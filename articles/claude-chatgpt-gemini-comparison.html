@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】 | GiveTex</title>
+<meta name="description" content="Claude・ChatGPT・Geminiの3大AIをプログラミング学習の観点から徹底比較。コード生成、エラー解説、学習サポート力を現役エンジニアが検証。">
+<meta property="og:title" content="Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】">
+<meta property="og:description" content="3大AIチャットボットをプログラミング学習に使い比べ。現役エンジニア×塾講師が忖度なしでレビュー。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://givetex.org/articles/claude-chatgpt-gemini-comparison.html">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://givetex.org/articles/claude-chatgpt-gemini-comparison.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1a1a;
+  --paper:#fafaf8;
+  --accent:#0066ff;
+  --accent-light:#e8f0ff;
+  --gray-100:#f4f4f2;
+  --gray-200:#e8e8e4;
+  --gray-400:#999;
+  --gray-600:#666;
+  --green:#0a8a50;
+  --green-light:#e6f7ee;
+  --orange:#c65d00;
+  --orange-light:#fff3e6;
+  --red:#cc2936;
+  --red-light:#ffeaec;
+  --radius:6px;
+  --max-w:720px;
+  --font-body:'Noto Sans JP',sans-serif;
+  --font-mono:'Space Mono',monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased}
+
+.pr-banner{background:var(--gray-100);border-bottom:1px solid var(--gray-200);text-align:center;padding:6px;font-size:.75rem;color:var(--gray-600)}
+
+header{border-bottom:2px solid var(--ink);padding:1.5rem 1rem}
+.header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-0.02em}
+.logo span{color:var(--accent)}
+nav a{font-size:.875rem;color:var(--gray-600);text-decoration:none;margin-left:1.5rem;transition:color .2s}
+nav a:hover{color:var(--ink)}
+
+/* Article */
+.article{max-width:var(--max-w);margin:0 auto;padding:3rem 1rem 4rem}
+.article-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--gray-400);margin-bottom:.75rem;display:flex;gap:1rem}
+.article h1{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:900;line-height:1.35;margin-bottom:1rem;letter-spacing:-0.02em}
+.article-lead{font-size:1.05rem;color:var(--gray-600);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-200)}
+
+.article h2{font-size:1.25rem;font-weight:700;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}
+.article h3{font-size:1.05rem;font-weight:700;margin:2rem 0 .75rem;padding-left:.75rem;border-left:3px solid var(--accent)}
+.article p{margin-bottom:1.25rem;font-size:.95rem}
+.article ul,.article ol{margin:0 0 1.25rem 1.5rem;font-size:.95rem}
+.article li{margin-bottom:.5rem}
+.article strong{font-weight:700}
+
+/* Comparison Table */
+.comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;font-size:.85rem}
+.comparison-table th{background:var(--ink);color:#fff;padding:.75rem .5rem;text-align:left;font-weight:700;font-size:.8rem}
+.comparison-table td{padding:.75rem .5rem;border-bottom:1px solid var(--gray-200);vertical-align:top}
+.comparison-table tr:hover{background:var(--gray-100)}
+.comparison-table .rank-1{background:var(--green-light)}
+.comparison-table .rank-2{background:var(--accent-light)}
+.comparison-table .rank-3{background:var(--orange-light)}
+
+/* Rating Badge */
+.rating{display:inline-block;font-family:var(--font-mono);font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:3px}
+.rating-high{background:var(--green-light);color:var(--green)}
+.rating-mid{background:var(--accent-light);color:var(--accent)}
+.rating-low{background:var(--orange-light);color:var(--orange)}
+
+/* Callout Box */
+.callout{background:var(--gray-100);border-left:4px solid var(--accent);padding:1.25rem;margin:1.5rem 0;border-radius:0 var(--radius) var(--radius) 0;font-size:.9rem}
+.callout-title{font-weight:700;margin-bottom:.5rem;font-size:.85rem}
+
+/* Verdict Box */
+.verdict{background:var(--accent-light);border:2px solid var(--accent);border-radius:var(--radius);padding:1.5rem;margin:2rem 0}
+.verdict h3{border:none;padding:0;margin:0 0 .75rem;color:var(--accent);font-size:1.1rem}
+
+/* Affiliate CTA */
+.cta-box{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;margin:2rem 0;text-align:center}
+.cta-box p{font-size:.9rem;margin-bottom:1rem;color:var(--gray-600)}
+.cta-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:.75rem 2rem;border-radius:var(--radius);font-weight:700;font-size:.9rem;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+
+/* TOC */
+.toc{background:var(--gray-100);border-radius:var(--radius);padding:1.5rem;margin:0 0 2.5rem}
+.toc-title{font-weight:700;font-size:.9rem;margin-bottom:.75rem}
+.toc ol{margin:0 0 0 1.25rem;font-size:.85rem}
+.toc li{margin-bottom:.4rem}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--accent)}
+
+.tag{display:inline-block;font-size:.7rem;font-family:var(--font-mono);background:var(--accent-light);color:var(--accent);padding:2px 8px;border-radius:3px;margin-right:.5rem}
+
+/* Back to top */
+.back-home{display:inline-block;margin-top:2rem;font-size:.875rem;color:var(--accent);text-decoration:none}
+.back-home:hover{text-decoration:underline}
+
+footer{border-top:1px solid var(--gray-200);padding:2rem 1rem;text-align:center}
+footer p{font-size:.75rem;color:var(--gray-400)}
+.legal-links{max-width:var(--max-w);margin:1rem auto 0;display:flex;justify-content:center;gap:1.5rem}
+.legal-links a{font-size:.75rem;color:var(--gray-400);text-decoration:none}
+
+@media(max-width:600px){
+  .header-inner{flex-direction:column;gap:.75rem}
+  nav a{margin-left:0;margin-right:1rem}
+  .comparison-table{font-size:.75rem}
+  .comparison-table th,.comparison-table td{padding:.5rem .35rem}
+}
+</style>
+
+<!-- JSON-LD 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】",
+  "author": {
+    "@type": "Person",
+    "name": "GiveTex編集部"
+  },
+  "datePublished": "2026-03-22",
+  "dateModified": "2026-03-22",
+  "publisher": {
+    "@type": "Organization",
+    "name": "GiveTex"
+  },
+  "description": "Claude・ChatGPT・Geminiの3大AIをプログラミング学習の観点から徹底比較。"
+}
+</script>
+
+</head>
+<body>
+
+<div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">Give<span>Tex</span></a>
+    <nav>
+      <a href="/">記事一覧</a>
+      <a href="/about.html">このサイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+
+  <div class="article-meta">
+    <span>2026.03.22</span>
+    <span>10 min read</span>
+  </div>
+
+  <h1>Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</h1>
+
+  <div style="margin-bottom:1.5rem">
+    <span class="tag">AI</span>
+    <span class="tag">比較レビュー</span>
+    <span class="tag">プログラミング</span>
+  </div>
+
+  <p class="article-lead">「プログラミングの勉強にAIを使いたいけど、結局どれがいいの？」——この疑問に、普段から3つのAIを開発と教育の現場で使い倒している筆者が答えます。Claude・ChatGPT・Geminiそれぞれの強みと弱みを、実際のコードで検証しました。</p>
+
+  <nav class="toc">
+    <div class="toc-title">この記事の内容</div>
+    <ol>
+      <li><a href="#overview">3大AIの基本スペック比較</a></li>
+      <li><a href="#code-gen">コード生成力の比較</a></li>
+      <li><a href="#error-fix">エラー解説・デバッグ力</a></li>
+      <li><a href="#learning">学習サポート力</a></li>
+      <li><a href="#pricing">料金プラン比較</a></li>
+      <li><a href="#verdict">結論：目的別おすすめ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="overview">3大AIの基本スペック比較</h2>
+
+  <p>まず、2026年3月時点での各AIの主要スペックを整理します。</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>Claude (Anthropic)</th>
+        <th>ChatGPT (OpenAI)</th>
+        <th>Gemini (Google)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>最新モデル</strong></td>
+        <td>Claude Opus 4.6</td>
+        <td>GPT-4o</td>
+        <td>Gemini 2.0 Pro</td>
+      </tr>
+      <tr>
+        <td><strong>無料プラン</strong></td>
+        <td>あり（制限付き）</td>
+        <td>あり（制限付き）</td>
+        <td>あり（制限付き）</td>
+      </tr>
+      <tr>
+        <td><strong>有料プラン</strong></td>
+        <td>月額 $20〜</td>
+        <td>月額 $20〜</td>
+        <td>月額 $20〜</td>
+      </tr>
+      <tr>
+        <td><strong>コード実行</strong></td>
+        <td>あり</td>
+        <td>あり</td>
+        <td>あり</td>
+      </tr>
+      <tr>
+        <td><strong>ファイル読込</strong></td>
+        <td>あり</td>
+        <td>あり</td>
+        <td>あり</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>基本スペックは横並びに見えますが、<strong>実際に使うと明確な違い</strong>が出ます。以下、具体的なタスクごとに検証していきます。</p>
+
+  <h2 id="code-gen">コード生成力の比較</h2>
+
+  <p>「Pythonで簡単なTodoアプリのAPIを作って」という同じプロンプトを各AIに投げて、生成されたコードの品質を比較しました。</p>
+
+  <h3>Claude：構造化された丁寧なコード</h3>
+  <p>Claudeは最初からファイル分割を意識した構造で出力する傾向があります。コメントも丁寧で、なぜその設計にしたのかの説明が付くことが多い。初学者が「なぜこう書くのか」を理解するのに最適です。</p>
+  <p><span class="rating rating-high">◎ 教育向き</span></p>
+
+  <h3>ChatGPT：素早く動くものを出す</h3>
+  <p>ChatGPTはとにかくスピード重視。シンプルに動くコードを素早く出してくれます。ただし、エラーハンドリングやバリデーションが省略されがちで、そのまま本番に使うには追加の作業が必要なことも。</p>
+  <p><span class="rating rating-mid">○ プロトタイプ向き</span></p>
+
+  <h3>Gemini：Google連携が強み</h3>
+  <p>GeminiはGoogle系サービス（Firebase、GCPなど）との連携コードに強みがあります。一方で、フレームワーク固有のベストプラクティスからずれたコードが出ることもあり、検証が必要です。</p>
+  <p><span class="rating rating-mid">○ Google技術スタック向き</span></p>
+
+  <h2 id="error-fix">エラー解説・デバッグ力</h2>
+
+  <p>プログラミング学習で一番困るのがエラーの対処。実際にPythonのTypeErrorをぶつけて、どう返してくれるかを検証しました。</p>
+
+  <div class="callout">
+    <div class="callout-title">検証方法</div>
+    同じエラーコード（TypeError: can't multiply sequence by non-int of type 'str'）を3つのAIに送り、回答の「わかりやすさ」「正確さ」「学びの深さ」を評価。
+  </div>
+
+  <p><strong>Claude</strong>は、まずエラーの意味を平易な言葉で説明し、次に原因のコード箇所を特定、最後に「なぜこのエラーが起きるのか」の背景知識まで教えてくれました。初学者にとっては、この段階的な説明が非常に助かります。</p>
+
+  <p><strong>ChatGPT</strong>は修正コードを先に出す傾向が強く、「直し方はわかったけど、なぜ間違っていたのかがわからない」状態になりがち。ただし、追加で「なぜ？」と聞けば詳しく説明してくれます。</p>
+
+  <p><strong>Gemini</strong>はGoogle検索結果と組み合わせた回答ができるのが特徴。公式ドキュメントへのリンク付きで答えてくれることがあり、自分でさらに調べたい人には便利です。</p>
+
+  <h2 id="learning">学習サポート力</h2>
+
+  <p>「Pythonの初心者です。変数について教えてください」という学習者目線の質問をぶつけてみました。</p>
+
+  <p>ここで最も差が出ました。<strong>Claudeは対話的に教えてくれる</strong>傾向が強く、「まず変数を箱に例えると...」のように、比喩を使った段階的な説明をしてくれます。塾講師としての実感ですが、これは実際の授業で使う教え方に近い。</p>
+
+  <p>ChatGPTも説明は丁寧ですが、一度に大量の情報を出す傾向があり、初学者は情報過多になることがあります。Geminiは説明とともにColab（Googleのオンラインコード環境）での実行を提案してくれることがあり、手を動かしたい人には良い導線です。</p>
+
+  <h2 id="pricing">料金プラン比較</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>プラン</th>
+        <th>Claude</th>
+        <th>ChatGPT</th>
+        <th>Gemini</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>無料</strong></td>
+        <td>基本機能利用可</td>
+        <td>基本機能利用可</td>
+        <td>基本機能利用可</td>
+      </tr>
+      <tr>
+        <td><strong>有料（個人）</strong></td>
+        <td>Pro: $20/月</td>
+        <td>Plus: $20/月</td>
+        <td>Advanced: $20/月</td>
+      </tr>
+      <tr>
+        <td><strong>学習用途のコスパ</strong></td>
+        <td><span class="rating rating-high">◎</span></td>
+        <td><span class="rating rating-mid">○</span></td>
+        <td><span class="rating rating-high">◎</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>料金は横並びです。ただし、<strong>無料プランでどこまで使えるか</strong>が重要。学習用途なら、まずは3つとも無料で試して、自分に合うものに課金するのがベストです。</p>
+
+  <h2 id="verdict">結論：目的別おすすめ</h2>
+
+  <div class="verdict">
+    <h3>🎯 筆者のおすすめ</h3>
+    <p><strong>プログラミング初学者</strong> → <strong>Claude</strong>：教え方が丁寧で段階的。「なぜ？」への回答が深い。</p>
+    <p><strong>素早くプロトタイプを作りたい人</strong> → <strong>ChatGPT</strong>：動くコードが最速で出る。</p>
+    <p><strong>Google技術スタック中心の人</strong> → <strong>Gemini</strong>：Firebase、GCP関連のコードに強い。</p>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--gray-600)">筆者は3つすべてを用途に応じて使い分けていますが、中学生への授業で一番使いやすいのはClaudeでした。説明の粒度が教育現場に合っています。</p>
+  </div>
+
+  <div class="cta-box">
+    <p>まずは無料で試してみよう</p>
+    <a href="https://claude.ai" class="cta-btn" rel="nofollow">Claude を無料で使う →</a>
+    <!-- 将来的にここにアフィリエイトリンクを設置 -->
+  </div>
+
+  <p>記事で紹介した各AIは、今後のアップデートで機能が変わる可能性があります。大きな変更があれば、この記事も随時更新していきます。</p>
+
+  <a href="/" class="back-home">← 記事一覧に戻る</a>
+
+</article>
+
+<footer>
+  <p>&copy; 2026 GiveTex. All rights reserved.</p>
+  <div class="legal-links">
+    <a href="/privacy.html">プライバシーポリシー</a>
+    <a href="/about.html">運営者情報</a>
+  </div>
+</footer>
+
+</body>
+</html>
