@@ -45,4 +45,24 @@
     <lastmod>2026-03-22</lastmod>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/apps/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/doparika/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/doparika/support/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/doparika/privacy/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
