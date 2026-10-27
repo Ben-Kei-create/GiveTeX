@@ -65,4 +65,19 @@
     <lastmod>2026-10-25</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/apps/linatex/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/linatex/support/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/linatex/privacy/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
