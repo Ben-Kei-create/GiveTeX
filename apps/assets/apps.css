@@ -46,3 +46,6 @@ table.info th,table.info td{border-bottom:1px solid var(--gray-200);padding:.6re
 table.info th{width:8.5em;color:var(--gray-600);font-weight:500;white-space:nowrap}
 .card.with-icon{display:flex;gap:1rem;align-items:center}
 .card.with-icon img{width:64px;height:64px;border-radius:14px;flex:0 0 auto}
+
+/* アイコン画像をヒーローに使うページ用（LinaTeX） */
+.hero img.app-icon{width:96px;height:96px;border-radius:21px}
