@@ -66,6 +66,21 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.givetex.org/apps/beerquiz/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/beerquiz/support/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/beerquiz/privacy/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.givetex.org/apps/linatex/</loc>
     <lastmod>2026-10-27</lastmod>
     <priority>0.5</priority>
