@@ -125,4 +125,19 @@
     <lastmod>2026-11-01</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/apps/terra/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/terra/support/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/terra/privacy/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
