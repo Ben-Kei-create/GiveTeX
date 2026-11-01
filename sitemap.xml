@@ -111,6 +111,21 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.givetex.org/apps/yomuemo/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/yomuemo/support/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/yomuemo/privacy/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.givetex.org/apps/terra/</loc>
     <lastmod>2026-11-01</lastmod>
     <priority>0.5</priority>
