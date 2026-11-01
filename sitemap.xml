@@ -80,4 +80,19 @@
     <lastmod>2026-10-27</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/apps/paperstory/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/paperstory/support/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/paperstory/privacy/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
