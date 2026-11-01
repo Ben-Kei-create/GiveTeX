@@ -49,3 +49,7 @@ table.info th{width:8.5em;color:var(--gray-600);font-weight:500;white-space:nowr
 
 /* アイコン画像をヒーローに使うページ用（LinaTeX） */
 .hero img.app-icon{width:96px;height:96px;border-radius:21px}
+
+/* TERRA: landscape Mac screenshots */
+.terra-shots figure{width:320px}
+.terra-shots img{width:320px;border-radius:4px}
