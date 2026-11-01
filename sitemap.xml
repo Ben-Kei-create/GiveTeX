@@ -140,4 +140,19 @@
     <lastmod>2026-11-01</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/apps/heydrum/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/heydrum/support/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/heydrum/privacy/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
