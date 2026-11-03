@@ -164,4 +164,19 @@
   <url><loc>https://www.givetex.org/apps/ionstep/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.givetex.org/apps/ionstep/support/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.givetex.org/apps/ionstep/privacy/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url>
+    <loc>https://givetex.org/apps/awstady-saa/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://givetex.org/apps/awstady-saa/support/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://givetex.org/apps/awstady-saa/privacy/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
