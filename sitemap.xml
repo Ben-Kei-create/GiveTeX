@@ -188,4 +188,19 @@
   <url><loc>https://www.givetex.org/apps/uzacal/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.givetex.org/apps/uzacal/support/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://www.givetex.org/apps/uzacal/privacy/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+  <url>
+    <loc>https://www.givetex.org/apps/minigamer/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/minigamer/support/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/apps/minigamer/privacy/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
