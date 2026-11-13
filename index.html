@@ -3,85 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GiveTex | AI×教育テクノロジーの情報メディア</title>
-<meta name="description" content="AI・プログラミング学習ツールのレビューと比較。現役塾講師×エンジニアが実体験をもとに発信する教育テックブログ。">
-<meta property="og:title" content="GiveTex | AI×教育テクノロジーの情報メディア">
-<meta property="og:description" content="AI・プログラミング学習ツールのレビューと比較。現役塾講師×エンジニアが実体験をもとに発信。">
+<title>GiveTex | 教育 × IT — アプリ・Kindle本・開発日記</title>
+<meta name="description" content="GiveTex（ギブテックス）は教育×ITのクリエイティブ・ラボ。学習アプリの開発、AIで制作したKindle電子書籍、開発日記、AI・学習ツールの記事を発信しています。">
+<meta property="og:title" content="GiveTex | 教育 × IT — アプリ・Kindle本・開発日記">
+<meta property="og:description" content="学習アプリ、AIで制作したKindle電子書籍、開発日記、AI活用の記事。教育×ITで「学び」をつくって届けます。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://givetex.org">
+<meta property="og:url" content="https://www.givetex.org/">
 <meta property="og:locale" content="ja_JP">
-<link rel="canonical" href="https://givetex.org">
+<meta name="theme-color" content="#ffe14d">
+<link rel="canonical" href="https://www.givetex.org/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#1a1a1a;
-  --paper:#fafaf8;
-  --accent:#0066ff;
-  --accent-light:#e8f0ff;
-  --gray-100:#f4f4f2;
-  --gray-200:#e8e8e4;
-  --gray-400:#999;
-  --gray-600:#666;
-  --radius:6px;
-  --max-w:720px;
-  --font-body:'Noto Sans JP',sans-serif;
-  --font-mono:'Space Mono',monospace;
-}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased}
-
-/* PR表記 - ステマ規制対応 */
-.pr-banner{background:var(--gray-100);border-bottom:1px solid var(--gray-200);text-align:center;padding:6px;font-size:.75rem;color:var(--gray-600)}
-
-/* Header */
-header{border-bottom:2px solid var(--ink);padding:1.5rem 1rem}
-.header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-0.02em}
-.logo span{color:var(--accent)}
-nav a{font-size:.875rem;color:var(--gray-600);text-decoration:none;margin-left:1.5rem;transition:color .2s}
-nav a:hover{color:var(--ink)}
-
-/* Hero */
-.hero{max-width:var(--max-w);margin:0 auto;padding:4rem 1rem 3rem}
-.hero-tag{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
-.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;line-height:1.3;margin-bottom:1rem;letter-spacing:-0.02em}
-.hero p{font-size:1.05rem;color:var(--gray-600);max-width:560px}
-
-/* Article Cards */
-.articles{max-width:var(--max-w);margin:0 auto;padding:0 1rem 4rem}
-.section-label{font-family:var(--font-mono);font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--gray-200)}
-.article-card{display:block;text-decoration:none;color:var(--ink);padding:1.5rem 0;border-bottom:1px solid var(--gray-200);transition:background .2s}
-.article-card:hover{background:var(--gray-100);margin:0 -1rem;padding:1.5rem 1rem;border-radius:var(--radius)}
-.article-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--gray-400);margin-bottom:.5rem;display:flex;gap:1rem}
-.article-card h2{font-size:1.2rem;font-weight:700;line-height:1.4;margin-bottom:.5rem}
-.article-card p{font-size:.9rem;color:var(--gray-600);line-height:1.6}
-.tag{display:inline-block;font-size:.7rem;font-family:var(--font-mono);background:var(--accent-light);color:var(--accent);padding:2px 8px;border-radius:3px;margin-right:.5rem}
-
-/* About Section */
-.about{max-width:var(--max-w);margin:0 auto;padding:3rem 1rem 4rem;border-top:2px solid var(--ink)}
-.about h2{font-size:1.1rem;font-weight:700;margin-bottom:1rem}
-.about p{font-size:.9rem;color:var(--gray-600);line-height:1.8}
-
-/* Footer */
-footer{border-top:1px solid var(--gray-200);padding:2rem 1rem;text-align:center}
-footer p{font-size:.75rem;color:var(--gray-400)}
-footer a{color:var(--gray-400);text-decoration:none}
-footer a:hover{color:var(--ink)}
-
-/* Privacy/Legal links */
-.legal-links{max-width:var(--max-w);margin:1rem auto 0;display:flex;justify-content:center;gap:1.5rem}
-.legal-links a{font-size:.75rem;color:var(--gray-400);text-decoration:none}
-.legal-links a:hover{color:var(--ink)}
-
-@media(max-width:600px){
-  .header-inner{flex-direction:column;gap:.75rem}
-  nav a{margin-left:0;margin-right:1rem}
-  .hero{padding:2.5rem 1rem 2rem}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/pop.css">
 
 <!-- Google Analytics placeholder - GA4のIDを入れ替える -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -89,132 +23,215 @@ footer a:hover{color:var(--ink)}
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 </script> -->
-
 </head>
 <body>
 
 <!-- ステマ規制法対応 PR表記 -->
 <div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>
 
-<header>
-  <div class="header-inner">
-    <a href="/" class="logo">Give<span>Tex</span></a>
-    <nav>
-      <a href="/">記事一覧</a>
-      <a href="/about.html">このサイトについて</a>
-      <a href="/privacy.html">プライバシーポリシー</a>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="/" aria-label="GiveTex ホーム"><span class="brand-mark">G</span><span class="brand-t"><small>教育 × IT</small><b>GiveTex</b></span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="/apps/">アプリ</a>
+      <a href="/books/">Kindle本</a>
+      <a href="/diary/">開発日記</a>
+      <a href="/#articles">記事</a>
+      <a href="/about.html">About</a>
     </nav>
   </div>
 </header>
 
+<main>
+
 <section class="hero">
-  <div class="hero-tag">Education × Technology</div>
-  <h1>AI時代の学び方を、<br>現場から発信する。</h1>
-  <p>現役塾講師×エンジニアが、AI学習ツール・プログラミング教材を実際に使ってレビュー。教育とテクノロジーの交差点から、本当に役立つ情報をお届けします。</p>
-</section>
-
-<section class="articles">
-  <div class="section-label">Latest Articles</div>
-
-  <a href="/articles/claude-chatgpt-gemini-comparison.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>10 min read</span>
+  <div>
+    <p class="hero-badge"><span>教育 × IT</span>学びを、つくるラボ</p>
+    <h1>学びを<em>つくって</em>、<br><em class="pk">アプリ</em>と<em class="bl">本</em>で<br>届ける。</h1>
+    <p class="hero-sub">GiveTexは、教育とITをかけ合わせて「学び」を形にする個人ラボです。<b>iPhone・Mac向けの学習アプリ</b>、<b>AIで制作したKindle電子書籍</b>、そして毎日の<b>開発日記</b>まで、つくったものをぜんぶここに置いています。</p>
+    <div class="hero-cta">
+      <a class="btn" href="/apps/">アプリを見る →</a>
+      <a class="btn btn-ghost" href="/diary/">開発日記を読む</a>
     </div>
-    <h2>Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</h2>
-    <p>3大AIチャットボットを実際にプログラミング学習に使い比べ。コード生成、エラー解説、学習サポートの観点から徹底比較しました。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">AI</span>
-      <span class="tag">比較レビュー</span>
-      <span class="tag">プログラミング</span>
-    </div>
-  </a>
-
-  <a href="/articles/ai-middle-school-science.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>12 min read</span>
-    </div>
-    <h2>中学生の理科学習にAIを使ってみた結果【塾講師が検証】</h2>
-    <p>現役塾講師がAIを活用して理科クイズアプリを自作。中学生に使わせてみたら、想像以上の反応が返ってきました。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">AI</span>
-      <span class="tag">理科教育</span>
-      <span class="tag">実体験レポート</span>
-    </div>
-  </a>
-
-  <a href="/articles/programming-learning-comparison.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>12 min read</span>
-    </div>
-    <h2>プログラミング学習サービス比較｜独学・スクール・AI、どれが最適？【2026年版】</h2>
-    <p>独学、スクール、AI活用。3つのアプローチを現役エンジニアがコスト・学習効果・挫折しにくさで徹底比較。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">プログラミング</span>
-      <span class="tag">比較レビュー</span>
-      <span class="tag">学習サービス</span>
-    </div>
-  </a>
-
-  <a href="/articles/ai-image-generation-guide.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>10 min read</span>
-    </div>
-    <h2>AIで画像生成を始める方法｜無料ツールから有料サービスまで比較【初心者向け】</h2>
-    <p>AI画像生成の始め方を完全ガイド。無料ツールから有料サービスまで、用途別に最適なツールを紹介します。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">AI</span>
-      <span class="tag">画像生成</span>
-      <span class="tag">初心者向け</span>
-    </div>
-  </a>
-
-  <a href="/articles/blog-monetization-guide.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>15 min read</span>
-    </div>
-    <h2>副業でブログを始める完全ガイド｜ゼロから収益化までの手順【2026年版】</h2>
-    <p>ブログ開設からASP登録、AI活用、SEO対策まで。副業ブログで月1万円を目指す全手順を解説。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">ブログ</span>
-      <span class="tag">副業</span>
-      <span class="tag">収益化</span>
-    </div>
-  </a>
-
-  <a href="/articles/ai-meeting-notes-tools.html" class="article-card">
-    <div class="article-meta">
-      <span>2026.03.22</span>
-      <span>10 min read</span>
-    </div>
-    <h2>AI議事録ツールの選び方｜会議の記録を自動化する方法【2026年版】</h2>
-    <p>Notta、CLOVA Note、Otter.aiなど主要ツールを比較。会議の議事録作成を自動化する最適な方法を解説。</p>
-    <div style="margin-top:.75rem">
-      <span class="tag">AI</span>
-      <span class="tag">仕事効率化</span>
-      <span class="tag">議事録</span>
-    </div>
-  </a>
-
-  <!-- 記事が増えたらここにカードを追加 -->
-
-</section>
-
-<section class="about">
-  <h2>GiveTexについて</h2>
-  <p>GiveTex（ギブテックス）は「Give（与える）× Education × Technology」をかけた造語。現役の塾講師でありソフトウェアエンジニアでもある筆者が、教育現場で本当に使えるAIツールや学習サービスを厳選してレビューするメディアです。実際に授業や開発で使った経験をもとに、忖度なしで書いています。</p>
-</section>
-
-<footer>
-  <p>&copy; 2026 GiveTex. All rights reserved.</p>
-  <div class="legal-links">
-    <a href="/privacy.html">プライバシーポリシー</a>
-    <a href="/about.html">運営者情報</a>
   </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="ha-card ha-1">Apps<small>iPhone / Mac</small></div>
+    <div class="ha-card ha-2">Kindle<small>AI × BOOKS</small></div>
+    <div class="ha-card ha-3">Diary<small>DEV LOG</small></div>
+    <div class="ha-card ha-4">Edu<small>LEARN</small></div>
+    <div class="ha-x">×</div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat box"><b>7</b><span>App Store 公開中</span></div>
+  <div class="stat box"><b>11</b><span>開発中のアプリ</span></div>
+  <div class="stat box"><b>6</b><span>AI・学習の記事</span></div>
+</div>
+
+<div class="wrap">
+
+<section class="sec" aria-label="コンテンツ">
+  <div class="modes">
+    <a class="mode mode-apps" href="/apps/"><span class="mode-emoji">📱</span><span class="mode-en">APPS</span><b>アプリ</b><p>漢検・化学・物理・AWS・Linux…学べるアプリを個人開発。</p></a>
+    <a class="mode mode-books" href="/books/"><span class="mode-emoji">📚</span><span class="mode-en">KINDLE</span><b>Kindle本</b><p>AIと一緒に書いた電子書籍をKindleで出版。</p></a>
+    <a class="mode mode-diary" href="/diary/"><span class="mode-emoji">📝</span><span class="mode-en">DEV DIARY</span><b>開発日記</b><p>何をつくって、何が起きたか。リリースまでの記録。</p></a>
+    <a class="mode mode-articles" href="#articles"><span class="mode-emoji">💡</span><span class="mode-en">ARTICLES</span><b>記事</b><p>AIツール比較やプログラミング学習のガイド。</p></a>
+  </div>
+</section>
+
+<section class="sec" id="apps">
+  <div class="sec-hd">
+    <h2><small>Now on App Store</small>📱 App Storeで公開中</h2>
+    <a class="more" href="/apps/">ぜんぶ見る →</a>
+  </div>
+  <div class="apps-grid">
+    <a class="app" href="/apps/ionstep/">
+      <img src="/apps/ionstep/images/icon.jpg" alt="イオンステップのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>イオンステップ</strong><span class="d">高校化学の電気分解と酸化・還元を、反応式を組み立てながら学ぶ。</span><span class="app-tags"><span class="chip chip-lm">化学</span><span class="chip">iPhone</span></span></div>
+    </a>
+    <a class="app" href="/apps/heydrum/">
+      <img src="/apps/heydrum/images/icon.jpg" alt="ヘイドラムのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>HeyDrum！</strong><span class="d">ドラムの合図のあとで文章を読み上げる。白い画面に大きな文字。</span><span class="app-tags"><span class="chip chip-y">ユーティリティ</span><span class="chip">iPhone</span></span></div>
+    </a>
+    <a class="app" href="https://apps.apple.com/jp/app/id6819971113" target="_blank" rel="noopener">
+      <img src="/assets/store/awstudy-clf.jpg" alt="AWSTUDY(CLF)のアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>AWSTUDY(CLF)</strong><span class="d">AWSの基礎を2択クイズで。3ステージ・全60問、回答ごとにポイント解説。</span><span class="app-tags"><span class="chip chip-or">AWS</span><span class="chip">iPhone</span></span></div>
+    </a>
+    <a class="app" href="https://apps.apple.com/jp/app/id6778082145" target="_blank" rel="noopener">
+      <img src="/assets/store/pokephysics.jpg" alt="PokePhysicsのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>PokePhysics</strong><span class="d">高校物理の公式を、記号の意味・成立条件・例題と一緒にすばやく確認。</span><span class="app-tags"><span class="chip chip-bl">物理</span><span class="chip">iPhone / iPad</span></span></div>
+    </a>
+    <a class="app" href="/apps/linatex/">
+      <img src="/apps/linatex/images/icon.jpg" alt="LinaTeXのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>LinaTeX</strong><span class="d">Linuxコマンドを、レッスン・クイズ・実践シナリオで身につける。</span><span class="app-tags"><span class="chip chip-pp">Linux</span><span class="chip">iPhone / iPad</span></span></div>
+    </a>
+    <a class="app" href="/apps/onitan/">
+      <img src="/assets/store/onitan.jpg" alt="OniTanのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>OniTan</strong><span class="d">漢字検定準1級の合格をめざす本格学習アプリ。10ジャンルの問題で実力を磨く。</span><span class="app-tags"><span class="chip chip-pk">漢検</span><span class="chip">iPhone</span></span></div>
+    </a>
+    <a class="app" href="/apps/beerquiz/">
+      <img src="/apps/beerquiz/images/icon.jpg" alt="ビール雑学クイズのアイコン" width="64" height="64" loading="lazy">
+      <div class="app-b"><strong>ビール雑学クイズ</strong><span class="d">注ぎ方・スタイル・醸造まで、初級〜上級の125問に挑戦。</span><span class="app-tags"><span class="chip chip-mt">雑学</span><span class="chip">iPhone</span></span></div>
+    </a>
+  </div>
+
+  <h3 class="month">🛠 開発中・リリース準備中</h3>
+  <div class="app-row">
+    <a class="app-mini" href="/apps/aws-saa-dojo/"><img src="/apps/aws-saa-dojo/images/icon.jpg" alt="" width="56" height="56" loading="lazy">SAA 設計道場</a>
+    <a class="app-mini" href="/apps/awstady-saa/"><img src="/apps/awstady-saa/images/icon.jpg" alt="" width="56" height="56" loading="lazy">AWSSTUDY(SAA)</a>
+    <a class="app-mini" href="/apps/minigamer/"><img src="/apps/minigamer/images/icon.jpg" alt="" width="56" height="56" loading="lazy">MiniGamer</a>
+    <a class="app-mini" href="/apps/kuragoyomi/"><img src="/apps/kuragoyomi/images/icon.jpg" alt="" width="56" height="56" loading="lazy">蔵ごよみ</a>
+    <a class="app-mini" href="/apps/uzacal/"><img src="/apps/uzacal/images/icon.jpg" alt="" width="56" height="56" loading="lazy">UzaCal</a>
+    <a class="app-mini" href="/apps/winequiz/"><img src="/apps/winequiz/images/icon.jpg" alt="" width="56" height="56" loading="lazy">ワイン雑学クイズ</a>
+    <a class="app-mini" href="/apps/zayping/"><img src="/apps/zayping/images/icon.jpg" alt="" width="56" height="56" loading="lazy">Zayping</a>
+    <a class="app-mini" href="/apps/terra/"><img src="/apps/terra/images/icon.jpg" alt="" width="56" height="56" loading="lazy">TERRA</a>
+    <a class="app-mini" href="/apps/yomuemo/"><img src="/apps/yomuemo/images/icon.jpg" alt="" width="56" height="56" loading="lazy">よむエモ</a>
+    <a class="app-mini" href="/apps/paperstory/"><img src="/apps/paperstory/images/icon.jpg" alt="" width="56" height="56" loading="lazy">PaperStory</a>
+    <a class="app-mini" href="/apps/doparika/"><img src="/apps/doparika/images/icon.jpg" alt="" width="56" height="56" loading="lazy">ドパリカ！</a>
+  </div>
+</section>
+
+<section class="sec" id="books">
+  <div class="sec-hd">
+    <h2><small>Kindle × AI</small>📚 Kindle電子書籍</h2>
+    <a class="more" href="/books/">本の一覧 →</a>
+  </div>
+  <div class="books">
+    <!-- KINDLE_BOOKS: 書籍を追加するときは /books/index.html と同じ .book カードをここに追加 -->
+    <div class="book box book-soon">
+      <div class="book-cover">Kindle<br>× AI</div>
+      <div>
+        <h3>AIと一緒につくった電子書籍</h3>
+        <p>生成AIを相棒に、企画・執筆・編集まで行った本をKindleで出版しています。書籍の一覧はこちらのページにまとめていきます。</p>
+        <a class="btn btn-dark" href="/books/" style="min-height:40px;font-size:14px">Kindle本のページへ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="diary">
+  <div class="sec-hd">
+    <h2><small>Dev Diary</small>📝 開発日記</h2>
+    <a class="more" href="/diary/">日記をぜんぶ読む →</a>
+  </div>
+  <ol class="diary">
+    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-13">2026.11.13</time><span class="chip chip-pk">サイト</span></div><h3>GiveTexをリニューアル。「教育 × IT」の看板へ</h3><p>ブログ中心だったサイトを、アプリ・Kindle本・開発日記をまとめるポップなデザインに作り直しました。</p></article></li>
+    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-06">2026.11.06</time><span class="chip chip-or">AWS</span></div><h3>「AWSTUDY SAA 設計道場」のページを公開</h3><p>要件が変わると答えも変わる。10問ずつ何度でも解ける、AWS設計判断トレーナーを準備中です。</p></article></li>
+    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-05">2026.11.05</time><span class="chip chip-y">ゲーム</span></div><h3>ミニゲーム集「MiniGamer」のページを追加</h3><p>本棚から選んですぐ遊べる6本のミニゲーム。あわせて「蔵ごよみ」のシェア画像も用意しました。</p></article></li>
+    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-04">2026.11.04</time><span class="chip chip-mt">日本酒</span></div><h3>日本酒を毎日ひとつ学ぶ「蔵ごよみ」</h3><p>約60日で日本酒を学ぶ仕込み帳。リマインダーとふりがな設定を追加しました。</p></article></li>
+  </ol>
+</section>
+
+<section class="sec" id="articles">
+  <div class="sec-hd">
+    <h2><small>Articles</small>💡 AI・学びの記事</h2>
+  </div>
+  <div class="posts">
+    <a href="/articles/claude-chatgpt-gemini-comparison.html" class="post">
+      <span class="post-meta">2026.03.22 · 10 min read</span>
+      <h3>Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</h3>
+      <p>3大AIチャットボットを実際にプログラミング学習に使い比べ。コード生成、エラー解説、学習サポートの観点から徹底比較。</p>
+      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip">比較レビュー</span><span class="chip">プログラミング</span></span>
+    </a>
+    <a href="/articles/ai-middle-school-science.html" class="post">
+      <span class="post-meta">2026.03.22 · 12 min read</span>
+      <h3>中学生の理科学習にAIを使ってみた結果【教室で検証】</h3>
+      <p>AIを活用して理科クイズアプリを自作。中学生に使ってもらったら、想像以上の反応が返ってきました。</p>
+      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-lm">理科教育</span><span class="chip">実体験レポート</span></span>
+    </a>
+    <a href="/articles/programming-learning-comparison.html" class="post">
+      <span class="post-meta">2026.03.22 · 12 min read</span>
+      <h3>プログラミング学習サービス比較｜独学・スクール・AI、どれが最適？【2026年版】</h3>
+      <p>独学、スクール、AI活用。3つのアプローチをコスト・学習効果・挫折しにくさで徹底比較。</p>
+      <span class="app-tags"><span class="chip chip-pp">プログラミング</span><span class="chip">比較レビュー</span><span class="chip">学習サービス</span></span>
+    </a>
+    <a href="/articles/ai-image-generation-guide.html" class="post">
+      <span class="post-meta">2026.03.22 · 10 min read</span>
+      <h3>AIで画像生成を始める方法｜無料ツールから有料サービスまで比較【初心者向け】</h3>
+      <p>AI画像生成の始め方を完全ガイド。無料ツールから有料サービスまで、用途別に最適なツールを紹介。</p>
+      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-pk">画像生成</span><span class="chip">初心者向け</span></span>
+    </a>
+    <a href="/articles/blog-monetization-guide.html" class="post">
+      <span class="post-meta">2026.03.22 · 15 min read</span>
+      <h3>副業でブログを始める完全ガイド｜ゼロから収益化までの手順【2026年版】</h3>
+      <p>ブログ開設からASP登録、AI活用、SEO対策まで。副業ブログで月1万円を目指す全手順を解説。</p>
+      <span class="app-tags"><span class="chip chip-y">ブログ</span><span class="chip">副業</span><span class="chip">収益化</span></span>
+    </a>
+    <a href="/articles/ai-meeting-notes-tools.html" class="post">
+      <span class="post-meta">2026.03.22 · 10 min read</span>
+      <h3>AI議事録ツールの選び方｜会議の記録を自動化する方法【2026年版】</h3>
+      <p>Notta、CLOVA Note、Otter.aiなど主要ツールを比較。会議の議事録作成を自動化する方法を解説。</p>
+      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-mt">仕事効率化</span><span class="chip">議事録</span></span>
+    </a>
+    <!-- 記事が増えたらここにカードを追加 -->
+  </div>
+</section>
+
+<section class="sec">
+  <div class="about-box box">
+    <h2>GiveTexについて</h2>
+    <p>GiveTex（ギブテックス）は「Give（与える）× Education × Technology」をかけた造語。<b>教育 × IT</b> をテーマに、学べるアプリ、AIで制作した電子書籍、学びに役立つ記事をつくって届けています。</p>
+    <div class="pillars">
+      <div class="pillar" style="background:var(--y)">📱 アプリ開発<small>iPhone・Mac向けの学習アプリ</small></div>
+      <div class="pillar" style="background:var(--pink-bg)">📚 Kindle出版<small>AIを相棒にした電子書籍</small></div>
+      <div class="pillar" style="background:var(--lime-bg)">📝 開発日記<small>つくる過程をそのまま公開</small></div>
+      <div class="pillar" style="background:var(--blue-bg)">💡 記事<small>AI・学習ツールのガイド</small></div>
+    </div>
+    <p><a class="more" href="/about.html">もっと詳しく →</a></p>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer class="ft">
+  <p class="ft-brand">Give<span>Tex</span></p>
+  <p>教育 × IT — 学びを、つくって届ける。</p>
+  <nav class="ft-links" aria-label="フッターメニュー">
+    <a href="/apps/">アプリ</a><a href="/books/">Kindle本</a><a href="/diary/">開発日記</a><a href="/about.html">運営者情報</a><a href="/privacy.html">プライバシーポリシー</a>
+  </nav>
+  <p>&copy; 2026 GiveTex. All rights reserved.</p>
 </footer>
 
 </body>

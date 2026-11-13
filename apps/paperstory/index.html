@@ -7,18 +7,20 @@
 <meta name="description" content="PaperStoryは、トイレットペーパーに印刷された物語を、引き出して読むiPhoneアプリです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/pop.css">
 <link rel="stylesheet" href="/apps/assets/apps.css">
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <a href="/" class="logo">Give<span>Tex</span></a>
-    <nav>
-      <a href="/">記事一覧</a>
-      <a href="/apps/">アプリ</a>
-      <a href="/about.html">このサイトについて</a>
-      <a href="/privacy.html">プライバシーポリシー</a>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="/" aria-label="GiveTex ホーム"><span class="brand-mark">G</span><span class="brand-t"><small>教育 × IT</small><b>GiveTex</b></span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="/apps/" aria-current="page">アプリ</a>
+      <a href="/books/">Kindle本</a>
+      <a href="/diary/">開発日記</a>
+      <a href="/#articles">記事</a>
+      <a href="/about.html">About</a>
     </nav>
   </div>
 </header>
@@ -76,7 +78,12 @@
 </a>
 </div>
 
-<footer>
+<footer class="ft">
+  <p class="ft-brand">Give<span>Tex</span></p>
+  <p>教育 × IT — 学びを、つくって届ける。</p>
+  <nav class="ft-links" aria-label="フッターメニュー">
+    <a href="/apps/">アプリ</a><a href="/books/">Kindle本</a><a href="/diary/">開発日記</a><a href="/about.html">運営者情報</a><a href="/privacy.html">プライバシーポリシー</a>
+  </nav>
   <p>&copy; 2026 GiveTex. All rights reserved.</p>
 </footer>
 </body>
