@@ -84,7 +84,8 @@ main{display:block}
   .ha-2{animation-delay:-1.2s}.ha-3{animation-delay:-2.4s}.ha-4{animation-delay:-3.6s}
   @keyframes bob{50%{translate:0 -8px}}
 }
-.stats{max-width:var(--max);margin:22px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stats{max-width:var(--max);margin:22px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
 .stat{padding:12px 10px;text-align:center}
 .stat b{display:block;font:clamp(26px,5vw,36px)/1.1 var(--disp)}
 .stat span{font-size:12.5px;font-weight:800;color:var(--sub)}
@@ -113,7 +114,7 @@ main{display:block}
 .app-b strong{font-size:16px;line-height:1.35}
 .app-b span.d{font-size:13px;color:var(--sub);line-height:1.6}
 .app-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.app-row{display:flex;gap:12px;overflow-x:auto;padding:4px 16px 16px;margin:0 -16px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.app-row{display:flex;gap:12px;overflow-x:auto;padding:4px 16px 16px;margin:0 -16px;scroll-padding-inline:16px;scroll-snap-type:x proximity;scrollbar-width:thin}
 .app-mini{flex:0 0 112px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;background:var(--card);border:2.5px solid var(--line);border-radius:var(--r-s);box-shadow:var(--sh-s);text-decoration:none;color:var(--ink);text-align:center;font-size:12.5px;font-weight:800;line-height:1.35}
 .app-mini img{width:56px;height:56px;border-radius:13px;border:2px solid var(--line)}
 .app-mini:hover{background:var(--y)}
@@ -202,3 +203,20 @@ main{display:block}
 .ft-links a{color:#fff;text-decoration:none;font-size:13.5px;font-weight:700}
 .ft-links a:hover{color:var(--y)}
 .apps-group{font:20px/1.35 var(--disp);margin:28px 0 12px}
+
+/* ---------- Kindle 本棚 ---------- */
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:18px 14px}
+@media(max-width:420px){.shelf{grid-template-columns:repeat(2,1fr)}}
+.kb{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink)}
+.kb-cover{aspect-ratio:2/3;background:var(--soft);border:2.5px solid var(--line);border-radius:6px 12px 12px 6px;box-shadow:var(--sh-s);overflow:hidden;transition:transform .1s,box-shadow .1s}
+.kb-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.kb:hover .kb-cover{transform:translate(-2px,-2px) rotate(-1.5deg);box-shadow:5px 5px 0 var(--line)}
+.kb b{font-size:13.5px;line-height:1.45;font-weight:800}
+.kb small{font-size:12px;line-height:1.5;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.shelf-row{display:flex;gap:14px;overflow-x:auto;padding:4px 16px 16px;margin:0 -16px;scroll-padding-inline:16px;scroll-snap-type:x proximity}
+.shelf-row .kb{flex:0 0 128px;scroll-snap-align:start}
+.cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.author{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:18px 20px;margin:0 0 24px;background:var(--pink);color:#fff}
+.author b{font:22px/1.2 var(--disp)}
+.author p{margin:0;font-size:14px;color:#fff;flex:1 1 280px}
+.author .btn{flex:none}
