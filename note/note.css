@@ -153,3 +153,10 @@ img{max-width:100%;height:auto}
 .nb-search{display:block}
 .nb-search svg{top:50%;transform:translateY(-50%)}
 @media (max-width:600px){.nb-prose{text-align:start;letter-spacing:.03em}}
+/* 有料記事：noteで続きを読む */
+.nb-paid{display:grid;justify-items:center;gap:8px;text-align:center;margin:8px 0 0;padding:28px 20px;border-radius:16px;background:linear-gradient(to bottom,transparent,var(--bg2) 40%);border:1px solid var(--line);font-family:var(--sans)}
+.nb-paid b{font:700 18px/1.5 var(--serif)}
+.nb-paid span{color:var(--sub);font-size:14.5px}
+.nb-badge{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 11px/1.6 var(--sans);letter-spacing:.05em;vertical-align:2px}
+.nb-prose .note-embed a{text-decoration:none}
+.nb-prose .note-embed a:hover{text-decoration:underline}

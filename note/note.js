@@ -51,10 +51,12 @@
   var listBox = $('#nb-list');
   if (listBox) {
     var q = '', tag = '';
+    try { tag = new URLSearchParams(location.search).get('tag') || ''; } catch (e) {}
     var tags = {};
     POSTS.forEach(function (p) { (p.tags || []).forEach(function (t) { tags[t] = (tags[t] || 0) + 1; }); });
     var chips = $('#nb-chips');
-    var tagNames = Object.keys(tags).sort(function (a, b) { return tags[b] - tags[a]; });
+    var tagNames = Object.keys(tags).sort(function (a, b) { return tags[b] - tags[a]; }).slice(0, 24);
+    if (tag && tagNames.indexOf(tag) < 0 && tags[tag]) tagNames.unshift(tag);
     function chip(label, val) {
       var c = el('button', 'nb-chip', label); c.type = 'button'; c.setAttribute('aria-pressed', val === tag ? 'true' : 'false');
       c.addEventListener('click', function () { tag = val; $$('.nb-chip', chips).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); c.setAttribute('aria-pressed', 'true'); render(); });
@@ -94,7 +96,9 @@
         }
         var li = el('li', 'nb-item'), a = el('a'); a.href = postUrl(p);
         var t = el('time', null, fmt(p.date)); t.dateTime = p.date; a.appendChild(t);
-        a.appendChild(el('h2', null, p.title));
+        var h2 = el('h2', null, p.title);
+        if (p.paid) h2.appendChild(el('span', 'nb-badge', '有料'));
+        a.appendChild(h2);
         if (p.excerpt) a.appendChild(el('p', null, p.excerpt));
         if (p.cover) { var im = el('img', 'nb-thumb'); im.src = p.cover; im.alt = ''; im.loading = 'lazy'; a.appendChild(im); }
         if (p.tags && p.tags.length) { var tg = el('div', 'nb-tags'); p.tags.forEach(function (x) { tg.appendChild(el('span', null, x)); }); a.appendChild(tg); }
