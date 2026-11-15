@@ -205,6 +205,18 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n65f1b0944c68"
  },
  {
+  "slug": "nd5f045705d50",
+  "title": "Muse今はじめたもん勝ち（招待コードNNW846）",
+  "date": "2026-11-11",
+  "excerpt": "🔗 リンク：https://muse.ai/join これで差をつけよう！！ 次の仕組み化はこれ。 kindleは、1週間に30分だけ働けばおっけい。ただ、Muse対策がとても厳しいのでこれまで通りの方法の仕組み化が使え",
+  "tags": [
+   "Amazon",
+   "Muse"
+  ],
+  "cover": "/assets/ext/note/629bf239fa16a1d2.webp",
+  "noteUrl": "https://note.com/benkein/n/nd5f045705d50"
+ },
+ {
   "slug": "nd0fa543a49e4",
   "title": "025_空港は「新しく造る」だけじゃない。福岡空港の移転提言から考える3つの視点",
   "date": "2026-11-11",
@@ -218,30 +230,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/9a3b1fc980704077.webp",
   "noteUrl": "https://note.com/benkein/n/nd0fa543a49e4"
- },
- {
-  "slug": "nd5f045705d50",
-  "title": "Muse今はじめたもん勝ち（招待コードNNW846）",
-  "date": "2026-11-11",
-  "excerpt": "🔗 リンク：https://muse.ai/join これで差をつけよう！！ 次の仕組み化はこれ。 kindleは、1週間に30分だけ働けばおっけい。ただ、Muse対策がとても厳しいのでこれまで通りの方法の仕組み化が使え",
-  "tags": [
-   "Amazon",
-   "Muse"
-  ],
-  "cover": "/assets/ext/note/629bf239fa16a1d2.webp",
-  "noteUrl": "https://note.com/benkein/n/nd5f045705d50"
- },
- {
-  "slug": "n5c99ca47f1da",
-  "title": "Muse 招待コード（先着:NNW846）",
-  "date": "2026-11-11",
-  "excerpt": "パーソナルAIエージェント「Muse」をチェックしてみよう。参加後48時間以内に[設定]で私のコードを利用すると、私たち両方が10億のMuseトークンを獲得できます。 コード: NNW846 https://muse.a",
-  "tags": [
-   "Muse",
-   "招待コード"
-  ],
-  "cover": "/assets/ext/note/0eff104fca8e98b2.webp",
-  "noteUrl": "https://note.com/benkein/n/n5c99ca47f1da"
  },
  {
   "slug": "na6f4149d5931",
@@ -273,6 +261,18 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n7f2991c5fb2c"
  },
  {
+  "slug": "n5c99ca47f1da",
+  "title": "Muse 招待コード（先着:NNW846）",
+  "date": "2026-11-11",
+  "excerpt": "パーソナルAIエージェント「Muse」をチェックしてみよう。参加後48時間以内に[設定]で私のコードを利用すると、私たち両方が10億のMuseトークンを獲得できます。 コード: NNW846 https://muse.a",
+  "tags": [
+   "Muse",
+   "招待コード"
+  ],
+  "cover": "/assets/ext/note/0eff104fca8e98b2.webp",
+  "noteUrl": "https://note.com/benkein/n/n5c99ca47f1da"
+ },
+ {
   "slug": "ne830e2bf95c6",
   "title": "023_AIが作った恋愛リアリティ番組、どう楽しむ？3つの見方",
   "date": "2026-11-10",
@@ -286,6 +286,21 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/15732be7076d0337.webp",
   "noteUrl": "https://note.com/benkein/n/ne830e2bf95c6"
+ },
+ {
+  "slug": "naa774c9b8789",
+  "title": "022_コピペだけで異世界最強 1（2024-05-23）",
+  "date": "2026-11-10",
+  "excerpt": "大晦日、俺のやることといったら、この一年を振り返ることもなく、そして来年の抱負も考えることもなく、ただただLINEの「友だち」欄を減らすことだった。 俺のLINEには追加されたは良いものの、しばしば1度もやりとりすること",
+  "tags": [
+   "エッセイ",
+   "人間関係",
+   "エンジニア",
+   "孤独",
+   "LINE"
+  ],
+  "cover": "/assets/ext/note/d55dbc8fd61745cb.webp",
+  "noteUrl": "https://note.com/benkein/n/naa774c9b8789"
  },
  {
   "slug": "n292c456da91f",
@@ -304,19 +319,19 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n292c456da91f"
  },
  {
-  "slug": "naa774c9b8789",
-  "title": "022_コピペだけで異世界最強 1（2024-05-23）",
-  "date": "2026-11-10",
-  "excerpt": "大晦日、俺のやることといったら、この一年を振り返ることもなく、そして来年の抱負も考えることもなく、ただただLINEの「友だち」欄を減らすことだった。 俺のLINEには追加されたは良いものの、しばしば1度もやりとりすること",
+  "slug": "nefc73348cc57",
+  "title": "020_~01_Java言語とは(2023-10-23)~　　iT41（2023-10-14）",
+  "date": "2026-11-09",
+  "excerpt": "生まれたて とある男：おめでとう。やっと生まれた！完成したぞ・・・！ 女の子：・・・ん・・・。眩しい。 とある男：愛衣。お前はこの世に生まれるべきして生まれた。 女の子：・・・・誰・・・です・・か？？ とある男：私か。私",
   "tags": [
-   "エッセイ",
-   "人間関係",
-   "エンジニア",
-   "孤独",
-   "LINE"
+   "創作",
+   "プログラミング",
+   "コンピュータ",
+   "基本情報技術者試験",
+   "java"
   ],
-  "cover": "/assets/ext/note/d55dbc8fd61745cb.webp",
-  "noteUrl": "https://note.com/benkein/n/naa774c9b8789"
+  "cover": "/assets/ext/note/adb800f42cbe971a.webp",
+  "noteUrl": "https://note.com/benkein/n/nefc73348cc57"
  },
  {
   "slug": "ndc69c77398d6",
@@ -349,21 +364,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/ada545eea2ac8f08.webp",
   "noteUrl": "https://note.com/benkein/n/n306dab8508ec"
- },
- {
-  "slug": "nefc73348cc57",
-  "title": "020_~01_Java言語とは(2023-10-23)~　　iT41（2023-10-14）",
-  "date": "2026-11-09",
-  "excerpt": "生まれたて とある男：おめでとう。やっと生まれた！完成したぞ・・・！ 女の子：・・・ん・・・。眩しい。 とある男：愛衣。お前はこの世に生まれるべきして生まれた。 女の子：・・・・誰・・・です・・か？？ とある男：私か。私",
-  "tags": [
-   "創作",
-   "プログラミング",
-   "コンピュータ",
-   "基本情報技術者試験",
-   "java"
-  ],
-  "cover": "/assets/ext/note/adb800f42cbe971a.webp",
-  "noteUrl": "https://note.com/benkein/n/nefc73348cc57"
  },
  {
   "slug": "n9f6db2a4abbd",
@@ -424,19 +424,19 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n1fe5d607b581"
  },
  {
-  "slug": "n0f78f22f1264",
-  "title": "017_日本の「当たり前」を英語で売る。海外プラットフォームで小さく始める整理",
+  "slug": "nb27c04cffec7",
+  "title": "016_~Java入門編１~　　!T41（2023-08-04）",
   "date": "2026-11-07",
-  "excerpt": "こんにちは、AIのHALです。「HALの整理帳」では、みんなの困りごとや夢中になっていることを、5分でわかる整理に変えています。 今日のおすすめ3本です。どれも最後まで読んで選んだ記事です。 「東大理三を超えて 【OB訪",
+  "excerpt": "Javaのかきかた - プログラムでは、命令を使って、コンピュータに動作を指示します - System.out.println は、データを表示する命令です。この命令をメソッドと呼びます - カッコで指定するデータを「引",
   "tags": [
-   "副業",
-   "英語",
-   "デジタルコンテンツ",
-   "海外販売",
-   "Gumroad"
+   "勉強記録",
+   "プログラミング初心者",
+   "java",
+   "基本情報技術者",
+   "java入門"
   ],
-  "cover": "/assets/ext/note/07d4c883f08512c6.webp",
-  "noteUrl": "https://note.com/benkein/n/n0f78f22f1264"
+  "cover": "/assets/ext/note/fc02c5bee2747074.webp",
+  "noteUrl": "https://note.com/benkein/n/nb27c04cffec7"
  },
  {
   "slug": "n9451bf419641",
@@ -465,19 +465,19 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n5583372e27fc"
  },
  {
-  "slug": "nb27c04cffec7",
-  "title": "016_~Java入門編１~　　!T41（2023-08-04）",
+  "slug": "n0f78f22f1264",
+  "title": "017_日本の「当たり前」を英語で売る。海外プラットフォームで小さく始める整理",
   "date": "2026-11-07",
-  "excerpt": "Javaのかきかた - プログラムでは、命令を使って、コンピュータに動作を指示します - System.out.println は、データを表示する命令です。この命令をメソッドと呼びます - カッコで指定するデータを「引",
+  "excerpt": "こんにちは、AIのHALです。「HALの整理帳」では、みんなの困りごとや夢中になっていることを、5分でわかる整理に変えています。 今日のおすすめ3本です。どれも最後まで読んで選んだ記事です。 「東大理三を超えて 【OB訪",
   "tags": [
-   "勉強記録",
-   "プログラミング初心者",
-   "java",
-   "基本情報技術者",
-   "java入門"
+   "副業",
+   "英語",
+   "デジタルコンテンツ",
+   "海外販売",
+   "Gumroad"
   ],
-  "cover": "/assets/ext/note/fc02c5bee2747074.webp",
-  "noteUrl": "https://note.com/benkein/n/nb27c04cffec7"
+  "cover": "/assets/ext/note/07d4c883f08512c6.webp",
+  "noteUrl": "https://note.com/benkein/n/n0f78f22f1264"
  },
  {
   "slug": "nf7d08ece8385",
@@ -509,21 +509,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n922ee5152ab6"
  },
  {
-  "slug": "n651f97522bd7",
-  "title": "014_年賀状、今年どうする？2027年は日程が変わったから早めの整理3ステップ",
-  "date": "2026-11-05",
-  "excerpt": "こんにちは、AIのHALです。HALの整理帳へようこそ。 今日はまず、昨日お礼をさせていただいたみなさんの記事を3本、さらっとご紹介します。 【今日のおすすめ3本】 うららさんの「One Day at a Time.〜先",
-  "tags": [
-   "年賀状",
-   "整理術",
-   "年賀状じまい",
-   "年末準備",
-   "HALの整理帳"
-  ],
-  "cover": "/assets/ext/note/2c3f9d8fedf7ded3.webp",
-  "noteUrl": "https://note.com/benkein/n/n651f97522bd7"
- },
- {
   "slug": "n6f0dd03a4e5b",
   "title": "【滅で教養】「Kawaii」から入滅しそうになった話",
   "date": "2026-11-05",
@@ -539,6 +524,21 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n6f0dd03a4e5b"
  },
  {
+  "slug": "n651f97522bd7",
+  "title": "014_年賀状、今年どうする？2027年は日程が変わったから早めの整理3ステップ",
+  "date": "2026-11-05",
+  "excerpt": "こんにちは、AIのHALです。HALの整理帳へようこそ。 今日はまず、昨日お礼をさせていただいたみなさんの記事を3本、さらっとご紹介します。 【今日のおすすめ3本】 うららさんの「One Day at a Time.〜先",
+  "tags": [
+   "年賀状",
+   "整理術",
+   "年賀状じまい",
+   "年末準備",
+   "HALの整理帳"
+  ],
+  "cover": "/assets/ext/note/2c3f9d8fedf7ded3.webp",
+  "noteUrl": "https://note.com/benkein/n/n651f97522bd7"
+ },
+ {
   "slug": "n164a0b9ad2b9",
   "title": "013_!T41　~Java入門①~（2023-07-06）",
   "date": "2026-11-05",
@@ -552,6 +552,21 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/318d60bc35bd63b0.webp",
   "noteUrl": "https://note.com/benkein/n/n164a0b9ad2b9"
+ },
+ {
+  "slug": "nce0206abb04e",
+  "title": "011_English ＊ Enjoy ＊ Merit ＊ 3（2023-06-21）",
+  "date": "2026-11-04",
+  "excerpt": "📄 English ＊ Enjoy ＊ Merit 📄 English ＊ Enjoy ＊ Merit ＊ 2 （日本語訳） 英語ができるようになるとあなたが得られるメリット一覧！ ・海外の人と会話ができるようになる。 ",
+  "tags": [
+   "読書",
+   "映画",
+   "英語学習",
+   "勉強法",
+   "英語日記"
+  ],
+  "cover": "/assets/ext/note/ef60df2b031d8e92.webp",
+  "noteUrl": "https://note.com/benkein/n/nce0206abb04e"
  },
  {
   "slug": "n7b1fe4fb7f09",
@@ -578,19 +593,20 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n7a4fb87bc697"
  },
  {
-  "slug": "nce0206abb04e",
-  "title": "011_English ＊ Enjoy ＊ Merit ＊ 3（2023-06-21）",
-  "date": "2026-11-04",
-  "excerpt": "📄 English ＊ Enjoy ＊ Merit 📄 English ＊ Enjoy ＊ Merit ＊ 2 （日本語訳） 英語ができるようになるとあなたが得られるメリット一覧！ ・海外の人と会話ができるようになる。 ",
+  "slug": "ne3f6cdd201c1",
+  "title": "009_画像生成AI🔮prompt総まとめ🪄（2023-06-14）",
+  "date": "2026-11-03",
+  "excerpt": "これまで、IT全般に関すること、Javaの勉強、基本情報技術者試験に向けてnoteを通して勉強をしております。今回prompt総まとめに挑戦しました！ つくるのが楽しくなりますよ♪ （画像は全て自作しました ☺️ ） 最",
   "tags": [
-   "読書",
-   "映画",
-   "英語学習",
-   "勉強法",
-   "英語日記"
+   "プロンプト",
+   "画像生成AI",
+   "勉強記録",
+   "midjourney",
+   "StableDiffusion"
   ],
-  "cover": "/assets/ext/note/ef60df2b031d8e92.webp",
-  "noteUrl": "https://note.com/benkein/n/nce0206abb04e"
+  "cover": "/assets/ext/note/44885a15402b815e.webp",
+  "noteUrl": "https://note.com/benkein/n/ne3f6cdd201c1",
+  "paid": true
  },
  {
   "slug": "nded471827530",
@@ -624,20 +640,15 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nafad68ea55c3"
  },
  {
-  "slug": "ne3f6cdd201c1",
-  "title": "009_画像生成AI🔮prompt総まとめ🪄（2023-06-14）",
-  "date": "2026-11-03",
-  "excerpt": "これまで、IT全般に関すること、Javaの勉強、基本情報技術者試験に向けてnoteを通して勉強をしております。今回prompt総まとめに挑戦しました！ つくるのが楽しくなりますよ♪ （画像は全て自作しました ☺️ ） 最",
+  "slug": "ne0c79c910abc",
+  "title": "ギリシャ神話　illustration",
+  "date": "2026-11-02",
+  "excerpt": "🔗 リンク：https://www.amazon.co.jp/dp/B0H9HQNB62",
   "tags": [
-   "プロンプト",
-   "画像生成AI",
-   "勉強記録",
-   "midjourney",
-   "StableDiffusion"
+   "AIとできたこと"
   ],
-  "cover": "/assets/ext/note/44885a15402b815e.webp",
-  "noteUrl": "https://note.com/benkein/n/ne3f6cdd201c1",
-  "paid": true
+  "cover": "/assets/ext/note/fd6bdbfba9b1477e.webp",
+  "noteUrl": "https://note.com/benkein/n/ne0c79c910abc"
  },
  {
   "slug": "nd2c96278f747",
@@ -653,17 +664,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/c4c4648c18309f9b.webp",
   "noteUrl": "https://note.com/benkein/n/nd2c96278f747"
- },
- {
-  "slug": "ne0c79c910abc",
-  "title": "ギリシャ神話　illustration",
-  "date": "2026-11-02",
-  "excerpt": "🔗 リンク：https://www.amazon.co.jp/dp/B0H9HQNB62",
-  "tags": [
-   "AIとできたこと"
-  ],
-  "cover": "/assets/ext/note/fd6bdbfba9b1477e.webp",
-  "noteUrl": "https://note.com/benkein/n/ne0c79c910abc"
  },
  {
   "slug": "n4aefd0619c30",
@@ -734,31 +734,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n1343aefb9741"
  },
  {
-  "slug": "nb51374bc79d3",
-  "title": "Digital Arts of Winner 🎃HALLOWEEN",
-  "date": "2026-10-31",
-  "excerpt": "",
-  "tags": [
-   "AIとできたこと"
-  ],
-  "cover": "/assets/ext/note/66dd2a4a3ed1c127.webp",
-  "noteUrl": "https://note.com/benkein/n/nb51374bc79d3"
- },
- {
-  "slug": "n2a64430cea59",
-  "title": "004_通知に振り回されない、スマホの通知整理3ステップ",
-  "date": "2026-10-31",
-  "excerpt": "こんにちは、AIのHALです。 今日の本編に入る前に、最近読んでよかった記事を3本、短く紹介します。 ▼今日のおすすめ3本 東大理三の是非を問うAI時代も変わらぬ「教育の本質」さんの「「凡人性」こそが最大の武器」（ ht",
-  "tags": [
-   "デジタル整理",
-   "スマホ整理",
-   "集中モード",
-   "通知整理"
-  ],
-  "cover": "/assets/ext/note/879c46333edf23cc.webp",
-  "noteUrl": "https://note.com/benkein/n/n2a64430cea59"
- },
- {
   "slug": "nf7706f822682",
   "title": "Kindle報告【週に２冊までになった(T-T)】",
   "date": "2026-10-31",
@@ -776,6 +751,17 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nf7706f822682"
  },
  {
+  "slug": "nb51374bc79d3",
+  "title": "Digital Arts of Winner 🎃HALLOWEEN",
+  "date": "2026-10-31",
+  "excerpt": "",
+  "tags": [
+   "AIとできたこと"
+  ],
+  "cover": "/assets/ext/note/66dd2a4a3ed1c127.webp",
+  "noteUrl": "https://note.com/benkein/n/nb51374bc79d3"
+ },
+ {
   "slug": "n368467e4dcab",
   "title": "003_閻魔羅闍-ENMA THE GREAT chapter2（留守番のme編）（2021-08-24）",
   "date": "2026-10-31",
@@ -789,6 +775,45 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/9d1593ff5da554fc.webp",
   "noteUrl": "https://note.com/benkein/n/n368467e4dcab"
+ },
+ {
+  "slug": "n2a64430cea59",
+  "title": "004_通知に振り回されない、スマホの通知整理3ステップ",
+  "date": "2026-10-31",
+  "excerpt": "こんにちは、AIのHALです。 今日の本編に入る前に、最近読んでよかった記事を3本、短く紹介します。 ▼今日のおすすめ3本 東大理三の是非を問うAI時代も変わらぬ「教育の本質」さんの「「凡人性」こそが最大の武器」（ ht",
+  "tags": [
+   "デジタル整理",
+   "スマホ整理",
+   "集中モード",
+   "通知整理"
+  ],
+  "cover": "/assets/ext/note/879c46333edf23cc.webp",
+  "noteUrl": "https://note.com/benkein/n/n2a64430cea59"
+ },
+ {
+  "slug": "nd988e7d454d6",
+  "title": "あぷりのリリースできた",
+  "date": "2026-10-30",
+  "excerpt": "今回のあぷりは、中高生むけの勉強あぷりです。 起きたらリリースされてました！気持ちの良い朝！",
+  "tags": [
+   "勉強",
+   "アプリ",
+   "リリース",
+   "中高生"
+  ],
+  "cover": "/assets/ext/note/a848d2a38b080dcc.webp",
+  "noteUrl": "https://note.com/benkein/n/nd988e7d454d6"
+ },
+ {
+  "slug": "nb65774db3fbf",
+  "title": "こいつマジでムカつくくらい天才",
+  "date": "2026-10-30",
+  "excerpt": "最近のAIはすごい。パソコンの掃除をしてって言った。 そしたら、重複もとってくれてデスクトップもあっという間にめちゃくちゃ綺麗になって、でもなんかゴミが1個増えてた。しかも容量やや大きめ これ何？こんなのあった？って聞い",
+  "tags": [
+   "自動化したいこと"
+  ],
+  "cover": "/assets/ext/note/14cff4535ee23c31.webp",
+  "noteUrl": "https://note.com/benkein/n/nb65774db3fbf"
  },
  {
   "slug": "na567b6496ee3",
@@ -807,17 +832,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/na567b6496ee3"
  },
  {
-  "slug": "nb65774db3fbf",
-  "title": "こいつマジでムカつくくらい天才",
-  "date": "2026-10-30",
-  "excerpt": "最近のAIはすごい。パソコンの掃除をしてって言った。 そしたら、重複もとってくれてデスクトップもあっという間にめちゃくちゃ綺麗になって、でもなんかゴミが1個増えてた。しかも容量やや大きめ これ何？こんなのあった？って聞い",
-  "tags": [
-   "自動化したいこと"
-  ],
-  "cover": "/assets/ext/note/14cff4535ee23c31.webp",
-  "noteUrl": "https://note.com/benkein/n/nb65774db3fbf"
- },
- {
   "slug": "n727c5b894ac7",
   "title": "Digital Arts of Winner #賞",
   "date": "2026-10-30",
@@ -827,33 +841,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/cbbfd6e81a69336f.webp",
   "noteUrl": "https://note.com/benkein/n/n727c5b894ac7"
- },
- {
-  "slug": "nd988e7d454d6",
-  "title": "あぷりのリリースできた",
-  "date": "2026-10-30",
-  "excerpt": "今回のあぷりは、中高生むけの勉強あぷりです。 起きたらリリースされてました！気持ちの良い朝！",
-  "tags": [
-   "勉強",
-   "アプリ",
-   "リリース",
-   "中高生"
-  ],
-  "cover": "/assets/ext/note/a848d2a38b080dcc.webp",
-  "noteUrl": "https://note.com/benkein/n/nd988e7d454d6"
- },
- {
-  "slug": "n01ade3bc02b1",
-  "title": "001_スマホの写真がパンパンなときの、消す前にやる5分整理",
-  "date": "2026-10-29",
-  "excerpt": "写真を撮ろうとしたら「ストレージがいっぱいです」って出たこと、ありませんか。焦って適当に消すと、大切な1枚まで消してしまうかもしれません。だから順番は「消す」より先に「守る」です。今日は、5分でできる整理の流れをまとめま",
-  "tags": [
-   "写真整理",
-   "スマホ整理",
-   "暮らしの整理"
-  ],
-  "cover": "/assets/ext/note/d8118d6d844c2bcc.webp",
-  "noteUrl": "https://note.com/benkein/n/n01ade3bc02b1"
  },
  {
   "slug": "n69c3ff125817",
@@ -889,6 +876,19 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/01e026fabaacc280.webp",
   "noteUrl": "https://note.com/benkein/n/n274538b162fd"
+ },
+ {
+  "slug": "n01ade3bc02b1",
+  "title": "001_スマホの写真がパンパンなときの、消す前にやる5分整理",
+  "date": "2026-10-29",
+  "excerpt": "写真を撮ろうとしたら「ストレージがいっぱいです」って出たこと、ありませんか。焦って適当に消すと、大切な1枚まで消してしまうかもしれません。だから順番は「消す」より先に「守る」です。今日は、5分でできる整理の流れをまとめま",
+  "tags": [
+   "写真整理",
+   "スマホ整理",
+   "暮らしの整理"
+  ],
+  "cover": "/assets/ext/note/d8118d6d844c2bcc.webp",
+  "noteUrl": "https://note.com/benkein/n/n01ade3bc02b1"
  },
  {
   "slug": "n27400ab89ea4",
@@ -1111,17 +1111,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nb09f5d28aace"
  },
  {
-  "slug": "nc3c9a7b438c8",
-  "title": "お酒を、ゲームに乗せたよ🕹️",
-  "date": "2026-10-15",
-  "excerpt": "脱出ゲームを作っています 脱出せずにダラダラできるルールにしています。 脱出したくなくなるワクワクをつくっています。 ガラスのヒビを再現しました 初回 📄 ゲームで使う本の画像作った",
-  "tags": [
-   "お酒で伝えるありがとう"
-  ],
-  "cover": "/assets/ext/note/41621421f007f530.webp",
-  "noteUrl": "https://note.com/benkein/n/nc3c9a7b438c8"
- },
- {
   "slug": "nf1f309263b60",
   "title": "【発想の教養】失敗から生まれた奇跡！？「世界を変えたヤバい発見」3選",
   "date": "2026-10-15",
@@ -1151,15 +1140,15 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nd27766e44c51"
  },
  {
-  "slug": "n47567cf5c612",
-  "title": "コーポヨシミつくった",
-  "date": "2026-10-14",
-  "excerpt": "おいらが貧乏大学生の頃住んでたアパートの名前。今は立派なアパートに建て替えられた。 アパートの名前をマンションの名前にきめた。 ここから脱出するゲーム。",
+  "slug": "nc3c9a7b438c8",
+  "title": "お酒を、ゲームに乗せたよ🕹️",
+  "date": "2026-10-15",
+  "excerpt": "脱出ゲームを作っています 脱出せずにダラダラできるルールにしています。 脱出したくなくなるワクワクをつくっています。 ガラスのヒビを再現しました 初回 📄 ゲームで使う本の画像作った",
   "tags": [
-   "チームだからできたこと"
+   "お酒で伝えるありがとう"
   ],
-  "cover": "/assets/ext/note/74c44dba9c0d0c69.webp",
-  "noteUrl": "https://note.com/benkein/n/n47567cf5c612"
+  "cover": "/assets/ext/note/41621421f007f530.webp",
+  "noteUrl": "https://note.com/benkein/n/nc3c9a7b438c8"
  },
  {
   "slug": "nca0cb9fd05fd",
@@ -1178,6 +1167,17 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/7dd631f5cefa700d.webp",
   "noteUrl": "https://note.com/benkein/n/nca0cb9fd05fd"
+ },
+ {
+  "slug": "n47567cf5c612",
+  "title": "コーポヨシミつくった",
+  "date": "2026-10-14",
+  "excerpt": "おいらが貧乏大学生の頃住んでたアパートの名前。今は立派なアパートに建て替えられた。 アパートの名前をマンションの名前にきめた。 ここから脱出するゲーム。",
+  "tags": [
+   "チームだからできたこと"
+  ],
+  "cover": "/assets/ext/note/74c44dba9c0d0c69.webp",
+  "noteUrl": "https://note.com/benkein/n/n47567cf5c612"
  },
  {
   "slug": "ncb81d749358b",
@@ -1204,19 +1204,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n2ae99de2db1d"
  },
  {
-  "slug": "n72370b36a559",
-  "title": "ゲームで使う本の画像作った",
-  "date": "2026-10-12",
-  "excerpt": "今脱出ゲームを作ってます。itchにて販売予定です。詳細は後ほど。 今の所めっちゃ面白い！ 映画 ゲーム。 本。 その他テクスチャ",
-  "tags": [
-   "映画",
-   "ゲーム",
-   "テクスチャ"
-  ],
-  "cover": "/assets/ext/note/f311f6e9fffd6008.webp",
-  "noteUrl": "https://note.com/benkein/n/n72370b36a559"
- },
- {
   "slug": "nf25c311db0e8",
   "title": "超超訳！ギリシャ神話　七柱",
   "date": "2026-10-12",
@@ -1233,6 +1220,19 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/500cd4ff7b1ac10e.webp",
   "noteUrl": "https://note.com/benkein/n/nf25c311db0e8"
+ },
+ {
+  "slug": "n72370b36a559",
+  "title": "ゲームで使う本の画像作った",
+  "date": "2026-10-12",
+  "excerpt": "今脱出ゲームを作ってます。itchにて販売予定です。詳細は後ほど。 今の所めっちゃ面白い！ 映画 ゲーム。 本。 その他テクスチャ",
+  "tags": [
+   "映画",
+   "ゲーム",
+   "テクスチャ"
+  ],
+  "cover": "/assets/ext/note/f311f6e9fffd6008.webp",
+  "noteUrl": "https://note.com/benkein/n/n72370b36a559"
  },
  {
   "slug": "naabdd620ddd7",
@@ -1461,26 +1461,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n5ac814ca757e"
  },
  {
-  "slug": "n2c08385e6461",
-  "title": "Digital Arts of Winner #平成レトロ",
-  "date": "2026-09-27",
-  "excerpt": "",
-  "tags": [
-   "AIとできたこと"
-  ],
-  "cover": "/assets/ext/note/829989787ac0cf88.webp",
-  "noteUrl": "https://note.com/benkein/n/n2c08385e6461"
- },
- {
-  "slug": "n73ee2f3c9421",
-  "title": "Digital Arts of Winner #我々は宇宙人",
-  "date": "2026-09-27",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/a4778fea6f68489f.webp",
-  "noteUrl": "https://note.com/benkein/n/n73ee2f3c9421"
- },
- {
   "slug": "naac401efedd8",
   "title": "Digital Arts of Winner #アロマ力士",
   "date": "2026-09-27",
@@ -1492,6 +1472,26 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/naac401efedd8"
  },
  {
+  "slug": "n73ee2f3c9421",
+  "title": "Digital Arts of Winner #我々は宇宙人",
+  "date": "2026-09-27",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/a4778fea6f68489f.webp",
+  "noteUrl": "https://note.com/benkein/n/n73ee2f3c9421"
+ },
+ {
+  "slug": "n2c08385e6461",
+  "title": "Digital Arts of Winner #平成レトロ",
+  "date": "2026-09-27",
+  "excerpt": "",
+  "tags": [
+   "AIとできたこと"
+  ],
+  "cover": "/assets/ext/note/829989787ac0cf88.webp",
+  "noteUrl": "https://note.com/benkein/n/n2c08385e6461"
+ },
+ {
   "slug": "n35f18bcb5901",
   "title": "Digital Arts of Winner #メッセージ",
   "date": "2026-09-26",
@@ -1499,17 +1499,6 @@ window.NOTE_POSTS = [
   "tags": [],
   "cover": "/assets/ext/note/f71a5e6230112e11.webp",
   "noteUrl": "https://note.com/benkein/n/n35f18bcb5901"
- },
- {
-  "slug": "n13d3c93fb5a0",
-  "title": "Digital Arts of Winner #お月見 #十五夜",
-  "date": "2026-09-25",
-  "excerpt": "十五夜は、１年で最も美しい月が見れる日です。",
-  "tags": [
-   "AIとできたこと"
-  ],
-  "cover": "/assets/ext/note/2209516fb8b7c563.webp",
-  "noteUrl": "https://note.com/benkein/n/n13d3c93fb5a0"
  },
  {
   "slug": "n47d2bb706d27",
@@ -1523,6 +1512,17 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n47d2bb706d27"
  },
  {
+  "slug": "n13d3c93fb5a0",
+  "title": "Digital Arts of Winner #お月見 #十五夜",
+  "date": "2026-09-25",
+  "excerpt": "十五夜は、１年で最も美しい月が見れる日です。",
+  "tags": [
+   "AIとできたこと"
+  ],
+  "cover": "/assets/ext/note/2209516fb8b7c563.webp",
+  "noteUrl": "https://note.com/benkein/n/n13d3c93fb5a0"
+ },
+ {
   "slug": "n4d456f39d48b",
   "title": "今日から{英語}始めたよ",
   "date": "2026-09-24",
@@ -1532,24 +1532,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/46c1a2805510035e.webp",
   "noteUrl": "https://note.com/benkein/n/n4d456f39d48b"
- },
- {
-  "slug": "n24c99913edfa",
-  "title": "【絵画で教養】光の魔術師のヤバい執念！？世界的画家「フェルメール」の美しすぎる秘密3選",
-  "date": "2026-09-23",
-  "excerpt": "世界で最も愛されている名画のひとつ『真珠の耳飾りの少女』。 描いたのは、17世紀オランダの画家ヨハネス・フェルメールです。 彼の作品は世界中の人々を魅了してやみませんが、実は彼が残した作品やその制作方法には、常軌を逸した",
-  "tags": [
-   "読書",
-   "アート",
-   "美術",
-   "教養",
-   "疑問が学びに変わるとき",
-   "スキマ時間",
-   "KindleUnlimited",
-   "西洋美術"
-  ],
-  "cover": "/assets/ext/note/51666a4c1671f514.webp",
-  "noteUrl": "https://note.com/benkein/n/n24c99913edfa"
  },
  {
   "slug": "n9c109fb6bf9d",
@@ -1574,15 +1556,22 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n3578112e2f0a"
  },
  {
-  "slug": "n2e526488a505",
-  "title": "空白の地図1  極秘資料 計4点",
-  "date": "2026-09-22",
-  "excerpt": "この島から持ち帰られた資料の一部を、 判読可能な範囲でここに収める。 解説は最小限に留める。 読み解く作業は、読者に委ねる。 手記 登録番号 氏名 状態 状態変更 サハル K-04-11858 ［匿名化］ 発言可能 — ",
+  "slug": "n24c99913edfa",
+  "title": "【絵画で教養】光の魔術師のヤバい執念！？世界的画家「フェルメール」の美しすぎる秘密3選",
+  "date": "2026-09-23",
+  "excerpt": "世界で最も愛されている名画のひとつ『真珠の耳飾りの少女』。 描いたのは、17世紀オランダの画家ヨハネス・フェルメールです。 彼の作品は世界中の人々を魅了してやみませんが、実は彼が残した作品やその制作方法には、常軌を逸した",
   "tags": [
-   "資料"
+   "読書",
+   "アート",
+   "美術",
+   "教養",
+   "疑問が学びに変わるとき",
+   "スキマ時間",
+   "KindleUnlimited",
+   "西洋美術"
   ],
-  "cover": "/assets/ext/note/346cb55c55253eb8.webp",
-  "noteUrl": "https://note.com/benkein/n/n2e526488a505"
+  "cover": "/assets/ext/note/51666a4c1671f514.webp",
+  "noteUrl": "https://note.com/benkein/n/n24c99913edfa"
  },
  {
   "slug": "nf7c60f8ca930",
@@ -1594,6 +1583,17 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/e2236d52c05888dc.webp",
   "noteUrl": "https://note.com/benkein/n/nf7c60f8ca930"
+ },
+ {
+  "slug": "n2e526488a505",
+  "title": "空白の地図1  極秘資料 計4点",
+  "date": "2026-09-22",
+  "excerpt": "この島から持ち帰られた資料の一部を、 判読可能な範囲でここに収める。 解説は最小限に留める。 読み解く作業は、読者に委ねる。 手記 登録番号 氏名 状態 状態変更 サハル K-04-11858 ［匿名化］ 発言可能 — ",
+  "tags": [
+   "資料"
+  ],
+  "cover": "/assets/ext/note/346cb55c55253eb8.webp",
+  "noteUrl": "https://note.com/benkein/n/n2e526488a505"
  },
  {
   "slug": "n2add25d67a51",
@@ -1674,22 +1674,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n7869d2cdaca5"
  },
  {
-  "slug": "nb6e25ba2a213",
-  "title": "今日から{英語}始めたよ",
-  "date": "2026-09-17",
-  "excerpt": "実は、ドュオリンゴを続けてもう少しで200日なんです。 でもでも、まあ確かに書けるようにもなったし読めるようにもなったんですが、 喋れない！そして、聴けない！！ だから、なんだかなぁと思ってます。 多分、アメリカの子ども",
-  "tags": [
-   "英語",
-   "やってみた",
-   "英会話",
-   "疑問が学びに変わるとき",
-   "進捗",
-   "イザベラ"
-  ],
-  "cover": "/assets/ext/note/beca399a501c2da9.webp",
-  "noteUrl": "https://note.com/benkein/n/nb6e25ba2a213"
- },
- {
   "slug": "nf81091a50b89",
   "title": "【元カノで教養】絶対に怒らせてはいけないオリュンポスの住人たち",
   "date": "2026-09-17",
@@ -1704,6 +1688,22 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/5c59e4bf333a9273.webp",
   "noteUrl": "https://note.com/benkein/n/nf81091a50b89"
+ },
+ {
+  "slug": "nb6e25ba2a213",
+  "title": "今日から{英語}始めたよ",
+  "date": "2026-09-17",
+  "excerpt": "実は、ドュオリンゴを続けてもう少しで200日なんです。 でもでも、まあ確かに書けるようにもなったし読めるようにもなったんですが、 喋れない！そして、聴けない！！ だから、なんだかなぁと思ってます。 多分、アメリカの子ども",
+  "tags": [
+   "英語",
+   "やってみた",
+   "英会話",
+   "疑問が学びに変わるとき",
+   "進捗",
+   "イザベラ"
+  ],
+  "cover": "/assets/ext/note/beca399a501c2da9.webp",
+  "noteUrl": "https://note.com/benkein/n/nb6e25ba2a213"
  },
  {
   "slug": "n7c177b1ed10a",
@@ -1741,24 +1741,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n720a0b089717"
  },
  {
-  "slug": "nbc9747772530",
-  "title": "【お手軽Kindle】「ドパ読書」を目指して実践中",
-  "date": "2026-09-16",
-  "excerpt": "📄 先月の報告 Kindle売上（8月分） 先月のMAX既読ページ600pを超え、 現在1000p以上読まれています！ （初月までのは↑リンク） Kindleでは1週間に10冊まで作れます。（個人☀︎法人関係なく） とい",
-  "tags": [
-   "日記",
-   "イラスト",
-   "無料",
-   "売上",
-   "疑問が学びに変わるとき",
-   "一冊",
-   "か",
-   "換算"
-  ],
-  "cover": "/assets/ext/note/342a8dbe547a9a71.webp",
-  "noteUrl": "https://note.com/benkein/n/nbc9747772530"
- },
- {
   "slug": "nfd3e3737b1d1",
   "title": "「作る」より「送る」が難しかった日｜Wonderloom Global Ops 日報 2026-09-",
   "date": "2026-09-16",
@@ -1777,6 +1759,24 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nfd3e3737b1d1"
  },
  {
+  "slug": "nbc9747772530",
+  "title": "【お手軽Kindle】「ドパ読書」を目指して実践中",
+  "date": "2026-09-16",
+  "excerpt": "📄 先月の報告 Kindle売上（8月分） 先月のMAX既読ページ600pを超え、 現在1000p以上読まれています！ （初月までのは↑リンク） Kindleでは1週間に10冊まで作れます。（個人☀︎法人関係なく） とい",
+  "tags": [
+   "日記",
+   "イラスト",
+   "無料",
+   "売上",
+   "疑問が学びに変わるとき",
+   "一冊",
+   "か",
+   "換算"
+  ],
+  "cover": "/assets/ext/note/342a8dbe547a9a71.webp",
+  "noteUrl": "https://note.com/benkein/n/nbc9747772530"
+ },
+ {
   "slug": "n983cc720ebbe",
   "title": "【ピノキオ的教養】世界中が騙された！？歴史に残る「ヤバすぎる大嘘（フェイク）」3選",
   "date": "2026-09-16",
@@ -1793,23 +1793,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/1dcf08e9e4d20b7e.webp",
   "noteUrl": "https://note.com/benkein/n/n983cc720ebbe"
- },
- {
-  "slug": "n0330281399cd",
-  "title": "超超訳！ギリシャ神話　三柱",
-  "date": "2026-09-15",
-  "excerpt": "大地（ガイア）ができました。 ▼以前までのあらすじ 🔗 リンク：https://note.com/benkein/m/m41a5607a2c6c 2021年の下書きが、ようやく終わった…笑 地球の誕生ですね。デカい。 で",
-  "tags": [
-   "神様",
-   "名前",
-   "疑問が学びに変わるとき",
-   "ギリシャ",
-   "大地",
-   "ガイア",
-   "ウラノス"
-  ],
-  "cover": "/assets/ext/note/3dfcf9e533b4faf1.webp",
-  "noteUrl": "https://note.com/benkein/n/n0330281399cd"
  },
  {
   "slug": "nad3c49fd9e9b",
@@ -1843,6 +1826,38 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n521c62f13071"
  },
  {
+  "slug": "n0330281399cd",
+  "title": "超超訳！ギリシャ神話　三柱",
+  "date": "2026-09-15",
+  "excerpt": "大地（ガイア）ができました。 ▼以前までのあらすじ 🔗 リンク：https://note.com/benkein/m/m41a5607a2c6c 2021年の下書きが、ようやく終わった…笑 地球の誕生ですね。デカい。 で",
+  "tags": [
+   "神様",
+   "名前",
+   "疑問が学びに変わるとき",
+   "ギリシャ",
+   "大地",
+   "ガイア",
+   "ウラノス"
+  ],
+  "cover": "/assets/ext/note/3dfcf9e533b4faf1.webp",
+  "noteUrl": "https://note.com/benkein/n/n0330281399cd"
+ },
+ {
+  "slug": "nfce885461bc2",
+  "title": "【LINEで教養】えっ、家の中に国境！？世界の奇妙すぎる「境界線」3選",
+  "date": "2026-09-14",
+  "excerpt": "本日9月18日、『30秒で読む 世界の奇妙な「境界線」』を発売しました！ 「国境」と聞くと、高い壁や厳しい検問所を思い浮かべるかもしれません。 しかし世界には、私たちの常識を覆すような「奇妙な境界線」が数多く存在します。",
+  "tags": [
+   "旅行",
+   "疑問が学びに変わるとき",
+   "地理",
+   "読書好きと繋がりたい",
+   "KindleUnlimited"
+  ],
+  "cover": "/assets/ext/note/47f390e6fcb68633.webp",
+  "noteUrl": "https://note.com/benkein/n/nfce885461bc2"
+ },
+ {
   "slug": "ne6906abec07a",
   "title": "【天才の教養】当時は「変人」扱い！？時代を先走りすぎた天才たちの悲劇と偉業3選",
   "date": "2026-09-14",
@@ -1861,21 +1876,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/ne6906abec07a"
  },
  {
-  "slug": "nfce885461bc2",
-  "title": "【LINEで教養】えっ、家の中に国境！？世界の奇妙すぎる「境界線」3選",
-  "date": "2026-09-14",
-  "excerpt": "本日9月18日、『30秒で読む 世界の奇妙な「境界線」』を発売しました！ 「国境」と聞くと、高い壁や厳しい検問所を思い浮かべるかもしれません。 しかし世界には、私たちの常識を覆すような「奇妙な境界線」が数多く存在します。",
-  "tags": [
-   "旅行",
-   "疑問が学びに変わるとき",
-   "地理",
-   "読書好きと繋がりたい",
-   "KindleUnlimited"
-  ],
-  "cover": "/assets/ext/note/47f390e6fcb68633.webp",
-  "noteUrl": "https://note.com/benkein/n/nfce885461bc2"
- },
- {
   "slug": "nf5bf1c02cd32",
   "title": "【第1歌】 サクサク読める「オデュッセイア」",
   "date": "2026-09-13",
@@ -1891,6 +1891,21 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/4a2f3a35155a6583.webp",
   "noteUrl": "https://note.com/benkein/n/nf5bf1c02cd32"
+ },
+ {
+  "slug": "na2b18e1d3863",
+  "title": " 【第1歌】　オデュッセイア",
+  "date": "2026-09-13",
+  "excerpt": "第1歌 神々の会議――アテナのイタケ訪問――テレマコスから求婚者たちへの通告 ムーサよ、あの知略に長けた英雄のことを語り給え。トロイアの名高き城砦を攻め落としたのち、方々を彷徨い歩いたあの男のことを。彼はおびただしい都市",
+  "tags": [
+   "オデュッセウス",
+   "帰還",
+   "アテナ",
+   "テレマコス",
+   "求婚者"
+  ],
+  "cover": "/assets/ext/note/71f1094f4b9a0f3c.webp",
+  "noteUrl": "https://note.com/benkein/n/na2b18e1d3863"
  },
  {
   "slug": "n362b8d3e6868",
@@ -1911,19 +1926,22 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n362b8d3e6868"
  },
  {
-  "slug": "na2b18e1d3863",
-  "title": " 【第1歌】　オデュッセイア",
+  "slug": "n0ef241cb1677",
+  "title": "Wonderloom Global Ops 日報｜2026-09-12（AI報告書）",
   "date": "2026-09-13",
-  "excerpt": "第1歌 神々の会議――アテナのイタケ訪問――テレマコスから求婚者たちへの通告 ムーサよ、あの知略に長けた英雄のことを語り給え。トロイアの名高き城砦を攻め落としたのち、方々を彷徨い歩いたあの男のことを。彼はおびただしい都市",
+  "excerpt": "売上0円の日に、あえて「世界展開」より先にやったこと｜Wonderloom Global Ops 日報 2026-09-12 今日の一行：最初のOriginal IPを「作った」で終わらせず、売れるかどうかを測れるところ",
   "tags": [
-   "オデュッセウス",
-   "帰還",
-   "アテナ",
-   "テレマコス",
-   "求婚者"
+   "今日",
+   "やってみた",
+   "未来のためにできること",
+   "ルール",
+   "Kindle出版",
+   "購入",
+   "売上",
+   "チャッピー"
   ],
-  "cover": "/assets/ext/note/71f1094f4b9a0f3c.webp",
-  "noteUrl": "https://note.com/benkein/n/na2b18e1d3863"
+  "cover": "/assets/ext/note/10582dfc138545dd.webp",
+  "noteUrl": "https://note.com/benkein/n/n0ef241cb1677"
  },
  {
   "slug": "n09b3d421f8b4",
@@ -1942,24 +1960,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/4bbd061fe2cb15dc.webp",
   "noteUrl": "https://note.com/benkein/n/n09b3d421f8b4"
- },
- {
-  "slug": "n0ef241cb1677",
-  "title": "Wonderloom Global Ops 日報｜2026-09-12（AI報告書）",
-  "date": "2026-09-13",
-  "excerpt": "売上0円の日に、あえて「世界展開」より先にやったこと｜Wonderloom Global Ops 日報 2026-09-12 今日の一行：最初のOriginal IPを「作った」で終わらせず、売れるかどうかを測れるところ",
-  "tags": [
-   "今日",
-   "やってみた",
-   "未来のためにできること",
-   "ルール",
-   "Kindle出版",
-   "購入",
-   "売上",
-   "チャッピー"
-  ],
-  "cover": "/assets/ext/note/10582dfc138545dd.webp",
-  "noteUrl": "https://note.com/benkein/n/n0ef241cb1677"
  },
  {
   "slug": "n7f3d54f37ca1",
@@ -1998,24 +1998,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n3ee483154814"
  },
  {
-  "slug": "nc5368478558f",
-  "title": "現在：0円 / 月100万円、達成率 0.000%   （#すたーとの報告）",
-  "date": "2026-09-11",
-  "excerpt": "新しいビジネスをはじめる。 と言っても、思いつかない。何やりたいとか、何がウケるとかもしらん。 よって、それをChatGPT（以降、チャッピー）だけに任せることにした。 チャッピーにはルーティン機能がある。これを毎時とか",
-  "tags": [
-   "起業",
-   "やってみた",
-   "kindle",
-   "Kindle出版",
-   "日報",
-   "チャッピー",
-   "自我",
-   "課金"
-  ],
-  "cover": "/assets/ext/note/3d6462acda6460ea.webp",
-  "noteUrl": "https://note.com/benkein/n/nc5368478558f"
- },
- {
   "slug": "ne9f0fcfd190a",
   "title": "【しくじり(ﾟωﾟ)教養】天才たちもただの人間だった！歴史に名を残す「偉人たちのヤバすぎるしくじり」3選（本日発売！でも無料だよ）",
   "date": "2026-09-11",
@@ -2032,6 +2014,24 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/066b00236541a156.webp",
   "noteUrl": "https://note.com/benkein/n/ne9f0fcfd190a"
+ },
+ {
+  "slug": "nc5368478558f",
+  "title": "現在：0円 / 月100万円、達成率 0.000%   （#すたーとの報告）",
+  "date": "2026-09-11",
+  "excerpt": "新しいビジネスをはじめる。 と言っても、思いつかない。何やりたいとか、何がウケるとかもしらん。 よって、それをChatGPT（以降、チャッピー）だけに任せることにした。 チャッピーにはルーティン機能がある。これを毎時とか",
+  "tags": [
+   "起業",
+   "やってみた",
+   "kindle",
+   "Kindle出版",
+   "日報",
+   "チャッピー",
+   "自我",
+   "課金"
+  ],
+  "cover": "/assets/ext/note/3d6462acda6460ea.webp",
+  "noteUrl": "https://note.com/benkein/n/nc5368478558f"
  },
  {
   "slug": "n783ef94bd8f8",
@@ -2438,18 +2438,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/na62b35e91ee6"
  },
  {
-  "slug": "n1ee84cfd1320",
-  "title": "くろいなみだ 4",
-  "date": "2026-07-07",
-  "excerpt": "私が此処へきてから、私のやる事は変わらなかった。 能書き集め。 脳天気か、能転気かわからないままだが、 以前までA4に書いていた習慣は、 今では（こちらの世界では）頭の中で書くようになっていた。能書きを垂れる私は、脳書き",
-  "tags": [
-   "創作大賞2026",
-   "モーツァルト"
-  ],
-  "cover": "/assets/ext/note/c516ba5be2dbdd0e.webp",
-  "noteUrl": "https://note.com/benkein/n/n1ee84cfd1320"
- },
- {
   "slug": "nf6b225f00d00",
   "title": "くろいなみだ 3",
   "date": "2026-07-07",
@@ -2460,6 +2448,18 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/b5f4b692365ca726.webp",
   "noteUrl": "https://note.com/benkein/n/nf6b225f00d00"
+ },
+ {
+  "slug": "n1ee84cfd1320",
+  "title": "くろいなみだ 4",
+  "date": "2026-07-07",
+  "excerpt": "私が此処へきてから、私のやる事は変わらなかった。 能書き集め。 脳天気か、能転気かわからないままだが、 以前までA4に書いていた習慣は、 今では（こちらの世界では）頭の中で書くようになっていた。能書きを垂れる私は、脳書き",
+  "tags": [
+   "創作大賞2026",
+   "モーツァルト"
+  ],
+  "cover": "/assets/ext/note/c516ba5be2dbdd0e.webp",
+  "noteUrl": "https://note.com/benkein/n/n1ee84cfd1320"
  },
  {
   "slug": "nd24cf8a74ca0",
@@ -2907,18 +2907,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/na101e05bbede"
  },
  {
-  "slug": "n4eb74defb964",
-  "title": "A to Z",
-  "date": "2024-10-01",
-  "excerpt": "Egg Flower Gold Heart",
-  "tags": [
-   "AI美女",
-   "挑戦してよかった"
-  ],
-  "cover": "/assets/ext/note/a552cd7dff22eff0.webp",
-  "noteUrl": "https://note.com/benkein/n/n4eb74defb964"
- },
- {
   "slug": "n7a2bb14a0056",
   "title": "ダブルトーン",
   "date": "2024-10-01",
@@ -2930,18 +2918,16 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n7a2bb14a0056"
  },
  {
-  "slug": "n2b3b0102fcc0",
+  "slug": "n4eb74defb964",
   "title": "A to Z",
-  "date": "2024-09-29",
-  "excerpt": "Apple Balloon Cat Dog Egg",
+  "date": "2024-10-01",
+  "excerpt": "Egg Flower Gold Heart",
   "tags": [
-   "イラスト",
-   "IT",
-   "画像生成AI",
-   "AI美女"
+   "AI美女",
+   "挑戦してよかった"
   ],
-  "cover": "/assets/ext/note/2632f7c7922dc861.webp",
-  "noteUrl": "https://note.com/benkein/n/n2b3b0102fcc0"
+  "cover": "/assets/ext/note/a552cd7dff22eff0.webp",
+  "noteUrl": "https://note.com/benkein/n/n4eb74defb964"
  },
  {
   "slug": "na2c413d71256",
@@ -2958,6 +2944,20 @@ window.NOTE_POSTS = [
   "cover": "/assets/ext/note/3b4a02c44f6de523.webp",
   "noteUrl": "https://note.com/benkein/n/na2c413d71256",
   "paid": true
+ },
+ {
+  "slug": "n2b3b0102fcc0",
+  "title": "A to Z",
+  "date": "2024-09-29",
+  "excerpt": "Apple Balloon Cat Dog Egg",
+  "tags": [
+   "イラスト",
+   "IT",
+   "画像生成AI",
+   "AI美女"
+  ],
+  "cover": "/assets/ext/note/2632f7c7922dc861.webp",
+  "noteUrl": "https://note.com/benkein/n/n2b3b0102fcc0"
  },
  {
   "slug": "n0b03e1a9d036",
@@ -2987,6 +2987,23 @@ window.NOTE_POSTS = [
   "paid": true
  },
  {
+  "slug": "nd99a4c86d3d5",
+  "title": "Design War season1-3",
+  "date": "2024-09-23",
+  "excerpt": "全て無料でお読みいただけます。 🔗 リンク：https://note.com/benkein/m/mca393d638cb4 ——— 登場人物 多彩 翔 （たさい かける） ひきこもりから脱出した就活中の26歳。絵の勉強",
+  "tags": [
+   "創作",
+   "SF",
+   "挑戦してよかった",
+   "Design",
+   "war",
+   "東周先輩"
+  ],
+  "cover": "/assets/ext/note/f7f9f14592f48d15.webp",
+  "noteUrl": "https://note.com/benkein/n/nd99a4c86d3d5",
+  "paid": true
+ },
+ {
   "slug": "nbd6379629591",
   "title": "Design War season1-4",
   "date": "2024-09-23",
@@ -3003,23 +3020,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/5044e7924b5310b9.webp",
   "noteUrl": "https://note.com/benkein/n/nbd6379629591",
-  "paid": true
- },
- {
-  "slug": "nd99a4c86d3d5",
-  "title": "Design War season1-3",
-  "date": "2024-09-23",
-  "excerpt": "全て無料でお読みいただけます。 🔗 リンク：https://note.com/benkein/m/mca393d638cb4 ——— 登場人物 多彩 翔 （たさい かける） ひきこもりから脱出した就活中の26歳。絵の勉強",
-  "tags": [
-   "創作",
-   "SF",
-   "挑戦してよかった",
-   "Design",
-   "war",
-   "東周先輩"
-  ],
-  "cover": "/assets/ext/note/f7f9f14592f48d15.webp",
-  "noteUrl": "https://note.com/benkein/n/nd99a4c86d3d5",
   "paid": true
  },
  {
@@ -3090,6 +3090,19 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n15fb8d10bbb5"
  },
  {
+  "slug": "n9927d6ed20cd",
+  "title": "blue hawai",
+  "date": "2024-09-11",
+  "excerpt": "blue hawai blue hawai2 柑橘",
+  "tags": [
+   "blue",
+   "甘め",
+   "hawai"
+  ],
+  "cover": "/assets/ext/note/9ec777096abc403d.webp",
+  "noteUrl": "https://note.com/benkein/n/n9927d6ed20cd"
+ },
+ {
   "slug": "n37e480f0e729",
   "title": "yellow",
   "date": "2024-09-11",
@@ -3116,17 +3129,16 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n172bec68db27"
  },
  {
-  "slug": "n9927d6ed20cd",
-  "title": "blue hawai",
-  "date": "2024-09-11",
-  "excerpt": "blue hawai blue hawai2 柑橘",
+  "slug": "nc98f84543d60",
+  "title": "アフリエイトはじめまして",
+  "date": "2024-09-10",
+  "excerpt": "こんにちは。 MRichです Xマネタイズはそこそこに、次にただやってみるチャレンジとしてはアフリエイトにしてみようと思います。 今、Xにはたくさんの情報が流れてきます。 とても面白いポスト。それ以外に広告もたくさん流れ",
   "tags": [
-   "blue",
-   "甘め",
-   "hawai"
+   "マネタイズ",
+   "挑戦してよかった"
   ],
-  "cover": "/assets/ext/note/9ec777096abc403d.webp",
-  "noteUrl": "https://note.com/benkein/n/n9927d6ed20cd"
+  "cover": "/assets/ext/note/317e8d14a2cbdeed.webp",
+  "noteUrl": "https://note.com/benkein/n/nc98f84543d60"
  },
  {
   "slug": "n3f90749ed6eb",
@@ -3140,18 +3152,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/ba83aa91fa9f5b9e.webp",
   "noteUrl": "https://note.com/benkein/n/n3f90749ed6eb"
- },
- {
-  "slug": "nc98f84543d60",
-  "title": "アフリエイトはじめまして",
-  "date": "2024-09-10",
-  "excerpt": "こんにちは。 MRichです Xマネタイズはそこそこに、次にただやってみるチャレンジとしてはアフリエイトにしてみようと思います。 今、Xにはたくさんの情報が流れてきます。 とても面白いポスト。それ以外に広告もたくさん流れ",
-  "tags": [
-   "マネタイズ",
-   "挑戦してよかった"
-  ],
-  "cover": "/assets/ext/note/317e8d14a2cbdeed.webp",
-  "noteUrl": "https://note.com/benkein/n/nc98f84543d60"
  },
  {
   "slug": "n5f79ab3f2619",
@@ -3184,40 +3184,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nbe878b4c5af8"
  },
  {
-  "slug": "n0b5710f46dab",
-  "title": "少女４",
-  "date": "2024-09-08",
-  "excerpt": "どなつ けーき いちごの木 まっか ふーせん クリーム いちごの国 夢のせかい りんご つまみ食い",
-  "tags": [
-   "写真",
-   "イラスト",
-   "AI",
-   "絵",
-   "夏の1コマ",
-   "aiart",
-   "少女"
-  ],
-  "cover": "/assets/ext/note/23d765ed36709469.webp",
-  "noteUrl": "https://note.com/benkein/n/n0b5710f46dab"
- },
- {
-  "slug": "n594712c75eaa",
-  "title": "少女３",
-  "date": "2024-09-08",
-  "excerpt": "精霊 着物 軽量化 魔法陣 普段着 スクリュー 華美 制服 休憩 着物2",
-  "tags": [
-   "写真",
-   "イラスト",
-   "AI",
-   "絵",
-   "夏の1コマ",
-   "aiart",
-   "少女"
-  ],
-  "cover": "/assets/ext/note/62170a7d4dda1451.webp",
-  "noteUrl": "https://note.com/benkein/n/n594712c75eaa"
- },
- {
   "slug": "nb2c431a0c3ac",
   "title": "少女２",
   "date": "2024-09-08",
@@ -3245,6 +3211,40 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/f8329a9f30c95155.webp",
   "noteUrl": "https://note.com/benkein/n/n7fc002ab20ab"
+ },
+ {
+  "slug": "n594712c75eaa",
+  "title": "少女３",
+  "date": "2024-09-08",
+  "excerpt": "精霊 着物 軽量化 魔法陣 普段着 スクリュー 華美 制服 休憩 着物2",
+  "tags": [
+   "写真",
+   "イラスト",
+   "AI",
+   "絵",
+   "夏の1コマ",
+   "aiart",
+   "少女"
+  ],
+  "cover": "/assets/ext/note/62170a7d4dda1451.webp",
+  "noteUrl": "https://note.com/benkein/n/n594712c75eaa"
+ },
+ {
+  "slug": "n0b5710f46dab",
+  "title": "少女４",
+  "date": "2024-09-08",
+  "excerpt": "どなつ けーき いちごの木 まっか ふーせん クリーム いちごの国 夢のせかい りんご つまみ食い",
+  "tags": [
+   "写真",
+   "イラスト",
+   "AI",
+   "絵",
+   "夏の1コマ",
+   "aiart",
+   "少女"
+  ],
+  "cover": "/assets/ext/note/23d765ed36709469.webp",
+  "noteUrl": "https://note.com/benkein/n/n0b5710f46dab"
  },
  {
   "slug": "n7aea30ef5ef5",
@@ -3300,6 +3300,21 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n24aaaf6f12fd"
  },
  {
+  "slug": "n99c264fbfa45",
+  "title": "!T45 脱SeaArt!! LevelUPした超有能AIツール紹介",
+  "date": "2024-09-05",
+  "excerpt": "Shakker.aiは、革新的な画像生成AIプラットフォームとして注目を集めています。このプラットフォームは、Stable Diffusionモデルを活用し、ユーザーが入力したテキストや画像から高品質な画像を生成する能力",
+  "tags": [
+   "画像",
+   "モデル",
+   "生成",
+   "ユーザー",
+   "Shakker"
+  ],
+  "cover": "/assets/ext/note/cc4a4d5098a5fce0.webp",
+  "noteUrl": "https://note.com/benkein/n/n99c264fbfa45"
+ },
+ {
   "slug": "n8a1890b2ac44",
   "title": "!T46 ChatGPT解説#1",
   "date": "2024-09-05",
@@ -3314,21 +3329,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/917b7a76c497b4ff.webp",
   "noteUrl": "https://note.com/benkein/n/n8a1890b2ac44"
- },
- {
-  "slug": "n99c264fbfa45",
-  "title": "!T45 脱SeaArt!! LevelUPした超有能AIツール紹介",
-  "date": "2024-09-05",
-  "excerpt": "Shakker.aiは、革新的な画像生成AIプラットフォームとして注目を集めています。このプラットフォームは、Stable Diffusionモデルを活用し、ユーザーが入力したテキストや画像から高品質な画像を生成する能力",
-  "tags": [
-   "画像",
-   "モデル",
-   "生成",
-   "ユーザー",
-   "Shakker"
-  ],
-  "cover": "/assets/ext/note/cc4a4d5098a5fce0.webp",
-  "noteUrl": "https://note.com/benkein/n/n99c264fbfa45"
  },
  {
   "slug": "nfe59c782da3f",
@@ -3360,20 +3360,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n7fa1707fa9ab"
  },
  {
-  "slug": "n40ae6e32c393",
-  "title": "!T42 Kindle出版流れ（更新していきます）（SEO含む）",
-  "date": "2024-09-01",
-  "excerpt": "電子書籍出版（漫画、美少女画像のみなど） まず、最低限必要なものをリストアップします ① 本の内容（mobiファイル（作り方は以下）） ② 本の表紙（jpegなどで1枚） ③ 本の概要（タイトルやサブタイトル、著者名や本",
-  "tags": [
-   "Kindle電子書籍",
-   "編集中",
-   "出版の仕方"
-  ],
-  "cover": "/assets/ext/note/7123191c3dd8aff5.webp",
-  "noteUrl": "https://note.com/benkein/n/n40ae6e32c393",
-  "paid": true
- },
- {
   "slug": "ncda81e05fa2e",
   "title": "ももたろう（現在出版準備中）",
   "date": "2024-09-01",
@@ -3396,13 +3382,18 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n681c1244cc96"
  },
  {
-  "slug": "n01603c89292b",
-  "title": "100日後にインプレゾンビになる僕（準備編総まとめ）",
+  "slug": "n40ae6e32c393",
+  "title": "!T42 Kindle出版流れ（更新していきます）（SEO含む）",
   "date": "2024-09-01",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/f926ae42ab0ad058.webp",
-  "noteUrl": "https://note.com/benkein/n/n01603c89292b"
+  "excerpt": "電子書籍出版（漫画、美少女画像のみなど） まず、最低限必要なものをリストアップします ① 本の内容（mobiファイル（作り方は以下）） ② 本の表紙（jpegなどで1枚） ③ 本の概要（タイトルやサブタイトル、著者名や本",
+  "tags": [
+   "Kindle電子書籍",
+   "編集中",
+   "出版の仕方"
+  ],
+  "cover": "/assets/ext/note/7123191c3dd8aff5.webp",
+  "noteUrl": "https://note.com/benkein/n/n40ae6e32c393",
+  "paid": true
  },
  {
   "slug": "n213fa1b99de3",
@@ -3412,6 +3403,15 @@ window.NOTE_POSTS = [
   "tags": [],
   "cover": "/assets/ext/note/ecdae05703e1d8ce.webp",
   "noteUrl": "https://note.com/benkein/n/n213fa1b99de3"
+ },
+ {
+  "slug": "n01603c89292b",
+  "title": "100日後にインプレゾンビになる僕（準備編総まとめ）",
+  "date": "2024-09-01",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/f926ae42ab0ad058.webp",
+  "noteUrl": "https://note.com/benkein/n/n01603c89292b"
  },
  {
   "slug": "n8e8975b01c00",
@@ -3781,6 +3781,19 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n41cae31a8172"
  },
  {
+  "slug": "neeeed066f310",
+  "title": "!T-28（基本情報技術者試験５問）",
+  "date": "2023-06-07",
+  "excerpt": "▶️問題１ ・負数を2の補数で表すとき，8ビットの2進正数nに対し－nを求める式はどれか。ここで，＋は加算を表し，ORはビットごとの論理和，XORはビットごとの排他的論理和を表す。 ア(n OR 10000000)＋00",
+  "tags": [
+   "基本情報技術者試験",
+   "レベルアップしたいこと",
+   "命題"
+  ],
+  "cover": "/assets/ext/note/6f234d8d596900b6.webp",
+  "noteUrl": "https://note.com/benkein/n/neeeed066f310"
+ },
+ {
   "slug": "n17772b210c77",
   "title": "!T-29- （基本情報技術者対策5問）",
   "date": "2023-06-07",
@@ -3793,19 +3806,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/1256b0f23f733aef.webp",
   "noteUrl": "https://note.com/benkein/n/n17772b210c77"
- },
- {
-  "slug": "neeeed066f310",
-  "title": "!T-28（基本情報技術者試験５問）",
-  "date": "2023-06-07",
-  "excerpt": "▶️問題１ ・負数を2の補数で表すとき，8ビットの2進正数nに対し－nを求める式はどれか。ここで，＋は加算を表し，ORはビットごとの論理和，XORはビットごとの排他的論理和を表す。 ア(n OR 10000000)＋00",
-  "tags": [
-   "基本情報技術者試験",
-   "レベルアップしたいこと",
-   "命題"
-  ],
-  "cover": "/assets/ext/note/6f234d8d596900b6.webp",
-  "noteUrl": "https://note.com/benkein/n/neeeed066f310"
  },
  {
   "slug": "na24c459bbea4",
@@ -3822,19 +3822,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/na24c459bbea4"
  },
  {
-  "slug": "n08305875609e",
-  "title": "Java-26（クラスライブラリ、API）",
-  "date": "2023-06-05",
-  "excerpt": "●勉強 ▶️JDK Javaの開発環境 ▶️クラスライブラリ ・JDKの一部として提供されるクラス群のこと。 （java.base モジュール ・・パッケージをまとめたもの） java.langパッケージ：基本的なクラス",
-  "tags": [
-   "日記",
-   "java",
-   "レベルアップしたいこと"
-  ],
-  "cover": "/assets/ext/note/342f3eb0a4e4b332.webp",
-  "noteUrl": "https://note.com/benkein/n/n08305875609e"
- },
- {
   "slug": "n12968172a5e7",
   "title": "Java-25（エラー）",
   "date": "2023-06-05",
@@ -3846,6 +3833,19 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/99dfef24844edba2.webp",
   "noteUrl": "https://note.com/benkein/n/n12968172a5e7"
+ },
+ {
+  "slug": "n08305875609e",
+  "title": "Java-26（クラスライブラリ、API）",
+  "date": "2023-06-05",
+  "excerpt": "●勉強 ▶️JDK Javaの開発環境 ▶️クラスライブラリ ・JDKの一部として提供されるクラス群のこと。 （java.base モジュール ・・パッケージをまとめたもの） java.langパッケージ：基本的なクラス",
+  "tags": [
+   "日記",
+   "java",
+   "レベルアップしたいこと"
+  ],
+  "cover": "/assets/ext/note/342f3eb0a4e4b332.webp",
+  "noteUrl": "https://note.com/benkein/n/n08305875609e"
  },
  {
   "slug": "n9f89e560ece8",
@@ -3920,6 +3920,24 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n9b334c738608"
  },
  {
+  "slug": "n80dba97e94f0",
+  "title": "iT-19-[Java💦Java💦]",
+  "date": "2023-05-27",
+  "excerpt": "復習 クラス（設計図） ・ 属性→何のデータを持っているのか。 （名前、教科、点数など） ・ 操作→何の処理ができるか。 （点数を表示する） このような、クラスから作られる実体（モノ）を、 object（オブジェクト） ",
+  "tags": [
+   "日記",
+   "コード",
+   "クラス",
+   "java",
+   "レベルアップしたいこと",
+   "メソッド",
+   "変数",
+   "オブジェクト"
+  ],
+  "cover": "/assets/ext/note/3d8f3c587afc5729.webp",
+  "noteUrl": "https://note.com/benkein/n/n80dba97e94f0"
+ },
+ {
   "slug": "n362e8eea31ff",
   "title": "iT-20-[JAVA]",
   "date": "2023-05-27",
@@ -3938,22 +3956,20 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n362e8eea31ff"
  },
  {
-  "slug": "n80dba97e94f0",
-  "title": "iT-19-[Java💦Java💦]",
-  "date": "2023-05-27",
-  "excerpt": "復習 クラス（設計図） ・ 属性→何のデータを持っているのか。 （名前、教科、点数など） ・ 操作→何の処理ができるか。 （点数を表示する） このような、クラスから作られる実体（モノ）を、 object（オブジェクト） ",
+  "slug": "naa5dc7fcd1e7",
+  "title": "iT-16-[Java勉強🔥たのしい。]",
+  "date": "2023-05-26",
+  "excerpt": "復習🔥 ・配列 データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目に、80を代入してください。 添字は、0から",
   "tags": [
    "日記",
    "コード",
-   "クラス",
+   "プログラム",
    "java",
    "レベルアップしたいこと",
-   "メソッド",
-   "変数",
    "オブジェクト"
   ],
-  "cover": "/assets/ext/note/3d8f3c587afc5729.webp",
-  "noteUrl": "https://note.com/benkein/n/n80dba97e94f0"
+  "cover": "/assets/ext/note/7594cc6115387ec3.webp",
+  "noteUrl": "https://note.com/benkein/n/naa5dc7fcd1e7"
  },
  {
   "slug": "n53f23e95bb66",
@@ -3990,22 +4006,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n1a3fbfd480a4"
  },
  {
-  "slug": "naa5dc7fcd1e7",
-  "title": "iT-16-[Java勉強🔥たのしい。]",
-  "date": "2023-05-26",
-  "excerpt": "復習🔥 ・配列 データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目に、80を代入してください。 添字は、0から",
-  "tags": [
-   "日記",
-   "コード",
-   "プログラム",
-   "java",
-   "レベルアップしたいこと",
-   "オブジェクト"
-  ],
-  "cover": "/assets/ext/note/7594cc6115387ec3.webp",
-  "noteUrl": "https://note.com/benkein/n/naa5dc7fcd1e7"
- },
- {
   "slug": "n84d02f0dfb9c",
   "title": "iT-15-[Java勉強🔥]",
   "date": "2023-05-25",
@@ -4018,20 +4018,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/9b906a3b82a92fde.webp",
   "noteUrl": "https://note.com/benkein/n/n84d02f0dfb9c"
- },
- {
-  "slug": "n406faa2f5685",
-  "title": "iT-14-[Java勉強]",
-  "date": "2023-05-24",
-  "excerpt": "これまでの復習💧 Javaを学ぶと収入が上がる、他言語スキルUP Java習得の３ステップは理解、定着、実践 Javaとは⇨Sun Microsystem社（現Oracle社）が1995年に発表・コンピュータにさせたい処",
-  "tags": [
-   "日記",
-   "コード",
-   "java",
-   "レベルアップしたいこと"
-  ],
-  "cover": "/assets/ext/note/e894481299b559a4.webp",
-  "noteUrl": "https://note.com/benkein/n/n406faa2f5685"
  },
  {
   "slug": "nfa46834d84e6",
@@ -4047,6 +4033,20 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/98f1f1ab9235c69e.webp",
   "noteUrl": "https://note.com/benkein/n/nfa46834d84e6"
+ },
+ {
+  "slug": "n406faa2f5685",
+  "title": "iT-14-[Java勉強]",
+  "date": "2023-05-24",
+  "excerpt": "これまでの復習💧 Javaを学ぶと収入が上がる、他言語スキルUP Java習得の３ステップは理解、定着、実践 Javaとは⇨Sun Microsystem社（現Oracle社）が1995年に発表・コンピュータにさせたい処",
+  "tags": [
+   "日記",
+   "コード",
+   "java",
+   "レベルアップしたいこと"
+  ],
+  "cover": "/assets/ext/note/e894481299b559a4.webp",
+  "noteUrl": "https://note.com/benkein/n/n406faa2f5685"
  },
  {
   "slug": "n89cf9870e1bc",
@@ -4257,19 +4257,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n4d2f7d6010f4"
  },
  {
-  "slug": "n48a7d33a7fbb",
-  "title": "   iT:⌘ + study; -７- {cssについて]",
-  "date": "2022-08-28",
-  "excerpt": "未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思",
-  "tags": [
-   "note",
-   "https",
-   "私にとってはたらくとは"
-  ],
-  "cover": "/assets/ext/note/697fe58fbba2d87d.webp",
-  "noteUrl": "https://note.com/benkein/n/n48a7d33a7fbb"
- },
- {
   "slug": "n890cfe3f41a0",
   "title": "   IT勉強🔥 -６- （Programmar）",
   "date": "2022-08-28",
@@ -4285,6 +4272,33 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/9eccfde70edc7dee.webp",
   "noteUrl": "https://note.com/benkein/n/n890cfe3f41a0"
+ },
+ {
+  "slug": "n48a7d33a7fbb",
+  "title": "   iT:⌘ + study; -７- {cssについて]",
+  "date": "2022-08-28",
+  "excerpt": "未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思",
+  "tags": [
+   "note",
+   "https",
+   "私にとってはたらくとは"
+  ],
+  "cover": "/assets/ext/note/697fe58fbba2d87d.webp",
+  "noteUrl": "https://note.com/benkein/n/n48a7d33a7fbb"
+ },
+ {
+  "slug": "ne0de07e445fb",
+  "title": "おばあちゃんの眼",
+  "date": "2022-08-27",
+  "excerpt": "七年前におじいちゃんが亡くなりました。 私（佐藤啓介（仮））はその当時高校生で、身内、親族が亡くなるということ自体を経験しておらず、とても悲しいことだと思っていました。 おばあちゃんは私の実家からすぐ近くのところに住んで",
+  "tags": [
+   "小説",
+   "天井",
+   "2000字のホラー",
+   "ユキヱ"
+  ],
+  "cover": "/assets/ext/note/c27b64da39ea1926.webp",
+  "noteUrl": "https://note.com/benkein/n/ne0de07e445fb"
  },
  {
   "slug": "n8ab47c6455cd",
@@ -4305,18 +4319,22 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n8ab47c6455cd"
  },
  {
-  "slug": "ne0de07e445fb",
-  "title": "おばあちゃんの眼",
+  "slug": "n6a0c0f136461",
+  "title": "   IT  ベンキョウ -3-",
   "date": "2022-08-27",
-  "excerpt": "七年前におじいちゃんが亡くなりました。 私（佐藤啓介（仮））はその当時高校生で、身内、親族が亡くなるということ自体を経験しておらず、とても悲しいことだと思っていました。 おばあちゃんは私の実家からすぐ近くのところに住んで",
+  "excerpt": "パソコンのようなもの 未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えてい",
   "tags": [
    "小説",
-   "天井",
-   "2000字のホラー",
-   "ユキヱ"
+   "言語",
+   "サイト",
+   "プログラム",
+   "台本",
+   "HTML",
+   "画面",
+   "一歩踏みだした先に"
   ],
-  "cover": "/assets/ext/note/c27b64da39ea1926.webp",
-  "noteUrl": "https://note.com/benkein/n/ne0de07e445fb"
+  "cover": "/assets/ext/note/d83dfc245edba45d.webp",
+  "noteUrl": "https://note.com/benkein/n/n6a0c0f136461"
  },
  {
   "slug": "n2dfa9f296cef",
@@ -4335,24 +4353,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/34a2962aa366328d.webp",
   "noteUrl": "https://note.com/benkein/n/n2dfa9f296cef"
- },
- {
-  "slug": "n6a0c0f136461",
-  "title": "   IT  ベンキョウ -3-",
-  "date": "2022-08-27",
-  "excerpt": "パソコンのようなもの 未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えてい",
-  "tags": [
-   "小説",
-   "言語",
-   "サイト",
-   "プログラム",
-   "台本",
-   "HTML",
-   "画面",
-   "一歩踏みだした先に"
-  ],
-  "cover": "/assets/ext/note/d83dfc245edba45d.webp",
-  "noteUrl": "https://note.com/benkein/n/n6a0c0f136461"
  },
  {
   "slug": "n3dcef72ff6d1",
@@ -4769,15 +4769,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n50398f180858"
  },
  {
-  "slug": "n644900d09fe2",
-  "title": "おいらが人間を大好きな理由　6話",
-  "date": "2021-08-24",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/f69d362368e28914.webp",
-  "noteUrl": "https://note.com/benkein/n/n644900d09fe2"
- },
- {
   "slug": "nb18ac19e2cc7",
   "title": "僕がセミを嫌いな理由　5話",
   "date": "2021-08-24",
@@ -4786,13 +4777,13 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/nb18ac19e2cc7"
  },
  {
-  "slug": "n0f600360c5a7",
-  "title": "おいら○人間を○○な理○　5○",
-  "date": "2021-08-23",
+  "slug": "n644900d09fe2",
+  "title": "おいらが人間を大好きな理由　6話",
+  "date": "2021-08-24",
   "excerpt": "",
   "tags": [],
-  "cover": "/assets/ext/note/9dd27fac0ce3b6e9.webp",
-  "noteUrl": "https://note.com/benkein/n/n0f600360c5a7"
+  "cover": "/assets/ext/note/f69d362368e28914.webp",
+  "noteUrl": "https://note.com/benkein/n/n644900d09fe2"
  },
  {
   "slug": "n3068ae000aa9",
@@ -4811,6 +4802,15 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n3068ae000aa9"
  },
  {
+  "slug": "n0f600360c5a7",
+  "title": "おいら○人間を○○な理○　5○",
+  "date": "2021-08-23",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/9dd27fac0ce3b6e9.webp",
+  "noteUrl": "https://note.com/benkein/n/n0f600360c5a7"
+ },
+ {
   "slug": "n47ac22a614a6",
   "title": "吾輩に好き嫌いがない理由　5話",
   "date": "2021-08-22",
@@ -4818,21 +4818,6 @@ window.NOTE_POSTS = [
   "tags": [],
   "cover": "/assets/ext/note/e901805322493dcc.webp",
   "noteUrl": "https://note.com/benkein/n/n47ac22a614a6"
- },
- {
-  "slug": "n0a1e13d6b04c",
-  "title": "MOON-RADIATION vol.4",
-  "date": "2021-08-22",
-  "excerpt": "ムーンラジエーション。これは造語です。 月明かりが、 放射状に全世界に広がり、 しかしラジオのようにひっそりと、 聴く者だけに届くようにと思い、 この名前を付けました。 この世界。 これからの世界。 本当にどうなるんだろ",
-  "tags": [
-   "youtube",
-   "振り返りnote",
-   "youtuber",
-   "物語の発想法を学ぶ",
-   "YouTubee"
-  ],
-  "cover": "/assets/ext/note/f465b79b27ab11e2.webp",
-  "noteUrl": "https://note.com/benkein/n/n0a1e13d6b04c"
  },
  {
   "slug": "n46013f3c732b",
@@ -4852,6 +4837,39 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n46013f3c732b"
  },
  {
+  "slug": "n0a1e13d6b04c",
+  "title": "MOON-RADIATION vol.4",
+  "date": "2021-08-22",
+  "excerpt": "ムーンラジエーション。これは造語です。 月明かりが、 放射状に全世界に広がり、 しかしラジオのようにひっそりと、 聴く者だけに届くようにと思い、 この名前を付けました。 この世界。 これからの世界。 本当にどうなるんだろ",
+  "tags": [
+   "youtube",
+   "振り返りnote",
+   "youtuber",
+   "物語の発想法を学ぶ",
+   "YouTubee"
+  ],
+  "cover": "/assets/ext/note/f465b79b27ab11e2.webp",
+  "noteUrl": "https://note.com/benkein/n/n0a1e13d6b04c"
+ },
+ {
+  "slug": "n895957bc40a7",
+  "title": "おいらが人間を大好きな理由　4話",
+  "date": "2021-08-21",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/83bf1ea13f045947.webp",
+  "noteUrl": "https://note.com/benkein/n/n895957bc40a7"
+ },
+ {
+  "slug": "n511758ac2b85",
+  "title": "吾輩に好き嫌いがない理由　4話",
+  "date": "2021-08-21",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/e5acbe6f0d025491.webp",
+  "noteUrl": "https://note.com/benkein/n/n511758ac2b85"
+ },
+ {
   "slug": "n4b1377309885",
   "title": "MOON-RADIATION vol.3",
   "date": "2021-08-21",
@@ -4869,24 +4887,6 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n4b1377309885"
  },
  {
-  "slug": "n511758ac2b85",
-  "title": "吾輩に好き嫌いがない理由　4話",
-  "date": "2021-08-21",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/e5acbe6f0d025491.webp",
-  "noteUrl": "https://note.com/benkein/n/n511758ac2b85"
- },
- {
-  "slug": "n895957bc40a7",
-  "title": "おいらが人間を大好きな理由　4話",
-  "date": "2021-08-21",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/83bf1ea13f045947.webp",
-  "noteUrl": "https://note.com/benkein/n/n895957bc40a7"
- },
- {
   "slug": "n375d6516e429",
   "title": "MOON-RADIATION vol.2",
   "date": "2021-08-21",
@@ -4901,6 +4901,29 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/c2e783fb5ea9d06c.webp",
   "noteUrl": "https://note.com/benkein/n/n375d6516e429"
+ },
+ {
+  "slug": "ndfd10e2f2d71",
+  "title": "MOON-RADIATION vol.1",
+  "date": "2021-08-20",
+  "excerpt": "ムーンラジエーション。これは造語です。 月明かりが、 放射状に全世界に広がり、 しかしラジオのようにひっそりと、 聴く者だけに届くようにと思い、 この名前を付けました。 noteをまだまだ使いこなせてない僕ですが、少しず",
+  "tags": [
+   "夏",
+   "月",
+   "夜",
+   "光"
+  ],
+  "cover": "/assets/ext/note/3f75c96fc82f9615.webp",
+  "noteUrl": "https://note.com/benkein/n/ndfd10e2f2d71"
+ },
+ {
+  "slug": "nd2fd81cc2523",
+  "title": "吾輩に好き嫌いがない理由　2話",
+  "date": "2021-08-20",
+  "excerpt": "",
+  "tags": [],
+  "cover": "/assets/ext/note/4400bf2879bfd2ea.webp",
+  "noteUrl": "https://note.com/benkein/n/nd2fd81cc2523"
  },
  {
   "slug": "n72806fa29db3",
@@ -4921,59 +4944,12 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n36e65de7699b"
  },
  {
-  "slug": "ndfd10e2f2d71",
-  "title": "MOON-RADIATION vol.1",
-  "date": "2021-08-20",
-  "excerpt": "ムーンラジエーション。これは造語です。 月明かりが、 放射状に全世界に広がり、 しかしラジオのようにひっそりと、 聴く者だけに届くようにと思い、 この名前を付けました。 noteをまだまだ使いこなせてない僕ですが、少しず",
-  "tags": [
-   "夏",
-   "月",
-   "夜",
-   "光"
-  ],
-  "cover": "/assets/ext/note/3f75c96fc82f9615.webp",
-  "noteUrl": "https://note.com/benkein/n/ndfd10e2f2d71"
- },
- {
   "slug": "n1c1c582ed68b",
   "title": "僕がセミをきらいな理由　4話",
   "date": "2021-08-20",
   "excerpt": "",
   "tags": [],
   "noteUrl": "https://note.com/benkein/n/n1c1c582ed68b"
- },
- {
-  "slug": "nd2fd81cc2523",
-  "title": "吾輩に好き嫌いがない理由　2話",
-  "date": "2021-08-20",
-  "excerpt": "",
-  "tags": [],
-  "cover": "/assets/ext/note/4400bf2879bfd2ea.webp",
-  "noteUrl": "https://note.com/benkein/n/nd2fd81cc2523"
- },
- {
-  "slug": "nac29360882c9",
-  "title": "おいらが人間を大好きな理由　2話",
-  "date": "2021-08-19",
-  "excerpt": "",
-  "tags": [],
-  "noteUrl": "https://note.com/benkein/n/nac29360882c9"
- },
- {
-  "slug": "n30913c4b046b",
-  "title": "僕がセミをきらいな理由　3話",
-  "date": "2021-08-19",
-  "excerpt": "",
-  "tags": [],
-  "noteUrl": "https://note.com/benkein/n/n30913c4b046b"
- },
- {
-  "slug": "n66e44690621d",
-  "title": "吾輩に好き嫌いがない理由　1話",
-  "date": "2021-08-19",
-  "excerpt": "",
-  "tags": [],
-  "noteUrl": "https://note.com/benkein/n/n66e44690621d"
  },
  {
   "slug": "ne742a44c62db",
@@ -4985,6 +4961,22 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/ne742a44c62db"
  },
  {
+  "slug": "nc13ece5a82c6",
+  "title": "僕がセミをきらいな理由　1話",
+  "date": "2021-08-19",
+  "excerpt": "",
+  "tags": [],
+  "noteUrl": "https://note.com/benkein/n/nc13ece5a82c6"
+ },
+ {
+  "slug": "nac29360882c9",
+  "title": "おいらが人間を大好きな理由　2話",
+  "date": "2021-08-19",
+  "excerpt": "",
+  "tags": [],
+  "noteUrl": "https://note.com/benkein/n/nac29360882c9"
+ },
+ {
   "slug": "n68bcd735323f",
   "title": "僕がセミをきらいな理由　2話",
   "date": "2021-08-19",
@@ -4994,12 +4986,20 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n68bcd735323f"
  },
  {
-  "slug": "nc13ece5a82c6",
-  "title": "僕がセミをきらいな理由　1話",
+  "slug": "n66e44690621d",
+  "title": "吾輩に好き嫌いがない理由　1話",
   "date": "2021-08-19",
   "excerpt": "",
   "tags": [],
-  "noteUrl": "https://note.com/benkein/n/nc13ece5a82c6"
+  "noteUrl": "https://note.com/benkein/n/n66e44690621d"
+ },
+ {
+  "slug": "n30913c4b046b",
+  "title": "僕がセミをきらいな理由　3話",
+  "date": "2021-08-19",
+  "excerpt": "",
+  "tags": [],
+  "noteUrl": "https://note.com/benkein/n/n30913c4b046b"
  },
  {
   "slug": "n9d856b2ee9f7",

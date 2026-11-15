@@ -7,6 +7,7 @@ HEADEXTRA = '''<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="/apps/assets/apps.css">
 <script src="/apps/assets/apps.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
+<script src="/assets/gt-menu.js" defer></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
