@@ -58,7 +58,7 @@ jobs:
           python3 -I tools/seo.py .
       - name: 変わっていたら main に反映
         run: |
-          git add -A -- . ':!.note-cache'
+          git add -A
           if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
           git -c user.name="GiveTex 自動更新" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "自動更新：note・スタンプ・TALES の新作を反映"
           git push origin HEAD:main
