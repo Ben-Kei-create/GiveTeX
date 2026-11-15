@@ -94,7 +94,8 @@
         var cv = el('div', 'sk-cover');
         if (w.cover) { var im = el('img'); im.src = w.cover; im.alt = ''; im.loading = 'lazy'; cv.appendChild(im); }
         else cv.appendChild(el('div', 'ph', w.title));
-        cv.appendChild(el('span', 'sk-type' + (w.type === 'novel' ? ' novel' : ''), w.type === 'novel' ? '小説' : 'マンガ'));
+        cv.appendChild(el('span', 'scan'));
+        cv.appendChild(el('span', 'sk-type' + (w.type === 'novel' ? ' novel' : ''), w.type === 'novel' ? 'NOVEL' : 'MANGA'));
         if (STATE[w.status]) cv.appendChild(el('span', 'sk-state', STATE[w.status]));
         a.appendChild(cv); a.appendChild(el('h3', null, w.title));
         if (w.desc) a.appendChild(el('p', null, w.desc));

@@ -6,38 +6,41 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&amp;family=Shippori+Mincho:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Share+Tech+Mono&amp;family=Shippori+Mincho:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;700;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/sousaku/sousaku.css">
 <script src="/sousaku/works.js" defer></script>
 <script src="/sousaku/sousaku.js" defer></script>
 <script src="/assets/ga.js" defer></script>
-<meta name="theme-color" content="#151413">
+<meta name="theme-color" content="#05060f">
 <title>創作ブース | GiveTex</title>
 <meta name="description" content="GiveTex の創作ブース。イベントで頒布するマンガや小説を、ここで読めます。">
 </head>
 <body>
 <header class="sk-bar">
   <div class="sk-bar-in">
-    <a class="sk-brand" href="/sousaku/"><b>創作ブース</b><span>GIVETEX CREATIVE</span></a>
-    <nav aria-label="メニュー"><a href="#works">作品</a><a href="#events">出展</a><a href="/">GiveTex</a></nav>
+    <a class="sk-brand" href="/sousaku/"><i aria-hidden="true"></i><b>創作ブース</b><span>CREATIVE BAY</span></a>
+    <nav aria-label="メニュー"><a href="#works">WORKS</a><a href="#events">EVENTS</a><a href="/">GiveTex</a></nav>
   </div>
 </header>
 <main>
   <section class="sk-hero">
+    <div class="sk-space" aria-hidden="true"><span class="stars s1"></span><span class="stars s2"></span><span class="planet"></span><span class="grid"></span></div>
     <div class="sk-hero-in">
-      <p class="sk-kicker">MANGA ・ NOVEL</p>
-      <h1>描いて、<br>書いて、<br><em>頒布</em>する。</h1>
-      <p>コミケなどのイベントで頒布するマンガや小説を、ここでも読めるようにしています。会場で QR コードを読み込めば、その場で読めます。</p>
+      <p class="sk-kicker"><span class="dot"></span>SYSTEM ONLINE // CREATIVE BAY</p>
+      <h1 class="sk-title" data-text="創作ブース">創作ブース</h1>
+      <p class="sk-lead">描いて、書いて、<em>頒布</em>する。<br>マンガと小説の、宇宙港。</p>
+      <p class="sk-desc">コミケなどのイベントで頒布する作品を、ここでも読めるようにしています。会場では QR コードを読み込めば、その場で読めます。</p>
+      <div class="sk-hud" aria-hidden="true"><span><b>01</b> MANGA</span><span><b>02</b> NOVEL</span><span><b>03</b> QR ACCESS</span></div>
     </div>
-    <div class="sk-burst" aria-hidden="true">会場で<br>読める！</div>
+    <div class="sk-badge" aria-hidden="true"><span><small>ON SITE</small>会場で<br>読める</span></div>
   </section>
   <div class="sk-wrap">
     <section class="sk-sec" id="events" aria-labelledby="h-ev">
-      <div class="sk-sec-hd"><h2 id="h-ev">出展予定</h2><small>EVENTS</small></div>
+      <div class="sk-sec-hd"><h2 id="h-ev">出展予定</h2><small>// 01 EVENTS</small></div>
       <div id="sk-events"></div>
     </section>
     <section class="sk-sec" id="works" aria-labelledby="h-wk">
-      <div class="sk-sec-hd"><h2 id="h-wk">作品</h2><small>WORKS</small></div>
+      <div class="sk-sec-hd"><h2 id="h-wk">作品</h2><small>// 02 WORKS</small></div>
       <div class="sk-filter" role="group" aria-label="種類でしぼりこむ"><button type="button" data-type="" aria-pressed="true">すべて</button><button type="button" data-type="manga" aria-pressed="false">マンガ</button><button type="button" data-type="novel" aria-pressed="false">小説</button></div>
       <div class="sk-grid" id="sk-grid"><noscript><div class="sk-empty">作品の一覧の表示には JavaScript を有効にしてください。</div></noscript></div>
     </section>
