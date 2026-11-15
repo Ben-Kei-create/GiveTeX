@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>どろん | GiveTex オカルトブース</title>
+<meta name="description" content="どろん — GiveTexのオカルトブース。座談会「relics」、心霊スポット巡り「霊界案内所」、スポット巡り×発表の「Cサークル」。参加してきた記録と写真をまとめています。">
+<meta property="og:title" content="どろん | GiveTex オカルトブース">
+<meta property="og:description" content="座談会「relics」、心霊スポット巡り「霊界案内所」、スポット巡り×発表の「Cサークル」。参加の記録と写真。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.givetex.org/doron/">
+<meta property="og:locale" content="ja_JP">
+<meta name="theme-color" content="#07060b">
+<link rel="canonical" href="https://www.givetex.org/doron/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/doron/doron.css">
+<script>document.documentElement.classList.add('js')</script>
+<noscript><style>.panel[hidden]{display:block!important}</style></noscript>
+</head>
+<body data-tab="relics">
+<script>(function(){var h=location.hash.slice(1);if(h==="reikai"||h==="c-circle")document.body.setAttribute("data-tab",h)})()</script>
+<div class="fog" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- 共通のSVGシンボル -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-relics" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 4c3 4 4 6.5 4 8.5a4 4 0 0 1-8 0C20 10.5 21 8 24 4z" fill="currentColor" fill-opacity=".35"/>
+    <path d="M24 16.5v3"/><rect x="18" y="19.5" width="12" height="17" rx="2"/><path d="M21 25v6"/>
+    <path d="M12 36.5h24l-3 5H15z"/><path d="M8 44h32"/>
+  </symbol>
+  <symbol id="i-reikai" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 10c6 2 32 2 38 0"/><path d="M8 16h32"/><path d="M13 10v34M35 10v34"/><path d="M24 16v-4"/>
+    <circle cx="24" cy="30" r="4" fill="currentColor" fill-opacity=".35"/><path d="M24 34v4"/>
+  </symbol>
+  <symbol id="i-c" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="13" stroke-dasharray="3 4"/>
+    <path d="M29 18.5a7.5 7.5 0 1 0 0 11" stroke-width="3.4"/>
+    <path d="M24 2v4M24 42v4M2 24h4M42 24h4"/>
+  </symbol>
+  <symbol id="i-ghost" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 42V22a14 14 0 0 1 28 0v20l-4.5-4-4.7 4-4.8-4-4.8 4-4.7-4z" fill="currentColor" fill-opacity=".15"/>
+    <circle cx="19" cy="22" r="2" fill="currentColor"/><circle cx="29" cy="22" r="2" fill="currentColor"/><path d="M21 30c2 1.5 4 1.5 6 0"/>
+  </symbol>
+</svg>
+
+<div class="page">
+  <nav class="topbar" aria-label="サイト">
+    <a class="back" href="/">← <b>GiveTex</b></a>
+    <span class="toplinks"><a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/diary/">開発日記</a></span>
+  </nav>
+
+  <header class="hero">
+    <p class="kicker">GIVETEX OCCULT BOOTH</p>
+    <h1 class="logo" data-text="どろん">どろん</h1>
+    <p class="tagline">ここは、GiveTexのオカルトブース。<br><b>座談会</b>、<b>心霊スポット巡り</b>、そしてその<b>発表</b>まで。<br>参加してきた夜の記録を、そっと置いておく場所です。</p>
+  </header>
+
+  <div class="tabs">
+    <div class="tablist" role="tablist" aria-label="どろんのブース">
+      <button class="tab" role="tab" id="t-relics" aria-controls="p-relics" aria-selected="true" data-tab="relics">
+        <svg aria-hidden="true"><use href="#i-relics"/></svg><span class="tn">relics</span><span class="tt">座談会</span>
+      </button>
+      <button class="tab" role="tab" id="t-reikai" aria-controls="p-reikai" aria-selected="false" tabindex="-1" data-tab="reikai">
+        <svg aria-hidden="true"><use href="#i-reikai"/></svg><span class="tn">霊界案内所</span><span class="tt">心霊スポット巡り</span>
+      </button>
+      <button class="tab" role="tab" id="t-c-circle" aria-controls="p-c-circle" aria-selected="false" tabindex="-1" data-tab="c-circle">
+        <svg aria-hidden="true"><use href="#i-c"/></svg><span class="tn">Cサークル</span><span class="tt">巡って、発表する</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== relics ===== -->
+    <section class="panel" id="p-relics" role="tabpanel" aria-labelledby="t-relics" tabindex="0">
+      <div class="ph">
+        <svg class="ph-mark" aria-hidden="true"><use href="#i-relics"/></svg>
+        <p class="ph-type">ROUNDTABLE ／ 座談会</p>
+        <h2 class="ph-name">relics</h2>
+        <p class="ph-catch">語られた話は、やがて遺物になる。</p>
+        <p class="ph-copy">relicsは、オカルトを語り合う座談会。持ち寄った怪談、うわさ、体験談、そして考察。灯りを落とした部屋で、夜が更けるまで話した内容を「遺物」として収蔵していきます。</p>
+        <ul class="ph-tags"><li>座談会</li><li>怪談・体験談</li><li>オカルト考察</li></ul>
+        <ol class="flow">
+          <li><b>持ち寄る</b><br>それぞれが話したい怪異・噂・記録を用意する</li>
+          <li><b>語り合う</b><br>ひとつの話を、何人もの視点で掘り下げる</li>
+          <li><b>収蔵する</b><br>当日のテーマと話題を、ここに記録する</li>
+        </ol>
+      </div>
+      <h3 class="h3"><small>ARCHIVE</small>座談会の記録<span class="count" data-count="relics"></span></h3>
+      <div class="reports" data-group="relics"></div>
+    </section>
+
+    <!-- ===== 霊界案内所 ===== -->
+    <section class="panel" id="p-reikai" role="tabpanel" aria-labelledby="t-reikai" tabindex="0" hidden>
+      <div class="ph">
+        <svg class="ph-mark" aria-hidden="true"><use href="#i-reikai"/></svg>
+        <p class="ph-type">SPIRIT INFORMATION ／ 心霊スポット巡り</p>
+        <h2 class="ph-name">霊界案内所</h2>
+        <p class="ph-catch">ようこそ。行き先は、こちら側ではありません。</p>
+        <p class="ph-copy">霊界案内所は、心霊スポットを巡る会。現地を訪ね、その場所に残る由来や伝承、空気の重さまでを記録します。受付番号を受け取ったら、案内の続きをどうぞ。</p>
+        <ul class="ph-tags"><li>心霊スポット巡り</li><li>現地レポート</li><li>写真記録</li></ul>
+        <ol class="flow">
+          <li><b>行き先を決める</b><br>場所の歴史や伝承を下調べする</li>
+          <li><b>現地を歩く</b><br>ルールを守って訪問し、見たこと感じたことを記録</li>
+          <li><b>案内板にする</b><br>記録と写真を、ここにまとめる</li>
+        </ol>
+      </div>
+      <h3 class="h3"><small>DESTINATIONS</small>巡ってきた場所<span class="count" data-count="reikai"></span></h3>
+      <div class="reports" data-group="reikai"></div>
+    </section>
+
+    <!-- ===== Cサークル ===== -->
+    <section class="panel" id="p-c-circle" role="tabpanel" aria-labelledby="t-c-circle" tabindex="0" hidden>
+      <div class="ph">
+        <svg class="ph-mark" aria-hidden="true"><use href="#i-c"/></svg>
+        <p class="ph-type">FIELDWORK &amp; PRESENTATION ／ スポット巡り×発表</p>
+        <h2 class="ph-name">Cサークル</h2>
+        <p class="ph-catch">見てきたものを、発表する。</p>
+        <p class="ph-copy">Cサークルも心霊スポットを巡りますが、主役は「発表」。現地で集めた記録や写真、調べた背景をまとめて、みんなの前でプレゼンします。調査と考察を、言葉にして共有する会です。</p>
+        <ul class="ph-tags"><li>スポット巡り</li><li>調査</li><li>発表・プレゼン</li></ul>
+        <ol class="flow">
+          <li><b>巡る</b><br>テーマに沿って心霊スポットを訪ねる</li>
+          <li><b>調べる</b><br>記録・写真・文献をつき合わせる</li>
+          <li><b>発表する</b><br>考察をスライドにして、みんなの前で</li>
+        </ol>
+      </div>
+      <h3 class="h3"><small>PRESENTATIONS</small>発表の記録<span class="count" data-count="c-circle"></span></h3>
+      <div class="reports" data-group="c-circle"></div>
+    </section>
+  </main>
+
+  <aside class="manners" aria-label="掲載について">
+    <div class="manners-in">
+      <h2>👁 掲載とマナーについて</h2>
+      <ul>
+        <li>立入禁止の場所や私有地には入りません。訪問は、公開されている場所・許可を得た範囲に限ります。</li>
+        <li>写真は、写っている人の許可を得たものだけを掲載します。</li>
+        <li>土地や関係者、亡くなった方への敬意を忘れずに。場所の特定につながる情報は控えめにしています。</li>
+      </ul>
+    </div>
+  </aside>
+
+  <footer class="foot">
+    <p>どろん — a GiveTex occult booth ／ <a href="/">GiveTex トップへ戻る</a></p>
+    <p>&copy; 2026 GiveTex</p>
+  </footer>
+</div>
+
+<dialog class="lb" aria-label="写真"><button type="button" aria-label="閉じる">×</button><img alt=""><p></p></dialog>
+
+<script src="/doron/reports.js"></script>
+<script src="/doron/doron.js"></script>
+</body>
+</html>

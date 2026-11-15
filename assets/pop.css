@@ -220,3 +220,32 @@ main{display:block}
 .author b{font:22px/1.2 var(--disp)}
 .author p{margin:0;font-size:14px;color:#fff;flex:1 1 280px}
 .author .btn{flex:none}
+
+/* ---------- ドパ読！ ---------- */
+.dopa-hero{position:relative;margin:0 0 24px;padding:26px 22px 22px;background:var(--y);border:3px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.dopa-hero::after{content:"30s";position:absolute;right:-6px;bottom:-26px;font:120px/1 var(--disp);color:#14141414;transform:rotate(-8deg);pointer-events:none}
+.dopa-kicker{margin:0;font:800 13px/1.4 var(--mono);letter-spacing:.14em}
+.dopa-logo{margin:2px 0 10px;font:clamp(52px,12vw,92px)/1 var(--disp);letter-spacing:.02em;color:#fff;-webkit-text-stroke:3px #141414;paint-order:stroke fill;text-shadow:5px 5px 0 #141414}
+.dopa-logo span{color:var(--pink);display:inline-block;transform:rotate(12deg)}
+.dopa-sub{margin:0 0 14px;font-size:15px;max-width:36em;position:relative;z-index:1}
+.dopa-stats{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+.dopa-stats span{background:#fff;border:2.5px solid var(--line);border-radius:999px;padding:2px 14px;font-weight:800;font-size:14px;box-shadow:2px 2px 0 var(--line)}
+.dopa-stats b{font:20px/1.3 var(--disp);margin-right:2px}
+.cat-nav .chip{text-decoration:none;color:inherit;font-size:13px;padding:4px 12px;box-shadow:2px 2px 0 var(--line)}
+.cat-nav .chip i{font-style:normal;margin-left:6px;background:#fff;color:#141414;border-radius:999px;padding:0 7px;font-size:11px}
+.cnt{font:800 14px/1 var(--jp);background:var(--ink);color:#fff;border-radius:999px;padding:4px 10px;vertical-align:middle}
+.sec-hd h2 .dopa-mini{color:#fff;-webkit-text-stroke:2px #141414;paint-order:stroke fill;text-shadow:3px 3px 0 #141414}
+.sec-hd h2 .dopa-mini span{color:var(--pink)}
+
+/* ---------- どろん（トップのバナー） ---------- */
+.doron-banner{position:relative;display:grid;gap:10px;padding:26px 22px;border:3px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);background:radial-gradient(ellipse at 80% 20%,#5b2bff55,transparent 55%),radial-gradient(ellipse at 10% 90%,#ff2b4e44,transparent 55%),#0d0b14;color:#fff;text-decoration:none;overflow:hidden;transition:transform .1s,box-shadow .1s}
+.doron-banner:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--line)}
+.doron-banner b{font:clamp(34px,7vw,52px)/1.1 var(--disp);letter-spacing:.06em;text-shadow:0 0 18px #b9a6ff}
+.doron-banner p{margin:0;color:#ffffffcc;font-size:14.5px;max-width:34em}
+.doron-banner .dk{font:800 12px/1.4 var(--mono);letter-spacing:.2em;color:#9dffcf}
+.doron-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.doron-tabs span{border:2px solid #ffffff55;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:800}
+.doron-ghost{position:absolute;right:18px;top:12px;font-size:64px;opacity:.9;filter:drop-shadow(0 0 12px #b9a6ff)}
+@media(prefers-reduced-motion:no-preference){.doron-ghost{animation:ghost 4s ease-in-out infinite}@keyframes ghost{50%{transform:translateY(-10px) rotate(6deg);opacity:.55}}}
+.mode-doron{background:#0d0b14;color:#fff}
+@media(min-width:860px){.modes{grid-template-columns:repeat(5,1fr)}}

@@ -220,12 +220,17 @@
   </url>
   <url>
     <loc>https://www.givetex.org/books/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.givetex.org/diary/</loc>
     <lastmod>2026-11-13</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/doron/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
