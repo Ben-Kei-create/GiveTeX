@@ -54,17 +54,20 @@
   });
 
   /* ---------- カートリッジ ---------- */
-  var carts = $('#carts'), games = G.games || [];
+  var carts = $('#carts'), games = (G.games || []).slice().sort(function (a, b) { return (b.pick ? 1 : 0) - (a.pick ? 1 : 0); });
   if (!games.length) {
     var em = el('div', 'empty'); em.appendChild(el('b', null, 'NO CARTRIDGE')); em.appendChild(el('span', null, 'Apple 以外のゲームを、ここに並べていきます。COMING SOON...'));
     carts.appendChild(em);
   } else games.forEach(function (g, i) {
-    var a = el('a', 'cart'); a.href = g.url || '#'; a.target = '_blank'; a.rel = 'noopener';
+    var a = el('a', 'cart' + (g.pick ? ' pick' : '')); a.href = /^https?:\/\//.test(g.url || '') ? g.url : '#'; a.target = '_blank'; a.rel = 'noopener';
     var lb = el('div', 'label'); if (g.img) { var im = el('img'); im.src = g.img; im.alt = ''; im.loading = 'lazy'; lb.appendChild(im); } else { lb.textContent = g.title; lb.style.background = ['#ffd23f', '#3ef0ff', '#ff4fd8', '#6bff7a'][i % 4]; }
+    if (g.pick) a.appendChild(el('span', 'pick-badge', '★ PICK UP ★'));
     a.appendChild(lb); a.appendChild(el('h3', null, g.title)); if (g.desc) a.appendChild(el('p', null, g.desc));
     a.appendChild(el('span', 'pf', (g.platform || 'GAME') + (g.year ? ' / ' + g.year : ''))); a.appendChild(el('span', 'play', 'PLAY ▶'));
+    a.addEventListener('click', function () { try { if (window.gtag) window.gtag('event', 'outbound_click', { link_url: a.href, place: 'game_cart' }); } catch (e) {} });
     carts.appendChild(a);
   });
+  if (G.unityroomUrl) { var all = el('a', 'ur-all', 'unityroom で ぜんぶ見る ▶'); all.href = G.unityroomUrl; all.target = '_blank'; all.rel = 'noopener'; carts.parentNode.insertBefore(all, carts.nextSibling); }
 
   /* ---------- つぶやき（RPGのウインドウ・文字送り） ---------- */
   var box = $('#msgs'), posts = (G.posts || []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }), cur = '';

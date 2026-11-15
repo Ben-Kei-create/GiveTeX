@@ -323,3 +323,13 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .ct-msg.ng{border-color:#c00;background:#fff0f0}
 .ct-msg a{display:inline-block;margin-top:4px}
 .r-warn{border:2px solid #c00;background:#fff0f0;color:#000;padding:8px}
+/* ホームのイチオシゲーム */
+.r-pick{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.r-pick-img{flex:none;display:block;border:3px outset #c0c0c0;background:#39ff3a;line-height:0}
+.r-pick-img img{width:220px;height:220px;image-rendering:pixelated;display:block}
+.r-pick-tx{flex:1 1 260px;min-width:0}
+.r-pick-tx h3{margin:2px 0 6px;font-size:26px;color:#6a2cff;text-shadow:2px 2px 0 #ff2d8a}
+.r-pick-tx p{margin:0 0 8px}
+.r-pick-new{color:#d10056;font-size:13px}
+.r-btn-hot{background:#ff2d8a!important;color:#fff!important;font-weight:bold}
+@media(max-width:520px){.r-pick{justify-content:center}.r-pick-img img{width:180px;height:180px}}

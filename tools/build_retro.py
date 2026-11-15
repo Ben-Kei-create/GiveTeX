@@ -143,6 +143,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-15', tag='ゲーム', title='unityroom のゲームを、ゲームブースにならべました',
+      body='<p>unityroom に出している6本のゲームを「<a href="/game/">ゲームブース</a>」に置きました。イチオシは、雨の中で二人が傘を回して障害物をよける「<a href="https://unityroom.com/games/umbrella_lovers" target="_blank" rel="noopener">umbrella lovers</a>」（unity1week 参加作）。ブラウザですぐ遊べます。</p>'),
  dict(date='2026-11-15', tag='ブース', title='ブースを5つ一気に開設',
       body='<p>「<a href="/game/">ゲーム</a>」「<a href="/museum/">美術館</a>」「<a href="/ramen/">ラーメン</a>」「<a href="/movie/">映画（C-Log Web）</a>」、それからサイトの裏側の「<a href="/bookmarks/">ブックマーク</a>」ブースを作りました。ゲームはコインあつめ、ラーメンはスクロールで麺がのびます。中身はこれから少しずつ。note ブースには TALES の連載『島の灯台と猫』も並べました。</p>'),
  dict(date='2026-11-15', tag='スタンプ', title='スタンプブースをつくりました',
@@ -194,6 +196,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-15', '<a href="/game/">ゲームブース</a>に unityroom のゲーム6本！ イチオシは「umbrella lovers」', True),
         ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>を開設', True),
         ('2026-11-15', '<a href="/stamp/">スタンプブース</a>をつくりました', True),
         ('2026-11-15', '<a href="/note/">note ブース</a>に過去の記事349本を移植しました', True),
@@ -224,14 +227,18 @@ document.write(rGreeting());
 <tr><td><a href="/doron/#relics">relics</a></td><td>座談会。怪談・うわさ・考察を語り合う</td></tr>
 <tr><td><a href="/doron/#reikai">霊界案内所</a></td><td>心霊スポット巡り</td></tr>
 <tr><td><a href="/doron/#c-circle">Cサークル</a></td><td>スポット巡り ＋ 発表。新企画「十人奇談」準備中 {NEWGIF}</td></tr></table>'''
-    main = (win('ようこそ！ - GiveTex', welcome, '🏠') +
+    G = js_json('game/game-data.js', 'GAME'); pick = next((g for g in G['games'] if g.get('pick')), None)
+    pick_win = win(f'★イチオシ ゲーム★ - {E(pick["title"])}', f'''<div class="r-pick"><a class="r-pick-img" href="{E(pick["url"])}" target="_blank" rel="noopener"><img src="{E(pick["img"])}" width="240" height="240" alt="{E(pick["title"])} のタイトル画像"></a>
+<div class="r-pick-tx"><p class="r-pick-new"><blink>NEW!</blink> <b>PICK UP GAME</b></p><h3>{E(pick["title"])}</h3><p>{E(pick["desc"])}</p><p class="r-small">unityroom（ブラウザで遊べる・パソコン推奨）／ {pick.get("year", "")}年 #unity1week</p>
+<p><a class="r-btn r-btn-hot" href="{E(pick["url"])}" target="_blank" rel="noopener">▶ unityroom で遊ぶ</a> <a class="r-btn" href="/game/">ゲームブースへ &gt;&gt;</a></p></div></div>''', '🎮') if pick else ''
+    main = (win('ようこそ！ - GiveTex', welcome, '🏠') + pick_win +
             win("What's New!! - 更新履歴", f'<table class="r-tbl" summary="更新履歴"><tr><th>日付</th><th>更新内容</th></tr>{rows}</table><p class="r-small">→ これまでの更新は <a href="/diary/">開発日記</a> へ</p>', '📢') +
             win('アプリ置き場 - マイ コンピュータ', f'<div class="r-icons">{apps_icons}</div>', '💾', menu=True, status=['18 個のオブジェクト', 'App Store 公開中 7']) +
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - 最新の記事', '<p class="r-center" style="margin:0 0 8px">NingentteWinner の note から、さいきんの記事。</p><div class="r-shelf r-notes">' + ''.join(f'<a class="r-book r-note" href="/note/posts/{E(p["slug"])}.html"><img src="{E(p["cover"])}" width="160" height="84" alt="" loading="lazy"><b>{E(p["title"])}</b><small>{p["date"].replace("-", "/")}</small></a>' for p in NOTE_POSTS[:8]) + '</div><p class="r-center"><a class="r-btn" href="/note/">note ブースへ（全 ' + str(len(js_json("note/posts.js", "NOTE_POSTS"))) + ' 本）&gt;&gt;</a></p>', '✒') +
             win('スタンプブース - LINE スタンプ', '<p class="r-center" style="margin:0 0 8px">fumi の LINE スタンプ <b>' + str(len(STAMP_SETS)) + 'セット</b>。トーク画面で送ってためせます。</p><div class="r-shelf r-stamps">' + ''.join(f'<a class="r-book r-stamp" href="/stamp/" title="{E(x["title"])}"><img src="{E(x["main"])}" width="96" height="96" alt="{E(x["title"])}" loading="lazy"><small>{E(x["title"])}</small></a>' for x in list(reversed(STAMP_SETS))[:10]) + '</div><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
-            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>つくったゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>C-Log Web・観た映画の感想</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
+            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>C-Log Web・観た映画の感想</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')

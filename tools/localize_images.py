@@ -11,8 +11,8 @@ from PIL import Image
 
 R = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent.parent)
 MAP = R / 'tools' / 'ext_images.json'
-HOSTS = {'assets.st-note.com': ('note', 960), 'm.media-amazon.com': ('amazon', 400), 'stickershop.line-scdn.net': ('line', 480)}
-URL = re.compile(r'https://(assets\.st-note\.com|m\.media-amazon\.com|stickershop\.line-scdn\.net)/[^"\'\s)<>\\]+')
+HOSTS = {'assets.st-note.com': ('note', 960), 'm.media-amazon.com': ('amazon', 400), 'stickershop.line-scdn.net': ('line', 480), 'os-worker.unityroom.com': ('unityroom', 600)}
+URL = re.compile(r'https://(assets\.st-note\.com|m\.media-amazon\.com|stickershop\.line-scdn\.net|os-worker\.unityroom\.com)/[^"\'\s)<>\\]+')
 SKIP = {'.git', 'node_modules', 'api', 'assets/ext', '.note-cache'}
 
 def files():
