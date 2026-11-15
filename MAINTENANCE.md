@@ -139,9 +139,11 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `api/board.js`：映画ブースの匿名掲示板。管理人も含めて全員「名無しの映画好き」。日替わり ID、3人の通報で自動非表示、本人は削除可、連投・重複・リンク・個人情報・暴言を機械ではじく、最新1000件まで。
 - `api/contact.js`：お問い合わせフォーム（`/contact/`）→ メール送信。
 - `api/_lib.js`：共通の道具（回数制限、合言葉、文字のそうじ、NG ワード）。
-- **Vercel に設定が必要な環境変数**（Settings → Environment Variables。値はチャットやリポジトリに書かない）：
-  - 掲示板：Vercel の Storage から **Upstash Redis** を追加（`KV_REST_API_URL`・`KV_REST_API_TOKEN` が自動で入ります）。未設定だと「準備中」と表示。
-  - お問い合わせ：**Resend**（resend.com）の API キーを `RESEND_API_KEY` に。未設定のあいだはメールアプリで送る案内が出ます。宛先を変えるなら `CONTACT_TO`。
+- **設定ずみ（2026-11-15）**：
+  - 掲示板：Vercel の Storage に **Upstash for Redis**（`givetex-board`・東京・Free・月50万回まで）。接頭辞 `KV` で `KV_REST_API_URL`・`KV_REST_API_TOKEN` が入っています。
+  - お問い合わせ：**Resend**（tofuodorico@gmail.com のアカウント）。givetex.org をドメイン認証ずみ（Cloudflare の DNS に `send`・`rsend`・`resend._domainkey` を追加）。Vercel の環境変数は `RESEND_API_KEY` と `CONTACT_FROM`（`GiveTex お問い合わせ <noreply@givetex.org>`）。宛先は tofuodorico@gmail.com（変えるなら `CONTACT_TO`）。
+  - 環境変数を変えたら、Vercel の Deployments → ⋯ → Redeploy で反映。
+- givetex.org の DNS は **Cloudflare** で管理しています（Google の所有権確認 TXT もここ）。
 - 不適切な書きこみを消したいときは、Upstash の画面で `b:p:<番号>` を削除し、`b:list` からその番号を外します（ふだんは通報で自動非表示）。
 
 ## 5. アクセス解析（Google アナリティクス 4）
