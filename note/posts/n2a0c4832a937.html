@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>!T61 個人開発アプリApp申請作業工程まとめ | NingentteWinner</title>
+<meta name="description" content="個人開発で作っていたiOSアプリを、App Store申請できる状態まで 整理。 このアプリは、ビールに関する雑学を4択クイズ形式で学べるアプリです。 注ぎ方、スタイル、醸造方法などの知識を、初級・中級・上級の3段階でテ">
+<meta property="og:title" content="!T61 個人開発アプリApp申請作業工程まとめ | NingentteWinner">
+<meta property="og:description" content="個人開発で作っていたiOSアプリを、App Store申請できる状態まで 整理。 このアプリは、ビールに関する雑学を4択クイズ形式で学べるアプリです。 注ぎ方、スタイル、醸造方法などの知識を、初級・中級・上級の3段階でテ">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n2a0c4832a937.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n2a0c4832a937">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=アプリ">アプリ</a><a href="/note/?tag=AIと始めてみた">AIと始めてみた</a></div>
+      <h1>!T61 個人開発アプリApp申請作業工程まとめ</h1>
+      <p class="nb-meta"><time datetime="2026-05-11">2026.05.11</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<p>個人開発で作っていたiOSアプリを、App Store申請できる状態まで<br>整理。</p><p>このアプリは、ビールに関する雑学を4択クイズ形式で学べるアプリです。<br>注ぎ方、スタイル、醸造方法などの知識を、初級・中級・上級の3段階でテンポよく学べる構成にしています。</p><p>今回は、実際にApp Store申請へ向けて行った作業工程をまとめます。</p><h3>個人開発でアプリを作ると、コードを書くところまでは楽しいのですが、申請前になると急にやることが増えます。</h3><p>アイコン、問題データ、署名設定、AdMob、プライバシーポリシー、Support URL、実機確認、Archiveなど、<br>地味だけど避けられない作業が一気に出てきます。</p><p><strong>今回はClaudeにも手伝ってもらいながら、<br>上から順にチェックしていきました。</strong></p><hr><h2>アプリ概要</h2><p>今回申請準備を進めたアプリは、以下のような内容です。</p><p><strong>アプリ名：BeerQuiz</strong></p><p>主な機能は以下です。</p><ul><li><p>4択クイズ</p></li><li><p>初級・中級・上級の難易度選択</p></li><li><p>問題ごとの制限時間</p></li><li><p>スコア結果表示</p></li><li><p>Google AdMobバナー広告</p></li><li><p>プライバシーポリシーへのリンク</p></li></ul><p>技術構成は <strong>Swift / SwiftUI</strong> です。</p><p>構成としては、主に以下のようになっています。</p><pre><code>BeerQuizSwift/
+  SwiftUIネイティブ版
+  App Store申請対象のXcodeプロジェクト
+
+beer_quiz/
+  旧Flutter版
+  現在は参照用
+
+privacy-policy.html / index.html
+  プライバシーポリシー公開用HTML
+
+support.html
+  App Store ConnectのSupport URL用ページ
+
+new_questions.json
+  問題データの編集元JSON</code></pre><hr><h2>まずは不要ファイルの整理</h2><p>最初に確認したのは、Gitの状態とAppIcon関連のファイルです。</p><p>その中で、古い app_icon.png がまだ残っていることが分かりました。</p><p>App Store申請前の状態では、アイコンまわりに不要なファイルが残っていると、警告や混乱の原因になります。</p><p>そこで、不要な app_icon.png を削除し、GitHubへプッシュしました。</p><p>これで、アイコン関連の警告は解消されました。</p><hr><h2>App Store申請前のチェックリストを整理</h2><p>次に、申請前に必要な項目を整理しました。</p><p>Claude側で確認・対応できるものと、自分がXcodeやApp Store Connect上で作業する必要があるものを分けました。</p><p>まず、すでに完了していた項目です。</p><p>項目状態問題数125問完了アイコン全サイズ完了アプリ表示名 BeerQuiz完了プライバシーポリシーURL設定済み</p><p>一方で、App Store申請に向けて自分で確認・作業する必要があるものは以下でした。</p><p>項目優先度Apple Developer Team IDをXcodeに設定必須AdMob本番アプリID / 広告ユニットIDの確認必須Xcode 26以降でビルド確認必須実機またはTestFlightで動作確認必須App Store ConnectでApp作成必須スクリーンショット作成必須App Privacyの回答必須年齢制限、アルコール関連コンテンツの扱い重要</p><p>この時点で、「<strong>アプリの中身はほぼできているけど、申請作業はまだまだある</strong>」という状態でした。</p><hr><h2>Apple Developer Team IDを設定</h2><p>まず最初に対応したのが、Apple Developer Team IDの設定です。</p><p>project.yml を確認すると、以下のように DEVELOPMENT_TEAM が空欄になっていました。</p><pre><code>DEVELOPMENT_TEAM: ""</code></pre><p>このままだと、Xcodeで署名まわりが正しく設定されません。</p><p>Apple DeveloperのTeam IDを確認し、以下の値を設定しました。</p><p>設定後は、project.yml に反映してGitHubへプッシュしました。</p><p>これで、Xcode側でSigning &amp; Capabilitiesを開いたときに、自分のDeveloper Teamが使える状態になりました。</p><p>Xcode側では以下を確認します。</p><ul><li><p>git pull で最新状態にする</p></li><li><p>app.xcodeproj を開く</p></li><li><p>Target → Signing &amp; Capabilities を確認</p></li><li><p>Teamが正しく設定されているか確認</p></li><li><p>Automatically manage signing がオンになっているか確認</p></li></ul><p>このステップで、App Store申請に必要な署名設定の土台が整いました。</p><hr><h2>AdMob IDを確認</h2><p>次にAdMobのIDを確認しました。</p><p>広告を使うアプリの場合、申請前に特に注意したいのが、Debug用のテスト広告IDとRelease用の本番広告IDの切り分けです。</p><p>確認した結果は以下でした。</p><p>DebugではGoogle公式のテスト広告ID、Releaseでは本番広告ユニットIDを使う形になっていました。</p><p>これは望ましい状態です。</p><p>個人開発だと、テスト広告IDのままリリースしてしまったり、逆に開発中に本番広告を表示してしまったりするリスクがあります。</p><p>今回はその点を事前に確認できたので安心でした。</p><hr><h2>Xcode 26.4.1でArchive確認</h2><p>次に、Xcodeのバージョンを確認しました。</p><p>使用していたXcodeは以下でした。</p><pre><code>Version 26.4.1</code></pre><p>要件としてXcode 26以降が必要だったため、この点は問題ありませんでした。</p><p>その後、Xcodeで Product → Archive を実行しました。</p><p>結果、Archiveは成功しました。</p><p>これはかなり大きなチェックポイントです。</p><p>App Store申請前は、Simulatorで動くだけでは不十分で、Archiveが通るかどうかを必ず確認する必要があります。</p><p>今回、Archiveが成功したことで、少なくともビルド・署名・構成面では申請に近い状態まで来ていることが確認できました。</p><hr><h2>GitHub PagesのURL確認</h2><p>次に確認したのが、プライバシーポリシーとサポートページのURLです。</p><p>App Store Connectでは、GitHubリポジトリのURLではなく、公開されているWebページのURLが必要になります。</p><p>ここで少し気になったのが、「GitHubリポジトリのURLも必要なのか？」という点です。</p><p>結論として、<br><strong>GitHubリポジトリのURLはApp Store Connectへの入力には不要</strong> です。</p><p>必要なのは、ユーザーがアクセスできるプライバシーポリシーURLとサポートURLです。</p><p>GitHub Pagesが有効になっているか確認するため、実際にブラウザでプライバシーポリシーURLを開きました。</p><p>結果、ページは正常に表示されました。</p><p>つまり、GitHub Pages側も問題なしです。</p><hr><h2>プライバシーポリシーをGitHub上で修正した場合、再Archiveは必要か？</h2><p>途中で、プライバシーポリシーの index.html をGitHub上で修正しました。</p><p>ここで気になったのが、</p><p>「HTMLを修正したら、もう一度XcodeでArchiveし直す必要があるのか？」</p><p>という点です。</p><p>結論は、<strong>再Archive不要</strong> です。</p><p>理由はシンプルで、</p><h3>プライバシーポリシーHTMLはアプリ内に同梱されているファイルではなく、アプリから外部URLとしてブラウザで開くページだからです。</h3><p>つまり、GitHub Pages上のHTMLを修正すれば、アプリ側を再ビルドしなくても最新版が表示されます。</p><p>アプリ内のコードやリソースを変更した場合は再Archiveが必要ですが、外部Webページだけを更新した場合は不要です。</p><p>ここは、個人開発者が少し迷いやすいポイントだと思います。</p><hr><h2>実機確認</h2><p>Archiveが通った後は、実機確認です。</p><p>XcodeからiPhoneへ直接インストールし、以下の項目を確認しました。</p><p>確認項目内容ホーム画面表示が崩れていないかスタートボタンクイズ開始できるかクイズ画面問題と選択肢が表示されるか回答処理正解・不正解が表示されるか難易度初級・中級・上級が動くかAdMobバナー下部に広告枠が表示されるかプライバシーポリシーリンクブラウザでページが開くか結果画面スコア結果が表示されるか</p><p>実機確認の結果、問題なく動作しました。</p><p>これで、申請前のアプリ本体確認は一通り完了です。</p><hr><h2>今回やってよかったこと</h2><p>今回の申請準備で、特にやってよかったと感じたのは以下です。</p><h3>1. Claudeにチェックリスト化してもらったこと</h3><p>App Store申請前は、やることが散らばりがちです。</p><ul><li><p>Xcodeでやること</p></li><li><p>GitHubでやること</p></li><li><p>App Store Connectでやること</p></li><li><p>AdMobで確認すること</p></li><li><p>Webページとして公開すること</p></li></ul><p>これらを頭の中だけで管理すると、かなり混乱します。</p><p>今回はClaudeに、</p><p>「Claude側でできること」<br>「自分しかできないこと」<br>「優先度が高いこと」</p><p>に分けてもらったことで、かなり進めやすくなりました。</p><h3>2. AdMobのDebug / Releaseを確認したこと</h3><p>広告IDまわりは、ミスると怖い部分です。</p><p>Debugではテスト広告、Releaseでは本番広告という切り分けができているか確認できたのは大きかったです。</p><h3>3. GitHub PagesのURLを事前確認したこと</h3><p>App Store ConnectにURLを入力してから404に気づくと面倒です。</p><p>今回は事前にブラウザで確認し、プライバシーポリシーが表示されていることを確認できました。</p><h3>4. Archive成功まで確認したこと</h3><p>Simulatorで動いていても、Archiveで失敗することはあります。</p><p>申請直前で慌てないためにも、早めにArchiveを通しておくのは重要だと感じました。</p><hr><h2>現在の状態</h2><p>現時点で、以下は完了しています。</p><ul><li><p>問題数125問</p></li><li><p>AppIcon整理</p></li><li><p>不要な app_icon.png 削除</p></li><li><p>Apple Developer Team ID設定</p></li><li><p>AdMob ID確認</p></li><li><p>Xcode 26.4.1確認</p></li><li><p>Archive成功</p></li><li><p>GitHub Pagesでプライバシーポリシー表示確認</p></li><li><p>Support URL確認</p></li><li><p>実機動作確認</p></li></ul><p>かなり申請に近い状態まで来ました。</p><hr><h2>次にやること</h2><p>次のフェーズは、App Store Connect側の作業です。</p><p>具体的には以下です。</p><ul><li><p>App Store Connectで新規Appを作成</p></li><li><p>Bundle IDを登録・紐付け</p></li><li><p>アプリ名、説明文、キーワードを入力</p></li><li><p>スクリーンショットを登録</p></li><li><p>プライバシーポリシーURLを登録</p></li><li><p>Support URLを登録</p></li><li><p>App Privacyを回答</p></li><li><p>年齢制限を設定</p></li><li><p>ビルドをアップロード</p></li><li><p>審査提出</p></li></ul><p>特に注意したいのは、<strong>App Privacy</strong> と <strong>年齢制限</strong> です。</p><p>このアプリはビールを題材にしているため、実際に飲酒を促す内容ではないとしても、アルコール関連コンテンツとして年齢制限や表現には注意が必要です。</p><p>また、AdMobを利用しているため、App Privacyの回答でも広告・トラッキング・データ収集まわりを正しく入力する必要があります。</p><hr><h2>まとめ</h2><p>個人開発アプリは、作るところも大変ですが、App Store申請前の整理もかなり大変です。</p><p>今回の作業を通して感じたのは、</p><p><strong>「アプリが動く」ことと「申請できる状態になっている」ことは別物</strong></p><p>ということです。</p><p>コードが完成していても、以下のような準備が必要になります。</p><ul><li><p>アイコンが正しく揃っているか</p></li><li><p>署名設定ができているか</p></li><li><p>Archiveが通るか</p></li><li><p>実機で動くか</p></li><li><p>プライバシーポリシーが公開されているか</p></li><li><p>Support URLがあるか</p></li><li><p>広告IDが正しいか</p></li><li><p>App Privacyに答えられる状態か</p></li><li><p>スクリーンショットが揃っているか</p></li></ul><p>こうした作業を一つずつ潰していくことで、ようやくApp Store申請に進める状態になります。</p><p>今回はClaudeを使いながら、申請前の作業をかなり整理できました。</p><p>個人開発では、実装だけでなく、<br>申請・公開・運用まで含めて一つのプロダクトです。</p><p>ここからいよいよApp Store申請フェーズに進めていきます。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>   iT:⌘ + study; -8- {html✖️cssについて] | NingentteWinner</title>
+<meta name="description" content="未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思">
+<meta property="og:title" content="   iT:⌘ + study; -8- {html✖️cssについて] | NingentteWinner">
+<meta property="og:description" content="未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n4d2f7d6010f4.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n4d2f7d6010f4">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=note">note</a><a href="/note/?tag=https">https</a><a href="/note/?tag=HTML">HTML</a><a href="/note/?tag=ディスプレイ">ディスプレイ</a><a href="/note/?tag=私にとってはたらくとは">私にとってはたらくとは</a><a href="/note/?tag=head">head</a></div>
+      <h1>   iT:⌘ + study; -8- {html✖️cssについて]</h1>
+      <p class="nb-meta"><time datetime="2022-09-03">2022.09.03</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<p>未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。<br>私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思いますが。）<strong>もし、オススメのサイト、アドバイスなどどんなことでも、気軽にコメントをいただけると幸いです。さまざまなことを、勉強したいと思っています！！！頑張ります！</strong></p><h2>♡☆♧　HTML　♢☆♤</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;link rel="stylesheet" href="box.css" /&gt;
+    &lt;title&gt;BOX&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="box1"&gt;
+      &lt;div class="box2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><h3>・Webページの構造</h3><ul><li><p>ヘッダー</p></li><li><p>メインビジュアル</p></li><li><p>メイン</p></li><li><p>フッター</p></li></ul><h3>・入れ子構造</h3><p>要素を囲っている要素を、親要素といいます。囲まれている要素は、子要素と呼ぶそうです。このように、まずは領域を作り、その中に入れていく形です。</p><h3>&lt;div&gt;　</h3><pre><code>&lt;div&gt;</code></pre><p>特に意味を持ちません。つまり、言い換えれば、いろいろな用途で使うことができます。「何もしない人」が売れているのは、そういうことなのかなぁと思います。<br>あとは、空気中にたくさんある、窒素N。特に性質を持たない空気なので、酸化させたくない場合に使える便利。そんな気体（期待）があります。</p><p>ちょっと、これを見てください。</p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;!-- CSSファイルの読み込み --&gt;
+    &lt;link rel="stylesheet" href="box.css" /&gt;
+    &lt;title&gt;BOX&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!-- box1用のdiv --&gt;
+    &lt;div class="box1"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>これは、&lt;div&gt;要素で、classを作っています。　その名前はbox1という名前になっています。</p><pre><code>&lt;div class = "box1"&gt;&lt;/div&gt;</code></pre><p>ここの部分です。また、この上のテキストをcssで装飾していきます。<br>例えば、</p><h3>widthとheight</h3><p>width（ウィズ／ウィドゥス） は横幅で、<br>height （ハイト）は、高さになります。</p><pre><code>px
+%
+auto</code></pre><h3>・px</h3><p>画面を構成する最小単位のことを「px」（ピクセル）と呼ぶそうです。<br>古いディスプレイでは１ドット = 1pxでした。<br>現在では、特にスマートフォンなどのディスプレイや4Kディスプレイ等ではドットが高密度化しており、<br>複数のドットが1pxに対応することも多くなっています。<br>pxで指定するとセンチメートルで大きさを指定するのと同じように、画面幅によらずに絶対的なサイズを指定できます。</p><h3>・%</h3><p>「％」を使うと、画面幅や親要素などに対して相対的な幅で設定できるそうです。例えば、パソコンで作ったものをスマホでも表示させたいときには、％で指定しておくと、見栄えが良くなるそうです。</p><h3>・auto</h3><p>初期値は「auto」<br>widthの場合、親の要素と同じ横幅になります。親要素がないと、widthは画面の横幅いっぱいに広がります。<br>heightの場合、子要素と同じ高さになります。子要素がないと、heightは０になります。</p><h2>♪▲♢　CSS　♪▲♢</h2><h3>・CSSの歴史</h3><p>htmlの歴史については過去にお話しました。でも、実はこのCSSもCERNで生まれているのですね。オペラ・ソフトウェアの最高技術責任者であるホーコン・ウィウム・リーさんによって開発されました。</p><h3>・CSSは何ができるのか</h3><p>CSSの登場によってHTMLで作成されたWebページ上での表現をより高度に装飾ができるようになりました。<br>htmlが家を建てる骨組みだとしたら、CSSは、その外壁や屋根などになるのではないでしょうか。家の中に明かりをつけることもできます。<br>ただ、その明かりを点滅させたり、オートロックの家にするのはちょっとまだ先のようです。でも、CSSは、「おしゃれ」テクニックの一つだと考えられそうです。<br>つまり、<br><strong>「HTMLで書いた内容をCSSで装飾する」</strong>ことだと理解しました。</p><h3>・書き方</h3><pre><code>セレクタ {
+  プロパティ: 値;
+}</code></pre><p>まず、拡張子.htmlというものを前に作りましたが、今回は拡張子は.cssになります。つまり、お尻の部分をこれに変えることで、.css用の脚本が出来上がり、そこにcssの言葉を記載していくようになります。<br>つまり！！！<br><strong>htmlで作るスクリプトと、cssで作るスクリプトは別！！<br></strong>ということになります。少なくとも、２つは必要なのです！<br>さて、↑のコードに書かれている言葉はなんでしょうか。</p><ul><li><p>セレクタ：CSSを適用したい場所（どの場所を変えたいの？段落とか）</p></li><li><p>プロパティ：変える部分を指定する （何を変えたいの？色とか）</p></li><li><p>値：「どのように変えるか？」を指定する （赤にするとか）</p></li></ul><p>ざっくりとこんな感じで、セレクタとかよくわかりませんが、ただ、正直な話、この３つがなければ、どうやったっておしゃれになるはずがないです。</p><p><strong>セレクタ：　　お父さんの<br>プロパティ：　トップスを<br>値：　　　　　　赤に</strong><br>できちゃうんです！つまり、どれがなくても困りますし、必要最低限のことなんです。はい。上半身裸じゃ困りますので。</p><pre><code>p {
+  color: red;
+}</code></pre><p>これが１例ですが、<strong>&lt;p&gt;タグは、段落のタグ</strong>を表しています。これをすると、&lt;p&gt;タグで囲んだコンテンツの内容の<strong>色が赤に変わる</strong>ことを意味しています。カラーって書いてあります。レッドって書いてあります。<br>なんかよくわからないけど、多分色が赤に変わるんだなって、理解できました。</p><p><strong>今日は、ここまでです。ご拝読いただき、ありがとうございました。</strong></p><h2>⌘ これまで ⌘<br>こちらをご拝読していただけると、　　　　　　　　メッサありがたいです。</h2><p><a href="/note/posts/n0019620960e5.html">https://note.com/benkein/n/n0019620960e5</a></p><p><a href="/note/posts/n3dcef72ff6d1.html">https://note.com/benkein/n/n3dcef72ff6d1</a></p><p><a href="/note/posts/n6a0c0f136461.html">https://note.com/benkein/n/n6a0c0f136461</a></p><p><a href="/note/posts/n2dfa9f296cef.html">https://note.com/benkein/n/n2dfa9f296cef</a></p><p><a href="/note/posts/n8ab47c6455cd.html">https://note.com/benkein/n/n8ab47c6455cd</a></p><p class="note-embed"><a href="/note/posts/n890cfe3f41a0.html">📄    IT勉強🔥 -６- （Programmar）</a></p><p><a href="/note/posts/n48a7d33a7fbb.html">https://note.com/benkein/n/n48a7d33a7fbb</a></p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

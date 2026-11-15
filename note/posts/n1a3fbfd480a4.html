@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>iT-17-[Java☕︎勉強] | NingentteWinner</title>
+<meta name="description" content="復習 ・配列 データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目に、80を代入してください。 添字は、0からス">
+<meta property="og:title" content="iT-17-[Java☕︎勉強] | NingentteWinner">
+<meta property="og:description" content="復習 ・配列 データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目に、80を代入してください。 添字は、0からス">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n1a3fbfd480a4.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n1a3fbfd480a4">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=コード">コード</a><a href="/note/?tag=プログラム">プログラム</a><a href="/note/?tag=クラス">クラス</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=メソッド">メソッド</a><a href="/note/?tag=オブジェクト">オブジェクト</a></div>
+      <h1>iT-17-[Java☕︎勉強]</h1>
+      <p class="nb-meta"><time datetime="2023-05-26">2023.05.26</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>復習</h2><h3>・配列</h3><pre><code>データ型[] 配列名　= new データ型[要素数]
+
+int[] score = new int[3];
+score[0] = 80;
+// scoreの０番目に、80を代入してください。　添字は、0からスタートすることに注意</code></pre><pre><code>データ型[] 配列名　= { 値1, 値2, ・・・・}
+
+配列.length で、配列の要素数をGet</code></pre><pre><code>class Array {
+  public static void main(String args[]) {
+    int[] score = new int[3]
+    score[0] = 80;
+    score[1] = 100;
+    score[2] = 70;
+
+    String[] name = {"高木", "西山", "小梅"};
+
+    System.out.println(name[0] + "さん:" + score[0] + "点");
+    System.out.println(name[1] + "さん:" + score[1] + "点");
+    System.out.println(name[2] + "さん:" + score[2] + "点");
+
+    System.out.println("受験者数:" + score.length + "人です。");
+
+// score.lengthをすることで、その要素の数（要素数）を利用することができる！！いいね。
+  } 
+}</code></pre><p>多次元配列</p><pre><code>class MultiArray{
+  public static void main(String[] args){
+    int[][] allScore = new int[2][3];
+    allScore[0][0] = 80;
+    allScore[0][1] = 100;
+    allScore[0][2] = 75;
+    allScore[1][0] = 85;
+    allScore[1][1] = 95;
+    allScore[1][2] = 80;
+    
+    // 多次元配列の初期化
+    // int[][] allScore = { {10, 20, 30}, {40, 50, 60} };
+
+    System.out.println(allScore[0][0] + "点");
+    System.out.println(allScore[0][1] + "点");
+    System.out.println(allScore[0][2] + "点");
+    System.out.println(allScore[1][0] + "点");
+    System.out.println(allScore[1][1] + "点");
+    System.out.println(allScore[1][2] + "点");
+    
+    System.out.println("allScore.length：" + allScore.length);
+    System.out.println("allScore[0].length：" + allScore[0].length);
+  }
+}</code></pre><h3>・演算子</h3><pre><code>//割り算
+7 / 2 → 3
+//あまりの数
+7 % 2 → 1</code></pre><pre><code>//a = a + bと同じ。
+a += b　
+//aにbを加えて、aに再度代入する。</code></pre><pre><code>//a = a + 1;と同じ。
+a ++;
+a --;</code></pre><pre><code>class Operator {
+  public static void main(String[] args){
+    //コマンドラインから入力した文字列型を、int aとして宣言する
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+
+    System.out.println("a =" + a + "b =" + b );
+    System.out.println("a + b =" + (a + b));
+    System.out.println("a - b =" + (a - b));
+    System.out.println("a / b =" + (a / b));
+    System.out.println("a % b =" + (a % b));
+    System.out.println("a &gt;= 0 :" + (a &gt;= 0);
+    System.out.println("(a &gt;= 0) &amp;&amp; (b &gt;= 0):" + ((a &gt;= 0)&amp;&amp;(b &gt;= 0));
+    
+  }
+}</code></pre><p><strong>関係演算子　</strong>trueかfalse</p><p><strong>論理演算子　&amp;&amp;, ||</strong></p><h3>・基本データの型変換</h3><p>表現の幅が広い順〜狭い（自動で）<br><strong>double, float, long, int, short, byte</strong></p><p>大きい箱を小さな箱にむりやり入れる（代入する）ためには、<br><strong>キャスト</strong>というものが必要。</p><pre><code>class FukuKau {
+  public static void main(String[] args){
+    
+    //服のねだんを入力したらそれをargs[0]が引数となりpriceに代入してくれる。
+    int price = Integer.parseInt(args[0]);
+　　　　　　　　
+　　　　　　　　//０.０８は、浮動小数点数としてdoubleで宣言をし、値を代入しておく。
+    double rate = 0.08;
+
+　　　　　　　　//amountという整数型を宣言しておく。
+    int amount;
+
+　　　　　　　　/*amountに、税込金額の式を代入する。このとき、double型が64bit,int型が32bitなので、小きな
+　　　　　　　　　　　　箱に、大きな箱をむりやり入れることになる。そのため、てこ＝キャストを使う必要がある。
+　　　　　　　　　　　　よって、（int）で変換後のデータ型を入れamountに代入している。　　*/
+　　　　　　　　　　　　
+    amount = (int)(price * (1 + rate))
+    System.out.println("税込金額は、" + amount + "円です。");
+    
+  }
+}</code></pre><h3>・構造化プログラミング</h3><p><strong>①順次進行②分岐③繰り返し</strong></p><h3>・If文</h3><pre><code>if (条件式) {
+  処理１
+  } else {
+ 　　処理２
+　　　　}</code></pre><h3>・else if文</h3><pre><code>    if(条件式1){
+       処理１;    
+    } else if (条件式2)
+       処理２;
+    } else {    
+       処理3;
+    }</code></pre><h3>・swich文</h3><pre><code>    swich(式){
+       
+       case1:
+       処理1
+       break1;
+     
+       case2:
+       処理2
+       break2;
+ 
+       case3:
+       処理3
+       break3;
+    
+    }</code></pre><p>・式に入るのは、byte, short, int, char型である。<br>・式の値によって、<strong>処理の開始位置が決まる！！<br></strong>・breakは何かというと、　　<strong>{　}を抜けます！</strong>という意味。</p><h3>・while文</h3><pre><code>    while(条件式){
+       処理
+       case1:
+       処理1
+       break1;
+     
+       case2:
+       処理2
+       break2;
+ 
+       case3:
+       処理3
+       break3;
+    
+    }</code></pre><h3>・前回間違えた問い</h3><p>コマンドラインから入力した文字列を、そのまま表示できるプログラムをfor文を使って表示しなさい。</p><pre><code>class Echo{
+  public static void main(String[] args){
+    //コマンドラインの入力文字列を表示（for文）
+
+  }
+}</code></pre><pre><code>&gt;Java Echo aa bb cc</code></pre><p>と入れたら、そのまま aa bb ccというものが出てくるはず。</p><p>参考コード</p><pre><code>class Echo{
+  public static void main(String[] args){
+    //コマンドラインの入力文字列を表示（for文）
+    for(int i = 0; i &lt; args.length; i++) {
+      System.out.println(args[i]);
+    }
+  }
+}</code></pre><h3>・オブジェクト指向とは</h3><pre><code>class NonObject{
+  public static void main(String[] args){
+    //データの代入
+    int[] score = {80, 100, 75};
+    String[] name = {"菅原", "村山", "寺島"};
+
+    //データの表示
+    for(int i = 0; i &lt; score.length; i++) {
+      System.out.println(name[i] + "さん：" + score[i] + "点");
+    }
+  }
+}</code></pre><p>というコード。</p><p>１回作ったコードは、更新（変更）することがほとんどである。<br>例えば、この要素数の中で、生徒が一人増えたとした。<br>もしくは、教科の数を増やしたいと考える。</p><pre><code>class NonObject{
+  public static void main(String[] args){
+    //データの代入
+    int[] score1 = {80, 100, 75, 90};
+    int[] score2 = {90, 80, 85, 70};
+
+    String[] name = {"菅原", "村山", "寺島"};
+    String[] name = {"数学", "英語"};
+
+    //データの表示
+    for(int i = 0; i &lt; score.length; i++) {
+      System.out.println(name[i] + "さん：" + score[i] + "点");
+    }
+  }
+}</code></pre><p>いちいち面倒だ。また、誰の、何の得点が何点かがわからない・・・。</p><p><strong>人ごとの点数がもう少しまとめて、管理しやすくできないか</strong>を考える必要があると考える。</p><p>Javaには、<strong>実行用のクラス</strong>と、<strong>設計図クラスの二つがある。</strong></p><p>クラス（設計図）<br>・<strong>属性→何のデータを持っているのか。<br></strong>（名前、教科、点数など）<br>・<strong>操作→何の処理ができるか。<br></strong>（点数を表示する）</p><p>→これによって、名前（菅原）英語（90）国語（80）<br>名前（佐藤）英語（50）国語（60）などというのをそのまま使える。</p><p>このような、クラスから作られる実体（モノ）を、<strong>object（オブジェクト）</strong>と呼ぶ。<br>このオブジェクトを中心にプログラムを作っていくことを、<strong>オブジェクト指向</strong>という。</p><h3>・メリット</h3><p>開発効率、保守性、メモリ効率、システム化など！！</p><p>クラス（設計図）<br>・<strong>属性→何のデータを持っているのか。→ 　プログラムの世界では、変数<br></strong>（名前、教科、点数など）<br>・<strong>操作→何の処理ができるか。→ 　プログラムの世界では、メソッド<br></strong>（点数を表示する）<br>これらの言い方がごっちゃにならないようにする。</p><h3>・変数の定義</h3><p>データ型　変数名；</p><p>例</p><pre><code>class Student{
+  //メンバ変数（属性）
+  String name;
+  int engScore;
+  int mathScore;
+以下はその下に続く</code></pre><h3>・メソッドの定義</h3><p>戻り値の型　メソッド名（引数リスト）{<br>（処理）<br>}</p><p>メソッドは、<strong>呼び出す側と、呼び出される側</strong>がある。</p><pre><code>  //メソッド（操作）
+  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  
+  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>・<strong>引数</strong>・・呼び出し元から受け取る値のこと。<br>・<strong>戻り値</strong>・・メソッドの処理の後に、呼び出しもとに返す値。<strong>return</strong>で指定することができる。<br>また、何も返さない場合は、<strong>void</strong>を記述する。</p><pre><code>  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }</code></pre><p>↑は、引数がないが、（）は書いておくことに注意しておく。</p><pre><code>  //データ型　変数名
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  </code></pre><p>↑は、引数がある。戻り値がない。</p><pre><code>  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>↑は、引数なし、戻り値ありのパターンある。</p><p>また、引数の中で定義した有効範囲は、そのブロックの中でしか使えないので、注意をする必要がある。</p><h3>・オブジェクトの使い方</h3><p>①オブジェクトを生成すること<br>②変数・メソッドを利用すること</p><p>①オブジェクトを生成すること<br><strong>クラス名　オブジェクト名　= new　クラス名（）;<br>Student stul = new Student( );</strong></p><p>new キーを使うと、メモリ上に新しく領域が確保される。配列でも出ました。</p><p>デフォルト初期値も入る。このように、プログラムにおいて、オブジェクトを作ることを、<strong>インスタンス化</strong>という。</p><p>②変数・メソッドを利用すること<br><strong>オブジェクト名.変数名<br>オブジェクト名.メソッド名（引数）<br>stul.name = "菅原";<br>stul.setScore(80,90);</strong></p><p>例</p><p>設計図</p><pre><code>class Student{
+  //メンバ変数（属性）
+  String name;
+  int engScore;
+  int mathScore;
+ 
+　　 //メソッド（操作）
+  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  
+  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>設計図をもとに、StuSampleクラスを動かしていく。</p><pre><code>class StuSample{
+  public static void main(String[] args){
+    Student stu1 = new Student();
+
+    stu1.name = "菅原";
+    stu1.setScore(90, 80);
+
+    stu1.display();    
+    System.out.println("平均" + stu1.getAvg() + "点");
+  }
+}</code></pre><h2>勉強（演習問題）</h2><p>ささ、今回は演習問題をやっていくぞ〜〜！！</p><hr><h3>・以下、問題です。</h3><hr><p>・自動車を管理する設計図のクラスとして、Carクラスを定義する。Carクラスの持つメンバ変数とメソッドは以下の通りである。</p><figure><img src="https://assets.st-note.com/img/1685078661673-W0n4Rm53Cm.jpg?width=1200" alt="" width="620" height="300" loading="lazy" decoding="async"><figcaption>Carクラス（設計図用）</figcaption></figure><p>さて、このCarクラスを利用する実行用クラスとして、DriveCarクラスを定義する。DriveCar.javaのコメントに合わせてコードを追加し、プログラムを完成させなさい。</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+
+    //c1のナンバーを2525に設定
+
+    //c1の速度を30に設定
+
+    //c1のナンバー、速度を表示
+
+n//c1の速度を0に設定
+
+    //c1のナンバー、速度を表示
+
+  }
+}
+</code></pre><hr><h3>・以下、自分の思考です。</h3><hr><p>まず、</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+
+    //c1のナンバーを2525に設定
+
+    //c1の速度を30に設定
+
+    //c1のナンバー、速度を表示
+
+    //c1の速度を0に設定
+
+    //c1のナンバー、速度を表示
+
+  }
+}</code></pre><p>上から</p><pre><code>    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();</code></pre><p>△　Car();であっているか微妙・・・。</p><pre><code>    //c1のナンバーを2525に設定
+    c1.no = 2525;</code></pre><p>これはメソッドを利用している。</p><pre><code>    //c1の速度を30に設定
+　　　　　　　　c1.speed = 30;</code></pre><p>ナンバーと同じこと。（メソッドの利用）</p><pre><code>    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );</code></pre><p>△　no, speedだけでいいのか不安。</p><pre><code>    //c1の速度を0に設定
+　　　　　　　　c1.stop();</code></pre><p>△　これはそもそも何をやっているかわからんけど、voidなくてOK?</p><pre><code>    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );</code></pre><p>さっきと同じ書き方でも、その前に速度を０に設定しているので表示は異なるはず。</p><p>ということで、</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();
+
+    //c1のナンバーを2525に設定
+    c1.no = 2525;
+   
+　　　　　　 //c1の速度を30に設定
+　　　　　　　　c1.speed = 30;
+
+    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );
+
+    //c1の速度を0に設定
+　　　　　　　　c1.stop();
+
+    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );
+
+  }
+}</code></pre><p>どうでしょうかね。</p><hr><h3>・以下は、その後の解説になります。</h3><hr><p>クラスには、<strong>実行用クラスと、設計図クラスがある。</strong></p><p>メンバ変数の宣言は、<br><strong>データ型　変数名</strong></p><p>変数名は両方とも与えられているので、そのまま書くだけ。<br>戻り値、メソッド名、引数{</p><p>このように、設計図クラスは作ることができる。</p><pre><code>//設計図クラス
+class Car{
+  //メンバ変数
+  int no;
+  int speed;
+
+  //メソッド
+  void setNo(int n){
+    no = n;
+  }
+  void run(int s){
+    speed = s;
+  }
+  void stop(){
+    speed = 0;
+  }
+  void display(){
+    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
+  }
+}
+</code></pre><p>よって、これに従って、実行用クラスも変わることに注意するべきだった。</p><p>作りかた→設計図クラス→実行用クラス/だった！！！<br>くっそ〜〜</p><p>従って、</p><pre><code>//実行用クラス
+class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();
+
+    //c1のナンバーを2525に設定
+    c1.setNo(2525);
+
+    //c1の速度を30に設定
+    c1.run(30);
+
+    //c1のナンバー、速度を表示
+    c1.display();
+
+    //c1の速度を0に設定
+    c1.stop();
+
+    //c1のナンバー、速度を表示
+    c1.display();
+  }
+}</code></pre><p>こんな簡単なのか〜〜。。いいね！</p><p>ここまで！</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

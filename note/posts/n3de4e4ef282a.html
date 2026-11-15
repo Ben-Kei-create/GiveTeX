@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>iT 51 JavaGold学習 （ネストクラス） | NingentteWinner</title>
+<meta name="description" content="JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。 JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで">
+<meta property="og:title" content="iT 51 JavaGold学習 （ネストクラス） | NingentteWinner">
+<meta property="og:description" content="JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。 JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n3de4e4ef282a.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n3de4e4ef282a">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=有料記事書いてみた">有料記事書いてみた</a><a href="/note/?tag=java">java</a><a href="/note/?tag=JavaGold">JavaGold</a><a href="/note/?tag=インナークラス">インナークラス</a><a href="/note/?tag=ネストクラス">ネストクラス</a></div>
+      <h1>iT 51 JavaGold学習 （ネストクラス）</h1>
+      <p class="nb-meta"><time datetime="2025-02-11">2025.02.11</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<p>JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。<br>JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで結局お金かかる。<br>なので、無料で全部ここで記録します。（余裕のある方、チップください笑）</p><h2>ネストクラス</h2><figure><img src="https://assets.st-note.com/img/1739105859-RKTZ8irbnp734lE2a1IxWgCF.png?width=1200" alt="" width="620" height="335" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>クラスの中にあるクラス。これまではクラス一個だとおもったが、クラスの中に、またちっこいクラスをつくれる。<br>大枠で囲ってる（エンクローズ）クラスをエンクロージングクラスといい、クラスの中にあるちっこいクラスをネストクラスという。</p><p>ネストクラスは全部で４種類ある。<br><strong>・インナークラス<br>・staticクラス<br>・ローカルクラス<br>・匿名クラス</strong></p><p>インナークラスって、そのままじゃん！と思ったが、アクセス修飾子はなんでもOK。</p><pre><code>public class Outer {
+    private String name;
+    public void setName(String a){
+        // do something
+    }
+
+    public class Inner {
+        // XXX
+    }
+}</code></pre><p>public void setName(String a)の部分は、void という（戻り値ないですよ〜という意味の戻り値の指定がある）値があり、setNameという名前、publicというアクセス修飾子（どっからでもOpenですの意味）がついている<strong>メソッド</strong>になる。戻り値、そしてString型の引数まで指定しているのですぐにメソッドとわかる。</p><p>そのメソッドの下には、同じくpublicがついているInnerの文字。これに<strong>class</strong>がついてるので、これが<strong>インナークラス</strong>だとわかる。</p><p>アクセス修飾子は、private, protected, (デフォルト), publicのどれもOK。</p><p>しかし、mainメソッドのようにstaticをつけると、もう一個のネストクラスに様変わりする。これが<strong>staticインナークラス</strong>と呼ぶ。わざわざ名前変えなくてよくね？と思うが、<strong>staticの制約</strong>が意外と多いので挙動がいろいろ代わる。なので分けているのだと思う。</p><p>staticインナークラスは、やはりクラスの中にあるクラスで、staticがくっついている。 staticなクラスにするだけでなく、staticなフィールドやstaticなメソッドにもくっつけることができる。</p><pre><code>class Outer {
+    static class StaticInner { // ← これが static インナークラス
+        static int staticField = 100;
+        int instanceField = 200;
+        
+        static void staticMethod() {
+            System.out.println("Static method in StaticInner");
+        }
+
+        void instanceMethod() {
+            System.out.println("Instance method in StaticInner");
+        }
+    }
+}</code></pre><p>これでOK。</p><p>上は、outerというエンクロージングクラスの中に、StaticInnerというstaticインナークラスがある。</p><p>そして、その中にはstaticなフィールドもstaticなメソッドもはいっている。</p><p>ちょっと疑問なのは、最初のインナークラスではその中にstaticとか入れられないのか？という疑問。結論、</p><p><strong>通常の（非staticな）インナークラスの中には static フィールドや static メソッドを入れることはできない。</strong></p><pre><code>class Outer {
+    class Inner {
+        static int staticField = 100; // ❌ コンパイルエラー
+        static void staticMethod() {  // ❌ コンパイルエラー
+            System.out.println("Static method in Inner");
+        }
+    }
+}</code></pre><p>フツーのインナークラスでは、staticを入れると<strong>コンパイルエラー</strong>がおきる。</p><p>本当めんどくさいのはここだけなので、もう少しお付き合い願いたいです。</p><pre><code>class Outer {
+    static class StaticInner { // ✅ static をつければOK！
+        static void staticMethod() {
+            System.out.println("Static method in StaticInner");
+        }
+    }
+}</code></pre><p>なので、このようにstaticなメソッドを作りたい場合はそのインナークラスをstaticクラスにしてもらえればOK</p><p>ここで<strong>超重要</strong>なのは、static制約を常に適用されること。</p><p>同クラス内で、<br>static→staticへのアクセスOK<br>static→非staticはアクセスNGです。</p><p>つまり、StaticInnerクラスから、外側のエンクロージングクラスの非staticメソッドや非staticなフィールドにアクセスすることはできない。</p><p>結論</p><p><strong>外部クラス（エンクロージングクラス）は普通のクラスなので static メンバを持てる。</strong><br><strong>非staticなインナークラスは「外部クラスのインスタンスに依存」するから static メンバを持てない！</strong><br><strong>static メンバを持ちたいなら、インナークラスを static にする！</strong></p><p>ネストクラスの中は、クラスの中にあるのはもちろんだが、クラスの直下でクラスをつくるのではなく、エンクロージングクラス内のメソッドの内部にあるネストクラスもある。つまり、メソッドの中に定義したネストクラスであり、これは<strong>ローカルクラス</strong>と呼ぶ。</p><pre><code>class Outer {
+    void outerMethod() {
+        class LocalClass { // ローカルクラス
+            void show() {
+                System.out.println("Hello from LocalClass");
+            }
+        }
+        LocalClass lc = new LocalClass();
+        lc.show();
+    }
+}</code></pre><p>このローカルクラスのアクセス修飾子は？と思うが、これは不要になる。これが不要な理由としては、メソッドの中にあるから。<br>このローカルクラスは、outerMethod()内でしか使えない。よって、不要になる。<br>たとえば、以下のような形でもエラー</p><pre><code>class Outer {
+    void outerMethod() {
+        private class LocalClass { // ❌ コンパイルエラー！
+            void show() {
+                System.out.println("Hello from LocalClass");
+            }
+        }
+        LocalClass lc = new LocalClass();
+        lc.show();
+    }
+}</code></pre><p>使える範囲のことをスコープというが、<br><strong>ローカルクラスはメソッドのスコープ内でしか使えないため、アクセス制御の概念が意味を持たない！</strong>となる。</p><p>結論</p><p><strong>ローカルクラスには private は不要 &amp; つけることができない！</strong><br><strong>そもそも Java には「ローカルメソッド」は存在しない！<br>（メソッドの中にメソッドは書けない）</strong><br><strong>ローカルクラスを使えばメソッドの中で処理をカプセル化できる！</strong></p><hr><p>演習</p><h3>Q1. 次のコードについて正しい説明を選びなさい。</h3><pre><code>class Outer {
+    static class StaticInner {
+        void display() {
+            System.out.println("Hello from StaticInner");
+        }
+    }
+    
+    void test() {
+        StaticInner inner = new StaticInner();
+        inner.display();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer.StaticInner inner = new Outer.StaticInner();
+        inner.display();
+    }
+}</code></pre><p>①StaticInner のインスタンスは Outer クラスのインスタンスなしに生成できる。<br>②StaticInner のインスタンスは Outer クラスのインスタンスを作成しないと生成できない。<br>③StaticInner クラスは Outer クラスの test() メソッドからのみアクセス可能である。<br>④StaticInner クラス内のメソッド display() を static にしないとコンパイルエラーになる。</p><p>解説</p><p>StaticInner は static クラスなので、<br>Outer のインスタンスなしに new Outer.StaticInner() で直接インスタンス化できる。これは、static制約が優先されるためです。</p><h3>Q2. 次のコードの実行結果として正しいものを選びなさい。</h3><pre><code>class Outer {
+    private String message = "Hello from Outer";
+
+    class Inner {
+        void printMessage() {
+            System.out.println(message);
+        }
+    }
+    
+    void test() {
+        Inner inner = new Inner();
+        inner.printMessage();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner();
+        inner.printMessage();
+    }
+}</code></pre><p>①Hello from Outer<br>②コンパイルエラーになる<br>③実行時エラー（NullPointerException）が発生する<br>④Hello from Inner</p><p>解説<br>Inner は<strong>非 static のインナークラス</strong>なので、Outer のインスタンスが必要。</p><p>outer.new Inner() で Outer のインスタンス outer を指定して Inner を作成することで message にアクセス可能。</p><pre><code>class Outer {
+    class Inner {  // 非staticインナークラス
+        void show() {
+            System.out.println("Hello from Inner");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer outer = new Outer();       // ① まず外部クラスのインスタンスを作る
+        Outer.Inner inner = outer.new Inner();  // ② 外部クラスのインスタンス経由でインナークラスを生成
+        inner.show();
+    }
+}</code></pre><p>よって、正解は①</p><pre><code>new Outer().new Inner();  //インナークラスの場合
+new Outer.StaticInner();  //staticインナークラスの場合</code></pre><h3>Q3. 次のコードについて正しい説明を選びなさい。</h3><pre><code>class Outer {
+    void outerMethod() {
+        class LocalClass {
+            static final String MESSAGE = "Hello";
+            void print() {
+                System.out.println(MESSAGE);
+            }
+        }
+        LocalClass local = new LocalClass();
+        local.print();
+    }
+}</code></pre><p>①LocalClass はメソッドの外からインスタンス化できる。<br>②LocalClass に static フィールドを定義できないためコンパイルエラーになる<br>③LocalClass に static final フィールドを定義できるためコンパイル成功する<br>④LocalClass のメソッド print() は static でないとコンパイルエラーになる。</p><p>解説</p><p>これは②がひっかけ。staticはダメだが、コンパイラーにはならない。<br>なぜなら、static finalだから。</p><p><strong>ローカルクラスは static メンバを持てないが、static final の定数 (final + コンパイル時に確定する値) は許可される！<br></strong>LocalClass は<strong>メソッド内のローカルクラス</strong>なので、メソッドの外からはインスタンス化できない。<br>MESSAGE は static final の定数として定義できるのでコンパイル成功。<br>正解は③</p><hr><p>まだまだ続く。。。</p>
+    </div>
+    <div class="nb-paid"><b>ここから先は note の有料部分です</b><span>続きは note で公開しています（100円）。</span><a class="nb-btn primary" href="https://note.com/benkein/n/n3de4e4ef282a" target="_blank" rel="noopener">note で続きを読む ↗</a></div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

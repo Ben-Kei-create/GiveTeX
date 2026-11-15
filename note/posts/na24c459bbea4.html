@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>!T-27（オブジェクトとインスタンスの違い） | NingentteWinner</title>
+<meta name="description" content="▶️よく勘違いする理由 答え：人によって、解釈の違いがあるから。 オブジェクト（Object→モノ）とインスタンス（instance→実体） ・説１ オブジェクト ＝ インスタンスとして考える説。初心者に多い。 ・説２ ">
+<meta property="og:title" content="!T-27（オブジェクトとインスタンスの違い） | NingentteWinner">
+<meta property="og:description" content="▶️よく勘違いする理由 答え：人によって、解釈の違いがあるから。 オブジェクト（Object→モノ）とインスタンス（instance→実体） ・説１ オブジェクト ＝ インスタンスとして考える説。初心者に多い。 ・説２ ">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/na24c459bbea4.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="na24c459bbea4">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=開発">開発</a><a href="/note/?tag=クラス">クラス</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=オブジェクト">オブジェクト</a></div>
+      <h1>!T-27（オブジェクトとインスタンスの違い）</h1>
+      <p class="nb-meta"><time datetime="2023-06-06">2023.06.06</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>▶️よく勘違いする理由</h2><p>答え：人によって、解釈の違いがあるから。<br><strong>オブジェクト（Object→モノ）とインスタンス（instance→実体）</strong> </p><h3>・説１</h3><p><strong>オブジェクト　＝　インスタンスとして考える説。初心者に多い。</strong></p><h3>・説２</h3><p><strong>オブジェクト＝全てのもの<br>クラスという設計図で作られたものをインスタンス。そして、クラスとインスタンス全てをまとめてオブジェクトと捉える考え方。</strong></p><p>→しかし、オブジェクト指向の説明を見てみると、<strong>クラスから元に作られるオブジェクトを組み合わせてプログラムを設計していくこと</strong>とある。<br>そう考えるとうまく説明ができない。</p><h3>・説３</h3><p>クラスという設計図を元に作ったものをオブジェクトという。<br>一般的な考え方や設計ではオブジェクトといい、<br>メモリ上に出来上がったプログラミング（実装）上で使われるものをインスタンスという。設計と実装で使い分けることが必要だ。</p><h3>・Oracle社</h3><p>クラスから生成された個々のオブジェクトのことを特に<br>インスタンスという。</p><h3>・最終的に・・</h3><p>→オブジェクトとインスタンスを相手の解釈に合わせて使い分けるのがいいらしい。（それこそ混乱な気がするが・・。）</p><h3>▶️Spring Bootとは</h3><p>・Java開発で人気のフレームワークの一つ。<br>・フレームワーク（システム開発の枠組み）<br>・システムを開発するときの、よく使う設計パターンや土台機能を利用できるので、開発や保守の効率がアップする。</p><h3>▶️MVCモデル</h3><p>Model（データーベースからのやり取り）<br>View（画面表示をする。Htmlなどで操作）<br>Controller（Modelの呼び出し、独自処理）Viewの呼び出しなどをする。</p><p>ブラウザからのリクエストに対して、コントローラーがリクエストを受け付け、ビューを呼び出したり、モデルを使って、データベースからデータを持ってくるなどができ、最終的にレスポンスしてブラウザへ返す。</p><p>開発者は、フレームワークによって、簡略化したコードで、メンテナンスや開発がとても楽になる。</p><h3>▶️SpringBoot</h3><p>・XMLファイルの設定が簡略化<br>-pom.xmlファイルで自動設定<br>・アノテーションでコード量が減る！<br>-アノテーション：＠から始まる注釈<br>@controller：リクエうとを受け取るクラス<br>@RequestMapping("fortune")<br>：リクエスト/fortuneで動くメソッド<br>・導入が簡単→EclipsでOK</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

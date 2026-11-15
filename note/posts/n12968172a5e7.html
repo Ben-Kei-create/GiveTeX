@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>Java-25（エラー） | NingentteWinner</title>
+<meta name="description" content="●勉強 public class Divide1{ public static void main(String[] args){ int a = Integer.parseInt(args[0]); int b = I">
+<meta property="og:title" content="Java-25（エラー） | NingentteWinner">
+<meta property="og:description" content="●勉強 public class Divide1{ public static void main(String[] args){ int a = Integer.parseInt(args[0]); int b = I">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n12968172a5e7.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n12968172a5e7">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a></div>
+      <h1>Java-25（エラー）</h1>
+      <p class="nb-meta"><time datetime="2023-06-05">2023.06.05</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>●勉強</h2><pre><code>public class Divide1{
+  public static void main(String[] args){
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+
+    System.out.println("計算開始");
+    System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+    System.out.println("計算終了");
+  }
+}</code></pre><h3>・例外とは</h3><p>実行時に発生するエラーのこと。<br>例外が発生すると、例外クラスのオブジェクトが自動生成される。<br>発生する例外の種類ごとに、クラスが生成される。</p><pre><code>Throwableクラス（親）　
+　　Error（システムが原因）
+　　　　VirtualMachineError 
+  OutOfMemoryError
+　　Exception（プログラムが原因）
+　　　　RuntimeException
+  　　ArrayIndexOutOfBoundsException ・・・・
+色々あるなぁ。</code></pre><h3>・例外処理（try-catch）</h3><p>例外発生時に<strong>自動生成</strong>される例外オブジェクトを受け取るために、<br><strong>try-catchブロック</strong>をかく</p><pre><code>try{
+　　[通常の処理]
+} catch(例外クラス　オブジェクト名){
+ [例外発生時の処理]
+}　　finally {
+ [後処理]
+}</code></pre><pre><code>public class Divide2{
+  public static void main(String[] args){
+    try{
+      int a = Integer.parseInt(args[0]);
+      int b = Integer.parseInt(args[1]);
+      System.out.println("計算開始");
+      System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+      System.out.println("計算終了");
+
+    }catch(ArrayIndexOutOfBoundsException e){
+      System.out.println("２つの数値を入力してください");
+      System.out.println("詳細：" + e.getMessage());
+      e.printStackTrace();
+
+    }catch(Exception e){
+      System.out.println("例外が発生しました");
+      System.out.println("詳細：" + e.getMessage());
+      e.printStackTrace();
+
+    }finally{
+      System.out.println("プログラムを終了します");
+    }
+  }
+}</code></pre><p>例外が発生しないときは、catchをスルーする。<br>例外発生時には、ArrayIndexOutOfBoundsExceptionのcatchブロック処理を実行する。ただし、複数書くときには、<strong>サブクラス→スーパー</strong>から書くようにする。</p><pre><code>public class Divide2{
+  public static void main(String[] args){
+    try{
+      int a = Integer.parseInt(args[0]);
+      int b = Integer.parseInt(args[1]);
+      System.out.println("計算開始");
+      System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+      System.out.println("計算終了");
+
+    }catch(ArrayIndexOutOfBoundsException e){
+      System.out.println("２つの数値を入力してください");
+      System.out.println("詳細：" + e.getMessage());　　//getMessageメソッドを使う。
+      e.printStackTrace();　　　//printStackTraceメソッドを使う。
+
+    }catch(Exception e){
+      System.out.println("例外が発生しました");
+      System.out.println("詳細：" + e.getMessage());　//getMessageメソッドを使う。
+      e.printStackTrace();　　　//printStackTraceメソッドを使う。→コマンドプロンプトのエラーメッセージを表示できる。
+
+    }finally{　　//例外あるなし関わらず「プログラムを終了します」という文字が出力される。
+      System.out.println("プログラムを終了します");
+    }
+  }
+}</code></pre><h3>・throwとthrows</h3><p>・throw　例外オブジェクト：　例外を強制的に<strong>発生</strong>させるために使う。<br>・throws　例外クラス：メソッドがその例外を発生することを<strong>宣言</strong>するために使う。メソッドの定義の段階で記載することができる！！</p><pre><code>void write(){
+  try{ 
+  throw new IOException();
+  } catch(IOException e){
+  }</code></pre><pre><code>void write() throws IOException{
+  throw new IOException();
+  }</code></pre><pre><code>public final class Integer ....{
+  public static int paraseInt(String s)
+    throws Number Format Exception {
+    }</code></pre><p>サンプル</p><pre><code>import java.io.*;
+
+public class WriteFile{
+  public void open(){
+    System.out.println("ファイルを開きます");
+  }
+  public void write() throws IOException{ //java.io.*パッケージの中にIOExceptionが入っている。
+    throw new IOException();
+  }
+  public void close(){
+    System.out.println("ファイルを保存して閉じます");
+  }
+}
+</code></pre><pre><code>import java.io.*;
+
+public class ThrowsMethod{
+  public static void main(String[] args){
+    WriteFile wf = new WriteFile();
+    try{
+      wf.open();
+      wf.write();
+    }catch(IOException e){
+      System.out.println("IOExceptionが発生しました");
+      e.printStackTrace();
+    }catch(Exception e){
+      System.out.println("Exceptionが発生しました");
+      e.printStackTrace();
+    }finally{
+      wf.close();
+    }
+  }
+}
+</code></pre><h3>・問題１</h3><figure><img src="https://assets.st-note.com/img/1685947045973-P4sMZaF0Cz.png?width=1200" alt="" width="620" height="668" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="https://assets.st-note.com/img/1685947090831-clyoGCCzoN.png?width=1200" alt="" width="620" height="160" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>自分の答え<br>try-catchを使っている。</p><pre><code>try{
+  例外が発生しているかどうか調べる文1;
+  例外が発生しているかどうか調べる文2;
+  ...
+}
+catch (例外クラス1 変数名1){
+  例外クラス1の例外が発生した時に行う文;
+  ...
+}
+catch (例外クラス2 変数名2){
+  例外クラス2の例外が発生した時に行う文;
+  ...
+}</code></pre><p>で考える</p><pre><code>public class TryDivide1{
+  public static void main(String[] args){
+    try{
+      System.out.println("処理開始");
+      int[] a = new int[3];
+      for(int i = 0; i &lt; args.length; i++){
+        a[i] = Integer.parseInt(args[i]);
+        System.out.println(a[i]);
+      }
+    }catch(NumberFormatException e){
+      System.out.println("例外：NumberFormatException");
+    }catch(ArrayIndexOutOfBoundsException e){
+      System.out.println("例外：ArrayIndexOutOfBoundsException");
+    }catch(Exception e){
+      System.out.println("例外：Exception");
+    }finally{
+      System.out.println("処理終了");
+    }
+  }
+}
+</code></pre><pre><code>TryDivide1クラス
+
+    例外処理を行う
+      "処理開始"と表示される
+      整数型a（要素数３）
+      for(0スタート; i &lt; 3; １を足す){
+        a[0] = Integer.parseInt(args[0]);
+        a[1] = Integer.parseInt(args[1]);
+        a[2] = Integer.parseInt(args[2]);
+
+        System.out.println(a[0]);
+        System.out.println(a[1]);
+        System.out.println(a[2]);
+      }
+
+それぞれの例外エラーによって、以下の文章が表示される。。。
+が、どんなエラーかはわからない・・・。
+
+    }catch(NumberFormatException e){
+      System.out.println("例外：NumberFormatException");
+    }catch(ArrayIndexOutOfBoundsException e){
+      System.out.println("例外：ArrayIndexOutOfBoundsException");
+    }catch(Exception e){
+      System.out.println("例外：Exception");
+    
+      最後に"処理終了"と表示される</code></pre><p>コマンドプロンプトには1 2 3 dと打ち込んだ。<br>そうすると、dは整数型田はないので、エラーが出るはず。</p><pre><code>    }catch(NumberFormatException e){
+      System.out.println("例外：NumberFormatException");</code></pre><p>　おそらくここのcatch文が使われると思うので、<br>"例外：NumberFormatException"と表示されるはずだ！！よって答えは、</p><pre><code>&gt;java TryDevide1 1 2 3 d 
+
+ 処理開始
+　　1
+ 2
+ 3
+ 例外：NumberFormatException
+ 処理終了</code></pre><h3>・回答</h3><p>for文なので、繰り返し。合わせてcatchやfinalyがある。<br>例えば、1 2 3とコンパイルをすると、</p><pre><code> 処理開始
+　　1
+ 2
+ 3
+ 処理終了</code></pre><p>となる。（正常系）<br>しかし、４つ目にdを代入してしまうと、NumberFormatExceptionが発生する。（処理は右から流れることに注意。）<br>また、</p><p><strong>例えば、1 2 3 4とコンパイルをするとどうなるか。</strong></p><pre><code>&gt;java TryDevide1 1 2 3 4</code></pre><p>ここで生成された配列の要素数は3つしかない。<br>※ int[] a = new int[3]となっているため</p><p>よって</p><pre><code>&gt;java TryDevide1 1 2 3 4
+
+ 処理開始
+　　1
+ 2
+ 3
+ 例外：ArrayIndexOutOfBoundsException
+ 処理終了</code></pre><p>という処理がなされることに注意したい。</p><h3>・問題２</h3><figure><img src="https://assets.st-note.com/img/1685950016961-9EcF8HFBKv.png?width=1200" alt="" width="620" height="639" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="https://assets.st-note.com/img/1685950027801-XZPzFv7hRZ.png?width=1200" alt="" width="620" height="714" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//提供プログラム
+public class TryDivide2{
+  public static void main(String[] args){
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+    System.out.println("プログラムを終了します");
+  }
+}</code></pre><p>自分の考え</p><pre><code>//提供プログラムを編集
+public class TryDivide2{
+  public static void main(String[] args){
+     try{
+       int a = Integer.parseInt(args[0]);　
+       int b = Integer.parseInt(args[1]);
+     }catch(ArithmeticException e){
+       System.out.println("割る数は０以外を入力してください。"); 
+     }catch(NumberFormatException e){
+       System.out.println("数値を入力してください。");
+  　　　　 }catch(Exception e){
+       System.out.println("例外が発生しました。");
+　　　　   }
+   }
+  printStackTrace()
+  System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+  System.out.println("プログラムを終了します");
+  }</code></pre><p>どうだろう・・・。</p><h3>・回答</h3><pre><code>public class TryDivide2{
+  public static void main(String[] args){
+    try{
+      int a = Integer.parseInt(args[0]);
+      int b = Integer.parseInt(args[1]);
+      System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+    }catch(NumberFormatException e){
+      System.out.println("数値を入力してください");
+      e.printStackTrace();
+    }catch(ArithmeticException e){
+      System.out.println("割る数は0以外を入力してください");
+      e.printStackTrace();
+    }catch(Exception e){
+      System.out.println("例外が発生しました");
+      e.printStackTrace();
+    }finally{
+      System.out.println("プログラムを終了します");
+    }
+  }
+}
+</code></pre><pre><code>public class TryDivide2{
+  public static void main(String[] args){
+    try{　//例外が発生する可能性のある範囲を、try文の中に囲むことが必要。
+      int a = Integer.parseInt(args[0]);
+      int b = Integer.parseInt(args[1]);
+      System.out.println("a / b = " + (a / b) + " あまり " + (a % b));
+
+    }catch(NumberFormatException e){ //以下、キャッチブロックを書くことで例外に対して処理を行う。
+      System.out.println("数値を入力してください");
+      e.printStackTrace();　　//オブジェクトeをつかって、エラーの詳細を表示させるようにする。
+    }catch(ArithmeticException e){
+      System.out.println("割る数は0以外を入力してください");
+      e.printStackTrace();
+    }catch(Exception e){
+      System.out.println("例外が発生しました");
+      e.printStackTrace();
+    }finally{　　//例外の有無に関わらず、表示させようと考えている文。
+      System.out.println("プログラムを終了します");
+    }
+  }
+}</code></pre><p>また、catchブロックの中には、サブクラスから書くことが必要になる。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

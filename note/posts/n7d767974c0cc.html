@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>!T52 JavaGold（Enum） | NingentteWinner</title>
+<meta name="description" content="🔗 リンク：https://stand.fm/episodes/6803436800fbb54093d7596d 以下は全て無料です。もし余裕のある方がいらっしゃいましたらカンパください！☺️ mycompilerで確認">
+<meta property="og:title" content="!T52 JavaGold（Enum） | NingentteWinner">
+<meta property="og:description" content="🔗 リンク：https://stand.fm/episodes/6803436800fbb54093d7596d 以下は全て無料です。もし余裕のある方がいらっしゃいましたらカンパください！☺️ mycompilerで確認">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n7d767974c0cc.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n7d767974c0cc">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=有料記事書いてみた">有料記事書いてみた</a><a href="/note/?tag=メソッド">メソッド</a><a href="/note/?tag=出力">出力</a><a href="/note/?tag=インターフェース">インターフェース</a><a href="/note/?tag=引数">引数</a><a href="/note/?tag=Consumer">Consumer</a><a href="/note/?tag=ラムダ式">ラムダ式</a><a href="/note/?tag=関数型インターフェース">関数型インターフェース</a></div>
+      <h1>!T52 JavaGold（Enum）</h1>
+      <p class="nb-meta"><time datetime="2025-02-11">2025.02.11</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<p class="note-embed"><a href="https://stand.fm/episodes/6803436800fbb54093d7596d" target="_blank" rel="noopener">🔗 リンク：https://stand.fm/episodes/6803436800fbb54093d7596d</a></p><p>以下は全て無料です。もし余裕のある方がいらっしゃいましたらカンパください！☺️</p><p>mycompilerで確認。</p><p class="note-embed"><a href="https://www.mycompiler.io/ja" target="_blank" rel="noopener">🔗 リンク：https://www.mycompiler.io/ja</a></p><h2>復習（3問）</h2><h3>問題 1: メンバークラスのアクセス</h3><p>以下のコードを実行するとどうなりますか？エラーが発生する場合、その理由を説明してください。</p><pre><code>class Outer {
+    private int outerValue = 10;
+
+    class Inner {
+        void display() {
+            System.out.println("outerValue: " + outerValue);
+        }
+    }
+
+    public static void main(String[] args) {
+        Inner inner = new Inner();
+        inner.display();
+    }
+}</code></pre><h3>問題 2: スタティックネストクラスの利用</h3><p>次のコードの出力を予想しなさい。</p><pre><code>class Outer {
+    static class StaticNested {
+        void show() {
+            System.out.println("Static Nested Class");
+        }
+    }
+
+    public static void main(String[] args) {
+        StaticNested nested = new StaticNested();
+        nested.show();
+    }
+}</code></pre><h3>問題 3: ローカルクラスのスコープ</h3><p>次のコードを実行するとどうなりますか？エラーが発生する場合、その理由を説明してください。</p><pre><code>class Outer {
+    void outerMethod() {
+        class LocalInner {
+            void show() {
+                System.out.println("Local Inner Class");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        LocalInner inner = new LocalInner();  // エラーになるか？
+        inner.show();
+    }
+}</code></pre><p>答えは最後にのせています！</p><hr><h3>関数型インターフェース</h3><p>java.util.function.Supplierインターフェースで宣言されている抽象メソッドは、T型のget();と書くことができる。</p><p>Supplierは、”提供者”なので、引数を取らず値をget()で戻す。<br>同様に、似たような関数型インターフェースも多いようです。</p><p>Consumer&lt;T&gt;は、"消費者"で、戻り値void, accept()メソッドなどがあります。<br>以下は一覧です。</p><ul><li><p><strong>Function&lt;T, R&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> R</p></li><li><p><strong>メソッド:</strong> R apply(T t)</p></li><li><p><strong>説明:</strong> T 型の入力を R 型に変換</p></li></ul></li><li><p><strong>BiFunction&lt;T, U, R&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> R</p></li><li><p><strong>メソッド:</strong> R apply(T t, U u)</p></li><li><p><strong>説明:</strong> 2つの入力を受けて R を返す</p></li></ul></li><li><p><strong>Consumer&lt;T&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> void</p></li><li><p><strong>メソッド:</strong> void accept(T t)</p></li><li><p><strong>説明:</strong> T 型の入力を消費（出力なし）</p></li></ul></li><li><p><strong>BiConsumer&lt;T, U&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> void</p></li><li><p><strong>メソッド:</strong> void accept(T t, U u)</p></li><li><p><strong>説明:</strong> 2つの入力を受けて処理を行う</p></li></ul></li><li><p><strong>Supplier&lt;T&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> T</p></li><li><p><strong>メソッド:</strong> T get()</p></li><li><p><strong>説明:</strong> 引数なしで T 型の値を返す</p></li></ul></li><li><p><strong>Predicate&lt;T&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> boolean</p></li><li><p><strong>メソッド:</strong> boolean test(T t)</p></li><li><p><strong>説明:</strong> T 型の条件判定を行う</p></li></ul></li><li><p><strong>BiPredicate&lt;T, U&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> boolean</p></li><li><p><strong>メソッド:</strong> boolean test(T t, U u)</p></li><li><p><strong>説明:</strong> 2つの入力を判定</p></li></ul></li><li><p><strong>UnaryOperator&lt;T&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> T</p></li><li><p><strong>メソッド:</strong> T apply(T t)</p></li><li><p><strong>説明:</strong> Function&lt;T, T&gt; の特殊形（入力と出力が同じ型）</p></li></ul></li><li><p><strong>BinaryOperator&lt;T&gt;</strong></p><ul><li><p><strong>戻り値型:</strong> T</p></li><li><p><strong>メソッド:</strong> T apply(T t1, T t2)</p></li><li><p><strong>説明:</strong> BiFunction&lt;T, T, T&gt; の特殊形</p></li></ul></li></ul><p>とはいえ、どうしても覚えられない・・・。</p><h3>フクスプ　で覚える</h3><p><strong>フ（Function）</strong>Function&lt;T, R&gt; BiFunction&lt;T, U, R&gt;変換する（T → R）</p><p><strong>ク（Consumer）</strong>Consumer&lt;T&gt; BiConsumer&lt;T, U&gt;消費する（出力なし）</p><p><strong>ス（Supplier）</strong>Supplier&lt;T&gt;供給する（値を返す）</p><p><strong>プ（Predicate）</strong>Predicate&lt;T&gt; BiPredicate&lt;T, U&gt;判定する（true / false）</p><p><strong>O（Operator）</strong>UnaryOperator&lt;T&gt; BinaryOperator&lt;T&gt;同じ型で変換する（T → T）</p><p>「プ」の丸まで入れる！</p><p>ただ、意味が欲しい自分などはこれで覚えます。</p><p>Function&lt;T, R&gt;apply()<strong>変換は apply（適用する）</strong></p><p>Consumer&lt;T&gt;accept()<strong>消費は accept（受け取る）</strong></p><p>Supplier&lt;T&gt;get()<strong>供給は get（取る）</strong></p><p>Predicate&lt;T&gt;test()<strong>判定は test（テストする）</strong></p><p>Consumerは、消費するので、受け取る（accept）のみ。<br>戻り値はない。つまり、引数を受け取って消費しちゃう。</p><p><strong>問題1: Consumer の基本</strong></p><p>次のコードを実行すると、コンソールには何が表示されますか？</p><pre><code>import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        Consumer&lt;String&gt; consumer = s -&gt; System.out.println("Hello, " + s + "!");
+        consumer.accept("Java");
+    }
+}</code></pre><p>sという引数を渡す必要がある。（消費）そしてそれは返さない。<br>Hello, Java!</p><p><strong>問題2: Consumer の連結</strong></p><p>以下のコードの実行結果は何になるでしょうか？</p><pre><code>import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        Consumer&lt;String&gt; first = s -&gt; System.out.print(s.toUpperCase() + " ");
+        Consumer&lt;String&gt; second = s -&gt; System.out.print(s.length());
+
+        Consumer&lt;String&gt; combined = first.andThen(second);
+        combined.accept("java");
+    }
+}</code></pre><p>JAVA 4</p><p><strong>問題3: Consumer の応用<br></strong>以下のコードの出力を予想してください。</p><pre><code>import java.util.List;
+import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        List&lt;String&gt; list = List.of("Apple", "Banana", "Cherry");
+        Consumer&lt;String&gt; printConsumer = System.out::println;
+
+        list.forEach(printConsumer);
+    }
+}</code></pre><pre><code>Apple
+Banana
+Cherry</code></pre><ul><li><p><strong>A:</strong> "Hello, Java!" が表示される。</p></li><li><p><strong>A:</strong> "JAVA 4"（first で大文字にし、second で長さを出力）</p></li><li><p><strong>A:</strong> forEach() でリストの要素が1行ずつ出力される。</p></li></ul><ul><li><p>Consumer&lt;T&gt; は <strong>引数を受け取って処理を行うが、戻り値はない</strong> 関数型インターフェース。</p></li><li><p>andThen() を使うと <strong>Consumer を連結</strong> できる。</p></li><li><p>forEach() と組み合わせるとリストの各要素に対して処理を適用できる。</p></li></ul><p>ここで疑問なのは、</p><p>Consumer&lt;String&gt; consumer = s -&gt; System.out.println("Hello, " + s + "!");の部分で、System.out.println("Hello, " + s + "!")は戻り値ではないの？<br>ということ。</p><p>しかし、println()の定義をみてみると、</p><pre><code>public void println(String x) { ... }</code></pre><p>voidになっているので、やはり戻り値はない。</p><p>結論として、<br>s -&gt; System.out.println("Hello, " + s + "!") は、</p><ul><li><p><strong>s を受け取る</strong></p></li><li><p><strong>コンソールに表示する</strong></p></li><li><p><strong>戻り値は何も返さない</strong></p></li></ul><pre><code>Consumer&lt;string&gt; c = x -&gt; "Hello, " + x;
+System.out.println(c.accpt("test");</code></pre><p>はどうしてだめなのか？<br>この理由は、 <strong>Consumer&lt;T&gt; は戻り値を持たない (void を返す) のに、戻り値を期待している</strong> から。</p><p>Predicateインターフェースに定義されている抽象メソッドは、boolean型で戻り値があるtest()がある。</p><p>java.util.funtion.Functionインターフェースは元の型を別の型に<strong>適応させる</strong>ため、apply()となる。</p><p>Function()は合成することもできる。<br><strong>andThenが順次処理<br>composeが逆順処理</strong></p><p>java.util.funtion.<strong>UnaryOperator</strong>インターフェースは、<br>１つの型を処理して同じ型の結果をもどす。<br>Functionインターフェースのサブクラスとなっている。</p><p><strong>UnaryOperator</strong>は、リストなどで一律で処理する際に使用できる。</p><p>例題：以下のリスト numbers の各要素を <strong>2倍にする</strong> ように UnaryOperator&lt;Integer&gt; を使用して実装してください。<br>ただし、replaceAll() メソッドを用いること。</p><pre><code>import java.util.List;
+import java.util.function.UnaryOperator;
+
+public class UnaryOperatorExample {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; numbers = List.of(1, 2, 3, 4, 5);
+        
+        // ここに UnaryOperator を使用してリストの要素を2倍にする処理を追加
+        
+        System.out.println(numbers);
+    }
+}</code></pre><p class="note-embed"><a href="https://www.mycompiler.io/ja" target="_blank" rel="noopener">🔗 リンク：https://www.mycompiler.io/ja</a></p><p>mycompilerでも確認できるとOK</p><pre><code>import java.util.ArrayList;
+import java.util.List;
+import java.util.function.UnaryOperator;
+
+public class UnaryOperatorExample {
+    public static void main(String[] args) {
+        // 可変リストにする（List.of() のままだと replaceAll() が使えない）
+        List&lt;Integer&gt; numbers = new ArrayList&lt;&gt;(List.of(1, 2, 3, 4, 5));
+
+        // UnaryOperator を定義（各要素を2倍にする）
+        UnaryOperator&lt;Integer&gt; doubleValue = x -&gt; x * 2;
+
+        // replaceAll() を使用してリストの要素を一律で2倍にする
+        numbers.replaceAll(doubleValue);
+
+        // 結果を出力
+        System.out.println(numbers); // 出力: [2, 4, 6, 8, 10]
+    }
+}</code></pre><p>ということで、<br>演習問題！</p><pre><code>interface A {
+    void methodA();
+}
+
+interface B {
+    int methodB(int x, int y);
+}
+
+@FunctionalInterface
+interface C {
+    boolean isEven(int x);
+}
+</code></pre><p>すぐに</p><pre><code>@FunctionalInterface
+interface C {
+    boolean isEven(int x);
+}</code></pre><p>ぽいとわかる。</p><p>問題２<br>正しいものはどれか</p><pre><code>import java.util.function.Function;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        Function&lt;Integer, Integer&gt; multiplyByTwo = x -&gt; x * 2;
+        System.out.println(multiplyByTwo.apply(5));  // 出力: ?
+        
+        Function&lt;Integer, Integer&gt; addThree = (x, y) -&gt; x + y;  // ❌ コンパイルエラー
+        System.out.println(addThree.apply(3, 4));  // 出力: ?
+    }
+}</code></pre><ul><li><p>multiplyByTwo は正しくラムダ式が適用されている</p></li><li><p>addThree は関数型インターフェースが引数2つを取ることができる</p></li><li><p>multiplyByTwo と addThree はどちらも正しいラムダ式の使い方である</p></li><li><p>multiplyByTwo は正しく、addThree は間違ったラムダ式の使い方である</p></li></ul><p>Functionクラスは、引数が二つ。よって、addThree は関数型インターフェースが引数2つを取ることができるが正解かな？？</p><p>→Functionは引数は１つ！</p><p><strong>問題 3: 関数型インターフェースの使い方</strong></p><p>次のコードの実行結果は何か。</p><pre><code>import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        Consumer&lt;String&gt; printMessage = message -&gt; System.out.println(message);
+        printMessage.accept("Hello, World!");
+    }
+}</code></pre><ul><li><p>出力されるのは「message」</p></li><li><p>出力されるのは「Hello, World!」</p></li><li><p>コンパイルエラーが発生する</p></li><li><p>出力されるのは「Hello, message!」</p></li></ul><p>Consumerは、受け取って、それを消費してしまう。戻り値はない。（void）<br>よって、出力されるのは「Hello, World!」</p><p>回答１<br>関数型インターフェースとは、<strong>1つの抽象メソッド</strong> を持つインターフェースです。<br>@FunctionalInterface アノテーションが付いているインターフェースは関数型インターフェースです。</p><ul><li><p><strong>A</strong> は抽象メソッド void methodA(); を持っており、関数型インターフェースではないため <strong>×</strong>。</p></li><li><p><strong>B</strong> は methodB(int x, int y); として引数2つを取るメソッドを持っているため、関数型インターフェースにはなりません <strong>×</strong>。</p></li><li><p><strong>C</strong> は boolean isEven(int x); という1つの抽象メソッドを持っているので <strong>〇</strong> 関数型インターフェースです。</p></li></ul><p><strong>問題 2: ラムダ式の利用</strong></p><p>ラムダ式の使用について確認します。</p><ul><li><p>multiplyByTwo = x -&gt; x * 2; は <strong>正しいラムダ式</strong> です。</p></li><li><p>addThree = (x, y) -&gt; x + y; は2つの引数を取る関数型インターフェース BiFunction で使われるべきですが、<strong>Function は引数1つしか受け取らないため エラー です。</strong></p></li></ul><p><strong>答え: 4 (multiplyByTwo は正しく、addThree は間違ったラムダ式の使い方である)</strong></p><p><strong>問題 3: 関数型インターフェースの使い方</strong></p><p>Consumer&lt;String&gt; は引数を1つ取り、戻り値を返さない関数型インターフェースです。accept("Hello, World!"); は "Hello, World!" を出力します。</p><p><strong>答え: 2 (出力されるのは「Hello, World!」)</strong></p><p>さて、ここで疑問がでてきた。というのは、以下の３問目のコード。</p><pre><code>import java.util.function.Consumer;
+
+public class ConsumerExample {
+    public static void main(String[] args) {
+        Consumer&lt;String&gt; printMessage = message -&gt; System.out.println(message);
+        printMessage.accept("Hello, World!");
+    }
+}</code></pre><p>まず、messageの使い方がよくわからん。messageを引数として左辺で受け取っているのはまあわかる。しかし、それを</p><pre><code>System.out.println(message);</code></pre><p>として出力して、</p><pre><code>printMessage.accept("Hello, World!");</code></pre><p>としている。ここで、</p><pre><code>printMessage.accept(message);</code></pre><p>じゃないのがなんか気持ち悪い。だってそれを使えばいいじゃん！とおもった。</p><p>さらに、<br>これ、そもそもHello, World！と出力されるのなら、</p><p>いわゆるお決まりのsysoutでそのまま出力すればよくないかなぁ・・・と思う。</p><p>しかし、これもそれぞれ理由があった。</p><p>まず、</p><pre><code>printMessage.accept("Hello, World!");</code></pre><p>とする理由は、その前段階のmessageが理由だった。</p><p>というのも、前行のmessageは、<strong>ラムダ式の中でしか使えない変数だから。</strong></p><p>よって、クラスを呼んでメソッドを使うように、そのラムダ式で使った変数をFunctionインターフェースで使うメソッドを指定してあげて使うことでmessageという変数の中にHello, World!が入ることになるのだ。</p><p>そう、よく考えればわかる話だった。なぜなら、</p><pre><code>System.out.println(message);</code></pre><p>が入っているとするならば、<strong>引数の中身は何を入れればいいのよ?</strong></p><p>という結果に陥ってしまう。<br>OKOK。</p><p>しかし、次の疑問は拭えないはずだ。というのは、</p><p><strong>いわゆるお決まりのsysoutでそのまま出力すればいいのでは・・・。<br></strong>という疑問。</p><p>結果的にHello, World!を出力するのであれば（もちろん、簡易的な文言なのは前提として、わざわざ出力する文字を引数で書いてあげて（引数として書いている時点で、もうそのままSysOutPrintlnで出力すればいいじゃん）、そして関数型インターフェースで書く（ラムダ式でかかないといけないし、まあコード量はへるけど可読性微妙笑））</p><p>きいてみたが</p><p><strong>確かにその通りだそう。</strong></p><p>Consumer を使う目的は、<strong>1つの引数を受け取って何らかの操作を行う処理を定義すること</strong> です。▲しかし、このコードのように単純に System.out.println() を使うだけであれば、わざわざ Consumer を使う必要は全くありません。</p><p>例えば、次のような単純な実装で十分です：</p><pre><code>System.out.println("Hello, World!");</code></pre><p>では、Consumerの使いどころはなにか。</p><h3>副作用が大事</h3><p>Consumer は、引数を受け取って<strong>副作用を引き起こす操作</strong>（この場合は出力）を行うために使用しますが、複雑な処理を引数として渡す場合にこそ、その真価を発揮します。例えば、リストの各要素に対して何か処理をしたい場合などです。</p><pre><code>List&lt;String&gt; messages = List.of("Hello", "World", "Java");
+
+Consumer&lt;String&gt; printMessage = message -&gt; System.out.println(message);
+messages.forEach(printMessage);</code></pre><p>以上！</p><hr><p>復習問題１の回答<br>インナークラスを使用する場合は、外→内に扉を開けていくイメージでインスタンスをしていく。innerクラスを使用するにはまずそのクラスを囲っているエンクロージングクラスであるOuterをインスタンス化しないといけない。<br>よって、コンパイルエラーがおきる。</p><ul><li><p>インナークラス (Inner) を使用するには、まず Outer クラスのインスタンスを作成し、そのインスタンスを通じて Inner クラスをインスタンス化する必要がある。</p></li><li><p>Inner inner = new Inner(); という記述は Outer のインスタンスなしに Inner を直接生成しようとしているため、コンパイルエラーになる。</p></li></ul><pre><code>public static void main(String[] args) {
+    Outer outer = new Outer(); // まずOuterをインスタンス化
+    Outer.Inner inner = outer.new Inner(); // それを使ってInnerをインスタンス化
+    inner.display();
+}</code></pre><p>問題２の回答<br>staticNatedクラスに対しては、staticでインスタンス化をせずに呼び出せる。<br>よって、Static Nested Classが出力される。</p><ul><li><p>static なネストクラス (StaticNested) は Outer クラスのインスタンスを作成せずに直接インスタンス化できる。</p></li><li><p>したがって、StaticNested nested = new StaticNested(); は問題なく動作し、 "Static Nested Class" が出力される。</p></li></ul><p>問題３の回答<br>ローカルクラスを呼び出しているが、ローカルクラスは、別クラスのメソッド内にある。このローカルクラスはそのクラス内でしか使うことができないため、エラーになる。</p><ul><li><p>LocalInner クラスは outerMethod() 内で定義されたローカルクラスであり、メソッドのスコープ内でのみ利用可能。</p></li><li><p>main() メソッドの中では LocalInner はスコープ外のため、LocalInner inner = new LocalInner(); はコンパイルエラーになる。</p></li></ul><pre><code>class Outer {
+    void outerMethod() {
+        class LocalInner {
+            void show() {
+                System.out.println("Local Inner Class");
+            }
+        }
+        LocalInner inner = new LocalInner(); // このメソッド内では有効
+        inner.show();
+    }
+
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        outer.outerMethod(); // outerMethodを呼び出すことでローカルクラスを利用
+    }
+}
+</code></pre><p>どうしても使いたい場合は、上のような構成にすることが重要！</p>
+    </div>
+    <div class="nb-paid"><b>ここから先は note の有料部分です</b><span>続きは note で公開しています（100円）。</span><a class="nb-btn primary" href="https://note.com/benkein/n/n7d767974c0cc" target="_blank" rel="noopener">note で続きを読む ↗</a></div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

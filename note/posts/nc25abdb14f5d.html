@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>Java-22（型変換について〜 | NingentteWinner</title>
+<meta name="description" content="●勉強 ▶️今回の要点 データには基本データ型と参照型の2種類がある。 小さなデータ型から大きなデータ型に変換する場合は自動的に型変換が行われるが、逆の場合は キャスト が必要になる。 クラス間に継承関係がある場合には、">
+<meta property="og:title" content="Java-22（型変換について〜 | NingentteWinner">
+<meta property="og:description" content="●勉強 ▶️今回の要点 データには基本データ型と参照型の2種類がある。 小さなデータ型から大きなデータ型に変換する場合は自動的に型変換が行われるが、逆の場合は キャスト が必要になる。 クラス間に継承関係がある場合には、">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/nc25abdb14f5d.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="nc25abdb14f5d">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=クラス">クラス</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=メソッド">メソッド</a><a href="/note/?tag=キャスト">キャスト</a><a href="/note/?tag=型変換">型変換</a><a href="/note/?tag=スーパークラス">スーパークラス</a></div>
+      <h1>Java-22（型変換について〜</h1>
+      <p class="nb-meta"><time datetime="2023-05-30">2023.05.30</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>●勉強</h2><h3>▶️今回の要点</h3><ul><li><p>データには基本データ型と参照型の2種類がある。</p></li><li><p>小さなデータ型から大きなデータ型に変換する場合は自動的に型変換が行われるが、逆の場合は<strong>キャスト</strong>が必要になる。</p></li><li><p>クラス間に継承関係がある場合には、型変換が自動的に行われます。</p></li><li><p>サブクラスからスーパークラスへの変換では問題が発生する可能性があり、その場合にはキャストが必要になる。</p></li></ul><h3>▶️参照型の型変換とは</h3><p>型変換する前のクラスと、変換後のクラスの間で継承関係になるときに参照型の型変換ができる。<br>継承関係にあるクラス同士でオブジェクトの型変換は、</p><p>スーパー　＝　サブの時、　　自動で行われる。<br>サブ　　　＝　スーパーの時、キャストで明示する。</p><h3>▶️自動とキャストの違いとその理由</h3><pre><code>Student stu1 = new Student(...);
+Person psn = stu1;</code></pre><p>Studentクラス（入れ物の箱が大きい）　＞　Personクラス（小さい）<br>ここで、stu1で扱える範囲は大きい。<br>逆に、psnで扱える範囲は小さい。</p><pre><code>親クラス
+Personクラス　　　　= ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️
+
+子クラス
+Studentクラス = ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️　（←ここまでを継承）　　　+ ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️　（←ここまでを追加）　</code></pre><p>よって、箱の大きいstu1を、範囲の小さいpsnに入れることは可能。</p><pre><code>Student stu1 = new Student(...);
+Person psn = stu1;
+Student stu2 = (Student)psn;
+psn.display();
+psn.chgStuNo(・・・);
+stu2.chgStuNo(・・・);</code></pre><p>以上の中で、</p><pre><code>Student stu2 = (Student)psn;</code></pre><p>ここでいう、(Student)がキャストになります。</p><p>Studentクラスの入っている要素が多い理由は、Personクラスを継承したからである。つまり、要素の<strong>少ない</strong>Personクラスがスーパークラス（親クラス）で、要素の<strong>多い</strong>Studentクラスが参照。</p><p>スーパークラスに、サブクラスに代入する時には、自動で行われる。<br>なぜなら、サブクラスの中の情報には必ずスーパークラスの情報があるから、型変換するには問題はない。</p><p>しかし、スーパークラスから、サブクラスに代入する時には、要素がたくさん入った大きな箱へと広げるため、<strong>メモリ上に必ずしも存在するとは限らない</strong>ので、ただ変換するとコンパイルエラーが起きるので、型変換をする時には、キャストが必要である。ということになる。</p><h3>▶️サンプルプログラム</h3><pre><code>public class Person5{
+  private String name;
+
+  public Person5(String name){
+    this.name = name;
+  }
+  public void display(){
+    System.out.println("名前：" + name);
+  }
+}
+</code></pre><pre><code>public class Student5 extends Person5{
+  private int stuNo;
+
+  public Student5(String name, int stuNo){
+    super(name);
+    this.stuNo = stuNo;
+  }
+  public void display(){
+    super.display();
+    System.out.println("学籍番号：" + stuNo);
+  }
+  public void chgStuNo(int stuNo){
+    this.stuNo = stuNo;
+  }
+}
+</code></pre><pre><code>public class StuSample5{
+  public static void main(String[] args){
+    Student5 stu1 = new Student5("菅原",1);
+    Person5 psn = stu1;
+    psn.display();
+    // psn.chgStuNo(1001);
+
+    /* 補足：instanceofキーワード
+       オブジェクトのクラスを特定する
+       対象オブジェクト instanceof クラス名 */
+    if(psn instanceof Student5){
+      Student5 stu2 = (Student5)psn;
+      stu2.chgStuNo(1001);
+      stu2.display();
+    }
+  }
+}
+</code></pre><h2>●復習</h2><h3>▶️オーバーロードとオーバーライド</h3><p><strong>オーバーロード</strong><br>・１つのクラスの中で同じ名前のメソッドを複数定義できること。<br>・クラスにない、同じ名前で引数の型や数が違うメソッドを定義すること。<br>　同じような機能を持つメソッドであっても<strong>引数のデータ型が異なれば</strong>別々<br>　のメソッドを用意する必要がある。</p><p><strong>オーバーライド</strong><br>・スーパークラスとサブクラスでのメソッドの上書きである。<br>・サブクラスで、<strong>スーパークラス</strong>のメソッドを<strong>再定義</strong>する。<br>　条件は、<strong>戻り値の型、メソッド名、引数の型と数が全て同じ</strong>場合。</p><h3>▶️コンストラクタ</h3><p>オブジェクトの初期化のための<strong>特殊なメソッド</strong>。<br>名前がクラス名と同じであり、戻り値を持たないこと（voidを設定）<br>newクラス名（<strong>コンストラクタへの引数</strong>）があることが条件。<br><strong>コンストラクタ</strong>を定義しない→<strong>デフォルトコンストラクタが生成。</strong></p><h3>▶️static</h3><p>全インスタンス変数が使える<br>メンバ変数やメソッドを定義する時には、staticを指定する。<br><strong>クラス名.変数[メソッド]名</strong>と書きなおす必要がある。</p><h3>▶️カプセル化</h3><p><strong>「アクセス修飾子」</strong>でクラス・メンバ変数・メソッドの<strong>公開範囲を指定</strong></p><p><strong>｟公開範囲｠<br>public<br></strong>同クラス、同パッケージ、サブクラス、その他<br><strong> protected<br></strong>同クラス、同パッケージ、サブクラス<br><strong>（なし）<br></strong>同クラス、同パッケージ<strong><br>private<br></strong>同クラス<br><strong>代入前処理</strong>ができる、<strong>修正範囲</strong>を変えやすいというメリットがある。</p><pre><code>class Student{
+  private int score;
+  public void setScore(int s){
+  (中略)
+  score = s;
+  }
+}</code></pre><pre><code>○ stu.setScore(80);
+× stu.score = 80;
+//このように、直接代入をすると、コンパイルエラーが出ることになる。</code></pre><h3>▶️継承</h3><p>継承関係にある親クラスをスーパークラス、子クラスをサブクラスという。extendで継承可能。</p><h3>▶️this とsuper</h3><p>this とsuperによるメソッド・メソッドの呼び出し<br><strong>this.~　＝　自オブジェクトの〜<br>super.~　＝　スーパークラスの〜<br></strong>プログラムの処理を再び書く必要がない。引数名を考えなくて良い。</p><pre><code>public class Person3{
+  private String name;
+
+  public Person3(String name){
+    this.name = name;
+  }
+  public void display(){
+    System.out.println("名前：" + name);
+  }
+}
+</code></pre><p>this とsuperによるコンストラクタの呼び出し<br><strong>this（）~　＝　自オブジェクトの〜<br>super（）~　＝　スーパークラスの〜<br></strong>これらは、コンストラクタ内の<strong>先頭</strong>に記述するようにする。<br>なければ、自動的にsuper();が設定されることになる。</p><h2>●次回</h2><p>ポリモフィズムについて</p><p>今日はここまで！</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

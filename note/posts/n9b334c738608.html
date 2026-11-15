@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>JAVA-21 | NingentteWinner</title>
+<meta name="description" content="●復習 ▶️オーバーロード クラスにない、同じ名前で引数の型や数が違うメソッドを定義すること。同じような機能を持つメソッドであっても引数のデータ型が異なれば別々のメソッドを用意する必要がある。 //同じクラス内の、同じメ">
+<meta property="og:title" content="JAVA-21 | NingentteWinner">
+<meta property="og:description" content="●復習 ▶️オーバーロード クラスにない、同じ名前で引数の型や数が違うメソッドを定義すること。同じような機能を持つメソッドであっても引数のデータ型が異なれば別々のメソッドを用意する必要がある。 //同じクラス内の、同じメ">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n9b334c738608.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n9b334c738608">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=モチベーション">モチベーション</a><a href="/note/?tag=クラス">クラス</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=継承">継承</a><a href="/note/?tag=変数">変数</a><a href="/note/?tag=SUPER">SUPER</a></div>
+      <h1>JAVA-21</h1>
+      <p class="nb-meta"><time datetime="2023-05-30">2023.05.30</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>●復習</h2><h3>▶️オーバーロード</h3><p>クラスにない、同じ名前で引数の型や数が違うメソッドを定義すること。同じような機能を持つメソッドであっても引数のデータ型が異なれば別々のメソッドを用意する必要がある。</p><pre><code>//同じクラス内の、同じメソッドの名前だが、　引数が異なる。
+　　　　なので、定義する時に引数を変えれば、それぞれ違うメソッドを呼び出す。
+
+class Student {
+  void setData(String n){
+            （中略）
+　　　　}
+  void setData(String n, int e, int m){
+            （中略）
+　　　　}            </code></pre><h3>▶️オーバーライド</h3><p>・サブクラスで、スーパークラスのメソッドを<strong>再定義</strong>すること。<br>　条件は、戻り値の型、メソッド名、引数の型と数が全て同じ場合。</p><p><strong>オーバーロード</strong><br>１つのクラスの中で同じ名前のメソッドを複数定義できること。<br><strong>オーバーライド</strong><br>スーパークラスとサブクラスでのメソッドの上書きである。</p><pre><code>//スーパークラスPerson2
+
+public class Person2{
+  private String name;
+
+  public void setName(String n){
+    name = n;
+  }
+  public String getName(){
+    return name;
+  }
+  public void display(){
+    System.out.println("名前：" + name);
+  }
+}
+</code></pre><pre><code>//スーパークラスを継承した、サブクラスStudent2（設計図クラス）
+
+public class Student2 extends Person2{
+  private int stuNo;
+
+  public void setStuNo(int s){
+    stuNo = s;
+  }
+  public void display(){
+    System.out.println("名前：" + getName());
+    System.out.println("学籍番号：" + stuNo);
+ / }
+}
+</code></pre><pre><code>//StuSample2（実行用クラス）
+
+public class StuSample2{
+  public static void main(String[] args){
+    Student2 stu = new Student2();
+    stu.setName("菅原");    
+    stu.setStuNo(1);
+    stu.display();
+  }
+}</code></pre><h3>▶️コンストラクタ</h3><p>オブジェクトの初期化のために使われる<strong>特殊なメソッド</strong>。<br>名前がクラス名と同じであり、戻り値を持たないこと（voidを設定）、newクラス名（<strong>コンストラクタへの引数</strong>）があることが条件。<br>もし、<strong>コンストラクタ</strong>を定義しなければ、<strong>デフォルトコンストラクタ<br></strong>（引数&amp;処理なし）が生成されることになる。</p><pre><code>class Student{
+  Student(String n){
+}</code></pre><h3>▶️static</h3><pre><code>class Student{
+  static int counter = 0;
+
+  Student(){
+    counter ++;
+  }
+  
+  static void display(){
+    System.out.println(counter + "人です");
+
+}</code></pre><p>全インスタンス変数が使える<br>メンバ変数やメソッドを定義する時には、staticを指定する。<br><strong>クラス名.変数[メソッド]名</strong>と書きなおす必要がある。<br>↑　クラス内で幅を広げることで、カウントする表現を広げる的な？？</p><h3>▶️カプセル化</h3><p><strong>「アクセス修飾子」</strong>でクラス・メンバ変数・メソッドの<strong>公開範囲を指定</strong>すること</p><p><strong>｟公開範囲｠<br>public<br></strong>同クラス、同パッケージ、サブクラス、その他<br><strong> protected<br></strong>同クラス、同パッケージ、サブクラス<br><strong>（なし）<br></strong>同クラス、同パッケージ<strong><br>private<br></strong>同クラス</p><p>メンバ変数は、隠蔽（private）して、<br>クラスとメソッドは公開（publiv）する設計方針を<strong>カプセル化</strong>と呼ぶ。<br><strong>代入前処理</strong>ができる、<strong>修正範囲</strong>を変えやすいというメリットがある。</p><pre><code>class Student{
+  private int score;
+  public void setScore(int s){
+  (中略)
+  score = s;
+  }
+}</code></pre><pre><code>○ stu.setScore(80);
+× stu.score = 80;
+//このように、直接代入をすると、コンパイルエラーが出ることになる。</code></pre><h3>▶️継承</h3><p>既存のクラスをもとに変数やメソッドを追加したクラスを作ること。<br>継承関係にある親クラスを<strong>スーパークラス</strong>、子クラスを<strong>サブクラス</strong>という。<strong>extend</strong>を入れることによって、継承できる。</p><pre><code>public class Person{
+  private String name;
+
+  public void setName(String n){
+    name = n;
+  }
+  public void display(){
+    System.out.println("名前：" + name);
+  }
+}
+</code></pre><pre><code>//extendsを入れることによって、クラスを継承できる！！
+
+public class Student extends Person{
+  private int stuNo;
+
+  public void setStuNo(int s){
+    stuNo = s;
+  }
+  public void displayStuNo(){
+    System.out.println("学籍番号：" + stuNo);
+  }
+}
+</code></pre><pre><code>public class StuSample{
+  public static void main(String[] args){
+    Student stu = new Student();
+
+    // スーパークラスのメソッド
+    stu.setName("菅原");    
+    stu.display();
+
+    // サブクラスのメソッド
+    stu.setStuNo(1);
+    stu.displayStuNo();
+  }
+}
+</code></pre><h3>▶️this とsuper</h3><p>this とsuperによるメソッド・メソッドの呼び出し<br><strong>this.~　＝　自オブジェクトの〜<br>super.~　＝　スーパークラスの〜<br></strong>プログラムの処理を再び書く必要がない。引数名を考えなくて良い。</p><pre><code>public class Person3{
+  private String name;
+
+  public Person3(String name){
+    this.name = name;
+  }
+  public void display(){
+    System.out.println("名前：" + name);
+  }
+}
+</code></pre><p>this とsuperによるコンストラクタの呼び出し<br><strong>this（）~　＝　自オブジェクトの〜<br>super（）~　＝　スーパークラスの〜<br></strong>これらは、コンストラクタ内の<strong>先頭</strong>に記述するようにする。<br>なければ、自動的にsuper();が設定されることになる。</p><h2>●勉強</h2><p>(継承、オーバーライド、this &amp;superキー復習)</p><h3>▶️演習問題1</h3><figure><img src="https://assets.st-note.com/img/1685430290661-Fl6hxwC1u6.png?width=1200" alt="" width="620" height="457" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="https://assets.st-note.com/img/1685430300813-YEO3EaUDas.png?width=1200" alt="" width="620" height="207" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>では、Taxi1クラスを定義していこう。<br>Taxi1クラスは、自動車を管理するCar1クラスを継承している。</p><p>まず、Car1クラスのコードがこちら。</p><pre><code>//参考1
+public class Car1{
+  private int no;
+
+  public void setNo(int n){
+    no = n;
+  }
+  public void display(){
+    System.out.println("ナンバーは" + no + "です");
+  }
+}</code></pre><pre><code>//参考2
+public class DriveTaxi1{
+  public static void main(String[] args){
+    Taxi1 t1 = new Taxi1();
+    t1.setNo(2525);
+    t1.start();
+    t1.run();
+    t1.display();
+  }
+}</code></pre><p>これを継承するので<strong>extends</strong>が必要になるはず。</p><pre><code>//自分のコード
+public class Taxi1 extends Car1{
+  
+  //タクシーの料金（メンバ変数）
+  private int price;
+
+  //変数priceに420を代入する。（メソッド）
+  public void start(){
+    price = 420;
+  }
+
+  //変数priceに80を加算する。（メソッド）
+  public void run(){
+    price += 80;
+  }
+
+  //変数priceの値を表示する。（メソッド）
+  public void display(){
+    System.out.println("料金は" + price + "です");
+  }
+
+}</code></pre><h3>▶️回答1</h3><p>継承するということがわかっているか</p><pre><code>//回答例
+public class Taxi1 extends Car1{
+  private int price;
+
+  public void start(){
+    price = 420;
+  }
+  public void run(){
+    price = price + 80;
+  }
+  public void display(){
+    System.out.println("料金は" + price + "円です");
+  }
+}
+</code></pre><h3>▶️演習問題2</h3><figure><img src="https://assets.st-note.com/img/1685431845920-w8fC36x9JY.png?width=1200" alt="" width="620" height="568" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//Taxi1クラス
+public class Taxi1 extends Car1{
+  private int price;
+
+  public void start(){
+    price = 420;
+  }
+  public void run(){
+    price = price + 80;
+  }
+  public void display(){
+    System.out.println("料金は" + price + "円です");
+  }
+}</code></pre><pre><code>//参考用クラス
+public class Car2{
+  private int no;
+
+  public Car2(int no){
+    //このオブジェクトの〜
+　　　　　　　　→メンバ変数へと変換
+    this.no = no;
+  }
+  public void display(){
+    System.out.println("ナンバーは" + no + "です");
+  }
+}</code></pre><p>これより、Taxi2クラスを作る。</p><pre><code>//自分のコード
+public class Taxi2 extends Car2{
+　　　　//メンバ変数
+  private int price;
+
+  //変数noに引数を設定する、変数priceに、0を設定する。
+  public Taxi2(int no){
+    price = 0;
+  }
+
+  //変数no,priceを引数を設定する。
+  public Taxi2(int no, int price){
+  }
+
+　　　　//変数priceに420を設定する。
+  public void start(){
+    price = 420;
+  }
+
+　　　　//変数priceに8０を加算する。
+  public void run(){
+    price = price + 80;
+  }
+
+  //変数noと変数priceの値を表示する。
+  public void display(){
+    System.out.println("料金は" + price + "円です");
+  }
+}</code></pre><pre><code>//実行用クラス
+public class DriveTaxi2{
+  public static void main(String[] args){
+    Taxi2 t2 = new Taxi2(2525);
+    t2.start();
+    t2.run();
+    t2.display();
+  }
+}</code></pre><hr><h3>▶️回答2</h3><pre><code>public class Taxi2 extends Car2{
+  private int price;
+
+  public Taxi2(int no){
+    this(no, 0);
+  }
+  public Taxi2(int no, int price){
+    super(no);
+    this.price = price;
+  }
+  public void start(){
+    price = 420;
+  }
+  public void run(){
+    price = price + 80;
+  }
+  public void display(){
+    super.display();
+    System.out.println("料金は" + price + "円です");
+  }
+}
+</code></pre><pre><code>public class Taxi2 extends Car2{
+  private int price;
+
+  public Taxi2(int no){
+    //Taxi2のクラス
+　　　　　　　　　this(no, 0);
+  }
+  public Taxi2(int no, int price){
+    //スーパークラスのコンストラクトを使いたい
+    super(no);
+　　　　　　　　//このクラスのコンストラクタを使いたい
+    this.price = price;
+  }
+  public void start(){
+    price = 420;
+  }
+  public void run(){
+    price = price + 80;
+  }
+  public void display(){
+    //Car2クラスのメソッドを呼び出したいている。
+　　　　　　　　super.display();
+    System.out.println("料金は" + price + "円です");
+  }
+}
+</code></pre><h3>▶️演習問題3</h3><p>次のプログラムを実行した時にどのように表示されるか。答えなさい。</p><pre><code>//プログラム1
+
+class Car{
+  Car(){
+    System.out.println("Car()");
+  }
+  Car(int no){
+    System.out.println("Car(int no)");
+  }
+}</code></pre><pre><code>//プログラム2
+
+class Taxi extends Car{
+  Taxi(){
+    this(9999);
+    System.out.println("Taxi()");
+  }
+  Taxi(int no){
+    super(no);
+    System.out.println("Taxi(int no)");
+  }
+  Taxi(String no){
+    System.out.println("Taxi(String no)");
+  }
+}
+</code></pre><pre><code>//プログラム3
+
+class DriveTaxi{
+  public static void main(String[] args){
+    Car c = new Car();
+    System.out.println("-----");
+    Taxi t1 = new Taxi(2525);
+    System.out.println("-----");
+    Taxi t0 = new Taxi();
+    System.out.println("-----");
+    Taxi t2 = new Taxi("2525");
+  }
+}
+</code></pre><p>プログラム３を追っていく。</p><pre><code>//プログラム3
+
+class DriveTaxi{
+  public static void main(String[] args){
+　　　　　　　　//コンストラクタcをCarクラスに生成
+    Car c = new Car();
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    //コンストラクタt1を生成、Taxi1クラスに2525の値を代入。
+    Taxi t1 = new Taxi(2525);
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    //コンストラクタt0をTaxiクラスに生成
+    Taxi t0 = new Taxi();
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    //コンストラクタt2を生成、Taxiクラスに"2525"という文字列を代入。
+    Taxi t2 = new Taxi("2525");
+  }
+}
+</code></pre><pre><code>//プログラム3
+
+class DriveTaxi{
+  public static void main(String[] args){
+　　　　　　　　/* コンストラクタcをCarクラスに生成
+    Car(){
+    　　System.out.println("Car()");
+    }となっているので、Car()という文字が表示されるはず。 */
+    Car c = new Car();
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    /*コンストラクタt1を生成、Taxiクラスに2525の値を代入。
+　　　　　　　　Taxi(int no){
+    　　super(no);
+    　　System.out.println("Taxi(int no)");
+  　　　　}となっているので、まず親クラスのno数値に2525を代入する。親クラスは
+  　　　　Car(int no){
+    　　System.out.println("Car(int no)");
+  　　　　}となっているので、"Car(2525)"という文字列が生成される。
+　　　　　　　　また、"Taxi(2525)"　という文字列が生成される。*/
+    Taxi t1 = new Taxi(2525);
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    /*コンストラクタt0をTaxiクラスに生成
+    Taxi(){
+    　　this(9999);
+    　　System.out.println("Taxi()");
+    }
+    this(9999)の部分は、サブクラスのTaxi(9999)であるので、
+　　　　　　　　Taxi(int no){
+    　　super(no);
+    　　System.out.println("Taxi(int no)");
+  　　　　}より、
+　　　　　　　　Taxi(9999){
+    　　super(9999);
+    　　System.out.println("Taxi(9999)");
+  　　　　}より、
+  　　　　　Car(９９９９){
+    　　　　System.out.println("Car(９９９９)");
+  　　　　　}より、Car(9999)が表示される。
+　　　　　　　　　また、System.out.println("Taxi(int no)");より、
+　　　　　　　　　Taxi(9999)が表示される。
+　　　　　　　　　さらに、System.out.println("Taxi()");より、
+　　　　　　　　　Taxi()が表示される。　　*/
+    　Taxi t0 = new Taxi();
+
+    //-----が表示された後、改行
+    System.out.println("-----");
+
+    /*コンストラクタt2を生成、Taxiクラスに"2525"という文字列を代入。
+     Taxi("2525")より、"2525"はStringとして考えるので、
+  　　　　　　Taxi(String no){
+    　　　　System.out.println("Taxi(String no)");
+ 　　　　　　　 }より、
+  　　　　　　Taxi("2525"){
+    　　　　System.out.println("Taxi(2525)");
+ 　　　　　　　　}より、Taxi(2525)が表示される。 */
+    Taxi t2 = new Taxi("2525");
+  }
+}</code></pre><p>まとめると、</p><pre><code>//プログラム3まとめ
+
+class DriveTaxi{
+  public static void main(String[] args){
+　　　　　　　　//"Car()"と表示
+    Car c = new Car();
+
+    //"-----"と表示
+    System.out.println("-----");
+
+    //"Car(2525)"と表示
+　　　　　　　　//"Taxi(2525)"　と表示
+    Taxi t1 = new Taxi(2525);
+
+    //"-----"と表示
+    System.out.println("-----");
+
+    //"Car(9999)"が表示
+　　　　　　　　//"Taxi(9999)"が表示
+    //"Taxi()"が表示
+    　Taxi t0 = new Taxi();
+
+    //"-----"が表示
+    System.out.println("-----");
+
+    //"Taxi(2525)"が表示
+    Taxi t2 = new Taxi("2525");
+  }
+}</code></pre><p>よって、コンパイルはおそらく</p><pre><code>//コンパイル実行
+
+　　　　　　　　Car()
+　　　　　　　　-----
+　　　　　　　　Car(2525)
+　　　　　　　　Taxi(2525)
+　　　　　　　　-----
+　　　　　　　　Car(9999)
+　　　　　　　　Taxi(9999)
+　　　　　　　　Taxi()
+　　　　　　　　-----
+　　　　　　　　Taxi(2525)</code></pre><p>でしょうか・・・？？</p><h3>▶️回答2</h3><p>それぞれのコンストラクタを呼び代した時に、どのような順番で呼び出されるかを終えるかがポイントになる。</p><pre><code>//コンパイル実行
+
+　　　　　　　　Car()
+　　　　　　　　-----
+　　　　　　　　Car(int no)
+　　　　　　　　Taxi(int no)
+　　　　　　　　-----
+　　　　　　　　Car(int no)
+　　　　　　　　Taxi(int no)
+　　　　　　　　Taxi()
+　　　　　　　　-----
+    Car()
+　　　　　　　　Taxi(String no)</code></pre><p>super(no);<br>引数2525をスーパークラスに渡すこと。</p><p>this(9999);<br>そのクラス内のTaxi(int no)が再度呼び出されることになる。<br>super(9999);<br>System・・・・</p><p><strong>今回重要だったのは、<br>最初にthis (~)やsuper（~）がない場合は、</strong></p><p><strong>「super();」が自動で呼び出されるという動きになる！！<br>→ Car()が表示されることになる。<br></strong>今日はここまで！！</p><h2>●名言</h2><p>私は自分が死ぬ覚悟ならある。 しかし、私に人を殺す覚悟をさせる大義はどこにもない。 「眼には眼を」で行けば、しまいには全世界が盲目になってしまう。 国の偉大さ、道徳的発展は、その国における動物の扱い方で判る。</p><p>プーチンさん、犬の扱い方うまかったのになぁ。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

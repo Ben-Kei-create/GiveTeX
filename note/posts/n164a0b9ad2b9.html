@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>013_!T41　~Java入門①~（2023-07-06） | NingentteWinner</title>
+<meta name="description" content="Introduction 普段は、基本情報技術者試験のための勉強をしています。 今回は「情報セキュリティ」についての勉強をします。 主に、「いちばんやさしい」技術者に向けての対策本を参考にしております。ぜひよかったら、お">
+<meta property="og:title" content="013_!T41　~Java入門①~（2023-07-06） | NingentteWinner">
+<meta property="og:description" content="Introduction 普段は、基本情報技術者試験のための勉強をしています。 今回は「情報セキュリティ」についての勉強をします。 主に、「いちばんやさしい」技術者に向けての対策本を参考にしております。ぜひよかったら、お">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n164a0b9ad2b9.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n164a0b9ad2b9">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=勉強記録">勉強記録</a><a href="/note/?tag=プログラミング初心者">プログラミング初心者</a><a href="/note/?tag=java">java</a><a href="/note/?tag=基本情報技術者">基本情報技術者</a><a href="/note/?tag=java入門">java入門</a></div>
+      <h1>013_!T41　~Java入門①~（2023-07-06）</h1>
+      <p class="nb-meta"><time datetime="2026-11-05">2026.11.05</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>Introduction</h2><p>普段は、基本情報技術者試験のための勉強をしています。<br></p><h3>今回は「情報セキュリティ」についての勉強をします。</h3><p>主に、「いちばんやさしい」技術者に向けての対策本を参考にしております。ぜひよかったら、お手元にどうぞ。全然関係はないのですが、作者の地元が一緒なので、こちらが勝手に親近感が湧いているというだけです。ただ、参考書としてのレベルは他のものと比較してもかなり読みやすく、そしてベストセラーですので、実績もありとても良本です。</p><p class="note-embed"><a href="https://amzn.to/3XH90wD" target="_blank" rel="noopener">🔗 リンク：https://amzn.to/3XH90wD</a></p><h2>Main</h2><h3>初めての出力</h3><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</code></pre><p>「Hello World」と出力されます。</p><p>複数の言葉を出力する場合、System.out.printlnを複数書けば大丈夫です。</p><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("MRich");
+    System.out.println("○○歳です");
+    System.out.println("映画が好きです");
+
+  }
+}</code></pre><p>コンパイルをした後の実行結果</p><pre><code>MRich
+○○歳です
+映画が好きです</code></pre><p>このように出力されます。<br>コンパイルとは、入力したプログラミングの内容を、Javaが読み取って解釈をすることです。</p><h3>計算をさせてみる</h3><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("MRich");
+    System.out.println("29歳です");
+    System.out.println("映画が好きです");
+    System.out.println("31 + 31の計算をします");
+    System.out.println(31 + 31);
+  }
+}
+</code></pre><p>この場合、実行結果はこうなります。</p><pre><code>MRich
+29歳です
+映画が好きです
+31 + 31の計算をします
+62</code></pre><p>つまり、""で囲まれた部分が出力されることになります。<strong>数式</strong>を使う場合は、""は要りません。</p><h3>変数を使ってみる</h3><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("MRich");
+    System.out.println("29歳です");
+    System.out.println("映画が好きです");
+    System.out.println("31 + 31の計算をします");
+    System.out.println(31 + 31);
+    int x;
+    x = 6;
+    System.out.println(x * x * 3.14);
+  }
+}</code></pre><h3>Javaの基礎知識</h3><p>Javaのプログラミング開発は<br>・ソースコードの作成<br>・コンパイル<br>・実行<br>で成り立ちます。</p><p><strong>ソースコードの作成<br></strong>public class ~のような記述で、Javaの文法で書いたもの。<br><br><strong>コンパイル<br></strong>ソースコードは、そのままでは実行できないので、ソースファイルを<strong>クラスファイル</strong>に書き換えます。この時の拡張子は、<strong>.class</strong>を使うことになっています。この中には、機械が読みやすくなった<strong>byte code（バイトコード）</strong>と呼ばれるものが詰まっています。<br>この<strong>バイトコードは、1と0(2進数)でできています。<br></strong><br><strong>実行<br></strong>インタプリタというソフトウェアに対して、このバイトコードの変換と実行をお願いする。インタプリタは、内部に<strong>Java Virtual Machine</strong>という仕組みがあります。<br>略すと<strong>JVM</strong>と呼ばれますが、これがクラスファイル内の<strong>byte code（バイトコード）</strong>を読み取ってくれます。JVMがバイトコードを読み取りながらコンピュータの中央処理装置である<strong>CPU</strong>がわかりやすいように<strong>マシン語に</strong>翻訳してくれます。同時に、<strong>CPU</strong>は処理を実行させてくれます。</p><p>結果的に、このようにして実行することができるようになります。</p><h3>Javaの開発環境の整備</h3><p>バイトコードに変換、そしてCPUがわかりやすいようにマシン語に変換されます。よって、バイトコードに変換してくれる<strong>コンパイラ</strong>とマシン語に変換してくれる<strong>JVM</strong>は自分のコンピュータにダウンロードとインストールする必要があります。</p><h3>プログラムの骨格</h3><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("RPG: スッキリ魔王征伐");
+    System.out.println("Ver.0.1 by 湊");
+    System.out.println("＜ただいま鋭意学習・制作中＞");
+    System.out.println("プログラムを終了します");
+  }
+}</code></pre><p>この中で、<br>以下は<strong>クラスブロック</strong>と呼ばれます。</p><pre><code>  public static void main(String[] args) {
+
+
+
+
+
+  }</code></pre><p>また、このクラスブロックの中を<strong>メソッドブロック</strong>と呼びます。<br><strong>メソッドブロック</strong>は、私たちが命令や指示をする場所になります。</p><pre><code>    System.out.println("RPG: スッキリ魔王征伐");
+    System.out.println("Ver.0.1 by 湊");
+    System.out.println("＜ただいま鋭意学習・制作中＞");
+    System.out.println("プログラムを終了します");</code></pre><p>ここで、Mainは、<strong>クラス名</strong>になります。</p><pre><code>public class Main {
+
+}</code></pre><h3>意識すること</h3><p>・正確に記述すること<br>・ブロックを開いてすぐに閉じる癖をつける<br>・読みやすいコード作りを心がける</p><h3>どのように読みやすいコードとは</h3><p>・インデント<br>・コメント</p><p><strong>インデント<br></strong>ブロックの開始と終了では正確に字下げを行い、括弧の対応とブロックの多重構造の見通しをよくすることが必要です。<br><strong>コメント<br></strong>さらに読みやすくするために、ソースコード中に解説文を書き込むことができます。</p><pre><code>// 単一行のコメントを入れる場合はこの形　　　</code></pre><pre><code>/*　　　
+複数行のコメントを入れる場合はこの形　　　
+複数行のコメントを入れる場合はこの形　　　
+複数行のコメントを入れる場合はこの形　　　
+複数行のコメントを入れる場合はこの形　　　
+*/</code></pre><h3>メソッドブロックについて</h3><p>メソッドブロックの中についてです。</p><p><strong>メソッドブロック</strong>は、私たちが命令や指示をする場所になります。</p><pre><code>  public static void main(String[] args) {
+
+
+/　この中に、文章（statement）が入ります。 /
+
+
+  }</code></pre><p>では、この部分には<strong>mainメソッド</strong>と呼ばれるものが入っています。</p><p>では、このmainメソッドのブロックの中に書いていく<strong>文（statement）</strong>について考えていきます。</p><h3>変数宣言の文</h3><p><strong>変数とは、データを格納（しまう）ためにコンピュータ内部に準備する箱のようなものです。<br></strong>この箱を用意する理由は、この変数を準備することで文字列や数値などをとても簡単に扱うことができたり、効率的に開発をすることができるようになります。</p><p>変数は、コンピュータの中のメモリにある区画です。</p><pre><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("変数を宣言してみる");
+    int age = 29;
+    System.out.println("私の年齢は" + age + "です。");
+  }
+}</code></pre><p>コンパイル後に実行すると以下のようになります。</p><pre><code>変数を宣言してみる
+私の年齢は29です。</code></pre><p>では、どこで宣言しているのかというと、</p><pre><code>int age = 29;</code></pre><p>という部分です。<br>ここで、intは<strong>型</strong>といいます。箱の特徴みたいなものです。<br><strong>型</strong>を指定した後、箱の<strong>名前</strong>を決めます。なるべく、箱の名前で中身に何が入っているかが分かるように書くべきです。</p><p>よって、<strong>型　箱の名前;<br></strong>という書き方をします。</p><p><strong>型は、変数に入れることができるデータの種類</strong>です。<br>int型は、<strong>整数型</strong>です。整数を表すことができます。<br>他にはどんな型があるのでしょうか。</p><h3>データ型</h3><p>データ型はdata typeと呼ばれます。<br>代表的なものは9つあります。</p><p><strong>整数<br>byte<br>short<br>int<br>long</strong></p><p><strong>小数<br>float<br>double</strong></p><p><strong>真偽値<br>boolean</strong></p><p><strong>文字<br>char</strong></p><p><strong>文字列<br>String</strong></p><h3>整数型（byte,short,int,long)</h3><p>では、この型はどんな特徴があるのでしょうか。</p><p>占いのアプリを作りました！</p><pre><code>public class Main {
+    public static void main (String args[]) {
+        System.out.println("ようこそ占いの館へ");
+        System.out.println("あなたの名前を入力してください");
+        String name = new java.util.Scanner(System.in).nextLine();
+        System.out.println("あなたの年齢を入力してください");
+        String ageString = new java.util.Scanner(System.in).nextLine();
+        int age = Integer.parseInt(ageString);
+        int fortune = new java.util.Random().nextInt(4);
+        fortune++;
+        System.out.println("占いの結果が出ました！");
+        System.out.println(age + "歳の" + name + "さん、あなたの運気は" + fortune + "です");
+        System.out.println("1:大吉, 2:中吉, 3:小吉, 4:凶");
+    }
+}</code></pre><h2>notes</h2><h3><br></h3><h2>Exercise</h2><h3>3-1</h3><p>次の日本語で記載された条件式を記述せよ。<br>①変数のweightの値が60に等しい。</p><pre><code>int weight == 60;</code></pre><p>②変数age1とage2の合計を2倍したものが60を越えている。</p><pre><code>(age1 + age2)*2 &gt; 60; </code></pre><p>③変数ageが奇数である。</p><pre><code>age / 2 != 0;</code></pre><p>④変数nameの中身の文字列が「湊」と等しい。</p><pre><code>String name equals.("湊");</code></pre><h3>3-2</h3><p>A〜Fのうち、適切なものを選びなさい。<br>A cost = 300*1.05<br>B 3<br>C age != 30<br>D true<br>E b + 5 &lt; 20<br>F isNumeric = true</p><p>A　==となっていない。<br>B　何が3なのか分からない。<br>C　正しい。<br>D　何が正しいのか分からない。<br>E　正しい。<br>F　==となっていない。</p><h3>3-3</h3><p>ごはんプログラムを作成しなさい。</p><pre><code>public class Main {
+    public static void main (String args[]) {
+        int isHungry;
+        isHungry = 1;
+        String food = "banana";
+        System.out.println("こんにちは");
+        if (isHungry == 0){
+            System.out.println("お腹がいっぱいです");
+        } else {
+            System.out.println("はらぺこです");
+            System.out.println(food + "をいただきます。");
+        }
+            System.out.println("ごちそうさまでした");
+    }
+}</code></pre><p>結果は</p><pre><code>こんにちは
+はらぺこです
+bananaをいただきます。
+ごちそうさまでした</code></pre><h3>3-4</h3><p>どこが間違っているか。</p><pre><code>public class Main {
+    public static void main (String args[]) {
+        boolean tenki = false;
+        if (tenki == true){
+            System.out.println("洗濯をします");
+            System.out.println("散歩にいきます");
+        } else 
+            System.out.println("DVDを見ます");
+            System.out.println("寝ます");
+        }
+    }
+}</code></pre><h3>3-5</h3><p>swich文を作りなさい。</p><pre><code>public class Main {
+    public static void main (String args[]) {
+            System.out.print("[メニュー]1:検索,2:登録,3:削除,4:変更&gt;");
+            int selected = new java.util.Scanner(System.in).nextInt();
+            switch (selected) {
+                case 1:
+                    System.out.print("検索します");
+                break;
+                case 2:
+                    System.out.print("登録します");
+                break;
+                case 3:
+                    System.out.print("削除します");
+                break;
+                case 4:
+                    System.out.print("変更します");
+                break;
+            }
+    }
+}</code></pre><h3>3-6</h3><p>数あてゲームを作りなさい。</p><pre><code>public class Main {
+    public static void main (String args[]) {
+            System.out.print("【数当てゲーム】");
+            int ans = new java.util.Random().nextInt(10);
+            for (int i = 1; i &lt;= 5; i++) {
+                System.out.print("0〜9の数字を入力してください");
+                int num = new java.util.Scanner(System.in).nextInt();
+                   if (num == ans) {
+                       System.out.print("アタリ！");
+                   } else {
+                       System.out.print("違います");
+                   }
+            }
+        System.out.print("ゲームを終了します");
+    }
+}</code></pre><h3>3-7</h3><pre><code>public class Main {
+    public static void main (String args[]) {
+        int[] points = new int[4];
+        double[] weights = new double[5];
+        boolean[] answers = new boolean[3];
+        String[] names = new names[3];
+    }
+}</code></pre><pre><code>public class Calc {
+  public static void main(String[] args) {
+    int a = 10; int b = 2;
+    int total = CalcLogic.plus(a, b);
+    int delta = CalcLogic.minus(a, b);
+    System.out.println("足すと" + total + "、引くと" + delta);
+  }
+}
+</code></pre><pre><code>public class CalcLogic {
+    
+  public static int plus(int a, int b) {
+    return (a + b);
+  }
+  
+  public static int minus(int a, int b) {
+    return (a - b);
+  }
+  
+}</code></pre><pre><code>public class Main {
+	
+	public static void main(String[] args) throws Exception {
+		doWarusa();
+		doTogame();
+		callDeae();
+		showMondokoro();
+	}
+	
+	public static void doWarusa() {
+		System.out.println("きなこでござる。食えませんがの。");
+	}
+	
+	public static void doTogame() {
+		System.out.println("この老いぼれの目は誤魔化せんぞ。");
+	}
+
+	public static void callDeae() {
+		System.out.println("ええい、こしゃくな。曲者だ。であえい！！");
+	}
+
+	public static void showMondokoro() throws Exception {
+		System.out.println("飛車さん、角さん。もう良いでしょう。");
+		System.out.println("この紋所が目に入らぬか！");
+		doTogame();
+	}
+	
+}</code></pre><pre><code>public static void main(String[] args){
+    
+    public class Cleric {
+            String name;
+            int hp = 50;
+            final int maxhp = 50;
+            int mp = 10;
+            final int maxmp = 10;
+        
+        public void selfAid() {
+        	this.mp -= 5;
+        	this.hp = maxhp;
+        }
+            
+        public void pray(int sec) {
+            int i = new java.util.Random().nextInt(2);
+            this.mp += sec + i;
+            return this.mp;
+        }
+        
+    }
+}</code></pre><h2>News</h2><p>最近、「君たちはどう生きるか」という映画を観ました。そもそも、自分が知ったのは、この本の漫画版が</p><p class="note-embed"><a href="https://amzn.to/46WHAac" target="_blank" rel="noopener">🔗 リンク：https://amzn.to/46WHAac</a></p><p class="note-embed"><a href="https://amzn.to/44qTuY6" target="_blank" rel="noopener">🔗 リンク：https://amzn.to/44qTuY6</a></p><h2>Index</h2><p>過去のnoteです。もし観ていただけると幸いです。<br>基本情報技術者対策として勉強をがんばって続けています。</p><p><a href="/note/posts/n61ef8bfea3c6.html">https://note.com/benkein/n/n61ef8bfea3c6</a></p><p><a href="/note/posts/n54e1306cd6ed.html">https://note.com/benkein/n/n54e1306cd6ed</a></p><p><a href="/note/posts/nb3b2517fbd48.html">https://note.com/benkein/n/nb3b2517fbd48</a></p><p><a href="/note/posts/nd76d2427e43f.html">https://note.com/benkein/n/nd76d2427e43f</a></p><p><a href="/note/posts/nb7c880a1d16a.html">https://note.com/benkein/n/nb7c880a1d16a</a></p><p><a href="/note/posts/nd55dbfadd018.html">https://note.com/benkein/n/nd55dbfadd018</a></p><p><strong>ここまで見てくださり、ありがとうございました。</strong></p><hr><p>【続き】整数型の特徴を整理する</p><p>本文の途中で「整数型（byte, short, int, long）では、この型はどんな特徴があるのでしょうか。」と問いかけたままになっていたので、ここで整理します。</p><p>・byte：-128〜127まで、1バイト。とても小さい整数用。<br>・short：-32,768〜32,767まで、2バイト。byteより少し大きい整数用。<br>・int：約-21億〜約21億まで、4バイト。ふだんの整数はまずこれ。<br>・long：約-922京〜約922京まで、8バイト。とても大きな整数用。書くときは数字のあとに L を付けます。</p><p>選び方の目安はシンプルです。迷ったら int から始める。年齢や人数、点数のような身近な数は int で十分です。byte や short は、メモリを節約したい場面や、範囲がはっきり決まっている場面で使うものだと覚えておけば大丈夫です。</p><p>【まとめ】今回の①で学んだこと</p><p>・System.out.println で文字や計算結果を出力する<br>・"" で囲んだものはそのまま文字として出て、囲まない数式は計算される<br>・変数は「型 箱の名前;」で宣言して、データを入れる箱として使う<br>・プログラムは「ソースコードの作成→コンパイル→実行」の流れで動く<br>・メソッドの骨格と、読みやすいコードのためのインデントとコメント</p><p>占いのアプリや数あてゲーム、ごはんプログラムのように、出力・変数・条件分岐・繰り返しを組み合わせれば、もう小さなプログラムが作れます。①はここでいったん完結です。次に進むときは、実践編の練習問題で手を動かしながら、型とメソッドの使い方を確かめていくのがおすすめです。</p><p>※この記事は、HALが NingentteWinner に代わって記載しました。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

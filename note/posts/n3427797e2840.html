@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>IT-33-インフラ基礎- | NingentteWinner</title>
+<meta name="description" content="・インターネットの公開に必要なモノ ①IPアドレス、ドメイン（インターネット上の住所） ②Webサーバー（インターネット上に公開） ・IPアドレス IPアドレス （Internet Protocol address） イ">
+<meta property="og:title" content="IT-33-インフラ基礎- | NingentteWinner">
+<meta property="og:description" content="・インターネットの公開に必要なモノ ①IPアドレス、ドメイン（インターネット上の住所） ②Webサーバー（インターネット上に公開） ・IPアドレス IPアドレス （Internet Protocol address） イ">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n3427797e2840.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n3427797e2840">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=勉強">勉強</a><a href="/note/?tag=プログラム">プログラム</a><a href="/note/?tag=コンピュータ">コンピュータ</a><a href="/note/?tag=ソフトウェア">ソフトウェア</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=アドレス">アドレス</a></div>
+      <h1>IT-33-インフラ基礎-</h1>
+      <p class="nb-meta"><time datetime="2023-06-12">2023.06.12</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h3>・インターネットの公開に必要なモノ</h3><p><strong>①IPアドレス、ドメイン（インターネット上の住所）<br>②Webサーバー（インターネット上に公開）</strong></p><h3>・IPアドレス</h3><p><strong>IPアドレス</strong>（Internet Protocol address）<br>インターネット接続中のコンピュータを識別する番号のことで、<br>インターネット上の住所のこと。</p><p>データのやり取りは、IPアドレスを使って行われる。</p><h3>・ドメイン</h3><p><strong>ドメイン</strong>（domain）<br>IPアドレスをわかりやすい名前に<strong>変換したもの</strong>です。<br>「xxxxx.com」や「xxxxx.co.jp」で表される。<br><strong>ドメインを変換するシステム</strong></p><p>人間がわかりやすい名前にしただけなので、<br>コンピュータ同士の接続には<strong>IPアドレスが絶対に必要！</strong><br><strong>ドメイン名をIPアドレスに変換する仕組み</strong>を、<br><strong>DNS</strong>（Domain Name System）といいます。</p><h3>・PCとサーバーの違い</h3><p>手元にあるPCも、サーバーとしての機能を持てる。<br>ただし、<strong>パソコン（Personal Computer）</strong>は、<br><strong>個人が使うことを前提</strong>として作られています。</p><p>一方<strong>サーバー</strong>は、<strong>大勢の人が使うことを前提</strong>としているため、<br>安定してサービスを提供できるように<strong>耐久性を上げる工夫が施されている。</strong><br>たとえば、突然の停電でも<strong>電力を供給できる装置（無停電電源装置）</strong>や、ディスクが故障してもサービスを継続できる<strong>複数台のディスク構成</strong>などが準備されています。</p><h3>・サーバーの種類</h3><ul><li><p>物理サーバー</p></li><li><p>仮想サーバー（クラウド☁️）</p></li></ul><p>物理サーバーでは、<br>実体のハードウェア1台に1つのサーバーを構築します。<br><strong>複数のサーバーが必要なときは、台数分のハードウェアを準備する必要がある。<br></strong><br>仮想（クラウド☁️）サーバーでは、<br><strong>実体のハードウェア内に複数のサーバーを構築できます。</strong><br>利用者は、複数のサーバー環境を切り替えて使ったり、<br>サーバー環境を意識せずに利用できます。<br><br>仮想化技術を用いたソフトウェアで有名なのは<strong>Vagrant</strong>などです。Vagrantは、仮想マシン（VM）環境を単一のワークフローで構築、管理できるツールです。<br>ハイパーバイザで動作するローカルVMを構築する場合でも、<br>クラウドVMを構築する場合でも、Vagrantが力を発揮します。</p><p class="note-embed"><a href="https://amzn.to/3p0vOKQ" target="_blank" rel="noopener">🔗 リンク：https://amzn.to/3p0vOKQ</a></p><p>他にも、Amazonが提供するAWSには、cloud9という環境があります。これも、仮想サーバーと呼ぶことができます。</p><h3>・OS</h3><p><strong>OS</strong>（Operating System）<br>コンピュータを動かすために必要不可欠な<strong>ソフトウェア</strong>です。<br><br>コンピュータの利用者（ユーザ）とコンピュータ、そして、アプリケーションの仲介を行っています。<br><br>ユーザがキーボードで入力した文字列を画面上に表示させたり、<br>アプリケーションで書いたプログラムを実行したりします。<br><strong>PCやサーバーは「体」だとすると、<br>OSは「脳」という重要な役割になります。</strong></p><h3>・ミドルウェア</h3><p><strong>ミドルウェア</strong>（<strong>Middle</strong>ware）<br><strong>OSとアプリケーションの中間</strong>に位置しOS上で動作する<strong>ソフトウェア</strong>です。<br><br>OSの機能を拡張したり、アプリケーションの共通機能や処理を提供します。<br>これによって、アプリケーションを作らなくても、<br>Webサービスやデータベースサービスなどの汎用的な機能を利用できます。</p><p>　　OS --------------------- <strong>ミドルウェア</strong> --------------- アプリケーション</p><p><strong>・ミドルウェアの種類</strong></p><p><strong>①Webサーバーソフト<br>②データベース管理ソフト<br>③メールサーバーソフト　</strong>などがあります。</p><p><strong>Webサーバーソフト<br>Webサービスの通信</strong>を行います。<br>ユーザのWebブラウザから送られてくるリクエストに対し、<br>HTMLや画像などWebページを構成するコンテンツを送信します。<br><strong>【例】Apache</strong>、IIS、<strong>Nginx</strong>など</p><p><strong>データベース管理ソフト<br>データの保存や検索</strong>を行います。<br>データを管理し、この<strong>データベースに送られたリクエストに対して、データの作成や更新、削除、データ返信の処理</strong>を行います。<br><strong>【例】MySQL</strong>、Postgres、<strong>Oracle</strong>など</p><p><strong>メールサーバーソフト<br>電子メールの受信や送信</strong>を行います。<br><strong>【例】Postfix</strong>、Sendmailなど</p><h3>・アプリケーション</h3><p>コンピュータで<strong>ユーザの業務や用途に応じて作成したプログラム</strong>です。<br><strong>OSは、コンピュータそのものの稼動に必要なソフトウェア</strong>です。<br><br>アプリケーションは、<br><strong>ユーザがコンピュータになんらかの処理をさせるため、任意で作成</strong>される。<br><br>アプリケーションは、システムを構成するパーツで、<br>様々なプログラム言語で記述されている。</p><p class="note-embed"><a href="/note/posts/n7bc778d9e5c9.html">📄 IT-31-基本情報技術者試験勉強-</a></p><p class="note-embed"><a href="/note/posts/n97871c5d2c26.html">📄 IT-32-基本情報技術者試験勉強-</a></p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

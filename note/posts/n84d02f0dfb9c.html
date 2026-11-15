@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>iT-15-[Java勉強🔥] | NingentteWinner</title>
+<meta name="description" content="Javaって、楽しい。 復習🔥 ・配列 配列は → new データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目">
+<meta property="og:title" content="iT-15-[Java勉強🔥] | NingentteWinner">
+<meta property="og:description" content="Javaって、楽しい。 復習🔥 ・配列 配列は → new データ型[] 配列名 = new データ型[要素数] int[] score = new int[3]; score[0] = 80; // scoreの０番目">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n84d02f0dfb9c.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n84d02f0dfb9c">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=プログラム">プログラム</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a></div>
+      <h1>iT-15-[Java勉強🔥]</h1>
+      <p class="nb-meta"><time datetime="2023-05-25">2023.05.25</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2> Javaって、楽しい。</h2><h2>復習🔥</h2><h3>・配列</h3><p>配列は　→　<strong>new</strong></p><pre><code>データ型[] 配列名　= new データ型[要素数]
+
+int[] score = new int[3];
+score[0] = 80;
+// scoreの０番目に、80を代入してください。　添字は、0からスタートすることに注意</code></pre><p>配列の初期化</p><pre><code>データ型[] 配列名　= { 値1, 値2, ・・・・}
+
+配列.length で、配列の要素数をGet</code></pre><pre><code>class Array {
+  public static void main(String args[]) {
+    int[] score = new int[3]
+    score[0] = 80;
+    score[1] = 100;
+    score[2] = 70;
+
+    String[] name = {"高木", "西山", "小梅"};
+
+    System.out.println(name[0] + "さん:" + score[0] + "点");
+    System.out.println(name[1] + "さん:" + score[1] + "点");
+    System.out.println(name[2] + "さん:" + score[2] + "点");
+
+    System.out.println("受験者数:" + score.length + "人です。");
+
+// score.lengthをすることで、その要素の数（要素数）を利用することができる！！いいね。
+  } 
+}</code></pre><p>多次元配列</p><pre><code>class MultiArray{
+  public static void main(String[] args){
+    int[][] allScore = new int[2][3];
+    allScore[0][0] = 80;
+    allScore[0][1] = 100;
+    allScore[0][2] = 75;
+    allScore[1][0] = 85;
+    allScore[1][1] = 95;
+    allScore[1][2] = 80;
+    
+    // 多次元配列の初期化
+    // int[][] allScore = { {10, 20, 30}, {40, 50, 60} };
+
+    System.out.println(allScore[0][0] + "点");
+    System.out.println(allScore[0][1] + "点");
+    System.out.println(allScore[0][2] + "点");
+    System.out.println(allScore[1][0] + "点");
+    System.out.println(allScore[1][1] + "点");
+    System.out.println(allScore[1][2] + "点");
+    
+    System.out.println("allScore.length：" + allScore.length);
+    System.out.println("allScore[0].length：" + allScore[0].length);
+  }
+}</code></pre><h3>・演算子</h3><p><strong>算術演算子</strong></p><pre><code>//割り算
+7 / 2 → 3
+//あまりの数
+7 % 2 → 1</code></pre><p><strong>代入、複合代入演算子</strong></p><pre><code>//a = a + bと同じ。
+a += b　
+//aにbを加えて、aに再度代入する。</code></pre><p><strong>インクリメント、デクリメント演算子</strong></p><pre><code>//a = a + 1;と同じ。
+a ++;
+a --;</code></pre><p>例</p><pre><code>class Operator {
+  public static void main(String[] args){
+    //コマンドラインから入力した文字列型を、int aとして宣言する
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+
+    System.out.println("a =" + a + "b =" + b );
+    System.out.println("a + b =" + (a + b));
+    System.out.println("a - b =" + (a - b));
+    System.out.println("a / b =" + (a / b));
+    System.out.println("a % b =" + (a % b));
+    System.out.println("a &gt;= 0 :" + (a &gt;= 0);
+    System.out.println("(a &gt;= 0) &amp;&amp; (b &gt;= 0):" + ((a &gt;= 0)&amp;&amp;(b &gt;= 0));
+    
+  }
+}</code></pre><p><strong>関係演算子<br></strong>trueかfalse</p><p><strong>論理演算子<br></strong>（a &gt;= 0）&amp;&amp; （b &gt;= 0）<br>→&amp;&amp;は「かつ」を表す。<br>→||は「もしくは」を表す。</p><pre><code>Integer.parseInt()
+//文字列型をint型に変換
+
+int a = Integer.parseInt(args[0]);
+//コマンドラインで入力した数を、上のargs[0]に代入することになる。</code></pre><h3>・基本データの型変換</h3><p>表現の幅が広い順〜狭い（自動で）<br><strong>double, float, long, int, short, byte</strong></p><pre><code>int　→ ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</code></pre><pre><code>double → ▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</code></pre><pre><code>d = i;
+//OK</code></pre><p>大きい箱を小さな箱にむりやり入れる（代入する）ためには、<br><strong>キャスト</strong>というものが必要だ。もしそういう時になったら、こう書く。</p><pre><code>i = (int)d;
+//OK</code></pre><p>キャストは、()内に、<br><strong>変換後のデータ型の名前を入れる必要がある。</strong></p><pre><code>class FukuKau {
+  public static void main(String[] args){
+    
+    int uniform = 1980;
+    double percent = 0.08;
+
+    System.out.println("服の値段が１着" + uniform + "円です。");
+    System.out.println("消費税が0.08％なので、合計金額は、" + (uniform * percent) + "円です。");
+    
+  }
+}</code></pre><p>→これだと、1980円のポロシャツがすんごく安くなってしまうなw w<br>→つまり、１倍に、0.08倍を加算する処理を書かなかった。</p><p>後に参考にしたコード</p><pre><code>class FukuKau {
+  public static void main(String[] args){
+    
+    int price = Integer.parseInt(args[0]);
+    double rate = 0.08;
+    int amount;
+
+    amount = (int)(price * (1 + rate))
+    System.out.println("税込金額は、" + amount + "円です。");
+    
+  }
+}</code></pre><p>なるほど！！<br>以下は、自分なりの解説です。</p><pre><code>class FukuKau {
+  public static void main(String[] args){
+    
+    //服のねだんを入力したらそれをargs[0]が引数となりpriceに代入してくれる。
+    int price = Integer.parseInt(args[0]);
+　　　　　　　　
+　　　　　　　　//０.０８は、浮動小数点数としてdoubleで宣言をし、値を代入しておく。
+    double rate = 0.08;
+
+　　　　　　　　//amountという整数型を宣言しておく。
+    int amount;
+
+　　　　　　　　/*amountに、税込金額の式を代入する。このとき、double型が64bit,int型が32bitなので、小きな
+　　　　　　　　　　　　箱に、大きな箱をむりやり入れることになる。そのため、てこ＝キャストを使う必要がある。
+　　　　　　　　　　　　よって、（int）で変換後のデータ型を入れamountに代入している。　　*/
+　　　　　　　　　　　　
+    amount = (int)(price * (1 + rate))
+    System.out.println("税込金額は、" + amount + "円です。");
+    
+  }
+}</code></pre><h3>・構造化プログラミング</h3><p>以下を組み合わせてプログラムをかくことを意識して書くと、プログラムがわかりやすくなる。</p><p><strong>①順次進行</strong></p><p>→|処理|→|処理|→|処理|→|処理|→|処理|→|処理|→|処理|→|処理|→|処理|→・・</p><p><strong>②分岐<br></strong>→|条件|→true→|処理|→<br>　　↓                            ↑<br>　　 |→ false→|処理|→ |</p><p><strong>③繰り返し<br></strong>→|条件|→|処理|→|更新！|→|条件|→|処理|→|更新！|→</p><p><strong>If文</strong></p><pre><code>if (条件式) {
+  処理１
+  } else {
+ 　　処理２
+　　　　}</code></pre><p>・どちらかの処理しか実行されない。<br>・else以降は、省略できる。<br>・処理が1つのときは、{}は書かなくて良い。</p><p>ポロシャツを3000円以上かうと、ディスカウントされるプログラムを作成してみる。<br>自分のコード</p><pre><code>class FukuKau2{
+  public static void main(String[] args){
+  
+    int price = Integer.parseInt(args[0]);
+    double rate = 0.08;
+    int discount, amount;
+
+　　　　　　　　amount = (int)(price * (1 + rate));
+
+    if(price &gt;= 3000){
+       discount = 300;
+       System.out.println("割引されるので、金額は"　+ (amount - discount) + "円");
+    
+    } else {
+       
+       System.out.println("割引はないので、" + amount + "円");
+    
+    }
+  }
+}</code></pre><pre><code>    if(price &gt;= 3000){
+       discount = 300;    
+    } else {
+       discount = 0;    
+    }</code></pre><h2>勉強🔥🔥</h2><h3>・else if文</h3><pre><code>    if(price &gt;= 3000){
+       discount = 300;    
+    } else {
+       discount = 0;    
+    }</code></pre><p>の拡張！！さらに条件式を入れる場合はこちら。</p><pre><code>    if(条件式1){
+       処理１;    
+    } else if (条件式2)
+       処理２;
+    } else {    
+       処理3;
+    }</code></pre><h3>・swich文</h3><pre><code>    swich(式){
+       
+       case1:
+       処理1
+       break1;
+     
+       case2:
+       処理2
+       break2;
+ 
+       case3:
+       処理3
+       break3;
+    
+    }</code></pre><p>・式に入るのは、byte, short, int, char型である。<br>・式の値によって、<strong>処理の開始位置が決まる！！<br></strong>・breakは何かというと、　　<strong>{　}を抜けます！</strong>という意味。</p><h3>・while文</h3><pre><code>    while(条件式){
+       処理
+       case1:
+       処理1
+       break1;
+     
+       case2:
+       処理2
+       break2;
+ 
+       case3:
+       処理3
+       break3;
+    
+    }</code></pre><h2>問題🔥🔥🔥</h2><h3>・１問</h3><p>面積と高さ・幅・面積の表示をしなさい。</p><pre><code>class Triangle{
+  public static void main(String[] args){
+    int height = Integer.parseInt(args[0]);
+    int width = Integer.parseInt(args[1]);
+    int area;
+    
+    //面積の計算
+    
+    //高さ・幅・面積の表示
+
+  }
+}</code></pre><p>さあて、考えよう。<br>まず、Integer.parseInt()を使われているから、入力した数がそのまま面積を求められるようになっているはずだ。<br>だから、高さ✖️幅(横)が、面積の計算になるので・・・<br>とりあえず、面積をareaでint型（整数型）で宣言されているから、それを使うのだな。</p><p>よし！多分これだ。<br>以下、自分なりに考えたコード</p><pre><code>class Triangle{
+  public static void main(String[] args){
+    int height = Integer.parseInt(args[0]);
+    int width = Integer.parseInt(args[1]);
+    int area;
+    
+    //面積の計算
+　　　　　　　　area = ((height * width) / 2);
+    
+    //高さ・幅・面積の表示
+    System.out.println("高さ＝"　+　height　+　",幅＝"　+　width　+　",面積＝"　+　area);
+  }
+}</code></pre><p>これでどうでしょう！</p><p>回答コード</p><pre><code>class Triangle{
+  public static void main(String[] args){
+    int height = Integer.parseInt(args[0]);
+    int width = Integer.parseInt(args[1]);
+    int area;
+    
+    //面積の計算
+    area = height * width / 2;
+    
+    //高さ・幅・面積の表示
+    System.out.println("高さ：" + height);
+    System.out.println("幅　：" + width);
+    System.out.println("面積：" + area);
+  }
+}</code></pre><p>概ねあっていたものの、</p><pre><code>    //面積の計算
+    area = height * width / 2;</code></pre><p>これでいいのか。<br>（）が必要なのではないかと思ったが、確かにどの順番において計算してもできるし、OKだな。</p><h3>・２問</h3><p>面積を小数点第２位まで表示するようにしてください。<br>今のままだと、コンパイルエラーは出ないものの、<br>例えば半径r＝　１０として入力すると、<br>面積が314.1592まで表示されることになるらしい。<br>では、これを<strong>小数点第２位まで表示</strong>するということは、<br>コンパイルしたら 面積が314.15までになるということだ。</p><pre><code>class Sample003{
+  public static void main(String[] args){
+    int radius = 15;
+    double pi = 3.141592;
+    double area;
+    double minus;
+    
+    area = radius * radius * pi;
+    
+    //小数点第３位以降を切り捨て
+    
+    System.out.println("半径：" + radius);
+    System.out.println("面積：" + area);
+  }
+}</code></pre><p>考えましたが、頓挫しました。</p><pre><code>    //小数点第３位以降を切り捨て
+　　　　　　　　minus = area % 0.1;
+    area = area - minus;</code></pre><p>こう考えましたが、うまくいかず。<br>小数点第二以下を、元の計算式から引いたら、みんな0になると思ったんです。でも、結局0が出力されるので、切り捨て・・・ん？？となってしまう。</p><p>参考コード</p><pre><code>class Circle{
+  public static void main(String[] args){
+    int radius = Integer.parseInt(args[0]);
+    double pi = 3.141592;
+    double area;
+    
+    area = radius * radius * pi;
+    
+    //小数点第３位以降を切り捨て
+    area = (int)(area * 100);
+    area = area / 100;
+    
+    System.out.println("半径：" + radius);
+    System.out.println("面積：" + area);
+  }
+}</code></pre><pre><code>    //小数点第３位以降を切り捨て
+    area = (int)(area * 100);
+    area = area / 100;</code></pre><p>ああ！！わざと桁数を大きめにとって無理やりキャストで落とし込み、その上で最後に１００を割る。そうすると、桁数が減るのか・・・</p><p>頭いい〜〜！！！</p><p><strong>キャストは、小数点以下を切り捨てる処理をする</strong>ので、これが可能になるのか。</p><h3>・３問</h3><p>二つの数字を入れた時に、大きい方の値を表示させなさい。</p><pre><code>class Comparison{
+  public static void main(String[] args){
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    
+    //大きいほうの値を表示
+
+  }
+}
+</code></pre><p>３つのパターンで、if文を作ってみました。</p><pre><code>class Comparison{
+  public static void main(String[] args){
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    
+    //大きいほうの値を表示
+　　　　　　　　if (a &gt; b) {
+      System.out.println("大きいのは" + a + "です。");
+    } else if (a &lt; b) {
+      System.out.println("小さいのは" + b + "です。");
+　　　　　　　　} else {
+      System.out.println("２つの数は同じです。")
+  }
+}</code></pre><p>参考コード</p><pre><code>class Comparison{
+  public static void main(String[] args){
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    
+    //大きい方の値を表示
+    if( a &gt; b ){
+      System.out.println("大きいのは" + a + "です");
+    } else if( b &gt; a ){
+      System.out.println("大きいのは" + b + "です");
+    } else {
+      System.out.println("同じです");
+    }
+  }
+}</code></pre><p>失敗した！大きいのを表示するのに、「小さいのは・・・」という書き方をしている。</p><pre><code>    if( a &gt; b ){
+      System.out.println("大きいのは" + a + "です");
+    } else if( b &gt; a ){
+      System.out.println("大きいのは" + b + "です");
+    } else {
+      System.out.println("同じです");
+    }</code></pre><p>if文を使うことはあっていたので、とりあえず、修正が必要だ。</p><h3>・４問</h3><p>メッセージを１０回表示させるプログラムを作りなさい。</p><pre><code>class LoopMessage{
+  public static void main(String[] args){
+    //メッセージを10回表示（while文）
+
+  }
+}</code></pre><p>よし、やってみる・・・・</p><pre><code>class LoopMessage{
+  public static void main(String[] args){
+    int i = 1;
+    //メッセージを10回表示（while文）
+    while(i &lt;= 10){
+      System.out.println(i +"回目：フリーラーニングを広げたいぜ！");
+      i ++;
+    }
+  }
+}</code></pre><p>どうだ！</p><pre><code>1回目：フリーラーニングを広げたいぜ！
+2回目：フリーラーニングを広げたいぜ！
+3回目：フリーラーニングを広げたいぜ！
+4回目：フリーラーニングを広げたいぜ！
+5回目：フリーラーニングを広げたいぜ！
+6回目：フリーラーニングを広げたいぜ！
+7回目：フリーラーニングを広げたいぜ！
+8回目：フリーラーニングを広げたいぜ！
+9回目：フリーラーニングを広げたいぜ！
+10回目：フリーラーニングを広げたいぜ！</code></pre><p>出た〜！！よかった。</p><h3>・５問</h3><p>コマンドラインから入力した文字列を、そのまま表示できるプログラムをfor文を使って表示しなさい。</p><pre><code>class Echo{
+  public static void main(String[] args){
+    //コマンドラインの入力文字列を表示（for文）
+
+  }
+}</code></pre><pre><code>&gt;Java Echo aa bb cc</code></pre><p>と入れたら、そのまま aa bb ccというものが出てくるはず。</p><pre><code>class Echo{
+  public static void main(String[] args){
+    
+    //コマンドラインの入力文字列を表示（for文）
+    for (int = i; i &lt; ; i){
+    String moji = Integer.parseInt(args[]);
+  
+}
+    Sysytem.out.println(moji);
+}</code></pre><p>だめだ・・・わからない。args[]を使えればなぁ・・・・。</p><p>参考コード</p><pre><code>class Echo{
+  public static void main(String[] args){
+    //コマンドラインの入力文字列を表示（for文）
+    for(int i = 0; i &lt; args.length; i++) {
+      System.out.println(args[i]);
+    }
+  }
+}</code></pre><p>うわ〜・・なるほど。</p><pre><code>   for(int i = 0; i &lt; args.length; i++) {</code></pre><p>まず宣言としてint i = 0;<br>条件として、args.lengthにすると、要素数になる。<br>これはつまり、私がコマンドラインに書いた要素の数になる。<br>この要素数よりも少ない場合はその要素（文字列）を表示させる。</p><p>例えばaa bb ccと打った場合。<br>args.lengthは3だ。まずi=0から始まるので、i=0,1,2までの３つが出力されることになる。よって、条件式はi &lt; args.lengthとするべきなのがわかった。<br>そして、その下の</p><pre><code>      System.out.println(args[i]);</code></pre><p>をした後に、i++;(インクリメント)をさせれば、i=0が1に変わり、1が２へと加算されていく。<br>そして、System.out・・・の部分も、引数にargs[i]とすることで、Strings args[]の配列からi=0から順に出力できるということなのか・・・すげー！！<br>納得。</p><p>よって、args[0]はaaだし、args[1]はbbだし、args[2]はccだ。<br>i=3になった時、args.length（要素数は3）となり、for文は機能しなくなる。<br>そのまま進むことになる。</p><p>ここまで！！</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

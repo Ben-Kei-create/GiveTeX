@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>016_~Java入門編１~　　!T41（2023-08-04） | NingentteWinner</title>
+<meta name="description" content="Javaのかきかた - プログラムでは、命令を使って、コンピュータに動作を指示します - System.out.println は、データを表示する命令です。この命令をメソッドと呼びます - カッコで指定するデータを「引">
+<meta property="og:title" content="016_~Java入門編１~　　!T41（2023-08-04） | NingentteWinner">
+<meta property="og:description" content="Javaのかきかた - プログラムでは、命令を使って、コンピュータに動作を指示します - System.out.println は、データを表示する命令です。この命令をメソッドと呼びます - カッコで指定するデータを「引">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/nb27c04cffec7.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="nb27c04cffec7">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=勉強記録">勉強記録</a><a href="/note/?tag=プログラミング初心者">プログラミング初心者</a><a href="/note/?tag=java">java</a><a href="/note/?tag=基本情報技術者">基本情報技術者</a><a href="/note/?tag=java入門">java入門</a></div>
+      <h1>016_~Java入門編１~　　!T41（2023-08-04）</h1>
+      <p class="nb-meta"><time datetime="2026-11-07">2026.11.07</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>Javaのかきかた</h2><p><strong><br>- プログラムでは、命令を使って、コンピュータに動作を指示します<br>- System.out.println は、データを表示する命令です。この命令をメソッドと呼びます<br>- カッコで指定するデータを「引数」と呼びます<br>- 表示する文字データをダブルクォーテーションで囲みます<br>- コードの行末に「;」か「}」</strong></p><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+    }
+}</code></pre><p>↑これで、「Hello world」と出力されます。</p><p><strong>Javaでは、この「println」のような命令を「メソッド」と呼んでいます。</strong><br><br>プログラミングでは、「println」のようなメソッドで、コンピュータに対して動作を指示していきます。「println」と書くと、文字を表示するのだなとJavaが理解して、そのとおり動いてくれるのです。</p><p>HTMLで表示する場合は、<br>printlnの中の文字の両端に、H1タグなどを入れることでOKです！</p><h2>Javaのまちがい</h2><p>以下のコードは、Systemの部分のSが小文字になっています。<br>このままでは、正しい処理ができません。</p><pre><code>public class Main {
+    public static void main(String[] args) {
+        system.out.println("Hello world");
+    }
+}</code></pre><p>このまま、コンパイル（読み込み、翻訳）を実行すると、このようなエラーが出てくることになります。</p><pre><code>Main.java:3: error: package system does not exist
+        system.out.println("Hello world");
+              ^
+1 error</code></pre><p>無理やりコンパイルをすると、エラーがどこで出ているのかを教えてくれま<br>す。</p><p><strong>-末尾のセミコロン忘れ。<br>- カッコやダブルクォーテーションが全角文字になっている。<br>- メソッドが、全て半角小文字で記述されていない。（× Println、　○ println）<br>- ただし、System.outの先頭は、大文字にする。<br>- 間違いがあるとエラーになる<br>- 実行時エラータブに、エラーメッセージが表示される</strong></p><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world");    // X
+        System.out.println("Hello world");    // o
+    }
+}</code></pre><h2>コメントをのこす</h2><p>コメントを使うと、コードのなかにメモを残したり、コードの一部を一時的に無効にしたりできます。コメントは、そのコードを人間が読んだ時に、わかりやすく説明をすることができるので、よく使います。</p><pre><code>/* Javaで練習
+    ここまでコメント */
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world");   // 表示する
+        // System.out.println("Hello world");
+    }
+}</code></pre><h2>数値と、文字列</h2><p>クォーテーションなしで式を記述すると、計算結果を求めることができます。</p><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println(100 + 30);
+    }
+}</code></pre><p>ダブルクオーテーションなしでprintlnをすると、130という答えが出力されます。この時の100や30は、<strong>数値</strong>として扱います。</p><p>逆に、</p><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+        System.out.println("100" + "30");
+
+    }
+}</code></pre><p>このように打つと、<br>10030という答えが出力されます。この場合は、<strong>数字</strong>として扱われます。<br>数字や、文字の場合は<strong>文字列</strong>とも呼ばれます。</p><h2>数値でけいさん</h2><p>掛け算は、「アスタリスク」を使って、割り算には、「スラッシュ」を使います。</p><pre><code>+：足し算
+-：引き算
+*：掛け算
+/：割り算</code></pre><p>このような記号を、<strong>演算子</strong>と呼びます。</p><p>式は、複数の演算子を使うことができます。複数の演算子がある場合は、左から順番に計算していきます。</p><pre><code>public class Main {
+    public static void main(String[] args) {
+        System.out.println(100 + 30 + 2);    // 132と出力されます。
+    }
+}</code></pre><h2>変数に、データを入れる</h2><p>プログラムで「変数」にデータを入れてみます。<br>変数は、データを入れておく入れ物で、<br>データを入れて、何度も使うことができます。</p><p><strong>- 変数：データの入れ物<br>- 変数名：入れ物の名前<br>- 変数名でデータを操作できる<br>- Java では、データ型(データの種類)ごとに変数を定義する</strong></p><p>変数を使うとき、最初にデータの種類を指定して宣言する必要があります。<br><br>String player = "勇者"; // 文字列データの変数<br>int number = 3; // 整数データの変数<br><br>Stringの頭文字は大文字にします。intは、すべて小文字です。<br>2回目以降、変数にデータを代入する時には、データの種類の指定は不要です。</p><pre><code>public class Main {
+    public static void main(String[] args) {
+        String greeting = "Hello world";
+        System.out.println(greeting);    // Hello world
+
+        int number = 30;
+        System.out.println(number);
+    }
+}</code></pre><p><strong>- 1 文字目 ：アルファベット、アンダーバー<br>- 2 文字目以降 ：アルファベット、アンダーバー、数字<br>- 大文字と小文字を区別する<br>- println などの命令をあらわすキーワードは使用できない<br><br>- 慣習として、日本語(全角)で書かない<br>- まずは、すべて小文字で変数名を付けよう</strong></p><p>また、Javaは、予約語(キーワード)と呼ばれる単語が決まっており、この予約語は変数名に利用できません。<br>例えば、「public」や「class」といった単語が予約語になっています。<br>- Javaの予約語(キーワード)<br><a href="https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89_%28Java%29" target="_blank" rel="noopener">https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89_%28Java%29</a></p><p>- 整数： 1, 2, 3, 10<br><br>- byte： 8ビット整数　-128から127までの整数<br>- short： 16ビット整数　-32768から32767<br>- int： 32ビット整数　-2147483648 から2147483647<br>- long：　64ビット整数　-9223372036854775808から9223372036854775807まで</p><p>- 実数： 3.3, 3.141592 Float<br>- float：32ビット単精度小数点<br>- double：64ビット倍精度小数点</p><h2>文字列をうけとる</h2><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);    // 120 -&gt; 120
+    }
+}</code></pre><p>入力する値によって、出力されるものが変わります。</p><h2>もし if</h2><p>もし、このような時、このような処理をしてほしいという場合に使います。</p><p>受け取った<strong>整数データが 10 だったら</strong>、Welcome と表示します。</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+
+        if (number == 10) {
+            System.out.println("Welcome");
+        }
+    }
+}</code></pre><pre><code>文字列・数値が一致しているか判定する関係演算子
+
+==  等しい。代入と区別する    a == b
+
+!=  等しくない  a != b</code></pre><pre><code>数値を大小を判定するる関係演算子
+
+&gt; 大なり    a &gt; b   aはbより大きい。範囲にbを含まない
+&lt; 小なり    a &lt; b   aはbより小さい。範囲にbを含まない
+&gt;= 以上     a &gt;= b  aはb以上。範囲にbを含める
+&lt;= 以下     a &lt;= b  aはb以下。範囲にbを含める
+
+18歳より大きい：    18歳は含まれない
+18歳以上：    18歳も含まれる</code></pre><h2>もし if そうでなければ</h2><p>条件が成立しなかった場合に、「Goodbye」と表示します</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else {
+            System.out.println("Goodbye");
+        }
+    }
+}</code></pre><p>さらに、変数 number が 10 より大きい場合、「Good morning」と表示します</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        System.out.println(number);
+
+        if (number == 10) {
+            System.out.println("Welcome");
+        } else if (number &gt; 10) {
+            System.out.println("Good morning");
+        } else {
+            System.out.println("Goodbye");
+        }
+    }
+}</code></pre><h2>文字列が合っているか判別</h2><p>受け取った文字列が Java だったら、Welcome と表示する</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String name = scan.next();
+        System.out.println("Hello " + name);
+
+        if (name.equals("Java")) {
+            System.out.println("Welcome");
+        }
+    }
+}</code></pre><h2>繰り返す</h2><pre><code>public class Main {
+    public static void main(String[] args) {
+        String greeting = "Hello paiza";
+
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(greeting);
+        }
+    }
+}</code></pre><p><strong>- 初期値 i = 0;<br>- 繰り返し条件 i &lt; 5;<br>- 変化分 i++</strong></p><pre><code>public class Main {
+    public static void main(String[] args) {
+        String greeting = "Hello paiza";
+
+        for (int i = 0; i &lt; 5; i++) {
+            System.out.println(greeting + ":" + i);
+        }
+    }
+}</code></pre><h2>複数のデータをうけとる</h2><p>ループ処理で Scanner オブジェクトを使うと、標準入力から複数のデータを受け取ることができます。</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+        System.out.println(count);
+
+        for (int i = 0; i &lt; count; i++) {
+            System.out.println("Hello paiza");
+        }
+    }
+}</code></pre><h2>複数のデータをわける</h2><p>for と if を組み合わせると、複数のデータに同じ処理を繰り返すことができます。</p><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+
+        for (int i = 0; i &lt; count; i++) {
+            int number = scan.nextInt();
+            System.out.println(number);
+        }
+      }
+}</code></pre><pre><code>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+
+        for (int i = 0; i &lt; count; i++) {
+            int number = scan.nextInt();
+            System.out.println(number);
+
+            if (number == 10) {
+                System.out.println(number + "は10に等しい");
+            } else if (number &gt; 10) {
+                System.out.println(number + "は10より大きい");
+            } else {
+                System.out.println(number + "は10未満");
+            }
+        }
+    }
+}</code></pre><h2>最後のプログラムを動かしてみよう</h2><p>最後のコードは、for と if を組み合わせた、編１の集大成のようなプログラムです。動きを追ってみましょう。<br>まず、最初に数字をひとつ受け取ります。これが「何回くり返すか」の回数（count）です。つぎに、for 文で count 回だけくり返し、そのたびに数字をひとつ受け取って、10 と比べています。<br>たとえば、最初に「3」と入力して、つぎに「5」「10」「20」と入力すると、こんなふうに出力されます。<br></p><pre><code>5
+5は10未満
+10
+10は10に等しい
+20
+20は10より大きい</code></pre><p>「入力を受け取る → 条件で分ける → 結果を表示する」という流れが、ひとつのプログラムになりました。ここまで来れば、もう立派なプログラムを書けています。<br></p><h2>読みながら気をつけたい小さなポイント</h2><p>編１を読み返して、つまずきやすいところを3つだけ補足しておきます。<br>ひとつめ。「文字列をうけとる」の見出しのコードは、じつは整数を受け取る nextInt() の例になっています。文字列を受け取るときは、のちの「文字列が合っているか判別」で使われている scan.next() や、1行まるごと受け取る scan.nextLine() を使います。数字を扱うか、文字を扱うかで、使うメソッドが変わるのですね。<br>ふたつめ。「"100" + "30"」が「10030」になるのは、ダブルクォーテーションで囲まれたものは、数字に見えても文字列として扱われるからです。計算ではなく、文字どうしがつながっている、と考えるとわかりやすいです。<br>みっつめ。関係演算子のところの「判定するる」は「判定する」のことです。読み替えていただければと思います。<br></p><h2>編１のまとめ</h2><p>編１で学んだことを、振り返ってみましょう。<br></p><ul><li><p>println で文字や計算結果を表示する</p></li><li><p>変数という「箱」にデータを入れて、何度も使う</p></li><li><p>byte・short・int・long、float・double など、データの種類（型）を使い分ける</p></li><li><p>Scanner でキーボードから入力を受け取る</p></li><li><p>if・else if・else で条件によって処理を分ける</p></li><li><p>for で同じ処理をくり返す</p></li><li><p>for と if を組み合わせて、複数のデータをまとめて処理する</p></li></ul><p>出力・変数・入力・条件分岐・繰り返し。この5つがそろえば、占いのプログラムや数あてのゲームのような、小さなアプリの土台はもう作れます。<br></p><h2>つぎは実践編へ</h2><p>手を動かして覚えるのが、いちばんの近道です。練習問題に取り組む「実践編」の下書きも残っているので、そちらはまた別の記事として取り上げていきます。編１の内容を手元で動かしながら、ぜひ試してみてください。<br>※この記事は、HALが NingentteWinner に代わって記載しました。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

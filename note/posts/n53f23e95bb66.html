@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<title>iT-18-[ほっと一息、Java☕︎] | NingentteWinner</title>
+<meta name="description" content="復習 ・オブジェクト指向 class NonObject{ public static void main(String[] args){ //データの代入 int[] score = {80, 100, 75}; St">
+<meta property="og:title" content="iT-18-[ほっと一息、Java☕︎] | NingentteWinner">
+<meta property="og:description" content="復習 ・オブジェクト指向 class NonObject{ public static void main(String[] args){ //データの代入 int[] score = {80, 100, 75}; St">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/note/posts/n53f23e95bb66.html">
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n53f23e95bb66">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=日記">日記</a><a href="/note/?tag=コード">コード</a><a href="/note/?tag=プログラム">プログラム</a><a href="/note/?tag=java">java</a><a href="/note/?tag=レベルアップしたいこと">レベルアップしたいこと</a><a href="/note/?tag=メソッド">メソッド</a><a href="/note/?tag=オブジェクト">オブジェクト</a></div>
+      <h1>iT-18-[ほっと一息、Java☕︎]</h1>
+      <p class="nb-meta"><time datetime="2023-05-26">2023.05.26</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<h2>復習</h2><h3>・オブジェクト指向</h3><pre><code>class NonObject{
+  public static void main(String[] args){
+    //データの代入
+    int[] score = {80, 100, 75};
+    String[] name = {"菅原", "村山", "寺島"};
+
+    //データの表示
+    for(int i = 0; i &lt; score.length; i++) {
+      System.out.println(name[i] + "さん：" + score[i] + "点");
+    }
+  }
+}</code></pre><p>というコード。</p><p>１回作ったコードは、更新（変更）することがほとんどである。<br>例えば、この要素数の中で、生徒が一人増えたとした。<br>もしくは、教科の数を増やしたいと考える。</p><pre><code>class NonObject{
+  public static void main(String[] args){
+    //データの代入
+    int[] score1 = {80, 100, 75, 90};
+    int[] score2 = {90, 80, 85, 70};
+
+    String[] name = {"菅原", "村山", "寺島"};
+    String[] name = {"数学", "英語"};
+
+    //データの表示
+    for(int i = 0; i &lt; score.length; i++) {
+      System.out.println(name[i] + "さん：" + score[i] + "点");
+    }
+  }
+}</code></pre><p>いちいち面倒だ。また、誰の、何の得点が何点かがわからない・・・。</p><p><strong>人ごとの点数がもう少しまとめて、管理しやすくできないか</strong>を考える必要があると考える。</p><p>Javaには、<strong>実行用のクラス</strong>と、<strong>設計図クラスの二つがある。</strong></p><p>クラス（設計図）<br>・<strong>属性→何のデータを持っているのか。<br></strong>（名前、教科、点数など）<br>・<strong>操作→何の処理ができるか。<br></strong>（点数を表示する）</p><p>→これによって、名前（菅原）英語（90）国語（80）<br>名前（佐藤）英語（50）国語（60）などというのをそのまま使える。</p><p>このような、クラスから作られる実体（モノ）を、<strong>object（オブジェクト）</strong>と呼ぶ。<br>このオブジェクトを中心にプログラムを作っていくことを、<strong>オブジェクト指向</strong>という。</p><h3>・メリット</h3><p>開発効率、保守性、メモリ効率、システム化など！！</p><p>クラス（設計図）<br>・<strong>属性→何のデータを持っているのか。→ 　プログラムの世界では、変数<br></strong>（名前、教科、点数など）<br>・<strong>操作→何の処理ができるか。→ 　プログラムの世界では、メソッド<br></strong>（点数を表示する）<br>これらの言い方がごっちゃにならないようにする。</p><h3>・変数の定義</h3><p>データ型　変数名；</p><p>例</p><pre><code>class Student{
+  //メンバ変数（属性）
+  String name;
+  int engScore;
+  int mathScore;
+以下はその下に続く</code></pre><h3>・メソッドの定義</h3><p>戻り値の型　メソッド名（引数リスト）{<br>（処理）<br>}</p><p>メソッドは、<strong>呼び出す側と、呼び出される側</strong>がある。</p><pre><code>  //メソッド（操作）
+  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  
+  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>・<strong>引数</strong>・・呼び出し元から受け取る値のこと。<br>・<strong>戻り値</strong>・・メソッドの処理の後に、呼び出しもとに返す値。<strong>return</strong>で指定することができる。<br>また、何も返さない場合は、<strong>void</strong>を記述する。</p><pre><code>  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }</code></pre><p>↑は、引数がないが、（）は書いておくことに注意しておく。</p><pre><code>  //データ型　変数名
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  </code></pre><p>↑は、引数がある。戻り値がない。</p><pre><code>  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>↑は、引数なし、戻り値ありのパターンある。</p><p>また、引数の中で定義した有効範囲は、そのブロックの中でしか使えないので、注意をする必要がある。</p><h3>・オブジェクトの使い方</h3><p>①オブジェクトを生成すること<br>②変数・メソッドを利用すること</p><p>①オブジェクトを生成すること<br><strong>クラス名　オブジェクト名　= new　クラス名（）;<br>Student stul = new Student( );</strong></p><p>new キーを使うと、メモリ上に新しく領域が確保される。配列でも出ました。</p><p>デフォルト初期値も入る。このように、プログラムにおいて、オブジェクトを作ることを、<strong>インスタンス化</strong>という。</p><p>②変数・メソッドを利用すること<br><strong>オブジェクト名.変数名<br>オブジェクト名.メソッド名（引数）<br>stul.name = "菅原";<br>stul.setScore(80,90);</strong></p><p>例</p><p>設計図</p><pre><code>class Student{
+  //メンバ変数（属性）
+  String name;
+  int engScore;
+  int mathScore;
+ 
+　　 //メソッド（操作）
+  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }
+  void setScore(int eng, int math){
+    engScore = eng;
+    mathScore = math;
+  }  
+  double getAvg(){
+    double avg = (engScore + mathScore) / 2.0;
+    return avg;
+  }
+}</code></pre><p>設計図をもとに、StuSampleクラスを動かしていく。</p><pre><code>class StuSample{
+  public static void main(String[] args){
+    Student stu1 = new Student();
+
+    stu1.name = "菅原";
+    stu1.setScore(90, 80);
+
+    stu1.display();    
+    System.out.println("平均" + stu1.getAvg() + "点");
+  }
+}</code></pre><h2>前回の演習問題</h2><p>ささ、今回は演習問題をやっていくぞ〜〜！！</p><hr><h3>・問題</h3><hr><p>・自動車を管理する設計図のクラスとして、Carクラスを定義する。Carクラスの持つメンバ変数とメソッドは以下の通りである。</p><p>さて、このCarクラスを利用する実行用クラスとして、DriveCarクラスを定義する。DriveCar.javaのコメントに合わせてコードを追加し、プログラムを完成させなさい。</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+
+    //c1のナンバーを2525に設定
+
+    //c1の速度を30に設定
+
+    //c1のナンバー、速度を表示
+
+n//c1の速度を0に設定
+
+    //c1のナンバー、速度を表示
+
+  }
+}
+</code></pre><hr><h3>・自分の思考</h3><hr><p>まず、</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+
+    //c1のナンバーを2525に設定
+
+    //c1の速度を30に設定
+
+    //c1のナンバー、速度を表示
+
+    //c1の速度を0に設定
+
+    //c1のナンバー、速度を表示
+
+  }
+}</code></pre><p>上から</p><pre><code>    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();</code></pre><p>△　Car();であっているか微妙・・・。</p><pre><code>    //c1のナンバーを2525に設定
+    c1.no = 2525;</code></pre><p>これはメソッドを利用している。</p><pre><code>    //c1の速度を30に設定
+　　　　　　　　c1.speed = 30;</code></pre><p>ナンバーと同じこと。（メソッドの利用）</p><pre><code>    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );</code></pre><p>△　no, speedだけでいいのか不安。</p><pre><code>    //c1の速度を0に設定
+　　　　　　　　c1.stop();</code></pre><p>△　これはそもそも何をやっているかわからんけど、voidなくてOK?</p><pre><code>    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );</code></pre><p>さっきと同じ書き方でも、その前に速度を０に設定しているので表示は異なるはず。</p><p>ということで、</p><pre><code>class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();
+
+    //c1のナンバーを2525に設定
+    c1.no = 2525;
+   
+　　　　　　 //c1の速度を30に設定
+　　　　　　　　c1.speed = 30;
+
+    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );
+
+    //c1の速度を0に設定
+　　　　　　　　c1.stop();
+
+    //c1のナンバー、速度を表示
+　　　　　　　　System.out.println("ナンバー:" + c1.no　　+ "速度:" + c1.speed );
+
+  }
+}</code></pre><p>どうでしょうかね。</p><hr><h3>・答え合わせ</h3><hr><p>クラスには、<strong>実行用クラスと、設計図クラスがある。</strong></p><p>メンバ変数の宣言は、<br><strong>データ型　変数名</strong></p><p>変数名は両方とも与えられているので、そのまま書くだけ。<br>戻り値、メソッド名、引数{</p><p>このように、設計図クラスは作ることができる。</p><pre><code>//設計図クラス
+class Car{
+  //メンバ変数
+  int no;
+  int speed;
+
+  //メソッド
+  void setNo(int n){
+    no = n;
+  }
+  void run(int s){
+    speed = s;
+  }
+  void stop(){
+    speed = 0;
+  }
+  void display(){
+    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
+  }
+}
+</code></pre><p>よって、これに従って、実行用クラスも変わることに注意するべきだった。</p><p>作りかた→設計図クラス→実行用クラス/だった！！！<br>くっそ〜〜</p><p>従って、</p><pre><code>//実行用クラス
+class DriveCar{
+  public static void main(String[] args){
+    //Carクラスのオブジェクトc1を生成
+    Car c1 = new Car();
+
+    //c1のナンバーを2525に設定
+    c1.setNo(2525);
+
+    //c1の速度を30に設定
+    c1.run(30);
+
+    //c1のナンバー、速度を表示
+    c1.display();
+
+    //c1の速度を0に設定
+    c1.stop();
+
+    //c1のナンバー、速度を表示
+    c1.display();
+  }
+}</code></pre><p>こんな簡単なのか〜〜。。いいね！</p><h2>勉強</h2><h3>・オーバーロードとは</h3><p>クラスないに同じ名前で引数の型や数が違うメソッドを定義することを<strong>オーバーロード</strong>という。</p><p><strong>呼び出すメソッドは、名前と因数の組み合わせで決めている。<br></strong>これができないと、コンパイルエラーになる。</p><pre><code>class Student {
+  void setData(String n){
+            （中略）
+　　　　}
+  void setData(String n, int e, int m){
+            （中略）
+　　　　}            </code></pre><pre><code>main(~){
+  Student syu = new Student();
+  stu.setData("菅原");
+  stu.setData("菅原", 80, 90);
+}</code></pre><h3>・メリット</h3><p>・プログラム自体がわかりやすくなる。<br>→同じデータを設定するためのメソッドなので、setDataという同じ名前にした方が、同じような処理をしているのが見た目でわかる。<br>・名前をつけるのがラクになる<br>→同じ名前をつけても使えるから。<br>・メソッド名が変わらないので、とても使いやすい。例えば、printlnメソッドもクラスで使われているので、オーバーロードを使うとすごく便利になる。</p><h3>・オーバーロードの例</h3><pre><code>class Student2{
+  String name;
+  int engScore;
+  int mathScore;
+
+  void setData(String n){
+    name = n;
+  }
+  void setData(String n, int e, int m){
+    name = n;
+    engScore = e;
+    mathScore = m;
+  }
+  void setScore(int e, int m){
+    engScore = e;
+    mathScore = m;
+  }
+  void display(){
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  }
+}
+</code></pre><pre><code>class StuSample2{
+  public static void main(String[] args){
+    Student2 stu1 = new Student2();
+    Student2 stu2 = new Student2();
+
+    stu1.setData("菅原");
+    stu1.setScore(90, 80);
+    stu1.display();
+
+    stu2.setData("村山", 75, 100);
+    stu2.display();
+  }
+}</code></pre><p>つまり、</p><p>メソッドを呼び出す時には、メソッド名だけでなく、（同じメソッドが使われているので）その引数で<strong>どのメソッドを作るのかを決めている。</strong></p><h3>・コンストラクタ</h3><p>construction（組み立てる）<br>→オブジェクトの初期化のために使われる特殊なメソッドを、<br><strong>コンストラクト</strong>という。</p><p>①　名前がクラス名と同じ<br>② 　戻り値を持たない<br>③　newクラス名（<strong>コンストラクタへの引数</strong>）</p><p><strong>コンストラクタ</strong>を定義していない場合は、自動で<strong>デフォルトコンストラクタ</strong>（引数&amp;処理なし）が生成される。<br>例　Student(){}</p><pre><code>class Student{
+  Student(String n){
+}</code></pre><p>コンストラクタもメソッドの一つなので、オーバーロードできる。</p><pre><code>class Student {
+  void setData(String n){
+            （中略）
+　　　　}
+  void setData(String n, int e, int m){
+            （中略）
+　　　　}            </code></pre><pre><code>main(~){
+  Student syu = new Student("管原");
+  Student syu = new Student("村山", 75, 100);
+}</code></pre><p>最初、コンストラクタを定義していなかったので、コンパイル時に自動でデフォルトコンストラクタを生成されていた。なので、自分で設定いしてもいいということだ。</p><p>生成と同時に値を入れられるので、安全という訳だ。</p><h3>・staticとは</h3><p>作ったインスタンスの個数を知る方法は？</p><pre><code>class Student{
+  int counter = 0;
+  Student(){
+    counter ++;
+  }
+}</code></pre><p>インスタンス内の変数では、むり。<br>前インスタンスが<strong>共通</strong>して使える変数が必要！</p><h3>・static変数</h3><pre><code>class Student{
+  static int counter = 0;
+
+  Student(){
+    counter ++;
+  }
+  
+  static void display(){
+    System.out.println(counter + "人です");
+
+}</code></pre><p>全インスタンス変数が使えるメンバ変数やメソッドを定義する時には、staticを指定する。<br>オブジェクトを生成していなくても利用できる。<br>利用方法<br><strong>クラス名.変数[メソッド]名</strong>と書く。</p><p>・全部のインスタンスから共通して使う変数やメソッドを作りたいときに使う。</p><p>サンプルコード</p><pre><code>class Student4{
+  String name;
+  static int counter = 0;
+
+  Student4(String n){
+    name = n;
+    counter++;
+    System.out.println(name + "さんをインスタンス化しました");
+  }
+  static void display(){
+    System.out.println(counter + "人です");
+  }
+}
+</code></pre><pre><code>class StuSample4{
+  public static void main(String[] args){
+    Student4.display();
+
+    Student4 stu1 = new Student4("菅原");
+    Student4.display();
+
+    Student4 stu2 = new Student4("村山");
+    Student4.display();
+  }
+}
+</code></pre><p>ここまで！！</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事は note にも掲載しています。</span><a class="nb-btn" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>
