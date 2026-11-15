@@ -17,6 +17,8 @@
   }
 */
 window.NOTE_CONFIG = {
+  teaserDays: 14,     // note 投稿から何日間は「冒頭だけ＋続きは note で」にするか（0 で無効）
+  teaserChars: 600,   // そのとき見せる冒頭の文字数の目安
   profileUrl: "https://note.com/benkein"   // note のプロフィールURL（例 "https://note.com/xxxx"）。空なら「noteで見る」ボタンは隠れます
 };
 

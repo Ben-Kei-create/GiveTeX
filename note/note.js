@@ -98,6 +98,7 @@
         var t = el('time', null, fmt(p.date)); t.dateTime = p.date; a.appendChild(t);
         var h2 = el('h2', null, p.title);
         if (p.paid) h2.appendChild(el('span', 'nb-badge', '有料'));
+        else if (p.noteUrl && (CONF.teaserDays == null ? 14 : CONF.teaserDays) > 0 && Date.now() < Date.parse(p.date + 'T00:00:00+09:00') + (CONF.teaserDays == null ? 14 : CONF.teaserDays) * 864e5) h2.appendChild(el('span', 'nb-badge', 'note 先行'));
         a.appendChild(h2);
         if (p.excerpt) a.appendChild(el('p', null, p.excerpt));
         if (p.cover) { var im = el('img', 'nb-thumb'); im.src = p.cover; im.alt = ''; im.loading = 'lazy'; a.appendChild(im); }
@@ -113,6 +114,30 @@
   if (article) {
     var slug = article.getAttribute('data-slug');
     var prose = $('.nb-prose', article);
+    // 新着記事は note で先行公開：最初の数日は冒頭だけ見せて note へ（日数は posts.js の NOTE_CONFIG.teaserDays）
+    var meT = null; POSTS.forEach(function (p) { if (p.slug === slug) meT = p; });
+    var DAYS = CONF.teaserDays == null ? 14 : CONF.teaserDays;
+    if (meT && meT.noteUrl && !meT.paid && prose && DAYS > 0) {
+      var pub = Date.parse(meT.date + 'T00:00:00+09:00'), open = pub + DAYS * 864e5;
+      if (Date.now() < open) {
+        var kids = Array.prototype.slice.call(prose.children), chars = 0, keep = 0;
+        for (var c = 0; c < kids.length; c++) { chars += (kids[c].textContent || '').length; keep = c + 1; if (chars >= (CONF.teaserChars || 600) && keep >= 2) break; }
+        if (keep < kids.length) {
+          for (var h = keep; h < kids.length; h++) kids[h].hidden = true;
+          prose.classList.add('is-teaser');
+          var d = new Date(open), md = (d.getMonth() + 1) + '月' + d.getDate() + '日';
+          var box = el('div', 'nb-teaser');
+          box.appendChild(el('b', null, 'この記事は note で先行公開中です'));
+          box.appendChild(el('span', null, '続きは note でどうぞ。' + md + 'からは、ここでも全文を読めます。'));
+          var go = el('a', 'nb-btn primary', 'note で続きを読む ↗'); go.href = meT.noteUrl; go.target = '_blank'; go.rel = 'noopener';
+          box.appendChild(go);
+          prose.parentNode.insertBefore(box, prose.nextSibling);
+          var fin = $('.nb-fin'), org0 = $('.nb-origin');
+          if (fin) fin.hidden = true;
+          if (org0) org0.hidden = true;
+        }
+      }
+    }
     // 読了時間（日本語 約500字／分）
     var rt = $('[data-readtime]');
     if (rt && prose) {
@@ -184,6 +209,7 @@
     var origin = $('.nb-origin');
     if (origin) {
       if (me && me.noteUrl) { var oa = $('a', origin); oa.href = me.noteUrl; } else origin.hidden = true;
+      if ($('.nb-teaser')) origin.hidden = true;
     }
   }
 })();
