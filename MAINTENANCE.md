@@ -83,7 +83,8 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `stamp/stamps.js` の `sets` に1セットずつ追加します（古い順）。書き方の見本はファイルの先頭にあります。
 - 画像は `stamp/img/<id>/` に置きます（`main.png` と各スタンプ）。
 - LINE STORE の作者ページURLを `storeAuthorUrl` に入れると、「すべてのスタンプを見る」が出ます。
-- 2026-11-15 時点で、クリエイター **heatshimmer** の18セット・248種類を掲載しています（作者ページ https://store.line.me/stickershop/author/4293406/ja から取得）。
+- トークの相手の名前は **fumi**、訪問者は **You** と表示します。fumi はキーワードで返事をし、それ以外は `assets/site-index.js`（`node tools/build_index.js` で作り直し）を部分一致で検索して返します（外部APIは使っていません）。
+- 2026-11-15 時点で、LINE STORE の作者名 **heatshimmer** の18セット・248種類を掲載しています（作者ページ https://store.line.me/stickershop/author/4293406/ja から取得）。
 - 画像は LINE のサーバー（`stickershop.line-scdn.net`）から直接読み込んでいます。
 - 発売日はストアのページに出ないので、商品番号の順に `no`（No.1〜）で並べています。
 - 新しいセットは、作者ページで商品番号を確かめ、商品ページの `data-preview` から画像URLを取って `sets` の末尾に追加します。
@@ -98,6 +99,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 
 ### ブックマークを更新する
 - ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
+
+### サイト内検索の索引を作り直す
+- アプリ・Kindle・note・TALES・スタンプ・記事を足したら `node tools/build_index.js` を実行します（`assets/site-index.js` が更新されます）。
 
 ### アプリを足す
 - `apps/<名前>/` に、紹介・サポート・プライバシーの3ページを作ります。
@@ -120,6 +124,7 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 | `stamp_store_click` | スタンプブースからストアへ移動した |
 | `game_achievement` | ゲームブースで実績を解除した |
 | `ramen_kanshoku` | ラーメンブースを最後までスクロールした（完食） |
+| `stamp_chat` | スタンプブースで会話した（種類と件数のみ。入力した文字は送らない） |
 | `bookmarks_cmd` | ブックマークブースでコマンドを実行した |
 
 - **⚠ テストの注意**：自動テスト（Playwright など）では、必ず `googletagmanager` と `google-analytics` へのリクエストを止めてください。2026-11-15 に一度止め忘れて、`localhost` からのテストアクセスが約700件入りました。分析するときは、ホスト名 `localhost` を除外してください。

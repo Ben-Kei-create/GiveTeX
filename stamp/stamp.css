@@ -118,3 +118,14 @@ button{font:inherit;color:inherit}
 .st-note{font-size:11.5px;color:var(--time);text-align:center;margin:18px auto 4px;max-width:30em}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 .st-note{word-break:auto-phrase;text-wrap:balance}
+
+/* You の名前・検索結果 */
+.st-msg.mine .st-name{margin:0 4px 3px 0}
+.st-results{max-width:min(420px,100%);padding:10px 12px}
+.st-results > b{display:block;font-size:14px;margin-bottom:6px}
+.st-results ul{list-style:none;margin:0;padding:0}
+.st-results li a{display:flex;gap:8px;align-items:baseline;padding:7px 4px;border-top:1px solid var(--line);text-decoration:none;color:var(--text)}
+.st-results li a:hover{background:#f5f8ff}
+.st-results .k{flex:none;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:1px 8px}
+.st-results .t{font-size:14px;line-height:1.5;color:var(--link);overflow-wrap:anywhere}
+.st-results small{display:block;margin-top:6px;color:var(--sub);font-size:12px}

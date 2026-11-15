@@ -16,7 +16,7 @@
   }
 */
 window.STAMP = {
- "host": "heatshimmer",
+ "host": "fumi",
  "room": "GiveTex スタンプ部",
  "storeAuthorUrl": "https://store.line.me/stickershop/author/4293406/ja",
  "sets": [

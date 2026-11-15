@@ -289,3 +289,7 @@ table.info th { width: 8.5em; white-space: nowrap; }
   table.r-tbl th { white-space: normal; }
   table.r-tbl { font-size: 12.5px; }
 }
+
+/* GIVE教育！ */
+.r-sub b.give { color: #ffd84a; text-shadow: 0 0 8px rgba(255,216,74,.6); }
+@media (max-width: 760px) { .r-sub { letter-spacing: 0; font-size: 13px; } .r-sub b.give { white-space: nowrap; } }

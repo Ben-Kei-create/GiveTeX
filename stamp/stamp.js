@@ -22,7 +22,7 @@
     if (opt.id) m.id = opt.id;
     if (!mine) { var av = el('div', 'st-av', HOST.charAt(0)); av.setAttribute('aria-hidden', 'true'); m.appendChild(av); }
     var body = el('div', 'st-body');
-    if (!mine) body.appendChild(el('div', 'st-name', HOST));
+    body.appendChild(el('div', 'st-name', mine ? 'You' : HOST));
     var row = el('div', 'st-row');
     row.appendChild(content);
     var meta = el('div', 'st-meta');
@@ -56,11 +56,12 @@
   sys('あなたが「' + (D.room || 'スタンプブース') + '」に参加しました');
   msg('host', text('ようこそ、スタンプブースへ！'));
   if (SETS.length) {
-    msg('host', text(HOST + ' がつくったスタンプを紹介しています。下の 😊 から、スタンプを送ってためせるよ。'));
+    msg('host', text(HOST + ' です。つくったスタンプを紹介しています。下の 😊 から、スタンプを送ってためせるよ。'));
+    msg('host', text('作品の名前を送ってくれたら、このサイトの中をさがしてみるね。たとえば「灯台」「Java」「ラーメン」とか！'));
   } else {
     msg('host', text('スタンプは、ただいま準備中です。そろったら、ここに流していきます。'));
   }
-  var note = el('p', 'st-note', 'ここは見本のトークです。送ったメッセージやスタンプは、この画面の中にだけ表示され、どこにも送信されません。');
+  var note = el('p', 'st-note', HOST + ' は、かんたんな自動返信です。送ったメッセージやスタンプは、この画面の中にだけ表示され、どこにも送信されません。');
   log.appendChild(note);
   requestAnimationFrame(scrollEnd);
 
@@ -102,13 +103,82 @@
       setTimeout(function () { t.remove(); last = 'me'; fn(); scrollEnd(); busy = false; }, 1100);
     }, 900);
   }
+  /* ---------- 自動返信とサイト内検索 ---------- */
+  var IDX = window.SITE_INDEX || [];
+  function norm(t) {
+    return String(t || '').normalize('NFKC').toLowerCase()
+      .replace(/[\u30a1-\u30f6]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); })
+      .replace(/[\s・、。,.!！?？「」『』（）()〜~ー\-_:：]/g, '');
+  }
+  IDX.forEach(function (x) { x.n = norm(x.t); });
+  function cleanQuery(t) {
+    return String(t).replace(/(を)?(さが|探|検索)(して|す|したい|してください)?|(って)?(ある|あります|ない)[?？]*|どこ(にある)?[?？]*|おしえて|教えて|ください|について|の(本|記事|アプリ|スタンプ)$/g, '').trim();
+  }
+  function search(q) {
+    var n = norm(cleanQuery(q)); if (n.length < 2) return [];
+    var hit = IDX.filter(function (x) { return x.n.indexOf(n) >= 0; });
+    hit.sort(function (a, b) { return (a.n.indexOf(n) === 0 ? 0 : 1) - (b.n.indexOf(n) === 0 ? 0 : 1) || a.t.length - b.t.length; });
+    return hit;
+  }
+  function allStickers() { var a = []; SETS.forEach(function (s) { a = a.concat(s.stickers || []); }); return a; }
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function results(q, hit) {
+    var box = el('div', 'st-bubble st-results');
+    box.appendChild(el('b', null, '「' + cleanQuery(q) + '」で ' + hit.length + ' 件みつけたよ！'));
+    var ul = el('ul');
+    hit.slice(0, 5).forEach(function (x) {
+      var li = el('li'), a = el('a'); a.href = x.u; if (/^https?:/.test(x.u)) { a.target = '_blank'; a.rel = 'noopener'; }
+      a.appendChild(el('span', 'k', x.k)); a.appendChild(el('span', 't', x.t)); li.appendChild(a); ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    if (hit.length > 5) box.appendChild(el('small', null, 'ほか ' + (hit.length - 5) + ' 件。もうすこし長いことばで送ると、しぼりこめるよ。'));
+    return box;
+  }
+  var RULES = [
+    [/こんにち|こんばん|おはよ|やっほ|はじめまして|hello|^hi$|^やあ/i, ['こんにちは！ ' + HOST + ' です。', 'やっほー！来てくれてうれしい。'], true],
+    [/ありがと|感謝|thanks|thank you/i, ['どういたしまして！', 'こちらこそ、ありがとう！'], true],
+    [/おやすみ|寝る|ねる$/, ['おやすみなさい〜。いい夢を！'], true],
+    [/つかれ|疲れ|しんど|ねむい|眠い/, ['おつかれさま！ ちょっとひと休みしよう。', 'むりしないでね。'], true],
+    [/かわい|すごい|いいね|最高|すき|好き|すてき|素敵/, ['うれしい！ ありがとう！', 'えへへ、照れる。'], true],
+    [/だれ|誰|名前|なまえ|あなたは/, [HOST + ' だよ。LINE スタンプや本、アプリをつくってる人。']],
+    [/使い方|ヘルプ|help|なにができ|何ができ/i, ['作品の名前やことばを送ってくれたら、このサイトの中をさがすよ。スタンプは下の 😊 から送れる！']],
+    [/買|ストア|store|どこで/i, ['スタンプは LINE STORE で買えるよ。左の一覧（スマホは右上の ≡）の下にリンクがあるよ！']],
+    [/^(笑|w+|ｗ+|草|wwww?)$/i, null, true],
+    [/おすすめ|オススメ|どれがいい/, 'recommend'],
+    [/^スタンプ$/, null, true]
+  ];
+  function reply(t) {
+    var acts = [], short = t.length <= 14;
+    var rule = null; for (var i = 0; i < RULES.length; i++) if (RULES[i][0].test(t)) { rule = RULES[i]; break; }
+    var hit = search(t);
+    if (rule && (short || !hit.length)) {
+      if (rule[1] === 'recommend') { var s = pick(SETS); acts.push(['text', 'これはどう？「' + s.title + '」']); acts.push(['card', s]); }
+      else { if (rule[1]) acts.push(['text', pick(rule[1])]); if (rule[2] && SETS.length) acts.push(['sticker', pick(allStickers())]); }
+    } else if (hit.length) {
+      acts.push(['results', t, hit]);
+    } else {
+      acts.push(['text', pick(['なるほど〜！', 'ふむふむ。', 'それ、スタンプにできそう。'])]);
+      acts.push(['text', 'サイトの中では見つからなかったよ。作品の名前で送ってくれたら、さがしてみるね。']);
+    }
+    try { if (window.gtag) window.gtag('event', 'stamp_chat', { kind: hit.length ? 'search' : (rule ? 'rule' : 'other'), hits: hit.length }); } catch (e) {}
+    return acts;
+  }
+  function play(acts) {
+    acts.forEach(function (a) {
+      if (a[0] === 'text') msg('host', text(a[1]), { time: now(), pop: true });
+      else if (a[0] === 'sticker') msg('host', sticker(a[1]), { time: now(), pop: true });
+      else if (a[0] === 'card') msg('host', card(a[1]), { time: now(), pop: true });
+      else if (a[0] === 'results') msg('host', results(a[1], a[2]), { time: now(), pop: true });
+    });
+  }
+
   var input = $('#st-text'), sendBtn = $('.st-send');
   input.addEventListener('input', function () { sendBtn.disabled = !input.value.trim(); });
   $('.st-input').addEventListener('submit', function (e) {
     e.preventDefault();
     var v = input.value.trim(); if (!v) return;
     var m = msg('me', text(v), { time: now(), pop: true }); input.value = ''; sendBtn.disabled = true; scrollEnd(); readLater(m);
-    hostReply(function () { msg('host', text('メッセージありがとう！ ここは見本のトークなので、届くのはこの画面の中だけです。'), { time: now(), pop: true }); });
+    var acts = reply(v); hostReply(function () { play(acts); });
   });
 
   /* ---------- スタンプ選択 ---------- */

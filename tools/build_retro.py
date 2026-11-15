@@ -36,7 +36,7 @@ def header(cur):
     return f'''<a name="top" id="top"></a>
 <div class="r-head">
 <a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
-<div class="r-sub">～ <b>教育</b> × <b>IT</b> の ホームページ ～</div>
+<div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
 <marquee class="r-news" scrollamount="5" scrolldelay="60">{NEWS}</marquee>
 <div class="r-nav">{nav}</div>
 </div>'''
@@ -143,7 +143,7 @@ NEW_ENTRIES = [
  dict(date='2026-11-15', tag='ブース', title='ブースを5つ一気に開設',
       body='<p>「<a href="/game/">ゲーム</a>」「<a href="/museum/">美術館</a>」「<a href="/ramen/">ラーメン</a>」「<a href="/movie/">映画（C-Log Web）</a>」、それからサイトの裏側の「<a href="/bookmarks/">ブックマーク</a>」ブースを作りました。ゲームはコインあつめ、ラーメンはスクロールで麺がのびます。中身はこれから少しずつ。note ブースには TALES の連載『島の灯台と猫』も並べました。</p>'),
  dict(date='2026-11-15', tag='スタンプ', title='スタンプブースをつくりました',
-      body='<p>つくった LINE スタンプを紹介する「<a href="/stamp/">スタンプブース</a>」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。heatshimmer の名前で出している18セット・248種類を並べました。</p>'),
+      body='<p>つくった LINE スタンプを紹介する「<a href="/stamp/">スタンプブース</a>」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。fumi のLINEスタンプ18セット・248種類を並べました。</p>'),
  dict(date='2026-11-15', tag='note', title='note の過去記事を349本、まるごと移植',
       body='<p>2021年から note に書いてきた記事349本を、<a href="/note/">note ブース</a>に移しました。年ごとの目次、タグ、検索から読めます。Java の勉強記録などはコードも読みやすく整えました。有料記事（30本）は無料部分だけをのせて、続きは note へご案内しています。</p>'),
  dict(date='2026-11-15', tag='note', title='note ブースをはじめました',
@@ -203,8 +203,7 @@ document.write(rGreeting());
 <p class="r-center"><b>GiveTex</b>（ギブテックス）のホームページへ ようこそ！<br>
 ここでは <font color="#ff0066"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
 ゆっくりしていってくださいね。</p>
-<table class="r-tbl" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>記事</th></tr>
-<tr><td class="r-center"><b>7</b> 本</td><td class="r-center"><b>11</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>6</b> 本</td></tr></table>
+<table class="r-tbl" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>7</b> 本</td><td class="r-center"><b>11</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>349</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>ブース</th><th>記事</th></tr><tr><td class="r-center"><b>11</b> 話</td><td class="r-center"><b>18</b> セット</td><td class="r-center"><b>11</b> こ</td><td class="r-center"><b>6</b> 本</td></tr></table>
 <p class="r-small r-center">最終更新日：2026年11月15日</p>'''
     apps_icons = ''.join(icon(h or s, img, n, '★公開中', ext=not h) for h, img, n, d, s in RELEASED)
     apps_icons += ''.join(icon(f'/apps/{k}/', f'/apps/{k}/images/icon.jpg', n, '準備中', dev=True) for k, n, d in DEV)
@@ -223,7 +222,7 @@ document.write(rGreeting());
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - NingentteWinner', '<p class="r-center" style="font-size:20px;margin:4px 0"><a href="/note/"><b>NingentteWinner</b></a></p><p class="r-center">note で5年ほど書いてきた創作、<b>349本</b>をこちらにも移しました。<br>読みやすさ優先の、しずかな読書スペースです。</p><p class="r-center"><a class="r-btn" href="/note/">note ブースへ &gt;&gt;</a></p>', '✒') +
-            win('スタンプブース - グループトーク', '<p class="r-center">heatshimmer の LINE スタンプ <b>18セット</b>を、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
+            win('スタンプブース - グループトーク', '<p class="r-center">fumi の LINE スタンプ <b>18セット</b>を、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
             '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>つくったゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>C-Log Web・観た映画の感想</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
@@ -317,7 +316,7 @@ def build_about():
 </table>
 <h3 class="r-h3">お問い合わせ</h3>
 <p>アプリ・書籍・記事に関するご質問や、取り上げてほしいテーマのリクエストは、こちらまでお気軽にどうぞ。<br>
-📧 メール：contact[at]givetex.org　<span class="r-small">（[at] を @ にかえてね）</span></p>""", '👤')}
+📧 メール：tofuodorico[at]gmail.com　<span class="r-small">（[at] を @ にかえてね）</span></p>""", '👤')}
 </div>'''
     page('about.html', '管理人のプロフィール | GiveTex', 'GiveTex（ギブテックス）は教育×ITをテーマに、学習アプリ・Kindle電子書籍「ドパ読！」・オカルトブース「どろん」・開発日記・記事を発信する個人ホームページです。', body, '/about.html', canonical='https://www.givetex.org/about.html')
 
