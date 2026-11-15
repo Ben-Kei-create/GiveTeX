@@ -47,6 +47,41 @@
     if (CONF.profileUrl) { a.href = CONF.profileUrl; a.hidden = false; } else { a.hidden = true; }
   });
 
+  /* ---------- TALES の連載（小説。エピソードは TALES で読む） ---------- */
+  var talesBox = $('#nb-tales');
+  if (talesBox && Array.isArray(CONF.tales) && CONF.tales.length) {
+    talesBox.hidden = false;
+    var grid0 = $('.nb-tales-list', talesBox);
+    CONF.tales.forEach(function (w) {
+      var card = el('article', 'nb-tale');
+      var cov = el('a', 'nb-tale-cover'); cov.href = w.url; cov.target = '_blank'; cov.rel = 'noopener';
+      if (w.cover) { var ci = el('img'); ci.src = w.cover; ci.alt = w.title + 'の表紙'; ci.loading = 'lazy'; cov.appendChild(ci); }
+      card.appendChild(cov);
+      var tx = el('div', 'nb-tale-tx');
+      tx.appendChild(el('p', 'nb-tale-kicker', 'TALES 連載中'));
+      var h = el('h3'); var ha = el('a', null, w.title); ha.href = w.url; ha.target = '_blank'; ha.rel = 'noopener'; h.appendChild(ha); tx.appendChild(h);
+      if (w.catch) tx.appendChild(el('p', 'nb-tale-catch', w.catch));
+      if (w.desc) tx.appendChild(el('p', 'nb-tale-desc', w.desc));
+      var n = (w.episodes || []).length;
+      var pr = el('div', 'nb-tale-prog'); var bar = el('span'); bar.style.width = (w.total ? Math.min(100, n / w.total * 100) : 100) + '%'; pr.appendChild(bar);
+      tx.appendChild(pr); tx.appendChild(el('p', 'nb-tale-count', n + '話 公開中' + (w.total ? '（全' + w.total + '話）' : '')));
+      if (w.tags && w.tags.length) { var tg = el('div', 'nb-tags'); w.tags.forEach(function (t) { tg.appendChild(el('span', null, t)); }); tx.appendChild(tg); }
+      if (n) {
+        var det = el('details', 'nb-tale-eps'); det.appendChild(el('summary', null, 'エピソード一覧（' + n + '話）'));
+        var ol = el('ol');
+        w.episodes.forEach(function (e, k) {
+          var li = el('li'), a = el('a'); a.href = e.url; a.target = '_blank'; a.rel = 'noopener';
+          a.appendChild(el('span', 'no', '第' + (k + 1) + '話')); a.appendChild(el('span', 't', e.t.replace(/^第\d+話「(.*)」$/, '$1'))); a.appendChild(el('time', null, fmt(e.date)));
+          li.appendChild(a); ol.appendChild(li);
+        });
+        det.appendChild(ol); tx.appendChild(det);
+        var rd = el('a', 'nb-btn primary', '第1話から TALES で読む ↗'); rd.href = w.episodes[0].url; rd.target = '_blank'; rd.rel = 'noopener'; tx.appendChild(rd);
+      }
+      card.appendChild(tx); grid0.appendChild(card);
+    });
+    var more = $('[data-tales-profile]', talesBox); if (more && CONF.talesUrl) more.href = CONF.talesUrl;
+  }
+
   /* ---------- 記事一覧（ブースのトップ） ---------- */
   var listBox = $('#nb-list');
   if (listBox) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#d7261e">
+<title>ラーメンブース | GiveTex</title>
+<meta name="description" content="GiveTex のラーメンブース。食べたラーメンの記録を、食券にして並べています。スクロールすると麺がのびます。">
+<link rel="canonical" href="https://www.givetex.org/ramen/">
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&amp;family=Zen+Maru+Gothic:wght@500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ramen/ramen.css">
+<script src="/ramen/ramen-data.js" defer></script>
+<script src="/ramen/ramen.js" defer></script>
+</head>
+<body>
+<div class="rm-top"><a href="/">← GiveTex</a></div>
+<div class="noren" aria-hidden="true"><span>ら</span><span>ー</span><span>め</span><span>ん</span></div>
+<header class="hero">
+  <h1>ラーメンブース</h1>
+  <p>食べたラーメンを、食券にして並べています。下へスクロールすると……麺がのびます。</p>
+  <div class="bowl" aria-hidden="true">
+    <svg viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg">
+      <g class="steam" stroke="#c9b9a6" stroke-width="5" fill="none" stroke-linecap="round"><path d="M120 40 q-12 -16 0 -32 q12 -16 0 -32"/><path d="M170 34 q-12 -16 0 -32 q12 -16 0 -32"/><path d="M220 40 q-12 -16 0 -32 q12 -16 0 -32"/></g>
+      <ellipse cx="170" cy="92" rx="160" ry="34" fill="#2a1a12"/>
+      <ellipse cx="170" cy="90" rx="152" ry="28" fill="#e9a54a"/>
+      <path d="M40 92 q30 -18 60 0 t60 0 t60 0 t60 0 t40 0" stroke="#f6d77a" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <circle cx="108" cy="82" r="24" fill="#c8735a" stroke="#7a3a24" stroke-width="4"/><circle cx="108" cy="82" r="13" fill="#e6a58c"/>
+      <circle cx="232" cy="84" r="17" fill="#fff" stroke="#e8d9d9" stroke-width="2"/><path d="M232 84 m-9 0 a9 9 0 1 1 9 9 a5 5 0 1 1 -4 -5" stroke="#e64a7a" stroke-width="3" fill="none"/>
+      <rect x="258" y="54" width="34" height="46" rx="3" fill="#1f2a1c" transform="rotate(12 275 77)"/>
+      <ellipse cx="165" cy="74" rx="19" ry="14" fill="#fff"/><ellipse cx="165" cy="76" rx="9" ry="7" fill="#f2a516"/>
+      <g fill="#5ab04a"><circle cx="150" cy="98" r="4"/><circle cx="190" cy="100" r="4"/><circle cx="205" cy="92" r="4"/><circle cx="140" cy="88" r="4"/></g>
+      <path d="M10 92 q10 100 80 128 h160 q70 -28 80 -128 z" fill="#fff" stroke="#2a1a12" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M16 118 h308" stroke="#d7261e" stroke-width="16"/>
+      <path d="M22 118 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6 l10 6 l10 -6" stroke="#fff" stroke-width="3" fill="none"/>
+      <path d="M110 220 h120 l-10 10 h-100 z" fill="#2a1a12"/>
+    </svg>
+  </div>
+</header>
+<svg class="noodles" aria-hidden="true"></svg>
+<svg class="chopsticks" viewBox="0 0 120 120" aria-hidden="true"><g stroke="#2a1a12" stroke-width="3"><rect x="26" y="0" width="8" height="112" rx="3" fill="#b07a3e" transform="rotate(-18 30 112)"/><rect x="40" y="0" width="8" height="112" rx="3" fill="#c48a48" transform="rotate(-6 44 112)"/></g></svg>
+<main class="wrap"><div class="tickets" id="tickets"></div>
+  <section class="done" aria-live="polite"><b>完食！</b><p>ごちそうさまでした。</p><button type="button">替え玉する</button></section>
+</main>
+<div class="meter" role="status" aria-live="off"><small>麺の長さ</small><b>0.00m</b><small>ズルズル…</small></div>
+<footer class="foot"><a href="/">GiveTex ホームへ</a></footer>
+</body>
+</html>

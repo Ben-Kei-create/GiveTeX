@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#000000">
+<title>C-Log Web — 映画ブース | GiveTex</title>
+<meta name="description" content="映画を、もっと好きになる。C-Log の Web 版。観た映画の感想を残す、電子映画ノート。">
+<link rel="canonical" href="https://www.givetex.org/movie/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Shippori+Mincho:wght@500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/movie/movie.css">
+<script src="/movie/movies.js" defer></script>
+<script src="/movie/movie.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <header class="cl-head">
+    <a class="cl-logo" href="/movie/" aria-label="C-Log"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#e8dcc4" d="M18 60c-4 0-6-3-5-7 2-8 4-15 4-22 0-5-2-9-2-14 0-4 1-8 3-11l3 7c2-1 5-1 7 0l4-7c2 3 3 7 3 11 0 4-1 7-1 11 4 3 8 7 9 13 1 4 0 7 1 10 1 4 5 5 9 4-1 4-6 6-10 5H18z"/><path fill="#000" d="M22 20a2 2 0 1 0 0 .1zM30 20a2 2 0 1 0 0 .1z"/></svg><span><b>C-Log</b><small>映画を、もっと好きになる。</small></span></a>
+    <p class="cl-tag">映画の記録と、<br>出会いの場所。</p>
+    <a class="cl-home" href="/">GiveTex</a>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div>
+        <h1><span>映画は、</span><span>きっとどこかで</span><span>また、わたしを救ってくれる。</span></h1>
+        <p>C-Log は、映画の感想を残せる電子映画ノートです。</p>
+        <a class="btn-y" href="#about">C-Log について ›</a>
+      </div>
+    </section>
+    <section class="sec" id="impression" aria-labelledby="h-imp">
+      <div class="sec-hd"><h2 id="h-imp"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1c1b19"/><g fill="#d6d3cf"><circle cx="16" cy="8.5" r="3.4"/><circle cx="16" cy="23.5" r="3.4"/><circle cx="8.5" cy="16" r="3.4"/><circle cx="23.5" cy="16" r="3.4"/><circle cx="16" cy="16" r="1.6"/></g></svg>Impression</h2><small>さいきんの感想</small><a class="more" href="#note">もっと見る ›</a></div>
+      <div class="cards" id="imp"></div>
+    </section>
+    <div class="search" id="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="q">映画をさがす</label><input id="q" type="search" placeholder="タイトル・ことば・タグ" enterkeyhint="search"></div>
+    <section class="sec" id="note" aria-labelledby="h-note">
+      <div class="sec-hd"><h2 id="h-note">My Note</h2><small>マイノート <span id="count"></span></small></div>
+      <div class="filters" id="filters" role="group" aria-label="しぼりこみ"></div>
+      <div class="note-list" id="notes"></div>
+    </section>
+    <section class="app-intro" id="about" aria-labelledby="h-app">
+      <span class="badge">iPhone アプリ 開発中</span>
+      <h2 id="h-app">C-Log for iPhone</h2>
+      <p>2022〜2023年につくった映画レビューサイト「C-Log（CINEMA-LOG）」を、iPhone アプリとしてつくり直しています。映画を観たらチェックひとつで記録して、感想を残せる、電子版の映画ノートです。</p>
+      <ul class="feat">
+        <li><b>さがす</b>作品名から映画を検索（TMDb）</li>
+        <li><b>Impression</b>観た映画の感想を、星と一緒に残す</li>
+        <li><b>マイノート</b>自分だけの鑑賞記録</li>
+        <li><b>ウォームアップ</b>映画トリビアで、観る前にひと盛り上がり</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="cl-foot">C-Log Web — <a href="/">GiveTex</a> の映画ブース</footer>
+</div>
+<nav class="tabbar" aria-label="C-Log メニュー">
+  <a href="#top"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg>ホーム</a>
+  <a href="#search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>さがす</a>
+  <a href="#note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M8 11h8M8 15h8"/></svg>マイノート</a>
+  <a href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 3v18M3 12h5"/></svg>アプリ</a>
+</nav>
+<dialog class="detail" aria-label="映画の感想"><div class="dt"></div><button class="dt-close" type="button">とじる</button></dialog>
+</body>
+</html>

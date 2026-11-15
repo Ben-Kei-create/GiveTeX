@@ -248,4 +248,29 @@
     <lastmod>2026-11-15</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/game/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/museum/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/ramen/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/movie/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/bookmarks/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

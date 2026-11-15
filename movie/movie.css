@@ -1,0 +1,91 @@
+/* 映画ブース — C-Log の Web 版 */
+:root{--black:#000;--paper:#d6d3cf;--card:#f5f2ed;--ink:#1c1b19;--sub:#5d5a55;--silver:#c0c0c0;--accent:#ffd133;--cream:#faf0d1;--beige:#dbc79e;--section:#696969;
+  --serif:"Shippori Mincho","Noto Serif JP",serif;--en:"Cormorant Garamond","Shippori Mincho",serif;--sans:"Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--black);color:var(--ink);font:15.5px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
+.app{max-width:1100px;margin:0 auto;background:var(--paper);min-height:100vh}
+/* ヘッダー */
+.cl-head{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:12px 18px;background:var(--black);color:var(--cream)}
+.cl-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.cl-logo svg{width:44px;height:44px;flex:none}
+.cl-logo b{display:block;font:700 34px/1 var(--en);letter-spacing:.02em}
+.cl-logo small{display:block;font:500 11.5px/1.4 var(--serif);letter-spacing:.12em;color:var(--cream)}
+.cl-tag{margin-left:auto;text-align:right;font:500 12px/1.5 var(--serif);color:var(--silver)}
+.cl-home{color:var(--silver);font-size:12.5px;text-decoration:none;border:1px solid #333;border-radius:999px;padding:4px 10px;white-space:nowrap}
+@media(max-width:600px){.cl-tag{display:none}.cl-logo b{font-size:28px}.cl-home{margin-left:auto}}
+/* ヒーロー */
+.hero{position:relative;min-height:300px;display:flex;align-items:center;padding:40px clamp(18px,5vw,56px);color:#fff;overflow:hidden;
+  background:radial-gradient(ellipse at 78% 30%,rgba(255,190,90,.55),transparent 45%),radial-gradient(ellipse at 90% 80%,rgba(255,90,60,.35),transparent 40%),linear-gradient(110deg,#0d0b0a 0%,#2a1d14 55%,#5a3a1e 100%)}
+.hero::after{content:"";position:absolute;right:-40px;top:20px;width:min(46%,420px);aspect-ratio:1.6;border:3px solid rgba(255,220,150,.35);border-radius:8px;transform:rotate(-6deg);box-shadow:0 0 60px rgba(255,190,90,.25) inset;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(0,0,0,.25) 22px 26px)}
+.hero h1{position:relative;z-index:1;margin:0 0 18px;font:500 clamp(24px,4.6vw,38px)/1.6 var(--serif);letter-spacing:.06em}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){padding-left:1.2em}.hero h1 span:nth-child(3){padding-left:.4em}
+.hero p{position:relative;z-index:1;margin:0 0 18px;font:500 15px/1.8 var(--serif)}
+.btn-y{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#000;font-weight:700;font-size:14px;padding:8px 18px;border-radius:999px;text-decoration:none}
+/* セクション */
+.sec{padding:26px clamp(14px,3vw,24px) 6px}
+.sec-hd{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin:0 0 14px}
+.sec-hd h2{display:flex;align-items:center;gap:10px;margin:0;font:700 clamp(24px,4vw,32px)/1.2 var(--en)}
+.sec-hd h2 svg{width:30px;height:30px}
+.sec-hd small{font-size:12.5px;color:var(--sub)}
+.sec-hd .more{margin-left:auto;font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink)}
+/* 映画カード */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+@media(max-width:480px){.cards{grid-template-columns:repeat(2,1fr)}}
+.mc{display:flex;flex-direction:column;background:var(--card);border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.15);cursor:pointer;text-align:left;border:0;padding:0;font:inherit;color:inherit;transition:transform .15s}
+.mc:hover{transform:translateY(-3px)}
+.poster{position:relative;aspect-ratio:2/3;display:flex;align-items:flex-end;padding:10px;color:#fff;overflow:hidden}
+.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.poster .pt{position:relative;font:700 18px/1.3 var(--serif);text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.poster .yr{position:absolute;right:8px;top:8px;font:600 12px/1 var(--en);letter-spacing:.1em;opacity:.85}
+.mc-tx{padding:8px 10px 10px}
+.mc-tx b{display:block;font:700 14px/1.4 var(--sans)}
+.mc-tx p{margin:2px 0 6px;font-size:12.5px;color:var(--sub);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stars{color:#e6b400;font-size:13px;letter-spacing:1px}
+.stars .off{color:#bdb8ad}
+/* さがす */
+.search{display:flex;align-items:center;gap:12px;margin:18px clamp(14px,3vw,24px) 6px;background:var(--black);color:var(--cream);border-radius:12px;padding:12px 16px}
+.search svg{width:26px;height:26px;flex:none}
+.search label{font:600 19px/1 var(--serif);white-space:nowrap}
+.search input{flex:1;min-width:0;background:#1d1d1d;border:1px solid #333;border-radius:8px;color:#fff;font:15px var(--sans);padding:9px 12px}
+@media(max-width:560px){.search{flex-wrap:wrap}.search input{flex-basis:100%}}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.filters button{appearance:none;border:1px solid var(--section);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 12px;font:13px var(--sans);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.note-list{display:grid;gap:10px}
+.nl{display:grid;grid-template-columns:72px 1fr;gap:12px;background:var(--card);border-radius:10px;padding:10px;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.nl .poster{border-radius:6px;padding:6px}.nl .poster .pt{font-size:11px}.nl .poster .yr{display:none}
+.nl h3{margin:0;font:700 16px/1.4 var(--sans)}
+.nl .meta{font-size:12px;color:var(--sub)}
+.nl p{margin:4px 0 0;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.nl .tags{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:6px;font-size:12px;color:var(--section)}
+.empty{background:var(--card);border-radius:10px;padding:24px 18px;text-align:center;color:var(--sub)}
+.empty b{display:block;font:600 18px/1.6 var(--serif);color:var(--ink)}
+/* 詳細 */
+dialog.detail{border:0;border-radius:14px;padding:0;max-width:min(560px,94vw);width:100%;background:var(--card);color:var(--ink)}
+dialog.detail::backdrop{background:rgba(0,0,0,.7)}
+.dt{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:18px}
+@media(max-width:480px){.dt{grid-template-columns:1fr}.dt .poster{max-width:160px}}
+.dt .poster{border-radius:8px}
+.dt h3{margin:0 0 2px;font:700 22px/1.4 var(--serif)}
+.dt p{white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 0}
+.dt-close{display:block;width:100%;border:0;border-top:1px solid #ddd;background:none;padding:12px;font:600 14px var(--sans);cursor:pointer}
+/* アプリの紹介（フッター） */
+.app-intro{margin-top:30px;background:var(--black);color:var(--cream);padding:30px clamp(18px,4vw,40px) 26px}
+.app-intro .badge{display:inline-block;background:var(--accent);color:#000;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.app-intro h2{margin:0 0 6px;font:700 clamp(24px,4vw,32px)/1.3 var(--en)}
+.app-intro > p{margin:0 0 16px;color:var(--silver);font-size:14.5px;max-width:40em}
+.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.feat li{border:1px solid #333;border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--silver)}
+.feat b{display:block;color:var(--cream);font:600 15px/1.5 var(--serif)}
+.cl-foot{background:var(--black);color:var(--section);text-align:center;font-size:12.5px;padding:16px 16px calc(80px + env(safe-area-inset-bottom))}
+.cl-foot a{color:var(--silver)}
+/* 下のタブ（スマホ） */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;background:#111;border-top:1px solid #222;padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--silver);text-decoration:none;padding:2px 8px}
+.tabbar a:first-child{color:var(--accent)}
+.tabbar svg{width:22px;height:22px}
+@media(min-width:900px){.tabbar{display:none}.cl-foot{padding-bottom:24px}}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#07090b">
+<title>backstage — ブックマークブース | GiveTex</title>
+<meta name="description" content="GiveTex の裏側。作者がブックマークしてきた公開サイトを、ターミナルで探索できます。">
+<link rel="canonical" href="https://www.givetex.org/bookmarks/">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/bookmarks/bookmarks.css">
+<script src="/bookmarks/bookmarks.js" defer></script>
+<script src="/bookmarks/bookmarks-term.js" defer></script>
+</head>
+<body>
+<div class="tm">
+  <div class="tm-bar" aria-hidden="false"><i></i><i></i><i></i><span>guest@givetex — backstage — bash</span><a href="/">exit ↩</a></div>
+  <main class="tm-screen" aria-label="ターミナル">
+    <div id="out" role="log" aria-live="polite"></div>
+    <noscript><p>このページは JavaScript を使います。</p></noscript>
+    <div class="prompt"><label for="cmd" class="ps">guest@givetex:~/backstage$</label><input id="cmd" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-label="コマンドを入力"></div>
+  </main>
+  <nav class="quick" aria-label="よく使うコマンド">
+    <button type="button" data-cmd="ls">ls</button><button type="button" data-cmd="cd ..">cd ..</button><button type="button" data-cmd="tree">tree</button><button type="button" data-cmd="random">random</button><button type="button" data-cmd="help">help</button>
+  </nav>
+</div>
+</body>
+</html>

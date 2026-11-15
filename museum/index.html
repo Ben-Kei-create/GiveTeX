@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#f7f6f2">
+<title>美術館ブース | GiveTex</title>
+<meta name="description" content="GiveTex の美術館ブース。訪れた美術館のつぶやきと、来館の記録を額縁に入れて飾っています。">
+<link rel="canonical" href="https://www.givetex.org/museum/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Shippori+Mincho:wght@500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/museum/museum.css">
+<script src="/museum/museum-data.js" defer></script>
+<script src="/museum/museum.js" defer></script>
+</head>
+<body>
+<header class="mu-top"><a href="/">GiveTex</a><span>Museum</span></header>
+<main>
+  <section class="mu-hero">
+    <small>GALLERY OF NOTES</small>
+    <h1>美術館ブース</h1>
+    <p>訪れた美術館で感じたことを、一枚ずつ額に入れて飾っています。ゆっくり、ご覧ください。</p>
+    <hr class="mu-rule">
+  </section>
+  <div class="mu-wrap">
+    <h2 class="mu-wall-h">EXHIBITION</h2>
+    <nav class="mu-filter" id="filter" aria-label="年でしぼりこむ"></nav>
+    <div class="wall" id="wall"></div>
+    <section class="mu-log" id="log" aria-labelledby="h-log">
+      <h2 id="h-log">VISIT LOG</h2>
+      <table><thead><tr><th>DATE</th><th>MUSEUM</th><th class="ex">EXHIBITION</th></tr></thead><tbody></tbody></table>
+    </section>
+  </div>
+</main>
+<footer class="mu-foot"><a href="/">GiveTex</a> ― 美術館ブース</footer>
+</body>
+</html>

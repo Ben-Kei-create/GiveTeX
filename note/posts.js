@@ -19,7 +19,83 @@
 window.NOTE_CONFIG = {
   teaserDays: 14,     // note 投稿から何日間は「冒頭だけ＋続きは note で」にするか（0 で無効）
   teaserChars: 600,   // そのとき見せる冒頭の文字数の目安
-  profileUrl: "https://note.com/benkein"   // note のプロフィールURL（例 "https://note.com/xxxx"）。空なら「noteで見る」ボタンは隠れます
+  profileUrl: "https://note.com/benkein",
+  talesUrl: "https://tales.note.com/benkein",   // TALES（小説）のプロフィール
+  tales: [
+   {
+    "title": "島の灯台と猫",
+    "catch": "島にひとり残る灯台守と黒猫の、静かな一年。",
+    "desc": "周囲2kmの小島・塔島。住民は、赴任してきた灯台守の相川凪ひとりと、先代から島に住む黒猫スミだけ。点灯と消灯、郵便船、季節の移ろい。あかりを止めないための、静かで少し温かい全30話の物語。",
+    "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d",
+    "cover": "https://tales.note.com/benkein/wfgsd8b3o6c7d/opengraph-image-vmhufa?2d8be76312c154d4",
+    "tags": [
+     "日常",
+     "黒猫",
+     "猫のいる暮らし",
+     "灯台守",
+     "島暮らし",
+     "塔島"
+    ],
+    "total": 30,
+    "episodes": [
+     {
+      "t": "あかりを守る者",
+      "date": "2026-10-31",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/edtmssslgkna1"
+     },
+     {
+      "t": "郵便船の日",
+      "date": "2026-11-01",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ef4flj7jyttvb"
+     },
+     {
+      "t": "商店のない島",
+      "date": "2026-11-02",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/e073wg40wovzc"
+     },
+     {
+      "t": "先代の日誌",
+      "date": "2026-11-05",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/e685cxhw7zlum"
+     },
+     {
+      "t": "雨の点検",
+      "date": "2026-11-06",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/erspbcdawfh6a"
+     },
+     {
+      "t": "第6話「霧の晩」",
+      "date": "2026-11-07",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/er2esinwt43q1"
+     },
+     {
+      "t": "名前のない花",
+      "date": "2026-11-08",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/edv4h6rr5lo23"
+     },
+     {
+      "t": "塔島の地図",
+      "date": "2026-11-10",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/eit754bnmzxjz"
+     },
+     {
+      "t": "一番長い日",
+      "date": "2026-11-11",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ew5ywp9riyole"
+     },
+     {
+      "t": "台風の前に",
+      "date": "2026-11-13",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ezfkh24h72a79"
+     },
+     {
+      "t": "スミがいない夜",
+      "date": "2026-11-14",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/eby1sf7s7sn82"
+     }
+    ]
+   }
+  ]   // TALES の連載（エピソードは TALES で読む）   // note のプロフィールURL（例 "https://note.com/xxxx"）。空なら「noteで見る」ボタンは隠れます
 };
 
 window.NOTE_POSTS = [

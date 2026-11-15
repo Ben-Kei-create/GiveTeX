@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#120a24">
+<title>ゲームブース | GiveTex</title>
+<meta name="description" content="GiveTex のゲームブース。Apple 以外で作ったゲームと、デジタルゲーム・ボドゲ・マダミス・脱出ゲームのつぶやき。">
+<link rel="canonical" href="https://www.givetex.org/game/">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/game/game.css">
+<script src="/game/game-data.js" defer></script>
+<script src="/game/game.js" defer></script>
+</head>
+<body>
+<header class="hud" aria-label="スコア">
+  <div class="hud-in"><span><span class="c1">1UP</span> <b id="sc">000000</b></span><span class="hi">HI-SCORE <b id="hi">000000</b></span><span>COIN <b id="cn">×0</b></span><a class="home" href="/">◀ GiveTex</a></div>
+</header>
+<main>
+  <section class="title">
+    <h1>GAME<br>BOOTH</h1>
+    <p>Apple 以外でつくったゲームと、デジタルゲーム・ボドゲ・マダミス・脱出ゲームのつぶやき置き場。コインをあつめてみてね。</p>
+    <a class="start blink" href="#stage1">PRESS START</a>
+  </section>
+  <div class="wrap">
+    <section class="stage" id="stage1" aria-labelledby="h1s">
+      <h2 id="h1s">STAGE 1<small>つくったゲーム</small></h2>
+      <div class="carts" id="carts"></div>
+    </section>
+    <section class="stage" id="stage2" aria-labelledby="h2s">
+      <h2 id="h2s">STAGE 2<small>ゲームのつぶやき</small></h2>
+      <div class="tabs" role="group" aria-label="ジャンル"><button type="button" data-kind="" aria-pressed="true">ぜんぶ</button><button type="button" data-kind="digital" aria-pressed="false">デジタル</button><button type="button" data-kind="boardgame" aria-pressed="false">ボドゲ</button><button type="button" data-kind="madamis" aria-pressed="false">マダミス</button><button type="button" data-kind="escape" aria-pressed="false">脱出</button><button type="button" data-kind="event" aria-pressed="false">イベント</button></div>
+      <div class="msgs" id="msgs"></div>
+    </section>
+  </div>
+</main>
+<footer class="foot"><p class="credit">THANK YOU FOR PLAYING</p><p><a href="/">GiveTex ホームへ</a>　｜　ヒント：↑↑↓↓←→←→BA</p></footer>
+</body>
+</html>

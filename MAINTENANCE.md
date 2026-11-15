@@ -17,6 +17,11 @@
 | `/doron/`（どろん） | タブごとに雰囲気が変わるオカルト | `doron/doron.css`・`doron.js` | ロゴ3種は `doron/img/` |
 | `/note/`（noteブース） | 読みやすさ優先 | `note/note.css`・`note.js` | 記事349本を移植済みです |
 | `/sousaku/`（創作ブース） | コミケ × SF | `sousaku/sousaku.css`・`sousaku.js` | 本番に公開済み。ただしリンクなし・noindex（URLを知っている人だけ） |
+| `/game/`（ゲームブース） | ゲームセンター（ドット・コイン・実績・隠しコマンド） | `game/game.css`・`game.js` | データは `game/game-data.js`（games＝作ったゲーム、posts＝つぶやき） |
+| `/museum/`（美術館ブース） | 白い展示室・額縁 | `museum/museum.css`・`museum.js` | データは `museum/museum-data.js` |
+| `/ramen/`（ラーメンブース） | スクロールで丼から麺がのびる | `ramen/ramen.css`・`ramen.js` | データは `ramen/ramen-data.js`（食券） |
+| `/movie/`（映画ブース・C-Log Web） | C-Log のデザインを引き継ぐ | `movie/movie.css`・`movie.js` | データは `movie/movies.js`。フッターで iPhone 版（開発中）を紹介 |
+| `/bookmarks/`（ブックマークブース） | サイトの裏側・ターミナル | `bookmarks/bookmarks.css`・`bookmarks-term.js` | `bookmarks/bookmarks.js`。個人のアカウント・管理画面などは除外済み（183件） |
 | `/stamp/`（スタンプブース） | グループトーク風（GiveTex オリジナル。LINE のロゴや配色はまねない） | `stamp/stamp.css`・`stamp.js` | 送ったスタンプは画面内だけ（送信しない） |
 
 **レスポンシブ**：全ページ、幅320〜1440pxで、はみ出しがないことを確認しています。変更したら同じ範囲で確認してください。
@@ -83,6 +88,17 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 発売日はストアのページに出ないので、商品番号の順に `no`（No.1〜）で並べています。
 - 新しいセットは、作者ページで商品番号を確かめ、商品ページの `data-preview` から画像URLを取って `sets` の末尾に追加します。
 
+### ゲーム・美術館・ラーメン・映画ブースに書く
+- それぞれのデータファイルの先頭に書き方の見本があります（`game/game-data.js`・`museum/museum-data.js`・`ramen/ramen-data.js`・`movie/movies.js`）。2026-11-15 時点ではどれも空です（架空の投稿は入れていません）。
+- ゲームの `kind` は digital／boardgame／madamis／escape／event／other。
+
+### note ブースの TALES
+- `note/posts.js` の `NOTE_CONFIG.tales` に作品とエピソード（タイトル・日付・URL）を入れています。本家は TALES なので、エピソードは TALES へのリンクです。
+- 新しい話が出たら `episodes` の末尾に追加します（現在『島の灯台と猫』11話／全30話）。
+
+### ブックマークを更新する
+- ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
+
 ### アプリを足す
 - `apps/<名前>/` に、紹介・サポート・プライバシーの3ページを作ります。
 - そのあと `python3 -I tools/apps_skin.py .` を実行すると、Appブースのヘッダーとフッター、テーマ切り替えが付きます。
@@ -102,6 +118,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 | `sousaku_qr` | 創作ブースのQRコードを表示した |
 | `stamp_send` | スタンプブースでスタンプを送った（画面内のみ） |
 | `stamp_store_click` | スタンプブースからストアへ移動した |
+| `game_achievement` | ゲームブースで実績を解除した |
+| `ramen_kanshoku` | ラーメンブースを最後までスクロールした（完食） |
+| `bookmarks_cmd` | ブックマークブースでコマンドを実行した |
 
 - **⚠ テストの注意**：自動テスト（Playwright など）では、必ず `googletagmanager` と `google-analytics` へのリクエストを止めてください。2026-11-15 に一度止め忘れて、`localhost` からのテストアクセスが約700件入りました。分析するときは、ホスト名 `localhost` を除外してください。
 
