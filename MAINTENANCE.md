@@ -5,7 +5,7 @@
 ## 1. 全体
 - **サイト**：https://www.givetex.org/ 。静的HTMLだけで、ビルド工程はありません。
 - **公開の仕組み**：Vercel で配信しています。GitHub `Ben-Kei-create/givetex` の `main` に push すると、1分ほどで本番に反映されます。
-- **作業ブランチ**：`redesign-pop`。2026-11-15 時点で、`main` にない差分は **創作ブース（/sousaku/）** だけです。本番に出すかどうかはオーナーの判断待ちです。
+- **作業ブランチ**：`redesign-pop`。2026-11-15 時点で `main` と同じ内容です（創作ブースも公開済み）。
 - **このファイルと `tools/` について**：`.vercelignore` で除外しているので、本番には公開されません。
 
 ## 2. ブースとデザインの対応（混ぜないこと）
@@ -16,7 +16,7 @@
 | `/apps/` 以下 | 白黒を切り替えられるシンプルなデザイン | `apps/assets/apps.css`・`apps.js` | フォントは英字 Fjalla One、日本語 WDXL Lubrifont JP N。App関連だけの専用デザインです |
 | `/doron/`（どろん） | タブごとに雰囲気が変わるオカルト | `doron/doron.css`・`doron.js` | ロゴ3種は `doron/img/` |
 | `/note/`（noteブース） | 読みやすさ優先 | `note/note.css`・`note.js` | 記事349本を移植済みです |
-| `/sousaku/`（創作ブース） | コミケ × SF | `sousaku/sousaku.css`・`sousaku.js` | 非公開扱い（リンクなし・noindex） |
+| `/sousaku/`（創作ブース） | コミケ × SF | `sousaku/sousaku.css`・`sousaku.js` | 本番に公開済み。ただしリンクなし・noindex（URLを知っている人だけ） |
 | `/stamp/`（スタンプブース） | グループトーク風（GiveTex オリジナル。LINE のロゴや配色はまねない） | `stamp/stamp.css`・`stamp.js` | 送ったスタンプは画面内だけ（送信しない） |
 
 **レスポンシブ**：全ページ、幅320〜1440pxで、はみ出しがないことを確認しています。変更したら同じ範囲で確認してください。
@@ -78,7 +78,10 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `stamp/stamps.js` の `sets` に1セットずつ追加します（古い順）。書き方の見本はファイルの先頭にあります。
 - 画像は `stamp/img/<id>/` に置きます（`main.png` と各スタンプ）。
 - LINE STORE の作者ページURLを `storeAuthorUrl` に入れると、「すべてのスタンプを見る」が出ます。
-- 2026-11-15 時点ではまだ0セットです。Creators Market のマイページはログインが必要で、外から一覧を取得できません。
+- 2026-11-15 時点で、クリエイター **heatshimmer** の18セット・248種類を掲載しています（作者ページ https://store.line.me/stickershop/author/4293406/ja から取得）。
+- 画像は LINE のサーバー（`stickershop.line-scdn.net`）から直接読み込んでいます。
+- 発売日はストアのページに出ないので、商品番号の順に `no`（No.1〜）で並べています。
+- 新しいセットは、作者ページで商品番号を確かめ、商品ページの `data-preview` から画像URLを取って `sets` の末尾に追加します。
 
 ### アプリを足す
 - `apps/<名前>/` に、紹介・サポート・プライバシーの3ページを作ります。
@@ -117,8 +120,6 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - **本番（main）への反映は、オーナーの了承を得てから**行います。
 
 ## 8. 未完了・オーナーからの返事待ち
-- 創作ブースを本番に出すかどうか。
 - どろんの活動記録（概要・写真）。
 - 創作ブースの最初の作品と、出展予定。
-- スタンプブースのスタンプ（LINE STORE の作者ページURL、または各セットのURL）。
 - ドパ読！の新刊の追加。Amazon の一覧から作ったので、英語版などの海外版は載せていません。

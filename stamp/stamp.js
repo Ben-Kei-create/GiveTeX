@@ -46,8 +46,9 @@
 
   /* ---------- タイムライン ---------- */
   SETS.forEach(function (s) {
-    day(jd(s.date) || '　');
+    day(jd(s.date) || (s.no ? 'No.' + s.no : '新作'));
     msg('host', text(s.message || '「' + s.title + '」をつくりました！'), { id: 'set-' + s.id });
+    if (s.desc) msg('host', text(s.desc));
     if (s.main) msg('host', sticker(s.main, s.title + 'の代表スタンプ'));
     if (s.storeUrl) msg('host', card(s));
   });
@@ -70,7 +71,7 @@
     SETS.slice().reverse().forEach(function (s) {
       var li = el('li'), b = el('button'); b.type = 'button';
       if (s.main) { var i = el('img'); i.src = s.main; i.alt = ''; i.loading = 'lazy'; b.appendChild(i); } else b.appendChild(el('span', 'noimg', '😊'));
-      var t = el('span'); t.appendChild(el('b', null, s.title)); t.appendChild(el('small', null, jd(s.date))); b.appendChild(t);
+      var t = el('span'); t.appendChild(el('b', null, s.title)); t.appendChild(el('small', null, jd(s.date) || ((s.no ? 'No.' + s.no + '・' : '') + (s.stickers || []).length + '種類'))); b.appendChild(t);
       b.addEventListener('click', function () { closeDrawer(); var m = document.getElementById('set-' + s.id); if (m) { m.scrollIntoView({ block: 'center' }); m.classList.remove('pop'); void m.offsetWidth; m.classList.add('pop'); } });
       li.appendChild(b); ul.appendChild(li);
     });

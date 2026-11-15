@@ -141,7 +141,7 @@ else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
  dict(date='2026-11-15', tag='スタンプ', title='スタンプブースをつくりました',
-      body='<p>つくった LINE スタンプを紹介する「<a href="/stamp/">スタンプブース</a>」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。スタンプはこれから並べていきます。</p>'),
+      body='<p>つくった LINE スタンプを紹介する「<a href="/stamp/">スタンプブース</a>」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。heatshimmer の名前で出している18セット・248種類を並べました。</p>'),
  dict(date='2026-11-15', tag='note', title='note の過去記事を349本、まるごと移植',
       body='<p>2021年から note に書いてきた記事349本を、<a href="/note/">note ブース</a>に移しました。年ごとの目次、タグ、検索から読めます。Java の勉強記録などはコードも読みやすく整えました。有料記事（30本）は無料部分だけをのせて、続きは note へご案内しています。</p>'),
  dict(date='2026-11-15', tag='note', title='note ブースをはじめました',
@@ -220,7 +220,7 @@ document.write(rGreeting());
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - NingentteWinner', '<p class="r-center" style="font-size:20px;margin:4px 0"><a href="/note/"><b>NingentteWinner</b></a></p><p class="r-center">note で5年ほど書いてきた創作、<b>349本</b>をこちらにも移しました。<br>読みやすさ優先の、しずかな読書スペースです。</p><p class="r-center"><a class="r-btn" href="/note/">note ブースへ &gt;&gt;</a></p>', '✒') +
-            win('スタンプブース - グループトーク', '<p class="r-center">つくった LINE スタンプを、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
+            win('スタンプブース - グループトーク', '<p class="r-center">heatshimmer の LINE スタンプ <b>18セット</b>を、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
