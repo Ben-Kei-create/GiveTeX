@@ -32,7 +32,7 @@
     help: function () {
       line(span('a', 'つかえるコマンド：'));
       [['ls [dir]', 'ディレクトリ／リンクの一覧'], ['cd <dir>', 'ディレクトリに移動（cd .. でもどる）'], ['tree', 'ぜんぶ表示'], ['grep <ことば>', 'タイトル・URLから検索'],
-       ['open <番号>', '直前の一覧の番号のリンクを開く'], ['random', 'ランダムに1つおすすめ'], ['whoami', 'ここはどこ？'], ['clear', '画面をきれいに'], ['exit', 'GiveTex にもどる']]
+       ['open <番号>', '直前の一覧の番号のリンクを開く'], ['random', 'ランダムに1つおすすめ'], ['github', '作者の GitHub のざっくり概要'], ['whoami', 'ここはどこ？'], ['clear', '画面をきれいに'], ['exit', 'GiveTex にもどる']]
         .forEach(function (x) { line('  ', span('g', x[0].padEnd(14)), span('d', x[1])); });
       line(span('d', 'ヒント：ディレクトリやリンクはクリックでも開けます。Tab で補完、↑↓ で履歴。'));
     },
@@ -71,6 +71,20 @@
     exit: function () { line(span('d', 'logout')); setTimeout(function () { location.href = '/'; }, 400); },
     sudo: function () { line(span('r', 'guest は sudoers に入っていません。この件は報告されます。')); line(span('d', '……うそです。')); },
     rm: function () { line(span('r', 'rm: 読み取り専用のファイルシステムです')); },
+    github: function () {
+      var G = window.GITHUB; if (!G) return line(span('r', 'github: データがありません'));
+      var gh = document.createElement('a'); gh.href = G.url; gh.target = '_blank'; gh.rel = 'noopener'; gh.className = 'lnk'; gh.textContent = G.url;
+      line(span('a', '$ gh profile ' + G.user)); line('  ', gh);
+      line(span('d', '  公開リポジトリ ' + G.total + ' 個 / ' + G.since + '年〜 / ' + G.updated + ' 時点'));
+      line(span('a', '# つかってきた言語（リポジトリの数）'));
+      var max = G.langs[0][1];
+      G.langs.forEach(function (l) { line('  ', span('c', l[0].padEnd(11)), span('g', '█'.repeat(Math.max(1, Math.round(l[1] / max * 24)))), span('d', ' ' + l[1])); });
+      line(span('a', '# git log --oneline（年ごと）'));
+      G.years.slice().reverse().forEach(function (y) { line('  ', span('p', y[0]), span('d', ' (' + String(y[1]).padStart(2) + ') '), y[2]); });
+      line(span('a', '# 代表的なリポジトリ（クリックで GitHub へ）'));
+      items(G.highlights.map(function (h) { return { t: h[0] + ' — ' + h[2], u: G.url + '/' + encodeURIComponent(h[0]), h: h[1] }; }));
+      line(span('d', 'open <番号> でも開けます。ぜんぶ見るなら → '), (function () { var a = gh.cloneNode(true); return a; })());
+    },
     pwd: function () { line('/home/guest/backstage' + (cwd ? '/' + cwd.id : '')); }
   };
   function run(raw) {
@@ -101,7 +115,13 @@
   var seen = false; try { seen = sessionStorage.getItem('bm-boot') === '1'; sessionStorage.setItem('bm-boot', '1'); } catch (e) {}
   var art = document.createElement('pre'); art.className = 'ascii glow'; art.setAttribute('aria-hidden', 'true');
   art.textContent = ' ____             _        _                   \n| __ )  __ _  ___| | _____| |_ __ _  __ _  ___ \n|  _ \\ / _` |/ __| |/ / __| __/ _` |/ _` |/ _ \\\n| |_) | (_| | (__|   <\\__ \\ || (_| | (_| |  __/\n|____/ \\__,_|\\___|_|\\_\\___/\\__\\__,_|\\__, |\\___|\n                                    |___/      ';
-  function finish() { setPs(); run('ls'); input.focus({ preventScroll: true }); }
+  function finish() {
+    setPs();
+    var G = window.GITHUB;
+    if (G) { var b = span('dir', '[ github ] ' + G.user + ' — 公開リポジトリ ' + G.total + ' 個（' + G.since + '〜）→ 概要を見る'); b.tabIndex = 0; b.setAttribute('role', 'button');
+      b.addEventListener('click', function () { run('github'); }); b.addEventListener('keydown', function (e) { if (e.key === 'Enter') run('github'); }); line(b); }
+    run('ls'); input.focus({ preventScroll: true });
+  }
   out.appendChild(art);
   if (calm || seen) { BOOT.forEach(function (b) { line(span(b[0], b[1])); }); finish(); return; }
   var k = 0, skip = false;

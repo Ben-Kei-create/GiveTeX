@@ -309,3 +309,17 @@ table.info th { width: 8.5em; white-space: nowrap; }
   .r-book.r-stamp { width: calc(25% - 8px); }
   .r-book.r-stamp img { width: 100%; height: auto; aspect-ratio: 1; }
 }
+/* お問い合わせフォーム */
+.ct input[type=text],.ct input[type=email],.ct select,.ct textarea{width:100%;max-width:560px;font:16px/1.5 inherit;font-family:inherit;padding:6px;border:2px inset #808080;background:#fff;color:#000;box-sizing:border-box}
+.ct textarea{resize:vertical;min-height:10em}
+.ct label{font-weight:bold}
+.ct .ct-agree{font-weight:normal}
+.ct-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.r-req{color:#c00;font-size:.85em;font-weight:normal}
+.ct-send{font-size:1.1em;padding:6px 22px;cursor:pointer}
+.ct-send[disabled]{opacity:.6;cursor:wait}
+.ct-msg{margin:10px auto;max-width:560px;padding:8px 10px;border:2px solid #000080;background:#ffffe0;color:#000}
+.ct-msg.ok{border-color:#008000;background:#f0fff0}
+.ct-msg.ng{border-color:#c00;background:#fff0f0}
+.ct-msg a{display:inline-block;margin-top:4px}
+.r-warn{border:2px solid #c00;background:#fff0f0;color:#000;padding:8px}

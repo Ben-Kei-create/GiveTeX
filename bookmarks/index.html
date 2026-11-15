@@ -12,11 +12,12 @@
 <script src="/assets/ga.js" defer></script>
 <meta name="theme-color" content="#07090b">
 <title>backstage — ブックマークブース | GiveTex</title>
-<meta name="description" content="GiveTex の裏側。作者がブックマークしてきた公開サイトを、ターミナルで探索できます。">
+<meta name="description" content="GiveTex の裏側。作者がブックマークしてきた公開サイトと、GitHub のざっくり概要を、ターミナルで探索できます。">
 <link rel="canonical" href="https://www.givetex.org/bookmarks/">
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/bookmarks/bookmarks.css">
 <script src="/bookmarks/bookmarks.js" defer></script>
+<script src="/bookmarks/github.js" defer></script>
 <script src="/bookmarks/bookmarks-term.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
 </head>
@@ -29,7 +30,7 @@
     <div class="prompt"><label for="cmd" class="ps">guest@givetex:~/backstage$</label><input id="cmd" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-label="コマンドを入力"></div>
   </main>
   <nav class="quick" aria-label="よく使うコマンド">
-    <button type="button" data-cmd="ls">ls</button><button type="button" data-cmd="cd ..">cd ..</button><button type="button" data-cmd="tree">tree</button><button type="button" data-cmd="random">random</button><button type="button" data-cmd="help">help</button>
+    <button type="button" data-cmd="ls">ls</button><button type="button" data-cmd="cd ..">cd ..</button><button type="button" data-cmd="tree">tree</button><button type="button" data-cmd="github">github</button><button type="button" data-cmd="random">random</button><button type="button" data-cmd="help">help</button>
   </nav>
 </div>
 </body>

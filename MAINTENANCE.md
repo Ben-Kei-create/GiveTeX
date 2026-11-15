@@ -20,7 +20,7 @@
 | `/game/`（ゲームブース） | ゲームセンター（ドット・コイン・実績・隠しコマンド） | `game/game.css`・`game.js` | データは `game/game-data.js`（games＝作ったゲーム、posts＝つぶやき） |
 | `/museum/`（美術館ブース） | 白い展示室・額縁 | `museum/museum.css`・`museum.js` | データは `museum/museum-data.js` |
 | `/ramen/`（ラーメンブース） | スクロールで丼から麺がのびる | `ramen/ramen.css`・`ramen.js` | データは `ramen/ramen-data.js`（食券） |
-| `/movie/`（映画ブース・C-Log Web） | C-Log のデザインを引き継ぐ | `movie/movie.css`・`movie.js` | データは `movie/movies.js`。ヒーローの下にオープンチャット「映画を見る会」への参加リンク、フッターで iPhone 版（開発中）を紹介 |
+| `/movie/`（映画ブース・C-Log Web） | C-Log のデザインを引き継ぐ | `movie/movie.css`・`movie.js` | 話題の映画・検索は C-Log のサーバーから `/api/clog` 経由。感想は匿名掲示板「みんなの C-Log」（`/api/board`）。ヒーローの下にオープンチャット「映画を見る会」への参加リンク、フッターで iPhone 版（開発中）を紹介 |
 | `/bookmarks/`（ブックマークブース） | サイトの裏側・ターミナル | `bookmarks/bookmarks.css`・`bookmarks-term.js` | `bookmarks/bookmarks.js`。個人のアカウント・管理画面などは除外済み（183件） |
 | `/stamp/`（スタンプブース） | グループトーク風（GiveTex オリジナル。LINE のロゴや配色はまねない） | `stamp/stamp.css`・`stamp.js` | 送ったスタンプは画面内だけ（送信しない） |
 
@@ -94,7 +94,7 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 新しいセットは、作者ページで商品番号を確かめ、商品ページの `data-preview` から画像URLを取って `sets` の末尾に追加します。
 
 ### ゲーム・美術館・ラーメン・映画ブースに書く
-- それぞれのデータファイルの先頭に書き方の見本があります（`game/game-data.js`・`museum/museum-data.js`・`ramen/ramen-data.js`・`movie/movies.js`）。2026-11-15 時点ではどれも空です（架空の投稿は入れていません）。
+- それぞれのデータファイルの先頭に書き方の見本があります（`game/game-data.js`・`museum/museum-data.js`・`ramen/ramen-data.js`）。2026-11-15 時点ではどれも空です（架空の投稿は入れていません）。
 - ゲームの `kind` は digital／boardgame／madamis／escape／event／other。
 
 ### note ブースの TALES
@@ -121,6 +121,16 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `apps/<名前>/` に、紹介・サポート・プライバシーの3ページを作ります。
 - そのあと `python3 -I tools/apps_skin.py .` を実行すると、Appブースのヘッダーとフッター、テーマ切り替えが付きます。
 - 一覧 `apps/index.html` と、ホームのアプリ欄にも追加します。ホームのアプリ欄は `build_retro.py` の `RELEASED` と `DEV` です。
+
+## 4.9 サーバー機能（`api/` フォルダ・Vercel の関数）
+- `api/clog.js`：C-Log アプリのサーバー（`https://clog-api.onrender.com`）から話題の映画・検索・お知らせを中継。サーバーが眠っていたら約1分で起きます。
+- `api/board.js`：映画ブースの匿名掲示板。管理人も含めて全員「名無しの映画好き」。日替わり ID、3人の通報で自動非表示、本人は削除可、連投・重複・リンク・個人情報・暴言を機械ではじく、最新1000件まで。
+- `api/contact.js`：お問い合わせフォーム（`/contact/`）→ メール送信。
+- `api/_lib.js`：共通の道具（回数制限、合言葉、文字のそうじ、NG ワード）。
+- **Vercel に設定が必要な環境変数**（Settings → Environment Variables。値はチャットやリポジトリに書かない）：
+  - 掲示板：Vercel の Storage から **Upstash Redis** を追加（`KV_REST_API_URL`・`KV_REST_API_TOKEN` が自動で入ります）。未設定だと「準備中」と表示。
+  - お問い合わせ：**Resend**（resend.com）の API キーを `RESEND_API_KEY` に。未設定のあいだはメールアプリで送る案内が出ます。宛先を変えるなら `CONTACT_TO`。
+- 不適切な書きこみを消したいときは、Upstash の画面で `b:p:<番号>` を削除し、`b:list` からその番号を外します（ふだんは通報で自動非表示）。
 
 ## 5. アクセス解析（Google アナリティクス 4）
 - **ID**：`G-RJ2BPF1RLV`。全ページで `assets/ga.js` から読み込んでいます。古い記事5本はページ内に直書きされているので、二重には読み込みません。

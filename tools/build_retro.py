@@ -50,7 +50,7 @@ FOOTER = '''<div class="r-foot">
 <img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
 </div>
 <p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
-<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
+<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="/contact/">お問い合わせ</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
 <address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
 </div>'''
 
@@ -321,7 +321,7 @@ def build_about():
 </table>
 <h3 class="r-h3">お問い合わせ</h3>
 <p>アプリ・書籍・記事に関するご質問や、取り上げてほしいテーマのリクエストは、こちらまでお気軽にどうぞ。<br>
-📧 メール：tofuodorico[at]gmail.com　<span class="r-small">（[at] を @ にかえてね）</span></p>""", '👤')}
+📧 メール：tofuodorico[at]gmail.com　<span class="r-small">（[at] を @ にかえてね）</span><br>✉ <a href="/contact/">お問い合わせフォーム</a>からも送れます</p>""", '👤')}
 </div>'''
     page('about.html', '管理人のプロフィール | GiveTex', 'GiveTex（ギブテックス）は教育×ITをテーマに、学習アプリ・Kindle電子書籍「ドパ読！」・オカルトブース「どろん」・開発日記・記事を発信する個人ホームページです。', body, '/about.html', canonical='https://www.givetex.org/about.html')
 

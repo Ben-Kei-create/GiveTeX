@@ -12,11 +12,10 @@
 <script src="/assets/ga.js" defer></script>
 <meta name="theme-color" content="#000000">
 <title>C-Log Web — 映画ブース | GiveTex</title>
-<meta name="description" content="映画を、もっと好きになる。C-Log の Web 版。観た映画の感想を残す、電子映画ノート。">
+<meta name="description" content="映画を、もっと好きになる。C-Log の Web 版。話題の映画をチェックして、だれでも匿名で感想を書きこめる映画ノート。">
 <link rel="canonical" href="https://www.givetex.org/movie/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Shippori+Mincho:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/movie/movie.css">
-<script src="/movie/movies.js" defer></script>
 <script src="/movie/movie.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
 </head>
@@ -32,8 +31,8 @@
     <section class="hero">
       <div>
         <h1><span>映画は、</span><span>きっとどこかで</span><span>また、わたしを救ってくれる。</span></h1>
-        <p>C-Log は、映画の感想を残せる電子映画ノートです。</p>
-        <a class="btn-y" href="#about">C-Log について ›</a>
+        <p>話題の映画をチェックして、だれでも匿名で感想を残せる映画ノートです。</p>
+        <a class="btn-y" href="#board">感想を書く ›</a> <a class="btn-g" href="#about">C-Log について</a>
       </div>
     </section>
     <section class="oc" aria-labelledby="h-oc">
@@ -45,15 +44,37 @@
       </div>
       <a class="oc-btn" href="https://line.me/ti/g2/PHAPvF3mwLGU-StyvUEee-7BIArtgj9z--SnQQ?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">参加する ›</a>
     </section>
-    <section class="sec" id="impression" aria-labelledby="h-imp">
-      <div class="sec-hd"><h2 id="h-imp"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1c1b19"/><g fill="#d6d3cf"><circle cx="16" cy="8.5" r="3.4"/><circle cx="16" cy="23.5" r="3.4"/><circle cx="8.5" cy="16" r="3.4"/><circle cx="23.5" cy="16" r="3.4"/><circle cx="16" cy="16" r="1.6"/></g></svg>Impression</h2><small>さいきんの感想</small><a class="more" href="#note">もっと見る ›</a></div>
-      <div class="cards" id="imp"></div>
+    <section class="sec" id="pop" aria-labelledby="h-pop">
+      <div class="sec-hd"><h2 id="h-pop"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1c1b19"/><g fill="#d6d3cf"><circle cx="16" cy="8.5" r="3.4"/><circle cx="16" cy="23.5" r="3.4"/><circle cx="8.5" cy="16" r="3.4"/><circle cx="23.5" cy="16" r="3.4"/><circle cx="16" cy="16" r="1.6"/></g></svg>Now Popular</h2><small>いま話題の映画</small><button class="more" type="button" id="pop-more" hidden>もっと見る ›</button></div>
+      <div class="row" id="pop-list" aria-live="polite"></div>
     </section>
-    <div class="search" id="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="q">映画をさがす</label><input id="q" type="search" placeholder="タイトル・ことば・タグ" enterkeyhint="search"></div>
-    <section class="sec" id="note" aria-labelledby="h-note">
-      <div class="sec-hd"><h2 id="h-note">My Note</h2><small>マイノート <span id="count"></span></small></div>
-      <div class="filters" id="filters" role="group" aria-label="しぼりこみ"></div>
-      <div class="note-list" id="notes"></div>
+    <section class="sec" id="news-sec" aria-labelledby="h-news" hidden>
+      <div class="sec-hd"><h2 id="h-news">News</h2><small>C-Log からのお知らせ</small></div>
+      <ul class="news" id="news"></ul>
+    </section>
+    <div class="search" id="search" role="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="q">映画をさがす</label><input id="q" type="search" maxlength="50" placeholder="作品名を入れてね（例：千と千尋）" enterkeyhint="search" autocomplete="off"></div>
+    <section class="sec" id="found-sec" aria-label="検索結果" hidden>
+      <div class="cards" id="found" aria-live="polite"></div>
+    </section>
+    <section class="sec" id="board" aria-labelledby="h-board">
+      <div class="sec-hd"><h2 id="h-board">みんなの C-Log</h2><small id="b-total">だれでも匿名で書ける感想ノート</small></div>
+      <form class="bf" id="bf" novalidate>
+        <p class="bf-who">名無しの映画好き <span>（全員が匿名。管理人も同じ立場です）</span></p>
+        <div class="bf-pick" id="bf-pick" hidden></div>
+        <label class="bf-l" for="bf-t">映画のタイトル</label>
+        <input id="bf-t" name="t" type="text" maxlength="60" required placeholder="上の一覧や検索から選ぶと、ポスターもつきます" autocomplete="off">
+        <span class="bf-l" id="bf-rl">評価</span>
+        <div class="bf-stars" role="radiogroup" aria-labelledby="bf-rl" id="bf-stars"></div>
+        <label class="bf-l" for="bf-b">感想 <small id="bf-c">0 / 800</small></label>
+        <textarea id="bf-b" name="b" rows="5" maxlength="800" required placeholder="ネタバレは控えめに。人を傷つけることば、リンク、個人情報は書けません。"></textarea>
+        <p class="bf-hp" aria-hidden="true"><label>空欄のままに<input name="website" type="text" tabindex="-1" autocomplete="off"></label></p>
+        <div class="bf-foot"><button class="btn-y" type="submit" id="bf-send">書きこむ</button><span class="bf-out" id="bf-out" role="status" aria-live="polite"></span></div>
+        <details class="bf-rule"><summary>ルール（みんなで管理しています）</summary>
+          <ul><li>名前は全員「名無しの映画好き」。ID は1日ごとに変わります。</li><li>3人から「通報」されると、自動で見えなくなります。</li><li>自分の書きこみは、同じブラウザからなら「削除」できます。</li><li>連続投稿・同じ文の投稿・リンク・個人情報・ひどいことばは、機械ではじきます。</li><li>書きこみは新しい順に1000件まで残ります。</li></ul>
+        </details>
+      </form>
+      <div class="posts" id="posts" aria-live="polite"></div>
+      <p class="r-center"><button class="more-b" type="button" id="b-more" hidden>もっと読む</button></p>
     </section>
     <section class="app-intro" id="about" aria-labelledby="h-app">
       <span class="badge">iPhone アプリ 開発中</span>
@@ -62,19 +83,20 @@
       <ul class="feat">
         <li><b>さがす</b>作品名から映画を検索（TMDb）</li>
         <li><b>Impression</b>観た映画の感想を、星と一緒に残す</li>
+        <li><b>Web 版</b>このページ。話題の映画と、みんなの匿名の感想ノート</li>
         <li><b>マイノート</b>自分だけの鑑賞記録</li>
         <li><b>ウォームアップ</b>映画トリビアで、観る前にひと盛り上がり</li>
       </ul>
     </section>
   </main>
-  <footer class="cl-foot">C-Log Web — <a href="/">GiveTex</a> の映画ブース</footer>
+  <footer class="cl-foot">C-Log Web — <a href="/">GiveTex</a> の映画ブース<br><small>映画の情報は C-Log のサーバー経由で TMDb から取得しています。This product uses the TMDB API but is not endorsed or certified by TMDB.</small></footer>
 </div>
 <nav class="tabbar" aria-label="C-Log メニュー">
   <a href="#top"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg>ホーム</a>
+  <a href="#pop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5v4M16 5v4"/></svg>話題</a>
   <a href="#search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>さがす</a>
-  <a href="#note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M8 11h8M8 15h8"/></svg>マイノート</a>
-  <a href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 3v18M3 12h5"/></svg>アプリ</a>
+  <a href="#board"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>みんな</a>
 </nav>
-<dialog class="detail" aria-label="映画の感想"><div class="dt"></div><button class="dt-close" type="button">とじる</button></dialog>
+<dialog class="detail" aria-label="映画の情報"><div class="dt"></div><button class="dt-close" type="button">とじる</button></dialog>
 </body>
 </html>

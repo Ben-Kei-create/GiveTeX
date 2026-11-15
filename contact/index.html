@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000080">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/assets/retro.css">
+<script type="text/javascript" src="/assets/retro.js"></script>
+<script src="/assets/img-fallback.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/assets/ga.js" defer></script>
+<title>お問い合わせ | GiveTex</title>
+<meta name="description" content="GiveTex（教育×IT）へのお問い合わせフォーム。サイト・アプリ・ドパ読！・お仕事の相談など、お気軽にどうぞ。">
+<link rel="canonical" href="https://www.givetex.org/contact/">
+<meta property="og:title" content="お問い合わせ | GiveTex">
+<meta property="og:url" content="https://www.givetex.org/contact/">
+<meta property="og:description" content="GiveTex（ギブテックス）は教育×ITのホームページ。自作アプリ、Kindle電子書籍「ドパ読！」、オカルトブース「どろん」、開発日記、AI・学びの記事を置いています。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+</head>
+<body>
+<a name="top" id="top"></a>
+<div class="r-head">
+<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
+<div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
+<marquee class="r-news" scrollamount="5" scrolldelay="60">★☆★ ようこそ GiveTex のホームページへ！ ★☆★　Kindle本「ドパ読！」96冊を書庫にならべました　◆　オカルトブース「<a href="/doron/">どろん</a>」オープン！ Cサークルの新企画「十人奇談」準備中…　◆　<a href="/note/">note ブース</a>はじめました　◆　<a href="/stamp/">スタンプブース</a>オープン　◆　このホームページはリンクフリーです　★☆★</marquee>
+<div class="r-nav"><a href="/">HOME</a><a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/doron/">どろん</a><a href="/note/">note</a><a href="/stamp/">スタンプ</a><a href="/#booths">ブース</a><a href="/diary/">開発日記</a><a href="/#articles">記事</a><a href="/about.html">管理人</a></div>
+</div>
+<div class="r-page">
+<div class="win">
+<div class="win-t"><span class="ico">✉</span><span class="ttl">お問い合わせ - GiveTex へメールを送る</span><span class="bt" aria-hidden="true">_</span><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b">
+<p>GiveTex へのご意見・ご感想・ご質問・お仕事のご相談は、このフォームからどうぞ。管理人のメールに直接とどきます。<br><span class="r-small">お返事が必要なときは、返信先のメールアドレスを書いてください。お返事には数日かかることがあります。</span></p>
+<noscript><p class="r-warn">このフォームは JavaScript を使います。使えないときは、メール <b>tofuodorico[at]gmail.com</b>（[at] を @ にかえてね）へ直接どうぞ。</p></noscript>
+<form id="ct" class="ct" novalidate>
+<p><label for="ct-kind">ご用件 <span class="r-small">（えらんでね）</span></label><br>
+<select id="ct-kind" name="kind"><option>サイトについて</option><option>アプリについて</option><option>ドパ読！（Kindle）について</option><option>どろん（オカルト）について</option><option>お仕事の相談</option><option>不具合のご報告</option><option>その他</option></select></p>
+<p><label for="ct-name">お名前 <span class="r-small">（ニックネームでOK・なくてもOK）</span></label><br><input id="ct-name" name="name" type="text" maxlength="40" autocomplete="nickname"></p>
+<p><label for="ct-email">返信先のメールアドレス <span class="r-small">（お返事がいらなければ空でOK）</span></label><br><input id="ct-email" name="email" type="email" maxlength="254" autocomplete="email" inputmode="email"></p>
+<p><label for="ct-msg">お問い合わせの内容 <span class="r-req">（必須・10〜3000文字）</span></label><br><textarea id="ct-msg" name="msg" rows="9" maxlength="3000" required></textarea><br><span class="r-small" id="ct-count">0 / 3000</span></p>
+<p class="ct-hp" aria-hidden="true"><label>ウェブサイト（空のままにしてください）<input name="website" type="text" tabindex="-1" autocomplete="off"></label></p>
+<p><label class="ct-agree"><input id="ct-agree" type="checkbox"> <a href="/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意して送ります</label></p>
+<p class="r-center"><button class="r-btn ct-send" type="submit">送信する ✉</button></p>
+<div id="ct-out" role="status" aria-live="polite"></div>
+</form>
+<hr class="r-hr">
+<p class="r-small">・送っていただいた内容は、お返事のためだけに使います。サイトに公開することはありません。<br>・パスワードやカード番号などの大事な情報は書かないでください。<br>・いたずら防止のため、短い時間に何回も送ることはできません。<br>・うまく送れないときは、メール <b>tofuodorico[at]gmail.com</b>（[at] を @ にかえてね）へ直接どうぞ。</p>
+</div></div></div>
+<script src="/assets/contact.js" defer></script>
+<div class="r-foot">
+<hr class="r-hr">
+<div class="bnrs">
+<a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
+<a href="/books/"><img src="/assets/retro/bnr-dopayomi.gif" width="88" height="31" alt="ドパ読！"></a>
+<a href="/doron/"><img src="/assets/retro/bnr-doron.gif" width="88" height="31" alt="どろん"></a>
+<img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
+</div>
+<p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
+<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="/contact/">お問い合わせ</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
+<address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
+</div>
+</body>
+</html>
