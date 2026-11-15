@@ -333,3 +333,4 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-pick-new{color:#d10056;font-size:13px}
 .r-btn-hot{background:#ff2d8a!important;color:#fff!important;font-weight:bold}
 @media(max-width:520px){.r-pick{justify-content:center}.r-pick-img img{width:180px;height:180px}}
+.r-ol{margin:4px 0 8px;padding-left:1.6em}.r-ol li{margin:2px 0}
