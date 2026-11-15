@@ -334,3 +334,9 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-btn-hot{background:#ff2d8a!important;color:#fff!important;font-weight:bold}
 @media(max-width:520px){.r-pick{justify-content:center}.r-pick-img img{width:180px;height:180px}}
 .r-ol{margin:4px 0 8px;padding-left:1.6em}.r-ol li{margin:2px 0}
+/* ウインドウのボタン：たたむと青いバーだけ */
+.win.closed .win-menu, .win.closed .win-status { display: none; }
+.win-t .bt[aria-pressed="true"] { box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf; }
+.win-t .bt-x { cursor: default; }
+.win-t .bt:focus-visible { outline: 1px dotted #fff; outline-offset: 1px; }
+@media (hover: none) { .win-t .bt { width: 24px; height: 21px; line-height: 19px; font-size: 13px; } }

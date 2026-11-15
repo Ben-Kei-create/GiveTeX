@@ -58,7 +58,7 @@ def win(title, body, ico='■', cls='', menu=False, status=None, bodycls=''):
     m = '<div class="win-menu"><span><u>F</u>ファイル</span><span><u>E</u>編集</span><span><u>V</u>表示</span><span><u>H</u>ヘルプ</span></div>' if menu else ''
     st = '<div class="win-status">' + ''.join(f'<span>{x}</span>' for x in status) + '</div>' if status else ''
     return f'''<div class="win {cls}">
-<div class="win-t"><span class="ico">{ico}</span><span class="ttl">{title}</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-t"><span class="ico">{ico}</span><span class="ttl">{title}</span><button class="bt bt-min" type="button" aria-label="最小化（たたむ）">_</button><button class="bt bt-max" type="button" aria-label="元の大きさにもどす">□</button><span class="bt bt-x" aria-hidden="true">×</span></div>
 {m}<div class="win-b {bodycls}">
 {body}
 </div>{st}

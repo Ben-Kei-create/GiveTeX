@@ -48,17 +48,18 @@ function rClock() {
 }
 
 /* ---- ウィンドウの「_」ボタンでたたむ ---- */
+/* ウインドウの「_」でたたむ（青いバーだけ）、「□」で元にもどす。「×」は押しても閉じません */
 function rWin(btn) {
-  var w = btn.parentNode.parentNode;
-  if (w.className.indexOf("closed") >= 0) {
-    w.className = w.className.replace(" closed", "");
-    btn.innerHTML = "_";
-  } else {
-    w.className += " closed";
-    btn.innerHTML = "□";
-  }
+  var w = btn.parentNode.parentNode, min = btn.className.indexOf("bt-max") < 0;
+  if (min) { if (w.className.indexOf(" closed") < 0) w.className += " closed"; }
+  else w.className = w.className.replace(" closed", "");
+  btn.setAttribute("aria-pressed", "true"); setTimeout(function () { btn.removeAttribute("aria-pressed"); }, 150);
   return false;
 }
+document.addEventListener("click", function (e) {
+  var b = e.target && e.target.closest && e.target.closest(".win-t .bt-min, .win-t .bt-max");
+  if (b) { e.preventDefault(); rWin(b); }
+});
 
 /* ---- マウスのキラキラ ---- */
 var rLast = 0;
