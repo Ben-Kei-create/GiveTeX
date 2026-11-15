@@ -44,7 +44,7 @@ function rClock() {
   function z(x) { return (x < 10 ? "0" : "") + x; }
   el.innerHTML = d.getFullYear() + "/" + z(d.getMonth() + 1) + "/" + z(d.getDate()) + "(" + w + ")<br>" +
     z(d.getHours()) + ":" + z(d.getMinutes()) + ":" + z(d.getSeconds());
-  setTimeout("rClock()", 1000);
+  setTimeout(rClock, 1000);
 }
 
 /* ---- ウィンドウの「_」ボタンでたたむ ---- */

@@ -134,26 +134,25 @@
     if (hit.length > 5) box.appendChild(el('small', null, 'ほか ' + (hit.length - 5) + ' 件。もうすこし長いことばで送ると、しぼりこめるよ。'));
     return box;
   }
-  var RULES = [
-    [/こんにち|こんばん|おはよ|やっほ|はじめまして|hello|^hi$|^やあ/i, ['こんにちは！ ' + HOST + ' です。', 'やっほー！来てくれてうれしい。'], true],
-    [/ありがと|感謝|thanks|thank you/i, ['どういたしまして！', 'こちらこそ、ありがとう！'], true],
-    [/おやすみ|寝る|ねる$/, ['おやすみなさい〜。いい夢を！'], true],
-    [/つかれ|疲れ|しんど|ねむい|眠い/, ['おつかれさま！ ちょっとひと休みしよう。', 'むりしないでね。'], true],
-    [/かわい|すごい|いいね|最高|すき|好き|すてき|素敵/, ['うれしい！ ありがとう！', 'えへへ、照れる。'], true],
-    [/だれ|誰|名前|なまえ|あなたは/, [HOST + ' だよ。LINE スタンプや本、アプリをつくってる人。']],
-    [/使い方|ヘルプ|help|なにができ|何ができ/i, ['作品の名前やことばを送ってくれたら、このサイトの中をさがすよ。スタンプは下の 😊 から送れる！']],
-    [/買|ストア|store|どこで/i, ['スタンプは LINE STORE で買えるよ。左の一覧（スマホは右上の ≡）の下にリンクがあるよ！']],
-    [/^(笑|w+|ｗ+|草|wwww?)$/i, null, true],
-    [/おすすめ|オススメ|どれがいい/, 'recommend'],
-    [/^スタンプ$/, null, true]
-  ];
+  // 返事のルールは stamp/replies.js（書き足すだけで動く）
+  var RULES = (window.STAMP_REPLIES || []).map(function (r) {
+    return { words: (r.words || []).map(norm).filter(Boolean), replies: (r.replies || []).map(function (x) { return String(x).replace(/\{name\}/g, HOST); }), sticker: !!r.sticker, exact: !!r.exact, action: r.action || '' };
+  });
+  function matchRule(t) {
+    var n = norm(t);
+    for (var i = 0; i < RULES.length; i++) {
+      var r = RULES[i];
+      if (r.words.some(function (w) { return r.exact ? n === w : n.indexOf(w) >= 0; })) return r;
+    }
+    return null;
+  }
   function reply(t) {
     var acts = [], short = t.length <= 14;
-    var rule = null; for (var i = 0; i < RULES.length; i++) if (RULES[i][0].test(t)) { rule = RULES[i]; break; }
+    var rule = matchRule(t);
     var hit = search(t);
     if (rule && (short || !hit.length)) {
-      if (rule[1] === 'recommend') { var s = pick(SETS); acts.push(['text', 'これはどう？「' + s.title + '」']); acts.push(['card', s]); }
-      else { if (rule[1]) acts.push(['text', pick(rule[1])]); if (rule[2] && SETS.length) acts.push(['sticker', pick(allStickers())]); }
+      if (rule.action === 'recommend' && SETS.length) { var s = pick(SETS); acts.push(['text', 'これはどう？「' + s.title + '」']); acts.push(['card', s]); }
+      else { if (rule.replies.length) acts.push(['text', pick(rule.replies)]); if (rule.sticker && SETS.length) acts.push(['sticker', pick(allStickers())]); }
     } else if (hit.length) {
       acts.push(['results', t, hit]);
     } else {

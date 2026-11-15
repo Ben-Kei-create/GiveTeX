@@ -160,7 +160,7 @@ have = {(d['date'], d['title']) for d in DIARY}
 DIARY = [n for n in NEW_ENTRIES if (n['date'], n['title']) not in have] + DIARY
 
 def photos_html(ps):
-    return ''.join(f'<a class="r-photo" href="{s}" target="_blank"><img src="{s}" width="{w}" height="{h}" alt="{E(c)}" loading="lazy">{E(c)}</a>' for s, c, w, h in ps)
+    return ''.join(f'<a class="r-photo" href="{s}" target="_blank" rel="noopener"><img src="{s}" width="{w}" height="{h}" alt="{E(c)}" loading="lazy">{E(c)}</a>' for s, c, w, h in ps)
 
 def diary_entry(d):
     ph = photos_html(d['photos']) if d.get('photos') else ''
@@ -176,10 +176,10 @@ def books_flat():
 TOTAL = len(books_flat())
 
 def book(a, m, s, img):
-    return f'<a class="r-book" href="https://www.amazon.co.jp/dp/{a}" target="_blank"><img src="{E(img)}" width="110" height="164" alt="{E(m)}の表紙" loading="lazy"><b>{E(m)}</b>{f"<small>{E(s)}</small>" if s else ""}</a>'
+    return f'<a class="r-book" href="https://www.amazon.co.jp/dp/{a}" target="_blank" rel="noopener"><img src="{E(img)}" width="110" height="164" alt="{E(m)}の表紙" loading="lazy"><b>{E(m)}</b>{f"<small>{E(s)}</small>" if s else ""}</a>'
 
 def icon(href, img, name, note, dev=False, ext=False):
-    t = ' target="_blank"' if ext else ''
+    t = ' target="_blank" rel="noopener"' if ext else ''
     return f'<a class="r-icon" href="{href}"{t}><img src="{img}" width="56" height="56" alt=""><span>{E(name)}</span><small class="{"dev" if dev else ""}">{note}</small></a>'
 
 # ================= トップページ =================
@@ -247,7 +247,7 @@ document.write(rGreeting());
 def build_apps():
     def row(h, img, n, d, store, dev=False):
         name = f'<a href="{h}">{E(n)}</a>' if h else E(n)
-        links = ([f'<a href="{h}">くわしく</a>'] if h else []) + ([f'<a href="{store}" target="_blank">App Store</a>'] if store else [])
+        links = ([f'<a href="{h}">くわしく</a>'] if h else []) + ([f'<a href="{store}" target="_blank" rel="noopener">App Store</a>'] if store else [])
         st = '<font color="#808080">準備中</font>' if dev else '<font color="#008000"><b>★公開中</b></font>'
         return f'<tr><td align="center" width="64"><img src="{img}" width="48" height="48" alt="" style="border-radius:10px"></td><td><b>{name}</b><br><span class="r-small">{E(d)}</span></td><td align="center" nowrap>{st}<br><span class="r-small">{" / ".join(links)}</span></td></tr>'
     r1 = ''.join(row(h, img, n, d, s) for h, img, n, d, s in RELEASED)
@@ -271,7 +271,7 @@ def build_books():
 <p class="r-center"><b>Kindle電子書籍「ドパ読！」</b>へようこそ。<br>1話30秒で、脳にドーパミン。ひとつのテーマを10話に分けて、神話・名作・偉人・歴史・科学・心理まで、<br class="pc">ちょうどいい短さで読める <font color="#ff0066"><b>「30秒で読む」シリーズ</b></font> を <b>{TOTAL}冊</b> ならべています。</p>
 <table class="r-tbl" summary="著者"><tr><th>著者名</th><td><b>NingentteWinner</b>（Kindleでの名義）</td></tr>
 <tr><th>どんな本？</th><td>学校教育とIT開発の経験をいかし、むずかしいテーマを短く、おもしろく。AIを相棒に企画・執筆しています。</td></tr>
-<tr><th>買える場所</th><td><a href="{AUTH}" target="_blank">Amazon の著者ページで全作品を見る</a></td></tr></table>
+<tr><th>買える場所</th><td><a href="{AUTH}" target="_blank" rel="noopener">Amazon の著者ページで全作品を見る</a></td></tr></table>
 <p class="r-jump">ジャンル：{jump}</p>'''
     body = f'''<div class="r-page">
 {win(f"ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊", intro, "📚")}
@@ -312,7 +312,7 @@ def build_about():
 <tr><th>分野</th><td>理科（物理・化学・生物・地学）、資格学習、Webアプリ / iOS・macOSアプリ開発、AIを活用した出版、オカルト（座談会・心霊スポット巡り）</td></tr>
 <tr><th>使用技術</th><td>Swift / SwiftUI / Next.js / React / Supabase / Flutter / 生成AI</td></tr>
 <tr><th>実績</th><td>App Storeで学習アプリなど7本を公開、Kindle電子書籍「ドパ読！」として「30秒で読む」シリーズを{TOTAL}冊出版（2026年11月時点）</td></tr>
-<tr><th>Kindle著者名</th><td><a href="{AUTH}" target="_blank">NingentteWinner</a></td></tr>
+<tr><th>Kindle著者名</th><td><a href="{AUTH}" target="_blank" rel="noopener">NingentteWinner</a></td></tr>
 </table>
 <h3 class="r-h3">お問い合わせ</h3>
 <p>アプリ・書籍・記事に関するご質問や、取り上げてほしいテーマのリクエストは、こちらまでお気軽にどうぞ。<br>

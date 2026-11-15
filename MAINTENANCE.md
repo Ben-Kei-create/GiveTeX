@@ -83,6 +83,7 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `stamp/stamps.js` の `sets` に1セットずつ追加します（古い順）。書き方の見本はファイルの先頭にあります。
 - 画像は `stamp/img/<id>/` に置きます（`main.png` と各スタンプ）。
 - LINE STORE の作者ページURLを `storeAuthorUrl` に入れると、「すべてのスタンプを見る」が出ます。
+- **fumi の返事のルールは `stamp/replies.js`**。`words`（この言葉が入っていたら）と `replies`（この中から返す）を書き足すだけで動きます。
 - トークの相手の名前は **fumi**、訪問者は **You** と表示します。fumi はキーワードで返事をし、それ以外は `assets/site-index.js`（`node tools/build_index.js` で作り直し）を部分一致で検索して返します（外部APIは使っていません）。
 - 2026-11-15 時点で、LINE STORE の作者名 **heatshimmer** の18セット・248種類を掲載しています（作者ページ https://store.line.me/stickershop/author/4293406/ja から取得）。
 - 画像は LINE のサーバー（`stickershop.line-scdn.net`）から直接読み込んでいます。
@@ -134,6 +135,15 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - **画像**：note の記事画像（`assets.st-note.com`）と、Amazon の書影（`m.media-amazon.com`）は直接読み込んでいます。
 - **ライブラリ**：QRコードは cdnjs の `qrcodejs 1.0.0` を使っています。
 - **フォント**：Google Fonts です。
+
+## 6.5 セキュリティ
+- **`vercel.json` でセキュリティヘッダーを付けています**：CSP（スクリプトは自サイト・Google アナリティクス・cdnjs だけ許可、画像は https なら可、ほかのサイトへの埋め込み禁止）、X-Frame-Options、nosniff、Referrer-Policy、Permissions-Policy。HSTS は Vercel が付けます。
+- **新しく外部のスクリプトやフォント・通信先を使うとき**は、CSP に追加しないと動きません（ブラウザのコンソールに「Content Security Policy」と出ます）。
+- 外部ライブラリには SRI（改ざんチェック）を付けます。QR コードの `qrcodejs 1.0.0` は付け済みです。
+- データ（JSON・本文など）を画面に出すときは `textContent` を使い、`innerHTML` に入れないこと。創作ブースの小説本文は、読み込むときにスクリプトや `on〜` 属性を取り除いています。
+- 新しいタブで開くリンクには `rel="noopener"` を付けます。
+- `.git`・`tools/`・`MAINTENANCE.md` は本番で 404 になることを確認済みです。
+- 秘密情報（APIキー・パスワード）はリポジトリに入れないこと。静的サイトなので、ページに書いたものは誰でも見えます。
 
 ## 7. オーナーの方針（これまでの指示）
 - 肩書きは「現役塾講師×エンジニア」ではなく、**教育 × IT** です。

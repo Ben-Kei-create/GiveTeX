@@ -30,6 +30,7 @@
     if (qrLib) { qrLib.addEventListener('load', cb); return; }
     qrLib = document.createElement('script');
     qrLib.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+    qrLib.integrity = 'sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU'; qrLib.crossOrigin = 'anonymous'; qrLib.referrerPolicy = 'no-referrer';
     qrLib.onload = cb; document.head.appendChild(qrLib);
   }
   function showQR(w) {
@@ -310,7 +311,13 @@
     });
     fetch(w.text).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (h) {
       var tpl = document.createElement('template'); tpl.innerHTML = h;
-      Array.prototype.forEach.call(tpl.content.querySelectorAll('script,style,iframe,object'), function (x) { x.remove(); });
+      Array.prototype.forEach.call(tpl.content.querySelectorAll('script,style,iframe,object,embed,link,meta,form,base'), function (x) { x.remove(); });
+      Array.prototype.forEach.call(tpl.content.querySelectorAll('*'), function (x) {
+        Array.prototype.slice.call(x.attributes).forEach(function (a) {
+          var n = a.name.toLowerCase(), v = String(a.value).replace(/\s+/g, '').toLowerCase();
+          if (n.indexOf('on') === 0 || n === 'style' || ((n === 'href' || n === 'src' || n === 'xlink:href') && /^(javascript|data|vbscript):/.test(v))) x.removeAttribute(a.name);
+        });
+      });
       text.innerHTML = ''; text.appendChild(tpl.content); tcy(text); apply();
     }).catch(function () { text.innerHTML = '<p>本文を読み込めませんでした。</p>'; apply(); });
   }
