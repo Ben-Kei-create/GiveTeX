@@ -124,7 +124,7 @@ for v in sorted(INDEX, key=lambda x: x['date'], reverse=True):
 # 案内記事（ブース独自）を残す
 posts.append(dict(slug='about-this-booth', title='note ブースをはじめます', date='2026-11-15',
                   excerpt='note で書いてきたものを、ここにも置いていくことにしました。このブースの読み方と、これからのことを少しだけ。', tags=['お知らせ']))
-posts.sort(key=lambda p: p['date'], reverse=True)
+posts.sort(key=lambda p: (p['date'], p['slug']), reverse=True)  # 同じ日付でも並びが毎回変わらないように
 for p in posts:
     for k in [k for k, val in p.items() if val is None]: del p[k]
 
