@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&amp;family=Shippori+Mincho:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/sousaku/sousaku.css">
+<script src="/sousaku/works.js" defer></script>
+<script src="/sousaku/sousaku.js" defer></script>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#0f0f10">
+<title>作品を読む | 創作ブース</title>
+</head>
+<body class="reader">
+<div id="rd">
+  <header class="rd-top"><div class="rd-top-in">
+    <a class="rd-btn" href="/sousaku/" aria-label="創作ブースへ戻る">←</a>
+    <span class="rd-title"></span>
+    <button class="rd-btn" type="button" data-qr>QR</button>
+    <button class="rd-btn" type="button" data-panel aria-expanded="false" aria-controls="sk-panel">表示</button>
+  </div></header>
+  <div class="sk-panel" id="sk-panel" role="dialog" aria-label="表示の設定" hidden></div>
+
+  <!-- マンガ -->
+  <div class="mg-stage" aria-live="polite"></div>
+  <button class="mg-zone left" type="button"></button>
+  <button class="mg-zone right" type="button"></button>
+  <div class="mg-scroll"></div>
+  <div class="mg-end" hidden><div class="mg-end-in">
+    <b>おわり</b><p>最後まで読んでくださり、ありがとうございました。</p>
+    <div class="row"><button class="rd-btn" type="button" data-restart>最初から読む</button><button class="rd-btn" type="button" data-qr-end>QRコード</button><a class="rd-btn" href="/sousaku/">創作ブースへ</a></div>
+  </div></div>
+
+  <!-- 小説 -->
+  <div class="nv" hidden>
+    <header class="nv-head"><h1></h1><p></p></header>
+    <div class="nv-text"></div>
+    <p class="nv-end">（おわり）</p>
+  </div>
+
+  <footer class="rd-bottom"><div class="rd-bottom-in">
+    <span class="mg-count"></span>
+    <input class="mg-slider" type="range" min="1" max="1" value="1" aria-label="ページ">
+    <span class="nv-progress" aria-hidden="true"><span></span></span>
+    <button class="rd-btn" type="button" data-fs>全画面</button>
+  </div></footer>
+</div>
+</body>
+</html>
