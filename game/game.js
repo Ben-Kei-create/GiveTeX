@@ -92,6 +92,7 @@
       var tx = el('p', 'tx', p.text || ''); tx.setAttribute('data-full', p.text || ''); w.appendChild(tx);
       var m = el('div', 'meta'); m.appendChild(el('time', null, String(p.date).replace(/-/g, '.')));
       (p.tags || []).forEach(function (t) { m.appendChild(el('span', null, '#' + t)); });
+      var mp = window.GTPlace && GTPlace.chip(p); if (mp) m.appendChild(mp);
       if (p.url) { var a = el('a', null, 'リンク ↗'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; m.appendChild(a); }
       w.appendChild(m); w.appendChild(el('span', 'next', '▼'));
       box.appendChild(w); if (io) io.observe(w);

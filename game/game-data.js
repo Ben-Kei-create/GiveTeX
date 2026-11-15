@@ -8,7 +8,8 @@
 
   ■ posts（つぶやき）新しい順でも古い順でもOK（自動で新しい順に並びます）
     { date: "2026-11-15", kind: "digital" | "boardgame" | "madamis" | "escape" | "event" | "other",
-      title: "遊んだもの・行ったところ（省略可）", text: "本文", tags: ["タグ"], url: "関連リンク（省略可）" }
+      title: "遊んだもの・行ったところ（省略可）", text: "本文", tags: ["タグ"], url: "関連リンク（省略可）",
+      map: "会場の名前など（省略可）" }   // 省略すると本文の都道府県名を見つけて「📍 東京都」のように出す。false で出さない
     kind の意味：digital＝デジタルゲーム／boardgame＝ボドゲ／madamis＝マダミス／escape＝脱出ゲーム／event＝イベント
 */
 window.GAME = {

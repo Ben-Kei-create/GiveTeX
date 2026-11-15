@@ -18,6 +18,7 @@
     t.appendChild(el('h3', null, p.shop || '')); if (p.menu) t.appendChild(el('p', 'menu', p.menu));
     if (p.img) { var im = el('img'); im.src = p.img; im.alt = (p.menu || p.shop || '') + 'の写真'; im.loading = 'lazy'; t.appendChild(im); }
     if (p.text) t.appendChild(el('p', null, p.text));
+    var mp = window.GTPlace && GTPlace.chip(p, { query: p.shop ? p.shop + (p.area ? ' ' + p.area : '') : '', label: p.shop ? p.shop + (p.area ? '（' + p.area + '）' : '') : '' }); if (mp) { var mw = el('p', 'place'); mw.appendChild(mp); t.appendChild(mw); }
     if (p.score) {
       var sc = el('div', 'score');
       [['men', '麺'], ['soup', 'スープ'], ['gu', '具']].forEach(function (k) {

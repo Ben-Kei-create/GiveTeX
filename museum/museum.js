@@ -25,6 +25,7 @@
       var pl = el('div', 'plaque'); pl.appendChild(el('b', null, p.exhibition || p.museum || ''));
       if (p.exhibition && p.museum) pl.appendChild(el('span', null, p.museum + (p.place ? '（' + p.place + '）' : '')));
       var t = el('time', null, fmt(p.date)); t.dateTime = p.date; pl.appendChild(t);
+      var mp = window.GTPlace && GTPlace.chip(p, { query: p.museum ? p.museum + (p.place ? ' ' + p.place : '') : '', label: p.museum || '' }); if (mp) { pl.appendChild(document.createTextNode('　')); pl.appendChild(mp); }
       if (p.url) { pl.appendChild(document.createTextNode('　')); var a = el('a', null, '展覧会のページ ↗'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; pl.appendChild(a); }
       art.appendChild(pl); wall.appendChild(art); if (io) io.observe(art); else art.classList.add('in');
     });

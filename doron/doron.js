@@ -58,6 +58,7 @@
       var li = el('li'); li.appendChild(el('b', null, m[0])); li.appendChild(document.createTextNode(m[1])); meta.appendChild(li);
     });
     a.appendChild(meta);
+    var mp = window.GTPlace && r.map && GTPlace.chip(r, { detect: false }); if (mp) { var mw = el('p', 'rep-map'); mw.appendChild(mp); a.appendChild(mw); }
 
     if (r.summary) {
       var body = el('div', 'rep-body');
