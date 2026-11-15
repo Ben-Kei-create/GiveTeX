@@ -48,8 +48,8 @@
   /* ---------- 記録カード ---------- */
   function card(r, no, group) {
     var a = el('article', 'rep');
-    a.appendChild(el('div', 'rep-no', LABEL[group] + ' No.' + pad(no, group === 'reikai' ? 4 : 3)));
-    if (group === 'c-circle') a.appendChild(el('span', 'stamp', '発表'));
+    a.appendChild(el('div', 'rep-no', (r.kind || LABEL[group]) + ' No.' + pad(no, group === 'reikai' ? 4 : 3)));
+    if (group === 'c-circle') a.appendChild(el('span', 'stamp', r.stamp || '発表'));
     a.appendChild(el('h4', null, r.title || '（無題）'));
 
     var meta = el('ul', 'rep-meta');
@@ -136,6 +136,8 @@
       p.hidden = !on;
       if (on) { p.classList.remove('enter'); void p.offsetWidth; p.classList.add('enter'); }
     });
+    var logo = document.querySelector('.logo');
+    if (logo && push) { logo.classList.remove('swap'); void logo.offsetWidth; logo.classList.add('swap'); }
     var meta = document.querySelector('meta[name=theme-color]');
     if (meta) meta.setAttribute('content', getComputedStyle(document.body).getPropertyValue('--bg').trim() || '#07060b');
     if (push && history.replaceState) history.replaceState(null, '', '#' + name);

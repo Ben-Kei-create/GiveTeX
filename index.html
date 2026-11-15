@@ -1,255 +1,140 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GiveTex | 教育 × IT — アプリ・Kindle本・開発日記</title>
-<meta name="description" content="GiveTex（ギブテックス）は教育×ITのクリエイティブ・ラボ。学習アプリの開発、AIで制作したKindle電子書籍、開発日記、AI・学習ツールの記事を発信しています。">
-<meta property="og:title" content="GiveTex | 教育 × IT — アプリ・Kindle本・開発日記">
-<meta property="og:description" content="学習アプリ、AIで制作したKindle電子書籍、開発日記、AI活用の記事。教育×ITで「学び」をつくって届けます。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.givetex.org/">
-<meta property="og:locale" content="ja_JP">
-<meta name="theme-color" content="#ffe14d">
-<link rel="canonical" href="https://www.givetex.org/">
+<meta name="theme-color" content="#000080">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/pop.css">
-
-<!-- Google Analytics placeholder - GA4のIDを入れ替える -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
-</script> -->
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/assets/retro.css">
+<script type="text/javascript" src="/assets/retro.js"></script>
+<title>GiveTex のホームページ ～教育×IT～</title>
+<meta name="description" content="GiveTex（ギブテックス）は教育×ITのホームページ。自作アプリ、Kindle電子書籍「ドパ読！」、オカルトブース「どろん」、開発日記、AI・学びの記事を置いています。">
+<meta property="og:title" content="GiveTex のホームページ ～教育×IT～">
+<meta property="og:description" content="GiveTex（ギブテックス）は教育×ITのホームページ。自作アプリ、Kindle電子書籍「ドパ読！」、オカルトブース「どろん」、開発日記、AI・学びの記事を置いています。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/">
 </head>
 <body>
-
-<!-- ステマ規制法対応 PR表記 -->
 <div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>
-
-<header class="hd">
-  <div class="hd-in">
-    <a class="brand" href="/" aria-label="GiveTex ホーム"><span class="brand-mark">G</span><span class="brand-t"><small>教育 × IT</small><b>GiveTex</b></span></a>
-    <nav class="gnav" aria-label="メインメニュー">
-      <a href="/apps/">アプリ</a>
-      <a href="/books/">ドパ読！</a>
-      <a href="/doron/">どろん</a>
-      <a href="/diary/">開発日記</a>
-      <a href="/#articles">記事</a>
-      <a href="/about.html">About</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <div>
-    <p class="hero-badge"><span>教育 × IT</span>学びを、つくるラボ</p>
-    <h1>学びを<em>つくって</em>、<br><em class="pk">アプリ</em>と<em class="bl">本</em>で<br>届ける。</h1>
-    <p class="hero-sub">GiveTexは、教育とITをかけ合わせて「学び」を形にする個人ラボです。<b>iPhone・Mac向けの学習アプリ</b>、<b>AIで制作したKindle電子書籍</b>、そして毎日の<b>開発日記</b>まで、つくったものをぜんぶここに置いています。</p>
-    <div class="hero-cta">
-      <a class="btn" href="/apps/">アプリを見る →</a>
-      <a class="btn btn-ghost" href="/diary/">開発日記を読む</a>
-    </div>
-  </div>
-  <div class="hero-art" aria-hidden="true">
-    <div class="ha-card ha-1">Apps<small>iPhone / Mac</small></div>
-    <div class="ha-card ha-2">Kindle<small>AI × BOOKS</small></div>
-    <div class="ha-card ha-3">Diary<small>DEV LOG</small></div>
-    <div class="ha-card ha-4">Edu<small>LEARN</small></div>
-    <div class="ha-x">×</div>
-  </div>
-</section>
-
-<div class="stats">
-  <div class="stat box"><b>7</b><span>App Store 公開中</span></div>
-  <div class="stat box"><b>11</b><span>開発中のアプリ</span></div>
-  <div class="stat box"><b>96</b><span>Kindle本「ドパ読！」</span></div>
-  <div class="stat box"><b>6</b><span>AI・学習の記事</span></div>
+<a name="top" id="top"></a>
+<div class="r-head">
+<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
+<div class="r-sub">～ <b>教育</b> × <b>IT</b> の ホームページ ～</div>
+<marquee class="r-news" scrollamount="5" scrolldelay="60">★☆★ ようこそ GiveTex のホームページへ！ ★☆★　11/15　ホームページを90年代風にリニューアルしました！　◆　Kindle本「ドパ読！」96冊を書庫にならべました　◆　オカルトブース「<a href="/doron/">どろん</a>」オープン！ Cサークルの新企画「十人奇談」準備中…　◆　このホームページはリンクフリーです　★☆★</marquee>
+<div class="r-nav"><a href="/" aria-current="page">HOME</a><a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/doron/">どろん</a><a href="/diary/">開発日記</a><a href="/#articles">記事</a><a href="/about.html">管理人</a></div>
 </div>
-
-<div class="wrap">
-
-<section class="sec" aria-label="コンテンツ">
-  <div class="modes">
-    <a class="mode mode-apps" href="/apps/"><span class="mode-emoji">📱</span><span class="mode-en">APPS</span><b>アプリ</b><p>漢検・化学・物理・AWS・Linux…学べるアプリを個人開発。</p></a>
-    <a class="mode mode-books" href="/books/"><span class="mode-emoji">📚</span><span class="mode-en">KINDLE</span><b>ドパ読！</b><p>Kindle電子書籍。「30秒で読む」シリーズ96冊。</p></a>
-    <a class="mode mode-doron" href="/doron/"><span class="mode-emoji">👻</span><span class="mode-en">OCCULT</span><b>どろん</b><p>オカルトブース。座談会と心霊スポット巡りの記録。</p></a>
-    <a class="mode mode-diary" href="/diary/"><span class="mode-emoji">📝</span><span class="mode-en">DEV DIARY</span><b>開発日記</b><p>何をつくって、何が起きたか。リリースまでの記録。</p></a>
-    <a class="mode mode-articles" href="#articles"><span class="mode-emoji">💡</span><span class="mode-en">ARTICLES</span><b>記事</b><p>AIツール比較やプログラミング学習のガイド。</p></a>
-  </div>
-</section>
-
-<section class="sec" id="apps">
-  <div class="sec-hd">
-    <h2><small>Now on App Store</small>📱 App Storeで公開中</h2>
-    <a class="more" href="/apps/">ぜんぶ見る →</a>
-  </div>
-  <div class="apps-grid">
-    <a class="app" href="/apps/ionstep/">
-      <img src="/apps/ionstep/images/icon.jpg" alt="イオンステップのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>イオンステップ</strong><span class="d">高校化学の電気分解と酸化・還元を、反応式を組み立てながら学ぶ。</span><span class="app-tags"><span class="chip chip-lm">化学</span><span class="chip">iPhone</span></span></div>
-    </a>
-    <a class="app" href="/apps/heydrum/">
-      <img src="/apps/heydrum/images/icon.jpg" alt="ヘイドラムのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>HeyDrum！</strong><span class="d">ドラムの合図のあとで文章を読み上げる。白い画面に大きな文字。</span><span class="app-tags"><span class="chip chip-y">ユーティリティ</span><span class="chip">iPhone</span></span></div>
-    </a>
-    <a class="app" href="https://apps.apple.com/jp/app/id6819971113" target="_blank" rel="noopener">
-      <img src="/assets/store/awstudy-clf.jpg" alt="AWSTUDY(CLF)のアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>AWSTUDY(CLF)</strong><span class="d">AWSの基礎を2択クイズで。3ステージ・全60問、回答ごとにポイント解説。</span><span class="app-tags"><span class="chip chip-or">AWS</span><span class="chip">iPhone</span></span></div>
-    </a>
-    <a class="app" href="https://apps.apple.com/jp/app/id6778082145" target="_blank" rel="noopener">
-      <img src="/assets/store/pokephysics.jpg" alt="PokePhysicsのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>PokePhysics</strong><span class="d">高校物理の公式を、記号の意味・成立条件・例題と一緒にすばやく確認。</span><span class="app-tags"><span class="chip chip-bl">物理</span><span class="chip">iPhone / iPad</span></span></div>
-    </a>
-    <a class="app" href="/apps/linatex/">
-      <img src="/apps/linatex/images/icon.jpg" alt="LinaTeXのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>LinaTeX</strong><span class="d">Linuxコマンドを、レッスン・クイズ・実践シナリオで身につける。</span><span class="app-tags"><span class="chip chip-pp">Linux</span><span class="chip">iPhone / iPad</span></span></div>
-    </a>
-    <a class="app" href="/apps/onitan/">
-      <img src="/assets/store/onitan.jpg" alt="OniTanのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>OniTan</strong><span class="d">漢字検定準1級の合格をめざす本格学習アプリ。10ジャンルの問題で実力を磨く。</span><span class="app-tags"><span class="chip chip-pk">漢検</span><span class="chip">iPhone</span></span></div>
-    </a>
-    <a class="app" href="/apps/beerquiz/">
-      <img src="/apps/beerquiz/images/icon.jpg" alt="ビール雑学クイズのアイコン" width="64" height="64" loading="lazy">
-      <div class="app-b"><strong>ビール雑学クイズ</strong><span class="d">注ぎ方・スタイル・醸造まで、初級〜上級の125問に挑戦。</span><span class="app-tags"><span class="chip chip-mt">雑学</span><span class="chip">iPhone</span></span></div>
-    </a>
-  </div>
-
-  <h3 class="month">🛠 開発中・リリース準備中</h3>
-  <div class="app-row">
-    <a class="app-mini" href="/apps/aws-saa-dojo/"><img src="/apps/aws-saa-dojo/images/icon.jpg" alt="" width="56" height="56" loading="lazy">SAA 設計道場</a>
-    <a class="app-mini" href="/apps/awstady-saa/"><img src="/apps/awstady-saa/images/icon.jpg" alt="" width="56" height="56" loading="lazy">AWSSTUDY(SAA)</a>
-    <a class="app-mini" href="/apps/minigamer/"><img src="/apps/minigamer/images/icon.jpg" alt="" width="56" height="56" loading="lazy">MiniGamer</a>
-    <a class="app-mini" href="/apps/kuragoyomi/"><img src="/apps/kuragoyomi/images/icon.jpg" alt="" width="56" height="56" loading="lazy">蔵ごよみ</a>
-    <a class="app-mini" href="/apps/uzacal/"><img src="/apps/uzacal/images/icon.jpg" alt="" width="56" height="56" loading="lazy">UzaCal</a>
-    <a class="app-mini" href="/apps/winequiz/"><img src="/apps/winequiz/images/icon.jpg" alt="" width="56" height="56" loading="lazy">ワイン雑学クイズ</a>
-    <a class="app-mini" href="/apps/zayping/"><img src="/apps/zayping/images/icon.jpg" alt="" width="56" height="56" loading="lazy">Zayping</a>
-    <a class="app-mini" href="/apps/terra/"><img src="/apps/terra/images/icon.jpg" alt="" width="56" height="56" loading="lazy">TERRA</a>
-    <a class="app-mini" href="/apps/yomuemo/"><img src="/apps/yomuemo/images/icon.jpg" alt="" width="56" height="56" loading="lazy">よむエモ</a>
-    <a class="app-mini" href="/apps/paperstory/"><img src="/apps/paperstory/images/icon.jpg" alt="" width="56" height="56" loading="lazy">PaperStory</a>
-    <a class="app-mini" href="/apps/doparika/"><img src="/apps/doparika/images/icon.jpg" alt="" width="56" height="56" loading="lazy">ドパリカ！</a>
-  </div>
-</section>
-
-<section class="sec" id="books">
-  <div class="sec-hd">
-    <h2><small>Kindle電子書籍</small>📚 <span class="dopa-mini">ドパ読<span>！</span></span></h2>
-    <a class="more" href="/books/">全96冊を見る →</a>
-  </div>
-  <p class="lead">Kindle電子書籍「ドパ読！」。著者名 <b>NingentteWinner</b> で、ひとつのテーマを10話・1話30秒で読める「30秒で読む」シリーズを96冊出版中。</p>
-  <div class="shelf-row">
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0H9RFXJY8" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81w-IeO50TL._AC_UY436_.jpg" alt="30秒で読む 雪の女王 君が私を忘れてもの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 雪の女王 君が私を忘れても</b><small>鏡のかけらに心を奪われた友を、ゲルダは探しに行く</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HL58GL8Z" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/91JjJyJcivL._AC_UY436_.jpg" alt="30秒で読む オデュッセイア（新装版）の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む オデュッセイア（新装版）</b><small>故郷へ帰るための10の選択</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HP7P6YF5" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81HiUdXTHcL._AC_UY436_.jpg" alt="30秒で読む 地底旅行、地球の奥には海があるの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 地底旅行、地球の奥には海がある</b><small>ここは地球の中。帰り道は、もうわからない。</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HP7N25ZZ" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81sN7b8tOxL._AC_UY436_.jpg" alt="30秒で読む クリスマス・キャロル スクルージが変わる夜の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む クリスマス・キャロル スクルージが変わる夜</b><small>三人の精霊と旅する、過去・現在・未来</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HR1XB2K9" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/817wABW8GqL._AC_UY436_.jpg" alt="30秒で読む ネリー・ブライ、80日間を追い抜けの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む ネリー・ブライ、80日間を追い抜け</b><small>小説に挑んだ記者と、もう一人のライバル</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HR1LCGLF" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81vBmXSsdFL._AC_UY436_.jpg" alt="30秒で読む ソクラテス、最後の問いの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む ソクラテス、最後の問い</b><small>毒杯を前に哲学者は何を守ったのか</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HKFWHRYJ" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81iI4FbDmCL._AC_UY436_.jpg" alt="30秒で読む 世界の「開けてはいけない墓」の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 世界の「開けてはいけない墓」</b><small>呪いと地図、そして倫理は何を守ったのか</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HJNK8N4S" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81Pfs5kaRjL._AC_UY436_.jpg" alt="30秒で読む 美容と健康、「やめられない」の心理学の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 美容と健康、「やめられない」の心理学</b><small>歴史のおかしな美容法から学ぶ、行動心理学のきほん</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HK8N73LK" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81SrymV3DkL._AC_UY436_.jpg" alt="30秒で読む 突然変異は怪物をつくるのかの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 突然変異は怪物をつくるのか</b><small>DNAの一文字から、体・ウイルス・がんをめぐる10の科学スリラー</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HK8HT89S" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/815QJ0BO3tL._AC_UY436_.jpg" alt="30秒で読む ノーベル賞は誰のもの？の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む ノーベル賞は誰のもの？</b><small>世界最高の賞が、発見を選ぶまで</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HMN4LCQC" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81ca1mJHL8L._AC_UY436_.jpg" alt="30秒で読む 世界を変えたフレネミーの表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 世界を変えたフレネミー</b><small>昨日の味方が、今日いちばん気まずい相手</small></a>
-      <a class="kb" href="https://www.amazon.co.jp/dp/B0HMMRW69J" target="_blank" rel="noopener"><span class="kb-cover"><img src="https://m.media-amazon.com/images/I/81Z7O1aqhOL._AC_UY436_.jpg" alt="30秒で読む 推されすぎて滅の表紙" loading="lazy" width="146" height="218"></span><b>30秒で読む 推されすぎて滅</b><small>かわいい、おいしい、ほしい。その先で消えかけた生きものたち</small></a>
-  </div>
-</section>
-
-<section class="sec" id="doron">
-  <a class="doron-banner" href="/doron/">
-    <span class="doron-ghost" aria-hidden="true">👻</span>
-    <span class="dk">OCCULT BOOTH</span>
-    <b>どろん</b>
-    <p>GiveTexのオカルトブース。座談会、心霊スポット巡り、その発表まで。参加してきた記録と写真をまとめています。</p>
-    <span class="doron-tabs"><span>relics</span><span>霊界案内所</span><span>Cサークル</span></span>
-  </a>
-</section>
-
-<section class="sec" id="diary">
-  <div class="sec-hd">
-    <h2><small>Dev Diary</small>📝 開発日記</h2>
-    <a class="more" href="/diary/">日記をぜんぶ読む →</a>
-  </div>
-  <ol class="diary">
-    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-15">2026.11.15</time><span class="chip chip-pk">サイト</span></div><h3>「ドパ読！」と、オカルトブース「どろん」を開設</h3><p>Kindle本96冊を6ジャンルの本棚に。座談会・心霊スポット巡り・発表の記録を置く「どろん」も。</p></article></li>
-    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-13">2026.11.13</time><span class="chip chip-pk">サイト</span></div><h3>GiveTexをリニューアル。「教育 × IT」の看板へ</h3><p>ブログ中心だったサイトを、アプリ・Kindle本・開発日記をまとめるポップなデザインに作り直しました。</p></article></li>
-    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-06">2026.11.06</time><span class="chip chip-or">AWS</span></div><h3>「AWSTUDY SAA 設計道場」のページを公開</h3><p>要件が変わると答えも変わる。10問ずつ何度でも解ける、AWS設計判断トレーナーを準備中です。</p></article></li>
-    <li><article class="entry box"><div class="entry-hd"><time datetime="2026-11-05">2026.11.05</time><span class="chip chip-y">ゲーム</span></div><h3>ミニゲーム集「MiniGamer」のページを追加</h3><p>本棚から選んですぐ遊べる6本のミニゲーム。あわせて「蔵ごよみ」のシェア画像も用意しました。</p></article></li>
-  </ol>
-</section>
-
-<section class="sec" id="articles">
-  <div class="sec-hd">
-    <h2><small>Articles</small>💡 AI・学びの記事</h2>
-  </div>
-  <div class="posts">
-    <a href="/articles/claude-chatgpt-gemini-comparison.html" class="post">
-      <span class="post-meta">2026.03.22 · 10 min read</span>
-      <h3>Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</h3>
-      <p>3大AIチャットボットを実際にプログラミング学習に使い比べ。コード生成、エラー解説、学習サポートの観点から徹底比較。</p>
-      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip">比較レビュー</span><span class="chip">プログラミング</span></span>
-    </a>
-    <a href="/articles/ai-middle-school-science.html" class="post">
-      <span class="post-meta">2026.03.22 · 12 min read</span>
-      <h3>中学生の理科学習にAIを使ってみた結果【教室で検証】</h3>
-      <p>AIを活用して理科クイズアプリを自作。中学生に使ってもらったら、想像以上の反応が返ってきました。</p>
-      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-lm">理科教育</span><span class="chip">実体験レポート</span></span>
-    </a>
-    <a href="/articles/programming-learning-comparison.html" class="post">
-      <span class="post-meta">2026.03.22 · 12 min read</span>
-      <h3>プログラミング学習サービス比較｜独学・スクール・AI、どれが最適？【2026年版】</h3>
-      <p>独学、スクール、AI活用。3つのアプローチをコスト・学習効果・挫折しにくさで徹底比較。</p>
-      <span class="app-tags"><span class="chip chip-pp">プログラミング</span><span class="chip">比較レビュー</span><span class="chip">学習サービス</span></span>
-    </a>
-    <a href="/articles/ai-image-generation-guide.html" class="post">
-      <span class="post-meta">2026.03.22 · 10 min read</span>
-      <h3>AIで画像生成を始める方法｜無料ツールから有料サービスまで比較【初心者向け】</h3>
-      <p>AI画像生成の始め方を完全ガイド。無料ツールから有料サービスまで、用途別に最適なツールを紹介。</p>
-      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-pk">画像生成</span><span class="chip">初心者向け</span></span>
-    </a>
-    <a href="/articles/blog-monetization-guide.html" class="post">
-      <span class="post-meta">2026.03.22 · 15 min read</span>
-      <h3>副業でブログを始める完全ガイド｜ゼロから収益化までの手順【2026年版】</h3>
-      <p>ブログ開設からASP登録、AI活用、SEO対策まで。副業ブログで月1万円を目指す全手順を解説。</p>
-      <span class="app-tags"><span class="chip chip-y">ブログ</span><span class="chip">副業</span><span class="chip">収益化</span></span>
-    </a>
-    <a href="/articles/ai-meeting-notes-tools.html" class="post">
-      <span class="post-meta">2026.03.22 · 10 min read</span>
-      <h3>AI議事録ツールの選び方｜会議の記録を自動化する方法【2026年版】</h3>
-      <p>Notta、CLOVA Note、Otter.aiなど主要ツールを比較。会議の議事録作成を自動化する方法を解説。</p>
-      <span class="app-tags"><span class="chip chip-bl">AI</span><span class="chip chip-mt">仕事効率化</span><span class="chip">議事録</span></span>
-    </a>
-    <!-- 記事が増えたらここにカードを追加 -->
-  </div>
-</section>
-
-<section class="sec">
-  <div class="about-box box">
-    <h2>GiveTexについて</h2>
-    <p>GiveTex（ギブテックス）は「Give（与える）× Education × Technology」をかけた造語。<b>教育 × IT</b> をテーマに、学べるアプリ、AIで制作した電子書籍、学びに役立つ記事をつくって届けています。</p>
-    <div class="pillars">
-      <div class="pillar" style="background:var(--y)">📱 アプリ開発<small>iPhone・Mac向けの学習アプリ</small></div>
-      <div class="pillar" style="background:var(--pink-bg)">📚 ドパ読！<small>Kindle「30秒で読む」シリーズ</small></div>
-      <div class="pillar" style="background:var(--lime-bg)">📝 開発日記<small>つくる過程をそのまま公開</small></div>
-      <div class="pillar" style="background:var(--blue-bg)">💡 記事<small>AI・学習ツールのガイド</small></div>
-    </div>
-    <p><a class="more" href="/about.html">もっと詳しく →</a></p>
-  </div>
-</section>
-
+<table class="r-layout" border="0" cellspacing="0" cellpadding="0" summary="レイアウト"><tr>
+<td class="r-main" valign="top">
+<div class="win ">
+<div class="win-t"><span class="ico">🏠</span><span class="ttl">ようこそ！ - GiveTex</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<p class="r-big"><script type="text/javascript"><!--
+document.write(rGreeting());
+//--></script><noscript>ようこそ！</noscript></p>
+<p class="r-center"><b>GiveTex</b>（ギブテックス）のホームページへ ようこそ！<br>
+ここでは <font color="#ff0066"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
+ゆっくりしていってくださいね。</p>
+<table class="r-tbl" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>記事</th></tr>
+<tr><td class="r-center"><b>7</b> 本</td><td class="r-center"><b>11</b> 本</td><td class="r-center"><b>96</b> 冊</td><td class="r-center"><b>6</b> 本</td></tr></table>
+<p class="r-small r-center">最終更新日：2026年11月15日</p>
 </div>
-</main>
+</div><div class="win ">
+<div class="win-t"><span class="ico">📢</span><span class="ttl">What's New!! - 更新履歴</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<table class="r-tbl" summary="更新履歴"><tr><th>日付</th><th>更新内容</th></tr><tr><td class="date">2026/11/15</td><td>どろん：Cサークルの新企画「<a href="/doron/#c-circle">十人奇談</a>」の素材を公開 <img src="/assets/retro/new.gif" width="30" height="13" alt="NEW!"></td></tr><tr><td class="date">2026/11/15</td><td>ホームページを90年代風にリニューアルしました！ <img src="/assets/retro/new.gif" width="30" height="13" alt="NEW!"></td></tr><tr><td class="date">2026/11/15</td><td>Kindle本「<a href="/books/">ドパ読！</a>」96冊を書庫に／オカルトブース「<a href="/doron/">どろん</a>」オープン </td></tr><tr><td class="date">2026/11/13</td><td>「教育 × IT」の看板でサイトをリニューアル </td></tr><tr><td class="date">2026/11/06</td><td>「<a href="/apps/aws-saa-dojo/">AWSTUDY SAA 設計道場</a>」のページを公開 </td></tr><tr><td class="date">2026/11/05</td><td>ミニゲーム集「<a href="/apps/minigamer/">MiniGamer</a>」のページを追加 </td></tr></table><p class="r-small">→ これまでの更新は <a href="/diary/">開発日記</a> へ</p>
+</div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">💾</span><span class="ttl">アプリ置き場 - マイ コンピュータ</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-menu"><span><u>F</u>ファイル</span><span><u>E</u>編集</span><span><u>V</u>表示</span><span><u>H</u>ヘルプ</span></div><div class="win-b ">
+<div class="r-icons"><a class="r-icon" href="/apps/ionstep/"><img src="/apps/ionstep/images/icon.jpg" width="56" height="56" alt=""><span>イオンステップ</span><small class="">★公開中</small></a><a class="r-icon" href="/apps/heydrum/"><img src="/apps/heydrum/images/icon.jpg" width="56" height="56" alt=""><span>HeyDrum！</span><small class="">★公開中</small></a><a class="r-icon" href="https://apps.apple.com/jp/app/id6819971113" target="_blank"><img src="/assets/store/awstudy-clf.jpg" width="56" height="56" alt=""><span>AWSTUDY(CLF)</span><small class="">★公開中</small></a><a class="r-icon" href="https://apps.apple.com/jp/app/id6778082145" target="_blank"><img src="/assets/store/pokephysics.jpg" width="56" height="56" alt=""><span>PokePhysics</span><small class="">★公開中</small></a><a class="r-icon" href="/apps/linatex/"><img src="/apps/linatex/images/icon.jpg" width="56" height="56" alt=""><span>LinaTeX</span><small class="">★公開中</small></a><a class="r-icon" href="/apps/onitan/"><img src="/assets/store/onitan.jpg" width="56" height="56" alt=""><span>OniTan(Pre1)</span><small class="">★公開中</small></a><a class="r-icon" href="/apps/beerquiz/"><img src="/apps/beerquiz/images/icon.jpg" width="56" height="56" alt=""><span>ビール雑学クイズ</span><small class="">★公開中</small></a><a class="r-icon" href="/apps/aws-saa-dojo/"><img src="/apps/aws-saa-dojo/images/icon.jpg" width="56" height="56" alt=""><span>SAA 設計道場</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/awstady-saa/"><img src="/apps/awstady-saa/images/icon.jpg" width="56" height="56" alt=""><span>AWSSTUDY(SAA)</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/minigamer/"><img src="/apps/minigamer/images/icon.jpg" width="56" height="56" alt=""><span>MiniGamer</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/kuragoyomi/"><img src="/apps/kuragoyomi/images/icon.jpg" width="56" height="56" alt=""><span>蔵ごよみ</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/uzacal/"><img src="/apps/uzacal/images/icon.jpg" width="56" height="56" alt=""><span>UzaCal</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/winequiz/"><img src="/apps/winequiz/images/icon.jpg" width="56" height="56" alt=""><span>ワイン雑学クイズ</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/zayping/"><img src="/apps/zayping/images/icon.jpg" width="56" height="56" alt=""><span>Zayping</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/terra/"><img src="/apps/terra/images/icon.jpg" width="56" height="56" alt=""><span>TERRA</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/yomuemo/"><img src="/apps/yomuemo/images/icon.jpg" width="56" height="56" alt=""><span>よむエモ</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/paperstory/"><img src="/apps/paperstory/images/icon.jpg" width="56" height="56" alt=""><span>PaperStory</span><small class="dev">準備中</small></a><a class="r-icon" href="/apps/doparika/"><img src="/apps/doparika/images/icon.jpg" width="56" height="56" alt=""><span>ドパリカ！</span><small class="dev">準備中</small></a></div>
+</div><div class="win-status"><span>18 個のオブジェクト</span><span>App Store 公開中 7</span></div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">📚</span><span class="ttl">ドパ読！書庫 - Kindle電子書籍 96冊</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<div class="r-shelf"><a class="r-book" href="https://www.amazon.co.jp/dp/B0H9RFXJY8" target="_blank"><img src="https://m.media-amazon.com/images/I/81w-IeO50TL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 雪の女王 君が私を忘れてもの表紙" loading="lazy"><b>30秒で読む 雪の女王 君が私を忘れても</b><small>鏡のかけらに心を奪われた友を、ゲルダは探しに行く</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HL58GL8Z" target="_blank"><img src="https://m.media-amazon.com/images/I/91JjJyJcivL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む オデュッセイア（新装版）の表紙" loading="lazy"><b>30秒で読む オデュッセイア（新装版）</b><small>故郷へ帰るための10の選択</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HP7P6YF5" target="_blank"><img src="https://m.media-amazon.com/images/I/81HiUdXTHcL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 地底旅行、地球の奥には海があるの表紙" loading="lazy"><b>30秒で読む 地底旅行、地球の奥には海がある</b><small>ここは地球の中。帰り道は、もうわからない。</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HP7N25ZZ" target="_blank"><img src="https://m.media-amazon.com/images/I/81sN7b8tOxL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む クリスマス・キャロル スクルージが変わる夜の表紙" loading="lazy"><b>30秒で読む クリスマス・キャロル スクルージが変わる夜</b><small>三人の精霊と旅する、過去・現在・未来</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HR1XB2K9" target="_blank"><img src="https://m.media-amazon.com/images/I/817wABW8GqL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む ネリー・ブライ、80日間を追い抜けの表紙" loading="lazy"><b>30秒で読む ネリー・ブライ、80日間を追い抜け</b><small>小説に挑んだ記者と、もう一人のライバル</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HR1LCGLF" target="_blank"><img src="https://m.media-amazon.com/images/I/81vBmXSsdFL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む ソクラテス、最後の問いの表紙" loading="lazy"><b>30秒で読む ソクラテス、最後の問い</b><small>毒杯を前に哲学者は何を守ったのか</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HKFWHRYJ" target="_blank"><img src="https://m.media-amazon.com/images/I/81iI4FbDmCL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 世界の「開けてはいけない墓」の表紙" loading="lazy"><b>30秒で読む 世界の「開けてはいけない墓」</b><small>呪いと地図、そして倫理は何を守ったのか</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HJNK8N4S" target="_blank"><img src="https://m.media-amazon.com/images/I/81Pfs5kaRjL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 美容と健康、「やめられない」の心理学の表紙" loading="lazy"><b>30秒で読む 美容と健康、「やめられない」の心理学</b><small>歴史のおかしな美容法から学ぶ、行動心理学のきほん</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HK8N73LK" target="_blank"><img src="https://m.media-amazon.com/images/I/81SrymV3DkL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 突然変異は怪物をつくるのかの表紙" loading="lazy"><b>30秒で読む 突然変異は怪物をつくるのか</b><small>DNAの一文字から、体・ウイルス・がんをめぐる10の科学スリラー</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HK8HT89S" target="_blank"><img src="https://m.media-amazon.com/images/I/815QJ0BO3tL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む ノーベル賞は誰のもの？の表紙" loading="lazy"><b>30秒で読む ノーベル賞は誰のもの？</b><small>世界最高の賞が、発見を選ぶまで</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HMN4LCQC" target="_blank"><img src="https://m.media-amazon.com/images/I/81ca1mJHL8L._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 世界を変えたフレネミーの表紙" loading="lazy"><b>30秒で読む 世界を変えたフレネミー</b><small>昨日の味方が、今日いちばん気まずい相手</small></a><a class="r-book" href="https://www.amazon.co.jp/dp/B0HMMRW69J" target="_blank"><img src="https://m.media-amazon.com/images/I/81Z7O1aqhOL._AC_UY436_.jpg" width="110" height="164" alt="30秒で読む 推されすぎて滅の表紙" loading="lazy"><b>30秒で読む 推されすぎて滅</b><small>かわいい、おいしい、ほしい。その先で消えかけた生きものたち</small></a></div><p class="r-center"><a class="r-btn" href="/books/">全96冊を見る &gt;&gt;</a></p>
+</div>
+</div><div class="win dark">
+<div class="win-t"><span class="ico">👻</span><span class="ttl">どろん - オカルトブース</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<p class="r-center"><a href="/doron/"><img src="/doron/img/logo-relics.webp" width="440" height="182" alt="どろん" style="filter:drop-shadow(0 0 10px #ff3355)"></a></p>
+<p class="r-center">GiveTex の <b>オカルトブース</b> です。夜の記録はこちらから……</p>
+<table class="r-tbl" summary="どろんのブース"><tr><th>ブース</th><th>なにをする？</th></tr>
+<tr><td><a href="/doron/#relics">relics</a></td><td>座談会。怪談・うわさ・考察を語り合う</td></tr>
+<tr><td><a href="/doron/#reikai">霊界案内所</a></td><td>心霊スポット巡り</td></tr>
+<tr><td><a href="/doron/#c-circle">Cサークル</a></td><td>スポット巡り ＋ 発表。新企画「十人奇談」準備中 <img src="/assets/retro/new.gif" width="30" height="13" alt="NEW!"></td></tr></table>
+</div>
+</div><a name="diary" id="diary"></a><div class="win ">
+<div class="win-t"><span class="ico">📝</span><span class="ttl">開発日記 - メモ帳</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<div class="r-diary-entry">
+<div class="d">■ 2026/11/15(日)　[どろん]</div>
+<h3>Cサークルの新企画「十人奇談」、準備中</h3>
+<p>オカルトブース「<a href="/doron/#c-circle">どろん</a>」のCサークルで、「十人奇談」という企画を考えています。前半・後半の札と、「怪談」「奇談」「雑談」の題名カードを作りました。くわしい内容は決まりしだい、ここと Cサークルのページでお知らせします。</p>
+<div><a class="r-photo" href="/doron/img/jyunin-kidan-fuda.webp" target="_blank"><img src="/doron/img/jyunin-kidan-fuda.webp" width="989" height="1400" alt="十人奇談 前半・後半の札" loading="lazy">十人奇談 前半・後半の札</a><a class="r-photo" href="/doron/img/jyunin-kidan-cards.webp" target="_blank"><img src="/doron/img/jyunin-kidan-cards.webp" width="1400" height="822" alt="怪談・奇談・雑談 の題名カード" loading="lazy">怪談・奇談・雑談 の題名カード</a></div>
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/11/15(日)　[サイト]</div>
+<h3>ホームページを90年代風にリニューアル！</h3>
+<p>インターネットが始まったころの「ホームページ」の空気を目指して、まるごと作り直しました。テーブルでレイアウトして、マーキーが流れて、アクセスカウンターが回る、あの感じです。どろんのロゴも3種類になりました。</p>
 
-<footer class="ft">
-  <p class="ft-brand">Give<span>Tex</span></p>
-  <p>教育 × IT — 学びを、つくって届ける。</p>
-  <nav class="ft-links" aria-label="フッターメニュー">
-    <a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/doron/">どろん</a><a href="/diary/">開発日記</a><a href="/about.html">運営者情報</a><a href="/privacy.html">プライバシーポリシー</a>
-  </nav>
-  <p>&copy; 2026 GiveTex. All rights reserved.</p>
-</footer>
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/11/15(日)　[サイト]</div>
+<h3>Kindle本は「ドパ読！」に。オカルトブース「どろん」も開設</h3>
+<p>Kindle電子書籍のコーナーを「<a href="/books/">ドパ読！</a>」と名付け、「30秒で読む」シリーズ全96冊を6ジャンルの本棚に。あわせて、座談会「relics」・心霊スポット巡り「霊界案内所」・巡って発表する「Cサークル」の記録を置くオカルトブース「<a href="/doron/">どろん</a>」を作りました。</p>
 
+</div><p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>
+</div>
+</div><a name="articles" id="articles"></a><div class="win ">
+<div class="win-t"><span class="ico">📄</span><span class="ttl">記事 - AI・学びのお役立ち</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<ul class="r-list"><li><a href="/articles/claude-chatgpt-gemini-comparison.html">Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</a></li><li><a href="/articles/ai-middle-school-science.html">中学生の理科学習にAIを使ってみた結果【教室で検証】</a></li><li><a href="/articles/programming-learning-comparison.html">プログラミング学習サービス比較｜独学・スクール・AI、どれが最適？【2026年版】</a></li><li><a href="/articles/ai-image-generation-guide.html">AIで画像生成を始める方法｜無料ツールから有料サービスまで比較【初心者向け】</a></li><li><a href="/articles/blog-monetization-guide.html">副業でブログを始める完全ガイド｜ゼロから収益化までの手順【2026年版】</a></li><li><a href="/articles/ai-meeting-notes-tools.html">AI議事録ツールの選び方｜会議の記録を自動化する方法【2026年版】</a></li></ul>
+</div>
+</div><div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>
+</td>
+<td class="r-side" valign="top" width="210">
+<div class="win ">
+<div class="win-t"><span class="ico">📁</span><span class="ttl">MENU</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<div class="r-menu"><a href="/apps/">アプリ置き場</a><a href="/books/">ドパ読！書庫</a><a href="/doron/">どろん（オカルト）</a><a href="/diary/">開発日記</a><a href="/#articles">お役立ち記事</a><a href="/about.html">管理人のプロフィール</a><a href="/privacy.html">プライバシー</a></div>
+</div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">🔢</span><span class="ttl">カウンター</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>1</b></span><br>回目の訪問です</p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>
+</div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">👤</span><span class="ttl">管理人のプロフィール</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>
+</div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">⏰</span><span class="ttl">いまの時刻</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<p class="r-center" style="margin:0"><span id="r-clock">--:--:--</span></p>
+</div>
+</div><div class="win ">
+<div class="win-t"><span class="ico">🔗</span><span class="ttl">リンク</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
+<div class="win-b ">
+<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>
+</div>
+</div>
+</td>
+</tr></table>
+<div class="r-foot">
+<hr class="r-hr">
+<div class="bnrs">
+<a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
+<a href="/books/"><img src="/assets/retro/bnr-dopayomi.gif" width="88" height="31" alt="ドパ読！"></a>
+<a href="/doron/"><img src="/assets/retro/bnr-doron.gif" width="88" height="31" alt="どろん"></a>
+<img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
+</div>
+<p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
+<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
+<address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
+</div>
 </body>
 </html>

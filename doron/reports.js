@@ -24,6 +24,8 @@
       points: ["要点1", "要点2"]
     },
     tags: ["タグ1", "タグ2"],
+    kind: "企画",                       // 番号の前の文字（省略すると タブごとの既定）
+    stamp: "企画中",                    // Cサークルのはんこの文字（省略すると「発表」）
     photos: [
       { src: "/doron/photos/2026-11-20-01.jpg", caption: "写真の説明" }
     ]
@@ -31,4 +33,17 @@
 */
 window.DORON_REPORTS = [
   // ここに記録を追加
+  {
+    group: "c-circle",
+    date: "2026-11-15",
+    title: "新企画「十人奇談」準備中",
+    kind: "企画",
+    stamp: "企画中",
+    summary: "Cサークルで「十人奇談」という企画を考えています。\n\n前半・後半の札と、「怪談」「奇談」「雑談」の題名カードを作りました。くわしい内容は、決まりしだいここで発表します。",
+    tags: ["十人奇談", "企画中"],
+    photos: [
+      { src: "/doron/img/jyunin-kidan-fuda.webp", caption: "十人奇談 前半・後半の札" },
+      { src: "/doron/img/jyunin-kidan-cards.webp", caption: "怪談・奇談・雑談 の題名カード" }
+    ]
+  }
 ];

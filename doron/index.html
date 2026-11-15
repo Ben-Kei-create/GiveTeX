@@ -15,6 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/doron/img/logo-relics.webp">
+<link rel="preload" as="image" href="/doron/img/logo-reikai.webp">
+<link rel="preload" as="image" href="/doron/img/logo-c-circle.webp">
 <link rel="stylesheet" href="/doron/doron.css">
 <script>document.documentElement.classList.add('js')</script>
 <noscript><style>.panel[hidden]{display:block!important}</style></noscript>
@@ -24,6 +27,13 @@
 <div class="fog" aria-hidden="true"></div>
 <div class="noise" aria-hidden="true"></div>
 
+<!-- ロゴをゆらす（陽炎のような歪み） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="haunt" x="-4%" y="-6%" width="108%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.024" numOctaves="2" seed="13" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
 <!-- 共通のSVGシンボル -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-relics" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -54,7 +64,7 @@
 
   <header class="hero">
     <p class="kicker">GIVETEX OCCULT BOOTH</p>
-    <h1 class="logo" data-text="どろん">どろん</h1>
+    <h1 class="logo"><span class="sr">どろん</span><span class="logo-img" aria-hidden="true"></span></h1>
     <p class="tagline">ここは、GiveTexのオカルトブース。<br><b>座談会</b>、<b>心霊スポット巡り</b>、そしてその<b>発表</b>まで。<br>参加してきた夜の記録を、そっと置いておく場所です。</p>
   </header>
 

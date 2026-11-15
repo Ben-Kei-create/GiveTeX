@@ -46,13 +46,30 @@ body[data-tab=reikai] .noise{opacity:.05;background-image:repeating-linear-gradi
 /* ヒーロー */
 .hero{max-width:1080px;margin:0 auto;padding:40px 16px 10px;text-align:center}
 .kicker{margin:0;font:700 12px/1.4 var(--mono);letter-spacing:.32em;color:var(--acc)}
-.logo{margin:6px 0 4px;font:clamp(84px,22vw,190px)/1 var(--disp);letter-spacing:.04em;color:var(--ink);text-shadow:0 0 24px var(--glow),0 0 2px var(--ink);position:relative;display:inline-block}
-.logo::after{content:attr(data-text);position:absolute;left:0;top:0;color:var(--acc);opacity:.35;transform:translate(4px,2px);mix-blend-mode:screen;pointer-events:none}
+/* ロゴ：タブごとに3種類。同じ枠・同じ大きさで差し替わる */
+body[data-tab=relics]{--logo:url("/doron/img/logo-relics.webp");--logo-fx:drop-shadow(0 0 2px #2a0d00) drop-shadow(0 0 18px #ff6a1a88) brightness(.9) contrast(1.1) saturate(.9)}
+body[data-tab=reikai]{--logo:url("/doron/img/logo-reikai.webp");--logo-fx:drop-shadow(0 0 1.5px #d9fff0) drop-shadow(0 0 2px #4dffb5) drop-shadow(0 0 22px #4dffb5aa) brightness(.95)}
+body[data-tab=c-circle]{--logo:url("/doron/img/logo-c-circle.webp");--logo-fx:drop-shadow(0 0 2px #2a0010) drop-shadow(0 0 20px #ff2d5599) brightness(.88) contrast(1.12)}
+.logo{position:relative;display:block;width:min(92vw,680px);aspect-ratio:2.3/1;margin:8px auto 6px}
+.logo-img,.logo::before,.logo::after{position:absolute;inset:0;background:var(--logo) center/contain no-repeat;pointer-events:none}
+.logo-img{filter:url(#haunt) var(--logo-fx)}
+/* 残像（にじんだ“もうひとつのどろん”） */
+.logo::after{content:"";opacity:.22;filter:blur(4px) var(--logo-fx);mix-blend-mode:screen;transform:translate(7px,4px)}
+/* たまに走るノイズ */
+.logo::before{content:"";opacity:0;z-index:2;filter:url(#haunt) saturate(0) brightness(1.8);mix-blend-mode:screen}
 @media(prefers-reduced-motion:no-preference){
-  .logo{animation:flicker 7s infinite}
-  @keyframes flicker{0%,18%,22%,62%,64%,100%{opacity:1}20%,63%{opacity:.35}}
-  .logo::after{animation:shift 5s steps(2) infinite}
-  @keyframes shift{0%,90%,100%{transform:translate(4px,2px)}92%{transform:translate(-6px,-1px)}95%{transform:translate(7px,3px)}}
+  .logo-img{animation:flicker 7s infinite}
+  @keyframes flicker{0%,17%,21%,61%,64%,100%{opacity:1}18%{opacity:.25}19.5%{opacity:.85}20%{opacity:.4}62.5%{opacity:.55}}
+  .logo::after{animation:afterimage 9s ease-in-out infinite}
+  @keyframes afterimage{0%,100%{transform:translate(7px,4px);opacity:.22}50%{transform:translate(-9px,-3px) scale(1.02);opacity:.34}}
+  .logo::before{animation:glitch 6.5s steps(1) infinite}
+  @keyframes glitch{0%,88%,100%{opacity:0;clip-path:inset(0 0 100% 0);transform:none}
+    89%{opacity:.7;clip-path:inset(18% 0 62% 0);transform:translateX(-14px)}
+    90.5%{opacity:.6;clip-path:inset(55% 0 28% 0);transform:translateX(12px)}
+    92%{opacity:.5;clip-path:inset(76% 0 8% 0);transform:translateX(-6px)}
+    93%{opacity:0}}
+  .logo.swap .logo-img{animation:materialize .9s ease-out both,flicker 7s 1s infinite}
+  @keyframes materialize{0%{opacity:0;filter:url(#haunt) var(--logo-fx) blur(14px);transform:scale(1.06)}60%{opacity:.7}100%{opacity:1;filter:url(#haunt) var(--logo-fx) blur(0);transform:none}}
 }
 .tagline{margin:0 auto 6px;max-width:34em;color:var(--sub);font-size:15.5px;text-wrap:balance;word-break:auto-phrase}
 .tagline b{color:var(--ink)}
@@ -105,7 +122,7 @@ body[data-tab=reikai] .noise{opacity:.05;background-image:repeating-linear-gradi
 .rep-list{margin:0 0 6px;padding-left:1.2em;font-size:14.5px}
 .rep-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .rep-tags span{font-size:12px;font-weight:700;border:1px solid var(--card-line);border-radius:999px;padding:0 10px;color:var(--card-sub)}
-.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:12px}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:12px}
 .photos button{all:unset;cursor:zoom-in;display:block;border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:#0004;outline-offset:2px}
 .photos button:focus-visible{outline:3px solid var(--acc)}
 .photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,filter .4s}
