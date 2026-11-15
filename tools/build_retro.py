@@ -34,14 +34,14 @@ def header(cur):
     AC = ' aria-current="page"'
     nav = ''.join(f'<a href="{h}"{AC if h == cur else ""}>{t}</a>' for h, t in NAV)
     return f'''<a name="top" id="top"></a>
-<div class="r-head">
+<div class="r-head" role="banner">
 <a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
 <div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
 <marquee class="r-news" scrollamount="5" scrolldelay="60">{NEWS}</marquee>
-<div class="r-nav">{nav}</div>
+<div class="r-nav" role="navigation" aria-label="メニュー">{nav}</div>
 </div>'''
 
-FOOTER = '''<div class="r-foot">
+FOOTER = '''<div class="r-foot" role="contentinfo">
 <hr class="r-hr">
 <div class="bnrs">
 <a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
@@ -86,6 +86,9 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 </body>
 </html>
 '''
+    # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
+    head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
+    doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
     (R / path).parent.mkdir(parents=True, exist_ok=True)
     (R / path).write_text(doc)
     print('wrote', path)
@@ -206,7 +209,7 @@ def build_index():
 document.write(rGreeting());
 //--></script><noscript>ようこそ！</noscript></p>
 <p class="r-center"><b>GiveTex</b>（ギブテックス）のホームページへ ようこそ！<br>
-ここでは <font color="#ff0066"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
+ここでは <font color="#d10056"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
 ゆっくりしていってくださいね。</p>
 <table class="r-tbl" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>7</b> 本</td><td class="r-center"><b>11</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>349</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>ブース</th><th>記事</th></tr><tr><td class="r-center"><b>11</b> 話</td><td class="r-center"><b>18</b> セット</td><td class="r-center"><b>11</b> こ</td><td class="r-center"><b>6</b> 本</td></tr></table>
 <p class="r-small r-center">最終更新日：2026年11月15日</p>'''
@@ -215,7 +218,7 @@ document.write(rGreeting());
     shelf = ''.join(book(*b) for k in BOOKS['cats'] for b in BOOKS['books'][k][:2])
     diary_top = ''.join(diary_entry(d) for d in DIARY[:3])
     arts = ''.join(f'<li><a href="{h}">{E(t)}</a></li>' for h, t in ARTICLES)
-    doron = f'''<p class="r-center"><a href="/doron/"><img src="/doron/img/logo-relics.webp" width="440" height="182" alt="どろん" style="filter:drop-shadow(0 0 10px #ff3355)"></a></p>
+    doron = f'''<p class="r-center"><a href="/doron/"><img src="/doron/img/logo-relics-s.webp" width="440" height="182" alt="どろん" style="filter:drop-shadow(0 0 10px #ff3355)"></a></p>
 <p class="r-center">GiveTex の <b>オカルトブース</b> です。夜の記録はこちらから……</p>
 <table class="r-tbl" summary="どろんのブース"><tr><th>ブース</th><th>なにをする？</th></tr>
 <tr><td><a href="/doron/#relics">relics</a></td><td>座談会。怪談・うわさ・考察を語り合う</td></tr>
@@ -257,7 +260,7 @@ def build_apps():
         return f'<tr><td align="center" width="64"><img src="{img}" width="48" height="48" alt="" style="border-radius:10px"></td><td><b>{name}</b><br><span class="r-small">{E(d)}</span></td><td align="center" nowrap>{st}<br><span class="r-small">{" / ".join(links)}</span></td></tr>'
     r1 = ''.join(row(h, img, n, d, s) for h, img, n, d, s in RELEASED)
     r2 = ''.join(row(f'/apps/{k}/', f'/apps/{k}/images/icon.jpg', n, d, None, True) for k, n, d in DEV)
-    body = f'''<div class="r-page">
+    body = f'''<div class="r-page" role="main">
 {win('アプリ置き場 - マイ コンピュータ', f"""<h2 class="r-h">💾 アプリ置き場</h2>
 <p>GiveTex で作ったアプリの一覧です。紹介ページ・サポート・プライバシーポリシーもここから見られます。</p>
 <h3 class="r-h3">App Store で公開中</h3>
@@ -273,12 +276,12 @@ def build_books():
     jump = ' ｜ '.join(f'<a href="#{k}">{E(n)}（{len(BOOKS["books"][k])}）</a>' for k, n in BOOKS['cats'].items())
     cats = ''.join(f'<a name="{k}" id="{k}"></a>' + win(f'{E(n)} - {len(BOOKS["books"][k])}冊', '<div class="r-shelf">' + ''.join(book(*b) for b in BOOKS['books'][k]) + '</div><p class="r-small" style="text-align:right;margin:0"><a href="#top">▲ 上へ</a></p>', '📚') for k, n in BOOKS['cats'].items())
     intro = f'''<p class="r-big" style="font-size:40px;color:#ff0066">ドパ読<font color="#3d63ff">！</font></p>
-<p class="r-center"><b>Kindle電子書籍「ドパ読！」</b>へようこそ。<br>1話30秒で、脳にドーパミン。ひとつのテーマを10話に分けて、神話・名作・偉人・歴史・科学・心理まで、<br class="pc">ちょうどいい短さで読める <font color="#ff0066"><b>「30秒で読む」シリーズ</b></font> を <b>{TOTAL}冊</b> ならべています。</p>
+<p class="r-center"><b>Kindle電子書籍「ドパ読！」</b>へようこそ。<br>1話30秒で、脳にドーパミン。ひとつのテーマを10話に分けて、神話・名作・偉人・歴史・科学・心理まで、<br class="pc">ちょうどいい短さで読める <font color="#d10056"><b>「30秒で読む」シリーズ</b></font> を <b>{TOTAL}冊</b> ならべています。</p>
 <table class="r-tbl" summary="著者"><tr><th>著者名</th><td><b>NingentteWinner</b>（Kindleでの名義）</td></tr>
 <tr><th>どんな本？</th><td>学校教育とIT開発の経験をいかし、むずかしいテーマを短く、おもしろく。AIを相棒に企画・執筆しています。</td></tr>
 <tr><th>買える場所</th><td><a href="{AUTH}" target="_blank" rel="noopener">Amazon の著者ページで全作品を見る</a></td></tr></table>
 <p class="r-jump">ジャンル：{jump}</p>'''
-    body = f'''<div class="r-page">
+    body = f'''<div class="r-page" role="main">
 {win(f"ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊", intro, "📚")}
 {cats}
 <p class="r-small" style="color:#ccc">※ 日本語版を掲載しています（{TOTAL}冊・2026年11月時点）。英語版・ドイツ語版・スペイン語版や最新刊は Amazon の著者ページへ。価格・Kindle Unlimited 対象かどうかは Amazon でご確認ください。</p>
@@ -292,7 +295,7 @@ def build_diary():
         months.setdefault(d['date'][:7], []).append(d)
     idx = ' ｜ '.join(f'<a href="#m{k.replace("-", "")}">{int(k[:4])}年{int(k[5:])}月</a>' for k in months)
     parts = ''.join(f'<a name="m{k.replace("-", "")}" id="m{k.replace("-", "")}"></a><h2 class="r-h">{int(k[:4])}年{int(k[5:])}月</h2>' + ''.join(diary_entry(d) for d in v) for k, v in months.items())
-    body = f'''<div class="r-page">
+    body = f'''<div class="r-page" role="main">
 {win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 2026/11/15'])}
 </div>'''
     page('diary/index.html', '開発日記 | GiveTex', 'GiveTexの開発日記。学習アプリのリリース、サイト更新、Kindle出版、オカルトブース「どろん」など、つくる過程の記録です。', body, '/diary/')
@@ -300,10 +303,10 @@ def build_diary():
 # ================= 管理人のプロフィール =================
 def build_about():
     AUTH = 'https://www.amazon.co.jp/s?i=digital-text&amp;rh=p_27%3ANingentteWinner&amp;s=date-desc-rank'
-    body = f'''<div class="r-page">
+    body = f'''<div class="r-page" role="main">
 {win('管理人のプロフィール - GiveTex', f"""<h2 class="r-h">👤 このホームページについて</h2>
 <p><b>GiveTex</b>（ギブテックス）は「Give（与える）× Education × Technology」を掛け合わせた造語です。<br>
-<font color="#ff0066"><b>教育 × IT</b></font> をテーマに、学びを形にして届けることを目標にしています。</p>
+<font color="#d10056"><b>教育 × IT</b></font> をテーマに、学びを形にして届けることを目標にしています。</p>
 <h3 class="r-h3">やっていること</h3>
 <table class="r-tbl" summary="活動"><tr><th>コーナー</th><th>内容</th></tr>
 <tr><td><a href="/apps/">アプリ置き場</a></td><td>漢検・化学・物理・AWS・Linuxなど、学べる iPhone / Mac アプリ</td></tr>

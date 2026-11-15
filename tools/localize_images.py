@@ -13,7 +13,7 @@ R = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).re
 MAP = R / 'tools' / 'ext_images.json'
 HOSTS = {'assets.st-note.com': ('note', 960), 'm.media-amazon.com': ('amazon', 400), 'stickershop.line-scdn.net': ('line', 480)}
 URL = re.compile(r'https://(assets\.st-note\.com|m\.media-amazon\.com|stickershop\.line-scdn\.net)/[^"\'\s)<>\\]+')
-SKIP = {'.git', 'node_modules', 'api', 'assets/ext'}
+SKIP = {'.git', 'node_modules', 'api', 'assets/ext', '.note-cache'}
 
 def files():
     for p in R.rglob('*'):
@@ -45,14 +45,28 @@ def fetch(url):
         print('  x', url[:90], type(e).__name__, file=sys.stderr)
         return url, None
 
+def base(u):
+    # note の画像は ?width=… などの違いを同じ画像としてあつかう
+    return u.split('?')[0] if u.startswith('https://assets.st-note.com/') else u
+
 def main():
     mp = json.loads(MAP.read_text()) if MAP.exists() else {}
     texts = {p: p.read_text(encoding='utf-8') for p in files()}
-    urls = sorted({m.group(0) for t in texts.values() for m in URL.finditer(t)} - set(mp))
-    print('新しく保存する画像:', len(urls))
+    byb = {base(k): v for k, v in mp.items()}
+    found = {m.group(0) for t in texts.values() for m in URL.finditer(t)}
+    for u in found:
+        if u not in mp and base(u) in byb: mp[u] = byb[base(u)]
+    todo = {}
+    for u in sorted(found - set(mp)):
+        b = base(u); todo.setdefault(b, []).append(u)
+    print('新しく保存する画像:', len(todo))
+    def one(b):
+        src = b + '?width=1200' if b.startswith('https://assets.st-note.com/') and '?' not in b else todo[b][0]
+        return b, fetch(src)[1]
     with cf.ThreadPoolExecutor(8) as ex:
-        for u, local in ex.map(fetch, urls):
-            if local: mp[u] = local
+        for b, local in ex.map(one, list(todo)):
+            if local:
+                for u in todo[b]: mp[u] = local
     MAP.write_text(json.dumps(mp, ensure_ascii=False, indent=0, sort_keys=True))
     changed = 0
     for p, t in texts.items():

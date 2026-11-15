@@ -42,8 +42,8 @@ def convert(p, sub):
     s = re.sub(r'<link href="https://fonts.googleapis.com/css2\?family=DotGothic16[^"]*" rel="stylesheet">', FONTS, s, count=1)
     s = s.replace('<link rel="stylesheet" type="text/css" href="/assets/retro.css">\n', '').replace('<script type="text/javascript" src="/assets/retro.js"></script>\n', '')
     s = s.replace('</head>', HEADEXTRA + '\n</head>', 1)
-    s = re.sub(r'<a name="top" id="top"></a>\s*<div class="r-head">.*?</div>\s*</div>\n', nav() + ('\n' + sub if sub else '') + '\n', s, count=1, flags=re.S)
-    s = re.sub(r'<div class="r-foot">.*?</address>\s*</div>', FOOT, s, count=1, flags=re.S)
+    s = re.sub(r'<a name="top" id="top"></a>\s*<div class="r-head" role="banner">.*?</div>\s*</div>\n', nav() + ('\n' + sub if sub else '') + '\n', s, count=1, flags=re.S)
+    s = re.sub(r'<div class="r-foot" role="contentinfo">.*?</address>\s*</div>', FOOT, s, count=1, flags=re.S)
     s = re.sub(r'<p class="crumbs">.*?</p>\n?', '', s, count=1)
     for bad in ['retro.', 'r-head', 'r-foot', 'DotGothic']:
         if bad in s: print('LEFTOVER', p, bad)

@@ -1,16 +1,16 @@
 /* note ブース — NingentteWinner
    読みやすさ最優先。ライト／セピア／ダーク、文字サイズ、明朝／ゴシックを切り替え可能 */
 :root{
-  --bg:#fbfaf7; --bg2:#f3f0ea; --text:#26231f; --sub:#6b655d; --faint:#9a938a; --line:#e6e0d6;
-  --accent:#c8442a; --accent-soft:#c8442a1a; --bar:rgba(251,250,247,.86);
+  --bg:#fbfaf7; --bg2:#f3f0ea; --text:#26231f; --sub:#6b655d; --faint:#736c63; --line:#e6e0d6;
+  --accent:#b23a22; --accent-soft:#b23a221a; --bar:rgba(251,250,247,.86);
   --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
   --sans:"Noto Sans JP",-apple-system,"Hiragino Sans","Yu Gothic UI",sans-serif;
   --face:var(--serif); --fs:19px; --measure:34em;
   color-scheme:light;
 }
-:root[data-theme=sepia]{--bg:#f4ecd8;--bg2:#ebe0c6;--text:#3a2e21;--sub:#76664f;--faint:#a08f75;--line:#ddcfb2;--accent:#a8431f;--accent-soft:#a8431f1c;--bar:rgba(244,236,216,.88)}
-:root[data-theme=dark]{--bg:#131313;--bg2:#1c1c1c;--text:#e8e3da;--sub:#aaa398;--faint:#7c766d;--line:#2c2b29;--accent:#ff8a65;--accent-soft:#ff8a6522;--bar:rgba(19,19,19,.86);color-scheme:dark}
-@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#131313;--bg2:#1c1c1c;--text:#e8e3da;--sub:#aaa398;--faint:#7c766d;--line:#2c2b29;--accent:#ff8a65;--accent-soft:#ff8a6522;--bar:rgba(19,19,19,.86);color-scheme:dark}}
+:root[data-theme=sepia]{--bg:#f4ecd8;--bg2:#ebe0c6;--text:#3a2e21;--sub:#76664f;--faint:#7a6a52;--line:#ddcfb2;--accent:#a8431f;--accent-soft:#a8431f1c;--bar:rgba(244,236,216,.88)}
+:root[data-theme=dark]{--bg:#131313;--bg2:#1c1c1c;--text:#e8e3da;--sub:#aaa398;--faint:#9a948a;--line:#2c2b29;--accent:#ff8a65;--accent-soft:#ff8a6522;--bar:rgba(19,19,19,.86);color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#131313;--bg2:#1c1c1c;--text:#e8e3da;--sub:#aaa398;--faint:#9a948a;--line:#2c2b29;--accent:#ff8a65;--accent-soft:#ff8a6522;--bar:rgba(19,19,19,.86);color-scheme:dark}}
 :root[data-face=sans]{--face:var(--sans)}
 :root[data-size=s]{--fs:17px} :root[data-size=l]{--fs:21px}
 @media (max-width:600px){:root{--fs:17.5px}:root[data-size=s]{--fs:16px}:root[data-size=l]{--fs:19.5px}}
@@ -216,3 +216,4 @@ img{max-width:100%;height:auto}
 .nb-tale-eps .no{font-size:12.5px;color:var(--faint);white-space:nowrap}
 .nb-tale-eps .t{font-family:var(--serif)}
 .nb-tale-eps time{font-size:12px;color:var(--faint)}
+.nb-item{content-visibility:auto;contain-intrinsic-size:auto 150px}

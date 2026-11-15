@@ -86,12 +86,19 @@ def plain(s):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s))).strip()
 
 posts = []; missing = []; paid = 0
+# 本文が取れなかった記事は、前回のデータをそのまま残す（記事が消えないように）
+try:
+    _t = (R / 'note/posts.js').read_text(); OLD = {p['slug']: p for p in json.loads(_t[_t.index('window.NOTE_POSTS =') + 19:].strip().rstrip(';'))}
+except Exception:
+    OLD = {}
 for v in sorted(INDEX, key=lambda x: x['date'], reverse=True):
     k = v['key']; f = D / 'body' / f'{k}.json'
     try:
         d = json.load(open(f))['data']
     except Exception:
-        missing.append(k); continue
+        missing.append(k)
+        if k in OLD and (R / 'note/posts' / f'{k}.html').exists(): posts.append(OLD[k])
+        continue
     c = Clean(); c.feed(d.get('body') or ''); prose = c.result()
     date = v['date'][:10]
     tags = []

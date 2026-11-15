@@ -4,7 +4,7 @@
 set -e
 OUT="${1:?保存先ディレクトリを指定してください}"; mkdir -p "$OUT/list" "$OUT/body"
 for pg in $(seq 1 200); do
-  curl -sS "https://note.com/api/v2/creators/benkein/contents?kind=note&page=$pg" -o "$OUT/list/p$pg.json"
+  curl -sS --retry 4 --retry-all-errors --retry-delay 3 --max-time 30 "https://note.com/api/v2/creators/benkein/contents?kind=note&page=$pg" -o "$OUT/list/p$pg.json"
   python3 -I -c "import json,sys;sys.exit(0 if json.load(open('$OUT/list/p$pg.json'))['data']['isLastPage'] else 1)" && break
   sleep 1.2
 done
@@ -20,6 +20,10 @@ print('articles',len(seen))
 PY
 while read k; do
   [ -s "$OUT/body/$k.json" ] && continue
-  curl -sS --max-time 30 "https://note.com/api/v3/notes/$k" -o "$OUT/body/$k.json"; sleep 1.1
+  if ! curl -sS --retry 4 --retry-all-errors --retry-delay 3 --max-time 30 "https://note.com/api/v3/notes/$k" -o "$OUT/body/$k.json.tmp" \
+     || ! python3 -I -c "import json,sys;json.load(open(sys.argv[1]))['data']" "$OUT/body/$k.json.tmp" 2>/dev/null; then
+    echo "  skip $k（あとで再取得）"; rm -f "$OUT/body/$k.json.tmp"
+  else mv "$OUT/body/$k.json.tmp" "$OUT/body/$k.json"; fi
+  sleep 1.1
 done < "$OUT/keys.txt"
 echo "done: $(ls "$OUT/body" | wc -l) bodies"

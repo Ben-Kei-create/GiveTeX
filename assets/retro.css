@@ -140,7 +140,7 @@ table.r-tbl td.date { white-space: nowrap; font-family: "VT323", monospace; font
 .r-icon img { display: block; width: 56px; height: 56px; margin: 0 auto 4px; border-radius: 12px; image-rendering: auto; }
 .r-icon:hover span, .r-icon:focus span { background: #000080; color: #ffffff; outline: 1px dotted #ffff00; }
 .r-icon small { display: block; color: #008000; font-size: 11px; }
-.r-icon small.dev { color: #808080; }
+.r-icon small.dev { color: #666; }
 
 /* 本棚 */
 .r-shelf { font-size: 0; text-align: left; }

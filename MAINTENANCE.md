@@ -122,6 +122,18 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - そのあと `python3 -I tools/apps_skin.py .` を実行すると、Appブースのヘッダーとフッター、テーマ切り替えが付きます。
 - 一覧 `apps/index.html` と、ホームのアプリ欄にも追加します。ホームのアプリ欄は `build_retro.py` の `RELEASED` と `DEV` です。
 
+## 4.8 自動更新・画像・SEO（2026-11-15〜）
+- **毎朝 6:17（日本時間）に GitHub Actions「サイトの自動更新」**（`.github/workflows/auto-update.yml`）が動きます。
+  1. note の記事を取得（`tools/note_fetch.sh`。取得ずみの本文は Actions のキャッシュに残る）→ `tools/migrate_note.py` で note ブースを作り直す（記事数が減ったら中止）
+  2. `tools/update_feeds.py`：LINE スタンプの新作と TALES の新しい話を追加
+  3. `tools/localize_images.py`：外部の画像を `assets/ext/` に保存して URL を書きかえ（対応表は `tools/ext_images.json`）
+  4. `tools/build_retro.py` → `node tools/build_index.js` → `tools/seo.py`
+  5. 変わっていたら main にコミット（Vercel が自動で公開）。手動実行は Actions 画面の Run workflow。
+- **手で作業したときも、最後に** `python3 -I tools/build_retro.py && node tools/build_index.js && python3 -I tools/seo.py` を実行してください（seo.py がシェア用タグ・RSS・サイトマップを入れます）。
+- **シェア用画像**：`assets/og/*.jpg`。デザインを大きく変えたら、ローカルでサイトを配信して `node tools/build_og.js http://127.0.0.1:8787` で撮り直し。note の記事は記事の表紙画像を使います。
+- **RSS**：`/note/feed.xml`（note の新着30本・リンク先は note）、`/diary/feed.xml`（開発日記）。
+- **sitemap.xml** は seo.py が自動生成（noindex・創作ブース・note が本家の記事は入れない）。
+
 ## 4.9 サーバー機能（`api/` フォルダ・Vercel の関数）
 - `api/clog.js`：C-Log アプリのサーバー（`https://clog-api.onrender.com`）から話題の映画・検索・お知らせを中継。サーバーが眠っていたら約1分で起きます。
 - `api/board.js`：映画ブースの匿名掲示板。管理人も含めて全員「名無しの映画好き」。日替わり ID、3人の通報で自動非表示、本人は削除可、連投・重複・リンク・個人情報・暴言を機械ではじく、最新1000件まで。
