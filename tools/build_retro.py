@@ -16,6 +16,10 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/assets/retro.css">
 <script type="text/javascript" src="/assets/retro.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script src="/assets/ga.js" defer></script>'''
 NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'), ('/stamp/', 'スタンプ'),
        ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人')]

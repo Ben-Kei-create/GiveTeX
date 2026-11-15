@@ -6,6 +6,10 @@ HEADEXTRA = '''<meta name="theme-color" content="#ffffff">
 <script>(function(){try{var t=localStorage.getItem('givetex-apps-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <link rel="stylesheet" href="/apps/assets/apps.css">
 <script src="/apps/assets/apps.js" defer></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script src="/assets/ga.js" defer></script>'''
 SUN = '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>'
 MOON = '<svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>'
