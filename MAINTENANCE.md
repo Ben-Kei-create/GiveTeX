@@ -20,7 +20,7 @@
 | `/game/`（ゲームブース） | ゲームセンター（ドット・コイン・実績・隠しコマンド） | `game/game.css`・`game.js` | データは `game/game-data.js`（games＝作ったゲーム、posts＝つぶやき） |
 | `/museum/`（美術館ブース） | 白い展示室・額縁 | `museum/museum.css`・`museum.js` | データは `museum/museum-data.js` |
 | `/ramen/`（ラーメンブース） | スクロールで丼から麺がのびる | `ramen/ramen.css`・`ramen.js` | データは `ramen/ramen-data.js`（食券） |
-| `/movie/`（映画ブース・C-Log Web） | C-Log のデザインを引き継ぐ | `movie/movie.css`・`movie.js` | データは `movie/movies.js`。フッターで iPhone 版（開発中）を紹介 |
+| `/movie/`（映画ブース・C-Log Web） | C-Log のデザインを引き継ぐ | `movie/movie.css`・`movie.js` | データは `movie/movies.js`。ヒーローの下にオープンチャット「映画を見る会」への参加リンク、フッターで iPhone 版（開発中）を紹介 |
 | `/bookmarks/`（ブックマークブース） | サイトの裏側・ターミナル | `bookmarks/bookmarks.css`・`bookmarks-term.js` | `bookmarks/bookmarks.js`。個人のアカウント・管理画面などは除外済み（183件） |
 | `/stamp/`（スタンプブース） | グループトーク風（GiveTex オリジナル。LINE のロゴや配色はまねない） | `stamp/stamp.css`・`stamp.js` | 送ったスタンプは画面内だけ（送信しない） |
 

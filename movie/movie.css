@@ -89,3 +89,16 @@ dialog.detail::backdrop{background:rgba(0,0,0,.7)}
 .tabbar a:first-child{color:var(--accent)}
 .tabbar svg{width:22px;height:22px}
 @media(min-width:900px){.tabbar{display:none}.cl-foot{padding-bottom:24px}}
+
+/* オープンチャット「映画を見る会」 */
+.oc{display:flex;align-items:center;gap:16px;margin:18px clamp(14px,3vw,24px) 0;padding:16px 18px;background:var(--black);color:var(--cream);border-radius:14px;border:1px solid #2a2a2a;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.oc-icon{flex:none;width:52px;height:52px}
+.oc-icon svg{width:100%;height:100%}
+.oc-tx{flex:1;min-width:0}
+.oc-kicker{margin:0;font-size:12px;letter-spacing:.14em;color:var(--accent)}
+.oc h2{margin:0 0 2px;font:700 clamp(20px,3.4vw,24px)/1.35 var(--serif)}
+.oc-tx p:last-child{margin:0;font-size:13.5px;color:var(--silver);line-height:1.65}
+.oc-btn{flex:none;background:var(--accent);color:#000;font-weight:700;font-size:15px;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.oc-btn:hover{filter:brightness(1.08)}
+@media(max-width:560px){.oc{flex-wrap:wrap}.oc-icon{width:44px;height:44px}.oc-btn{flex-basis:100%;text-align:center}}
+.hero h1 span{word-break:auto-phrase;text-wrap:balance}@media(max-width:420px){.hero h1{font-size:22px;letter-spacing:.03em}}
