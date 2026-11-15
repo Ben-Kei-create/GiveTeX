@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#26324a">
+<title>スタンプブース | GiveTex</title>
+<meta name="description" content="GiveTex がつくったLINEスタンプを、グループトークの中にいるような画面で紹介しています。">
+<meta property="og:title" content="スタンプブース | GiveTex">
+<meta property="og:description" content="GiveTex がつくったLINEスタンプを、トーク画面で紹介。スタンプを送ってためせます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.givetex.org/stamp/">
+<link rel="canonical" href="https://www.givetex.org/stamp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/stamp/stamp.css">
+<script src="/stamp/stamps.js" defer></script>
+<script src="/stamp/stamp.js" defer></script>
+<script src="/assets/ga.js" defer></script>
+</head>
+<body>
+<div class="st-app">
+  <aside class="st-side" aria-label="スタンプ一覧">
+    <div class="st-side-hd"><b>スタンプ一覧</b><span>GiveTex がつくったスタンプ</span></div>
+    <ul class="st-list"></ul>
+    <div class="st-side-ft">
+      <a data-author href="#" target="_blank" rel="noopener">LINE STORE ですべてのスタンプを見る ↗</a>
+      <a href="/">GiveTex ホームへ</a>
+    </div>
+  </aside>
+
+  <section class="st-chat" aria-label="トーク">
+    <header class="st-head">
+      <a href="/" aria-label="GiveTex ホームへ戻る">‹</a>
+      <h1><span>スタンプブース</span><small>(2)</small></h1>
+      <button class="menu" type="button" aria-label="スタンプ一覧を開く">≡</button>
+    </header>
+    <div class="st-log" id="st-log" role="log" aria-live="polite" tabindex="0">
+      <noscript><p class="st-sys">トーク画面の表示には JavaScript を有効にしてください。</p></noscript>
+    </div>
+    <div class="st-dock">
+      <div class="st-preview" hidden><img alt="選んだスタンプ"><button class="go" type="button">送信</button><button class="x" type="button" aria-label="やめる">✕</button></div>
+      <form class="st-input" autocomplete="off">
+        <button class="st-ib" type="button" data-stickers aria-expanded="false" aria-controls="st-sheet" aria-label="スタンプを選ぶ">😊</button>
+        <label class="sr" for="st-text">メッセージ</label>
+        <input id="st-text" type="text" placeholder="メッセージを入力" enterkeyhint="send" maxlength="200">
+        <button class="st-ib st-send" type="submit" aria-label="送信" disabled>➤</button>
+      </form>
+      <div class="st-sheet" id="st-sheet" hidden>
+        <div class="st-tabs" role="tablist" aria-label="スタンプのセット"></div>
+        <div class="st-grid"></div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

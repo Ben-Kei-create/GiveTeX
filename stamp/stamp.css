@@ -1,0 +1,120 @@
+/* スタンプブース — グループトークの中に入ったような画面（GiveTex オリジナルのデザイン） */
+:root{
+  --room:#cfdcec; --room-pat:rgba(255,255,255,.35);
+  --head:#26324a; --head-text:#fff;
+  --bubble:#fff; --mine:#ffe27a; --text:#1f2430; --sub:#5b6375; --time:#56607a;
+  --sys:rgba(38,50,74,.42); --line:#e3e8f0; --accent:#ff7a59; --link:#2f6bff;
+  --sheet:#f7f8fb; --bar:#fff;
+  --font:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:15.5px/1.6 var(--font);color:var(--text);background:#e9eef5;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:var(--link)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* 画面全体：スマホは全画面、PCは左にルーム一覧 */
+.st-app{display:grid;grid-template-columns:1fr;height:100dvh;max-width:1100px;margin:0 auto;background:var(--room)}
+@media(min-width:900px){.st-app{grid-template-columns:300px 1fr;box-shadow:0 0 0 1px #d6dde8,0 20px 60px rgba(38,50,74,.12)}}
+
+/* 左：スタンプ一覧（PC） */
+.st-side{display:none;flex-direction:column;background:#fff;border-right:1px solid var(--line);min-height:0}
+@media(min-width:900px){.st-side{display:flex}}
+.st-side-hd{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+.st-side-hd b{display:block;font-size:17px}
+.st-side-hd span{font-size:12.5px;color:var(--sub)}
+.st-list{list-style:none;margin:0;padding:6px 0;overflow-y:auto;flex:1}
+.st-list button{display:flex;align-items:center;gap:12px;width:100%;padding:10px 18px;border:0;background:none;text-align:left;cursor:pointer}
+.st-list button:hover{background:#f2f5fa}
+.st-list img,.st-list .noimg{width:48px;height:48px;border-radius:12px;object-fit:contain;background:#f2f5fa;flex:none}
+.st-list .noimg{display:grid;place-items:center;font-size:22px}
+.st-list b{display:block;font-size:14.5px;line-height:1.4}
+.st-list small{color:var(--sub);font-size:12px}
+.st-side-ft{padding:14px 18px;border-top:1px solid var(--line);font-size:13px}
+.st-side-ft a{display:block;margin-top:4px;text-decoration:none}
+
+/* 右：トーク */
+.st-chat{display:flex;flex-direction:column;min-height:0;min-width:0;position:relative}
+.st-head{display:flex;align-items:center;gap:6px;height:56px;padding:0 8px;background:var(--head);color:var(--head-text);flex:none}
+.st-head a,.st-head button{display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:none;color:inherit;text-decoration:none;cursor:pointer;font-size:22px}
+.st-head a:hover,.st-head button:hover{background:rgba(255,255,255,.12)}
+.st-head h1{flex:1;min-width:0;margin:0;font-size:16.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-head h1 small{font-weight:400;opacity:.8;margin-left:4px}
+@media(min-width:900px){.st-head .menu{display:none}}
+
+.st-log{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:14px 12px 18px;background:radial-gradient(var(--room-pat) 1.5px,transparent 1.6px) 0 0/22px 22px,var(--room);scroll-behavior:smooth}
+.st-day{display:block;width:max-content;margin:6px auto 14px;padding:3px 12px;border-radius:999px;background:var(--sys);color:#fff;font-size:12px}
+.st-sys{display:block;width:fit-content;max-width:90%;margin:4px auto 14px;padding:4px 12px;border-radius:999px;background:var(--sys);color:#fff;font-size:12px;text-align:center}
+
+.st-msg{display:flex;align-items:flex-end;gap:6px;margin:0 0 10px;max-width:100%}
+.st-msg.mine{flex-direction:row-reverse}
+.st-av{width:38px;height:38px;border-radius:50%;flex:none;align-self:flex-start;display:grid;place-items:center;background:linear-gradient(135deg,#ff7a59,#ffc15e);color:#fff;font-weight:800;font-size:16px;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.st-msg.cont .st-av{visibility:hidden;height:0}
+.st-body{display:flex;flex-direction:column;align-items:flex-start;min-width:0;max-width:calc(100% - 100px)}
+.st-msg.mine .st-body{align-items:flex-end}
+.st-name{font-size:12px;color:var(--sub);margin:0 0 3px 4px}
+.st-msg.cont .st-name{display:none}
+.st-row{display:flex;align-items:flex-end;gap:6px}
+.st-msg.mine .st-row{flex-direction:row-reverse}
+.st-bubble{position:relative;padding:9px 13px;border-radius:18px;background:var(--bubble);font-size:15px;line-height:1.6;word-break:break-word;overflow-wrap:anywhere;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.st-msg:not(.cont):not(.mine) .st-bubble{border-top-left-radius:6px}
+.st-msg.mine .st-bubble{background:var(--mine)}
+.st-msg.mine:not(.cont) .st-bubble{border-top-right-radius:6px}
+.st-meta{display:flex;flex-direction:column;align-items:flex-start;font-size:10.5px;line-height:1.3;color:var(--time);flex:none;padding-bottom:2px}
+.st-msg.mine .st-meta{align-items:flex-end}
+.st-read{color:var(--time)}
+.st-stk{display:block;width:min(150px,40vw);height:auto;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 1px 1px rgba(0,0,0,.08))}
+@media(prefers-reduced-motion:no-preference){.st-msg.pop{animation:pop .28s cubic-bezier(.2,1.4,.5,1)}@keyframes pop{from{transform:scale(.85);opacity:0}}}
+.st-typing{display:inline-flex;gap:4px;padding:12px 14px}
+.st-typing i{width:7px;height:7px;border-radius:50%;background:#9aa4b8}
+@media(prefers-reduced-motion:no-preference){.st-typing i{animation:dot 1s infinite}.st-typing i:nth-child(2){animation-delay:.15s}.st-typing i:nth-child(3){animation-delay:.3s}@keyframes dot{30%{transform:translateY(-4px);opacity:.5}}}
+
+/* 共有カード（ストアへ） */
+.st-card{display:block;width:min(260px,70vw);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08);text-decoration:none;color:var(--text)}
+.st-card-img{display:grid;place-items:center;aspect-ratio:1.6;background:#f3f6fb}
+.st-card-img img{width:56%;height:auto;object-fit:contain}
+.st-card-tx{padding:10px 14px 12px}
+.st-card-tx b{display:block;font-size:14.5px;line-height:1.45}
+.st-card-tx small{display:block;color:var(--sub);font-size:12px;margin-top:2px}
+.st-card-btn{display:block;text-align:center;border-top:1px solid var(--line);padding:10px;font-weight:700;color:var(--link);font-size:14px}
+.st-card:hover .st-card-btn{background:#f5f8ff}
+
+/* 入力欄 */
+.st-input{flex:none;display:flex;align-items:center;gap:6px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:var(--bar);border-top:1px solid var(--line)}
+.st-input input{flex:1;min-width:0;height:40px;border:0;border-radius:20px;background:#f0f3f8;padding:0 14px;font:15px var(--font);color:var(--text)}
+.st-input input::placeholder{color:#8a93a6}
+.st-ib{display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:none;cursor:pointer;font-size:22px;color:#4b5670;flex:none}
+.st-ib:hover{background:#f0f3f8}
+.st-ib[aria-expanded=true]{background:#ffe9e2;color:var(--accent)}
+.st-send{color:var(--accent);font-size:20px}
+.st-send:disabled{opacity:.35;cursor:default}
+
+/* スタンプ選択シート */
+.st-sheet{flex:none;height:min(300px,42dvh);display:flex;flex-direction:column;background:var(--sheet);border-top:1px solid var(--line)}
+.st-tabs{display:flex;gap:4px;overflow-x:auto;padding:6px 8px;border-bottom:1px solid var(--line);background:#fff;scrollbar-width:none;flex:none}
+.st-tabs::-webkit-scrollbar{display:none}
+.st-tabs button{flex:none;width:46px;height:46px;border:2px solid transparent;border-radius:12px;background:none;padding:3px;cursor:pointer}
+.st-tabs button[aria-selected=true]{border-color:var(--accent);background:#fff4f0}
+.st-tabs img{width:100%;height:100%;object-fit:contain}
+.st-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:6px;padding:10px;align-content:start}
+.st-grid button{aspect-ratio:1;border:0;border-radius:12px;background:none;padding:6px;cursor:pointer}
+.st-grid button:hover,.st-grid button[aria-pressed=true]{background:#fff;box-shadow:0 0 0 2px var(--accent)}
+.st-grid img{width:100%;height:100%;object-fit:contain}
+.st-empty{grid-column:1/-1;text-align:center;color:var(--sub);padding:30px 10px;font-size:14px}
+.st-preview{position:absolute;left:0;right:0;bottom:calc(100% + 0px);display:flex;align-items:center;justify-content:center;gap:12px;padding:10px;background:rgba(233,238,245,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.st-preview img{width:120px;height:120px;object-fit:contain}
+.st-preview button{border:0;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;padding:10px 22px;cursor:pointer}
+.st-preview .x{background:#fff;color:var(--sub);padding:10px 14px}
+.st-dock{position:relative;flex:none}
+
+/* スマホ用：スタンプ一覧のドロワー */
+.st-drawer{position:fixed;inset:0;z-index:50;display:flex}
+.st-drawer-bg{flex:1;background:rgba(20,26,40,.45)}
+.st-drawer .st-side{display:flex;width:min(86vw,320px);order:-1;box-shadow:8px 0 30px rgba(0,0,0,.2)}
+.st-note{font-size:11.5px;color:var(--time);text-align:center;margin:18px auto 4px;max-width:30em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+.st-note{word-break:auto-phrase;text-wrap:balance}

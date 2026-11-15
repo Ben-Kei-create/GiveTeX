@@ -17,6 +17,7 @@
 | `/doron/`（どろん） | タブごとに雰囲気が変わるオカルト | `doron/doron.css`・`doron.js` | ロゴ3種は `doron/img/` |
 | `/note/`（noteブース） | 読みやすさ優先 | `note/note.css`・`note.js` | 記事349本を移植済みです |
 | `/sousaku/`（創作ブース） | コミケ × SF | `sousaku/sousaku.css`・`sousaku.js` | 非公開扱い（リンクなし・noindex） |
+| `/stamp/`（スタンプブース） | グループトーク風（GiveTex オリジナル。LINE のロゴや配色はまねない） | `stamp/stamp.css`・`stamp.js` | 送ったスタンプは画面内だけ（送信しない） |
 
 **レスポンシブ**：全ページ、幅320〜1440pxで、はみ出しがないことを確認しています。変更したら同じ範囲で確認してください。
 
@@ -68,6 +69,12 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 動作確認用のサンプル2作品（`sample-manga` と `sample-novel`、どちらも draft）は、本物の作品が入ったら消してください。
 - 出展予定は `events` に入れます（名前・日付・会場・スペース番号）。
 
+### スタンプブースにスタンプを足す
+- `stamp/stamps.js` の `sets` に1セットずつ追加します（古い順）。書き方の見本はファイルの先頭にあります。
+- 画像は `stamp/img/<id>/` に置きます（`main.png` と各スタンプ）。
+- LINE STORE の作者ページURLを `storeAuthorUrl` に入れると、「すべてのスタンプを見る」が出ます。
+- 2026-11-15 時点ではまだ0セットです。Creators Market のマイページはログインが必要で、外から一覧を取得できません。
+
 ### アプリを足す
 - `apps/<名前>/` に、紹介・サポート・プライバシーの3ページを作ります。
 - そのあと `python3 -I tools/apps_skin.py .` を実行すると、Appブースのヘッダーとフッター、テーマ切り替えが付きます。
@@ -85,6 +92,8 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 | `sousaku_open` | 創作ブースの作品を開いた |
 | `sousaku_read_end` | 創作ブースの作品を最後まで読んだ |
 | `sousaku_qr` | 創作ブースのQRコードを表示した |
+| `stamp_send` | スタンプブースでスタンプを送った（画面内のみ） |
+| `stamp_store_click` | スタンプブースからストアへ移動した |
 
 - **⚠ テストの注意**：自動テスト（Playwright など）では、必ず `googletagmanager` と `google-analytics` へのリクエストを止めてください。2026-11-15 に一度止め忘れて、`localhost` からのテストアクセスが約700件入りました。分析するときは、ホスト名 `localhost` を除外してください。
 
@@ -106,4 +115,5 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 創作ブースを本番に出すかどうか。
 - どろんの活動記録（概要・写真）。
 - 創作ブースの最初の作品と、出展予定。
+- スタンプブースのスタンプ（LINE STORE の作者ページURL、または各セットのURL）。
 - ドパ読！の新刊の追加。Amazon の一覧から作ったので、英語版などの海外版は載せていません。

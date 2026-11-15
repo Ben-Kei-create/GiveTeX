@@ -17,13 +17,13 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="/assets/retro.css">
 <script type="text/javascript" src="/assets/retro.js"></script>
 <script src="/assets/ga.js" defer></script>'''
-NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'),
+NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'), ('/stamp/', 'スタンプ'),
        ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人')]
 NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　'
         '11/15　ホームページを90年代風にリニューアルしました！　◆　'
         'Kindle本「ドパ読！」96冊を書庫にならべました　◆　'
         'オカルトブース「<a href="/doron/">どろん</a>」オープン！ Cサークルの新企画「十人奇談」準備中…　◆　'
-        '<a href="/note/">note ブース</a>はじめました　◆　'
+        '<a href="/note/">note ブース</a>はじめました　◆　<a href="/stamp/">スタンプブース</a>オープン　◆　'
         'このホームページはリンクフリーです　★☆★')
 
 def header(cur):
@@ -136,6 +136,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-15', tag='スタンプ', title='スタンプブースをつくりました',
+      body='<p>つくった LINE スタンプを紹介する「<a href="/stamp/">スタンプブース</a>」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。スタンプはこれから並べていきます。</p>'),
  dict(date='2026-11-15', tag='note', title='note の過去記事を349本、まるごと移植',
       body='<p>2021年から note に書いてきた記事349本を、<a href="/note/">note ブース</a>に移しました。年ごとの目次、タグ、検索から読めます。Java の勉強記録などはコードも読みやすく整えました。有料記事（30本）は無料部分だけをのせて、続きは note へご案内しています。</p>'),
  dict(date='2026-11-15', tag='note', title='note ブースをはじめました',
@@ -177,6 +179,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-15', '<a href="/stamp/">スタンプブース</a>をつくりました', True),
         ('2026-11-15', '<a href="/note/">note ブース</a>に過去の記事349本を移植しました', True),
         ('2026-11-15', '<a href="/note/">note ブース</a>をはじめました（NingentteWinner の創作）', False),
         ('2026-11-15', 'どろん：Cサークルの新企画「<a href="/doron/#c-circle">十人奇談</a>」の素材を公開', True),
@@ -213,10 +216,11 @@ document.write(rGreeting());
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - NingentteWinner', '<p class="r-center" style="font-size:20px;margin:4px 0"><a href="/note/"><b>NingentteWinner</b></a></p><p class="r-center">note で5年ほど書いてきた創作、<b>349本</b>をこちらにも移しました。<br>読みやすさ優先の、しずかな読書スペースです。</p><p class="r-center"><a class="r-btn" href="/note/">note ブースへ &gt;&gt;</a></p>', '✒') +
+            win('スタンプブース - グループトーク', '<p class="r-center">つくった LINE スタンプを、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
-    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/diary/', '開発日記'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
+    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/diary/', '開発日記'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
     side = (win('MENU', f'<div class="r-menu">{menu}</div>', '📁', bodycls='') +
             win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>1</b></span><br>回目の訪問です</p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>', '🔢') +
             win('管理人のプロフィール', '<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>', '👤') +
