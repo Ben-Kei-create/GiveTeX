@@ -1534,6 +1534,24 @@ window.NOTE_POSTS = [
   "noteUrl": "https://note.com/benkein/n/n4d456f39d48b"
  },
  {
+  "slug": "n24c99913edfa",
+  "title": "【絵画で教養】光の魔術師のヤバい執念！？世界的画家「フェルメール」の美しすぎる秘密3選",
+  "date": "2026-09-23",
+  "excerpt": "世界で最も愛されている名画のひとつ『真珠の耳飾りの少女』。 描いたのは、17世紀オランダの画家ヨハネス・フェルメールです。 彼の作品は世界中の人々を魅了してやみませんが、実は彼が残した作品やその制作方法には、常軌を逸した",
+  "tags": [
+   "読書",
+   "アート",
+   "美術",
+   "教養",
+   "疑問が学びに変わるとき",
+   "スキマ時間",
+   "KindleUnlimited",
+   "西洋美術"
+  ],
+  "cover": "/assets/ext/note/51666a4c1671f514.webp",
+  "noteUrl": "https://note.com/benkein/n/n24c99913edfa"
+ },
+ {
   "slug": "n9c109fb6bf9d",
   "title": "Digital Arts of Winner #マッチョ華道",
   "date": "2026-09-23",
@@ -1554,24 +1572,6 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/2c838d2d9e2786e4.webp",
   "noteUrl": "https://note.com/benkein/n/n3578112e2f0a"
- },
- {
-  "slug": "n24c99913edfa",
-  "title": "【絵画で教養】光の魔術師のヤバい執念！？世界的画家「フェルメール」の美しすぎる秘密3選",
-  "date": "2026-09-23",
-  "excerpt": "世界で最も愛されている名画のひとつ『真珠の耳飾りの少女』。 描いたのは、17世紀オランダの画家ヨハネス・フェルメールです。 彼の作品は世界中の人々を魅了してやみませんが、実は彼が残した作品やその制作方法には、常軌を逸した",
-  "tags": [
-   "読書",
-   "アート",
-   "美術",
-   "教養",
-   "疑問が学びに変わるとき",
-   "スキマ時間",
-   "KindleUnlimited",
-   "西洋美術"
-  ],
-  "cover": "/assets/ext/note/51666a4c1671f514.webp",
-  "noteUrl": "https://note.com/benkein/n/n24c99913edfa"
  },
  {
   "slug": "n2e526488a505",
