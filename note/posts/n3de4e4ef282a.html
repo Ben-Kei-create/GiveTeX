@@ -24,6 +24,15 @@
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n3de4e4ef282a.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/caffde114f26e88c.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iT 51 JavaGold学習 （ネストクラス） | NingentteWinner">
+<meta name="twitter:description" content="JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。 JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/caffde114f26e88c.webp">
+<!-- /seo -->
 </head>
 <body>
 <a class="sr" href="#main">本文へ</a>
@@ -54,7 +63,7 @@
       <p class="nb-meta"><time datetime="2025-02-11">2025.02.11</time><span data-readtime></span></p>
     </header>
     <div class="nb-prose">
-<p>JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。<br>JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで結局お金かかる。<br>なので、無料で全部ここで記録します。（余裕のある方、チップください笑）</p><h2>ネストクラス</h2><figure><img src="https://assets.st-note.com/img/1739105859-RKTZ8irbnp734lE2a1IxWgCF.png?width=1200" alt="" width="620" height="335" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>クラスの中にあるクラス。これまではクラス一個だとおもったが、クラスの中に、またちっこいクラスをつくれる。<br>大枠で囲ってる（エンクローズ）クラスをエンクロージングクラスといい、クラスの中にあるちっこいクラスをネストクラスという。</p><p>ネストクラスは全部で４種類ある。<br><strong>・インナークラス<br>・staticクラス<br>・ローカルクラス<br>・匿名クラス</strong></p><p>インナークラスって、そのままじゃん！と思ったが、アクセス修飾子はなんでもOK。</p><pre><code>public class Outer {
+<p>JavaGoldの学習法、勉強法のサイトが多すぎる。てか、それしかない。<br>JavaShilverを合格するとJavaGoldが受験できるが、どちらも受験料が高い。（四万円ほど。）なのに、参考書を購入する以外にUdemyで結局お金かかる。<br>なので、無料で全部ここで記録します。（余裕のある方、チップください笑）</p><h2>ネストクラス</h2><figure><img src="/assets/ext/note/2459579a071f42f0.webp" alt="" width="620" height="335" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>クラスの中にあるクラス。これまではクラス一個だとおもったが、クラスの中に、またちっこいクラスをつくれる。<br>大枠で囲ってる（エンクローズ）クラスをエンクロージングクラスといい、クラスの中にあるちっこいクラスをネストクラスという。</p><p>ネストクラスは全部で４種類ある。<br><strong>・インナークラス<br>・staticクラス<br>・ローカルクラス<br>・匿名クラス</strong></p><p>インナークラスって、そのままじゃん！と思ったが、アクセス修飾子はなんでもOK。</p><pre><code>public class Outer {
     private String name;
     public void setName(String a){
         // do something

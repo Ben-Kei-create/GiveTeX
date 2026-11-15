@@ -24,6 +24,15 @@
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n9b334c738608.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/6da2e7eb41248e35.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JAVA-21 | NingentteWinner">
+<meta name="twitter:description" content="●復習 ▶️オーバーロード クラスにない、同じ名前で引数の型や数が違うメソッドを定義すること。同じような機能を持つメソッドであっても引数のデータ型が異なれば別々のメソッドを用意する必要がある。 //同じクラス内の、同じメ">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/6da2e7eb41248e35.webp">
+<!-- /seo -->
 </head>
 <body>
 <a class="sr" href="#main">本文へ</a>
@@ -165,7 +174,7 @@ public class Student extends Person{
     System.out.println("名前：" + name);
   }
 }
-</code></pre><p>this とsuperによるコンストラクタの呼び出し<br><strong>this（）~　＝　自オブジェクトの〜<br>super（）~　＝　スーパークラスの〜<br></strong>これらは、コンストラクタ内の<strong>先頭</strong>に記述するようにする。<br>なければ、自動的にsuper();が設定されることになる。</p><h2>●勉強</h2><p>(継承、オーバーライド、this &amp;superキー復習)</p><h3>▶️演習問題1</h3><figure><img src="https://assets.st-note.com/img/1685430290661-Fl6hxwC1u6.png?width=1200" alt="" width="620" height="457" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="https://assets.st-note.com/img/1685430300813-YEO3EaUDas.png?width=1200" alt="" width="620" height="207" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>では、Taxi1クラスを定義していこう。<br>Taxi1クラスは、自動車を管理するCar1クラスを継承している。</p><p>まず、Car1クラスのコードがこちら。</p><pre><code>//参考1
+</code></pre><p>this とsuperによるコンストラクタの呼び出し<br><strong>this（）~　＝　自オブジェクトの〜<br>super（）~　＝　スーパークラスの〜<br></strong>これらは、コンストラクタ内の<strong>先頭</strong>に記述するようにする。<br>なければ、自動的にsuper();が設定されることになる。</p><h2>●勉強</h2><p>(継承、オーバーライド、this &amp;superキー復習)</p><h3>▶️演習問題1</h3><figure><img src="/assets/ext/note/d825ec4edf60f3e7.webp" alt="" width="620" height="457" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/ef6ba31c112d5c49.webp" alt="" width="620" height="207" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>では、Taxi1クラスを定義していこう。<br>Taxi1クラスは、自動車を管理するCar1クラスを継承している。</p><p>まず、Car1クラスのコードがこちら。</p><pre><code>//参考1
 public class Car1{
   private int no;
 
@@ -219,7 +228,7 @@ public class Taxi1 extends Car1{
     System.out.println("料金は" + price + "円です");
   }
 }
-</code></pre><h3>▶️演習問題2</h3><figure><img src="https://assets.st-note.com/img/1685431845920-w8fC36x9JY.png?width=1200" alt="" width="620" height="568" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//Taxi1クラス
+</code></pre><h3>▶️演習問題2</h3><figure><img src="/assets/ext/note/9cf7e5814d31d836.webp" alt="" width="620" height="568" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//Taxi1クラス
 public class Taxi1 extends Car1{
   private int price;
 

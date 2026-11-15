@@ -1,0 +1,64 @@
+# 毎朝、note・LINE スタンプ・TALES の新作を取りに行き、変わっていたら main に反映する。
+# 手動で動かすとき：GitHub の Actions → 「サイトの自動更新」→ Run workflow
+name: サイトの自動更新
+on:
+  schedule:
+    - cron: "17 21 * * *"   # 毎日 06:17（日本時間）
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: auto-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: 画像処理の道具を入れる
+        run: pip install --quiet pillow==11.3.0
+      - name: 取得ずみの note 本文を読みこむ（キャッシュ）
+        uses: actions/cache/restore@v4
+        with:
+          path: .note-cache
+          key: note-${{ github.run_id }}
+          restore-keys: note-
+      - name: note の記事を取得
+        run: bash tools/note_fetch.sh .note-cache
+      - name: note ブースを作り直す（記事が減ったら中止）
+        run: |
+          before=$(grep -c '"slug":' note/posts.js)
+          python3 -I tools/migrate_note.py .note-cache .
+          after=$(grep -c '"slug":' note/posts.js)
+          echo "note: $before → $after"
+          if [ "$after" -lt "$before" ]; then echo "記事数が減ったので中止します"; git checkout -- note; exit 1; fi
+      - name: 取得した note 本文を保存（キャッシュ）
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .note-cache
+          key: note-${{ github.run_id }}
+      - name: LINE スタンプと TALES の新作
+        run: python3 -I tools/update_feeds.py .
+      - name: 画像を自サイトに保存
+        run: python3 -I tools/localize_images.py .
+      - name: ホーム・日記・検索・RSS・サイトマップを作り直す
+        run: |
+          python3 -I tools/build_retro.py .
+          node tools/build_index.js
+          python3 -I tools/seo.py .
+      - name: 変わっていたら main に反映
+        run: |
+          git add -A -- . ':!.note-cache'
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git -c user.name="GiveTex 自動更新" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "自動更新：note・スタンプ・TALES の新作を反映"
+          git push origin HEAD:main

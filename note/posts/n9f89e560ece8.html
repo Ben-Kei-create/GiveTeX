@@ -24,6 +24,15 @@
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n9f89e560ece8.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/586b14182d5df69e.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Java-24（演習問題） | NingentteWinner">
+<meta name="twitter:description" content="●勉強 ▶️問題１ 抽象クラス、抽象メソッドに関するもの インターフェース、実装に関するもの パッケージ、インポートに関するもの 参照型の型変換に関するもの //タクシークラス public class Taxi{ pr">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/586b14182d5df69e.webp">
+<!-- /seo -->
 </head>
 <body>
 <a class="sr" href="#main">本文へ</a>
@@ -54,7 +63,7 @@
       <p class="nb-meta"><time datetime="2023-06-02">2023.06.02</time><span data-readtime></span></p>
     </header>
     <div class="nb-prose">
-<h2>●勉強</h2><h3>▶️問題１</h3><p>抽象クラス、抽象メソッドに関するもの<br>インターフェース、実装に関するもの<br>パッケージ、インポートに関するもの<br>参照型の型変換に関するもの</p><figure><img src="https://assets.st-note.com/img/1685669508829-txkxyoXzNe.jpg?width=1200" alt="" width="620" height="483" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//タクシークラス
+<h2>●勉強</h2><h3>▶️問題１</h3><p>抽象クラス、抽象メソッドに関するもの<br>インターフェース、実装に関するもの<br>パッケージ、インポートに関するもの<br>参照型の型変換に関するもの</p><figure><img src="/assets/ext/note/7bc1f5dc09824a10.webp" alt="" width="620" height="483" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//タクシークラス
 
 public class Taxi{
   private int crewNum;
@@ -76,7 +85,7 @@ public class Train{
   void showCrewNum(){
     System.out.println("電車の乗客：" + crewNum + "名");
   }
-}</code></pre><figure><img src="https://assets.st-note.com/img/1685669645526-r16743QWnA.png?width=1200" alt="" width="620" height="139" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//タクシークラス
+}</code></pre><figure><img src="/assets/ext/note/cd910db6a4e6945a.webp" alt="" width="620" height="139" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>//タクシークラス
 
 public class Taxi extends Vehicle{
   private int crewNum;　　　　//共通
@@ -98,7 +107,7 @@ public class Train extends Vehicle{
   void showCrewNum(){　　　　　　　//共通
     System.out.println("電車の乗客：" + crewNum + "名");
   }
-}</code></pre><figure><img src="https://assets.st-note.com/img/1685669658580-WcKOEj1Sat.png?width=1200" alt="" width="620" height="389" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>共通部分をまとめて、乗り物を管理する抽象クラスとして、Vehicleクラスを定義する。Vehicleとは、乗り物。内容がないメソッドは抽象メソッドとしてabstractを入れて、それが入ったクラスはabstractを入れれば良いはず・・！</p><p>まずVehicleクラスを作ろう。</p><pre><code>public abstract class Vehicle{
+}</code></pre><figure><img src="/assets/ext/note/de1331a5da342574.webp" alt="" width="620" height="389" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>共通部分をまとめて、乗り物を管理する抽象クラスとして、Vehicleクラスを定義する。Vehicleとは、乗り物。内容がないメソッドは抽象メソッドとしてabstractを入れて、それが入ったクラスはabstractを入れれば良いはず・・！</p><p>まずVehicleクラスを作ろう。</p><pre><code>public abstract class Vehicle{
   protected int crewNum;  //乗客人数(メンバ変数)
 
   public abstract void showCrewNum(){　　　　//変数crewNumの値を表示する（抽象メソッド) 
@@ -178,7 +187,7 @@ public class Train extends Vehicle{
   public void showCrewNum(){
     System.out.println("バスの乗客"+crewNum+"名");
   }
-}</code></pre><h3>▶️問題２</h3><figure><img src="https://assets.st-note.com/img/1685672386186-hRonwfSUVn.png?width=1200" alt="" width="620" height="346" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="https://assets.st-note.com/img/1685674183045-oeW4IZgYks.png?width=1200" alt="" width="620" height="150" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>interface Stopable{
+}</code></pre><h3>▶️問題２</h3><figure><img src="/assets/ext/note/6218660268aa3559.webp" alt="" width="620" height="346" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/68c0fb394368e253.webp" alt="" width="620" height="150" loading="lazy" decoding="async"><figcaption></figcaption></figure><pre><code>interface Stopable{
 //  String MESSAGE;
   void stop();
 }</code></pre><pre><code>//タクシークラスの編集

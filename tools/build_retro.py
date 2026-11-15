@@ -326,3 +326,22 @@ def build_about():
     page('about.html', '管理人のプロフィール | GiveTex', 'GiveTex（ギブテックス）は教育×ITをテーマに、学習アプリ・Kindle電子書籍「ドパ読！」・オカルトブース「どろん」・開発日記・記事を発信する個人ホームページです。', body, '/about.html', canonical='https://www.givetex.org/about.html')
 
 build_index(); build_diary(); build_about()  # books は pop デザインのまま（再生成しない）
+
+def build_diary_feed():
+    """開発日記の RSS（/diary/feed.xml）"""
+    X = lambda s: html.escape(str(s), quote=True)
+    items = []
+    for i, d in enumerate(DIARY[:30]):
+        body = re.sub(r'href="/', 'href="https://www.givetex.org/', d['body'])
+        dt = datetime.datetime.strptime(d['date'], '%Y-%m-%d').replace(hour=12, tzinfo=datetime.timezone(datetime.timedelta(hours=9)))
+        items.append(f'''<item><title>{X(re.sub("<[^>]+>", "", d["title"]))}</title><link>https://www.givetex.org/diary/#m{d["date"][:7].replace("-", "")}</link>
+<guid isPermaLink="false">givetex-diary-{d["date"]}-{X(re.sub("<[^>]+>", "", d["title"]))}</guid><category>{X(d["tag"])}</category><pubDate>{dt.strftime("%a, %d %b %Y %H:%M:%S +0900")}</pubDate><description>{X(body)}</description></item>''')
+    (R / 'diary' / 'feed.xml').write_text(f'''<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
+<atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+{chr(10).join(items)}
+</channel></rss>
+''')
+
+build_diary_feed()

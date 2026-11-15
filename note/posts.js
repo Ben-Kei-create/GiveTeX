@@ -108,7 +108,7 @@ window.NOTE_POSTS = [
    "やってみた",
    "最終定理"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/336254743/rectangle_large_type_2_4b537ec4c46ad1eafc3899681a08bb91.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/52f78462624b56ac.webp",
   "noteUrl": "https://note.com/benkein/n/n25c9bb3dbd97"
  },
  {
@@ -132,7 +132,7 @@ window.NOTE_POSTS = [
    "Suno",
    "ai動画"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/336072929/rectangle_large_type_2_3914b0a2d5182ca4b08972115ab41d89.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/73df26a5c4c92b32.webp",
   "noteUrl": "https://note.com/benkein/n/n0b3420f276b8"
  },
  {
@@ -147,7 +147,7 @@ window.NOTE_POSTS = [
    "nvidia",
    "引き継ぎ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/335678862/rectangle_large_type_2_91b4a7c39e6b89a430d9b0c7aa410f6b.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0a8cdefce6173dc1.webp",
   "noteUrl": "https://note.com/benkein/n/n8652d93207d6"
  },
  {
@@ -159,7 +159,7 @@ window.NOTE_POSTS = [
    "宣伝",
    "クリスマスキャロル"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/335494516/rectangle_large_type_2_737cd193421825ccc7a9705e6bec7174.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d03498caaf977430.webp",
   "noteUrl": "https://note.com/benkein/n/n35524aa4241f"
  },
  {
@@ -174,7 +174,7 @@ window.NOTE_POSTS = [
    "本書",
    "クリスマスキャロル"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/321851609/rectangle_large_type_2_704cef9f76f43854480db3b7d47ae125.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/84efc4185ec48e5e.webp",
   "noteUrl": "https://note.com/benkein/n/n0c8fb9fe87c2"
  },
  {
@@ -189,7 +189,7 @@ window.NOTE_POSTS = [
    "学び",
    "自己成長"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/335312479/rectangle_large_type_2_86113ebb3cbbb50b85ad69afc44d2a3e.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8bb3ff297d288617.webp",
   "noteUrl": "https://note.com/benkein/n/nf37eba921aef"
  },
  {
@@ -201,7 +201,7 @@ window.NOTE_POSTS = [
    "プロンプト",
    "人物"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333802220/rectangle_large_type_2_401cf33b0987d18ce25f314fd6539109.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/803a374e94c9891f.webp",
   "noteUrl": "https://note.com/benkein/n/n65f1b0944c68"
  },
  {
@@ -216,7 +216,7 @@ window.NOTE_POSTS = [
    "整理術",
    "ニュースの読み方"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334949018/rectangle_large_type_2_d6e8cf2469a61c4b515a0cc414577ce3.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9a3b1fc980704077.webp",
   "noteUrl": "https://note.com/benkein/n/nd0fa543a49e4"
  },
  {
@@ -228,7 +228,7 @@ window.NOTE_POSTS = [
    "Amazon",
    "Muse"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334599178/rectangle_large_type_2_b64c35b0d68c2acd4faac0351aa84434.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/629bf239fa16a1d2.webp",
   "noteUrl": "https://note.com/benkein/n/nd5f045705d50"
  },
  {
@@ -240,7 +240,7 @@ window.NOTE_POSTS = [
    "Muse",
    "招待コード"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334805862/rectangle_large_type_2_46037421e647612fc425df6248815338.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0eff104fca8e98b2.webp",
   "noteUrl": "https://note.com/benkein/n/n5c99ca47f1da"
  },
  {
@@ -254,7 +254,7 @@ window.NOTE_POSTS = [
    "名作",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/329197044/rectangle_large_type_2_d039402afcd5a363658642cf0e59f691.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6116f3e4cdd563b1.webp",
   "noteUrl": "https://note.com/benkein/n/na6f4149d5931"
  },
  {
@@ -269,7 +269,7 @@ window.NOTE_POSTS = [
    "DMMアフィリエイト",
    "盗賊の話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/154534286/rectangle_large_type_2_7770832bb292d9ec72a4d5112e538c34.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c885e42d0db2af3d.webp",
   "noteUrl": "https://note.com/benkein/n/n7f2991c5fb2c"
  },
  {
@@ -284,7 +284,7 @@ window.NOTE_POSTS = [
    "エンタメ",
    "恋愛リアリティ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334565962/rectangle_large_type_2_32c169a8b836739a961dca1ffd6a0995.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/15732be7076d0337.webp",
   "noteUrl": "https://note.com/benkein/n/ne830e2bf95c6"
  },
  {
@@ -300,7 +300,7 @@ window.NOTE_POSTS = [
    "フォッグ",
    "パスパルトゥー"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/328073239/rectangle_large_type_2_1d7d25a0994a1b0763ec0acb3440d6eb.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d5563a0ce910532f.webp",
   "noteUrl": "https://note.com/benkein/n/n292c456da91f"
  },
  {
@@ -315,7 +315,7 @@ window.NOTE_POSTS = [
    "孤独",
    "LINE"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334311353/rectangle_large_type_2_507e2385fe9187579445107c302398e4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d55dbc8fd61745cb.webp",
   "noteUrl": "https://note.com/benkein/n/naa774c9b8789"
  },
  {
@@ -330,7 +330,7 @@ window.NOTE_POSTS = [
    "仕事術",
    "強み"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/334168672/rectangle_large_type_2_655823f7d88b2007a0193d41ae89a441.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5464c56454b9e0a3.webp",
   "noteUrl": "https://note.com/benkein/n/ndc69c77398d6"
  },
  {
@@ -347,7 +347,7 @@ window.NOTE_POSTS = [
    "逸話",
    "一話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/328071005/rectangle_large_type_2_75491b80d3d3fee0a4ec453e9609d41a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ada545eea2ac8f08.webp",
   "noteUrl": "https://note.com/benkein/n/n306dab8508ec"
  },
  {
@@ -362,7 +362,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "java"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/118866025/rectangle_large_type_2_08e23e5e60a9fb7848de6311cecd3f9a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/adb800f42cbe971a.webp",
   "noteUrl": "https://note.com/benkein/n/nefc73348cc57"
  },
  {
@@ -377,7 +377,7 @@ window.NOTE_POSTS = [
    "ショートドラマ",
    "見分け方"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333759314/rectangle_large_type_2_038f93727e18b6897fa3fe721e19df49.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/967983985ea2f994.webp",
   "noteUrl": "https://note.com/benkein/n/n9f6db2a4abbd"
  },
  {
@@ -389,7 +389,7 @@ window.NOTE_POSTS = [
    "高校物理",
    "電磁気学"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333649818/rectangle_large_type_2_dade5b6ccd0828acbccd1b9887636da8.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4e6f9cbce530c7d4.webp",
   "noteUrl": "https://note.com/benkein/n/n7aa0b9ae293b"
  },
  {
@@ -404,7 +404,7 @@ window.NOTE_POSTS = [
    "収益化",
    "Muse"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333503976/rectangle_large_type_2_fa1c781d396e4eb4de5a03ff422dbc95.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7bcbd063c0f32141.webp",
   "noteUrl": "https://note.com/benkein/n/n45385f718f1b",
   "paid": true
  },
@@ -420,7 +420,7 @@ window.NOTE_POSTS = [
    "基本情報技術者",
    "java入門"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/113430719/rectangle_large_type_2_b2bfc6e6b1c805cd72ce89799ea8f79d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/24af0b9e9f4cbd20.webp",
   "noteUrl": "https://note.com/benkein/n/n1fe5d607b581"
  },
  {
@@ -435,7 +435,7 @@ window.NOTE_POSTS = [
    "海外販売",
    "Gumroad"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333650873/rectangle_large_type_2_744eeff6ca207eadccf56ddf94d5c45f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/07d4c883f08512c6.webp",
   "noteUrl": "https://note.com/benkein/n/n0f78f22f1264"
  },
  {
@@ -444,7 +444,7 @@ window.NOTE_POSTS = [
   "date": "2026-11-07",
   "excerpt": "AIに「適当にやっておいて」と頼むと、たいてい期待と違うものが返ってきます。原因はAIの能力ではなく、指示の曖昧さです。 私が実際にAIアシスタントに毎日の作業を任せる中で、返ってくる成果物の質がはっきり変わった指示の型",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/333420268/rectangle_large_type_2_a9bbcf0996b7445b16a13efb8c2f140b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/bb1ab5f92ad1a48c.webp",
   "noteUrl": "https://note.com/benkein/n/n9451bf419641",
   "paid": true
  },
@@ -461,7 +461,7 @@ window.NOTE_POSTS = [
    "方程式",
    "穴埋"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/333650469/rectangle_large_type_2_1a657d68cf49283598b0881c87fcd42d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8ac18282810a06e7.webp",
   "noteUrl": "https://note.com/benkein/n/n5583372e27fc"
  },
  {
@@ -476,7 +476,7 @@ window.NOTE_POSTS = [
    "基本情報技術者",
    "java入門"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/112476434/rectangle_large_type_2_20c8e06bdf9ba746c68bae4fecda67c3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fc02c5bee2747074.webp",
   "noteUrl": "https://note.com/benkein/n/nb27c04cffec7"
  },
  {
@@ -491,7 +491,7 @@ window.NOTE_POSTS = [
    "暮らしの整理",
    "年末の整理"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/332969847/rectangle_large_type_2_5ed80d9f03d258de9ad0a9ef27e4e671.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/74b0aa7fcf438349.webp",
   "noteUrl": "https://note.com/benkein/n/nf7d08ece8385"
  },
  {
@@ -505,7 +505,7 @@ window.NOTE_POSTS = [
    "AIとできたこと",
    "事実"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/323210486/rectangle_large_type_2_280d1f69a5ca15ffbd74cfa0d89d239a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8dbd378247aeafad.webp",
   "noteUrl": "https://note.com/benkein/n/n922ee5152ab6"
  },
  {
@@ -520,7 +520,7 @@ window.NOTE_POSTS = [
    "年末準備",
    "HALの整理帳"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/332581129/rectangle_large_type_2_a06f468213710ce01dd20fbea37a3f54.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2c3f9d8fedf7ded3.webp",
   "noteUrl": "https://note.com/benkein/n/n651f97522bd7"
  },
  {
@@ -535,7 +535,7 @@ window.NOTE_POSTS = [
    "滅亡",
    "滅"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/323209206/rectangle_large_type_2_9caf6abc53ced3df032b8d24336a5cd4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f534c0acc1003210.webp",
   "noteUrl": "https://note.com/benkein/n/n6f0dd03a4e5b"
  },
  {
@@ -550,7 +550,7 @@ window.NOTE_POSTS = [
    "基本情報技術者",
    "java入門"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/332335637/rectangle_large_type_2_880a651e73cf4d5e0dcec49018aeede0.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/318d60bc35bd63b0.webp",
   "noteUrl": "https://note.com/benkein/n/n164a0b9ad2b9"
  },
  {
@@ -565,7 +565,7 @@ window.NOTE_POSTS = [
    "整理整頓",
    "大掃除"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/332195543/rectangle_large_type_2_9496d91876080f70e99310c97533341c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5e652ccd43a76012.webp",
   "noteUrl": "https://note.com/benkein/n/n7b1fe4fb7f09"
  },
  {
@@ -574,7 +574,7 @@ window.NOTE_POSTS = [
   "date": "2026-11-04",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/321721087/rectangle_large_type_2_e6b92bfa481f00f4eecb4e8edec103fa.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/dfd35b9e2d959230.webp",
   "noteUrl": "https://note.com/benkein/n/n7a4fb87bc697"
  },
  {
@@ -589,7 +589,7 @@ window.NOTE_POSTS = [
    "勉強法",
    "英語日記"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108833828/rectangle_large_type_2_f2ce2067e30c8c9c71231ad1cd5d96b2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ef60df2b031d8e92.webp",
   "noteUrl": "https://note.com/benkein/n/nce0206abb04e"
  },
  {
@@ -604,7 +604,7 @@ window.NOTE_POSTS = [
    "暮らしの整理",
    "HALの整理帳"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/331806007/rectangle_large_type_2_da2985f2e7984c90571e636cfa81b86d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/86d6bee5071007ed.webp",
   "noteUrl": "https://note.com/benkein/n/nded471827530"
  },
  {
@@ -620,7 +620,7 @@ window.NOTE_POSTS = [
    "巨大",
    "ニコラ・テスラ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/320113442/rectangle_large_type_2_7de6632622d2f0d26b34fbd7a15cb24a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/df1784317b2c130c.webp",
   "noteUrl": "https://note.com/benkein/n/nafad68ea55c3"
  },
  {
@@ -635,7 +635,7 @@ window.NOTE_POSTS = [
    "midjourney",
    "StableDiffusion"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108256435/rectangle_large_type_2_e1728270e074e9020f5d3af05a0fc069.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/44885a15402b815e.webp",
   "noteUrl": "https://note.com/benkein/n/ne3f6cdd201c1",
   "paid": true
  },
@@ -651,7 +651,7 @@ window.NOTE_POSTS = [
    "整理術",
    "デジタル整理"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/331401791/rectangle_large_type_2_4a919f100e8e12b43765b3729ba071f5.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c4c4648c18309f9b.webp",
   "noteUrl": "https://note.com/benkein/n/nd2c96278f747"
  },
  {
@@ -662,7 +662,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319712183/rectangle_large_type_2_7dcfb52f114dd5a9598a6f1af91cc642.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fd6bdbfba9b1477e.webp",
   "noteUrl": "https://note.com/benkein/n/ne0c79c910abc"
  },
  {
@@ -674,7 +674,7 @@ window.NOTE_POSTS = [
    "合格",
    "途中"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/331160416/rectangle_large_type_2_1806b43082ced71d4d437db6aa4eb6b9.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7da3c9a2cd9d0ef5.webp",
   "noteUrl": "https://note.com/benkein/n/n4aefd0619c30"
  },
  {
@@ -689,7 +689,7 @@ window.NOTE_POSTS = [
    "漢検",
    "漢検準1級"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/331158985/rectangle_large_type_2_faf110ee289412837ed990ff8808b046.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/95924c1bfe1e514e.webp",
   "noteUrl": "https://note.com/benkein/n/n1507296865f3"
  },
  {
@@ -700,7 +700,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315677026/rectangle_large_type_2_375661769044680bbfb53d7b9b2c66e3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fcf90cf56bad69da.webp",
   "noteUrl": "https://note.com/benkein/n/n95745456c2e4"
  },
  {
@@ -715,7 +715,7 @@ window.NOTE_POSTS = [
    "書類整理",
    "整理術"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/331016659/rectangle_large_type_2_98ae6d23e463ca6f621f485f582c65e4.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/66578c6a4fc5f0a4.webp",
   "noteUrl": "https://note.com/benkein/n/n707b83114858"
  },
  {
@@ -730,7 +730,7 @@ window.NOTE_POSTS = [
    "HTML",
    "css"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330752628/rectangle_large_type_2_a6840fdc90d2d6a9aa76374dac7a4a5f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c1735243b2474c99.webp",
   "noteUrl": "https://note.com/benkein/n/n1343aefb9741"
  },
  {
@@ -741,7 +741,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315851285/rectangle_large_type_2_d1e6ceb6909b37925ba2024fbfbfb874.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/66dd2a4a3ed1c127.webp",
   "noteUrl": "https://note.com/benkein/n/nb51374bc79d3"
  },
  {
@@ -755,7 +755,7 @@ window.NOTE_POSTS = [
    "集中モード",
    "通知整理"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330603036/rectangle_large_type_2_fd2d0ef52aad4ac6a4d3ae3021fd512b.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/879c46333edf23cc.webp",
   "noteUrl": "https://note.com/benkein/n/n2a64430cea59"
  },
  {
@@ -772,7 +772,7 @@ window.NOTE_POSTS = [
    "電子書籍",
    "audible"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330548796/rectangle_large_type_2_7fc596877271c4d481a9cf054f7c78a8.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/455e93f24955d172.webp",
   "noteUrl": "https://note.com/benkein/n/nf7706f822682"
  },
  {
@@ -787,7 +787,7 @@ window.NOTE_POSTS = [
    "地獄",
    "閻魔"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330461508/rectangle_large_type_2_ed6e195a36139ffbec6c33da2acdf32a.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9d1593ff5da554fc.webp",
   "noteUrl": "https://note.com/benkein/n/n368467e4dcab"
  },
  {
@@ -803,7 +803,7 @@ window.NOTE_POSTS = [
    "AIエンジニア",
    "システムデザイン"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330229689/rectangle_large_type_2_13b5704e6e9aff9bb10291a90a16850d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/77ca497d4784854e.webp",
   "noteUrl": "https://note.com/benkein/n/na567b6496ee3"
  },
  {
@@ -814,7 +814,7 @@ window.NOTE_POSTS = [
   "tags": [
    "自動化したいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330230169/rectangle_large_type_2_5b915e0db333a224122d3f718aac923a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/14cff4535ee23c31.webp",
   "noteUrl": "https://note.com/benkein/n/nb65774db3fbf"
  },
  {
@@ -825,7 +825,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315674116/rectangle_large_type_2_4fabb670c64a8ea042a6167e80d0847f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/cbbfd6e81a69336f.webp",
   "noteUrl": "https://note.com/benkein/n/n727c5b894ac7"
  },
  {
@@ -839,7 +839,7 @@ window.NOTE_POSTS = [
    "リリース",
    "中高生"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/330000220/rectangle_large_type_2_a22092cad14fc319fa6abe48346133d5.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a848d2a38b080dcc.webp",
   "noteUrl": "https://note.com/benkein/n/nd988e7d454d6"
  },
  {
@@ -852,7 +852,7 @@ window.NOTE_POSTS = [
    "スマホ整理",
    "暮らしの整理"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/329875729/rectangle_large_type_2_2e0d04e5b8bcc01c739308d356f2b7cd.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d8118d6d844c2bcc.webp",
   "noteUrl": "https://note.com/benkein/n/n01ade3bc02b1"
  },
  {
@@ -873,7 +873,7 @@ window.NOTE_POSTS = [
    "リリース",
    "App"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/329805841/rectangle_large_type_2_475d8c3fe6dfee160983074f5c8b0f46.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a4d8fa45584c342a.webp",
   "noteUrl": "https://note.com/benkein/n/n35741b214913"
  },
  {
@@ -887,7 +887,7 @@ window.NOTE_POSTS = [
    "ドキドキ",
    "フェルメール"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316260412/rectangle_large_type_2_293718c3dc9160e678eba0660fe2499e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/01e026fabaacc280.webp",
   "noteUrl": "https://note.com/benkein/n/n274538b162fd"
  },
  {
@@ -905,7 +905,7 @@ window.NOTE_POSTS = [
    "真菌",
    "王墓"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318988289/rectangle_large_type_2_ced78b51f0903f9696d758f55dfa1b37.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8eca614c9fc09101.webp",
   "noteUrl": "https://note.com/benkein/n/n27400ab89ea4"
  },
  {
@@ -914,7 +914,7 @@ window.NOTE_POSTS = [
   "date": "2026-10-27",
   "excerpt": "🔗 リンク：https://group.gmo/info/alert/2026102705/ 以下、抜粋 【総額100万ドル・総額1.5億円】 「GMOサイバー犯罪撲滅・懸賞金 」について 「お名前.com デスクトップ",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/329210304/rectangle_large_type_2_38f59d10fbea605a2930295db2abd269.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a06c4ecf773142e5.webp",
   "noteUrl": "https://note.com/benkein/n/n7a39e49eea9a"
  },
  {
@@ -929,7 +929,7 @@ window.NOTE_POSTS = [
    "北斎",
    "応為"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319701208/rectangle_large_type_2_b29ffe511909e4b3c4e8ea5c66aeb6f1.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/cf4fa1ddc39d2809.webp",
   "noteUrl": "https://note.com/benkein/n/n357a3af04e91"
  },
  {
@@ -945,7 +945,7 @@ window.NOTE_POSTS = [
    "オデュッセイア",
    "オデュッセウス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319342190/rectangle_large_type_2_50243808cf53c57680fb4b591f23d515.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/48793db332f7906c.webp",
   "noteUrl": "https://note.com/benkein/n/naa565dd6685b"
  },
  {
@@ -961,7 +961,7 @@ window.NOTE_POSTS = [
    "ゴッホ",
    "ローヌ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319337557/rectangle_large_type_2_0bd4f9762a22b92ba0fff512d1e4dc51.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/07f4dd88293b73fa.webp",
   "noteUrl": "https://note.com/benkein/n/nbfb384fcb049"
  },
  {
@@ -976,7 +976,7 @@ window.NOTE_POSTS = [
    "一話",
    "第1部"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319333673/rectangle_large_type_2_5af7efbba355e1c923dbff554e2be94b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/56cc603c7ff0a678.webp",
   "noteUrl": "https://note.com/benkein/n/nddf6583541e6"
  },
  {
@@ -985,7 +985,7 @@ window.NOTE_POSTS = [
   "date": "2026-10-23",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/315672578/rectangle_large_type_2_22dfc85e04dcd2bb029b2494ca6e6b1c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3b94b9010599e522.webp",
   "noteUrl": "https://note.com/benkein/n/n3ab0c42ebace"
  },
  {
@@ -1001,7 +1001,7 @@ window.NOTE_POSTS = [
    "マキアート",
    "全国統一"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316769164/rectangle_large_type_2_d159610421920b2490316ccd709cc16d.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3a01399d2a5b7ed3.webp",
   "noteUrl": "https://note.com/benkein/n/n803a07f0ec05"
  },
  {
@@ -1012,7 +1012,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316766943/rectangle_large_type_2_ac3536cfbb9240a6e8c49d8fa4da819d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/41edc556e3907388.webp",
   "noteUrl": "https://note.com/benkein/n/n6cb92c90adcf"
  },
  {
@@ -1045,7 +1045,7 @@ window.NOTE_POSTS = [
    "天体",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319327482/rectangle_large_type_2_55868711e184c2eeff8f26801dddc90e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b28f51a3aa187735.webp",
   "noteUrl": "https://note.com/benkein/n/n52dcefd5f50e"
  },
  {
@@ -1056,7 +1056,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315857437/rectangle_large_type_2_af155a45def4bffdeef7831b0e8f6f9b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7f06c41629fac10a.webp",
   "noteUrl": "https://note.com/benkein/n/n0fccb197c515"
  },
  {
@@ -1071,7 +1071,7 @@ window.NOTE_POSTS = [
    "アエネーイス",
    "アエネアス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319324743/rectangle_large_type_2_f8571debe6e28f93599adc1b9039d440.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c150e241d9653584.webp",
   "noteUrl": "https://note.com/benkein/n/n490a73bfbe03"
  },
  {
@@ -1080,7 +1080,7 @@ window.NOTE_POSTS = [
   "date": "2026-10-17",
   "excerpt": "玄関を作りました。 ゲームにはほとんど出てきません。",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/325320178/rectangle_large_type_2_100058001cec0c03cf5c4d64b7c6afbc.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b9005625fec9c949.webp",
   "noteUrl": "https://note.com/benkein/n/ne3f87090fc74"
  },
  {
@@ -1096,7 +1096,7 @@ window.NOTE_POSTS = [
    "訪問者",
    "毛皮"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318947496/rectangle_large_type_2_8f5219c28f762be051e3f2c0ace35b21.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8ac4c12999d499e5.webp",
   "noteUrl": "https://note.com/benkein/n/nb8267bf7595c"
  },
  {
@@ -1107,7 +1107,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315671468/rectangle_large_type_2_e068bdef14037beee61aebaf5800c89a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/51b61a33757b8268.webp",
   "noteUrl": "https://note.com/benkein/n/nb09f5d28aace"
  },
  {
@@ -1118,7 +1118,7 @@ window.NOTE_POSTS = [
   "tags": [
    "お酒で伝えるありがとう"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/324659072/rectangle_large_type_2_aa65de710c6e75df2f68f689771d5185.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/41621421f007f530.webp",
   "noteUrl": "https://note.com/benkein/n/nc3c9a7b438c8"
  },
  {
@@ -1136,7 +1136,7 @@ window.NOTE_POSTS = [
    "スキマ時間",
    "発明"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318983664/rectangle_large_type_2_1888e49db57ac428fd40402a57c6b2f4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/59cb1b39f02b0910.webp",
   "noteUrl": "https://note.com/benkein/n/nf1f309263b60"
  },
  {
@@ -1147,7 +1147,7 @@ window.NOTE_POSTS = [
   "tags": [
    "ゲーム"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/284135957/rectangle_large_type_2_9372992d8acc4b971fed53dc249576ff.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/85d1edbb041f6d70.webp",
   "noteUrl": "https://note.com/benkein/n/nd27766e44c51"
  },
  {
@@ -1158,7 +1158,7 @@ window.NOTE_POSTS = [
   "tags": [
    "チームだからできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/324376356/rectangle_large_type_2_e17d42a69a0302ccc0508323a66783e4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/74c44dba9c0d0c69.webp",
   "noteUrl": "https://note.com/benkein/n/n47567cf5c612"
  },
  {
@@ -1176,7 +1176,7 @@ window.NOTE_POSTS = [
    "疑問が学びに変わるとき",
    "工夫"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318982159/rectangle_large_type_2_d085503e86400ebdb650840182f6a512.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7dd631f5cefa700d.webp",
   "noteUrl": "https://note.com/benkein/n/nca0cb9fd05fd"
  },
  {
@@ -1189,7 +1189,7 @@ window.NOTE_POSTS = [
    "秘密",
    "脱出ゲーム"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/323805392/rectangle_large_type_2_1f7a734bc834ea51fdedb784cdb329df.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2bee58b5441da34e.webp",
   "noteUrl": "https://note.com/benkein/n/ncb81d749358b"
  },
  {
@@ -1200,7 +1200,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316762205/rectangle_large_type_2_029166a49a2412da79b14474f5e3864b.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/acb4610812c24008.webp",
   "noteUrl": "https://note.com/benkein/n/n2ae99de2db1d"
  },
  {
@@ -1213,7 +1213,7 @@ window.NOTE_POSTS = [
    "ゲーム",
    "テクスチャ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/323539631/rectangle_large_type_2_232a5ba14e2b33bc62bb32637b1591ce.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f311f6e9fffd6008.webp",
   "noteUrl": "https://note.com/benkein/n/n72370b36a559"
  },
  {
@@ -1231,7 +1231,7 @@ window.NOTE_POSTS = [
    "キュクロプス",
    "ヘカトンケイル"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314368548/rectangle_large_type_2_c5a9c479461647a78766eba86a4efb76.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/500cd4ff7b1ac10e.webp",
   "noteUrl": "https://note.com/benkein/n/nf25c311db0e8"
  },
  {
@@ -1247,7 +1247,7 @@ window.NOTE_POSTS = [
    "1話",
    "ゲルダ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319000072/rectangle_large_type_2_85c5110ca87e87b6b00b3a72a73fd891.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/418b0182785167c4.webp",
   "noteUrl": "https://note.com/benkein/n/naabdd620ddd7"
  },
  {
@@ -1258,7 +1258,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315665879/rectangle_large_type_2_f38cf3b83a4f2e700f62667fd06873e6.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/96a689f65133ada9.webp",
   "noteUrl": "https://note.com/benkein/n/nc6943a1aad97"
  },
  {
@@ -1273,7 +1273,7 @@ window.NOTE_POSTS = [
    "本編",
    "バイオ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/322677769/rectangle_large_type_2_44e4c5efef8d0a7cc73125776bb971b5.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/62ff1512b33b254e.webp",
   "noteUrl": "https://note.com/benkein/n/n3df3f4414d08"
  },
  {
@@ -1284,7 +1284,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/317099642/rectangle_large_type_2_520b2173307ed435aa80bcc6b37d3444.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1bdd010ee417aac4.webp",
   "noteUrl": "https://note.com/benkein/n/n624ca223e93e"
  },
  {
@@ -1295,7 +1295,7 @@ window.NOTE_POSTS = [
   "tags": [
    "自動化したいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/322362733/rectangle_large_type_2_d6d34f33de7a61c6d58fe17ffb6177cd.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2ae702a93f8841ab.webp",
   "noteUrl": "https://note.com/benkein/n/n1c2f6f125b10"
  },
  {
@@ -1306,7 +1306,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316397472/rectangle_large_type_2_94e9b98fdccb6f6e7304bfda4f176e4b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/449865e5b4ce54b3.webp",
   "noteUrl": "https://note.com/benkein/n/nbdd047335acf"
  },
  {
@@ -1322,7 +1322,7 @@ window.NOTE_POSTS = [
    "ニュートン",
    "奇行"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318978620/rectangle_large_type_2_c97588624220b71526289e26e59c69c4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/415a38cd40418b67.webp",
   "noteUrl": "https://note.com/benkein/n/nf1f59e1dc993"
  },
  {
@@ -1333,7 +1333,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316350997/rectangle_large_type_2_680a1184591cf22a99e546d128e4c3e0.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2ef809134db52d2e.webp",
   "noteUrl": "https://note.com/benkein/n/nc4afb8b3028f"
  },
  {
@@ -1350,7 +1350,7 @@ window.NOTE_POSTS = [
    "ゼウス",
    "クロノス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314369100/rectangle_large_type_2_2d8207c0c6c504cbce5cdb8a2661b864.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/59b0818e81791748.webp",
   "noteUrl": "https://note.com/benkein/n/ne9505745f261"
  },
  {
@@ -1361,7 +1361,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315660887/rectangle_large_type_2_0ac659079b71b378a8a77316d35cce36.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/404e38016b676cbb.webp",
   "noteUrl": "https://note.com/benkein/n/n3b1e027fcdf9"
  },
  {
@@ -1372,7 +1372,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315647765/rectangle_large_type_2_8168d5eeb2421f48bcd1fb90509b05c1.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b938c5c31dfbf892.webp",
   "noteUrl": "https://note.com/benkein/n/n2afed001c606"
  },
  {
@@ -1383,7 +1383,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318950495/rectangle_large_type_2_b3b03ef0b1a5e7f1b1950439902e7918.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/95f6e3fdfb57052a.webp",
   "noteUrl": "https://note.com/benkein/n/nbe0a2eda79ef"
  },
  {
@@ -1394,7 +1394,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316406885/rectangle_large_type_2_fd0d6e6e375241bfc757402c8e0086d6.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2262e3a1db6e308a.webp",
   "noteUrl": "https://note.com/benkein/n/ndf03e64c835c"
  },
  {
@@ -1412,7 +1412,7 @@ window.NOTE_POSTS = [
    "半透明っていいよね",
    "半透明と友達になりたい"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/318943835/rectangle_large_type_2_e1aae09fb763df5c0a8b46a443fecc9a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/361375e0cecb7725.webp",
   "noteUrl": "https://note.com/benkein/n/ndc67efc9ffc0"
  },
  {
@@ -1423,7 +1423,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315652166/rectangle_large_type_2_503165067099e2fd06bc1c02dda0b062.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a5b25967017a8cd8.webp",
   "noteUrl": "https://note.com/benkein/n/n4d2eda5d1b9b"
  },
  {
@@ -1439,7 +1439,7 @@ window.NOTE_POSTS = [
    "来月",
    "素振"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319003511/rectangle_large_type_2_ea3f4deb3f4e0d781c31cc14be03f2bc.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/210d663916a1da29.webp",
   "noteUrl": "https://note.com/benkein/n/n44fb72d560bc"
  },
  {
@@ -1457,7 +1457,7 @@ window.NOTE_POSTS = [
    "クロノス",
    "アフロディーテ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314377586/rectangle_large_type_2_81123dd70ec279c23da44442132073c4.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/940d940b888043c3.webp",
   "noteUrl": "https://note.com/benkein/n/n5ac814ca757e"
  },
  {
@@ -1468,7 +1468,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316404439/rectangle_large_type_2_24d1d6a56ef1313bcd4afe5280c0cb11.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/829989787ac0cf88.webp",
   "noteUrl": "https://note.com/benkein/n/n2c08385e6461"
  },
  {
@@ -1477,7 +1477,7 @@ window.NOTE_POSTS = [
   "date": "2026-09-27",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/318060534/rectangle_large_type_2_153ef23ff09a1db1fc2a27114880ec2e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a4778fea6f68489f.webp",
   "noteUrl": "https://note.com/benkein/n/n73ee2f3c9421"
  },
  {
@@ -1488,7 +1488,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316765391/rectangle_large_type_2_fa8317d75f55c3fe8f1785e13cab9b5e.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4557411d01e9f172.webp",
   "noteUrl": "https://note.com/benkein/n/naac401efedd8"
  },
  {
@@ -1497,7 +1497,7 @@ window.NOTE_POSTS = [
   "date": "2026-09-26",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/315669186/rectangle_large_type_2_514bd192c5adf8a80d50b005fbecd8da.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f71a5e6230112e11.webp",
   "noteUrl": "https://note.com/benkein/n/n35f18bcb5901"
  },
  {
@@ -1508,7 +1508,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316284384/rectangle_large_type_2_d57e0001bed038d87094828365ae77d9.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2209516fb8b7c563.webp",
   "noteUrl": "https://note.com/benkein/n/n13d3c93fb5a0"
  },
  {
@@ -1519,7 +1519,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315156170/rectangle_large_type_2_604373ea39898af50859c734366cf501.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b384256d0afad771.webp",
   "noteUrl": "https://note.com/benkein/n/n47d2bb706d27"
  },
  {
@@ -1530,7 +1530,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314947546/rectangle_large_type_2_608260ddf9334c0a6b10f4f066b4c6ed.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/46c1a2805510035e.webp",
   "noteUrl": "https://note.com/benkein/n/n4d456f39d48b"
  },
  {
@@ -1541,7 +1541,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316446391/rectangle_large_type_2_cbe2a1f07b08fcc3732edfec23b7a4c5.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2fc5c9f75f1b2e56.webp",
   "noteUrl": "https://note.com/benkein/n/n9c109fb6bf9d"
  },
  {
@@ -1552,7 +1552,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316440433/rectangle_large_type_2_7bb4c204d16c8de7a35d99539f722742.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2c838d2d9e2786e4.webp",
   "noteUrl": "https://note.com/benkein/n/n3578112e2f0a"
  },
  {
@@ -1570,7 +1570,7 @@ window.NOTE_POSTS = [
    "KindleUnlimited",
    "西洋美術"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313716368/rectangle_large_type_2_3e644516730a8407b023fada443f3bad.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/51666a4c1671f514.webp",
   "noteUrl": "https://note.com/benkein/n/n24c99913edfa"
  },
  {
@@ -1581,7 +1581,7 @@ window.NOTE_POSTS = [
   "tags": [
    "資料"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/317104369/rectangle_large_type_2_4654847b6db9211288f1be356f632912.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/346cb55c55253eb8.webp",
   "noteUrl": "https://note.com/benkein/n/n2e526488a505"
  },
  {
@@ -1592,7 +1592,7 @@ window.NOTE_POSTS = [
   "tags": [
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/316281036/rectangle_large_type_2_8347fceb7a0dda4e0f5bea1fa0c71a03.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e2236d52c05888dc.webp",
   "noteUrl": "https://note.com/benkein/n/nf7c60f8ca930"
  },
  {
@@ -1603,7 +1603,7 @@ window.NOTE_POSTS = [
   "tags": [
    "疑問が学びに変わるとき"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315154357/rectangle_large_type_2_b0168d22ced4972ceb2cb65d038bcb89.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/14dd27751af03ba0.webp",
   "noteUrl": "https://note.com/benkein/n/n2add25d67a51"
  },
  {
@@ -1621,7 +1621,7 @@ window.NOTE_POSTS = [
    "アフロディーテ",
    "ウラノス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314316140/rectangle_large_type_2_7519f38f8d7270cac85f2e236df7cdf7.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1225c4b997af5399.webp",
   "noteUrl": "https://note.com/benkein/n/nb9ea7dcfc085"
  },
  {
@@ -1637,7 +1637,7 @@ window.NOTE_POSTS = [
    "手紙",
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/257721772/rectangle_large_type_2_47d97f72dfbbb1e7e593822b4d75b6bd.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7a194d746e2adbbb.webp",
   "noteUrl": "https://note.com/benkein/n/nc0250e146050"
  },
  {
@@ -1652,7 +1652,7 @@ window.NOTE_POSTS = [
    "30秒",
    "変異"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/315050659/rectangle_large_type_2_32d5f1d6af5d5f6d076e28c2d0775f30.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/59a7ee1df3c7865f.webp",
   "noteUrl": "https://note.com/benkein/n/n5e164d5fdb3a"
  },
  {
@@ -1670,7 +1670,7 @@ window.NOTE_POSTS = [
    "ホップ",
    "麦芽"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314808616/rectangle_large_type_2_02a2890bf26a1d86d2b60671d73aa014.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3457c42eb5466514.webp",
   "noteUrl": "https://note.com/benkein/n/n7869d2cdaca5"
  },
  {
@@ -1686,7 +1686,7 @@ window.NOTE_POSTS = [
    "進捗",
    "イザベラ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314702309/rectangle_large_type_2_3f590f9fc9488fdcb4aa71fb5fb5fd7c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/beca399a501c2da9.webp",
   "noteUrl": "https://note.com/benkein/n/nb6e25ba2a213"
  },
  {
@@ -1702,7 +1702,7 @@ window.NOTE_POSTS = [
    "神話",
    "ゼウス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314201269/rectangle_large_type_2_029479fc14d6f8834b11745327ff2723.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5c59e4bf333a9273.webp",
   "noteUrl": "https://note.com/benkein/n/nf81091a50b89"
  },
  {
@@ -1720,7 +1720,7 @@ window.NOTE_POSTS = [
    "疑問が学びに変わるとき",
    "スキマ時間"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313713872/rectangle_large_type_2_4177539ae7f0426455d4a02f925fa469.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/285ac79bb1c7254d.webp",
   "noteUrl": "https://note.com/benkein/n/n7c177b1ed10a"
  },
  {
@@ -1737,7 +1737,7 @@ window.NOTE_POSTS = [
    "応募",
    "0円"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314436762/rectangle_large_type_2_dd1165b868fe51b821322c0182df9040.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c82cc137168cff98.webp",
   "noteUrl": "https://note.com/benkein/n/n720a0b089717"
  },
  {
@@ -1755,7 +1755,7 @@ window.NOTE_POSTS = [
    "か",
    "換算"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/319003830/rectangle_large_type_2_a23965b13a11df1e99dc2613f4822555.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/342a8dbe547a9a71.webp",
   "noteUrl": "https://note.com/benkein/n/nbc9747772530"
  },
  {
@@ -1773,7 +1773,7 @@ window.NOTE_POSTS = [
    "公開",
    "0円"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/314095923/rectangle_large_type_2_f3195caba675f6cca0f0132584b03eed.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a3358d396abe0440.webp",
   "noteUrl": "https://note.com/benkein/n/nfd3e3737b1d1"
  },
  {
@@ -1791,7 +1791,7 @@ window.NOTE_POSTS = [
    "KindleUnlimited",
    "フェイクニュース"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313520605/rectangle_large_type_2_7945e083ec04413e1e6ef797a61c4b6c.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1dcf08e9e4d20b7e.webp",
   "noteUrl": "https://note.com/benkein/n/n983cc720ebbe"
  },
  {
@@ -1808,7 +1808,7 @@ window.NOTE_POSTS = [
    "ガイア",
    "ウラノス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313891420/rectangle_large_type_2_3ab0943f2dcd0204804155223692842b.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3dfcf9e533b4faf1.webp",
   "noteUrl": "https://note.com/benkein/n/n0330281399cd"
  },
  {
@@ -1826,7 +1826,7 @@ window.NOTE_POSTS = [
    "KindleUnlimited",
    "予約受付中"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313483186/rectangle_large_type_2_a3e1df8da9d9dd6f45340797fec5f8b3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/93481b8f3e3f963e.webp",
   "noteUrl": "https://note.com/benkein/n/nad3c49fd9e9b"
  },
  {
@@ -1839,7 +1839,7 @@ window.NOTE_POSTS = [
    "未来のためにできること",
    "日報"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313811224/rectangle_large_type_2_a63efb91a280997b8f9b125265a46f61.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9288bcf064271258.webp",
   "noteUrl": "https://note.com/benkein/n/n521c62f13071"
  },
  {
@@ -1857,7 +1857,7 @@ window.NOTE_POSTS = [
    "偉人",
    "KindleUnlimited"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313482120/rectangle_large_type_2_2ded4f03aed0b50a9b20d95be1e9adff.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c0de50fa177b8a4a.webp",
   "noteUrl": "https://note.com/benkein/n/ne6906abec07a"
  },
  {
@@ -1872,7 +1872,7 @@ window.NOTE_POSTS = [
    "読書好きと繋がりたい",
    "KindleUnlimited"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313480800/rectangle_large_type_2_4ad9f296c9fe32fdd2efd9f8fba5f24b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/47f390e6fcb68633.webp",
   "noteUrl": "https://note.com/benkein/n/nfce885461bc2"
  },
  {
@@ -1889,7 +1889,7 @@ window.NOTE_POSTS = [
    "アテナ",
    "テレマコス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313287977/rectangle_large_type_2_dd0aabd318d6cee984ae9f5e15a1d76e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4a2f3a35155a6583.webp",
   "noteUrl": "https://note.com/benkein/n/nf5bf1c02cd32"
  },
  {
@@ -1907,7 +1907,7 @@ window.NOTE_POSTS = [
    "プラン",
    "合法"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313218762/rectangle_large_type_2_d0cab2275efbcc361759322677b13e89.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/556c0c8acc42c730.webp",
   "noteUrl": "https://note.com/benkein/n/n362b8d3e6868"
  },
  {
@@ -1922,7 +1922,7 @@ window.NOTE_POSTS = [
    "テレマコス",
    "求婚者"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313138176/rectangle_large_type_2_778b02369e6e7b876ef0964f94f20407.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/71f1094f4b9a0f3c.webp",
   "noteUrl": "https://note.com/benkein/n/na2b18e1d3863"
  },
  {
@@ -1940,7 +1940,7 @@ window.NOTE_POSTS = [
    "シリーズ",
    "洞窟"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313120284/rectangle_large_type_2_e9df04f9f7d9f927b822629dba7ac5a1.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4bbd061fe2cb15dc.webp",
   "noteUrl": "https://note.com/benkein/n/n09b3d421f8b4"
  },
  {
@@ -1958,7 +1958,7 @@ window.NOTE_POSTS = [
    "売上",
    "チャッピー"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/313206832/rectangle_large_type_2_1aee03d07ed11c1bedc926936ab9062d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/10582dfc138545dd.webp",
   "noteUrl": "https://note.com/benkein/n/n0ef241cb1677"
  },
  {
@@ -1976,7 +1976,7 @@ window.NOTE_POSTS = [
    "故郷",
    "ギリシャ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312785639/rectangle_large_type_2_76951019a0b71951f6f1cf19c9148b77.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/122ea632181ca8bf.webp",
   "noteUrl": "https://note.com/benkein/n/n7f3d54f37ca1"
  },
  {
@@ -1994,7 +1994,7 @@ window.NOTE_POSTS = [
    "完成",
    "わたしとラジオ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312716059/rectangle_large_type_2_be9ffe917852fff83e9729e8e5a4266c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/49d6867db227ffa2.webp",
   "noteUrl": "https://note.com/benkein/n/n3ee483154814"
  },
  {
@@ -2012,7 +2012,7 @@ window.NOTE_POSTS = [
    "自我",
    "課金"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312506915/rectangle_large_type_2_e3f2250bed083c673bbb48453e99e3ad.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3d6462acda6460ea.webp",
   "noteUrl": "https://note.com/benkein/n/nc5368478558f"
  },
  {
@@ -2030,7 +2030,7 @@ window.NOTE_POSTS = [
    "疑問が学びに変わるとき",
    "偉人"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312335684/rectangle_large_type_2_f55f90086c947abf6dd2532e2e81f87d.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/066b00236541a156.webp",
   "noteUrl": "https://note.com/benkein/n/ne9f0fcfd190a"
  },
  {
@@ -2048,7 +2048,7 @@ window.NOTE_POSTS = [
    "目次",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312351903/rectangle_large_type_2_29cefb118b14e122711b06b214989a6c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/35cac887ba34ed78.webp",
   "noteUrl": "https://note.com/benkein/n/n783ef94bd8f8"
  },
  {
@@ -2065,7 +2065,7 @@ window.NOTE_POSTS = [
    "錯覚",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/312012413/rectangle_large_type_2_a4ccf7e51f181c0f058726fb5465e98b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c2d94f89a084b142.webp",
   "noteUrl": "https://note.com/benkein/n/n09a56e50442d"
  },
  {
@@ -2083,7 +2083,7 @@ window.NOTE_POSTS = [
    "30秒",
    "ウォルト・ディズニー"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/311810244/rectangle_large_type_2_70e13bed0b1415efb09d4ffad51e870d.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fb6861724da60752.webp",
   "noteUrl": "https://note.com/benkein/n/nf863016add08"
  },
  {
@@ -2101,7 +2101,7 @@ window.NOTE_POSTS = [
    "皇帝",
    "過激"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/311551284/rectangle_large_type_2_1755d34fffcbb8ade20533f6d0a3a802.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6c8188b74e514828.webp",
   "noteUrl": "https://note.com/benkein/n/n872b83e7b937"
  },
  {
@@ -2119,7 +2119,7 @@ window.NOTE_POSTS = [
    "エピソード",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/311277759/rectangle_large_type_2_6c48029135d413404c64052d87358d55.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/17640ad014e83f6b.webp",
   "noteUrl": "https://note.com/benkein/n/n564bb66bbe9a"
  },
  {
@@ -2137,7 +2137,7 @@ window.NOTE_POSTS = [
    "下ネタ",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/310968574/rectangle_large_type_2_80003a1be20eece02224f10eb2e0f505.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3ead29231f276d1b.webp",
   "noteUrl": "https://note.com/benkein/n/n105d936d791e"
  },
  {
@@ -2153,7 +2153,7 @@ window.NOTE_POSTS = [
    "疑問が学びに変わるとき",
    "30秒"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/310076744/rectangle_large_type_2_ceb57b387271d90930c1135c8415cbab.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5137e23cb04f56b3.webp",
   "noteUrl": "https://note.com/benkein/n/nb0c15b44e898"
  },
  {
@@ -2171,7 +2171,7 @@ window.NOTE_POSTS = [
    "古事記",
    "日本神話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/309990385/rectangle_large_type_2_482845f3b8232b57e49b1bbd2985fc4d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7c84c4dc1f8c9818.webp",
   "noteUrl": "https://note.com/benkein/n/n2c7cdad5c0ff"
  },
  {
@@ -2189,7 +2189,7 @@ window.NOTE_POSTS = [
    "ギリシャ神話",
    "KindleUnlimited"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/309492796/rectangle_large_type_2_a0b436f46c012d69683be1356ef9b2ed.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2afde729242db42d.webp",
   "noteUrl": "https://note.com/benkein/n/n09c93263cfed"
  },
  {
@@ -2207,7 +2207,7 @@ window.NOTE_POSTS = [
    "醒睡笑",
    "江戸小話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/309155382/rectangle_large_type_2_f0caed0ac3c3934690160b4eab7b0d9e.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d419634e5942c7e6.webp",
   "noteUrl": "https://note.com/benkein/n/nfb5f0aac1dad"
  },
  {
@@ -2223,7 +2223,7 @@ window.NOTE_POSTS = [
    "金額",
    "収支"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/305386695/rectangle_large_type_2_37f8c0a393b6c931b1a67fd4430a334f.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/eb935a5d900da563.webp",
   "noteUrl": "https://note.com/benkein/n/n863578ed657d"
  },
  {
@@ -2241,7 +2241,7 @@ window.NOTE_POSTS = [
    "恋愛心理学",
    "AIとできたこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/302207488/rectangle_large_type_2_cdeac742ba62f7e0efcc352969478110.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b38cdecd76b9b978.webp",
   "noteUrl": "https://note.com/benkein/n/n52a095307337"
  },
  {
@@ -2257,7 +2257,7 @@ window.NOTE_POSTS = [
    "合理化",
    "イソップ寓話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/300615954/rectangle_large_type_2_16926be74ad98a5d35bc0164f93c50b2.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/265a9e9d161bbdb6.webp",
   "noteUrl": "https://note.com/benkein/n/nd0f9bde1d461"
  },
  {
@@ -2273,7 +2273,7 @@ window.NOTE_POSTS = [
    "イソップ寓話",
    "30秒シリーズ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/300401113/rectangle_large_type_2_4bfb3a9a26b0cf439c46ee0e8f69904b.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b77cb1339af77b40.webp",
   "noteUrl": "https://note.com/benkein/n/n4e7e4a28f315"
  },
  {
@@ -2285,7 +2285,7 @@ window.NOTE_POSTS = [
    "未来のためにできること",
    "ちいかわ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/298877463/rectangle_large_type_2_9811676cb95d6000c051d3e3ff66146a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8bc43406d8ce50bd.webp",
   "noteUrl": "https://note.com/benkein/n/n94b1a27f2a09"
  },
  {
@@ -2300,7 +2300,7 @@ window.NOTE_POSTS = [
    "ソーサラー",
    "幌筵"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/298753193/rectangle_large_type_2_c004b751b21c29a44010fcdc35534277.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8e579683028a258a.webp",
   "noteUrl": "https://note.com/benkein/n/n597585e5f19a"
  },
  {
@@ -2314,7 +2314,7 @@ window.NOTE_POSTS = [
    "眠れない夜に",
    "夏の1コマ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/297891490/rectangle_large_type_2_562f724a8ef7e967e27be0ab64427938.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/253ab5091adef3c7.webp",
   "noteUrl": "https://note.com/benkein/n/n33b9c9e11353"
  },
  {
@@ -2328,7 +2328,7 @@ window.NOTE_POSTS = [
    "ムトー",
    "草介"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/296864027/rectangle_large_type_2_6e86e858d8df1f5302459aa70caf5aa3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d77be216ea813693.webp",
   "noteUrl": "https://note.com/benkein/n/nd0f9bbafb2fb"
  },
  {
@@ -2343,7 +2343,7 @@ window.NOTE_POSTS = [
    "沈黙",
    "親孝行"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/296714873/rectangle_large_type_2_b25bace3a1cfed39351a6b206fbe6ab7.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b6db266aaf07b88d.webp",
   "noteUrl": "https://note.com/benkein/n/n4f3e22c1cfc4"
  },
  {
@@ -2358,7 +2358,7 @@ window.NOTE_POSTS = [
    "目的地",
    "ブラックホール"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/296714486/rectangle_large_type_2_5b04aac016a43ef6005bf41f3418c6e0.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a5d5fee150d7bef1.webp",
   "noteUrl": "https://note.com/benkein/n/n60efcfdacee6"
  },
  {
@@ -2372,7 +2372,7 @@ window.NOTE_POSTS = [
    "貴女",
    "老爺"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/296604736/rectangle_large_type_2_6c2cda69f6e284d3b7617436490725ae.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fd572f98d60ffc60.webp",
   "noteUrl": "https://note.com/benkein/n/n18fe3d6d109e"
  },
  {
@@ -2385,7 +2385,7 @@ window.NOTE_POSTS = [
    "目的地",
    "老爺"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/294591933/rectangle_large_type_2_0fcbadad4dccdd0f591152640f663589.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4e61f099e4067308.webp",
   "noteUrl": "https://note.com/benkein/n/n558db111c684"
  },
  {
@@ -2398,7 +2398,7 @@ window.NOTE_POSTS = [
    "目的地",
    "老爺"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/293359787/rectangle_large_type_2_c808927bcfcff701fcde056be3bfbe78.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0d68556fc7057623.webp",
   "noteUrl": "https://note.com/benkein/n/nefdc6827b266"
  },
  {
@@ -2410,7 +2410,7 @@ window.NOTE_POSTS = [
    "目的地",
    "ラプラス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/293203008/rectangle_large_type_2_73284d4609676fb847bc551b708a9a34.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9870554ecf38165b.webp",
   "noteUrl": "https://note.com/benkein/n/ncc6833a39e1e"
  },
  {
@@ -2422,7 +2422,7 @@ window.NOTE_POSTS = [
    "小説",
    "老爺"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/292887150/rectangle_large_type_2_aaad12b2059956e140877746347786e3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c53625130d103a2d.webp",
   "noteUrl": "https://note.com/benkein/n/n9d584f715124"
  },
  {
@@ -2434,7 +2434,7 @@ window.NOTE_POSTS = [
    "創作大賞2026",
    "黒豹"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/292518615/rectangle_large_type_2_cdf5f89087a9f1b1285b1dee20da2151.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/97f880d5ac4e6ab6.webp",
   "noteUrl": "https://note.com/benkein/n/na62b35e91ee6"
  },
  {
@@ -2446,7 +2446,7 @@ window.NOTE_POSTS = [
    "創作大賞2026",
    "モーツァルト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/292298217/rectangle_large_type_2_e7255b6fc5b5c6b348b76c4f2008d456.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c516ba5be2dbdd0e.webp",
   "noteUrl": "https://note.com/benkein/n/n1ee84cfd1320"
  },
  {
@@ -2458,7 +2458,7 @@ window.NOTE_POSTS = [
    "読書",
    "創作大賞2026"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/292112977/rectangle_large_type_2_8b1d5336928e6a7d10b2065c1232447b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b5f4b692365ca726.webp",
   "noteUrl": "https://note.com/benkein/n/nf6b225f00d00"
  },
  {
@@ -2470,7 +2470,7 @@ window.NOTE_POSTS = [
    "創作大賞2026",
    "走馬灯"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/291770809/rectangle_large_type_2_d87106bc73ea12d2f3298da94f68519a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2ca6f28d18834d5f.webp",
   "noteUrl": "https://note.com/benkein/n/nd24cf8a74ca0"
  },
  {
@@ -2481,7 +2481,7 @@ window.NOTE_POSTS = [
   "tags": [
    "小説"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/291646938/rectangle_large_type_2_06a5e160f08475b3340aecf79f24460a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b0a99c5c026c5340.webp",
   "noteUrl": "https://note.com/benkein/n/n212e7c97f7ce"
  },
  {
@@ -2490,7 +2490,7 @@ window.NOTE_POSTS = [
   "date": "2026-06-12",
   "excerpt": "もうMac Book Pro m1も古株。 m5を買ってもいいが、もうm6が出たらそれを買おう。 ただ、それまでまだ時間ある。でも写真の通りもうパンパン。 そこで、通常ならMacのストアで500円で売られているが（それで",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/284884993/rectangle_large_type_2_cb5f2c0ebb583b9b7216eee26c1f443f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b15983a638b3cd0e.webp",
   "noteUrl": "https://note.com/benkein/n/n2241da2806d6"
  },
  {
@@ -2499,7 +2499,7 @@ window.NOTE_POSTS = [
   "date": "2026-06-08",
   "excerpt": "わかってきた、だんだん、わかってきた",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/283544315/rectangle_large_type_2_9673f034fb8988ceb0ac699baf6f2391.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9d30b1986eb8ac5c.webp",
   "noteUrl": "https://note.com/benkein/n/n9916714b2e95"
  },
  {
@@ -2508,7 +2508,7 @@ window.NOTE_POSTS = [
   "date": "2026-05-30",
   "excerpt": "おいらの頭の中のアプリを、ぜんぶリリースしていきます AI、おそい。",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/280700044/rectangle_large_type_2_ed94a7e3ffd809d289df7ebc66344062.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6a9bbb731904bc0c.webp",
   "noteUrl": "https://note.com/benkein/n/nb103c8aabf13"
  },
  {
@@ -2528,7 +2528,7 @@ window.NOTE_POSTS = [
   "date": "2026-05-11",
   "excerpt": "アップルに申請できた。 目指せ1000アプリ",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/275162042/rectangle_large_type_2_773d0e16c3f74124fd19834d287694f2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/32ac606aa9872370.webp",
   "noteUrl": "https://note.com/benkein/n/n290e07466d44"
  },
  {
@@ -2554,7 +2554,7 @@ window.NOTE_POSTS = [
    "スプレッドシート",
    "入力結果"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/257508610/rectangle_large_type_2_70c9764a188cacbcd1e13bf3f351c005.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/062bea511de9c29d.webp",
   "noteUrl": "https://note.com/benkein/n/n0f7b1463430f",
   "paid": true
  },
@@ -2570,7 +2570,7 @@ window.NOTE_POSTS = [
    "かなえたい夢",
    "一杯"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/244696974/rectangle_large_type_2_7eea2a6fde4b3339c51056056bb23268.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2c06c9ea62e1399c.webp",
   "noteUrl": "https://note.com/benkein/n/na341eedd2e61",
   "paid": true
  },
@@ -2585,7 +2585,7 @@ window.NOTE_POSTS = [
    "脂肪",
    "巨体"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/244413808/rectangle_large_type_2_ea211b7b03ab3e5cd3d0ef07d44cd713.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6e51b6c1701b56ae.webp",
   "noteUrl": "https://note.com/benkein/n/n09360ca4e6ae",
   "paid": true
  },
@@ -2599,7 +2599,7 @@ window.NOTE_POSTS = [
    "お弁当記録",
    "運動記録"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/244362577/rectangle_large_type_2_fdb4a4b779b398b60948610a4ffdc314.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3cccb9b1c1a30a28.webp",
   "noteUrl": "https://note.com/benkein/n/nfd520ffa981c",
   "paid": true
  },
@@ -2613,7 +2613,7 @@ window.NOTE_POSTS = [
    "今年やりたい10のこと",
    "人生最後のダイエット"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/244042198/rectangle_large_type_2_b09f3d387204d3006aab4ac3cca38ff5.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/866aa3b802ee04fd.webp",
   "noteUrl": "https://note.com/benkein/n/n2f07f70722c5",
   "paid": true
  },
@@ -2629,7 +2629,7 @@ window.NOTE_POSTS = [
    "AIと自由研究",
    "Etsy"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/208282782/rectangle_large_type_2_936fabdaf125bde7be72016e298bd01c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2d352090625f0cea.webp",
   "noteUrl": "https://note.com/benkein/n/nef120f7909e6",
   "paid": true
  },
@@ -2646,7 +2646,7 @@ window.NOTE_POSTS = [
    "ページ",
    "AIと自由研究"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/207986678/rectangle_large_type_2_2667d17ce6b04c6024bd9f4c1812e2a3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b1e21b0810469491.webp",
   "noteUrl": "https://note.com/benkein/n/n13b4e120d54c"
  },
  {
@@ -2661,7 +2661,7 @@ window.NOTE_POSTS = [
    "教師のバトン",
    "AIと自由研究"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/207870389/rectangle_large_type_2_1e62f56e5d99bcf6a4843484be38c973.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2d9eccfb489dea8a.webp",
   "noteUrl": "https://note.com/benkein/n/n41f40a8f8b20"
  },
  {
@@ -2675,7 +2675,7 @@ window.NOTE_POSTS = [
    "インストール",
    "コピペ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/201437971/rectangle_large_type_2_98f85473d7aae67ccc635330b81f8117.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e4d6cd6b78f74900.webp",
   "noteUrl": "https://note.com/benkein/n/n29440afafe54"
  },
  {
@@ -2690,7 +2690,7 @@ window.NOTE_POSTS = [
    "ファイル",
    "コマンド"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/200084345/rectangle_large_type_2_9c114beff35c48fb44294429c274b74e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/af6a681e78b5bc8a.webp",
   "noteUrl": "https://note.com/benkein/n/na14c6d55c66d"
  },
  {
@@ -2708,7 +2708,7 @@ window.NOTE_POSTS = [
    "Java8",
    "新人プログラマ応援"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/198512658/rectangle_large_type_2_6388eff99ce502adf82f5296c9a39f48.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b0c97737d881a9ae.webp",
   "noteUrl": "https://note.com/benkein/n/n5d4a5f0ec4b9",
   "paid": true
  },
@@ -2724,7 +2724,7 @@ window.NOTE_POSTS = [
    "作成",
    "Temu"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/197674257/rectangle_large_type_2_28394832d1496030ffa1d133d9c7b39b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f36ac25f63446784.webp",
   "noteUrl": "https://note.com/benkein/n/n60fb3523d415",
   "paid": true
  },
@@ -2738,7 +2738,7 @@ window.NOTE_POSTS = [
    "AIイラスト",
    "AI画像生成"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/196919282/rectangle_large_type_2_9033fe1a0f6d1d2f60e94750d49a8883.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4cbb09d90cc481ae.webp",
   "noteUrl": "https://note.com/benkein/n/n0db1660325b2"
  },
  {
@@ -2753,7 +2753,7 @@ window.NOTE_POSTS = [
    "ネットビジネス",
    "報酬"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/195193573/rectangle_large_type_2_126e9dd23ad1331a2f7f31c31845a4a4.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/df477d744f2f1c07.webp",
   "noteUrl": "https://note.com/benkein/n/n50da919e3c67",
   "paid": true
  },
@@ -2768,7 +2768,7 @@ window.NOTE_POSTS = [
    "Unity",
    "unity1week"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/185076979/rectangle_large_type_2_330dbed766546a3352f195db9cc1eafc.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7bd89f269abd15ad.webp",
   "noteUrl": "https://note.com/benkein/n/nc608b88ebf18"
  },
  {
@@ -2786,7 +2786,7 @@ window.NOTE_POSTS = [
    "ラムダ式",
    "関数型インターフェース"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/174045682/rectangle_large_type_2_932043cde95a76dac3d31afa268b1865.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1b526cd09e007174.webp",
   "noteUrl": "https://note.com/benkein/n/n7d767974c0cc",
   "paid": true
  },
@@ -2802,7 +2802,7 @@ window.NOTE_POSTS = [
    "インナークラス",
    "ネストクラス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/174045454/rectangle_large_type_2_60d00b1a6156d775aeb728964692cabd.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/caffde114f26e88c.webp",
   "noteUrl": "https://note.com/benkein/n/n3de4e4ef282a",
   "paid": true
  },
@@ -2816,7 +2816,7 @@ window.NOTE_POSTS = [
    "年末の過ごし方",
    "冬の1コマ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/168858322/rectangle_large_type_2_83504ccc74b48ed1ff22a776631c6cce.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c6510c95bea8fa4e.webp",
   "noteUrl": "https://note.com/benkein/n/need1c65c02f7",
   "paid": true
  },
@@ -2829,7 +2829,7 @@ window.NOTE_POSTS = [
    "UFO",
    "遭遇"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/168826224/rectangle_large_type_2_06bbf32d571f55599eb77c74d163b10d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/94f78b2cce48ac94.webp",
   "noteUrl": "https://note.com/benkein/n/ne666369f504c"
  },
  {
@@ -2841,7 +2841,7 @@ window.NOTE_POSTS = [
    "001",
    "グンマー"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/168683977/rectangle_large_type_2_54b90c7382b4c054a6e5a60d56dddab7.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d1de93aff62f0da6.webp",
   "noteUrl": "https://note.com/benkein/n/na4933f4bdc58"
  },
  {
@@ -2856,7 +2856,7 @@ window.NOTE_POSTS = [
    "早速挑戦",
    "50作記念"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/168493219/rectangle_large_type_2_7b1f0eb5c4b6549c225fc6b51f645921.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/18db8cb776a9fb03.webp",
   "noteUrl": "https://note.com/benkein/n/n3a082211cdae",
   "paid": true
  },
@@ -2868,7 +2868,7 @@ window.NOTE_POSTS = [
   "tags": [
    "かなえたい夢"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/147253602/rectangle_large_type_2_6862729088417f7205bb370f606ee56c.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/38c4f4dd96b74a3d.webp",
   "noteUrl": "https://note.com/benkein/n/na74bd9280498"
  },
  {
@@ -2879,7 +2879,7 @@ window.NOTE_POSTS = [
   "tags": [
    "ブランク"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/157090720/fb7332a58e7208a87aea0257be967346.png?width=360",
+  "cover": "/assets/ext/note/9dc49cc887a4e85e.webp",
   "noteUrl": "https://note.com/benkein/n/na95c94fbcdfc"
  },
  {
@@ -2892,7 +2892,7 @@ window.NOTE_POSTS = [
    "aiart",
    "Halloween"
   ],
-  "cover": "https://assets.st-note.com/img/1727962474-cqNz0Gws652jMnoBAOHUDeig.png?width=360",
+  "cover": "/assets/ext/note/17f832a4103c6faa.webp",
   "noteUrl": "https://note.com/benkein/n/nd777b4e427de"
  },
  {
@@ -2903,7 +2903,7 @@ window.NOTE_POSTS = [
   "tags": [
    "挑戦してよかった"
   ],
-  "cover": "https://assets.st-note.com/img/1727873810-UMDd20fPjni3QexGhwZkECuX.png?width=360",
+  "cover": "/assets/ext/note/0b54b23e170c6a2c.webp",
   "noteUrl": "https://note.com/benkein/n/na101e05bbede"
  },
  {
@@ -2915,7 +2915,7 @@ window.NOTE_POSTS = [
    "AI美女",
    "挑戦してよかった"
   ],
-  "cover": "https://assets.st-note.com/img/1727790702-w8Y92XuG7Uk4mncSE510QTpP.png?width=360",
+  "cover": "/assets/ext/note/a552cd7dff22eff0.webp",
   "noteUrl": "https://note.com/benkein/n/n4eb74defb964"
  },
  {
@@ -2926,7 +2926,7 @@ window.NOTE_POSTS = [
   "tags": [
    "絵"
   ],
-  "cover": "https://assets.st-note.com/img/1727787158-n7J8zdaBiWwNGorPlet2IqKx.png?width=360",
+  "cover": "/assets/ext/note/5719e619dfa66e29.webp",
   "noteUrl": "https://note.com/benkein/n/n7a2bb14a0056"
  },
  {
@@ -2940,7 +2940,7 @@ window.NOTE_POSTS = [
    "画像生成AI",
    "AI美女"
   ],
-  "cover": "https://assets.st-note.com/img/1727604189-0bhlGqBcR28rPjZziUT95Jek.png?width=360",
+  "cover": "/assets/ext/note/2632f7c7922dc861.webp",
   "noteUrl": "https://note.com/benkein/n/n2b3b0102fcc0"
  },
  {
@@ -2955,7 +2955,7 @@ window.NOTE_POSTS = [
    "担任",
    "ザクの幼少期"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/156070060/rectangle_large_type_2_d2165d80454ac584ca2d476e462ae6e7.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3b4a02c44f6de523.webp",
   "noteUrl": "https://note.com/benkein/n/na2c413d71256",
   "paid": true
  },
@@ -2968,7 +2968,7 @@ window.NOTE_POSTS = [
    "満月",
    "境界"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/155868389/rectangle_large_type_2_60ba4c4a1953a1d8cddc774b25ca636d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ff1b45435592f3af.webp",
   "noteUrl": "https://note.com/benkein/n/n0b03e1a9d036",
   "paid": true
  },
@@ -2982,7 +2982,7 @@ window.NOTE_POSTS = [
    "大人",
    "甘野書店"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/155542286/rectangle_large_type_2_7544276814a17bf2107cccc40d68985d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1bdee5556a850f86.webp",
   "noteUrl": "https://note.com/benkein/n/nfa5fc864b116",
   "paid": true
  },
@@ -3001,7 +3001,7 @@ window.NOTE_POSTS = [
    "硯",
    "色調"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/155513557/rectangle_large_type_2_d72fcc02876d7cc7b19710a797e0a5fe.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5044e7924b5310b9.webp",
   "noteUrl": "https://note.com/benkein/n/nbd6379629591",
   "paid": true
  },
@@ -3018,7 +3018,7 @@ window.NOTE_POSTS = [
    "war",
    "東周先輩"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/155293476/rectangle_large_type_2_a7e5901e4e66df18d7f2e4de2d582930.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f7f9f14592f48d15.webp",
   "noteUrl": "https://note.com/benkein/n/nd99a4c86d3d5",
   "paid": true
  },
@@ -3032,7 +3032,7 @@ window.NOTE_POSTS = [
    "Design",
    "war"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/155106066/rectangle_large_type_2_d2b00a52d9a5e4df946ced99e4662c70.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6e43bc069971aba2.webp",
   "noteUrl": "https://note.com/benkein/n/n1634c855f6bd",
   "paid": true
  },
@@ -3051,7 +3051,7 @@ window.NOTE_POSTS = [
    "挑戦してよかった",
    "Japanese"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/154811445/rectangle_large_type_2_3e055f27c2dacf69818e7bc043a3de6c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0cbab11a19028d1c.webp",
   "noteUrl": "https://note.com/benkein/n/n937420c02701",
   "paid": true
  },
@@ -3061,7 +3061,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-17",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/154683874/rectangle_large_type_2_863757d8d5f5a921cc713c7b5d7561f9.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/72683a01a2d52af5.webp",
   "noteUrl": "https://note.com/benkein/n/n6c49f4179168"
  },
  {
@@ -3074,7 +3074,7 @@ window.NOTE_POSTS = [
    "挑戦してよかった",
    "月に代わっておしおきよ"
   ],
-  "cover": "https://assets.st-note.com/img/1726145813-zNH73bfSeGdCIMp2n8mTZuwv.png?width=360",
+  "cover": "/assets/ext/note/befebc13fba4084e.webp",
   "noteUrl": "https://note.com/benkein/n/n570eaf4d702d"
  },
  {
@@ -3086,7 +3086,7 @@ window.NOTE_POSTS = [
    "アフリエイト",
    "盗賊の話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/156408009/rectangle_large_type_2_2b2c4f988d40153f104bc796d98b618b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4e3d64246b860584.webp",
   "noteUrl": "https://note.com/benkein/n/n15fb8d10bbb5"
  },
  {
@@ -3099,7 +3099,7 @@ window.NOTE_POSTS = [
    "AI",
    "yellow"
   ],
-  "cover": "https://assets.st-note.com/img/1726065668-KgF6OJTrcpG4R98qHv1SohlB.png?width=360",
+  "cover": "/assets/ext/note/56c3f77525d29554.webp",
   "noteUrl": "https://note.com/benkein/n/n37e480f0e729"
  },
  {
@@ -3112,7 +3112,7 @@ window.NOTE_POSTS = [
    "デジタルで変わったこと",
    "rain"
   ],
-  "cover": "https://assets.st-note.com/img/1726025378-kV9H6XNnz5aIjUDR1PpEGuBq.png?width=360",
+  "cover": "/assets/ext/note/f1633fa4f072fe87.webp",
   "noteUrl": "https://note.com/benkein/n/n172bec68db27"
  },
  {
@@ -3125,7 +3125,7 @@ window.NOTE_POSTS = [
    "甘め",
    "hawai"
   ],
-  "cover": "https://assets.st-note.com/img/1725982247-dvOsx0ei17TqfDSAhbXpWHYB.png?width=360",
+  "cover": "/assets/ext/note/9ec777096abc403d.webp",
   "noteUrl": "https://note.com/benkein/n/n9927d6ed20cd"
  },
  {
@@ -3138,7 +3138,7 @@ window.NOTE_POSTS = [
    "鉛筆",
    "アフリエイト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/156407984/rectangle_large_type_2_dddb6780f0db6810ec544a1e9d0616b0.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ba83aa91fa9f5b9e.webp",
   "noteUrl": "https://note.com/benkein/n/n3f90749ed6eb"
  },
  {
@@ -3150,7 +3150,7 @@ window.NOTE_POSTS = [
    "マネタイズ",
    "挑戦してよかった"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/156407963/rectangle_large_type_2_23e0a0a8a2c9b6791cffab204a8218c2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/317e8d14a2cbdeed.webp",
   "noteUrl": "https://note.com/benkein/n/nc98f84543d60"
  },
  {
@@ -3164,7 +3164,7 @@ window.NOTE_POSTS = [
    "絵",
    "夏の1コマ"
   ],
-  "cover": "https://assets.st-note.com/img/1725881777-kSfOn0VPEKp5dToZj8Xy7biJ.png?width=360",
+  "cover": "/assets/ext/note/e2f7bce565f7a33d.webp",
   "noteUrl": "https://note.com/benkein/n/n5f79ab3f2619"
  },
  {
@@ -3180,7 +3180,7 @@ window.NOTE_POSTS = [
    "図解",
    "テキスト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153612632/rectangle_large_type_2_2e0f97f536f28464c61fd244971d6928.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c8293ce542360bf6.webp",
   "noteUrl": "https://note.com/benkein/n/nbe878b4c5af8"
  },
  {
@@ -3197,7 +3197,7 @@ window.NOTE_POSTS = [
    "aiart",
    "少女"
   ],
-  "cover": "https://assets.st-note.com/img/1725764419-IgMV9AX1JWPl4qtomxRh2BQO.png?width=360",
+  "cover": "/assets/ext/note/23d765ed36709469.webp",
   "noteUrl": "https://note.com/benkein/n/n0b5710f46dab"
  },
  {
@@ -3214,7 +3214,7 @@ window.NOTE_POSTS = [
    "aiart",
    "少女"
   ],
-  "cover": "https://assets.st-note.com/img/1725726621-qe2zg5KyicmoGQVEB0OhWpdx.png?width=360",
+  "cover": "/assets/ext/note/62170a7d4dda1451.webp",
   "noteUrl": "https://note.com/benkein/n/n594712c75eaa"
  },
  {
@@ -3228,7 +3228,7 @@ window.NOTE_POSTS = [
    "aiart",
    "少女"
   ],
-  "cover": "https://assets.st-note.com/img/1725725269-P7nv2fTobmsJjzHrkCASacD4.png?width=360",
+  "cover": "/assets/ext/note/72e1fa8aa064934f.webp",
   "noteUrl": "https://note.com/benkein/n/nb2c431a0c3ac"
  },
  {
@@ -3243,7 +3243,7 @@ window.NOTE_POSTS = [
    "aiart",
    "sunset"
   ],
-  "cover": "https://assets.st-note.com/img/1725724737-qoJkSb8uGQ2MxY69tL0FlNcy.png?width=360",
+  "cover": "/assets/ext/note/f8329a9f30c95155.webp",
   "noteUrl": "https://note.com/benkein/n/n7fc002ab20ab"
  },
  {
@@ -3261,7 +3261,7 @@ window.NOTE_POSTS = [
    "Japanese",
    "sunset"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153454237/rectangle_large_type_2_8a764369fdcb3cf83bbc06cc41db2ef2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/faae22504072b5aa.webp",
   "noteUrl": "https://note.com/benkein/n/n7aea30ef5ef5",
   "paid": true
  },
@@ -3278,7 +3278,7 @@ window.NOTE_POSTS = [
    "鉛筆",
    "コンセント"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153373339/rectangle_large_type_2_5e6d34eb91848f9855336f0e575de6dc.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1325845a8df56374.webp",
   "noteUrl": "https://note.com/benkein/n/n5c6011b7a596",
   "paid": true
  },
@@ -3296,7 +3296,7 @@ window.NOTE_POSTS = [
    "山田",
    "今だからこそ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153362813/rectangle_large_type_2_d98e6cc981cb7d76e88570b3127e6ba7.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0a4f2bca9de3d0ba.webp",
   "noteUrl": "https://note.com/benkein/n/n24aaaf6f12fd"
  },
  {
@@ -3312,7 +3312,7 @@ window.NOTE_POSTS = [
    "田中",
    "山田"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153260199/rectangle_large_type_2_090d5cc2a5ed85b5583678abbf9eb1bb.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/917b7a76c497b4ff.webp",
   "noteUrl": "https://note.com/benkein/n/n8a1890b2ac44"
  },
  {
@@ -3327,7 +3327,7 @@ window.NOTE_POSTS = [
    "ユーザー",
    "Shakker"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/153152548/rectangle_large_type_2_a9968ab1745275925ac4fc4b7d4d16e7.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/cc4a4d5098a5fce0.webp",
   "noteUrl": "https://note.com/benkein/n/n99c264fbfa45"
  },
  {
@@ -3336,7 +3336,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-03",
   "excerpt": "はじめに Gensparkは、AIエージェントエンジンであり、ユーザーのクエリに基づいてリアルタイムでカスタムページ（Sparkpages）を生成します。 従来の検索エンジンとは異なり、Gensparkは広告やスパム、偏",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/153038246/rectangle_large_type_2_a4eae9b74e2426ca66bec837748d9603.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6d630da287136667.webp",
   "noteUrl": "https://note.com/benkein/n/nfe59c782da3f",
   "paid": true
  },
@@ -3346,7 +3346,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-02",
   "excerpt": "Stable Diffusion Web UIをMacで使う手順：詳細ガイド Stable Diffusion Web UIは、テキストプロンプトを使って画像を生成したり、既存の画像を修正するための直感的なツールです。G",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152929819/rectangle_large_type_2_8715ea5e33aaed36d8820b659956849e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c99aabe71c8091d2.webp",
   "noteUrl": "https://note.com/benkein/n/nc160d9d5e845",
   "paid": true
  },
@@ -3356,7 +3356,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-02",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152901021/rectangle_large_type_2_6fa3cc68b8c38c6f8ec680654c28fab2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/925ff3bcd275ab54.webp",
   "noteUrl": "https://note.com/benkein/n/n7fa1707fa9ab"
  },
  {
@@ -3369,7 +3369,7 @@ window.NOTE_POSTS = [
    "編集中",
    "出版の仕方"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/152764012/rectangle_large_type_2_51c0ac38598be6bd991c2dac06070035.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7123191c3dd8aff5.webp",
   "noteUrl": "https://note.com/benkein/n/n40ae6e32c393",
   "paid": true
  },
@@ -3381,7 +3381,7 @@ window.NOTE_POSTS = [
   "tags": [
    "桃太郎"
   ],
-  "cover": "https://assets.st-note.com/img/1725167882996-ZDf2iI73LV.png?width=360",
+  "cover": "/assets/ext/note/f9ae7690e1b01ba8.webp",
   "noteUrl": "https://note.com/benkein/n/ncda81e05fa2e"
  },
  {
@@ -3392,7 +3392,7 @@ window.NOTE_POSTS = [
   "tags": [
    "桃太郎"
   ],
-  "cover": "https://assets.st-note.com/img/1725161620902-rljOOWjnf8.png?width=360",
+  "cover": "/assets/ext/note/63e29acf0cf6fc3c.webp",
   "noteUrl": "https://note.com/benkein/n/n681c1244cc96"
  },
  {
@@ -3401,7 +3401,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-01",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152728615/rectangle_large_type_2_0140bf95bc8a1a76026b10f71352bee3.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f926ae42ab0ad058.webp",
   "noteUrl": "https://note.com/benkein/n/n01603c89292b"
  },
  {
@@ -3410,7 +3410,7 @@ window.NOTE_POSTS = [
   "date": "2024-09-01",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/155564426/rectangle_large_type_2_0b24f3e1457c71b070dc920b50469cb5.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ecdae05703e1d8ce.webp",
   "noteUrl": "https://note.com/benkein/n/n213fa1b99de3"
  },
  {
@@ -3419,7 +3419,7 @@ window.NOTE_POSTS = [
   "date": "2024-08-31",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152720513/rectangle_large_type_2_2b7e0fd902ed65c9cf5e4cdb4ba4e07e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/dee6c710e632beff.webp",
   "noteUrl": "https://note.com/benkein/n/n8e8975b01c00"
  },
  {
@@ -3428,7 +3428,7 @@ window.NOTE_POSTS = [
   "date": "2024-08-30",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152472537/rectangle_large_type_2_211725c256612e90231f42a9c278bef9.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/671d4d450cc52d74.webp",
   "noteUrl": "https://note.com/benkein/n/n6432fb9776b5"
  },
  {
@@ -3437,7 +3437,7 @@ window.NOTE_POSTS = [
   "date": "2024-08-29",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152405082/rectangle_large_type_2_90f62ec4bf28370919bfb1ffb98ad92c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4514d2cf2cb5a878.webp",
   "noteUrl": "https://note.com/benkein/n/n3ee1bbd232ae"
  },
  {
@@ -3455,7 +3455,7 @@ window.NOTE_POSTS = [
    "兼業",
    "ポスト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/152251471/rectangle_large_type_2_3898eadabb71c47d8086c88b93bfddb9.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/242859addeee5e80.webp",
   "noteUrl": "https://note.com/benkein/n/ndabe2332ed0e"
  },
  {
@@ -3464,7 +3464,7 @@ window.NOTE_POSTS = [
   "date": "2024-08-28",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/152192847/rectangle_large_type_2_ea0753b8fa21f2d08da1f53a72a2a424.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/afcfb10dadb9e76e.webp",
   "noteUrl": "https://note.com/benkein/n/n6b6f7a0679d1"
  },
  {
@@ -3482,7 +3482,7 @@ window.NOTE_POSTS = [
    "やめとけ",
    "あやしい"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/151249151/rectangle_large_type_2_f8c3c8302dbb17e96639fd331fa4d3de.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/386e3dfdd7c57cea.webp",
   "noteUrl": "https://note.com/benkein/n/n059865f9271a"
  },
  {
@@ -3500,7 +3500,7 @@ window.NOTE_POSTS = [
    "個人",
    "親孝行"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/150333502/rectangle_large_type_2_ba44e9121edbd1aeaa63996be398e1a5.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e22f5284f86adf21.webp",
   "noteUrl": "https://note.com/benkein/n/n7ff490e2e00c"
  },
  {
@@ -3515,7 +3515,7 @@ window.NOTE_POSTS = [
    "結論",
    "WINNER"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/148966019/rectangle_large_type_2_8f5c1e4a9290bc9eaef6d04fc582da65.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/69d008bf36fe14d1.webp",
   "noteUrl": "https://note.com/benkein/n/n376c21954857"
  },
  {
@@ -3531,7 +3531,7 @@ window.NOTE_POSTS = [
    "HTML",
    "画像生成AIチャレンジ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/123592893/rectangle_large_type_2_53ab1cfb2537cc4fb05a99ecc2d99c5f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/35cb0c501e2db8dd.webp",
   "noteUrl": "https://note.com/benkein/n/nbc551babe0ed"
  },
  {
@@ -3549,7 +3549,7 @@ window.NOTE_POSTS = [
    "高齢化社会",
    "年寄"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/122774251/rectangle_large_type_2_caee391627846629d3a3ea36a3de73dd.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f30f2207095d128f.webp",
   "noteUrl": "https://note.com/benkein/n/ndde92a6416fc"
  },
  {
@@ -3564,7 +3564,7 @@ window.NOTE_POSTS = [
    "あの選択をしたから",
    "新天地"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/115788255/rectangle_large_type_2_6ee7f34487bf6288bdd9f266b21dad56.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c8e93b125a4ac7d5.webp",
   "noteUrl": "https://note.com/benkein/n/nb319f549e2ed"
  },
  {
@@ -3576,7 +3576,7 @@ window.NOTE_POSTS = [
    "あの選択をしたから",
    "セミ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/114197469/rectangle_large_type_2_d541fdd7addd24be959243fb17aab397.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/972bb588002a537b.webp",
   "noteUrl": "https://note.com/benkein/n/n643c8c744d1c"
  },
  {
@@ -3590,7 +3590,7 @@ window.NOTE_POSTS = [
    "わたしのチャレンジ",
    "郷土愛"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/110551378/rectangle_large_type_2_b81da29e2d1a1ff8e82e8c8977176a02.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/cc1ccb58ba028cd6.webp",
   "noteUrl": "https://note.com/benkein/n/n6b42a29fb26e",
   "paid": true
  },
@@ -3609,7 +3609,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "わたしの習慣"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/109408968/rectangle_large_type_2_1bf0f66967f96df58e95921deb22de01.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/df3ef8825a708bd5.webp",
   "noteUrl": "https://note.com/benkein/n/nc73c89aadfc7"
  },
  {
@@ -3623,7 +3623,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "わたしの習慣"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/109334967/rectangle_large_type_2_8074c4b4b205131c71bd4c9e5d909718.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d488c62f54e79381.webp",
   "noteUrl": "https://note.com/benkein/n/n61ef8bfea3c6"
  },
  {
@@ -3637,7 +3637,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/109253400/rectangle_large_type_2_c38fd912f551d2ee76fabada6d32b409.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f5fc536a9459f234.webp",
   "noteUrl": "https://note.com/benkein/n/n54e1306cd6ed"
  },
  {
@@ -3651,7 +3651,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108800009/rectangle_large_type_2_53ea4d480d3848e0f8aa5a74baac3a07.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/632df7c5aa9f0d8e.webp",
   "noteUrl": "https://note.com/benkein/n/nb3b2517fbd48"
  },
  {
@@ -3666,7 +3666,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108730168/rectangle_large_type_2_b3bbf07211f681731b11b2266cd5ef42.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3882cbac20577b0c.webp",
   "noteUrl": "https://note.com/benkein/n/nd76d2427e43f"
  },
  {
@@ -3681,7 +3681,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "DRAM"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108650772/rectangle_large_type_2_b7663754c2e8a0152547f19c9f1649ee.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/30b53bd04bc24456.webp",
   "noteUrl": "https://note.com/benkein/n/nb7c880a1d16a"
  },
  {
@@ -3695,7 +3695,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/108580385/rectangle_large_type_2_f1885a36772eac979c36917b149c1f7b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8e6c72fabd355892.webp",
   "noteUrl": "https://note.com/benkein/n/nd55dbfadd018"
  },
  {
@@ -3711,7 +3711,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "アドレス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107986467/rectangle_large_type_2_26412a06f8f9afe1f7338b3d8170aee1.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b11fa208c4343a0a.webp",
   "noteUrl": "https://note.com/benkein/n/n3427797e2840"
  },
  {
@@ -3724,7 +3724,7 @@ window.NOTE_POSTS = [
    "プログラム",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107948113/rectangle_large_type_2_8ca242f48ffdd2b212d69bd34445de9d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4abea226fd035818.webp",
   "noteUrl": "https://note.com/benkein/n/n97871c5d2c26"
  },
  {
@@ -3737,7 +3737,7 @@ window.NOTE_POSTS = [
    "英語学習",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107927249/rectangle_large_type_2_6e5a768eac785956c94f081667e84529.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/09519223062b9d2f.webp",
   "noteUrl": "https://note.com/benkein/n/n68cf772c4a95"
  },
  {
@@ -3751,7 +3751,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "漢字検定準1級"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107889598/rectangle_large_type_2_744aef2583a7d98d285fddad8cf4acac.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/80e8344b42d20f71.webp",
   "noteUrl": "https://note.com/benkein/n/na0e33a58cc6a"
  },
  {
@@ -3765,7 +3765,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107883335/rectangle_large_type_2_ddf4be9169c6d45c918cf2551cabf493.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b24eb32bdda0cf79.webp",
   "noteUrl": "https://note.com/benkein/n/n7bc778d9e5c9"
  },
  {
@@ -3791,7 +3791,7 @@ window.NOTE_POSTS = [
    "基本情報技術者試験",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107592853/rectangle_large_type_2_816084602f57cdf5dabe5b4d76895658.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1256b0f23f733aef.webp",
   "noteUrl": "https://note.com/benkein/n/n17772b210c77"
  },
  {
@@ -3804,7 +3804,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "命題"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106698300/rectangle_large_type_2_5d6c668e053963cd5673af510a5a9106.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6f234d8d596900b6.webp",
   "noteUrl": "https://note.com/benkein/n/neeeed066f310"
  },
  {
@@ -3818,7 +3818,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "オブジェクト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107516438/rectangle_large_type_2_dbb071fafbaf8758b6a6488b471e47dc.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/21bbb3666d3c2b86.webp",
   "noteUrl": "https://note.com/benkein/n/na24c459bbea4"
  },
  {
@@ -3831,7 +3831,7 @@ window.NOTE_POSTS = [
    "java",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107438586/rectangle_large_type_2_a93164430e1024d465ad9c9ffe28d601.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/342f3eb0a4e4b332.webp",
   "noteUrl": "https://note.com/benkein/n/n08305875609e"
  },
  {
@@ -3844,7 +3844,7 @@ window.NOTE_POSTS = [
    "java",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107444914/rectangle_large_type_2_4b39deb11a9d734f214685f924eb3ea1.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/99dfef24844edba2.webp",
   "noteUrl": "https://note.com/benkein/n/n12968172a5e7"
  },
  {
@@ -3862,7 +3862,7 @@ window.NOTE_POSTS = [
    "サブクラス",
    "スーパークラス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107133879/rectangle_large_type_2_db5bd55d275b5008a5591a87e6d2be4c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/586b14182d5df69e.webp",
   "noteUrl": "https://note.com/benkein/n/n9f89e560ece8"
  },
  {
@@ -3880,7 +3880,7 @@ window.NOTE_POSTS = [
    "スーパークラス",
    "継承関係"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/107096237/rectangle_large_type_2_01ae0adaf29e5e1bbf4cd1abf2014e6d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/dd39fe931c8866a8.webp",
   "noteUrl": "https://note.com/benkein/n/n6678e33444b1"
  },
  {
@@ -3898,7 +3898,7 @@ window.NOTE_POSTS = [
    "型変換",
    "スーパークラス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106916726/rectangle_large_type_2_cf47f78b6794303bb2a65a1ccbebb8de.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c307c76a139c1ee2.webp",
   "noteUrl": "https://note.com/benkein/n/nc25abdb14f5d"
  },
  {
@@ -3916,7 +3916,7 @@ window.NOTE_POSTS = [
    "変数",
    "SUPER"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106890533/rectangle_large_type_2_0863c88c63bc2d493d7e2c0f95f917f7.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/6da2e7eb41248e35.webp",
   "noteUrl": "https://note.com/benkein/n/n9b334c738608"
  },
  {
@@ -3934,7 +3934,7 @@ window.NOTE_POSTS = [
    "SUPER",
    "スーパークラス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106610287/rectangle_large_type_2_90d7f831a3a8d6345a39347c70a5bfd6.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/37f6600cc6dc18c8.webp",
   "noteUrl": "https://note.com/benkein/n/n362e8eea31ff"
  },
  {
@@ -3952,7 +3952,7 @@ window.NOTE_POSTS = [
    "変数",
    "オブジェクト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106609944/rectangle_large_type_2_03212eaabfa70bf0ba934ea0d6bf00ff.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3d8f3c587afc5729.webp",
   "noteUrl": "https://note.com/benkein/n/n80dba97e94f0"
  },
  {
@@ -3986,7 +3986,7 @@ window.NOTE_POSTS = [
    "メソッド",
    "オブジェクト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106531151/rectangle_large_type_2_047a196b16ba0e47b5e9d670e5dd9ad8.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f064e91e5540a750.webp",
   "noteUrl": "https://note.com/benkein/n/n1a3fbfd480a4"
  },
  {
@@ -4002,7 +4002,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "オブジェクト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106463610/rectangle_large_type_2_a939432aefea068c7651584ae1f4ce2f.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7594cc6115387ec3.webp",
   "noteUrl": "https://note.com/benkein/n/naa5dc7fcd1e7"
  },
  {
@@ -4016,7 +4016,7 @@ window.NOTE_POSTS = [
    "java",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106413412/rectangle_large_type_2_180a2feb9969bd14e49a25e3ba2fe4bd.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9b906a3b82a92fde.webp",
   "noteUrl": "https://note.com/benkein/n/n84d02f0dfb9c"
  },
  {
@@ -4030,7 +4030,7 @@ window.NOTE_POSTS = [
    "java",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106460170/rectangle_large_type_2_75ff16f19fe179fc8104004e11a8d32e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e894481299b559a4.webp",
   "noteUrl": "https://note.com/benkein/n/n406faa2f5685"
  },
  {
@@ -4045,7 +4045,7 @@ window.NOTE_POSTS = [
    "レベルアップしたいこと",
    "配列"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106333295/rectangle_large_type_2_342b706ee6960ae0cc1e9690683ab40e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/98f1f1ab9235c69e.webp",
   "noteUrl": "https://note.com/benkein/n/nfa46834d84e6"
  },
  {
@@ -4058,7 +4058,7 @@ window.NOTE_POSTS = [
    "プログラム",
    "java"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106309730/rectangle_large_type_2_1364ea86a46028442a73c261f76b1431.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/375fbe2506e5e531.webp",
   "noteUrl": "https://note.com/benkein/n/n89cf9870e1bc"
  },
  {
@@ -4072,7 +4072,7 @@ window.NOTE_POSTS = [
    "自分にとって大切なこと",
    "レベルアップしたいこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/103399077/rectangle_large_type_2_d78289ed44850fbec0a92d672b308c1f.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4cf97353791b477c.webp",
   "noteUrl": "https://note.com/benkein/n/nd9a695eb9d9e"
  },
  {
@@ -4088,7 +4088,7 @@ window.NOTE_POSTS = [
    "自分にとって大切なこと",
    "かなえたい夢"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/167573668/rectangle_large_type_2_057aaf07cbb801b9a109ef540f0935e3.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/bc395e5f8fa4f556.webp",
   "noteUrl": "https://note.com/benkein/n/n854edb6855f4"
  },
  {
@@ -4102,7 +4102,7 @@ window.NOTE_POSTS = [
    "自分にとって大切なこと",
    "道標"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/103284571/rectangle_large_type_2_dd031b0db650b3db2fefc63c01fe8517.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/aee86f810ff1ea49.webp",
   "noteUrl": "https://note.com/benkein/n/nb5bb73dbdc6b"
  },
  {
@@ -4118,7 +4118,7 @@ window.NOTE_POSTS = [
    "自分にとって大切なこと",
    "アレルギー"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/103184162/rectangle_large_type_2_0818ef058c3516701555f1a338ba433a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/0d0aa5f921e2e76a.webp",
   "noteUrl": "https://note.com/benkein/n/n5429b7f4e53a"
  },
  {
@@ -4131,7 +4131,7 @@ window.NOTE_POSTS = [
    "おじいちゃんおばあちゃんへ",
    "元気をもらったあの食事"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/103033560/rectangle_large_type_2_7a56607f8bc1b1ccde6c500ad5b64032.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/59ab4302f7b36c27.webp",
   "noteUrl": "https://note.com/benkein/n/n3f84c63c4f9c"
  },
  {
@@ -4149,7 +4149,7 @@ window.NOTE_POSTS = [
    "知識",
    "自分にとって大切なこと"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/102987385/rectangle_large_type_2_8c58e1be9a45613a8d07bc0b6bb20d52.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2780d4d231d8b903.webp",
   "noteUrl": "https://note.com/benkein/n/ncae729467082"
  },
  {
@@ -4167,7 +4167,7 @@ window.NOTE_POSTS = [
    "朝",
    "月"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/102699647/rectangle_large_type_2_05a1fea3bfcf82c174378a23055e4187.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/eb384fe462fbc4d0.webp",
   "noteUrl": "https://note.com/benkein/n/n95baaa23b034"
  },
  {
@@ -4185,7 +4185,7 @@ window.NOTE_POSTS = [
    "理解",
    "スキル"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/102639300/rectangle_large_type_2_6b8867799fd7ade8b9b0fb0a996f5eb1.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/5e8cf4510d0ddb65.webp",
   "noteUrl": "https://note.com/benkein/n/n227217890335"
  },
  {
@@ -4202,7 +4202,7 @@ window.NOTE_POSTS = [
    "機械",
    "はじめてのインターネット"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/102516364/rectangle_large_type_2_a988a7e6efc6628c2912cf97b6ea03eb.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/15aa4eca8ab393fe.webp",
   "noteUrl": "https://note.com/benkein/n/nfe6fbb9141d2"
  },
  {
@@ -4253,7 +4253,7 @@ window.NOTE_POSTS = [
    "私にとってはたらくとは",
    "head"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/86081544/rectangle_large_type_2_2e93d6f0b6bc9313647026f77775fa5c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/fd2b0c05f9e38c09.webp",
   "noteUrl": "https://note.com/benkein/n/n4d2f7d6010f4"
  },
  {
@@ -4266,7 +4266,7 @@ window.NOTE_POSTS = [
    "https",
    "私にとってはたらくとは"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85645992/rectangle_large_type_2_06141f18c8ee68ba489aa745449760de.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/697fe58fbba2d87d.webp",
   "noteUrl": "https://note.com/benkein/n/n48a7d33a7fbb"
  },
  {
@@ -4283,7 +4283,7 @@ window.NOTE_POSTS = [
    "私にとってはたらくとは",
    "head"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85594963/rectangle_large_type_2_a3d32a255b129a0ef5bb72ce3cccd75d.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9eccfde70edc7dee.webp",
   "noteUrl": "https://note.com/benkein/n/n890cfe3f41a0"
  },
  {
@@ -4301,7 +4301,7 @@ window.NOTE_POSTS = [
    "表示",
    "要素"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85587524/rectangle_large_type_2_499d7d045225052830cd138b039ec6b2.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/11972d64452339ea.webp",
   "noteUrl": "https://note.com/benkein/n/n8ab47c6455cd"
  },
  {
@@ -4315,7 +4315,7 @@ window.NOTE_POSTS = [
    "2000字のホラー",
    "ユキヱ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85584818/rectangle_large_type_2_0d36f49354c3ebc9f59cb503aaedb764.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c27b64da39ea1926.webp",
   "noteUrl": "https://note.com/benkein/n/ne0de07e445fb"
  },
  {
@@ -4333,7 +4333,7 @@ window.NOTE_POSTS = [
    "一歩踏みだした先に",
    "スクリプト"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85575237/rectangle_large_type_2_377176ec9dc2d7dd7bdaa5fcf3c52411.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/34a2962aa366328d.webp",
   "noteUrl": "https://note.com/benkein/n/n2dfa9f296cef"
  },
  {
@@ -4351,7 +4351,7 @@ window.NOTE_POSTS = [
    "画面",
    "一歩踏みだした先に"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85547310/rectangle_large_type_2_3c95d9ba92984013d759f36f6a4e7a5d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d83dfc245edba45d.webp",
   "noteUrl": "https://note.com/benkein/n/n6a0c0f136461"
  },
  {
@@ -4369,7 +4369,7 @@ window.NOTE_POSTS = [
    "ブックマーク",
    "CTRL"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85467614/rectangle_large_type_2_98fcc80c5749af1878b75100bac694fa.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/777c9485138ff859.webp",
   "noteUrl": "https://note.com/benkein/n/n3dcef72ff6d1"
  },
  {
@@ -4387,7 +4387,7 @@ window.NOTE_POSTS = [
    "キャッシュ",
    "CTRL"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/85251750/rectangle_large_type_2_b5966438b4fc7cd8a98f01e6399f80de.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d65934188a659d34.webp",
   "noteUrl": "https://note.com/benkein/n/n0019620960e5"
  },
  {
@@ -4401,7 +4401,7 @@ window.NOTE_POSTS = [
    "学問への愛を語ろう",
    "ギリシャ神話"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/67549914/rectangle_large_type_2_2e7cd9c10aca9f5987dbd85ced2fb3bd.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/b294a29bc1937c46.webp",
   "noteUrl": "https://note.com/benkein/n/nc7f2264cd210"
  },
  {
@@ -4417,7 +4417,7 @@ window.NOTE_POSTS = [
    "ギリシャ神話",
    "2021年のおすすめnote"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/67548518/rectangle_large_type_2_4406a31678f136928c9e59f8444127fa.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/bac55d790cdee9df.webp",
   "noteUrl": "https://note.com/benkein/n/ndf7e32416f96"
  },
  {
@@ -4431,7 +4431,7 @@ window.NOTE_POSTS = [
    "戦争",
    "Design"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/106460262/rectangle_large_type_2_9faceb2585e98fdd0fbcc4904c5529a4.jpeg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/7d8e227efdc7de4c.webp",
   "noteUrl": "https://note.com/benkein/n/n8dcf90ce965b"
  },
  {
@@ -4449,7 +4449,7 @@ window.NOTE_POSTS = [
    "島流し",
    "隠し"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/62014601/rectangle_large_type_2_5806885f178eb3ade9609591c4b68622.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/86c5523def4b1ffe.webp",
   "noteUrl": "https://note.com/benkein/n/nab6973fb5c05"
  },
  {
@@ -4462,7 +4462,7 @@ window.NOTE_POSTS = [
    "眠れない夜に",
    "映画館の思い出"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61911140/rectangle_large_type_2_b94e0291a845afa4f3e2ad671977d4ac.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/02c7616aebe416c8.webp",
   "noteUrl": "https://note.com/benkein/n/n6becd3505dcd"
  },
  {
@@ -4475,7 +4475,7 @@ window.NOTE_POSTS = [
    "小噺",
    "浦島太郎"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61819757/rectangle_large_type_2_c0f46a1cdb1339a783f78a2ad26bb63b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ba5dacac39e4530f.webp",
   "noteUrl": "https://note.com/benkein/n/n78049b2dfb86"
  },
  {
@@ -4489,7 +4489,7 @@ window.NOTE_POSTS = [
    "自殺",
    "謎"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61815815/rectangle_large_type_2_d1850ab6a73b02936aff21947325651e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/a7c1586e7f40c9df.webp",
   "noteUrl": "https://note.com/benkein/n/n84c3a3376cd3"
  },
  {
@@ -4522,7 +4522,7 @@ window.NOTE_POSTS = [
    "宇宙SF",
    "火星"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61124524/rectangle_large_type_2_5b0a0f1d2b5ffe7c7cf73f2688ea83bf.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/11724a946a406726.webp",
   "noteUrl": "https://note.com/benkein/n/nffedc223694f"
  },
  {
@@ -4538,7 +4538,7 @@ window.NOTE_POSTS = [
    "不時着",
    "ちっちゃい"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61045510/rectangle_large_type_2_2549c3e32b974b7369d69052cde4cd0b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3537fd6afcb11283.webp",
   "noteUrl": "https://note.com/benkein/n/na80bdacbbe7c"
  },
  {
@@ -4556,7 +4556,7 @@ window.NOTE_POSTS = [
    "冒険",
    "宇宙人"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60997681/rectangle_large_type_2_522c75c325377302a65b4a0e7280225a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1a478c4ef2372492.webp",
   "noteUrl": "https://note.com/benkein/n/n949af1ccff06"
  },
  {
@@ -4574,7 +4574,7 @@ window.NOTE_POSTS = [
    "閻魔大王",
    "みたらし"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60978694/rectangle_large_type_2_5ce22d712332aefac2325d692fbb0431.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1ddd30aaf74195eb.webp",
   "noteUrl": "https://note.com/benkein/n/nb167a9fe4d00"
  },
  {
@@ -4592,7 +4592,7 @@ window.NOTE_POSTS = [
    "月",
    "頭の中"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60916282/rectangle_large_type_2_660773263b4a4ffe97bfe1dbc2808fdf.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4b7ee3b1a846fbd7.webp",
   "noteUrl": "https://note.com/benkein/n/n5b689eabe6a0"
  },
  {
@@ -4601,7 +4601,7 @@ window.NOTE_POSTS = [
   "date": "2021-09-09",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/60836457/rectangle_large_type_2_de4c7fbca7da261a21c743a2d63df625.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e378f70acc962072.webp",
   "noteUrl": "https://note.com/benkein/n/n28ccf126fcfe"
  },
  {
@@ -4610,7 +4610,7 @@ window.NOTE_POSTS = [
   "date": "2021-09-08",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/60749879/rectangle_large_type_2_7cc345a0a5ee3e22b611a1dfad2ad6db.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/12c557724c1f4a2c.webp",
   "noteUrl": "https://note.com/benkein/n/ncb59e9079327"
  },
  {
@@ -4628,7 +4628,7 @@ window.NOTE_POSTS = [
    "曲",
    "ラジオネーム"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60746046/rectangle_large_type_2_12878c1decb4dd9e5a09d2e2bfa6500d.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/392c18a9dd234f9b.webp",
   "noteUrl": "https://note.com/benkein/n/nbece6238127c"
  },
  {
@@ -4643,7 +4643,7 @@ window.NOTE_POSTS = [
    "過去",
    "いじめ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60618287/rectangle_large_type_2_389a64d53f3c587b715d62f30e5a0758.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/114c0829026dd9f5.webp",
   "noteUrl": "https://note.com/benkein/n/nee6fdb193293"
  },
  {
@@ -4661,7 +4661,7 @@ window.NOTE_POSTS = [
    "ドミノ",
    "9月11日"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60304133/rectangle_large_type_2_c568ba070dafa4359c7c96ca7903094a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d32cfadeb8d10644.webp",
   "noteUrl": "https://note.com/benkein/n/n287fbda042c6"
  },
  {
@@ -4670,7 +4670,7 @@ window.NOTE_POSTS = [
   "date": "2021-09-01",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/60145031/rectangle_large_type_2_03dba57a3c6238cb7efbe1a1bc2505af.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/bf9ac75f8de5878c.webp",
   "noteUrl": "https://note.com/benkein/n/nd80c676a3272"
  },
  {
@@ -4696,7 +4696,7 @@ window.NOTE_POSTS = [
    "包丁",
    "8月31日の夜に"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/60004291/rectangle_large_type_2_06d17ee35e5be533897fffd7f97162ee.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/dc98508915cc55e2.webp",
   "noteUrl": "https://note.com/benkein/n/n6435a0f7db4d"
  },
  {
@@ -4722,7 +4722,7 @@ window.NOTE_POSTS = [
    "小閻魔",
    "地獄法典"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59876040/rectangle_large_type_2_a1e11f00ba8fd56e5c4e36428c8a22ed.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/2a39e007eb7493fc.webp",
   "noteUrl": "https://note.com/benkein/n/n4e43bdfefe01"
  },
  {
@@ -4739,7 +4739,7 @@ window.NOTE_POSTS = [
    "火花",
    "火玉"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59853627/rectangle_large_type_2_6adfb6fd803e9d3ce7192d6b6034f17e.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/1f8ccf5759ccf2d1.webp",
   "noteUrl": "https://note.com/benkein/n/n97849aa05cf4"
  },
  {
@@ -4748,7 +4748,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-26",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59774381/rectangle_large_type_2_45978d7a2f3de3a2253b54a556a1b52a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/48aff1ee363ebad7.webp",
   "noteUrl": "https://note.com/benkein/n/nd3fad0127cf8"
  },
  {
@@ -4765,7 +4765,7 @@ window.NOTE_POSTS = [
    "小閻魔",
    "地獄法典"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59700617/rectangle_large_type_2_73d1c17bfb213481646e31fab5bdd209.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/eddc51ce282eb64a.webp",
   "noteUrl": "https://note.com/benkein/n/n50398f180858"
  },
  {
@@ -4774,7 +4774,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-24",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59640662/rectangle_large_type_2_04acb6ca240a899be647ccf3ad1dd70b.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f69d362368e28914.webp",
   "noteUrl": "https://note.com/benkein/n/n644900d09fe2"
  },
  {
@@ -4791,7 +4791,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-23",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59573060/rectangle_large_type_2_56bd3a374ff507d4b29026087c959c4c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/9dd27fac0ce3b6e9.webp",
   "noteUrl": "https://note.com/benkein/n/n0f600360c5a7"
  },
  {
@@ -4816,7 +4816,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-22",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59401419/rectangle_large_type_2_43ed9e44b58c2ec1b1a83e134356e7ff.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e901805322493dcc.webp",
   "noteUrl": "https://note.com/benkein/n/n47ac22a614a6"
  },
  {
@@ -4831,7 +4831,7 @@ window.NOTE_POSTS = [
    "物語の発想法を学ぶ",
    "YouTubee"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59459803/rectangle_large_type_2_0d08c0c3ebc2a888de9fe9cd6c1e791c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/f465b79b27ab11e2.webp",
   "noteUrl": "https://note.com/benkein/n/n0a1e13d6b04c"
  },
  {
@@ -4848,7 +4848,7 @@ window.NOTE_POSTS = [
    "眠れない夜に",
    "謎"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/61861173/rectangle_large_type_2_0417c6f0e6d6bfb1cea2504b0b185fbb.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3dbd0ae4a75d48c9.webp",
   "noteUrl": "https://note.com/benkein/n/n46013f3c732b"
  },
  {
@@ -4865,7 +4865,7 @@ window.NOTE_POSTS = [
    "月光",
    "物語の発想法を学ぶ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59401319/rectangle_large_type_2_a5cd4a8864efc20a95e9f17432201b7a.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/750def59c2e53018.webp",
   "noteUrl": "https://note.com/benkein/n/n4b1377309885"
  },
  {
@@ -4874,7 +4874,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-21",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59417499/rectangle_large_type_2_082db8d3b42a48583fa93c16f82bdab0.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/e5acbe6f0d025491.webp",
   "noteUrl": "https://note.com/benkein/n/n511758ac2b85"
  },
  {
@@ -4883,7 +4883,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-21",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59395575/rectangle_large_type_2_0ec0ef5c3602ccc5340c42b073701f16.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/83bf1ea13f045947.webp",
   "noteUrl": "https://note.com/benkein/n/n895957bc40a7"
  },
  {
@@ -4899,7 +4899,7 @@ window.NOTE_POSTS = [
    "radio",
    "オマージュ"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59379855/rectangle_large_type_2_76af47fc3a3e4bf079e36c1861e94d09.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/c2e783fb5ea9d06c.webp",
   "noteUrl": "https://note.com/benkein/n/n375d6516e429"
  },
  {
@@ -4908,7 +4908,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-20",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59357750/rectangle_large_type_2_b80e3e23c77cf497dc54c267be614675.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/807cba68c2c2cdff.webp",
   "noteUrl": "https://note.com/benkein/n/n72806fa29db3"
  },
  {
@@ -4917,7 +4917,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-20",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59351822/rectangle_large_type_2_381e7789d863db9431a8a0d92c1d7d81.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/dfd60cb24807fec2.webp",
   "noteUrl": "https://note.com/benkein/n/n36e65de7699b"
  },
  {
@@ -4931,7 +4931,7 @@ window.NOTE_POSTS = [
    "夜",
    "光"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59345917/rectangle_large_type_2_414ef3998f8313c79545a369b25be9de.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/3f75c96fc82f9615.webp",
   "noteUrl": "https://note.com/benkein/n/ndfd10e2f2d71"
  },
  {
@@ -4948,7 +4948,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-20",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59294486/rectangle_large_type_2_e700b89a817925e5aba805e7ef8c8faf.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/4400bf2879bfd2ea.webp",
   "noteUrl": "https://note.com/benkein/n/nd2fd81cc2523"
  },
  {
@@ -4981,7 +4981,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-19",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59265084/rectangle_large_type_2_3173cad10bc2565c7fda6373f2c2979c.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/66bc802e465e184f.webp",
   "noteUrl": "https://note.com/benkein/n/ne742a44c62db"
  },
  {
@@ -4990,7 +4990,7 @@ window.NOTE_POSTS = [
   "date": "2021-08-19",
   "excerpt": "",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/59263422/rectangle_large_type_2_8feeb5992ebf9484e4dafa5dd5e36082.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/ab151eec3500dda0.webp",
   "noteUrl": "https://note.com/benkein/n/n68bcd735323f"
  },
  {
@@ -5011,7 +5011,7 @@ window.NOTE_POSTS = [
    "眠れない夜に",
    "雨上がり決死隊"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/59208736/rectangle_large_type_2_097f2bbdb5927dd56eaaad17f00e72b7.jpg?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/d8a52ce4cab0b860.webp",
   "noteUrl": "https://note.com/benkein/n/n9d856b2ee9f7"
  },
  {
@@ -5025,7 +5025,7 @@ window.NOTE_POSTS = [
    "2000字のドラマ",
    "ブルーインパルス"
   ],
-  "cover": "https://assets.st-note.com/production/uploads/images/57417610/rectangle_large_type_2_5a3c2f8a2ea411699a5d880445eb5d66.png?fit=bounds&quality=85&width=1280?width=360",
+  "cover": "/assets/ext/note/8394e9d2c494bc0a.webp",
   "noteUrl": "https://note.com/benkein/n/n450931a3fd12"
  },
  {
@@ -5034,7 +5034,7 @@ window.NOTE_POSTS = [
   "date": "2021-01-03",
   "excerpt": "あけましておめでとう",
   "tags": [],
-  "cover": "https://assets.st-note.com/production/uploads/images/42295925/809ceeefb0b36b1b59cd7b65db2e92cb.png?width=360",
+  "cover": "/assets/ext/note/6c719c821c6a91d3.webp",
   "noteUrl": "https://note.com/benkein/n/n2c3579ac28b3"
  }
 ];

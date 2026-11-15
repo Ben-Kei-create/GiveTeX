@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
+<atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+<item><title>ブースを5つ一気に開設</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-ブースを5つ一気に開設</guid><category>ブース</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;「&lt;a href=&quot;https://www.givetex.org/game/&quot;&gt;ゲーム&lt;/a&gt;」「&lt;a href=&quot;https://www.givetex.org/museum/&quot;&gt;美術館&lt;/a&gt;」「&lt;a href=&quot;https://www.givetex.org/ramen/&quot;&gt;ラーメン&lt;/a&gt;」「&lt;a href=&quot;https://www.givetex.org/movie/&quot;&gt;映画（C-Log Web）&lt;/a&gt;」、それからサイトの裏側の「&lt;a href=&quot;https://www.givetex.org/bookmarks/&quot;&gt;ブックマーク&lt;/a&gt;」ブースを作りました。ゲームはコインあつめ、ラーメンはスクロールで麺がのびます。中身はこれから少しずつ。note ブースには TALES の連載『島の灯台と猫』も並べました。&lt;/p&gt;</description></item>
+<item><title>スタンプブースをつくりました</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-スタンプブースをつくりました</guid><category>スタンプ</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;つくった LINE スタンプを紹介する「&lt;a href=&quot;https://www.givetex.org/stamp/&quot;&gt;スタンプブース&lt;/a&gt;」を作りました。グループトークの中に入ったような画面で、スタンプを選んで送ってためせます（送ったものは画面の中だけで、どこにも送信されません）。fumi のLINEスタンプ18セット・248種類を並べました。&lt;/p&gt;</description></item>
+<item><title>note の過去記事を349本、まるごと移植</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-note の過去記事を349本、まるごと移植</guid><category>note</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;2021年から note に書いてきた記事349本を、&lt;a href=&quot;https://www.givetex.org/note/&quot;&gt;note ブース&lt;/a&gt;に移しました。年ごとの目次、タグ、検索から読めます。Java の勉強記録などはコードも読みやすく整えました。有料記事（30本）は無料部分だけをのせて、続きは note へご案内しています。&lt;/p&gt;</description></item>
+<item><title>note ブースをはじめました</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-note ブースをはじめました</guid><category>note</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;NingentteWinner の名前で note に5年ほど書いてきた創作を、こちらにも置いていくための「&lt;a href=&quot;https://www.givetex.org/note/&quot;&gt;note ブース&lt;/a&gt;」を作りました。とにかく読みやすさ優先で、背景（白・セピア・黒）、文字の大きさ、明朝／ゴシックを切り替えられます。記事はこれから少しずつ移していきます。&lt;/p&gt;</description></item>
+<item><title>アプリのページを、すっきりしたデザインに</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-アプリのページを、すっきりしたデザインに</guid><category>アプリ</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;&lt;a href=&quot;https://www.givetex.org/apps/&quot;&gt;アプリのページ&lt;/a&gt;だけ、白と黒を切り替えられるシンプルなデザインにしました。各アプリのサポート・プライバシーのページも同じ見た目です。&lt;/p&gt;</description></item>
+<item><title>Cサークルの新企画「十人奇談」、準備中</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-Cサークルの新企画「十人奇談」、準備中</guid><category>どろん</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;オカルトブース「&lt;a href=&quot;https://www.givetex.org/doron/#c-circle&quot;&gt;どろん&lt;/a&gt;」のCサークルで、「十人奇談」という企画を考えています。前半・後半の札と、「怪談」「奇談」「雑談」の題名カードを作りました。くわしい内容は決まりしだい、ここと Cサークルのページでお知らせします。&lt;/p&gt;</description></item>
+<item><title>Kindle本は「ドパ読！」に。オカルトブース「どろん」も開設</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-15-Kindle本は「ドパ読！」に。オカルトブース「どろん」も開設</guid><category>サイト</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;Kindle電子書籍のコーナーを「&lt;a href=&quot;https://www.givetex.org/books/&quot;&gt;ドパ読！&lt;/a&gt;」と名付け、「30秒で読む」シリーズ全96冊を6ジャンルの本棚に。あわせて、座談会「relics」・心霊スポット巡り「霊界案内所」・巡って発表する「Cサークル」の記録を置くオカルトブース「&lt;a href=&quot;https://www.givetex.org/doron/&quot;&gt;どろん&lt;/a&gt;」を作りました。&lt;/p&gt;</description></item>
+<item><title>GiveTexをリニューアル。「教育 × IT」の看板へ</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-13-GiveTexをリニューアル。「教育 × IT」の看板へ</guid><category>サイト</category><pubDate>Fri, 13 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ブログ中心だったサイトを作り直しました。アプリ、Kindle本、開発日記、記事をひとつのトップにまとめ、太い線とビビッドな色のポップなデザインに。この日記のページもここから始まります。&lt;/p&gt;</description></item>
+<item><title>「AWSTUDY SAA 設計道場」のページを公開</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-06-「AWSTUDY SAA 設計道場」のページを公開</guid><category>AWS</category><pubDate>Fri, 06 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;要件が変わると答えも変わる——AWSの設計判断を鍛えるトレーナー。10問ずつ何度でも解ける形にしました。&lt;a href=&quot;https://www.givetex.org/apps/aws-saa-dojo/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>ミニゲーム集「MiniGamer」</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-05-ミニゲーム集「MiniGamer」</guid><category>ゲーム</category><pubDate>Thu, 05 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;本棚から選んですぐ遊べるミニゲーム集のページを追加。唐揚げ、宇宙までのジャンプ、会話で日本語など6本入り。「蔵ごよみ」にはSNSシェア用の画像とOGPを設定しました。&lt;a href=&quot;https://www.givetex.org/apps/minigamer/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>日本酒を毎日ひとつ学ぶ「蔵ごよみ」</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-04-日本酒を毎日ひとつ学ぶ「蔵ごよみ」</guid><category>日本酒</category><pubDate>Wed, 04 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;約60日で日本酒を学べる無料の仕込み帳。公開前にリマインダーとふりがな設定を追加しました。&lt;a href=&quot;https://www.givetex.org/apps/kuragoyomi/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>4本分のページを一気に整備</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-03-4本分のページを一気に整備</guid><category>ラッシュ</category><pubDate>Tue, 03 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/ionstep/&quot;&gt;イオンステップ&lt;/a&gt;（高校化学の電気分解・酸化還元）の紹介ページ&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/onitan/&quot;&gt;OniTan&lt;/a&gt;（漢検準1級）のページ&lt;/li&gt;
+        &lt;li&gt;毒舌キャラの電卓 &lt;a href=&quot;https://www.givetex.org/apps/uzacal/&quot;&gt;UzaCal&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/awstady-saa/&quot;&gt;AWSSTUDY(SAA)&lt;/a&gt;：ブランド名を統一し、スクリーンショットを撮り直し。広告の初期設定（非パーソナライズ）もポリシーに明記&lt;/li&gt;
+      &lt;/ul&gt;</description></item>
+<item><title>ワイン雑学クイズ と Mac向け「Zayping」</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-02-ワイン雑学クイズ と Mac向け「Zayping」</guid><category>Mac</category><pubDate>Mon, 02 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ぶどう品種・産地・醸造を学ぶ125問の&lt;a href=&quot;https://www.givetex.org/apps/winequiz/&quot;&gt;ワイン雑学クイズ&lt;/a&gt;と、雑学の一文をタイプするMac向けタイピングゲーム&lt;a href=&quot;https://www.givetex.org/apps/zayping/&quot;&gt;Zayping&lt;/a&gt;のページを用意。Zaypingは翌日アイコンを新デザインに。&lt;/p&gt;</description></item>
+<item><title>アプリページを5本まとめて追加</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-01-アプリページを5本まとめて追加</guid><category>5本同時</category><pubDate>Sun, 01 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul&gt;
+        &lt;li&gt;紙を引き出して読む物語アプリ &lt;a href=&quot;https://www.givetex.org/apps/paperstory/&quot;&gt;PaperStory&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/beerquiz/&quot;&gt;ビール雑学クイズ&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;世界の7人の選択をたどるMac向け物語ゲーム &lt;a href=&quot;https://www.givetex.org/apps/terra/&quot;&gt;TERRA&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;名作文学を感情で読む &lt;a href=&quot;https://www.givetex.org/apps/yomuemo/&quot;&gt;よむエモ&lt;/a&gt;（AdMob導入にあわせてポリシー更新）&lt;/li&gt;
+        &lt;li&gt;ドラムの合図で読み上げる &lt;a href=&quot;https://www.givetex.org/apps/heydrum/&quot;&gt;ヘイドラム&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;</description></item>
+<item><title>「HeyDrum！」がApp Storeで公開</title><link>https://www.givetex.org/diary/#m202610</link>
+<guid isPermaLink="false">givetex-diary-2026-10-27-「HeyDrum！」がApp Storeで公開</guid><category>リリース</category><pubDate>Tue, 27 Oct 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;「音を鳴らす」と「文字を読み上げる」だけに絞った、とてもシンプルなアプリ。同じ日、&lt;a href=&quot;https://www.givetex.org/apps/linatex/&quot;&gt;LinaTeX&lt;/a&gt;のサイトページと app-ads.txt も整備しました。&lt;/p&gt;</description></item>
+<item><title>/apps/ を新設。最初の1本は「ドパリカ！」</title><link>https://www.givetex.org/diary/#m202610</link>
+<guid isPermaLink="false">givetex-diary-2026-10-25-/apps/ を新設。最初の1本は「ドパリカ！」</guid><category>サイト</category><pubDate>Sun, 25 Oct 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;アプリ紹介・サポート・プライバシーポリシーをまとめる場所をサイト内に作りました。中学理科の2択クイズ&lt;a href=&quot;https://www.givetex.org/apps/doparika/&quot;&gt;ドパリカ！&lt;/a&gt;はスクショやランク画像を圧縮して約0.9MBに。&lt;/p&gt;</description></item>
+<item><title>「AWSTUDY(CLF)」がApp Storeで公開</title><link>https://www.givetex.org/diary/#m202610</link>
+<guid isPermaLink="false">givetex-diary-2026-10-15-「AWSTUDY(CLF)」がApp Storeで公開</guid><category>リリース</category><pubDate>Thu, 15 Oct 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;AWSの基礎を学ぶシンプルな2択クイズ。3ステージ×20問、回答ごとにポイント解説。&lt;a href=&quot;https://apps.apple.com/jp/app/id6819971113&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;App Store&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>「イオンステップ」がApp Storeで公開</title><link>https://www.givetex.org/diary/#m202610</link>
+<guid isPermaLink="false">givetex-diary-2026-10-14-「イオンステップ」がApp Storeで公開</guid><category>リリース</category><pubDate>Wed, 14 Oct 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;反応前と反応後の物質を選び、係数と電子を加えて反応式を組み立てる、高校化学の学習アプリ。&lt;a href=&quot;https://www.givetex.org/apps/ionstep/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>「PokePhysics」と「LinaTeX」を同日公開</title><link>https://www.givetex.org/diary/#m202606</link>
+<guid isPermaLink="false">givetex-diary-2026-06-16-「PokePhysics」と「LinaTeX」を同日公開</guid><category>リリース</category><pubDate>Tue, 16 Jun 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;高校物理の公式をすばやく確認できる&lt;a href=&quot;https://apps.apple.com/jp/app/id6778082145&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PokePhysics&lt;/a&gt;と、Linuxコマンドを楽しく学べる&lt;a href=&quot;https://www.givetex.org/apps/linatex/&quot;&gt;LinaTeX&lt;/a&gt;。&lt;/p&gt;</description></item>
+<item><title>漢検準1級アプリ「OniTan」を公開</title><link>https://www.givetex.org/diary/#m202606</link>
+<guid isPermaLink="false">givetex-diary-2026-06-07-漢検準1級アプリ「OniTan」を公開</guid><category>リリース</category><pubDate>Sun, 07 Jun 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;10ジャンルの問題で漢字検定準1級の合格をめざす本格学習アプリ。&lt;a href=&quot;https://www.givetex.org/apps/onitan/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
+<item><title>はじめてのApp Storeリリース「beerQuiz」</title><link>https://www.givetex.org/diary/#m202605</link>
+<guid isPermaLink="false">givetex-diary-2026-05-30-はじめてのApp Storeリリース「beerQuiz」</guid><category>初リリース</category><pubDate>Sat, 30 May 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;注ぎ方・スタイル・醸造方法を初級〜上級の125問で学ぶビール雑学クイズ。ここからアプリづくりが加速しました。&lt;/p&gt;</description></item>
+<item><title>GiveTex 開設。記事6本を公開</title><link>https://www.givetex.org/diary/#m202603</link>
+<guid isPermaLink="false">givetex-diary-2026-03-22-GiveTex 開設。記事6本を公開</guid><category>はじまり</category><pubDate>Sun, 22 Mar 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;AIチャットボット比較、理科×AI、プログラミング学習の選び方、AI画像生成、ブログ収益化、AI議事録ツール。&lt;a href=&quot;https://www.givetex.org/#articles&quot;&gt;記事一覧&lt;/a&gt;&lt;/p&gt;</description></item>
+</channel></rss>

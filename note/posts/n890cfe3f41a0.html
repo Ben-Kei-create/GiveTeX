@@ -24,6 +24,15 @@
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n890cfe3f41a0.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/9eccfde70edc7dee.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="   IT勉強🔥 -６- （Programmar） | NingentteWinner">
+<meta name="twitter:description" content="未経験ながら、少しずつ勉強をしようというプロジェクトを立てました。 私は、全くの未経験・無知ですが・・・。もし、この投稿で誰かしらのお役に立てれば幸いだと思います。（まず、その前にみなさんに教えていただくことが多いかと思">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/9eccfde70edc7dee.webp">
+<!-- /seo -->
 </head>
 <body>
 <a class="sr" href="#main">本文へ</a>
@@ -67,7 +76,7 @@
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre><p>早くこれを作りたい・・・！</p><h3>・終了タグの必要のないもの</h3><p>終了タグが必要のないものは、こちらです。</p><pre><code>&lt;img&gt;：画像を表示する
-&lt;br&gt;：改行</code></pre><h3>&lt;img&gt;</h3><p>これは、画像を表示するタグになります。<br>しかし、もちろんですが、<strong>どんな画像</strong>であるかを指定しておかなければならないのですよね・・。ええと、</p><figure><a href="https://o-dan.net/ja/" target="_blank" rel="noopener"><img src="https://assets.st-note.com/img/1661595830490-nVoIncf4tk.jpg?width=1200" alt="" width="620" height="775" loading="lazy" decoding="async"></a><figcaption><a href="https://o-dan.net/ja/" target="_blank" rel="noopener">ODAN</a>から引用</figcaption></figure><p>この画像を開くと、</p><figure><img src="https://assets.st-note.com/img/1661596219447-Y7PLI8OJiD.png?width=1200" alt="" width="620" height="387" loading="lazy" decoding="async"><figcaption>詳細画面を開いて、上の方に何やら。</figcaption></figure><p>上の場所に、</p><p><a>andras-vas-Bd7gNnWJBkU-unsplash.jpg</a>　と書かれていました。<br>（↑ちなみに、これはサンプルなので、押しても何も起きません。）この拡張子.jpgのものを、指定するのですね。なので、</p><pre><code>&lt;img&gt;</code></pre><p>これを進化すると・・・。</p><pre><code>&lt;img href　= "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;</code></pre><p>このような感じになります。<br>&lt;img href = "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;<br>このとき、href = <br>これは、ハイパーレファレンスという意味らしいです。<br>ハイパーがついているので、何やらすごいのです。（２回目）<br>とりあえず、<strong>これはここを参照ね！！！</strong>という意味です。</p><p>ダブルクオーテーションマーク（""）で囲まれたところが、その画像の住所になります。これで、指定することができるのですね。めでたし。</p><p>しかし、昨今の世の中はこれではいけないということです。つまり、画像が読み込めない場合は何にも情報が得られないということになってしまうのです。なので、<strong>代わり身</strong>を用意してあげる必要があります。<br><strong>Altキー</strong>ならぬ、<strong>alt</strong>を挿入です。</p><pre><code>&lt;img href　= "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;
+&lt;br&gt;：改行</code></pre><h3>&lt;img&gt;</h3><p>これは、画像を表示するタグになります。<br>しかし、もちろんですが、<strong>どんな画像</strong>であるかを指定しておかなければならないのですよね・・。ええと、</p><figure><a href="https://o-dan.net/ja/" target="_blank" rel="noopener"><img src="/assets/ext/note/4dc18e4789af4549.webp" alt="" width="620" height="775" loading="lazy" decoding="async"></a><figcaption><a href="https://o-dan.net/ja/" target="_blank" rel="noopener">ODAN</a>から引用</figcaption></figure><p>この画像を開くと、</p><figure><img src="/assets/ext/note/2091ddeb5d1fba88.webp" alt="" width="620" height="387" loading="lazy" decoding="async"><figcaption>詳細画面を開いて、上の方に何やら。</figcaption></figure><p>上の場所に、</p><p><a>andras-vas-Bd7gNnWJBkU-unsplash.jpg</a>　と書かれていました。<br>（↑ちなみに、これはサンプルなので、押しても何も起きません。）この拡張子.jpgのものを、指定するのですね。なので、</p><pre><code>&lt;img&gt;</code></pre><p>これを進化すると・・・。</p><pre><code>&lt;img href　= "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;</code></pre><p>このような感じになります。<br>&lt;img href = "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;<br>このとき、href = <br>これは、ハイパーレファレンスという意味らしいです。<br>ハイパーがついているので、何やらすごいのです。（２回目）<br>とりあえず、<strong>これはここを参照ね！！！</strong>という意味です。</p><p>ダブルクオーテーションマーク（""）で囲まれたところが、その画像の住所になります。これで、指定することができるのですね。めでたし。</p><p>しかし、昨今の世の中はこれではいけないということです。つまり、画像が読み込めない場合は何にも情報が得られないということになってしまうのです。なので、<strong>代わり身</strong>を用意してあげる必要があります。<br><strong>Altキー</strong>ならぬ、<strong>alt</strong>を挿入です。</p><pre><code>&lt;img href　= "andras-vas-Bd7gNnWJBkU-unsplash.jpg"&gt;
 
 これを進化！
 

@@ -24,6 +24,15 @@
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n80dba97e94f0.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/3d8f3c587afc5729.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iT-19-[Java💦Java💦] | NingentteWinner">
+<meta name="twitter:description" content="復習 クラス（設計図） ・ 属性→何のデータを持っているのか。 （名前、教科、点数など） ・ 操作→何の処理ができるか。 （点数を表示する） このような、クラスから作られる実体（モノ）を、 object（オブジェクト） ">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/3d8f3c587afc5729.webp">
+<!-- /seo -->
 </head>
 <body>
 <a class="sr" href="#main">本文へ</a>
@@ -203,7 +212,7 @@
     // stu2.score = -50;
     stu2.display();
   }
-}</code></pre><h2>練習問題</h2><hr><figure><img src="https://assets.st-note.com/img/1685106582991-qbQFNLPyPa.jpg?width=1200" alt="" width="620" height="352" loading="lazy" decoding="async"><figcaption>問１</figcaption></figure><p>breakメソッドが、オーバーロード<br>同じメソッド名で、引数が違うものがあるので、それを確認する課題だ。</p><pre><code>class Car1{
+}</code></pre><h2>練習問題</h2><hr><figure><img src="/assets/ext/note/f7b1995b72156e25.webp" alt="" width="620" height="352" loading="lazy" decoding="async"><figcaption>問１</figcaption></figure><p>breakメソッドが、オーバーロード<br>同じメソッド名で、引数が違うものがあるので、それを確認する課題だ。</p><pre><code>class Car1{
   int no;
   int speed;
 
@@ -265,7 +274,7 @@
     c1.display();
   }
 }
-</code></pre><hr><figure><img src="https://assets.st-note.com/img/1685106895991-cjtcEw5RRc.jpg?width=1200" alt="" width="620" height="393" loading="lazy" decoding="async"><figcaption>問２</figcaption></figure><p>コンストラクタが、引数ありなしで宣言。</p><p>①コンストラクタを設定<br><strong>→名前は、クラス名に合わせる。<br>→戻り値を持たない。</strong><br><br>②setNoは削除する</p><pre><code>class Car2{
+</code></pre><hr><figure><img src="/assets/ext/note/016d05e6fb6fe13d.webp" alt="" width="620" height="393" loading="lazy" decoding="async"><figcaption>問２</figcaption></figure><p>コンストラクタが、引数ありなしで宣言。</p><p>①コンストラクタを設定<br><strong>→名前は、クラス名に合わせる。<br>→戻り値を持たない。</strong><br><br>②setNoは削除する</p><pre><code>class Car2{
   int no;
   int speed;
 
@@ -303,7 +312,7 @@
     c2.run(50);
     c2.display();
   }
-}</code></pre><p>コンストラクトをどこに設定すればいいかがわからない。</p><hr><figure><img src="https://assets.st-note.com/img/1685155741778-uiH4vI04tn.jpg?width=1200" alt="" width="620" height="414" loading="lazy" decoding="async"><figcaption>問３</figcaption></figure><p><strong>アクセス修飾子<br>→メンバ変数には、private<br>→コンストラクタとメソッドには、publicを設定すること。</strong></p><pre><code>class Car3{
+}</code></pre><p>コンストラクトをどこに設定すればいいかがわからない。</p><hr><figure><img src="/assets/ext/note/277ce7e8c702909a.webp" alt="" width="620" height="414" loading="lazy" decoding="async"><figcaption>問３</figcaption></figure><p><strong>アクセス修飾子<br>→メンバ変数には、private<br>→コンストラクタとメソッドには、publicを設定すること。</strong></p><pre><code>class Car3{
 　　　　//メンバ変数にはprivate
   private int no;
   private int speed;
@@ -362,7 +371,7 @@
     // c2.run(50);
     c2.display();
   }
-}</code></pre><p><strong>コンパイルした時点でエラーが出るので、他の開発者にメソッドを経由してねと言葉だけでなく強制させることができる。</strong></p><p><strong>もう一つは、修正範囲が狭くてメンテナンスがしやすいという利点がある。</strong></p><p>カプセル化をしておくと、Scoreを、mathScoreにしたいとおもったら、<br><strong>設計図の中だけ</strong>を修正すればよい。<br>しかし、.speedみたいに、直接代入を実行用クラスに入れておくと、<br>実行用クラスも.mathScoreみたいに編集する必要が出てくる。</p><p>つまり、一つのクラスを編集すれば変更が可能。</p><p>しかし、直接代入を複数のクラスで行ってしまった場合、その全てを変えなくてはいけなくなる。そうすると、<strong>メンテナンスが最強に無駄になる。</strong></p><hr><figure><img src="https://assets.st-note.com/img/1685158918555-QMOvzBjy2q.jpg?width=1200" alt="" width="620" height="361" loading="lazy" decoding="async"><figcaption>問４</figcaption></figure><pre><code>class Car4{
+}</code></pre><p><strong>コンパイルした時点でエラーが出るので、他の開発者にメソッドを経由してねと言葉だけでなく強制させることができる。</strong></p><p><strong>もう一つは、修正範囲が狭くてメンテナンスがしやすいという利点がある。</strong></p><p>カプセル化をしておくと、Scoreを、mathScoreにしたいとおもったら、<br><strong>設計図の中だけ</strong>を修正すればよい。<br>しかし、.speedみたいに、直接代入を実行用クラスに入れておくと、<br>実行用クラスも.mathScoreみたいに編集する必要が出てくる。</p><p>つまり、一つのクラスを編集すれば変更が可能。</p><p>しかし、直接代入を複数のクラスで行ってしまった場合、その全てを変えなくてはいけなくなる。そうすると、<strong>メンテナンスが最強に無駄になる。</strong></p><hr><figure><img src="/assets/ext/note/96eecd9bdcc6ecd8.webp" alt="" width="620" height="361" loading="lazy" decoding="async"><figcaption>問４</figcaption></figure><pre><code>class Car4{
   private int no;
   private int count = 0;
 
@@ -453,7 +462,7 @@ class DriveCar4{
     Car4.display();
   }
 }
-</code></pre><p>これによって、</p><figure><img src="https://assets.st-note.com/img/1685158918555-QMOvzBjy2q.jpg?width=1200" alt="" width="620" height="361" loading="lazy" decoding="async"><figcaption>変更前</figcaption></figure><figure><img src="https://assets.st-note.com/img/1685159515787-34q1TeAjO7.jpg?width=1200" alt="" width="620" height="226" loading="lazy" decoding="async"><figcaption>変更後</figcaption></figure><p>これによって、自動車を何台作ったのか（インスタンスどうし）を合計してカウントすることができるようになった！！<br>すげ〜〜！！</p><p>ここまで！！</p>
+</code></pre><p>これによって、</p><figure><img src="/assets/ext/note/96eecd9bdcc6ecd8.webp" alt="" width="620" height="361" loading="lazy" decoding="async"><figcaption>変更前</figcaption></figure><figure><img src="/assets/ext/note/20728ac20b4aa2e9.webp" alt="" width="620" height="226" loading="lazy" decoding="async"><figcaption>変更後</figcaption></figure><p>これによって、自動車を何台作ったのか（インスタンスどうし）を合計してカウントすることができるようになった！！<br>すげ〜〜！！</p><p>ここまで！！</p>
     </div>
   </article>
   <div class="nb-end">
