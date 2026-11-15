@@ -50,7 +50,12 @@
 <div class="win ">
 <div class="win-t"><span class="ico">📝</span><span class="ttl">開発日記 - メモ帳</span><button class="bt" type="button" onclick="return rWin(this)" aria-label="たたむ">_</button><span class="bt" aria-hidden="true">□</span><span class="bt" aria-hidden="true">×</span></div>
 <div class="win-menu"><span><u>F</u>ファイル</span><span><u>E</u>編集</span><span><u>V</u>表示</span><span><u>H</u>ヘルプ</span></div><div class="win-b ">
-<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：<a href="#m202611">2026年11月</a> ｜ <a href="#m202610">2026年10月</a> ｜ <a href="#m202606">2026年6月</a> ｜ <a href="#m202605">2026年5月</a> ｜ <a href="#m202603">2026年3月</a> ｜ <a href="#m202601">2026年1月</a> ｜ <a href="#m202512">2025年12月</a></p><hr class="r-hr"><a name="m202611" id="m202611"></a><h2 class="r-h">2026年11月</h2><div class="r-diary-entry">
+<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：<a href="#m202611">2026年11月</a> ｜ <a href="#m202610">2026年10月</a> ｜ <a href="#m202609">2026年9月</a> ｜ <a href="#m202608">2026年8月</a> ｜ <a href="#m202606">2026年6月</a> ｜ <a href="#m202605">2026年5月</a> ｜ <a href="#m202603">2026年3月</a> ｜ <a href="#m202601">2026年1月</a> ｜ <a href="#m202512">2025年12月</a></p><hr class="r-hr"><a name="m202611" id="m202611"></a><h2 class="r-h">2026年11月</h2><div class="r-diary-entry">
+<div class="d">■ 2026/11/15(日)　[教材]</div>
+<h3>高校物理「原子」の授業プリント</h3>
+<p>高校物理の「原子」の授業プリント（全27ページ）を確認しました。基礎から共通テストのレベルまで。授業中に書きこむ穴埋め、例題、むずかしさ別の演習を組み合わせた構成です。</p><ul class="r-list"><li>第1章 電子と光：光電効果、X線、コンプトン効果、物質波</li><li>第2章 原子の構造とスペクトル：原子模型、ボーアの理論、エネルギー準位</li><li>第3章 原子核と素粒子：放射性崩壊、半減期、質量欠損、核反応</li><li>巻末：公式まとめ、穴埋め90項目の答え、演習の解説</li></ul>
+
+</div><div class="r-diary-entry">
 <div class="d">■ 2026/11/15(日)　[企画]</div>
 <h3>著作権の切れた名作をゲームに／ここ1年のふりかえり</h3>
 <ul class="r-list"><li>著作権の保護期間が終わった映画や小説を、ゲーム体験に変える企画を検討</li></ul><p>2025年12月からの開発メモを、この日記にまとめて移しました。ふりかえると……</p><ul class="r-list"><li><b>10月は設計と実装の準備が中心</b>：Toiret、ドパリカ！、PageMint、Safe Eye、C-Log など、アプリとして形にするための仕様づくりと分担決め</li><li><b>11月は新しい遊びの発明が増えた</b>：ヒンジで折る折り紙、韻でとぶゴルフ、彗星の RPG、自分でしゃべる AI キャラなど</li><li><b>つくり方は AI との分業</b>：実装は Claude、レビューは Codex、企画・仕様・デザインの判断は自分</li></ul><p class="r-small">※構想・設計の段階のものもふくみます。公開ずみのものだけ、アプリのページにリンクしています。</p>
@@ -119,6 +124,11 @@
 <div class="d">■ 2026/11/15(日)　[サイト]</div>
 <h3>Kindle本は「ドパ読！」に。オカルトブース「どろん」も開設</h3>
 <p>Kindle電子書籍のコーナーを「<a href="/books/">ドパ読！</a>」と名付け、「30秒で読む」シリーズ全96冊を6ジャンルの本棚に。あわせて、座談会「relics」・心霊スポット巡り「霊界案内所」・巡って発表する「Cサークル」の記録を置くオカルトブース「<a href="/doron/">どろん</a>」を作りました。</p>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/11/13(金)　[Kindle]</div>
+<h3>Kindle の画像づくり、ここまでのまとめ</h3>
+<p>新しいプロンプトのファイルで、また1枚目から画像づくりを再開。8月からの流れをまとめると、こんな感じです。</p><ul class="r-list"><li><b>本づくり</b>：「30秒で読む」シリーズ（<a href="/books/">ドパ読！</a>）を中心に、文学・神話・人物伝の表紙・目次・背景・アイコン・挿絵を、決まった構成で生成</li><li><b>画像づくりのルール化</b>：1プロンプトにつき1枚。コラージュはつくらない</li><li><b>出版作業の自動化</b>：KDP への登録を CSV と Playwright で自動化中。説明文やカテゴリの入力にはまだ課題あり</li><li><b>これから</b>：Wonderloom での漫画・紙の本の制作フローを検討中</li></ul>
 
 </div><div class="r-diary-entry">
 <div class="d">■ 2026/11/13(金)　[アプリ]</div>
@@ -297,9 +307,64 @@
 <ul class="r-list"><li>インストールしたものの「command not found」が出て、原因を確認中</li></ul>
 
 </div><div class="r-diary-entry">
+<div class="d">■ 2026/10/09(金)　[Kindle]</div>
+<h3>4冊ぶんの画像を一気に。Wonderloom の作戦も</h3>
+<ul class="r-list"><li>『30秒で読む ギルガメッシュ 第一部』：最初の10枚から順に生成</li><li>『30秒で読む ニルスのふしぎな旅』：挿絵と目次の画像</li><li>『30秒で読む 良い意味でヤバいチバ』：23点を少しずつ制作</li><li>『30秒で読む 地底旅行』：11枚目以降も順に生成</li><li>ブランド「Wonderloom」で、漫画づくりと紙の本づくりの流れについて作戦を考えはじめた</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/10/08(木)　[Kindle]</div>
+<h3>『30秒で読む 海底二万里』の画像</h3>
+<ul class="r-list"><li>表紙・背景・アイコン・全面イラストなどを制作</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/10/04(日)　[Kindle]</div>
+<h3>水滸伝と鏡の国のアリス。「1プロンプト＝1枚」を徹底</h3>
+<ul class="r-list"><li>『30秒で読む 水滸伝』の画像を制作</li><li>いくつもの場面を1枚にまとめず、<b>1つの場面を1枚の画像</b>にするルールを徹底（本に組みこみやすくするため）</li><li>『鏡の国のアリス』の YouTube サムネイル用に、チェス盤がモチーフの画像を制作</li></ul>
+
+</div><div class="r-diary-entry">
 <div class="d">■ 2026/10/04(日)　[開発環境]</div>
 <h3>Mac で VOICEVOX を起動する</h3>
 <ul class="r-list"><li>macOS の安全機能（Gatekeeper）で起動が止められる件と、ターミナルからの起動方法を調べた</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/10/03(土)　[Kindle]</div>
+<h3>『30秒で読む オズの魔法使い』の挿絵</h3>
+<ul class="r-list"><li>11枚目からの挿絵の生成を続けた</li></ul>
+
+</div><a name="m202609" id="m202609"></a><h2 class="r-h">2026年9月</h2><div class="r-diary-entry">
+<div class="d">■ 2026/09/29(火)　[画像]</div>
+<h3>水彩の「半透明ハイキング」コレクション</h3>
+<ul class="r-list"><li>Etsy 向けに、水彩画風の幻想的なハイキングの絵を生成</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/09/28(月)　[Kindle]</div>
+<h3>『30秒で読む フランケンシュタイン』の画像</h3>
+<ul class="r-list"><li>日本語版・海外版の表紙をふくむ、全27点の生成を指示</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/09/26(土)　[Kindle]</div>
+<h3>ゴッホとラーマーヤナの画像</h3>
+<ul class="r-list"><li>『ゴッホ、ローヌ川に星を描く』『ラーマーヤナ 第二部・第三部』の表紙・目次・背景・挿絵を制作</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/09/25(金)　[Kindle]</div>
+<h3>塗り絵の本「A Witch's Year」</h3>
+<ul class="r-list"><li>魔女の世界がテーマの塗り絵。表紙・裏表紙・タイトルとサブタイトルのデザインをつくり、中の絵を順に生成</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/09/23(水)　[画像]</div>
+<h3>海外向けの画像作品「Ruined World Girl」</h3>
+<ul class="r-list"><li>Etsy 向けの画像シリーズを、プロンプトを使って生成</li></ul>
+
+</div><div class="r-diary-entry">
+<div class="d">■ 2026/09/01(火)　[Kindle]</div>
+<h3>KDP 自動入力ツールを改良</h3>
+<ul class="r-list"><li>CSV の項目、AI 生成の申告、シリーズの巻数、カテゴリ選択などの処理を調整</li></ul>
+
+</div><a name="m202608" id="m202608"></a><h2 class="r-h">2026年8月</h2><div class="r-diary-entry">
+<div class="d">■ 2026/08/24(月)　[Kindle]</div>
+<h3>KDP の入力を自動化するツールをつくりはじめた</h3>
+<ul class="r-list"><li>Kindle 本の情報を CSV にまとめて、KDP の画面に一括で入力する仕組みを Python と Playwright で検討</li></ul>
 
 </div><a name="m202606" id="m202606"></a><h2 class="r-h">2026年6月</h2><div class="r-diary-entry">
 <div class="d">■ 2026/06/16(火)　[リリース]</div>
@@ -337,7 +402,7 @@
 <ul class="r-list"><li>1日1枚、ランダムにカードが出る</li><li>広告を見るともう1回引ける</li><li>集めたカードは保存できる（10枚まで。課金で20枚に、いらないカードは削除）</li></ul>
 
 </div>
-</div><div class="win-status"><span>55 件の日記</span><span>最終更新 2026/11/15</span></div>
+</div><div class="win-status"><span>68 件の日記</span><span>最終更新 2026/11/15</span></div>
 </div>
 </div>
 <div class="r-foot" role="contentinfo">
