@@ -233,4 +233,14 @@
     <lastmod>2026-11-15</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.givetex.org/note/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.givetex.org/note/posts/about-this-booth.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>

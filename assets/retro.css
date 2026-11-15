@@ -281,3 +281,11 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .win.dark table.r-tbl { background: #2a0a3a; border-color: #6a0dad; }
 .win.dark table.r-tbl th { background: #4b0082; }
 .win.dark table.r-tbl td { background: #0d0b14; color: #e8e0ff; border-color: #4b0082; }
+
+/* 記事の表：はみ出さず、横にスクロールできるように */
+.article table { display: block; width: auto !important; max-width: calc(100% - 36px); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 760px) {
+  .article table { max-width: calc(100% - 24px); }
+  table.r-tbl th { white-space: normal; }
+  table.r-tbl { font-size: 12.5px; }
+}
