@@ -3,10 +3,10 @@
   --bg:#07060b; --ink:#ece8f5; --sub:#a7a1b8; --line:#ffffff26;
   --acc:#b9a6ff; --acc2:#5dffb0; --glow:#b9a6ff66;
   --card:#12101a; --card-ink:#ece8f5; --card-sub:#a7a1b8; --card-line:#ffffff22;
-  --disp:"Dela Gothic One",system-ui,sans-serif;
-  --jp:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+  --disp:var(--scary);
+  --jp:var(--scary);
   --mono:"Space Mono",ui-monospace,monospace;
-  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --serif:var(--scary);
   --r:16px;
   color-scheme:dark;
 }
@@ -174,3 +174,7 @@ dialog.lb button{position:absolute;top:-6px;right:-6px;width:40px;height:40px;bo
 
 .foot{position:relative;z-index:2;text-align:center;padding:30px 16px 40px;color:var(--sub);font-size:13px}
 .foot a{color:var(--acc);font-weight:700;text-decoration:none}
+
+/* おそろしげ明朝：読みやすさの調整 */
+body{letter-spacing:.03em}
+.rep-body p,.ph-copy,.manners ul,.flow li{line-height:1.95}

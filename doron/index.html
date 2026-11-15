@@ -14,10 +14,12 @@
 <link rel="canonical" href="https://www.givetex.org/doron/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/doron/img/logo-relics.webp">
 <link rel="preload" as="image" href="/doron/img/logo-reikai.webp">
 <link rel="preload" as="image" href="/doron/img/logo-c-circle.webp">
+<link rel="preload" as="font" type="font/woff2" href="/doron/fonts/osorosige-core.woff2" crossorigin>
+<link rel="stylesheet" href="/doron/fonts/osorosige.css">
 <link rel="stylesheet" href="/doron/doron.css">
 <script>document.documentElement.classList.add('js')</script>
 <noscript><style>.panel[hidden]{display:block!important}</style></noscript>
@@ -26,6 +28,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<script src="/assets/img-fallback.js"></script>
 </head>
 <body data-tab="relics">
 <script>(function(){var h=location.hash.slice(1);if(h==="reikai"||h==="c-circle")document.body.setAttribute("data-tab",h)})()</script>
@@ -159,6 +162,7 @@
 
   <footer class="foot">
     <p>どろん — a GiveTex occult booth ／ <a href="/">GiveTex トップへ戻る</a></p>
+    <p style="font-size:11px;opacity:.7">フォント：おそろしげ明朝（やっちゃん）SIL Open Font License 1.1 ／ <a href="/doron/fonts/OFL.txt">ライセンス</a></p>
     <p>&copy; 2026 GiveTex</p>
   </footer>
 </div>

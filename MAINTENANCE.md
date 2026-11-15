@@ -68,6 +68,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `doron/reports.js` に1件追加します。書き方の見本はファイルの先頭にあります。
 - 写真は `doron/photos/` に置きます。
 - `group` は `relics`（座談会）・`reikai`（霊界案内所）・`c-circle`（Cサークル）のどれかです。
+- **どろんのフォントは「おそろしげ明朝」**（やっちゃん作、SIL OFL 1.1。ライセンス本文は `doron/fonts/OFL.txt`、フッターにクレジットあり）。
+  - 軽くするため、ページで使う文字だけの `osorosige-core.woff2`（約180KB）と、残りの漢字の `osorosige-rest.woff2`（必要なときだけ読み込み）に分けています。
+  - どろんの文章を大きく書き足したら、`<fonttools入りのpython> -I tools/doron_font.py <OsorosigeMincho.ttf>` で作り直してください（元のTTFはリポジトリに入れていません）。作り直さなくても表示は崩れず、新しい漢字だけ rest から読み込まれます。
 
 ### 創作ブースに作品を足す
 - `sousaku/works.js` に1件追加します。書き方の見本はファイルの先頭にあります。素材は `sousaku/works/<id>/` に置きます。
@@ -100,6 +103,16 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 
 ### ブックマークを更新する
 - ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
+
+### ホームの「note」「LINE スタンプ」の棚
+- ホームには note の最新8本（表紙画像つき）と、スタンプの新しい10セットを並べています。
+- 中身は `note/posts.js` と `stamp/stamps.js` から自動で作るので、記事やスタンプを足したら `python3 -I tools/build_retro.py` を実行するだけです。
+
+### 壊れにくくするしくみ
+- **画像が読めないとき**：`assets/img-fallback.js` が「NO IMAGE」の絵に差し替えます（ほぼ全ページの `<head>` に入っています。新しいページにも入れてください）。
+- **404 ページ**：`404.html`。URL の最後の言葉でサイト内を自動検索して、近いページを案内します。
+- **スタンプのトーク**：連打されても返事は順番に1つずつ、溜まりすぎたら「ちょっと待ってね」。入力されたHTMLは文字として表示し、古いメッセージは300件を超えたら消します。
+- **JavaScript が切られているとき**：ゲーム・美術館・ラーメン・映画は案内文を出します。
 
 ### サイト内検索の索引を作り直す
 - アプリ・Kindle・note・TALES・スタンプ・記事を足したら `node tools/build_index.js` を実行します（`assets/site-index.js` が更新されます）。
@@ -134,7 +147,8 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 次のサービスが止まると、該当する部分が表示されません。
 - **画像**：note の記事画像（`assets.st-note.com`）と、Amazon の書影（`m.media-amazon.com`）は直接読み込んでいます。
 - **ライブラリ**：QRコードは cdnjs の `qrcodejs 1.0.0` を使っています。
-- **フォント**：Google Fonts です。
+- **フォント**：Google Fonts です（どろんの「おそろしげ明朝」だけは自サイトに置いています）。
+- **画像**：LINE スタンプ（`stickershop.line-scdn.net`）も直接読み込んでいます。読めないときは「NO IMAGE」になります。
 
 ## 6.5 セキュリティ
 - **`vercel.json` でセキュリティヘッダーを付けています**：CSP（スクリプトは自サイト・Google アナリティクス・cdnjs だけ許可、画像は https なら可、ほかのサイトへの埋め込み禁止）、X-Frame-Options、nosniff、Referrer-Policy、Permissions-Policy。HSTS は Vercel が付けます。
@@ -156,4 +170,5 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 ## 8. 未完了・オーナーからの返事待ち
 - どろんの活動記録（概要・写真）。
 - 創作ブースの最初の作品と、出展予定。
+- ChatGPT 側にある開発日記。届いたら `tools/build_retro.py` の日記（`NEW_ENTRIES` / `tools/diary.json`）に取り込みます。
 - ドパ読！の新刊の追加。Amazon の一覧から作ったので、英語版などの海外版は載せていません。

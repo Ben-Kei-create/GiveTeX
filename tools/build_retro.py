@@ -16,6 +16,7 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/assets/retro.css">
 <script type="text/javascript" src="/assets/retro.js"></script>
+<script src="/assets/img-fallback.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
@@ -24,7 +25,6 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'), ('/stamp/', 'スタンプ'), ('/#booths', 'ブース'),
        ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人')]
 NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　'
-        '11/15　ホームページを90年代風にリニューアルしました！　◆　'
         'Kindle本「ドパ読！」96冊を書庫にならべました　◆　'
         'オカルトブース「<a href="/doron/">どろん</a>」オープン！ Cサークルの新企画「十人奇談」準備中…　◆　'
         '<a href="/note/">note ブース</a>はじめました　◆　<a href="/stamp/">スタンプブース</a>オープン　◆　'
@@ -153,8 +153,6 @@ NEW_ENTRIES = [
  dict(date='2026-11-15', tag='どろん', title='Cサークルの新企画「十人奇談」、準備中',
       body='<p>オカルトブース「<a href="/doron/#c-circle">どろん</a>」のCサークルで、「十人奇談」という企画を考えています。前半・後半の札と、「怪談」「奇談」「雑談」の題名カードを作りました。くわしい内容は決まりしだい、ここと Cサークルのページでお知らせします。</p>',
       photos=KIDAN_PHOTOS),
- dict(date='2026-11-15', tag='サイト', title='ホームページを90年代風にリニューアル！',
-      body='<p>インターネットが始まったころの「ホームページ」の空気を目指して、まるごと作り直しました。テーブルでレイアウトして、マーキーが流れて、アクセスカウンターが回る、あの感じです。どろんのロゴも3種類になりました。</p>'),
 ]
 have = {(d['date'], d['title']) for d in DIARY}
 DIARY = [n for n in NEW_ENTRIES if (n['date'], n['title']) not in have] + DIARY
@@ -170,6 +168,14 @@ def diary_entry(d):
 {d['body']}
 {'<div>' + ph + '</div>' if ph else ''}
 </div>'''
+
+def js_json(path, var):
+    """window.XXX = [...] / {...}; の JSON 部分を読む"""
+    t = (R / path).read_text(); i = t.index('window.' + var + ' =') + len('window.' + var + ' =')
+    return json.loads(t[i:].strip().rstrip(';'))
+NOTE_POSTS = [p for p in js_json('note/posts.js', 'NOTE_POSTS') if p.get('cover')]
+NOTE_POSTS.sort(key=lambda p: p['date'], reverse=True)
+STAMP_SETS = js_json('stamp/stamps.js', 'STAMP')['sets']
 
 def books_flat():
     return [b for k in BOOKS['cats'] for b in BOOKS['books'][k]]
@@ -190,7 +196,6 @@ def build_index():
         ('2026-11-15', '<a href="/note/">note ブース</a>に過去の記事349本を移植しました', True),
         ('2026-11-15', '<a href="/note/">note ブース</a>をはじめました（NingentteWinner の創作）', False),
         ('2026-11-15', 'どろん：Cサークルの新企画「<a href="/doron/#c-circle">十人奇談</a>」の素材を公開', True),
-        ('2026-11-15', 'ホームページを90年代風にリニューアルしました！', True),
         ('2026-11-15', 'Kindle本「<a href="/books/">ドパ読！</a>」{}冊を書庫に／オカルトブース「<a href="/doron/">どろん</a>」オープン'.format(TOTAL), False),
         ('2026-11-13', '「教育 × IT」の看板でサイトをリニューアル', False),
         ('2026-11-06', '「<a href="/apps/aws-saa-dojo/">AWSTUDY SAA 設計道場</a>」のページを公開', False),
@@ -221,8 +226,8 @@ document.write(rGreeting());
             win('アプリ置き場 - マイ コンピュータ', f'<div class="r-icons">{apps_icons}</div>', '💾', menu=True, status=['18 個のオブジェクト', 'App Store 公開中 7']) +
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
-            win('note ブース - NingentteWinner', '<p class="r-center" style="font-size:20px;margin:4px 0"><a href="/note/"><b>NingentteWinner</b></a></p><p class="r-center">note で5年ほど書いてきた創作、<b>349本</b>をこちらにも移しました。<br>読みやすさ優先の、しずかな読書スペースです。</p><p class="r-center"><a class="r-btn" href="/note/">note ブースへ &gt;&gt;</a></p>', '✒') +
-            win('スタンプブース - グループトーク', '<p class="r-center">fumi の LINE スタンプ <b>18セット</b>を、<b>グループトーク</b>みたいな画面で紹介しています。<br>スタンプを選んで、送ってためせます。</p><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
+            win('note ブース - 最新の記事', '<p class="r-center" style="margin:0 0 8px">NingentteWinner の note から、さいきんの記事。</p><div class="r-shelf r-notes">' + ''.join(f'<a class="r-book r-note" href="/note/posts/{E(p["slug"])}.html"><img src="{E(p["cover"])}" width="160" height="84" alt="" loading="lazy"><b>{E(p["title"])}</b><small>{p["date"].replace("-", "/")}</small></a>' for p in NOTE_POSTS[:8]) + '</div><p class="r-center"><a class="r-btn" href="/note/">note ブースへ（全 ' + str(len(js_json("note/posts.js", "NOTE_POSTS"))) + ' 本）&gt;&gt;</a></p>', '✒') +
+            win('スタンプブース - LINE スタンプ', '<p class="r-center" style="margin:0 0 8px">fumi の LINE スタンプ <b>' + str(len(STAMP_SETS)) + 'セット</b>。トーク画面で送ってためせます。</p><div class="r-shelf r-stamps">' + ''.join(f'<a class="r-book r-stamp" href="/stamp/" title="{E(x["title"])}"><img src="{E(x["main"])}" width="96" height="96" alt="{E(x["title"])}" loading="lazy"><small>{E(x["title"])}</small></a>' for x in list(reversed(STAMP_SETS))[:10]) + '</div><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
             '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>つくったゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>C-Log Web・観た映画の感想</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +

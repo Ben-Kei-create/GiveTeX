@@ -6,6 +6,7 @@ HEADEXTRA = '''<meta name="theme-color" content="#ffffff">
 <script>(function(){try{var t=localStorage.getItem('givetex-apps-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <link rel="stylesheet" href="/apps/assets/apps.css">
 <script src="/apps/assets/apps.js" defer></script>
+<script src="/assets/img-fallback.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">

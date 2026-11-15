@@ -94,15 +94,27 @@
   /* ---------- 送る（この画面の中だけ） ---------- */
   var busy = false;
   function readLater(m) { setTimeout(function () { if (m._read) m._read.textContent = '既読'; }, 700); }
+  // 返事は順番待ち（連打されても落とさない。たまりすぎたら「ちょっと待ってね」）
+  var queue = [], warned = false;
   function hostReply(fn) {
-    if (busy) return; busy = true;
+    if (queue.length >= 3) {
+      if (!warned) { warned = true; queue.push(function () { msg('host', text('ちょっと待ってね、ひとつずつ返事するね！'), { time: now(), pop: true }); }); }
+    } else queue.push(fn);
+    if (!busy) next();
+  }
+  function next() {
+    var fn = queue.shift(); if (!fn) { busy = false; warned = false; return; }
+    busy = true;
     setTimeout(function () {
       var t = msg('host', el('div', 'st-bubble st-typing', null), { pop: true });
       t.querySelector('.st-typing').innerHTML = '<i></i><i></i><i></i>'; t.querySelector('.st-typing').setAttribute('aria-label', '入力中');
       scrollEnd();
-      setTimeout(function () { t.remove(); last = 'me'; fn(); scrollEnd(); busy = false; }, 1100);
-    }, 900);
+      setTimeout(function () { t.remove(); last = 'me'; fn(); scrollEnd(); next(); }, 1100);
+    }, 700);
   }
+  // 画面の吹き出しが増えすぎたら古いものから片づける（長時間あそんでも重くならないように）
+  function trim() { var ms = log.querySelectorAll('.st-msg'); for (var i = 0; i < ms.length - 300; i++) ms[i].remove(); }
+  setInterval(trim, 5000);
   /* ---------- 自動返信とサイト内検索 ---------- */
   var IDX = window.SITE_INDEX || [];
   function norm(t) {
