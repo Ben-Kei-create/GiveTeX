@@ -1,0 +1,163 @@
+/* GiveTex Apps — App関連ページ専用スタイル（ライト／ダーク切り替え対応）
+   英字: Fjalla One ／ 日本語: WDXL Lubrifont JP N */
+:root{
+  --bg:#ffffff; --bg-alt:#f5f5f7; --card:#ffffff; --text:#1d1d1f; --sub:#6e6e73; --faint:#86868b;
+  --line:#d2d2d7; --hair:rgba(0,0,0,.08); --link:#0066cc; --accent:#0071e3; --accent-text:#ffffff;
+  --nav:rgba(255,255,255,.72); --shadow:0 2px 6px rgba(0,0,0,.04),0 12px 32px rgba(0,0,0,.08);
+  --font:"Fjalla One","WDXL Lubrifont JP N",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  color-scheme:light;
+}
+:root[data-theme=dark]{
+  --bg:#000000; --bg-alt:#161617; --card:#1d1d1f; --text:#f5f5f7; --sub:#a1a1a6; --faint:#86868b;
+  --line:#424245; --hair:rgba(255,255,255,.1); --link:#2997ff; --accent:#0a84ff; --accent-text:#ffffff;
+  --nav:rgba(22,22,23,.72); --shadow:0 2px 6px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --bg:#000000; --bg-alt:#161617; --card:#1d1d1f; --text:#f5f5f7; --sub:#a1a1a6; --faint:#86868b;
+    --line:#424245; --hair:rgba(255,255,255,.1); --link:#2997ff; --accent:#0a84ff; --accent-text:#ffffff;
+    --nav:rgba(22,22,23,.72); --shadow:0 2px 6px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.65;letter-spacing:.01em;-webkit-font-smoothing:antialiased;font-synthesis-weight:none;transition:background-color .35s ease,color .35s ease}
+img{max-width:100%;height:auto}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+strong,b{font-weight:400;color:var(--text)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- グローバルナビ ---------- */
+.ax-nav{position:sticky;top:0;z-index:50;background:var(--nav);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--hair);transition:background-color .35s}
+.ax-nav-in{max-width:1024px;margin:0 auto;height:48px;display:flex;align-items:center;gap:22px;padding:0 22px}
+.ax-brand{font-size:17px;letter-spacing:.04em;color:var(--text)}
+.ax-brand span{color:var(--sub)}
+.ax-brand:hover{text-decoration:none;opacity:.75}
+.ax-links{margin-left:auto;display:flex;gap:22px;font-size:13px}
+.ax-links a{color:var(--text);opacity:.8}
+.ax-links a:hover{opacity:1;text-decoration:none}
+.ax-theme{appearance:none;border:0;background:transparent;color:var(--text);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;cursor:pointer;opacity:.85;transition:background-color .2s,opacity .2s}
+.ax-theme:hover{opacity:1;background:var(--hair)}
+.ax-theme svg{width:18px;height:18px}
+.ax-theme .moon{display:none}
+:root[data-theme=dark] .ax-theme .sun{display:none}
+:root[data-theme=dark] .ax-theme .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ax-theme .sun{display:none}:root:not([data-theme=light]) .ax-theme .moon{display:block}}
+
+/* ---------- アプリごとのサブナビ ---------- */
+.ax-sub{position:sticky;top:48px;z-index:40;background:var(--nav);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--hair)}
+.ax-sub-in{max-width:1024px;margin:0 auto;min-height:52px;display:flex;align-items:center;gap:16px;padding:0 22px}
+.ax-sub-name{font-size:21px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ax-sub-name:hover{text-decoration:none}
+.ax-sub-links{margin-left:auto;display:flex;gap:18px;font-size:13px;flex:none}
+.ax-sub-links a{color:var(--sub)}
+.ax-sub-links a[aria-current=page]{color:var(--text)}
+@media(max-width:600px){.ax-links{gap:14px}.ax-links .opt{display:none}.ax-sub-name{font-size:17px}.ax-sub-links{gap:12px}}
+
+/* ---------- 本文（各アプリ・サポート・プライバシー） ---------- */
+.content{max-width:1024px;margin:0 auto;padding:0 22px 80px}
+.content > p,.content > ul,.content > ol,.content > h2,.content > h3,.content > table,.content > .card,.content > .ranks,.content > div:not(.hero):not(.shots){max-width:720px;margin-left:auto;margin-right:auto}
+.crumbs{display:none}
+.content h1{font-size:clamp(40px,7vw,64px);line-height:1.08;font-weight:400;letter-spacing:.01em;margin:64px auto 10px;max-width:720px;text-align:center}
+.content > h1 + .meta{text-align:center;margin-bottom:48px}
+.meta{color:var(--sub);font-size:19px;line-height:1.5}
+.content h2{font-size:clamp(26px,4vw,34px);line-height:1.2;font-weight:400;margin-top:72px;margin-bottom:18px}
+.content h3{font-size:21px;line-height:1.35;font-weight:400;margin-top:36px;margin-bottom:8px}
+.content p{color:var(--text);margin-top:0;margin-bottom:18px}
+.content ul,.content ol{padding-left:1.2em;margin-top:0;margin-bottom:18px}
+.content li{margin-bottom:8px}
+.content li::marker{color:var(--faint)}
+
+/* ヒーロー */
+.hero{text-align:center;padding:72px 0 28px}
+.hero img.app-icon{width:132px;height:132px;border-radius:29px;box-shadow:var(--shadow)}
+.hero img.logo-img{width:min(100%,380px)}
+.hero h1{margin:26px auto 8px !important}
+.hero .meta{margin:0 auto 24px;max-width:640px;font-size:21px}
+
+/* App Store へのリンクはボタンに */
+a[href*="apps.apple.com"]{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:var(--accent-text);padding:9px 22px;border-radius:999px;font-size:17px;line-height:1.3;text-decoration:none;transition:filter .2s,transform .1s}
+a[href*="apps.apple.com"]:hover{filter:brightness(1.1);text-decoration:none}
+a[href*="apps.apple.com"]:active{transform:scale(.97)}
+
+/* スクリーンショット */
+.shots{display:flex;gap:20px;overflow-x:auto;margin:20px -22px 8px;padding:12px 22px 28px;scroll-snap-type:x mandatory;scrollbar-width:none;justify-content:safe center}
+.shots::-webkit-scrollbar{display:none}
+.shots figure{flex:0 0 auto;width:250px;margin:0;scroll-snap-align:center}
+.shots img{display:block;width:250px;border-radius:30px;box-shadow:var(--shadow);background:var(--bg-alt)}
+.shots figcaption{text-align:center;color:var(--sub);font-size:14px;margin-top:12px}
+.terra-shots figure{width:440px}
+.terra-shots img{width:440px;border-radius:12px}
+@media(max-width:600px){.shots figure{width:210px}.shots img{width:210px;border-radius:26px}.terra-shots figure,.terra-shots img{width:300px}}
+.ranks{display:flex;gap:12px;justify-content:space-between;margin:12px auto 18px}
+.ranks figure{flex:1;text-align:center;margin:0}
+.ranks img{width:72px;height:72px;object-fit:contain}
+.ranks figcaption{font-size:13px;color:var(--sub)}
+
+/* 情報テーブル → グループリスト */
+table.info{width:100%;border-collapse:separate;border-spacing:0;background:var(--bg-alt);border-radius:18px;overflow:hidden;font-size:16px;margin-bottom:24px}
+table.info th,table.info td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--hair)}
+table.info tr:last-child th,table.info tr:last-child td{border-bottom:0}
+table.info th{width:9em;color:var(--sub);font-weight:400;white-space:nowrap}
+
+/* サポート・プライバシーへのリンク → グループリスト */
+.card{display:flex;align-items:center;gap:16px;background:var(--bg-alt);color:var(--text);padding:16px 20px;margin-bottom:0 !important;border-radius:0;border-bottom:1px solid var(--hair);transition:background-color .2s}
+.card:hover{text-decoration:none;background:var(--hair)}
+.card::after{content:"›";margin-left:auto;font-size:24px;line-height:1;color:var(--faint)}
+.content > .card:first-of-type,h2 + .card{border-top-left-radius:18px;border-top-right-radius:18px}
+.card:has(+ :not(.card)),.card:last-child{border-bottom:0;border-bottom-left-radius:18px;border-bottom-right-radius:18px;margin-bottom:24px !important}
+.card strong{display:block;font-size:17px}
+.card span{display:block;font-size:14px;color:var(--sub)}
+.card.with-icon img{width:56px;height:56px;border-radius:13px;flex:none}
+
+/* ---------- アプリ一覧（/apps/） ---------- */
+.ax-hero{text-align:center;padding:88px 22px 40px;max-width:1024px;margin:0 auto}
+.ax-eyebrow{font-size:21px;color:var(--sub);margin:0 0 6px;letter-spacing:.06em}
+.ax-hero h1{font-size:clamp(48px,9vw,96px);line-height:1.04;font-weight:400;margin:0 0 18px;letter-spacing:.01em}
+.ax-hero p{font-size:clamp(19px,2.4vw,24px);color:var(--sub);margin:0 auto;max-width:640px;line-height:1.5}
+.ax-stats{display:flex;justify-content:center;gap:40px;margin-top:36px}
+.ax-stats div{text-align:center}
+.ax-stats b{display:block;font-size:44px;line-height:1.1;color:var(--text)}
+.ax-stats span{font-size:14px;color:var(--sub)}
+.ax-sec{background:var(--bg-alt);padding:72px 22px;transition:background-color .35s}
+.ax-sec.plain{background:var(--bg)}
+.ax-sec-in{max-width:1024px;margin:0 auto}
+.ax-sec h2{font-size:clamp(30px,5vw,48px);line-height:1.1;font-weight:400;margin:0 0 8px;text-align:center}
+.ax-sec .lead{text-align:center;color:var(--sub);margin:0 0 40px;font-size:19px}
+.ax-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.ax-tile{position:relative;display:flex;flex-direction:column;gap:6px;background:var(--card);border-radius:28px;padding:30px 28px 26px;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.ax-tile:hover{transform:translateY(-4px) scale(1.01)}
+.ax-tile img{width:88px;height:88px;border-radius:20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ax-tile h3{font-size:24px;line-height:1.2;font-weight:400;margin:0}
+.ax-tile .cat{font-size:13px;color:var(--sub);letter-spacing:.04em}
+.ax-tile p{font-size:15px;color:var(--sub);margin:4px 0 18px;line-height:1.55}
+.ax-tile .acts{margin-top:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ax-tile .more{font-size:15px}
+.ax-tile .more::after{content:" ›"}
+.ax-tile a[href*="apps.apple.com"]{padding:6px 18px;font-size:15px}
+.ax-tile .stretch::before{content:"";position:absolute;inset:0;border-radius:28px}
+.ax-tile .acts a{position:relative;z-index:1}
+.ax-grid.small{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.ax-mini{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:24px 12px 20px;border-radius:22px;background:var(--bg-alt);color:var(--text);transition:transform .25s,background-color .35s}
+.ax-mini:hover{text-decoration:none;transform:translateY(-3px)}
+.ax-mini img{width:72px;height:72px;border-radius:17px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ax-mini b{font-size:16px;line-height:1.3;font-weight:400}
+.ax-mini span{font-size:12.5px;color:var(--sub);line-height:1.45}
+.ax-badge{display:inline-block;font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:1px 10px}
+
+/* ---------- フッター ---------- */
+.ax-foot{background:var(--bg-alt);color:var(--sub);font-size:12.5px;line-height:1.6;transition:background-color .35s}
+.ax-foot-in{max-width:1024px;margin:0 auto;padding:20px 22px 28px}
+.ax-foot nav{display:flex;flex-wrap:wrap;gap:6px 22px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--hair)}
+.ax-foot a{color:var(--text);opacity:.8}
+.ax-foot p{margin:0}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+.ax-tile .acts a.stretch{position:static}
+.ax-sub-links{align-items:center}
+.ax-sub-links a[href*="apps.apple.com"]{padding:4px 14px;font-size:13px;color:var(--accent-text)}
