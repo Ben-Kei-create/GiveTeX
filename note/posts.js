@@ -17,7 +17,7 @@
   }
 */
 window.NOTE_CONFIG = {
-  profileUrl: ""   // note のプロフィールURL（例 "https://note.com/xxxx"）。空なら「noteで見る」ボタンは隠れます
+  profileUrl: "https://note.com/benkein"   // note のプロフィールURL（例 "https://note.com/xxxx"）。空なら「noteで見る」ボタンは隠れます
 };
 
 window.NOTE_POSTS = [
