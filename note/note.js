@@ -145,8 +145,43 @@
       if (newer) pager.appendChild(card(newer, 'next', '次の記事 →'));
       var all = el('a', 'all', '記事の一覧へ'); all.href = '/note/'; pager.appendChild(all);
     }
+    // あわせて読みたい（note へ）— 同じタグが多い順、同点なら日付が近い順に3本
+    var me = i >= 0 ? POSTS[i] : null;
+    if (me && pager) {
+      var mine = me.tags || [], t0 = Date.parse(me.date) || 0;
+      var picks = POSTS.filter(function (p) { return p.slug !== me.slug && p.noteUrl; })
+        .map(function (p) {
+          var shared = (p.tags || []).filter(function (t) { return mine.indexOf(t) >= 0; }).length;
+          return { p: p, score: shared * 1e12 - Math.abs((Date.parse(p.date) || 0) - t0) };
+        })
+        .sort(function (x, y) { return y.score - x.score; }).slice(0, 3);
+      if (picks.length) {
+        var sec = el('section', 'nb-more'); sec.setAttribute('aria-labelledby', 'nb-more-h');
+        var h = el('h2', null, 'あわせて読みたい'); h.id = 'nb-more-h'; sec.appendChild(h);
+        sec.appendChild(el('p', 'nb-more-lead', 'NingentteWinner の note から'));
+        var grid = el('div', 'nb-more-grid');
+        picks.forEach(function (x) {
+          var p = x.p, a = el('a', 'nb-more-card'); a.href = p.noteUrl; a.target = '_blank'; a.rel = 'noopener';
+          if (p.cover) { var im = el('img'); im.src = p.cover; im.alt = ''; im.loading = 'lazy'; a.appendChild(im); }
+          else a.appendChild(el('span', 'nb-more-noimg', '✒'));
+          var tx = el('span', 'nb-more-tx');
+          tx.appendChild(el('time', null, fmt(p.date)));
+          tx.appendChild(el('b', null, p.title));
+          tx.appendChild(el('span', 'nb-more-go', 'note で読む ↗'));
+          a.appendChild(tx); grid.appendChild(a);
+        });
+        sec.appendChild(grid);
+        if (CONF.profileUrl) {
+          var cta = el('div', 'nb-follow');
+          cta.appendChild(el('p', null, 'ほかの記事や新しい投稿は、note でどうぞ。スキ・フォローもうれしいです。'));
+          var fa = el('a', 'nb-btn primary', 'NingentteWinner の note を見る ↗'); fa.href = CONF.profileUrl; fa.target = '_blank'; fa.rel = 'noopener';
+          cta.appendChild(fa); sec.appendChild(cta);
+        }
+        pager.parentNode.insertBefore(sec, pager);
+      }
+    }
     // note の元記事
-    var me = i >= 0 ? POSTS[i] : null, origin = $('.nb-origin');
+    var origin = $('.nb-origin');
     if (origin) {
       if (me && me.noteUrl) { var oa = $('a', origin); oa.href = me.noteUrl; } else origin.hidden = true;
     }
