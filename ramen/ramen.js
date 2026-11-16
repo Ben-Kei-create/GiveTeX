@@ -15,7 +15,7 @@
     ['ぜんぶ'].concat(tags).forEach(function (tg, i) { var b = el('button', null, tg); b.type = 'button'; b.setAttribute('aria-pressed', i ? 'false' : 'true');
       b.addEventListener('click', function () { Array.prototype.forEach.call(bar.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
         Array.prototype.forEach.call(box.querySelectorAll('.ticket'), function (t) { t.hidden = i && t.getAttribute('data-tag') !== tg; }); }); bar.appendChild(b); });
-    box.parentNode.insertBefore(bar, box);
+    var mainEl = box.parentNode; mainEl.parentNode.insertBefore(bar, mainEl); // main の外に置く（箸や麺より手前に出すため）
   }
   if (!P.length) {
     var t = el('article', 'ticket empty'); var h = el('div', 'head'); h.appendChild(el('b', null, '食券')); h.appendChild(el('span', null, 'No.0000')); t.appendChild(h);

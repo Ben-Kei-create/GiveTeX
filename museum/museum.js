@@ -51,16 +51,27 @@
   /* ---------- 所蔵品（毎日9点を入れかえ） ---------- */
   var C = window.MUSEUM_COLLECTION || [], cw = document.getElementById('coll-wall');
   if (cw && C.length) {
-    var day = Math.floor((Date.now() + 9 * 3600e3) / 864e5), seed = day * 9301 + 49297, pick = [], used = {};
-    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-    while (pick.length < Math.min(9, C.length)) { var k = Math.floor(rnd() * C.length); if (!used[k]) { used[k] = 1; pick.push(C[k]); } }
-    pick.forEach(function (c, i) {
-      var art = el('article', 'piece'), a = el('a', 'mu-coll-link'); a.href = c.href;
-      var im = el('img'); im.src = c.img; im.alt = c.t; im.loading = 'lazy'; im.decoding = 'async'; im.style.aspectRatio = c.ratio; im.style.objectFit = 'cover'; im.style.width = '100%';
-      a.appendChild(frame([im])); art.appendChild(a);
-      var pl = el('div', 'plaque'); pl.appendChild(el('b', null, c.t)); pl.appendChild(el('span', null, c.s));
-      pl.appendChild(el('time', null, 'No.' + String(i + 1).padStart(2, '0') + '　本日の展示')); art.appendChild(pl);
-      cw.appendChild(art); if (io) io.observe(art); else art.classList.add('in');
-    });
+    var day = Math.floor((Date.now() + 9 * 3600e3) / 864e5), round = 0;
+    var show = function () {
+      var seed = (day + round * 7919) * 9301 + 49297, pick = [], used = {};
+      function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+      while (pick.length < Math.min(9, C.length)) { var k = Math.floor(rnd() * C.length); if (!used[k]) { used[k] = 1; pick.push(C[k]); } }
+      cw.innerHTML = '';
+      pick.forEach(function (c, i) {
+        var art = el('article', 'piece'), a = el('a', 'mu-coll-link'); a.href = c.href;
+        var im = el('img'); im.src = c.img; im.alt = c.t; im.loading = 'lazy'; im.decoding = 'async'; im.style.aspectRatio = c.ratio; im.style.objectFit = 'cover'; im.style.width = '100%';
+        a.appendChild(frame([im])); art.appendChild(a);
+        var pl = el('div', 'plaque'); pl.appendChild(el('b', null, c.t)); pl.appendChild(el('span', null, c.s));
+        pl.appendChild(el('time', null, 'No.' + String(i + 1).padStart(2, '0') + (round ? '　かけかえ ' + round + ' 回目' : '　本日の展示'))); art.appendChild(pl);
+        cw.appendChild(art); if (io) io.observe(art); else art.classList.add('in');
+      });
+    };
+    show();
+    /* 「かけかえる」：別の9点に入れかえる（ページを開きなおすと、本日の展示にもどる） */
+    var more = el('p', 'mu-coll-more'), mb = el('button', null, '作品をかけかえる（全 ' + C.length + ' 点）'); mb.type = 'button';
+    mb.addEventListener('click', function () { round++; show(); document.getElementById('coll').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); try { if (window.gtag) gtag('event', 'museum_rehang'); } catch (e) {} });
+    more.appendChild(mb); cw.parentNode.appendChild(more);
+    /* 来館の記録がまだないあいだは、所蔵品を先に見せる（「準備中」の額が最初に来ないように） */
+    if (!P.length) { var sec = document.getElementById('coll'), wrap = sec.parentNode; wrap.insertBefore(sec, wrap.firstChild); sec.classList.add('first'); }
   }
 })();

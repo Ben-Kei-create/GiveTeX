@@ -32,8 +32,8 @@ for cat, books in D['books'].items():
                          'bookFormat': 'https://schema.org/EBook', 'inLanguage': 'ja', 'image': 'https://www.givetex.org' + img, 'url': f'https://www.givetex.org/books/{a}.html',
                          'genre': CATN[cat], 'description': s, 'isPartOf': {'@type': 'BookSeries', 'name': '30秒で読む（ドパ読！）'}, 'sameAs': amz}, ensure_ascii=False)
         nav = ''
-        if prev_b: nav += f'<a class="bk-nav prev" href="/books/{prev_b[0]}.html">‹ {E(prev_b[1])}</a>'
-        if next_b: nav += f'<a class="bk-nav next" href="/books/{next_b[0]}.html">{E(next_b[1])} ›</a>'
+        if prev_b: nav += f'<a class="bk-nav prev" href="/books/{prev_b[0]}.html"><small>‹ 前の本</small>{E(prev_b[1])}</a>'
+        if next_b: nav += f'<a class="bk-nav next" href="/books/{next_b[0]}.html"><small>次の本 ›</small>{E(next_b[1])}</a>'
         doc = f'''{head_common}<title>{E(t)} | ドパ読！ | GiveTex</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="https://www.givetex.org/books/{a}.html">
