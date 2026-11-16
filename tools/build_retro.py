@@ -150,6 +150,10 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-16', tag='ゲーム', title='CPU と遊べるボードゲームを9種つくった',
+      body='<p><a href="/game/board/">ゲームブースのボードゲームの部屋</a>に、CPU とたいせんできるゲームを9種類置きました。</p><ul class="r-list"><li>日本：将棋（持ち駒・成り・二歩・打ち歩詰めもちゃんと判定）、囲碁（9路盤）、麻雀（CPU と2人打ち）、五目ならべ</li><li>世界：チェス、リバーシ、四目ならべ、チェッカー、マンカラ</li></ul><p>CPU の強さは3段階。将棋とチェスは、決まった手の数を正しく数えられるかで、ルールの作りを確かめました。</p>'),
+ dict(date='2026-11-16', tag='サイト', title='クリック音と、お助けツール',
+      body='<p>90年代風のページで、さわると昔のマウスみたいな「カチッ」という音が鳴るようにしました（右上でオン・オフ）。ホームには、右下に「▲TOP」、左下に「お助けツール」（手書きメモと電卓）も。</p>'),
  dict(date='2026-11-16', tag='サイト', title='昔のホームページっぽい機能を、どーんと追加',
       body='<p>90年代〜2000年代の個人ホームページにあったものを、いろいろ入れました。</p><ul class="r-list"><li><a href="/guestbook/">ゲストブック</a>（足あと帳）、<a href="/links/">リンク集</a>（88×31 のバナー）、<a href="/sitemap/">サイトマップ</a></li><li>本物のアクセスカウンター（今日・昨日の人数、キリ番をふんだら名前をのこせる）</li><li>右のメニューに、ゲームコーナー（ブロックおとし・うちゅうげきたい・クレーンゲーム・メダルゲーム風じゃんけん）、BGM、今日のおみくじ、Web拍手</li><li>ホームの起動画面には、こっそり起動音も</li></ul><p>ほかに、<a href="/books/">ドパ読！</a>の本1冊ずつのページ、新しい記事2本、アプリのページに開発日記が出るようにもしました。どこかに<b>隠しコマンド</b>もあります……。</p>'),
  dict(date='2022-09-01', when='2022年9月', tag='学習', title='Web と Java の勉強をはじめた',
@@ -326,6 +330,13 @@ NEW_ENTRIES = [
 ]
 have = {(d['date'], d['title']) for d in DIARY}
 DIARY = [n for n in NEW_ENTRIES if (n['date'], n['title']) not in have] + DIARY
+# GitHub の記録（tools/github_diary.json。リポジトリをつくりはじめた月ごと）
+try:
+    _gh = json.loads((pathlib.Path(__file__).parent / 'github_diary.json').read_text(encoding='utf-8'))
+    have = {(d['date'], d['title']) for d in DIARY}
+    DIARY += [g for g in _gh if (g['date'], g['title']) not in have]
+except FileNotFoundError:
+    pass
 DIARY.sort(key=lambda d: d['date'], reverse=True)  # 新しい順（同じ日は書いた順）
 
 def photos_html(ps):
@@ -362,6 +373,9 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-16', '<a href="/game/board/">ゲームブース</a>に、CPU と遊べるボードゲーム9種！ 将棋・囲碁・麻雀・チェス・リバーシ・マンカラなど', True),
+        ('2026-11-16', 'ホームに<b>お助けツール</b>（手書きメモ・電卓）と、なつかしい<b>クリック音</b>（右上で ON／OFF）', True),
+        ('2026-11-16', '<a href="/diary/">開発日記</a>に GitHub の記録（2022年〜）を追加', True),
         ('2026-11-16', '<a href="/guestbook/">ゲストブック</a>・<a href="/links/">リンク集</a>・<a href="/sitemap/">サイトマップ</a>をつくりました！ 足あと残してね', True),
         ('2026-11-16', '右のメニューに<b>ゲームコーナー</b>（じゃんけんはメダルゲーム風）・<b>BGM</b>・<b>おみくじ</b>・<b>Web拍手</b>', True),
         ('2026-11-16', 'カウンターが本物に！ 今日・昨日の人数と、<b>キリ番</b>をふんだ人の名前がのこります', True),
@@ -369,9 +383,6 @@ def build_index():
         ('2026-11-16', '新しい記事「<a href="/articles/ai-team-app-development.html">AIと分業してiPhoneアプリをつくる方法</a>」「<a href="/articles/ai-book-illustration-rules.html">AIで本の挿絵をつくる5つのルール</a>」', True),
         ('2026-11-16', 'ホームに起動画面／スマホの各ブースにメニューボタン／<a href="/diary/">開発日記</a>に2022年からの歩み（{}件）'.format(len(DIARY)), False),
         ('2026-11-15', '<a href="/movie/">映画ブース</a>に話題の映画と、匿名の感想ノート「みんなの C-Log」／<a href="/contact/">お問い合わせフォーム</a>', False),
-        ('2026-11-15', '<a href="/game/">ゲームブース</a>に unityroom のゲーム6本！ イチオシは「umbrella lovers」', False),
-        ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>、スタンプ・note ブースを開設', False),
-        ('2026-11-15', 'Kindle本「<a href="/books/">ドパ読！</a>」{}冊を書庫に／オカルトブース「<a href="/doron/">どろん</a>」オープン'.format(TOTAL), False),
     ]
     N_NOTE = sum(1 for p in js_json('note/posts.js', 'NOTE_POSTS') if p.get('noteUrl'))
     N_TALES = len(re.findall(r'"url": "https://tales\.note\.com/[^"]*/episodes/', (R / 'note/posts.js').read_text()))

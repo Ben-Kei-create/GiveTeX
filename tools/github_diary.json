@@ -1,0 +1,198 @@
+[
+ {
+  "date": "2022-09-04",
+  "when": "2022年9月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2022年9月）：HTML-practice・carvan・git-practiceほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（14個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/HTML-practice\" target=\"_blank\" rel=\"noopener\">HTML-practice</a>：HTML・CSS・JavaScript の練習帳（このあと半年以上つづく）</li><li><a href=\"https://github.com/Ben-Kei-create/carvan\" target=\"_blank\" rel=\"noopener\">carvan</a>：HTML・CSS の練習ページ</li><li><a href=\"https://github.com/Ben-Kei-create/git-practice\" target=\"_blank\" rel=\"noopener\">git-practice</a>：Git の練習</li><li><a href=\"https://github.com/Ben-Kei-create/Bookers\" target=\"_blank\" rel=\"noopener\">Bookers</a>：本の感想を投稿する Rails アプリ「Bookers」</li><li><a href=\"https://github.com/Ben-Kei-create/Ruby\" target=\"_blank\" rel=\"noopener\">Ruby</a>：Ruby の基本の練習</li><li><a href=\"https://github.com/Ben-Kei-create/Assignment-1-1\" target=\"_blank\" rel=\"noopener\">Assignment-1-1</a>：Rails の練習課題</li><li><a href=\"https://github.com/Ben-Kei-create/Assignment-1-2\" target=\"_blank\" rel=\"noopener\">Assignment-1-2</a>：Rails の練習課題（つづき）</li><li><a href=\"https://github.com/Ben-Kei-create/Rails\" target=\"_blank\" rel=\"noopener\">Rails</a>：Rails のはじめの一歩</li><li><a href=\"https://github.com/Ben-Kei-create/sample_app\" target=\"_blank\" rel=\"noopener\">sample_app</a>：Rails のサンプルアプリ</li><li><a href=\"https://github.com/Ben-Kei-create/bookers1\" target=\"_blank\" rel=\"noopener\">bookers1</a>：Bookers をもう一度つくりなおし</li><li><a href=\"https://github.com/Ben-Kei-create/study-Ruby1-2\" target=\"_blank\" rel=\"noopener\">study-Ruby1-2</a>：Ruby の練習（つづき）</li><li><a href=\"https://github.com/Ben-Kei-create/bookers1-2\" target=\"_blank\" rel=\"noopener\">bookers1-2</a>：Bookers の改良版</li><li><a href=\"https://github.com/Ben-Kei-create/Bookers2-1\" target=\"_blank\" rel=\"noopener\">Bookers2-1</a>：ユーザー機能つきの Bookers2</li><li><a href=\"https://github.com/Ben-Kei-create/Meshiterro\" target=\"_blank\" rel=\"noopener\">Meshiterro</a>：料理写真を投稿する Rails アプリ「Meshiterro」</li></ul>"
+ },
+ {
+  "date": "2022-10-10",
+  "when": "2022年10月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2022年10月）：bookers2-2・solid-quickstart",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/bookers2-2\" target=\"_blank\" rel=\"noopener\">bookers2-2</a>：Bookers2 の仕上げ（半年かけて手直し）</li><li><a href=\"https://github.com/Ben-Kei-create/solid-quickstart\" target=\"_blank\" rel=\"noopener\">solid-quickstart</a>：SolidJS をさわってみた</li></ul>"
+ },
+ {
+  "date": "2022-11-13",
+  "when": "2022年11月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2022年11月）：nagano_cake",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/nagano_cake\" target=\"_blank\" rel=\"noopener\">nagano_cake</a>：ケーキ屋さんの通販サイト（チームでつくる EC サイト）</li></ul>"
+ },
+ {
+  "date": "2022-12-25",
+  "when": "2022年12月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2022年12月）：C-Log（CINEMA-LOG）",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/C-Log\" target=\"_blank\" rel=\"noopener\">C-Log</a>：映画レビューサイト「C-Log（CINEMA-LOG）」。95回コミットした、はじめての本格作品</li></ul>"
+ },
+ {
+  "date": "2023-04-13",
+  "when": "2023年4月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2023年4月）：awesome_events",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/awesome_events\" target=\"_blank\" rel=\"noopener\">awesome_events</a>：イベント告知サイトを Rails で</li></ul>"
+ },
+ {
+  "date": "2023-05-24",
+  "when": "2023年5月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2023年5月）：gunma.github.io",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/gunma.github.io\" target=\"_blank\" rel=\"noopener\">gunma.github.io</a>：GitHub Pages で群馬のページ</li></ul>"
+ },
+ {
+  "date": "2024-03-24",
+  "when": "2024年3月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2024年3月）：music-player",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/music-player\" target=\"_blank\" rel=\"noopener\">music-player</a>：HTML の音楽プレイヤー</li></ul>"
+ },
+ {
+  "date": "2024-09-29",
+  "when": "2024年9月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2024年9月）：fly-bird・しぶやのかいだん・くりっくするだけ",
+  "body": "<p>この月に GitHub でつくりはじめたもの（3個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/fly-bird\" target=\"_blank\" rel=\"noopener\">fly-bird</a>：Unity で鳥をとばすゲーム</li><li><a href=\"https://github.com/Ben-Kei-create/shibuya-stairs\" target=\"_blank\" rel=\"noopener\">shibuya-stairs</a>：Unity「しぶやのかいだん」</li><li><a href=\"https://github.com/Ben-Kei-create/youtube-sub-clicker\" target=\"_blank\" rel=\"noopener\">youtube-sub-clicker</a>：クリックで登録者がふえるゲーム（unityroom「くりっくするだけ」）</li></ul>"
+ },
+ {
+  "date": "2024-10-02",
+  "when": "2024年10月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2024年10月）：KdpImg_1・ballune paddle・html-studyほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（7個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/KdpImg_1\" target=\"_blank\" rel=\"noopener\">KdpImg_1</a>：Kindle 本の画像づくりの実験</li><li><a href=\"https://github.com/Ben-Kei-create/ballune-paddle-game\" target=\"_blank\" rel=\"noopener\">ballune-paddle-game</a>：Unity「ballune paddle」</li><li><a href=\"https://github.com/Ben-Kei-create/html-study\" target=\"_blank\" rel=\"noopener\">html-study</a>：HTML の勉強</li><li><a href=\"https://github.com/Ben-Kei-create/2d-shooting-game\" target=\"_blank\" rel=\"noopener\">2d-shooting-game</a>：Unity の2Dシューティング</li><li><a href=\"https://github.com/Ben-Kei-create/javaScript-study\" target=\"_blank\" rel=\"noopener\">javaScript-study</a>：JavaScript の勉強（1年ほどつづく）</li><li><a href=\"https://github.com/Ben-Kei-create/java-study\" target=\"_blank\" rel=\"noopener\">java-study</a>：Java の勉強ノート（1年ほどつづく）</li><li><a href=\"https://github.com/Ben-Kei-create/CSharp_study\" target=\"_blank\" rel=\"noopener\">CSharp_study</a>：C# の勉強</li></ul>"
+ },
+ {
+  "date": "2024-11-02",
+  "when": "2024年11月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2024年11月）：3d-golf-game・accumulation_game",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/3d-golf-game\" target=\"_blank\" rel=\"noopener\">3d-golf-game</a>：Unity の3Dゴルフ</li><li><a href=\"https://github.com/Ben-Kei-create/accumulation_game\" target=\"_blank\" rel=\"noopener\">accumulation_game</a>：Unity「accumulation_game」</li></ul>"
+ },
+ {
+  "date": "2025-03-17",
+  "when": "2025年3月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年3月）：teacherShareSkills・teachingSharePoint",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/teacherShareSkills\" target=\"_blank\" rel=\"noopener\">teacherShareSkills</a>：先生どうしでスキルを共有するツールの構想</li><li><a href=\"https://github.com/Ben-Kei-create/teachingSharePoint\" target=\"_blank\" rel=\"noopener\">teachingSharePoint</a>：教師向けの共有ツール（Java）</li></ul>"
+ },
+ {
+  "date": "2025-04-20",
+  "when": "2025年4月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年4月）：umbrella lovers",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/umbrella_lovers\" target=\"_blank\" rel=\"noopener\">umbrella_lovers</a>：unity1week 参加作「umbrella lovers」</li></ul>"
+ },
+ {
+  "date": "2025-06-06",
+  "when": "2025年6月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年6月）：game",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/game\" target=\"_blank\" rel=\"noopener\">game</a>：ゲームの試作</li></ul>"
+ },
+ {
+  "date": "2025-07-06",
+  "when": "2025年7月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年7月）：Myblog・ainikki・Millほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（5個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/Myblog\" target=\"_blank\" rel=\"noopener\">Myblog</a>：PHP でブログ</li><li><a href=\"https://github.com/Ben-Kei-create/ainikki\" target=\"_blank\" rel=\"noopener\">ainikki</a>：PHP の AI 日記の試作</li><li><a href=\"https://github.com/Ben-Kei-create/Mill\" target=\"_blank\" rel=\"noopener\">Mill</a>：Swift のはじめての試作</li><li><a href=\"https://github.com/Ben-Kei-create/CalculateSales\" target=\"_blank\" rel=\"noopener\">CalculateSales</a>：Java の売上集計プログラム</li><li><a href=\"https://github.com/Ben-Kei-create/updateForum\" target=\"_blank\" rel=\"noopener\">updateForum</a>：Java の掲示板アプリ</li></ul>"
+ },
+ {
+  "date": "2025-08-07",
+  "when": "2025年8月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年8月）：エンドロールからの脱出・Guunn・pixcel_quest_academiaほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（12個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/Escape-from-the-End-Credits\" target=\"_blank\" rel=\"noopener\">Escape-from-the-End-Credits</a>：「エンドロールからの脱出」ゲームの試作</li><li><a href=\"https://github.com/Ben-Kei-create/Guunn\" target=\"_blank\" rel=\"noopener\">Guunn</a>：Unity のガンアクションの試作</li><li><a href=\"https://github.com/Ben-Kei-create/pixcel_quest_academia\" target=\"_blank\" rel=\"noopener\">pixcel_quest_academia</a>：Unity のドット絵 RPG の試作</li><li><a href=\"https://github.com/Ben-Kei-create/PythonStudy\" target=\"_blank\" rel=\"noopener\">PythonStudy</a>：Python の勉強</li><li><a href=\"https://github.com/Ben-Kei-create/sqlStudy\" target=\"_blank\" rel=\"noopener\">sqlStudy</a>：SQL の勉強</li><li><a href=\"https://github.com/Ben-Kei-create/C-study\" target=\"_blank\" rel=\"noopener\">C-study</a>：C# の勉強（つづき）</li><li><a href=\"https://github.com/Ben-Kei-create/Physics-site-article-creation\" target=\"_blank\" rel=\"noopener\">Physics-site-article-creation</a>：物理サイトの記事づくり</li><li><a href=\"https://github.com/Ben-Kei-create/altuber\" target=\"_blank\" rel=\"noopener\">altuber</a>：AI が配信でしゃべる AITuber</li><li><a href=\"https://github.com/Ben-Kei-create/short-news-edu-automation\" target=\"_blank\" rel=\"noopener\">short-news-edu-automation</a>：ニュースから教育ショート動画を自動でつくる仕組み</li><li><a href=\"https://github.com/Ben-Kei-create/ClassroomAI\" target=\"_blank\" rel=\"noopener\">ClassroomAI</a>：教室で使う AI アプリの試作</li><li><a href=\"https://github.com/Ben-Kei-create/oni-tan-app-info\" target=\"_blank\" rel=\"noopener\">oni-tan-app-info</a>：OniTan の紹介ページ</li><li><a href=\"https://github.com/Ben-Kei-create/TeachClear\" target=\"_blank\" rel=\"noopener\">TeachClear</a>：授業を手伝うアプリの試作</li></ul>"
+ },
+ {
+  "date": "2025-11-02",
+  "when": "2025年11月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年11月）：MakeShorts・MakeShorts_Zap1",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/MakeShorts\" target=\"_blank\" rel=\"noopener\">MakeShorts</a>：偉人シリーズのショート動画を自動生成</li><li><a href=\"https://github.com/Ben-Kei-create/MakeShorts_Zap1\" target=\"_blank\" rel=\"noopener\">MakeShorts_Zap1</a>：ショート動画づくりの自動化の実験</li></ul>"
+ },
+ {
+  "date": "2025-12-16",
+  "when": "2025年12月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2025年12月）：idoleCards",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/idoleCards\" target=\"_blank\" rel=\"noopener\">idoleCards</a>：架空アイドルのカードアプリ</li></ul>"
+ },
+ {
+  "date": "2026-01-02",
+  "when": "2026年1月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年1月）：積み立てNISAN・GunmaEscape・OniTan",
+  "body": "<p>この月に GitHub でつくりはじめたもの（3個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/tumitatenisa\" target=\"_blank\" rel=\"noopener\">tumitatenisa</a>：AI に全部つくらせる落ち物ゲーム「積み立てNISAN」</li><li><a href=\"https://github.com/Ben-Kei-create/GunmaEscape\" target=\"_blank\" rel=\"noopener\">GunmaEscape</a>：群馬県からの脱出（React＋Phaser 版）</li><li><a href=\"https://github.com/Ben-Kei-create/OniTan\" target=\"_blank\" rel=\"noopener\">OniTan</a>：漢検準一級アプリ「OniTan」。242回コミット</li></ul>"
+ },
+ {
+  "date": "2026-02-04",
+  "when": "2026年2月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年2月）：beer_Server・beer_Server_Sift・jumponほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（13個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/beer_Server\" target=\"_blank\" rel=\"noopener\">beer_Server</a>：ビール雑学クイズ</li><li><a href=\"https://github.com/Ben-Kei-create/beer_Server_Sift\" target=\"_blank\" rel=\"noopener\">beer_Server_Sift</a>：ビール雑学クイズ（SwiftUI 版）</li><li><a href=\"https://github.com/Ben-Kei-create/jumpon\" target=\"_blank\" rel=\"noopener\">jumpon</a>：ジャンプアクションの試作</li><li><a href=\"https://github.com/Ben-Kei-create/Project-FUTTO\" target=\"_blank\" rel=\"noopener\">Project-FUTTO</a>：Swift の試作「FUTTO」</li><li><a href=\"https://github.com/Ben-Kei-create/MathGraphLab\" target=\"_blank\" rel=\"noopener\">MathGraphLab</a>：数学のグラフを動かして学ぶアプリ</li><li><a href=\"https://github.com/Ben-Kei-create/MathGraphLab2\" target=\"_blank\" rel=\"noopener\">MathGraphLab2</a>：MathGraphLab の作り直し</li><li><a href=\"https://github.com/Ben-Kei-create/soloMeet\" target=\"_blank\" rel=\"noopener\">soloMeet</a>：自分との作戦会議アプリ「ソロ会議」</li><li><a href=\"https://github.com/Ben-Kei-create/uzaoCalculator\" target=\"_blank\" rel=\"noopener\">uzaoCalculator</a>：計算機アプリ「UzaCal」の試作</li><li><a href=\"https://github.com/Ben-Kei-create/NeoOthello\" target=\"_blank\" rel=\"noopener\">NeoOthello</a>：オセロ風ゲームの試作</li><li><a href=\"https://github.com/Ben-Kei-create/jumponVer2\" target=\"_blank\" rel=\"noopener\">jumponVer2</a>：ジャンプアクション Ver.2</li><li><a href=\"https://github.com/Ben-Kei-create/BookFlow\" target=\"_blank\" rel=\"noopener\">BookFlow</a>：読書記録アプリの試作</li><li><a href=\"https://github.com/Ben-Kei-create/MathGraphLabVer2.0\" target=\"_blank\" rel=\"noopener\">MathGraphLabVer2.0</a>：MathGraphLab Ver.2.0</li><li><a href=\"https://github.com/Ben-Kei-create/GUNMABOND\" target=\"_blank\" rel=\"noopener\">GUNMABOND</a>：Flutter で群馬のアプリ</li></ul>"
+ },
+ {
+  "date": "2026-03-08",
+  "when": "2026年3月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年3月）：SenseiBase・Cocktail-Notes・rikarikastudyほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（9個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/SenseiBase\" target=\"_blank\" rel=\"noopener\">SenseiBase</a>：先生向けサイトの試作（Next.js）</li><li><a href=\"https://github.com/Ben-Kei-create/Cocktail-Notes\" target=\"_blank\" rel=\"noopener\">Cocktail-Notes</a>：カクテルのメモ帳</li><li><a href=\"https://github.com/Ben-Kei-create/rikarikastudy\" target=\"_blank\" rel=\"noopener\">rikarikastudy</a>：中学理科の一問一答サイト。のちのドパリカ！のもと</li><li><a href=\"https://github.com/Ben-Kei-create/Mumumu\" target=\"_blank\" rel=\"noopener\">Mumumu</a>：Next.js の試作</li><li><a href=\"https://github.com/Ben-Kei-create/ButuButu\" target=\"_blank\" rel=\"noopener\">ButuButu</a>：高校物理の学習サイトの土台</li><li><a href=\"https://github.com/Ben-Kei-create/7-77\" target=\"_blank\" rel=\"noopener\">7-77</a>：数字だけでつながる SNS の試作「7:77」</li><li><a href=\"https://github.com/Ben-Kei-create/ButugiriButuri\" target=\"_blank\" rel=\"noopener\">ButugiriButuri</a>：教科書みたいに読める物理学サイト</li><li><a href=\"https://github.com/Ben-Kei-create/GunmaEscapeVer2\" target=\"_blank\" rel=\"noopener\">GunmaEscapeVer2</a>：ピクセルアート RPG「群馬県からの脱出」</li><li><a href=\"https://github.com/Ben-Kei-create/GiveTeX\" target=\"_blank\" rel=\"noopener\">GiveTeX</a>：このサイト GiveTex</li></ul>"
+ },
+ {
+  "date": "2026-04-05",
+  "when": "2026年4月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年4月）：study-LLLM・TaxSuite・javastaほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（11個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/study-LLLM\" target=\"_blank\" rel=\"noopener\">study-LLLM</a>：LLM の勉強</li><li><a href=\"https://github.com/Ben-Kei-create/TaxSuite\" target=\"_blank\" rel=\"noopener\">TaxSuite</a>：税金の試算ツール</li><li><a href=\"https://github.com/Ben-Kei-create/javasta\" target=\"_blank\" rel=\"noopener\">javasta</a>：Java の学習アプリ「javasta」</li><li><a href=\"https://github.com/Ben-Kei-create/LinaTeX\" target=\"_blank\" rel=\"noopener\">LinaTeX</a>：Linux コマンド学習アプリ「LinaTeX」</li><li><a href=\"https://github.com/Ben-Kei-create/OhClock\" target=\"_blank\" rel=\"noopener\">OhClock</a>：時間の単位を変えられる時計アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/redsheet\" target=\"_blank\" rel=\"noopener\">redsheet</a>：赤シート暗記アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/janmori\" target=\"_blank\" rel=\"noopener\">janmori</a>：麻雀の練習アプリの試作</li><li><a href=\"https://github.com/Ben-Kei-create/GitSTAR\" target=\"_blank\" rel=\"noopener\">GitSTAR</a>：Git を学ぶアプリ</li><li><a href=\"https://github.com/Ben-Kei-create/Eureka-s-Love\" target=\"_blank\" rel=\"noopener\">Eureka-s-Love</a>：ノベルゲームの試作</li><li><a href=\"https://github.com/Ben-Kei-create/Electromagnetism-for-High-School-Students\" target=\"_blank\" rel=\"noopener\">Electromagnetism-for-High-School-Students</a>：高校生のための電磁気アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/mathprocess\" target=\"_blank\" rel=\"noopener\">mathprocess</a>：中学数学アプリ「解け√ルート」</li></ul>"
+ },
+ {
+  "date": "2026-05-08",
+  "when": "2026年5月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年5月）：Git_Study・bookmark・MARUBATUほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（7個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/Git_Study\" target=\"_blank\" rel=\"noopener\">Git_Study</a>：Git の勉強</li><li><a href=\"https://github.com/Ben-Kei-create/bookmark\" target=\"_blank\" rel=\"noopener\">bookmark</a>：ブックマーク管理の iPhone アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/MARUBATU\" target=\"_blank\" rel=\"noopener\">MARUBATU</a>：○×クイズアプリ</li><li><a href=\"https://github.com/Ben-Kei-create/psqlsta\" target=\"_blank\" rel=\"noopener\">psqlsta</a>：PostgreSQL の学習アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/todayRakugo\" target=\"_blank\" rel=\"noopener\">todayRakugo</a>：今日の落語アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/springsta\" target=\"_blank\" rel=\"noopener\">springsta</a>：Spring の学習アプリ「springsta」</li><li><a href=\"https://github.com/Ben-Kei-create/PokePhysics\" target=\"_blank\" rel=\"noopener\">PokePhysics</a>：物理パズルアプリ「PokePhysics」</li></ul>"
+ },
+ {
+  "date": "2026-06-04",
+  "when": "2026年6月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年6月）：TERRA・pythonsta・よむエモほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（4個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/changetheworld\" target=\"_blank\" rel=\"noopener\">changetheworld</a>：6人の物語を生きるパズル「TERRA」（Mac）</li><li><a href=\"https://github.com/Ben-Kei-create/pythonsta\" target=\"_blank\" rel=\"noopener\">pythonsta</a>：Python の学習アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/emoyomi\" target=\"_blank\" rel=\"noopener\">emoyomi</a>：読書アプリ「よむエモ」</li><li><a href=\"https://github.com/Ben-Kei-create/zayping\" target=\"_blank\" rel=\"noopener\">zayping</a>：タイピングアプリ「Zayping」</li></ul>"
+ },
+ {
+  "date": "2026-07-21",
+  "when": "2026年7月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年7月）：moneytimes・Poco",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/moneytimes\" target=\"_blank\" rel=\"noopener\">moneytimes</a>：Wonderloom の展開を管理するダッシュボード</li><li><a href=\"https://github.com/Ben-Kei-create/Pocket\" target=\"_blank\" rel=\"noopener\">Pocket</a>：感想をフキダシで届けるアプリ「Poco」</li></ul>"
+ },
+ {
+  "date": "2026-08-12",
+  "when": "2026年8月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年8月）：Luze・FUMIBRO",
+  "body": "<p>この月に GitHub でつくりはじめたもの（2個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/luze\" target=\"_blank\" rel=\"noopener\">luze</a>：個人事業主の経理準備アプリ「Luze」（Mac）</li><li><a href=\"https://github.com/Ben-Kei-create/fumibro\" target=\"_blank\" rel=\"noopener\">fumibro</a>：作品をまとめるサイト「FUMIBRO」</li></ul>"
+ },
+ {
+  "date": "2026-09-04",
+  "when": "2026年9月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年9月）：makebook",
+  "body": "<p>この月に GitHub でつくりはじめたもの（1個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/makebook\" target=\"_blank\" rel=\"noopener\">makebook</a>：電子書籍（EPUB）を自動で組み立てるツール</li></ul>"
+ },
+ {
+  "date": "2026-10-05",
+  "when": "2026年10月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年10月）：justtodo・awssyudy・reactionEquationほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（9個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/justtodo\" target=\"_blank\" rel=\"noopener\">justtodo</a>：シンプルな ToDo アプリ</li><li><a href=\"https://github.com/Ben-Kei-create/awssyudy\" target=\"_blank\" rel=\"noopener\">awssyudy</a>：AWS の2択クイズ</li><li><a href=\"https://github.com/Ben-Kei-create/reactionEquation\" target=\"_blank\" rel=\"noopener\">reactionEquation</a>：化学反応式のアプリの試作</li><li><a href=\"https://github.com/Ben-Kei-create/toireshelter\" target=\"_blank\" rel=\"noopener\">toireshelter</a>：ユニットバスから脱出する3Dゲーム「Toiret」（Godot）</li><li><a href=\"https://github.com/Ben-Kei-create/rikarikastudy_app\" target=\"_blank\" rel=\"noopener\">rikarikastudy_app</a>：理科クイズアプリ「ドパリカ！」</li><li><a href=\"https://github.com/Ben-Kei-create/heydrum\" target=\"_blank\" rel=\"noopener\">heydrum</a>：「HeyDrum！」</li><li><a href=\"https://github.com/Ben-Kei-create/heydrum-site\" target=\"_blank\" rel=\"noopener\">heydrum-site</a>：HeyDrum！の紹介ページ</li><li><a href=\"https://github.com/Ben-Kei-create/Pageminit\" target=\"_blank\" rel=\"noopener\">Pageminit</a>：電子書籍づくりツール「PageMint」</li><li><a href=\"https://github.com/Ben-Kei-create/toirestory\" target=\"_blank\" rel=\"noopener\">toirestory</a>：巻紙で『走れメロス』を読む「PaperStory」</li></ul>"
+ },
+ {
+  "date": "2026-11-02",
+  "when": "2026年11月",
+  "tag": "GitHub",
+  "title": "GitHub の記録（2026年11月）：awsstudy_saa・MiniGamer・siritoriesほか",
+  "body": "<p>この月に GitHub でつくりはじめたもの（8個）。</p><ul class=\"r-list\"><li><a href=\"https://github.com/Ben-Kei-create/awsstudy_saa\" target=\"_blank\" rel=\"noopener\">awsstudy_saa</a>：AWS SAA の3択クイズ</li><li><a href=\"https://github.com/Ben-Kei-create/minigamer\" target=\"_blank\" rel=\"noopener\">minigamer</a>：ミニゲーム集「MiniGamer」</li><li><a href=\"https://github.com/Ben-Kei-create/siritories\" target=\"_blank\" rel=\"noopener\">siritories</a>：しりとりアプリの試作</li><li><a href=\"https://github.com/Ben-Kei-create/wine_quiz_seller\" target=\"_blank\" rel=\"noopener\">wine_quiz_seller</a>：ワイン雑学クイズ</li><li><a href=\"https://github.com/Ben-Kei-create/sakeQuiz\" target=\"_blank\" rel=\"noopener\">sakeQuiz</a>：日本酒アプリ「蔵ごよみ」</li><li><a href=\"https://github.com/Ben-Kei-create/dev_format\" target=\"_blank\" rel=\"noopener\">dev_format</a>：新しいアプリをつくるときの開発フォーマット集</li><li><a href=\"https://github.com/Ben-Kei-create/rhymegolf\" target=\"_blank\" rel=\"noopener\">rhymegolf</a>：韻でとぶゴルフ「ライムゴルフ」</li><li><a href=\"https://github.com/Ben-Kei-create/AoOniTan\" target=\"_blank\" rel=\"noopener\">AoOniTan</a>：OniTan の新シリーズの準備</li></ul>"
+ }
+]

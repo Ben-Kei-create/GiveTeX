@@ -12,7 +12,7 @@
 <script src="/assets/ga.js" defer></script>
 <meta name="theme-color" content="#120a24">
 <title>ゲームブース | GiveTex</title>
-<meta name="description" content="GiveTex のゲームブース。Apple 以外で作ったゲームと、デジタルゲーム・ボドゲ・マダミス・脱出ゲームのつぶやき。">
+<meta name="description" content="GiveTex のゲームブース。unityroom のゲーム、CPU と遊べるボードゲーム（将棋・囲碁・麻雀・チェス・リバーシなど）、ゲームのつぶやき。">
 <link rel="canonical" href="https://www.givetex.org/game/">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/game/game.css">
@@ -23,7 +23,7 @@
 <script src="/assets/place.js"></script>
 <!-- seo -->
 <meta property="og:title" content="ゲームブース | GiveTex">
-<meta property="og:description" content="GiveTex のゲームブース。Apple 以外で作ったゲームと、デジタルゲーム・ボドゲ・マダミス・脱出ゲームのつぶやき。">
+<meta property="og:description" content="GiveTex のゲームブース。unityroom のゲーム、CPU と遊べるボードゲーム（将棋・囲碁・麻雀・チェス・リバーシなど）、ゲームのつぶやき。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.givetex.org/game/">
 <meta property="og:site_name" content="GiveTex">
@@ -32,7 +32,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ゲームブース | GiveTex">
-<meta name="twitter:description" content="GiveTex のゲームブース。Apple 以外で作ったゲームと、デジタルゲーム・ボドゲ・マダミス・脱出ゲームのつぶやき。">
+<meta name="twitter:description" content="GiveTex のゲームブース。unityroom のゲーム、CPU と遊べるボードゲーム（将棋・囲碁・麻雀・チェス・リバーシなど）、ゲームのつぶやき。">
 <meta name="twitter:image" content="https://www.givetex.org/assets/og/game.jpg">
 <!-- /seo -->
 </head>
@@ -52,8 +52,17 @@
       <h2 id="h1s">STAGE 1<small>つくったゲーム</small></h2>
       <div class="carts" id="carts"></div>
     </section>
+    <section class="stage" id="stage3" aria-labelledby="h3s">
+      <h2 id="h3s">STAGE 2<small>CPU とたいせん（ボードゲーム）</small></h2>
+      <p class="bg-intro">将棋・囲碁・麻雀から、チェス・リバーシ・マンカラまで。CPU と1対1で遊べます。</p>
+      <div class="bg-list">
+        <a href="/game/board/?g=shogi">将棋</a><a href="/game/board/?g=go">囲碁（9路）</a><a href="/game/board/?g=mahjong">麻雀（2人打ち）</a><a href="/game/board/?g=chess">チェス</a><a href="/game/board/?g=reversi">リバーシ</a>
+        <a href="/game/board/?g=gomoku">五目ならべ</a><a href="/game/board/?g=connect4">四目ならべ</a><a href="/game/board/?g=checkers">チェッカー</a><a href="/game/board/?g=mancala">マンカラ</a>
+      </div>
+      <p><a class="start" href="/game/board/">ボードゲームの部屋へ ▶</a></p>
+    </section>
     <section class="stage" id="stage2" aria-labelledby="h2s">
-      <h2 id="h2s">STAGE 2<small>ゲームのつぶやき</small></h2>
+      <h2 id="h2s">STAGE 3<small>ゲームのつぶやき</small></h2>
       <div class="tabs" role="group" aria-label="ジャンル"><button type="button" data-kind="" aria-pressed="true">ぜんぶ</button><button type="button" data-kind="digital" aria-pressed="false">デジタル</button><button type="button" data-kind="boardgame" aria-pressed="false">ボドゲ</button><button type="button" data-kind="madamis" aria-pressed="false">マダミス</button><button type="button" data-kind="escape" aria-pressed="false">脱出</button><button type="button" data-kind="event" aria-pressed="false">イベント</button></div>
       <div class="msgs" id="msgs"></div>
     </section>

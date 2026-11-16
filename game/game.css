@@ -85,3 +85,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;ba
 .ur-all{display:inline-block;margin-top:18px;font:12px/1 var(--px);color:var(--g);text-decoration:none;border:2px solid var(--g);padding:10px 14px;border-radius:4px}
 .ur-all:hover{background:rgba(107,255,122,.12)}
 .cart .pf{display:block;margin:0 0 12px;line-height:1.4}
+/* STAGE 2：ボードゲームへの入口 */
+.bg-intro{color:var(--sub);margin:0 0 10px}
+.bg-list{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.bg-list a{display:inline-block;padding:8px 14px;border:2px solid var(--c);border-radius:6px;color:var(--text);text-decoration:none;background:rgba(62,240,255,.08)}
+.bg-list a:hover{background:rgba(62,240,255,.2)}

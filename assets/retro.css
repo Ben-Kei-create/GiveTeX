@@ -427,3 +427,25 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-tree li::before { content: "📁"; position: absolute; left: 0; font-size: 12px; }
 .r-tree ul li::before { content: "📄"; }
 .r-tree ul { border-left: 1px dotted #808080; margin-left: 6px; }
+/* ---- 右上の音ボタン・右下の TOP・左下のお助けツール ---- */
+.r-fixbtn { position: fixed; z-index: 9000; font: 12px/1 "DotGothic16", sans-serif; color: #000; background: #c0c0c0; border: 0; padding: 7px 10px; cursor: pointer;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf, 2px 2px 0 rgba(0,0,0,.35); }
+.r-fixbtn:active { box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf; }
+.r-snd { top: calc(8px + env(safe-area-inset-top)); right: 8px; }
+.r-snd[aria-pressed="false"] { color: #808080; }
+.r-top { right: 10px; bottom: calc(12px + env(safe-area-inset-bottom)); font-size: 13px; padding: 9px 12px; }
+.r-tools { left: 10px; bottom: calc(12px + env(safe-area-inset-bottom)); font-size: 13px; padding: 9px 12px; }
+.r-toolwin { position: fixed; z-index: 9001; left: 10px; bottom: calc(58px + env(safe-area-inset-bottom)); width: min(420px, calc(100vw - 20px)); margin: 0; }
+.r-toolwin .win-b { padding: 8px; }
+.r-tw-tabs { display: flex; gap: 3px; margin-bottom: 6px; }
+.r-tw-tabs button, .r-tw-row button, .r-calc-keys button { font: 13px/1 "DotGothic16", sans-serif; background: #c0c0c0; border: 0; padding: 8px 10px; cursor: pointer;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
+.r-tw-tabs button[aria-pressed="true"], .r-tw-row button[aria-pressed="true"] { background: #000080; color: #fff; }
+.r-tw-memo canvas { display: block; width: 100%; height: auto; aspect-ratio: 56 / 38; background: #fff; border: 2px inset #808080; cursor: crosshair; }
+.r-tw-row { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+.r-calc-disp { background: #fff; border: 2px inset #808080; font: 26px/1.4 "VT323", monospace; text-align: right; padding: 2px 8px; margin-bottom: 6px; overflow: hidden; }
+.r-calc-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.r-calc-keys button { font-size: 18px; padding: 12px 0; }
+.r-calc-keys .op { color: #d10000; }
+.r-calc-keys .clr { color: #0040d0; }
+@media print { .r-fixbtn, .r-toolwin { display: none; } }

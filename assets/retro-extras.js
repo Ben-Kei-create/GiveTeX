@@ -132,3 +132,89 @@
     if (!said) toast('右クリック禁止！……なんてね。ご自由にどうぞ (^^)');
   });
 })();
+
+/* ===== 昔のマウスのクリック音（さわったとき）・音のオン／オフ・ホームの「TOP」と「お助けツール」 ===== */
+(function () {
+  'use strict';
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  var on = store('gt-click') !== 'off', A = null, noise = null;
+  function ctx() { if (!A) { var C = window.AudioContext || window.webkitAudioContext; if (!C) return null; A = new C(); } if (A.state === 'suspended') A.resume(); return A; }
+  function click(up) {
+    if (!on) return; var a = ctx(); if (!a) return;
+    if (!noise) { noise = a.createBuffer(1, a.sampleRate * .03, a.sampleRate); var d = noise.getChannelData(0); for (var i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 6); }
+    var t = a.currentTime, s = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    s.buffer = noise; f.type = 'bandpass'; f.frequency.value = up ? 3200 : 2200; f.Q.value = 1.2; g.gain.value = up ? .05 : .09;  // ひかえめな音量
+    s.connect(f); f.connect(g); g.connect(a.destination); s.start(t);
+    var o = a.createOscillator(), og = a.createGain(); o.type = 'square'; o.frequency.setValueAtTime(up ? 1900 : 1300, t); o.frequency.exponentialRampToValueAtTime(400, t + .015);
+    og.gain.setValueAtTime(.02, t); og.gain.exponentialRampToValueAtTime(.0001, t + .02); o.connect(og); og.connect(a.destination); o.start(t); o.stop(t + .025);
+  }
+  document.addEventListener('pointerdown', function (e) { if (e.isPrimary !== false && !(e.target.closest && e.target.closest('.r-snd'))) click(false); }, { passive: true });
+  document.addEventListener('pointerup', function (e) { if (e.isPrimary !== false && !(e.target.closest && e.target.closest('.r-snd'))) click(true); }, { passive: true });
+
+  function btn(cls, label, text) { var b = document.createElement('button'); b.type = 'button'; b.className = 'r-fixbtn ' + cls; b.setAttribute('aria-label', label); b.textContent = text; document.body.appendChild(b); return b; }
+  function ready(fn) { if (document.body) fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function () {
+    /* 音のオン／オフ（右上） */
+    var snd = btn('r-snd', 'クリック音のオン・オフ', '');
+    function paint() { snd.textContent = on ? '♪ 音 ON' : '♪ 音 OFF'; snd.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+    snd.addEventListener('click', function () { on = !on; store('gt-click', on ? 'on' : 'off'); paint(); if (on) click(false); });
+    paint();
+    if (location.pathname !== '/') return;
+    /* ▲ TOP（右下） */
+    var top = btn('r-top', 'ページのいちばん上へ', '▲ TOP'); top.hidden = true;
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); });
+    addEventListener('scroll', function () { top.hidden = scrollY < 500; }, { passive: true });
+    /* お助けツール（左下）：手書きメモと電卓 */
+    var tb = btn('r-tools', 'お助けツール（手書きメモ・電卓）', '🧰 お助けツール');
+    var win = null;
+    tb.addEventListener('click', function () { if (win) { win.hidden = !win.hidden; return; } win = makeTools(); });
+  });
+
+  function makeTools() {
+    var w = document.createElement('div'); w.className = 'win r-toolwin'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-label', 'お助けツール');
+    w.innerHTML = '<div class="win-t"><span class="ico">🧰</span><span class="ttl">お助けツール</span><button class="bt r-tw-x" type="button" aria-label="とじる">×</button></div>' +
+      '<div class="win-b"><div class="r-tw-tabs"><button type="button" aria-pressed="true">手書きメモ</button><button type="button" aria-pressed="false">電卓</button></div>' +
+      '<div class="r-tw-memo"><canvas width="560" height="380" aria-label="手書きメモ。指やマウスで書けます"></canvas><div class="r-tw-row"><button type="button" data-c="#000">黒</button><button type="button" data-c="#d10000">赤</button><button type="button" data-c="#0040d0">青</button><button type="button" data-c="eraser">消しゴム</button><button type="button" class="r-tw-clear">ぜんぶ消す</button></div><p class="r-small">書いたメモは、このブラウザにだけ保存されます。</p></div>' +
+      '<div class="r-tw-calc" hidden><div class="r-calc-disp" aria-live="polite">0</div><div class="r-calc-keys"></div></div></div>';
+    document.body.appendChild(w);
+    w.querySelector('.r-tw-x').addEventListener('click', function () { w.hidden = true; });
+    var tabs = w.querySelectorAll('.r-tw-tabs button'), memo = w.querySelector('.r-tw-memo'), calc = w.querySelector('.r-tw-calc');
+    tabs[0].addEventListener('click', function () { memo.hidden = false; calc.hidden = true; tabs[0].setAttribute('aria-pressed', 'true'); tabs[1].setAttribute('aria-pressed', 'false'); });
+    tabs[1].addEventListener('click', function () { memo.hidden = true; calc.hidden = false; tabs[1].setAttribute('aria-pressed', 'true'); tabs[0].setAttribute('aria-pressed', 'false'); });
+    /* 手書きメモ */
+    var cv = w.querySelector('canvas'), g = cv.getContext('2d'), color = '#000', drawing = false, last = null;
+    g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height);
+    try { var saved = localStorage.getItem('gt-memo'); if (saved) { var im = new Image(); im.onload = function () { g.drawImage(im, 0, 0); }; im.src = saved; } } catch (e) {}
+    function pos(e) { var r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * cv.width / r.width, (e.clientY - r.top) * cv.height / r.height]; }
+    function save() { try { localStorage.setItem('gt-memo', cv.toDataURL('image/png')); } catch (e) {} }
+    cv.addEventListener('pointerdown', function (e) { drawing = true; last = pos(e); cv.setPointerCapture(e.pointerId); e.preventDefault(); });
+    cv.addEventListener('pointermove', function (e) { if (!drawing) return; var p = pos(e); g.strokeStyle = color === 'eraser' ? '#fff' : color; g.lineWidth = color === 'eraser' ? 22 : 3.5; g.lineCap = 'round'; g.beginPath(); g.moveTo(last[0], last[1]); g.lineTo(p[0], p[1]); g.stroke(); last = p; });
+    cv.addEventListener('pointerup', function () { if (drawing) { drawing = false; save(); } });
+    cv.style.touchAction = 'none';
+    Array.prototype.forEach.call(w.querySelectorAll('[data-c]'), function (b) { b.addEventListener('click', function () { color = b.getAttribute('data-c'); Array.prototype.forEach.call(w.querySelectorAll('[data-c]'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); }); });
+    w.querySelector('[data-c="#000"]').setAttribute('aria-pressed', 'true');
+    w.querySelector('.r-tw-clear').addEventListener('click', function () { if (!confirm('メモをぜんぶ消しますか？')) return; g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height); save(); });
+    /* 電卓（eval を使わない、ふつうの電卓の動き） */
+    var disp = w.querySelector('.r-calc-disp'), keys = w.querySelector('.r-calc-keys'), cur = '0', acc = null, op = null, fresh = true;
+    function fmt(n) { if (!isFinite(n)) return 'エラー'; var s = String(Math.round(n * 1e10) / 1e10); return s.length > 14 ? n.toExponential(8) : s; }
+    function calcOp(a, b, o) { return o === '+' ? a + b : o === '−' ? a - b : o === '×' ? a * b : o === '÷' ? (b === 0 ? NaN : a / b) : b; }
+    function press(k) {
+      if (/^[0-9]$/.test(k)) { cur = fresh || cur === '0' ? k : (cur.length < 14 ? cur + k : cur); fresh = false; }
+      else if (k === '.') { if (fresh) { cur = '0.'; fresh = false; } else if (cur.indexOf('.') < 0) cur += '.'; }
+      else if (k === 'C') { cur = '0'; acc = null; op = null; fresh = true; }
+      else if (k === '←') { if (!fresh) cur = cur.length > 1 ? cur.slice(0, -1) : '0'; }
+      else if (k === '±') { cur = cur.charAt(0) === '-' ? cur.slice(1) : (cur === '0' ? cur : '-' + cur); }
+      else if (k === '%') { cur = fmt(parseFloat(cur) / 100); fresh = true; }
+      else if (k === '=') { if (op !== null) { cur = fmt(calcOp(acc, parseFloat(cur), op)); acc = null; op = null; fresh = true; } }
+      else { if (op !== null && !fresh) cur = fmt(calcOp(acc, parseFloat(cur), op)); acc = parseFloat(cur); op = k; fresh = true; }
+      disp.textContent = cur;
+    }
+    ['C', '←', '%', '÷', '7', '8', '9', '×', '4', '5', '6', '−', '1', '2', '3', '+', '±', '0', '.', '='].forEach(function (k) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = k; if (/[÷×−+=]/.test(k)) b.className = 'op'; if (k === 'C') b.className = 'clr';
+      b.addEventListener('click', function () { press(k); }); keys.appendChild(b);
+    });
+    w.addEventListener('keydown', function (e) { if (calc.hidden) return; var m = { '/': '÷', '*': '×', '-': '−', '+': '+', Enter: '=', '=': '=', Backspace: '←', Escape: 'C', '.': '.', '%': '%' }; var k = /^[0-9]$/.test(e.key) ? e.key : m[e.key]; if (k) { e.preventDefault(); press(k); } });
+    w.tabIndex = -1; w.focus();
+    return w;
+  }
+})();

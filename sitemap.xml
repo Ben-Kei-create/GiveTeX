@@ -159,5 +159,6 @@
   <url><loc>https://www.givetex.org/apps/zayping/</loc><priority>0.5</priority></url>
   <url><loc>https://www.givetex.org/apps/zayping/privacy/</loc><priority>0.5</priority></url>
   <url><loc>https://www.givetex.org/apps/zayping/support/</loc><priority>0.5</priority></url>
+  <url><loc>https://www.givetex.org/game/board/</loc><priority>0.5</priority></url>
   <url><loc>https://www.givetex.org/note/posts/about-this-booth.html</loc><priority>0.5</priority></url>
 </urlset>

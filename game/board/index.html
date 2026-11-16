@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#120a24">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/game/board/board.css">
+<script src="/assets/ga.js" defer></script>
+<title>ボードゲーム（CPU対戦）— ゲームブース | GiveTex</title>
+<meta name="description" content="CPUと対戦できるボードゲーム。将棋・囲碁（9路）・麻雀（2人打ち）・チェス・リバーシ・五目ならべ・四目ならべ・チェッカー・マンカラ。ブラウザですぐ遊べます。">
+<link rel="canonical" href="https://www.givetex.org/game/board/">
+<script src="/game/board/board.js" defer></script>
+<script src="/assets/img-fallback.js"></script>
+<script src="/assets/gt-menu.js" defer></script>
+<!-- seo -->
+<meta property="og:title" content="ボードゲーム（CPU対戦）— ゲームブース | GiveTex">
+<meta property="og:description" content="CPUと対戦できるボードゲーム。将棋・囲碁（9路）・麻雀（2人打ち）・チェス・リバーシ・五目ならべ・四目ならべ・チェッカー・マンカラ。ブラウザですぐ遊べます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.givetex.org/game/board/">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/og/game.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ボードゲーム（CPU対戦）— ゲームブース | GiveTex">
+<meta name="twitter:description" content="CPUと対戦できるボードゲーム。将棋・囲碁（9路）・麻雀（2人打ち）・チェス・リバーシ・五目ならべ・四目ならべ・チェッカー・マンカラ。ブラウザですぐ遊べます。">
+<meta name="twitter:image" content="https://www.givetex.org/assets/og/game.jpg">
+<!-- /seo -->
+</head>
+<body>
+<header class="bg-head"><a href="/game/">◀ ゲームブース</a><h1>BOARD GAMES</h1></header>
+<main class="wrap">
+  <p class="lead">CPU とたいせんできるボードゲーム。日本の定番から、海外のボードゲームまで。ブラウザですぐ遊べます（登録不要）。</p>
+  <noscript><p>このページは JavaScript を使います。</p></noscript>
+  <nav class="games" id="games" aria-label="ゲームをえらぶ"></nav>
+  <section class="play" id="play" hidden aria-labelledby="g-title">
+    <div class="ctrl">
+      <h2 id="g-title"></h2>
+      <select id="side" aria-label="先手・後手" hidden></select>
+      <select id="level" aria-label="CPUの強さ"><option value="1">CPU：よわい</option><option value="2" selected>CPU：ふつう</option><option value="3">CPU：つよい</option></select>
+      <button type="button" class="btn y" id="restart">はじめから</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <div class="stage" id="stage"></div>
+    <details class="rules" id="rules"></details>
+  </section>
+</main>
+</body>
+</html>

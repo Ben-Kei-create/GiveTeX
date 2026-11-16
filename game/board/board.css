@@ -1,0 +1,45 @@
+/* ボードゲーム（CPU対戦）— ゲームブースのつづき。読みやすさ優先でドットは控えめ */
+:root{--bg:#120a24;--bg2:#1c1036;--panel:#241645;--text:#f4f0ff;--sub:#b9b0d8;--y:#ffd23f;--c:#3ef0ff;--m:#ff4fd8;--g:#6bff7a;--r:#ff5a5a;
+  --px:"Press Start 2P","DotGothic16",monospace;--jp:"DotGothic16","Hiragino Sans","Noto Sans JP",sans-serif;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% -20%,#2a1656,transparent 60%),var(--bg);color:var(--text);font:16px/1.75 var(--jp)}
+a{color:var(--c)}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+.bg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:2px solid #3b2470;background:rgba(10,4,24,.7);position:sticky;top:0;z-index:20}
+.bg-head h1{margin:0;font:13px/1.4 var(--px);color:var(--y);letter-spacing:.06em}
+.bg-head a{font-size:13px;text-decoration:none;color:var(--sub);border:1px solid #3b2470;border-radius:999px;padding:3px 12px}
+.bg-head a:first-child{margin-right:auto}
+.wrap{max-width:1000px;margin:0 auto;padding:18px 14px 90px}
+.lead{color:var(--sub);font-size:14px;margin:0 0 16px}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:0 0 22px}
+.gcard{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:10px;background:var(--panel);border:2px solid #3b2470;color:var(--text);text-decoration:none;font:inherit;text-align:left;cursor:pointer}
+.gcard b{font-size:17px}.gcard small{font-size:12px;color:var(--sub);line-height:1.5}
+.gcard[aria-current=true]{border-color:var(--y);box-shadow:0 0 0 2px var(--y) inset}
+.gcard .tag{font:9px/1 var(--px);color:var(--g);margin-bottom:6px}
+.play{background:var(--bg2);border:2px solid #3b2470;border-radius:14px;padding:14px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.ctrl h2{margin:0 auto 0 0;font-size:20px}
+.ctrl select,.ctrl button,.btn{font:inherit;font-size:14px;color:var(--text);background:#2d1b58;border:1px solid #5a3fa0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.btn.y{background:var(--y);color:#000;border-color:var(--y);font-weight:bold}
+.status{min-height:1.8em;margin:4px 0 10px;font-size:15px;color:var(--y)}
+.status.win{color:var(--g)}.status.lose{color:var(--r)}
+.stage{display:flex;flex-direction:column;align-items:center;gap:10px}
+.rules{margin-top:12px;font-size:13px;color:var(--sub)}
+.rules summary{cursor:pointer}
+/* マス目の共通 */
+.grid{display:grid;grid-auto-rows:1fr;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.cell{position:relative;border:0;padding:0;margin:0;cursor:pointer;background:transparent;color:inherit;font:inherit;display:grid;place-items:center}
+.cell:disabled{cursor:default}
+.cell.hint::after{content:"";width:22%;height:22%;border-radius:50%;background:rgba(255,255,255,.35)}
+.cell.sel{box-shadow:inset 0 0 0 3px var(--y)}
+.cell.last{box-shadow:inset 0 0 0 2px var(--m)}
+.cell.to::after{content:"";width:26%;height:26%;border-radius:50%;background:rgba(255,210,63,.75)}
+.cell.to.cap::after{width:84%;height:84%;background:transparent;border:3px solid rgba(255,210,63,.85)}
+/* 石 */
+.stone{width:84%;height:84%;border-radius:50%;box-shadow:inset -3px -4px 6px rgba(0,0,0,.35),0 2px 3px rgba(0,0,0,.45)}
+.stone.b{background:radial-gradient(circle at 35% 30%,#666,#111 60%)}
+.stone.w{background:radial-gradient(circle at 35% 30%,#fff,#d8d8d8 60%,#bbb)}
+.stone.r{background:radial-gradient(circle at 35% 30%,#ff8080,#d01818 60%)}
+.stone.yl{background:radial-gradient(circle at 35% 30%,#fff3a0,#f0c000 60%)}
+@media(max-width:520px){.wrap{padding:12px 8px 90px}.play{padding:10px 6px}}

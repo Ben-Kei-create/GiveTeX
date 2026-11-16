@@ -104,6 +104,18 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 ### ブックマークを更新する
 - ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
 
+### ボードゲーム（/game/board/）
+- 入れもの：`game/board/index.html`・`board.js`・`board.css`。ゲームは選ばれたときだけ `game/board/<名前>.js` を読みこむ。
+- 9種：shogi・go（9路）・mahjong（2人打ち・簡易）・chess・reversi・gomoku・connect4・checkers・mancala。CPU の強さは3段階。
+- 将棋・チェスは、手の数の検算（perft）で正しさを確認ずみ：将棋 30／900／25,470／719,731、チェス 20／400／8,902。
+- 新しいゲームを足すときは、`board.js` の GAMES に1行足して、`BG.<名前> = { name, rules, sides?, mount(el, ui) }` のファイルを置く。
+
+### クリック音・お助けツール
+- `assets/retro-extras.js`：90年代風のページでさわるとクリック音（右上の「♪ 音」でオン・オフ、ブラウザに保存）。ホームだけ右下に「▲TOP」、左下に「お助けツール」（手書きメモ・電卓）。
+
+### GitHub の記録（日記）
+- `tools/github_diary.json`：公開リポジトリを、つくりはじめた月ごとにまとめた日記。コードや個人情報は入れない。
+
 ### 昔のホームページ機能（2026-11-16）
 - `assets/retro-extras.js`：BGM（オリジナル曲を Web Audio で。押したときだけ）、今日のおみくじ（1日1回）、Web拍手（`api/clap.js`、ひとことは管理人にメール）、隠しコマンド（↑↑↓↓←→←→BA／スマホはホームのロゴを7回タップ）、右クリックのジョーク（禁止はしない）。
 - `/sitemap/`：サイトマップ（ビルダーが自動生成）。
