@@ -52,7 +52,7 @@
     box.innerHTML = '<div class="gtb-sky"></div><div class="gtb-line"></div><div class="gtb-in"><img class="gtb-g" src="/assets/icon/icon-512.png" alt=""><div class="gtb-flash"></div><p class="gtb-t"></p><p class="gtb-s">GIVE教育！　教育 × IT</p></div><p class="gtb-c">© 2026 GiveTex</p><p class="gtb-skip">TAP TO SKIP ▶</p>';
     var t = box.querySelector('.gtb-t');
     'GiveTex'.split('').forEach(function (c, i) { var s = document.createElement('span'); s.textContent = c; s.style.animationDelay = (2.05 + i * 0.07) + 's'; t.appendChild(s); });
-    document.body.appendChild(box);
+    (document.body || document.documentElement).appendChild(box);
     box.addEventListener('click', function () { finish(true); });
     document.addEventListener('keydown', function () { finish(true); }, { once: true });
     box.addEventListener('touchstart', function () { finish(true); }, { passive: true, once: true });
@@ -60,5 +60,5 @@
     try { if (window.gtag) window.gtag('event', 'boot_screen'); } catch (e) {}
   }
   setTimeout(function () { finish(true); }, 6000); // 何かあっても必ず消える
-  if (document.body) build(); else document.addEventListener('DOMContentLoaded', build);
+  build(); // <body> ができるのを待たず、すぐ始める（<html> の直下に置く）
 })();
