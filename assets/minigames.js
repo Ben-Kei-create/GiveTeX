@@ -1,0 +1,165 @@
+/* ホームのゲームコーナー（昔ながらのミニゲーム4本・すべてオリジナル）
+   ブロックおとし／うちゅうげきたい／クレーンゲーム／じゃんけんポン
+   操作：画面の下のボタン、またはゲーム画面をクリックしてからキーボード（← → ↑ ↓、スペース／Z） */
+(function () {
+  'use strict';
+  var root = document.getElementById('mg'); if (!root) return;
+  var W = 160, H = 240;
+  var cv = root.querySelector('canvas'), ctx = cv.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 3);
+  cv.width = W * dpr; cv.height = H * dpr; ctx.scale(dpr, dpr);
+  var info = root.querySelector('.mg-info'), pad = root.querySelector('.mg-pad'), jpad = root.querySelector('.mg-janken');
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function hiGet(k) { try { return +localStorage.getItem('gt-mg-' + k) || 0; } catch (e) { return 0; } }
+  function hiSet(k, v) { try { localStorage.setItem('gt-mg-' + k, String(v)); } catch (e) {} }
+  function txt(s, x, y, size, color, align) { ctx.fillStyle = color || '#fff'; ctx.font = (size || 10) + 'px "DotGothic16","VT323",monospace'; ctx.textAlign = align || 'center'; ctx.textBaseline = 'middle'; ctx.fillText(s, x, y); }
+  function clear(c) { ctx.fillStyle = c || '#000'; ctx.fillRect(0, 0, W, H); }
+  function rnd(n) { return Math.floor(Math.random() * n); }
+  var held = {};
+
+  /* ===== ブロックおとし ===== */
+  var SH = [[[1,1,1,1]], [[1,1],[1,1]], [[0,1,0],[1,1,1]], [[1,0,0],[1,1,1]], [[0,0,1],[1,1,1]], [[1,1,0],[0,1,1]], [[0,1,1],[1,1,0]]];
+  var COL = ['#3ef0ff', '#ffd23f', '#c77dff', '#ff9f1c', '#4d7cff', '#ff4d6d', '#6bff7a'];
+  var block = {
+    name: 'ブロックおとし', key: 'block', help: '← → いどう ／ ↑・A かいてん ／ ↓ はやく',
+    reset: function () { this.g = []; for (var y = 0; y < 15; y++) this.g.push(new Array(10).fill(0)); this.score = 0; this.lines = 0; this.t = 0; this.over = false; this.next(); },
+    next: function () { var i = rnd(7); this.p = { s: SH[i].map(function (r) { return r.slice(); }), c: i + 1, x: 3, y: 0 }; if (this.hit(this.p.s, this.p.x, this.p.y)) this.over = true; },
+    hit: function (s, px, py) { for (var y = 0; y < s.length; y++) for (var x = 0; x < s[y].length; x++) if (s[y][x]) { var gx = px + x, gy = py + y; if (gx < 0 || gx > 9 || gy > 14 || (gy >= 0 && this.g[gy][gx])) return true; } return false; },
+    rot: function () { var s = this.p.s, r = s[0].map(function (_, i) { return s.map(function (row) { return row[i]; }).reverse(); }); for (var k = 0; k < 3; k++) { var dx = [0, -1, 1][k]; if (!this.hit(r, this.p.x + dx, this.p.y)) { this.p.s = r; this.p.x += dx; return; } } },
+    lock: function () { var p = this.p, g = this.g; p.s.forEach(function (row, y) { row.forEach(function (v, x) { if (v && p.y + y >= 0) g[p.y + y][p.x + x] = p.c; }); });
+      var n = 0; for (var y = 14; y >= 0; y--) if (g[y].every(Boolean)) { g.splice(y, 1); g.unshift(new Array(10).fill(0)); n++; y++; }
+      this.lines += n; this.score += [0, 100, 300, 500, 800][n]; this.next(); },
+    down: function () { if (!this.hit(this.p.s, this.p.x, this.p.y + 1)) { this.p.y++; return true; } this.lock(); return false; },
+    step: function (dt) { if (this.over) return; this.t += dt; var sp = Math.max(120, 650 - this.lines * 25); if (held.down) sp = 45; if (this.t > sp) { this.t = 0; this.down(); } },
+    input: function (k) { if (this.over) return; if (k === 'left' && !this.hit(this.p.s, this.p.x - 1, this.p.y)) this.p.x--; if (k === 'right' && !this.hit(this.p.s, this.p.x + 1, this.p.y)) this.p.x++; if (k === 'up' || k === 'a') this.rot(); if (k === 'down') { this.down(); this.score++; } },
+    draw: function () { clear('#0b0b1a'); var g = this.g, p = this.p;
+      function cell(x, y, c) { ctx.fillStyle = COL[c - 1]; ctx.fillRect(x * 16 + 1, y * 16 + 1, 14, 14); ctx.fillStyle = 'rgba(255,255,255,.35)'; ctx.fillRect(x * 16 + 1, y * 16 + 1, 14, 3); }
+      for (var y = 0; y < 15; y++) for (var x = 0; x < 10; x++) if (g[y][x]) cell(x, y, g[y][x]);
+      if (!this.over) p.s.forEach(function (row, y) { row.forEach(function (v, x) { if (v) cell(p.x + x, p.y + y, p.c); }); });
+      return 'SCORE ' + this.score + '　LINE ' + this.lines; }
+  };
+
+  /* ===== うちゅうげきたい ===== */
+  var space = {
+    name: 'うちゅうげきたい', key: 'space', help: '← → いどう ／ A うつ',
+    reset: function () { this.score = 0; this.life = 3; this.wave = 1; this.over = false; this.x = 72; this.wave0(); },
+    wave0: function () { this.al = []; for (var r = 0; r < 4; r++) for (var c = 0; c < 6; c++) this.al.push({ x: 14 + c * 22, y: 24 + r * 16, r: r }); this.dir = 1; this.mt = 0; this.shot = null; this.eb = []; },
+    step: function (dt) { if (this.over) return; var s = this;
+      if (held.left) s.x = Math.max(2, s.x - dt * .09); if (held.right) s.x = Math.min(W - 18, s.x + dt * .09);
+      if (s.shot) { s.shot.y -= dt * .25; if (s.shot.y < 0) s.shot = null; }
+      s.mt += dt; var sp = Math.max(60, 520 - (24 - s.al.length) * 18 - s.wave * 30);
+      if (s.mt > sp) { s.mt = 0; var edge = s.al.some(function (a) { return (s.dir > 0 && a.x > W - 18) || (s.dir < 0 && a.x < 4); });
+        if (edge) { s.dir *= -1; s.al.forEach(function (a) { a.y += 6; }); } else s.al.forEach(function (a) { a.x += 4 * s.dir; }); }
+      if (s.al.length && Math.random() < dt * .0012 * (1 + s.wave * .3)) { var a = s.al[rnd(s.al.length)]; s.eb.push({ x: a.x + 6, y: a.y + 8 }); }
+      s.eb.forEach(function (b) { b.y += dt * .11; }); s.eb = s.eb.filter(function (b) { return b.y < H; });
+      if (s.shot) for (var i = 0; i < s.al.length; i++) { var a = s.al[i]; if (s.shot.x > a.x - 1 && s.shot.x < a.x + 13 && s.shot.y > a.y && s.shot.y < a.y + 9) { s.al.splice(i, 1); s.shot = null; s.score += (4 - a.r) * 10; break; } }
+      for (var j = 0; j < s.eb.length; j++) { var b = s.eb[j]; if (b.y > H - 22 && b.y < H - 10 && b.x > s.x && b.x < s.x + 16) { s.eb.splice(j, 1); s.life--; if (s.life <= 0) s.over = true; break; } }
+      if (s.al.some(function (a) { return a.y > H - 34; })) s.over = true;
+      if (!s.al.length) { s.wave++; s.wave0(); } },
+    input: function (k) { if (k === 'a' && !this.shot && !this.over) this.shot = { x: this.x + 8, y: H - 24 }; },
+    draw: function () { clear('#02010a'); var s = this;
+      for (var i = 0; i < 30; i++) { ctx.fillStyle = 'rgba(255,255,255,.35)'; ctx.fillRect((i * 53) % W, (i * 97) % H, 1, 1); }
+      var colors = ['#ff4fd8', '#ffd23f', '#3ef0ff', '#6bff7a'], f = (Date.now() >> 8) & 1;
+      s.al.forEach(function (a) { ctx.fillStyle = colors[a.r]; ctx.fillRect(a.x + 2, a.y, 8, 2); ctx.fillRect(a.x, a.y + 2, 12, 4); ctx.fillStyle = '#000'; ctx.fillRect(a.x + 3, a.y + 3, 2, 2); ctx.fillRect(a.x + 7, a.y + 3, 2, 2); ctx.fillStyle = colors[a.r]; ctx.fillRect(a.x + (f ? 0 : 2), a.y + 6, 2, 2); ctx.fillRect(a.x + (f ? 10 : 8), a.y + 6, 2, 2); });
+      ctx.fillStyle = '#6bff7a'; ctx.fillRect(s.x, H - 16, 16, 6); ctx.fillRect(s.x + 6, H - 20, 4, 4);
+      if (s.shot) { ctx.fillStyle = '#fff'; ctx.fillRect(s.shot.x - 1, s.shot.y, 2, 6); }
+      ctx.fillStyle = '#ff5a5a'; s.eb.forEach(function (b) { ctx.fillRect(b.x - 1, b.y, 2, 5); });
+      ctx.fillStyle = '#334'; ctx.fillRect(0, H - 8, W, 1);
+      return 'SCORE ' + s.score + '　WAVE ' + s.wave + '　' + '♥'.repeat(Math.max(0, s.life)); }
+  };
+
+  /* ===== クレーンゲーム ===== */
+  var PZ = ['#ff8fab', '#ffd23f', '#8ecae6', '#b8f2a6', '#cdb4db', '#ffb703'];
+  var crane = {
+    name: 'クレーンゲーム', key: 'crane', help: '← → うごかす ／ A アームを下ろす（5回まで）',
+    reset: function () { this.x = 80; this.y = 30; this.st = 'move'; this.left = 5; this.got = 0; this.hold = null; this.over = false;
+      this.pz = []; for (var i = 0; i < 7; i++) this.pz.push({ x: 46 + i * 15 + rnd(6), y: 214 - (i % 2) * 10, r: 9 + rnd(3), c: PZ[rnd(PZ.length)] }); },
+    step: function (dt) { var s = this; if (s.over) return;
+      if (s.st === 'move') { if (held.left) s.x = Math.max(40, s.x - dt * .07); if (held.right) s.x = Math.min(W - 14, s.x + dt * .07); }
+      else if (s.st === 'down') { s.y += dt * .08; var t = null; s.pz.forEach(function (p) { if (Math.abs(p.x - s.x) < p.r + 4 && s.y + 10 > p.y - p.r) t = t || p; });
+        if (t || s.y > 222) { s.st = 'up'; if (t && Math.abs(t.x - s.x) < t.r * .7 && Math.random() < .75) { s.hold = t; s.slip = Math.random() < .3 ? 60 + rnd(60) : -1; } } }
+      else if (s.st === 'up') { s.y -= dt * .07; if (s.hold) { s.hold.x = s.x; s.hold.y = s.y + 18; if (s.slip > 0 && s.y < s.slip) { s.hold.y += 0; s.drop = s.hold; s.hold = null; } }
+        if (s.y <= 30) { s.y = 30; s.st = 'back'; } }
+      else if (s.st === 'back') { s.x -= dt * .07; if (s.hold) { s.hold.x = s.x; s.hold.y = s.y + 18; } if (s.x <= 20) { s.x = 20; if (s.hold) { s.got++; s.pz.splice(s.pz.indexOf(s.hold), 1); s.hold = null; } s.st = 'ret'; } }
+      else if (s.st === 'ret') { s.x += dt * .09; if (s.x >= 80) { s.x = 80; s.left--; s.st = 'move'; if (s.left <= 0 || !s.pz.length) { s.over = true; s.score = s.got; } } }
+      if (s.drop) { s.drop.y += dt * .15; if (s.drop.y >= 214) { s.drop.y = 214; s.drop = null; } }
+      s.score = s.got; },
+    input: function (k) { if (k === 'a' && this.st === 'move' && !this.over) this.st = 'down'; },
+    draw: function () { var s = this; clear('#1d0f33');
+      ctx.fillStyle = '#2d1b4e'; ctx.fillRect(0, 0, W, 20); for (var i = 0; i < 8; i++) { ctx.fillStyle = i % 2 ? '#ff4fd8' : '#ffd23f'; ctx.fillRect(i * 20 + 6, 6, 8, 8); }
+      ctx.fillStyle = '#0f0820'; ctx.fillRect(4, 196, 30, 40); ctx.strokeStyle = '#ffd23f'; ctx.strokeRect(4.5, 196.5, 29, 39); txt('GET', 19, 190, 9, '#ffd23f');
+      ctx.fillStyle = '#3a2a5a'; ctx.fillRect(36, 226, W - 36, 14);
+      s.pz.forEach(function (p) { ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fill(); ctx.beginPath(); ctx.arc(p.x - p.r * .6, p.y - p.r * .8, p.r * .35, 0, 7); ctx.arc(p.x + p.r * .6, p.y - p.r * .8, p.r * .35, 0, 7); ctx.fill(); ctx.fillStyle = '#000'; ctx.fillRect(p.x - 4, p.y - 2, 2, 2); ctx.fillRect(p.x + 2, p.y - 2, 2, 2); });
+      ctx.strokeStyle = '#ccc'; ctx.beginPath(); ctx.moveTo(s.x, 20); ctx.lineTo(s.x, s.y); ctx.stroke();
+      ctx.fillStyle = '#ddd'; ctx.fillRect(s.x - 8, s.y, 16, 5); var open = s.st === 'down' || s.st === 'move';
+      ctx.fillRect(s.x - (open ? 11 : 7), s.y + 5, 3, 12); ctx.fillRect(s.x + (open ? 8 : 4), s.y + 5, 3, 12);
+      return 'GET ' + s.got + '　のこり ' + Math.max(0, s.left) + ' 回'; }
+  };
+
+  /* ===== じゃんけんポン ===== */
+  var HANDS = ['グー', 'チョキ', 'パー'];
+  var janken = {
+    name: 'じゃんけんポン', key: 'janken', help: '下のボタンで出す手をえらんでね',
+    reset: function () { this.st = 'ready'; this.me = -1; this.cpu = -1; this.res = ''; this.streak = 0; this.score = 0; this.t = 0; this.over = false; this.aiko = false; },
+    step: function (dt) { this.t += dt; if (this.st === 'shout' && this.t > 650) { this.st = 'show'; this.t = 0; this.cpu = rnd(3); var d = (this.me - this.cpu + 3) % 3;
+      if (d === 0) { this.res = 'あいこ'; this.aiko = true; } else if (d === 2) { this.res = 'かち！'; this.streak++; this.aiko = false; } else { this.res = 'まけ…'; this.aiko = false; this.over = true; }
+      this.score = this.streak; } },
+    input: function (k) { if (typeof k === 'number' && (this.st === 'ready' || this.st === 'show') && !this.over) { this.me = k; this.st = 'shout'; this.t = 0; } },
+    hand: function (h, x, y, flip) { ctx.save(); ctx.translate(x, y); if (flip) ctx.scale(1, -1); ctx.fillStyle = '#ffd7b0'; ctx.strokeStyle = '#7a4b00'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(0, 0, 16, 0, 7); ctx.fill(); ctx.stroke();
+      if (h === 1) { ctx.fillRect(-9, -36, 7, 24); ctx.strokeRect(-9, -36, 7, 24); ctx.fillRect(2, -36, 7, 24); ctx.strokeRect(2, -36, 7, 24); }
+      if (h === 2) for (var i = -2; i <= 2; i++) { ctx.save(); ctx.rotate(i * .32); ctx.fillRect(-3, -38, 6, 24); ctx.strokeRect(-3, -38, 6, 24); ctx.restore(); }
+      ctx.restore(); },
+    draw: function () { var s = this; clear('#10233f'); txt('CPU', 80, 16, 10, '#9fb3d9'); txt('あなた', 80, 226, 10, '#9fb3d9');
+      if (s.st === 'ready') { txt(s.aiko ? 'あいこで…' : 'じゃん けん…', 80, 120, 16, '#ffd23f'); }
+      if (s.st === 'shout') { txt(s.aiko ? 'しょ！' : 'ポン！', 80, 120, 22, '#ffd23f'); s.hand(rnd(3), 80, 62, true); }
+      if (s.st === 'show') { s.hand(s.cpu, 80, 62, true); s.hand(s.me, 80, 176, false); txt(s.res, 80, 120, 22, s.res === 'かち！' ? '#6bff7a' : s.res === 'まけ…' ? '#ff5a5a' : '#ffd23f');
+        if (!s.over) txt(s.aiko ? 'もういっかい えらんでね' : 'つづけて えらんでね', 80, 140, 9, '#cfe'); }
+      return s.streak + ' 連勝中'; }
+  };
+
+  var GAMES = [block, space, crane, janken], cur = null, running = false, last = 0, visible = true, started = false;
+  function hud(extra) { var hi = hiGet(cur.key); info.textContent = (extra || '') + (hi ? '　HI ' + hi : ''); }
+  function frame(ts) {
+    if (!running) return; var dt = Math.min(50, ts - (last || ts)); last = ts;
+    if (started && !cur.over) cur.step(dt);
+    var line = cur.draw();
+    if (!started) { ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(0, 86, W, 70); txt(cur.name, 80, 104, 13, '#ffd23f'); txt(cur.key === 'janken' ? 'ボタンをおしてスタート' : 'A ボタンでスタート', 80, 126, 10, '#fff'); txt(cur.help, 80, 144, 7.5, '#9fb3d9'); }
+    if (cur.over) { if (cur.score > hiGet(cur.key)) hiSet(cur.key, cur.score); ctx.fillStyle = 'rgba(0,0,0,.65)'; ctx.fillRect(0, 92, W, 56); txt('GAME OVER', 80, 110, 14, '#ff5a5a'); txt(cur.key === 'janken' ? 'もう一回は ボタンで' : 'A でもう一回', 80, 132, 10, '#fff'); }
+    hud(line);
+    if ((!started || cur.over) && cur.key !== 'janken') { running = false; return; } // 止まっている画面は描きつづけない
+    if (visible && !document.hidden) requestAnimationFrame(frame); else running = false;
+  }
+  function run() { if (!running && visible && !document.hidden) { running = true; last = 0; requestAnimationFrame(frame); } }
+  function pick(i) {
+    cur = GAMES[i]; cur.reset(); started = false;
+    Array.prototype.forEach.call(root.querySelectorAll('.mg-tabs button'), function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    pad.hidden = cur.key === 'janken'; jpad.hidden = cur.key !== 'janken';
+    try { localStorage.setItem('gt-mg-last', String(i)); } catch (e) {}
+    run();
+  }
+  function press(k) {
+    if (!cur) return;
+    if (cur.over) { if (k === 'a' || typeof k === 'number') { cur.reset(); started = true; if (typeof k === 'number') cur.input(k); } run(); return; }
+    if (!started) { if (k === 'a' || typeof k === 'number') { started = true; try { if (window.gtag) gtag('event', 'minigame_play', { game: cur.key }); } catch (e) {} if (typeof k === 'number') cur.input(k); } run(); return; }
+    cur.input(k); run();
+  }
+  Array.prototype.forEach.call(root.querySelectorAll('.mg-tabs button'), function (b, i) { b.addEventListener('click', function () { pick(i); }); });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-k]'), function (b) {
+    var k = b.getAttribute('data-k'); k = /^\d$/.test(k) ? +k : k; var rep = null;
+    function down(e) { e.preventDefault(); held[k] = true; press(k); if (k === 'left' || k === 'right' || k === 'down') { clearInterval(rep); rep = setInterval(function () { if (cur && cur.key === 'block' && started) press(k); }, 110); } }
+    function up() { held[k] = false; clearInterval(rep); }
+    b.addEventListener('pointerdown', down); b.addEventListener('pointerup', up); b.addEventListener('pointerleave', up); b.addEventListener('pointercancel', up);
+    b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); press(k); } });
+  });
+  var KEYS = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down', ' ': 'a', z: 'a', Z: 'a', Enter: 'a', '1': 0, '2': 1, '3': 2 };
+  var screen = root.querySelector('.mg-screen');
+  screen.addEventListener('keydown', function (e) { var k = KEYS[e.key]; if (k === undefined) return; e.preventDefault(); if (!held[k]) press(k); held[k] = true; });
+  screen.addEventListener('keyup', function (e) { var k = KEYS[e.key]; if (k !== undefined) held[k] = false; });
+  screen.addEventListener('blur', function () { held = {}; });
+  screen.addEventListener('click', function () { screen.focus({ preventScroll: true }); if (!started || (cur && cur.over)) press(cur && cur.key === 'janken' ? 'noop' : 'a'); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) run(); }).observe(root);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) run(); });
+  var lastI = 0; try { lastI = Math.min(3, +localStorage.getItem('gt-mg-last') || 0); } catch (e) {}
+  pick(lastI);
+})();

@@ -40,7 +40,7 @@
 <!-- /seo -->
 </head>
 <body>
-<div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>
+<div class="pr-banner daily-quote" aria-label="今日のひとこと">今日のひとこと「千里の道も一歩から。」― 老子</div><script src="/assets/quote.js" defer></script>
 <a name="top" id="top"></a>
 <div class="r-head" role="banner">
 <a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
@@ -161,6 +161,19 @@ document.write(rGreeting());
 <div class="win-t"><span class="ico">🔗</span><span class="ttl">リンク</span><button class="bt bt-min" type="button" aria-label="最小化（たたむ）">_</button><button class="bt bt-max" type="button" aria-label="元の大きさにもどす">□</button><button class="bt bt-x" type="button" aria-label="閉じる（ページを開き直すと元にもどります）">×</button></div>
 <div class="win-b ">
 <p class="r-center" style="margin:0"><a href="/"><img loading="lazy" decoding="async" src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img loading="lazy" decoding="async" src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>
+</div>
+</div><div class="win mg-win">
+<div class="win-t"><span class="ico">🕹</span><span class="ttl">ゲームコーナー</span><button class="bt bt-min" type="button" aria-label="最小化（たたむ）">_</button><button class="bt bt-max" type="button" aria-label="元の大きさにもどす">□</button><button class="bt bt-x" type="button" aria-label="閉じる（ページを開き直すと元にもどります）">×</button></div>
+<div class="win-b ">
+<div class="mg" id="mg">
+<div class="mg-tabs" role="group" aria-label="ゲームをえらぶ"><button type="button">ブロック</button><button type="button">うちゅう</button><button type="button">クレーン</button><button type="button">じゃんけん</button></div>
+<div class="mg-screen" tabindex="0" aria-label="ゲーム画面。クリックしてから、矢印キーとスペースキーで遊べます"><canvas width="160" height="240"></canvas></div>
+<p class="mg-info"></p>
+<div class="mg-pad"><button type="button" data-k="left" aria-label="ひだり">◀</button><button type="button" data-k="up" aria-label="うえ・かいてん">▲</button><button type="button" data-k="down" aria-label="した">▼</button><button type="button" data-k="right" aria-label="みぎ">▶</button><button type="button" data-k="a" class="mg-a" aria-label="Aボタン">A</button></div>
+<div class="mg-janken" hidden><button type="button" data-k="0">グー</button><button type="button" data-k="1">チョキ</button><button type="button" data-k="2">パー</button></div>
+<noscript><p class="r-small">ゲームは JavaScript をオンにすると遊べます。</p></noscript>
+</div>
+<script src="/assets/minigames.js" defer></script>
 </div>
 </div>
 </td>

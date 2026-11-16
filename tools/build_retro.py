@@ -80,7 +80,7 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 <link rel="canonical" href="{can}">
 </head>
 <body>
-{'<div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>' if pr else ''}
+{'<div class="pr-banner daily-quote" aria-label="今日のひとこと">今日のひとこと「千里の道も一歩から。」― 老子</div><script src="/assets/quote.js" defer></script>' if pr else ''}
 {header(cur)}
 {body}
 {FOOTER}
@@ -412,7 +412,16 @@ document.write(rGreeting());
             win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>', '🔢') +
             win('管理人のプロフィール', '<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>', '👤') +
             win('いまの時刻', '<p class="r-center" style="margin:0"><span id="r-clock">--:--:--</span></p>', '⏰') +
-            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗'))
+            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗') +
+            win('ゲームコーナー', '''<div class="mg" id="mg">
+<div class="mg-tabs" role="group" aria-label="ゲームをえらぶ"><button type="button">ブロック</button><button type="button">うちゅう</button><button type="button">クレーン</button><button type="button">じゃんけん</button></div>
+<div class="mg-screen" tabindex="0" aria-label="ゲーム画面。クリックしてから、矢印キーとスペースキーで遊べます"><canvas width="160" height="240"></canvas></div>
+<p class="mg-info"></p>
+<div class="mg-pad"><button type="button" data-k="left" aria-label="ひだり">◀</button><button type="button" data-k="up" aria-label="うえ・かいてん">▲</button><button type="button" data-k="down" aria-label="した">▼</button><button type="button" data-k="right" aria-label="みぎ">▶</button><button type="button" data-k="a" class="mg-a" aria-label="Aボタン">A</button></div>
+<div class="mg-janken" hidden><button type="button" data-k="0">グー</button><button type="button" data-k="1">チョキ</button><button type="button" data-k="2">パー</button></div>
+<noscript><p class="r-small">ゲームは JavaScript をオンにすると遊べます。</p></noscript>
+</div>
+<script src="/assets/minigames.js" defer></script>''', '🕹', cls='mg-win'))
     body = f'''<table class="r-layout" border="0" cellspacing="0" cellpadding="0" summary="レイアウト"><tr>
 <td class="r-main" valign="top">
 {main}

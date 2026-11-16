@@ -136,7 +136,8 @@ footer p{font-size:.75rem;color:var(--gray-400)}
 </head>
 <body>
 
-<div class="pr-banner">当サイトはアフィリエイト広告を利用しています</div>
+<div class="pr-banner daily-quote" aria-label="今日のひとこと">今日のひとこと「千里の道も一歩から。」― 老子</div>
+<script src="/assets/quote.js" defer></script>
 
 <a name="top" id="top"></a>
 <div class="r-head" role="banner">
@@ -255,12 +256,14 @@ footer p{font-size:.75rem;color:var(--gray-400)}
 
   <p>特にGMOが提供するConoHa AI Canvasは、日本語インターフェースで操作が直感的。アカウント登録からすぐに画像生成を始められます。Stable Diffusionベースの高品質な画像が、GPUを持っていなくてもブラウザ上で生成できるのが強みです。</p>
 
-  <div class="cta-box">
+  <template class="ad-off"><!-- アフィリエイト枠（非表示中）。表示するときは template を外す -->
+<div class="cta-box">
     <p>ブラウザだけで本格的なAI画像生成を始めるなら</p>
     <a href="https://px.a8.net/svt/ejp?a8mat=4AZLSH+ERO3ZM+50+7RTY1E" class="cta-btn" rel="nofollow">ブラウザだけでできる 本格的なAI画像生成 【ConoHa AI Canvas】</a>
     <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AZLSH+ERO3ZM+50+7RTY1E" alt="">
     <p class="cta-sub">エントリープラン月額500円〜・日本語対応・GMO運営</p>
   </div>
+</template>
 
   <h2 id="use-cases">用途別おすすめ</h2>
 
