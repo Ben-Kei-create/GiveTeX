@@ -157,7 +157,7 @@
   ready(function () {
     /* 音のオン／オフ（右上） */
     var snd = btn('r-snd', 'クリック音のオン・オフ', '');
-    function paint() { snd.textContent = on ? '♪ 音 ON' : '♪ 音 OFF'; snd.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+    function paint() { snd.innerHTML = '<span class="r-snd-i" aria-hidden="true">♪</span><span class="r-snd-t"> 音 ' + (on ? 'ON' : 'OFF') + '</span>'; snd.setAttribute('aria-pressed', on ? 'true' : 'false'); snd.setAttribute('aria-label', on ? 'クリック音：ON（押すと OFF）' : 'クリック音：OFF（押すと ON）'); }
     snd.addEventListener('click', function () { on = !on; store('gt-click', on ? 'on' : 'off'); paint(); if (on) click(false); try { window.dispatchEvent(new CustomEvent('gt-sound-toggle', { detail: on })); } catch (e) {} });
     paint();
     if (location.pathname !== '/') return;

@@ -433,6 +433,14 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-fixbtn:active { box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf; }
 .r-snd { top: calc(8px + env(safe-area-inset-top)); right: 8px; }
 .r-snd[aria-pressed="false"] { color: #808080; }
+/* スマホ：音ボタンは「♪」だけの小さな四角にして、上の「今日のひとこと」と重ならないようにする */
+@media (max-width: 700px) {
+  .r-snd { top: calc(4px + env(safe-area-inset-top)); right: 4px; width: 30px; height: 26px; padding: 0; display: grid; place-items: center; font-size: 14px; }
+  .r-snd .r-snd-t { display: none; }
+  .r-snd[aria-pressed="false"] .r-snd-i { position: relative; }
+  .r-snd[aria-pressed="false"] .r-snd-i::after { content: ""; position: absolute; left: -3px; right: -3px; top: 50%; height: 2px; background: #b00000; transform: rotate(-35deg); }
+  .pr-banner { padding-right: 40px; padding-left: 8px; min-height: 34px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 0; line-height: 1.5; }
+}
 .r-top { right: 10px; bottom: calc(12px + env(safe-area-inset-bottom)); font-size: 13px; padding: 9px 12px; }
 .r-tools { left: 10px; bottom: calc(12px + env(safe-area-inset-bottom)); font-size: 13px; padding: 9px 12px; }
 .r-toolwin { position: fixed; z-index: 9001; left: 10px; bottom: calc(58px + env(safe-area-inset-bottom)); width: min(420px, calc(100vw - 20px)); margin: 0; }
