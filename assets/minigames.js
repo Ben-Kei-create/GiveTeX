@@ -107,7 +107,7 @@
         if (d === 0) { s.res = 'あいこ'; s.aiko = true; }
         else if (d === 2) { s.res = 'かち'; s.aiko = false; s.st = 'roul'; s.spin = 28 + rnd(12); s.rt = 0; }
         else { s.res = 'まけ'; s.aiko = false; if (s.medal <= 0) s.over = true; } }
-      if (s.st === 'roul') { s.rt += dt; var iv = 40 + Math.max(0, 28 - s.spin) * 22; if (s.rt > iv) { s.rt = 0; s.pos = (s.pos + 1) % 12; s.spin--; if (s.spin <= 0) { s.win = RING[s.pos]; s.medal += s.win + 1; s.st = 'show'; s.t = 0; } } }
+      if (s.st === 'roul') { s.rt += dt; var iv = 40 + Math.max(0, 28 - s.spin) * 22; if (s.rt > iv) { s.rt = 0; s.pos = (s.pos + 1) % 12; s.spin--; if (s.spin <= 0) { s.win = RING[s.pos]; s.medal += s.win + 1; s.st = 'show'; s.t = 0; jingle(true); } } }
       s.best = Math.max(s.best, s.medal); s.score = s.best; },
     input: function (k) { var s = this; if (typeof k !== 'number' || s.over || s.st === 'shout' || s.st === 'roul') return;
       if (!s.aiko) { if (s.medal <= 0) { s.over = true; return; } s.medal--; } s.win = 0; s.me = k; s.st = 'shout'; s.t = 0; s.res = ''; },
@@ -163,6 +163,43 @@
       return 'メダル ' + s.medal + ' 枚'; }
   };
 
+  /* ===== ゲーム中の BGM（ファミコン風。4本ともオリジナル曲）=====
+     遊びはじめると鳴り、ゲームオーバー・別のゲーム・画面の外・タブを離れると止まる。
+     右上の「音 OFF」、またはゲームコーナーの「♪ 音楽」ボタンで鳴らさないようにできる */
+  var TUNES = {
+    block: { bpm: 152, lead: [69,0,72,74, 76,-1,74,72, 71,-1,67,71, 72,-1,69,-1, 69,0,72,74, 76,77,79,-1, 77,76,74,71, 69,-1,-1,0,
+                              72,-1,76,-1, 74,72,71,72, 74,-1,71,-1, 67,-1,71,-1, 72,74,76,72, 74,71,67,71, 69,-1,72,71, 69,-1,-1,0],
+             bass: [45,57,45,57, 41,53,41,53, 43,55,43,55, 40,52,40,52] },
+    space: { bpm: 138, lead: [64,67,71,67, 64,67,72,67, 62,66,69,66, 62,66,71,66, 64,67,71,76, 74,71,67,71, 72,-1,71,-1, 69,-1,66,-1],
+             bass: [40,0,40,52, 40,0,40,52, 38,0,38,50, 38,0,38,50, 36,0,36,48, 38,0,38,50, 40,0,47,0, 42,0,47,0] },
+    crane: { bpm: 126, lead: [72,76,79,76, 77,-1,74,-1, 71,74,77,74, 76,-1,72,-1, 72,76,79,84, 81,-1,79,77, 76,74,72,74, 72,-1,-1,0],
+             bass: [48,55,52,55, 53,57,53,57, 55,59,55,59, 48,55,52,55] },
+    janken: { bpm: 168, lead: [67,72,72,74, 76,-1,74,72, 69,72,72,74, 72,-1,-1,0, 76,76,79,76, 74,72,74,-1, 77,76,74,71, 72,-1,79,0],
+              bass: [48,55,48,55, 53,57,53,57, 55,59,55,59, 48,55,48,0] }
+  };
+  var AU = null, mTimer = null, mOn = true;
+  try { mOn = localStorage.getItem('gt-mg-music') !== 'off' && localStorage.getItem('gt-click') !== 'off'; } catch (e) {}
+  function au() { if (!AU) { var C = window.AudioContext || window.webkitAudioContext; if (!C) return null; AU = new C(); } if (AU.state === 'suspended') AU.resume(); return AU; }
+  function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+  function note(a, m, t, d, type, vol) { var o = a.createOscillator(), g = a.createGain(); o.type = type; o.frequency.value = hz(m);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .008); g.gain.setValueAtTime(vol, t + d * .7); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(g); g.connect(a.destination); o.start(t); o.stop(t + d + .02); }
+  function musicStop() { clearInterval(mTimer); mTimer = null; }
+  function musicStart(key) {
+    musicStop(); if (!mOn) return; var a = au(), s = TUNES[key]; if (!a || !s) return;
+    try { window.dispatchEvent(new CustomEvent('gt-sound', { detail: 'game' })); } catch (e) {}
+    var step = 60 / s.bpm / 2, k = 0, t0 = a.currentTime + .06, L = s.lead, B = s.bass;
+    function len(i) { var n = 1; while (L[(i + n) % L.length] === -1 && n < 8) n++; return n; }
+    function sched() { while (t0 < a.currentTime + .25) { var m = L[k % L.length];
+        if (m > 0) note(a, m, t0, step * len(k % L.length) * .92, 'square', .022);
+        if (k % 2 === 0) { var b = B[(k / 2) % B.length]; if (b > 0) note(a, b, t0, step * 1.7, 'triangle', .05); }
+        t0 += step; k++; } }
+    sched(); mTimer = setInterval(sched, 90);
+  }
+  function jingle(up) { if (!mOn) return; var a = au(); if (!a) return; var t = a.currentTime + .03;
+    (up ? [72, 76, 79, 84] : [72, 67, 64, 60]).forEach(function (m, i) { note(a, m, t + i * .13, up ? .16 : .22, 'square', .028); }); }
+  window.addEventListener('gt-sound', function (e) { if (e.detail !== 'game') musicStop(); });
+
   var GAMES = [block, space, crane, janken], cur = null, running = false, last = 0, visible = true, started = false;
   function hud(extra) { var hi = hiGet(cur.key); info.textContent = (extra || '') + (hi ? '　HI ' + hi : ''); }
   function frame(ts) {
@@ -170,14 +207,14 @@
     if (started && !cur.over) cur.step(dt);
     var line = cur.draw();
     if (!started) { ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(0, 86, W, 70); txt(cur.name, 80, 104, 13, '#ffd23f'); txt(cur.key === 'janken' ? 'ボタンをおしてスタート' : 'A ボタンでスタート', 80, 126, 10, '#fff'); txt(cur.help, 80, 144, 7.5, '#9fb3d9'); }
-    if (cur.over) { if (cur.score > hiGet(cur.key)) hiSet(cur.key, cur.score); ctx.fillStyle = 'rgba(0,0,0,.65)'; ctx.fillRect(0, 92, W, 56); txt('GAME OVER', 80, 110, 14, '#ff5a5a'); txt(cur.key === 'janken' ? 'メダルがなくなった… ボタンでもう一回' : 'A でもう一回', 80, 132, cur.key === 'janken' ? 8.5 : 10, '#fff'); }
+    if (cur.over) { if (mTimer) { musicStop(); jingle(false); } if (cur.score > hiGet(cur.key)) hiSet(cur.key, cur.score); ctx.fillStyle = 'rgba(0,0,0,.65)'; ctx.fillRect(0, 92, W, 56); txt('GAME OVER', 80, 110, 14, '#ff5a5a'); txt(cur.key === 'janken' ? 'メダルがなくなった… ボタンでもう一回' : 'A でもう一回', 80, 132, cur.key === 'janken' ? 8.5 : 10, '#fff'); }
     hud(line);
     if ((!started || cur.over) && cur.key !== 'janken') { running = false; return; } // 止まっている画面は描きつづけない
-    if (visible && !document.hidden) requestAnimationFrame(frame); else running = false;
+    if (visible && !document.hidden) requestAnimationFrame(frame); else { running = false; musicStop(); }
   }
   function run() { if (!running && visible && !document.hidden) { running = true; last = 0; requestAnimationFrame(frame); } }
   function pick(i) {
-    cur = GAMES[i]; cur.reset(); started = false;
+    cur = GAMES[i]; cur.reset(); started = false; musicStop();
     Array.prototype.forEach.call(root.querySelectorAll('.mg-tabs button'), function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
     pad.hidden = cur.key === 'janken'; jpad.hidden = cur.key !== 'janken';
     try { localStorage.setItem('gt-mg-last', String(i)); } catch (e) {}
@@ -185,8 +222,8 @@
   }
   function press(k) {
     if (!cur) return;
-    if (cur.over) { if (k === 'a' || typeof k === 'number') { cur.reset(); started = true; if (typeof k === 'number') cur.input(k); } run(); return; }
-    if (!started) { if (k === 'a' || typeof k === 'number') { started = true; try { if (window.gtag) gtag('event', 'minigame_play', { game: cur.key }); } catch (e) {} if (typeof k === 'number') cur.input(k); } run(); return; }
+    if (cur.over) { if (k === 'a' || typeof k === 'number') { cur.reset(); started = true; musicStart(cur.key); if (typeof k === 'number') cur.input(k); } run(); return; }
+    if (!started) { if (k === 'a' || typeof k === 'number') { started = true; musicStart(cur.key); try { if (window.gtag) gtag('event', 'minigame_play', { game: cur.key }); } catch (e) {} if (typeof k === 'number') cur.input(k); } run(); return; }
     cur.input(k); run();
   }
   Array.prototype.forEach.call(root.querySelectorAll('.mg-tabs button'), function (b, i) { b.addEventListener('click', function () { pick(i); }); });
@@ -203,8 +240,13 @@
   screen.addEventListener('keyup', function (e) { var k = KEYS[e.key]; if (k !== undefined) held[k] = false; });
   screen.addEventListener('blur', function () { held = {}; });
   screen.addEventListener('click', function () { screen.focus({ preventScroll: true }); if (!started || (cur && cur.over)) press(cur && cur.key === 'janken' ? 'noop' : 'a'); });
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) run(); }).observe(root);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) run(); });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) { run(); if (started && !cur.over && !mTimer) musicStart(cur.key); } else musicStop(); }).observe(root);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) musicStop(); else { run(); if (started && cur && !cur.over && visible && !mTimer) musicStart(cur.key); } });
+  var mb = root.querySelector('.mg-music');
+  function mPaint() { if (mb) { mb.textContent = mOn ? '♪ 音楽 ON' : '♪ 音楽 OFF'; mb.setAttribute('aria-pressed', mOn ? 'true' : 'false'); } }
+  if (mb) mb.addEventListener('click', function () { mOn = !mOn; try { localStorage.setItem('gt-mg-music', mOn ? 'on' : 'off'); } catch (e) {} mPaint(); if (mOn && started && !cur.over) musicStart(cur.key); else musicStop(); });
+  window.addEventListener('gt-sound-toggle', function (e) { var own = true; try { own = localStorage.getItem('gt-mg-music') !== 'off'; } catch (x) {} mOn = !!e.detail && own; mPaint(); if (!mOn) musicStop(); });
+  mPaint();
   var lastI = 0; try { lastI = Math.min(3, +localStorage.getItem('gt-mg-last') || 0); } catch (e) {}
   pick(lastI);
 })();

@@ -2,6 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
 <title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
 <atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+<item><title>名刺を置きました</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-16-名刺を置きました</guid><category>サイト</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ホームのメニューに「名刺」ボタンをつけました。ここだけは90年代風ではなく、黒い背景で名刺を大きく見せます。タップで裏返り、裏の QR は大きく表示して読み取れます。表・裏・両面の画像の保存や、スマホなら共有もできます。&lt;/p&gt;&lt;p&gt;ついでに、右のゲームコーナーで遊んでいるあいだは、ファミコン風のオリジナル BGM が流れるようにしました（「♪ 音楽」ボタンで消せます）。&lt;/p&gt;</description></item>
 <item><title>ラーメンブースに14杯、美術館に所蔵品</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-16-ラーメンブースに14杯、美術館に所蔵品</guid><category>ブース</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;&lt;a href=&quot;https://www.givetex.org/ramen/&quot;&gt;ラーメンブース&lt;/a&gt;に、これまで食べた14杯（ほうとう・そばの番外編もふくむ）をならべました。しょうゆ・みそ・とんこつ・家系・二郎系などの味でしぼりこめます。写真は軽くするために小さめです。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.givetex.org/museum/&quot;&gt;美術館ブース&lt;/a&gt;には「所蔵品」の部屋をつくりました。ドパ読！の表紙、LINE スタンプ、unityroom のゲームの絵から、毎日9点が入れかわって飾られます。&lt;/p&gt;</description></item>
 <item><title>CPU と遊べるボードゲームを9種つくった</title><link>https://www.givetex.org/diary/#m202611</link>
@@ -60,6 +62,4 @@
 <guid isPermaLink="false">givetex-diary-2026-11-06-自分でしゃべる AI VTuber</guid><category>AI</category><pubDate>Fri, 06 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;自律して会話する AI キャラクターを構想。ゲーム画面の右下にいて、自分から話しかける最初の機能を検討&lt;/li&gt;&lt;li&gt;ローカルで動く AI（Ollama など）も調べる対象に&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>「AWSTUDY SAA 設計道場」のページを公開</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-06-「AWSTUDY SAA 設計道場」のページを公開</guid><category>AWS</category><pubDate>Fri, 06 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;要件が変わると答えも変わる——AWSの設計判断を鍛えるトレーナー。10問ずつ何度でも解ける形にしました。&lt;a href=&quot;https://www.givetex.org/apps/aws-saa-dojo/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
-<item><title>折り紙アプリ「GetOffGod」と、韻でとぶゴルフ</title><link>https://www.givetex.org/diary/#m202611</link>
-<guid isPermaLink="false">givetex-diary-2026-11-05-折り紙アプリ「GetOffGod」と、韻でとぶゴルフ</guid><category>ゲーム</category><pubDate>Thu, 05 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;GetOffGod：折りたたみスマホのヒンジを使う折り紙アプリ。紙の回転・裏返し・折り目・折り込みの操作と、物理演算をふくむ詳細設計&lt;/li&gt;&lt;li&gt;ライムゴルフ：韻のふみ具合でボールの飛距離が決まるゲーム。ラッパー風のゴルファーをデザインし、AI に頼らない韻の判定とスコア計算の詳細設計を依頼（GitHub の &lt;a href=&quot;https://github.com/Ben-Kei-create/rhymegolf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;rhymegolf&lt;/a&gt;）&lt;/li&gt;&lt;/ul&gt;</description></item>
 </channel></rss>

@@ -32,7 +32,7 @@
   }
   function play(i) {
     stop(); var a = ac(); if (!a) return; var s = SONGS[i], beat = 60 / s.bpm / 2, lead = s.lead.split(' '), bass = s.bass.split(' '), k = 0, t0 = a.currentTime + .05;
-    playing = i;
+    playing = i; try { window.dispatchEvent(new CustomEvent('gt-sound', { detail: 'bgm' })); } catch (e) {}
     function sched() {
       while (t0 < a.currentTime + .3) {
         var n = lead[k % lead.length]; if (n !== '-') tone(N[n], t0, beat * .9, 'square', .035);
@@ -51,6 +51,7 @@
     btn.addEventListener('click', function () { if (playing === null) { play(+sel.value); ga('bgm_play', { song: SONGS[+sel.value].name }); } else stop(); ui(); });
     sel.addEventListener('change', function () { if (playing !== null) play(+sel.value); ui(); });
     document.addEventListener('visibilitychange', function () { if (document.hidden && playing !== null) { stop(); ui(); } });
+    window.addEventListener('gt-sound', function (e) { if (e.detail === 'game' && playing !== null) { stop(); ui(); } });
     ui();
   }
 
@@ -157,7 +158,7 @@
     /* 音のオン／オフ（右上） */
     var snd = btn('r-snd', 'クリック音のオン・オフ', '');
     function paint() { snd.textContent = on ? '♪ 音 ON' : '♪ 音 OFF'; snd.setAttribute('aria-pressed', on ? 'true' : 'false'); }
-    snd.addEventListener('click', function () { on = !on; store('gt-click', on ? 'on' : 'off'); paint(); if (on) click(false); });
+    snd.addEventListener('click', function () { on = !on; store('gt-click', on ? 'on' : 'off'); paint(); if (on) click(false); try { window.dispatchEvent(new CustomEvent('gt-sound-toggle', { detail: on })); } catch (e) {} });
     paint();
     if (location.pathname !== '/') return;
     /* ▲ TOP（右下） */

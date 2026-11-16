@@ -449,3 +449,17 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-calc-keys .op { color: #d10000; }
 .r-calc-keys .clr { color: #0040d0; }
 @media print { .r-fixbtn, .r-toolwin { display: none; } }
+
+/* ゲームコーナーの「♪ 音楽」 */
+.mg-opt { margin: 4px 0 0; text-align: right; }
+.mg-music { font: 11px/1.4 "DotGothic16", monospace; padding: 2px 8px; background: #c0c0c0; border: 0; cursor: pointer;
+  box-shadow: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
+.mg-music[aria-pressed=false] { color: #777; }
+
+/* ホームのメニューの「名刺」ボタン（押すと、ここだけ今っぽい黒い画面になる） */
+.r-nav .r-meishi { display: inline-block; margin: 2px 1px; padding: 3px 12px; font: inherit; font-size: 13px; line-height: 1.5; cursor: pointer; border: 0;
+  background: linear-gradient(#1a1a1a, #000); color: #e9d39a; letter-spacing: .12em;
+  box-shadow: inset -1px -1px #000, inset 1px 1px #6b5a2e, inset -2px -2px #3a3a3a, inset 2px 2px #8a7440; }
+.r-nav .r-meishi:hover { color: #fff3c8; }
+.r-nav .r-meishi:focus-visible { outline: 2px dotted #000080; outline-offset: 1px; }
+@media (max-width: 600px) { .r-nav .r-meishi { padding: 3px 8px; font-size: 12.5px; } }

@@ -33,6 +33,8 @@ NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　
         '<a href="/movie/">映画ブース</a>の感想ノート「みんなの C-Log」もよろしく　◆　'
         'このホームページはリンクフリーです　★☆★')
 
+MEISHI = '<button type="button" class="r-meishi" data-meishi aria-haspopup="dialog">名刺</button>'
+
 def header(cur):
     AC = ' aria-current="page"'
     nav = ''.join(f'<a href="{h}"{AC if h == cur else ""}>{t}</a>' for h, t in NAV)
@@ -41,7 +43,7 @@ def header(cur):
 <a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
 <div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
 <marquee class="r-news" scrollamount="5" scrolldelay="60">{NEWS}</marquee>
-<div class="r-nav" role="navigation" aria-label="メニュー">{nav}</div>
+<div class="r-nav" role="navigation" aria-label="メニュー">{nav}{MEISHI if cur == '/' else ''}</div>
 </div>'''
 
 FOOTER = '''<div class="r-foot" role="contentinfo">
@@ -90,7 +92,7 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 </html>
 '''
     if path == 'index.html':  # ホームだけ起動画面
-        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1)
+        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
     head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
     doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
@@ -150,6 +152,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-16', tag='サイト', title='名刺を置きました',
+      body='<p>ホームのメニューに「名刺」ボタンをつけました。ここだけは90年代風ではなく、黒い背景で名刺を大きく見せます。タップで裏返り、裏の QR は大きく表示して読み取れます。表・裏・両面の画像の保存や、スマホなら共有もできます。</p><p>ついでに、右のゲームコーナーで遊んでいるあいだは、ファミコン風のオリジナル BGM が流れるようにしました（「♪ 音楽」ボタンで消せます）。</p>'),
  dict(date='2026-11-16', tag='ブース', title='ラーメンブースに14杯、美術館に所蔵品',
       body='<p><a href="/ramen/">ラーメンブース</a>に、これまで食べた14杯（ほうとう・そばの番外編もふくむ）をならべました。しょうゆ・みそ・とんこつ・家系・二郎系などの味でしぼりこめます。写真は軽くするために小さめです。</p><p><a href="/museum/">美術館ブース</a>には「所蔵品」の部屋をつくりました。ドパ読！の表紙、LINE スタンプ、unityroom のゲームの絵から、毎日9点が入れかわって飾られます。</p>'),
  dict(date='2026-11-16', tag='ゲーム', title='CPU と遊べるボードゲームを9種つくった',
@@ -375,6 +379,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-16', 'メニューに「名刺」ボタン！ 裏返したり、QR を大きくしたり、画像で保存できます／ゲームコーナーで遊ぶと BGM が流れるように', True),
         ('2026-11-16', '<a href="/ramen/">ラーメンブース</a>に14杯！ 味でしぼりこめます／<a href="/museum/">美術館</a>に「所蔵品」の展示（毎日入れかわり）', True),
         ('2026-11-16', '<a href="/game/board/">ゲームブース</a>に、CPU と遊べるボードゲーム9種！ 将棋・囲碁・麻雀・チェス・リバーシ・マンカラなど', True),
         ('2026-11-16', 'ホームに<b>お助けツール</b>（手書きメモ・電卓）と、なつかしい<b>クリック音</b>（右上で ON／OFF）', True),
@@ -441,6 +446,7 @@ document.write(rGreeting());
 <p class="mg-info"></p>
 <div class="mg-pad"><button type="button" data-k="left" aria-label="ひだり">◀</button><button type="button" data-k="up" aria-label="うえ・かいてん">▲</button><button type="button" data-k="down" aria-label="した">▼</button><button type="button" data-k="right" aria-label="みぎ">▶</button><button type="button" data-k="a" class="mg-a" aria-label="Aボタン">A</button></div>
 <div class="mg-janken" hidden><button type="button" data-k="0">グー</button><button type="button" data-k="1">チョキ</button><button type="button" data-k="2">パー</button></div>
+<p class="mg-opt"><button type="button" class="mg-music" aria-pressed="true">♪ 音楽 ON</button></p>
 <noscript><p class="r-small">ゲームは JavaScript をオンにすると遊べます。</p></noscript>
 </div>
 <script src="/assets/minigames.js" defer></script>''', '🕹', cls='mg-win'))
