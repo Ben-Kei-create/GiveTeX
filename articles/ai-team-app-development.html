@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】 | GiveTex</title>
+<meta name="description" content="企画・判断は人、実装とレビューはAIに分担して iPhone アプリをつくる方法を、中学理科アプリ「ドパリカ！」の開発記録をもとに紹介します。">
+<meta property="og:title" content="AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】">
+<meta property="og:description" content="企画・判断は人、実装とレビューはAIに分担して iPhone アプリをつくる方法を、中学理科アプリ「ドパリカ！」の開発記録をもとに紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.givetex.org/articles/ai-team-app-development.html">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/articles/ai-team-app-development.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ2BPF1RLV"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-RJ2BPF1RLV');
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1a1a;--paper:#fafaf8;--accent:#0066ff;--accent-light:#e8f0ff;
+  --gray-100:#f4f4f2;--gray-200:#e8e8e4;--gray-400:#999;--gray-600:#666;
+  --green:#0a8a50;--green-light:#e6f7ee;--orange:#c65d00;--orange-light:#fff3e6;
+  --radius:6px;--max-w:720px;--font-body:'Noto Sans JP',sans-serif;--font-mono:'Space Mono',monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased}
+.pr-banner{background:var(--gray-100);border-bottom:1px solid var(--gray-200);text-align:center;padding:6px;font-size:.75rem;color:var(--gray-600)}
+header{border-bottom:2px solid var(--ink);padding:1.5rem 1rem}
+.header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-0.02em}
+.logo span{color:var(--accent)}
+nav a{font-size:.875rem;color:var(--gray-600);text-decoration:none;margin-left:1.5rem;transition:color .2s}
+nav a:hover{color:var(--ink)}
+.article{max-width:var(--max-w);margin:0 auto;padding:3rem 1rem 4rem}
+.article-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--gray-400);margin-bottom:.75rem;display:flex;gap:1rem}
+.article h1{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:900;line-height:1.35;margin-bottom:1rem;letter-spacing:-0.02em}
+.article-lead{font-size:1.05rem;color:var(--gray-600);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-200)}
+.article h2{font-size:1.25rem;font-weight:700;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}
+.article h3{font-size:1.05rem;font-weight:700;margin:2rem 0 .75rem;padding-left:.75rem;border-left:3px solid var(--accent)}
+.article p{margin-bottom:1.25rem;font-size:.95rem}
+.article ul,.article ol{margin:0 0 1.25rem 1.5rem;font-size:.95rem}
+.article li{margin-bottom:.5rem}
+.article strong{font-weight:700}
+.comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;font-size:.85rem}
+.comparison-table th{background:var(--ink);color:#fff;padding:.75rem .5rem;text-align:left;font-weight:700;font-size:.8rem}
+.comparison-table td{padding:.75rem .5rem;border-bottom:1px solid var(--gray-200);vertical-align:top}
+.comparison-table tr:hover{background:var(--gray-100)}
+.rating{display:inline-block;font-family:var(--font-mono);font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:3px}
+.rating-high{background:var(--green-light);color:var(--green)}
+.rating-mid{background:var(--accent-light);color:var(--accent)}
+.rating-low{background:var(--orange-light);color:var(--orange)}
+.callout{background:var(--gray-100);border-left:4px solid var(--accent);padding:1.25rem;margin:1.5rem 0;border-radius:0 var(--radius) var(--radius) 0;font-size:.9rem}
+.callout-title{font-weight:700;margin-bottom:.5rem;font-size:.85rem}
+.verdict{background:var(--accent-light);border:2px solid var(--accent);border-radius:var(--radius);padding:1.5rem;margin:2rem 0}
+.verdict h3{border:none;padding:0;margin:0 0 .75rem;color:var(--accent);font-size:1.1rem}
+.cta-box{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;margin:2rem 0;text-align:center}
+.cta-box p{font-size:.9rem;margin-bottom:1rem;color:var(--gray-600)}
+.cta-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:.75rem 2rem;border-radius:var(--radius);font-weight:700;font-size:.9rem;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+.cta-sub{display:inline-block;margin-top:.5rem;font-size:.8rem;color:var(--gray-400)}
+.toc{background:var(--gray-100);border-radius:var(--radius);padding:1.5rem;margin:0 0 2.5rem}
+.toc-title{font-weight:700;font-size:.9rem;margin-bottom:.75rem}
+.toc ol{margin:0 0 0 1.25rem;font-size:.85rem}
+.toc li{margin-bottom:.4rem}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover{color:var(--accent)}
+.tag{display:inline-block;font-size:.7rem;font-family:var(--font-mono);background:var(--accent-light);color:var(--accent);padding:2px 8px;border-radius:3px;margin-right:.5rem}
+.back-home{display:inline-block;margin-top:2rem;font-size:.875rem;color:var(--accent);text-decoration:none}
+.back-home:hover{text-decoration:underline}
+.related-articles{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--ink)}
+.related-articles h2{font-size:1rem;font-weight:700;margin-bottom:1rem;border:none;padding:0}
+.related-link{display:block;padding:.75rem 0;border-bottom:1px solid var(--gray-200);text-decoration:none;color:var(--ink);font-size:.9rem}
+.related-link:hover{color:var(--accent)}
+footer{border-top:1px solid var(--gray-200);padding:2rem 1rem;text-align:center}
+footer p{font-size:.75rem;color:var(--gray-400)}
+.legal-links{max-width:var(--max-w);margin:1rem auto 0;display:flex;justify-content:center;gap:1.5rem}
+.legal-links a{font-size:.75rem;color:var(--gray-400);text-decoration:none}
+@media(max-width:600px){
+  .header-inner{flex-direction:column;gap:.75rem}
+  nav a{margin-left:0;margin-right:1rem}
+  .comparison-table{font-size:.75rem}
+  .comparison-table th,.comparison-table td{padding:.5rem .35rem}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】",
+  "author": {
+    "@type": "Person",
+    "name": "GiveTex"
+  },
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "publisher": {
+    "@type": "Organization",
+    "name": "GiveTex"
+  },
+  "description": "企画・判断は人、実装とレビューはAIに分担して iPhone アプリをつくる方法を、中学理科アプリ「ドパリカ！」の開発記録をもとに紹介します。"
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/assets/retro.css">
+<script type="text/javascript" src="/assets/retro.js"></script>
+<script src="/assets/retro-extras.js" defer></script>
+<script src="/assets/ga.js" defer></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/assets/img-fallback.js"></script>
+<!-- seo -->
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】">
+<meta name="twitter:description" content="企画・判断は人、実装とレビューはAIに分担して iPhone アプリをつくる方法を、中学理科アプリ「ドパリカ！」の開発記録をもとに紹介します。">
+<meta name="twitter:image" content="https://www.givetex.org/assets/og/home.jpg">
+<!-- /seo -->
+</head>
+<body>
+
+<div class="pr-banner daily-quote" aria-label="今日のひとこと">今日のひとこと「千里の道も一歩から。」― 老子</div>
+<script src="/assets/quote.js" defer></script>
+
+<a name="top" id="top"></a>
+<div class="r-head" role="banner">
+<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
+<div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
+<marquee class="r-news" scrollamount="5" scrolldelay="60">★☆★ ようこそ GiveTex のホームページへ！ ★☆★　<a href="/guestbook/">ゲストブック</a>に足あとを残してね！　◆　キリ番をふんだら名前をのこそう　◆　右のゲームコーナーで、じゃんけん勝負！　◆　今日のおみくじ、もう引いた？　◆　<a href="/movie/">映画ブース</a>の感想ノート「みんなの C-Log」もよろしく　◆　このホームページはリンクフリーです　★☆★</marquee>
+<div class="r-nav" role="navigation" aria-label="メニュー"><a href="/">HOME</a><a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/doron/">どろん</a><a href="/note/">note</a><a href="/stamp/">スタンプ</a><a href="/#booths">ブース</a><a href="/diary/">開発日記</a><a href="/#articles" aria-current="page">記事</a><a href="/about.html">管理人</a><a href="/contact/">お問い合わせ</a></div>
+</div>
+
+<article class="article">
+
+  <div class="article-meta">
+    <span>2026.11.16</span>
+    <span>8 min read</span>
+  </div>
+
+  <h1>AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】</h1>
+
+  <div style="margin-bottom:1.5rem">
+    <span class="tag">AI</span>
+    <span class="tag">アプリ開発</span>
+    <span class="tag">SwiftUI</span>
+    
+  </div>
+
+  <p class="article-lead">アプリづくりで一番時間がかかるのは、コードを書くことよりも「何をつくるかを決めること」かもしれません。GiveTex では、企画と判断は人、設計の整理・実装・レビューは AI、という分業でアプリをつくっています。中学理科アプリ「ドパリカ！」の開発記録をもとに、その進め方を紹介します。</p>
+
+  <nav class="toc">
+    <div class="toc-title">この記事の内容</div>
+    <ol><li><a href="#roles">役割を3つに分ける</a></li><li><a href="#spec">最初に「決めること」を決める</a></li><li><a href="#assets">仮の素材で先に動かす</a></li><li><a href="#redesign">つくってから気づいたら、仕様を直す</a></li><li><a href="#tips">うまくいくコツ</a></li></ol>
+  </nav>
+
+  <h2 id="roles">役割を3つに分ける</h2>
+  <p>ドパリカ！では、AI ごとに役割を決めました。</p>
+  <ul>
+    <li><strong>ChatGPT</strong>：仕様・設計・指示書づくり（何をつくるかを言葉にする係）</li>
+    <li><strong>Claude Code</strong>：Swift／SwiftUI の実装（実際に手を動かす係）</li>
+    <li><strong>Codex</strong>：レビューと QA（できたものを点検する係）</li>
+  </ul>
+  <p>そして人間は、<strong>企画・仕様・デザインの最終判断</strong>をします。AI にはどんどん案を出してもらい、「どれにするか」だけは自分で決める。この線引きをしておくと、AI が勝手に方向を変えてしまう事故が減ります。</p>
+
+  <h2 id="spec">最初に「決めること」を決める</h2>
+  <p>実装に入る前に、アプリの芯になる仕様を先に固めました。たとえばドパリカ！では、次のようなことです。</p>
+  <ul>
+    <li>iPhone 専用、SwiftUI でつくる</li>
+    <li>Lv.1〜30＝山（2択）、Lv.31〜60＝空（3択）、Lv.61〜100＝海（4択）</li>
+    <li>レベルは「ステージ」ではなく、自分の累積 XP のレベル（自分では選べない）</li>
+    <li>1セット5問。前のレベルで間違えた問題を優先して出す</li>
+    <li>最初のリリースは Lv.1〜30（山）まで</li>
+  </ul>
+  <p>ここが決まっていると、AI への指示が「この仕様のとおりに、この画面をつくって」と具体的になります。逆にあいまいなまま実装を頼むと、AI はそれらしい仮の仕様を自分で作ってしまいます。</p>
+
+  <h2 id="assets">仮の素材で先に動かす</h2>
+  <p>背景画像やアイコンが完成していなくても、<strong>仮の画像で先に組みこんで動かしてしまう</strong>のがおすすめです。ドパリカ！では、仮のアプリアイコン・ホーム背景・山の背景10枚を先に入れて、Simulator で動きを確認しました。</p>
+  <p>このとき、<strong>コードを変えずに画像だけ差し替えられる作り</strong>にしておくと、あとで本番の画像に入れかえるのが一瞬で済みます。画像がないときはコードで描いた背景に切りかわるようにしておくと、作業中に画面が壊れることもありません。</p>
+
+  <h2 id="redesign">つくってから気づいたら、仕様を直す</h2>
+  <p>最初は「1問正解したら、次の背景へ進む」という作りでした。ところが動かしてみると、5問全問正解で5つ進み、次に始めるとレベルの位置に戻ってしまう、という問題が見つかりました。</p>
+  <p>そこで仕様を変え、<strong>背景の位置を累積 XP・レベルと同期</strong>させました。「本当に到達した位置」と「演出上の今の位置」を分けて持ち、まちがえたときは演出だけ後ろに下がる（XP は減らない）、という形です。</p>
+  <p>AI と分業していても、<strong>動かしてみて気づくことは必ずあります</strong>。そのときは実装をつぎはぎで直すより、仕様の言葉から直して、もう一度 AI に渡すほうがきれいに直ります。</p>
+
+  <h2 id="tips">うまくいくコツ</h2>
+  <ul>
+    <li><strong>指示書は「完成の条件」まで書く</strong>：何ができたら終わりかを書くと、AI の作業がぶれません。</li>
+    <li><strong>小さく区切ってコミットする</strong>：1つの機能ごとに保存しておくと、失敗してもすぐ戻れます。</li>
+    <li><strong>レビュー役を別にする</strong>：つくった AI 自身より、別の AI に見せたほうが見落としに気づきやすいです。</li>
+    <li><strong>判断だけは手放さない</strong>：デザインの好みや、だれに向けたアプリかは、人が決めるところです。</li>
+  </ul>
+  <p>AI に「全部おまかせ」ではなく、得意なところを分けてお願いする。それだけで、個人でもアプリづくりのスピードはぐっと上がります。開発のようすは<a href="/diary/">開発日記</a>にも書いています。</p>
+
+
+  <div class="related-articles">
+    <h2>関連記事</h2>
+    <a href="/articles/claude-chatgpt-gemini-comparison.html" class="related-link">Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】</a>
+    <a href="/articles/ai-book-illustration-rules.html" class="related-link">AIで本の挿絵をつくるときの5つのルール｜1プロンプト＝1枚で迷わない</a>
+    <a href="/apps/doparika/" class="related-link">ドパリカ！（中学理科の2択クイズ）</a>
+    
+  </div>
+
+  <a href="/" class="back-home">← 記事一覧に戻る</a>
+
+</article>
+
+<div class="r-foot" role="contentinfo">
+<hr class="r-hr">
+<div class="bnrs">
+<a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
+<a href="/books/"><img src="/assets/retro/bnr-dopayomi.gif" width="88" height="31" alt="ドパ読！"></a>
+<a href="/doron/"><img src="/assets/retro/bnr-doron.gif" width="88" height="31" alt="どろん"></a>
+<img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
+</div>
+<p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
+<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="/contact/">お問い合わせ</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
+<address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
+</div>
+
+</body>
+</html>

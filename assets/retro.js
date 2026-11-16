@@ -56,6 +56,7 @@ function rCounter() {
       if (!j || !j.ok) return local();
       try { sessionStorage.setItem("givetex_counted", "1"); } catch (e) {}
       show(j.n, "人目のお客さまです");
+      var td = document.getElementById("r-today"); if (td && j.today != null) td.innerHTML = "今日 <b>" + j.today + "</b> 人 ／ 昨日 <b>" + j.yesterday + "</b> 人";
       list(Array.isArray(j.kiri) ? j.kiri : j.list);
       if (j.kiri === true && j.ktk) kiriForm(j.n, j.ktk);
     })["catch"](local);

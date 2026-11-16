@@ -113,4 +113,20 @@ function looksSpam(s) {
   return '';
 }
 
-module.exports = { kv, hasKV, send, clientIp, hmac, sha, ipKey, dailyId, sameOrigin, issueToken, checkToken, readJson, limit, clean, mask, looksSpam, jstDay };
+/* 管理人へのお知らせメール（Resend）。1日40通まで。失敗しても本体の処理は止めない */
+async function notify(subject, text) {
+  try {
+    if (!process.env.RESEND_API_KEY) return false;
+    if (hasKV()) { const [n] = await kv([['INCR', 'notify:' + jstDay()], ['EXPIRE', 'notify:' + jstDay(), '172800']]); if (n > 40) return false; }
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 6000);
+    try {
+      const r = await fetch('https://api.resend.com/emails', { method: 'POST', signal: ctl.signal,
+        headers: { Authorization: 'Bearer ' + process.env.RESEND_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from: process.env.CONTACT_FROM || 'GiveTex お知らせ <onboarding@resend.dev>', to: [process.env.CONTACT_TO || ['tofuodorico', 'gmail.com'].join('@')],
+          subject: ('[GiveTex] ' + subject).replace(/[\r\n]/g, ' ').slice(0, 120), text: text + '\n\n―――\nGiveTex の自動のお知らせです（1日40通まで）。' }) });
+      return r.ok;
+    } finally { clearTimeout(t); }
+  } catch (e) { return false; }
+}
+
+module.exports = { notify, kv, hasKV, send, clientIp, hmac, sha, ipKey, dailyId, sameOrigin, issueToken, checkToken, readJson, limit, clean, mask, looksSpam, jstDay };

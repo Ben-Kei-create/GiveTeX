@@ -26,7 +26,7 @@ def pages():
 def meta(t, name):
     m = re.search(r'<meta (?:name|property)="' + re.escape(name) + r'" content="([^"]*)"', t); return html.unescape(m.group(1)) if m else ''
 
-def og_block(t, rel, covers):
+def og_block(t, rel, covers, book_covers={}):
     title = meta(t, 'og:title') or html.unescape((re.search(r'<title>(.*?)</title>', t, re.S) or [0, 'GiveTex'])[1].strip())
     desc = meta(t, 'og:description') or meta(t, 'description')
     canon = (re.search(r'<link rel="canonical" href="([^"]+)"', t) or [0, ''])[1]
@@ -34,6 +34,8 @@ def og_block(t, rel, covers):
     img = next((f'/assets/og/{n}.jpg' for pre, n in OG if rel.startswith(pre)), '/assets/og/home.jpg')
     slug = rel[len('note/posts/'):-5] if rel.startswith('note/posts/') else ''
     if slug in covers: img = covers[slug]
+    m = re.match(r'books/(\w+)\.html$', rel)
+    if m and m.group(1) in book_covers: img = book_covers[m.group(1)]
     tags = []
     if not meta(t, 'og:title'): tags.append(f'<meta property="og:title" content="{X(title)}">')
     if not meta(t, 'og:description') and desc: tags.append(f'<meta property="og:description" content="{X(desc)}">')
@@ -50,12 +52,14 @@ def og_block(t, rel, covers):
 def main():
     posts = js_json('note/posts.js', 'NOTE_POSTS')
     covers = {p['slug']: p['cover'].split('?')[0] for p in posts if p.get('cover', '').startswith('/')}
+    BOOKS = json.loads((R / 'tools/books_all.json').read_text(encoding='utf-8'))['books']
+    book_covers = {b[0]: b[3] for v in BOOKS.values() for b in v}
     n = 0; sm = []
     for p, rel in pages():
         t = p.read_text(encoding='utf-8')
         if '</head>' not in t: continue
         t2 = re.sub(r'\n?<!-- seo -->.*?<!-- /seo -->', '', t, flags=re.S)
-        t2 = t2.replace('</head>', og_block(t2, rel, covers) + '\n</head>', 1)
+        t2 = t2.replace('</head>', og_block(t2, rel, covers, book_covers) + '\n</head>', 1)
         if t2 != t: p.write_text(t2, encoding='utf-8'); n += 1
         noindex = re.search(r'<meta name="robots" content="[^"]*noindex', t2)
         canon = (re.search(r'<link rel="canonical" href="([^"]+)"', t2) or [0, ''])[1]

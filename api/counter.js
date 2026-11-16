@@ -19,8 +19,8 @@ module.exports = async function handler(req, res) {
   try {
     if (!L.hasKV()) return L.send(res, 503, { ok: false, error: 'not_configured' });
     if (req.method === 'GET') {
-      const [n] = await L.kv([['GET', KEY]]);
-      return L.send(res, 200, { ok: true, n: +n || 0, kiri: await recent() }, 'public, s-maxage=30, stale-while-revalidate=300');
+      const [n, td, yd] = await L.kv([['GET', KEY], ['GET', 'site:day:' + L.jstDay()], ['GET', 'site:day:' + L.jstDay(Date.now() - 864e5)]]);
+      return L.send(res, 200, { ok: true, n: +n || 0, today: +td || 0, yesterday: +yd || 0, kiri: await recent() }, 'public, s-maxage=30, stale-while-revalidate=300');
     }
     if (req.method !== 'POST') { res.setHeader('Allow', 'GET, POST'); return L.send(res, 405, { ok: false }); }
     if (!L.sameOrigin(req)) return L.send(res, 403, { ok: false });
@@ -37,6 +37,7 @@ module.exports = async function handler(req, res) {
       if (!k) return L.send(res, 404, { ok: false, error: '記録が見つかりません。' });
       if (k.name) return L.send(res, 409, { ok: false, error: 'もう名前が書かれています。' });
       k.name = L.mask(name); await L.kv([['SET', 'site:kiri:' + n, JSON.stringify(k)]]);
+      await L.notify('キリ番 ' + n + ' がふまれました！', k.name + ' さんが キリ番 ' + n + ' をふみました。\n\nhttps://www.givetex.org/');
       return L.send(res, 200, { ok: true, kiri: await recent() });
     }
 
@@ -44,8 +45,9 @@ module.exports = async function handler(req, res) {
       const [n] = await L.kv([['GET', KEY]]);
       return L.send(res, 200, { ok: true, n: +n || 0, counted: false, kiri: await recent() });
     }
-    const [n] = await L.kv([['INCR', KEY]]);
-    const out = { ok: true, n: +n || 0, counted: true };
+    const dk = 'site:day:' + L.jstDay();
+    const [n, td, , yd] = await L.kv([['INCR', KEY], ['INCR', dk], ['EXPIRE', dk, '259200'], ['GET', 'site:day:' + L.jstDay(Date.now() - 864e5)]]);
+    const out = { ok: true, n: +n || 0, counted: true, today: +td || 0, yesterday: +yd || 0 };
     if (isKiri(out.n)) try {
       await L.kv([['SET', 'site:kiri:' + out.n, JSON.stringify({ n: out.n, at: Date.now(), name: '' }), 'NX'], ['LPUSH', 'site:kirilist', String(out.n)], ['LTRIM', 'site:kirilist', '0', '49']]);
       out.kiri = true; out.ktk = L.hmac('kiri|' + out.n, 16);

@@ -161,3 +161,4 @@ table.info th{width:9em;color:var(--sub);font-weight:400;white-space:nowrap}
 .ax-tile .acts a.stretch{position:static}
 .ax-sub-links{align-items:center}
 .ax-sub-links a[href*="apps.apple.com"]{padding:4px 14px;font-size:13px;color:var(--accent-text)}
+.ax-diary-more{margin:6px 0 0;font-size:14px}.ax-diary-more a{color:var(--link,#0066cc);text-decoration:none}

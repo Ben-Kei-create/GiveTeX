@@ -96,26 +96,71 @@
       return 'GET ' + s.got + '　のこり ' + Math.max(0, s.left) + ' 回'; }
   };
 
-  /* ===== じゃんけんポン ===== */
-  var HANDS = ['グー', 'チョキ', 'パー'];
+  /* ===== じゃんけんポン（メダルゲーム風）=====
+     白い筐体・赤いルーレット・ネオンの手・青い回転灯。勝つとルーレットが回って、止まった数だけメダルが増える */
+  var RING = [1, 2, 4, 1, 2, 7, 1, 2, 4, 1, 2, 20];
   var janken = {
-    name: 'じゃんけんポン', key: 'janken', help: '下のボタンで出す手をえらんでね',
-    reset: function () { this.st = 'ready'; this.me = -1; this.cpu = -1; this.res = ''; this.streak = 0; this.score = 0; this.t = 0; this.over = false; this.aiko = false; },
-    step: function (dt) { this.t += dt; if (this.st === 'shout' && this.t > 650) { this.st = 'show'; this.t = 0; this.cpu = rnd(3); var d = (this.me - this.cpu + 3) % 3;
-      if (d === 0) { this.res = 'あいこ'; this.aiko = true; } else if (d === 2) { this.res = 'かち！'; this.streak++; this.aiko = false; } else { this.res = 'まけ…'; this.aiko = false; this.over = true; }
-      this.score = this.streak; } },
-    input: function (k) { if (typeof k === 'number' && (this.st === 'ready' || this.st === 'show') && !this.over) { this.me = k; this.st = 'shout'; this.t = 0; } },
-    hand: function (h, x, y, flip) { ctx.save(); ctx.translate(x, y); if (flip) ctx.scale(1, -1); ctx.fillStyle = '#ffd7b0'; ctx.strokeStyle = '#7a4b00'; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(0, 0, 16, 0, 7); ctx.fill(); ctx.stroke();
-      if (h === 1) { ctx.fillRect(-9, -36, 7, 24); ctx.strokeRect(-9, -36, 7, 24); ctx.fillRect(2, -36, 7, 24); ctx.strokeRect(2, -36, 7, 24); }
-      if (h === 2) for (var i = -2; i <= 2; i++) { ctx.save(); ctx.rotate(i * .32); ctx.fillRect(-3, -38, 6, 24); ctx.strokeRect(-3, -38, 6, 24); ctx.restore(); }
+    name: 'じゃんけんポン', key: 'janken', help: 'メダル1枚で勝負！ 勝つとルーレット',
+    reset: function () { this.st = 'ready'; this.me = -1; this.cpu = rnd(3); this.res = ''; this.medal = 10; this.score = 10; this.best = 10; this.t = 0; this.over = false; this.aiko = false; this.pos = 0; this.win = 0; this.spin = 0; },
+    step: function (dt) { var s = this; s.t += dt;
+      if (s.st === 'shout' && s.t > 900) { s.st = 'show'; s.t = 0; s.cpu = rnd(3); var d = (s.me - s.cpu + 3) % 3;
+        if (d === 0) { s.res = 'あいこ'; s.aiko = true; }
+        else if (d === 2) { s.res = 'かち'; s.aiko = false; s.st = 'roul'; s.spin = 28 + rnd(12); s.rt = 0; }
+        else { s.res = 'まけ'; s.aiko = false; if (s.medal <= 0) s.over = true; } }
+      if (s.st === 'roul') { s.rt += dt; var iv = 40 + Math.max(0, 28 - s.spin) * 22; if (s.rt > iv) { s.rt = 0; s.pos = (s.pos + 1) % 12; s.spin--; if (s.spin <= 0) { s.win = RING[s.pos]; s.medal += s.win + 1; s.st = 'show'; s.t = 0; } } }
+      s.best = Math.max(s.best, s.medal); s.score = s.best; },
+    input: function (k) { var s = this; if (typeof k !== 'number' || s.over || s.st === 'shout' || s.st === 'roul') return;
+      if (!s.aiko) { if (s.medal <= 0) { s.over = true; return; } s.medal--; } s.win = 0; s.me = k; s.st = 'shout'; s.t = 0; s.res = ''; },
+    neon: function (h, cx, cy) { /* ネオン管の手（元のデザイン） */
+      ctx.save(); ctx.translate(cx, cy); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      for (var pass = 0; pass < 2; pass++) {
+        ctx.strokeStyle = pass ? '#fff' : '#ff3b3b'; ctx.lineWidth = pass ? 1.6 : 5; ctx.shadowColor = '#ff2020'; ctx.shadowBlur = pass ? 6 : 12;
+        ctx.beginPath();
+        if (h === 0) { ctx.moveTo(-16, 6); ctx.quadraticCurveTo(-18, -14, -6, -16); ctx.quadraticCurveTo(10, -18, 16, -8); ctx.quadraticCurveTo(20, 8, 6, 16); ctx.quadraticCurveTo(-12, 20, -16, 6);
+          ctx.moveTo(-8, -8); ctx.lineTo(10, -8); ctx.moveTo(-8, 0); ctx.lineTo(10, 0); ctx.moveTo(-6, 8); ctx.lineTo(8, 8); }
+        if (h === 1) { ctx.moveTo(-14, 18); ctx.quadraticCurveTo(-18, 0, -8, -2); ctx.lineTo(-14, -26); ctx.quadraticCurveTo(-10, -30, -6, -26); ctx.lineTo(0, -6); ctx.lineTo(6, -28); ctx.quadraticCurveTo(10, -31, 13, -27); ctx.lineTo(8, -2); ctx.quadraticCurveTo(18, 4, 12, 18); ctx.closePath();
+          ctx.moveTo(-4, 6); ctx.lineTo(6, 6); }
+        if (h === 2) { ctx.moveTo(-14, 20); ctx.lineTo(-16, 2); ctx.lineTo(-26, -10); ctx.quadraticCurveTo(-26, -15, -20, -12); ctx.lineTo(-12, -4);
+          [[-12, -28], [-3, -32], [6, -30], [14, -22]].forEach(function (f, k) { var bx = -10 + k * 7; ctx.lineTo(bx, -6); ctx.lineTo(f[0], f[1]); ctx.quadraticCurveTo(f[0] + 3, f[1] - 4, f[0] + 6, f[1]); ctx.lineTo(bx + 5, -6); });
+          ctx.lineTo(16, 4); ctx.lineTo(10, 20); ctx.closePath(); }
+        ctx.stroke();
+      }
       ctx.restore(); },
-    draw: function () { var s = this; clear('#10233f'); txt('CPU', 80, 16, 10, '#9fb3d9'); txt('あなた', 80, 226, 10, '#9fb3d9');
-      if (s.st === 'ready') { txt(s.aiko ? 'あいこで…' : 'じゃん けん…', 80, 120, 16, '#ffd23f'); }
-      if (s.st === 'shout') { txt(s.aiko ? 'しょ！' : 'ポン！', 80, 120, 22, '#ffd23f'); s.hand(rnd(3), 80, 62, true); }
-      if (s.st === 'show') { s.hand(s.cpu, 80, 62, true); s.hand(s.me, 80, 176, false); txt(s.res, 80, 120, 22, s.res === 'かち！' ? '#6bff7a' : s.res === 'まけ…' ? '#ff5a5a' : '#ffd23f');
-        if (!s.over) txt(s.aiko ? 'もういっかい えらんでね' : 'つづけて えらんでね', 80, 140, 9, '#cfe'); }
-      return s.streak + ' 連勝中'; }
+    draw: function () { var s = this, t = Date.now();
+      ctx.fillStyle = '#f4f2ea'; ctx.fillRect(0, 0, W, H);
+      /* 回転灯 */
+      var lit = s.st === 'roul' || (s.st === 'show' && s.res === 'かち' && s.t < 2500);
+      ctx.fillStyle = '#111'; ctx.fillRect(66, 18, 28, 6);
+      ctx.fillStyle = lit ? '#3a7bff' : '#1b2f88'; ctx.beginPath(); ctx.moveTo(68, 18); ctx.lineTo(70, 4); ctx.quadraticCurveTo(80, -2, 90, 4); ctx.lineTo(92, 18); ctx.fill();
+      if (lit) { var a = (t / 120) % (Math.PI * 2); ctx.fillStyle = 'rgba(120,170,255,.35)'; ctx.beginPath(); ctx.moveTo(80, 10); ctx.arc(80, 10, 60, a, a + .5); ctx.fill(); }
+      /* 看板 */
+      ctx.fillStyle = '#e8262b'; ctx.fillRect(8, 28, 144, 16); txt('じゃんけんポン', 50, 36, 10, '#fff'); ctx.fillStyle = '#ffd23f'; ctx.fillRect(98, 30, 50, 12); txt('メダル', 123, 36, 8, '#e8262b');
+      /* 外側の「かち・まけ・あいこ」 */
+      txt('かち', 22, 62, 10, s.res === 'かち' ? '#e8262b' : '#bbb'); txt('かち', 138, 62, 10, s.res === 'かち' ? '#e8262b' : '#bbb');
+      txt('まけ', 22, 168, 10, s.res === 'まけ' ? '#1b2f88' : '#bbb'); txt('あいこ', 136, 168, 10, s.res === 'あいこ' ? '#0a8a3a' : '#bbb');
+      /* ルーレット */
+      var cx = 80, cy = 112, R = 54;
+      ctx.fillStyle = '#7a0d10'; ctx.beginPath(); ctx.arc(cx, cy, R + 6, 0, 7); ctx.fill();
+      ctx.fillStyle = '#c41c22'; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fill();
+      for (var k = 0; k < 12; k++) { var ang = -Math.PI / 2 + k * Math.PI / 6, x = cx + Math.cos(ang) * (R - 10), y = cy + Math.sin(ang) * (R - 10);
+        var on = (s.st === 'roul' || (s.st === 'show' && s.res === 'かち')) && k === s.pos;
+        ctx.fillStyle = on ? '#fff36b' : (RING[k] >= 7 ? '#ff8a00' : '#ffd23f'); if (on) { ctx.shadowColor = '#fff36b'; ctx.shadowBlur = 10; }
+        ctx.beginPath(); ctx.arc(x, y, 7.5, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
+        txt(String(RING[k]), x, y + .5, RING[k] >= 10 ? 7 : 8, on ? '#c41c22' : '#7a0d10'); }
+      ctx.fillStyle = '#2a0204'; ctx.beginPath(); ctx.arc(cx, cy, R - 20, 0, 7); ctx.fill();
+      /* まんなかのネオンの手 */
+      var hand = s.st === 'shout' ? Math.floor(t / 110) % 3 : (s.st === 'ready' ? Math.floor(t / 700) % 3 : s.cpu);
+      if (s.st !== 'ready' || (t >> 9) & 1) s.neon(hand, cx, cy + 2);
+      /* 文字 */
+      if (s.st === 'shout') txt(s.aiko ? 'しょ！' : (s.t < 450 ? 'じゃん けん…' : 'ポン！'), 80, 182, 13, '#e8262b');
+      else if (s.st === 'roul') txt('ルーレット！', 80, 182, 12, '#e8262b');
+      else if (s.st === 'show') txt(s.res === 'かち' ? 'かち！ メダル ×' + s.win : s.res === 'まけ' ? 'まけ…' : 'あいこで…', 80, 182, 12, s.res === 'かち' ? '#e8262b' : s.res === 'まけ' ? '#1b2f88' : '#0a8a3a');
+      else txt('ボタンをおしてね', 80, 182, 10, '#555');
+      /* メダルの受け皿 */
+      ctx.fillStyle = '#ddd8c8'; ctx.fillRect(10, 196, 140, 40); ctx.fillStyle = '#c9c2ad'; ctx.fillRect(14, 214, 132, 18);
+      for (var m = 0; m < Math.min(s.medal, 24); m++) { ctx.fillStyle = '#d9b44a'; ctx.beginPath(); ctx.arc(22 + (m % 12) * 10, 228 - Math.floor(m / 12) * 6, 4, 0, 7); ctx.fill(); ctx.strokeStyle = '#8a6a10'; ctx.stroke(); }
+      txt('MEDAL ' + s.medal, 80, 204, 9, '#333');
+      return 'メダル ' + s.medal + ' 枚'; }
   };
 
   var GAMES = [block, space, crane, janken], cur = null, running = false, last = 0, visible = true, started = false;
@@ -125,7 +170,7 @@
     if (started && !cur.over) cur.step(dt);
     var line = cur.draw();
     if (!started) { ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(0, 86, W, 70); txt(cur.name, 80, 104, 13, '#ffd23f'); txt(cur.key === 'janken' ? 'ボタンをおしてスタート' : 'A ボタンでスタート', 80, 126, 10, '#fff'); txt(cur.help, 80, 144, 7.5, '#9fb3d9'); }
-    if (cur.over) { if (cur.score > hiGet(cur.key)) hiSet(cur.key, cur.score); ctx.fillStyle = 'rgba(0,0,0,.65)'; ctx.fillRect(0, 92, W, 56); txt('GAME OVER', 80, 110, 14, '#ff5a5a'); txt(cur.key === 'janken' ? 'もう一回は ボタンで' : 'A でもう一回', 80, 132, 10, '#fff'); }
+    if (cur.over) { if (cur.score > hiGet(cur.key)) hiSet(cur.key, cur.score); ctx.fillStyle = 'rgba(0,0,0,.65)'; ctx.fillRect(0, 92, W, 56); txt('GAME OVER', 80, 110, 14, '#ff5a5a'); txt(cur.key === 'janken' ? 'メダルがなくなった… ボタンでもう一回' : 'A でもう一回', 80, 132, cur.key === 'janken' ? 8.5 : 10, '#fff'); }
     hud(line);
     if ((!started || cur.over) && cur.key !== 'janken') { running = false; return; } // 止まっている画面は描きつづけない
     if (visible && !document.hidden) requestAnimationFrame(frame); else running = false;

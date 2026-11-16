@@ -50,6 +50,7 @@ module.exports = async function handler(req, res) {
       const p = { id: id, at: Date.now(), uid: L.dailyId(req), name: L.mask(name || '名無しさん'), mood: MOODS.indexOf(b.mood) >= 0 ? b.mood : '', msg: L.mask(msg), from: L.mask(from || ''), dk: L.sha(dk) };
       const [, len] = await L.kv([['SET', 'gb:p:' + id, JSON.stringify(p)], ['LPUSH', 'gb:list', String(id)]]);
       if (len > MAX) { const old = await L.kv([['RPOP', 'gb:list', String(len - MAX)]]); const gone = [].concat(old[0] || []); if (gone.length) await L.kv(gone.map(g => ['DEL', 'gb:p:' + g, 'gb:rp:' + g]).concat([['HDEL', 'gb:reps'].concat(gone)])); }
+      await L.notify('ゲストブックに足あとがありました', p.name + (p.from ? '（' + p.from + '）' : '') + ' ' + (p.mood || '') + '\n\n' + p.msg + '\n\nhttps://www.givetex.org/guestbook/');
       return L.send(res, 200, { ok: true, item: pub(p, 0) });
     }
     const id = parseInt(b.id, 10); if (!(id > 0)) return L.send(res, 400, { ok: false, error: 'bad_id' });

@@ -54,6 +54,7 @@ jobs:
       - name: ホーム・日記・検索・RSS・サイトマップを作り直す
         run: |
           python3 -I tools/build_retro.py .
+          python3 -I tools/build_books_pages.py .
           node tools/build_index.js
           python3 -I tools/seo.py .
       - name: 変わっていたら main に反映

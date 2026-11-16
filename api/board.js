@@ -52,6 +52,7 @@ async function post(req, res, b) {
     const gone = [].concat(old[0] || []);
     if (gone.length) await L.kv(gone.map(g => ['DEL', 'b:p:' + g, 'b:lk:' + g, 'b:rp:' + g]).concat([['HDEL', 'b:likes'].concat(gone), ['HDEL', 'b:reps'].concat(gone)]));
   }
+  await L.notify('みんなの C-Log に感想がとどきました', '映画：' + p.t + (p.r ? '（★' + p.r + '）' : '') + '\n\n' + p.b + '\n\nhttps://www.givetex.org/movie/#board');
   L.send(res, 200, { ok: true, item: pub(p, 0, 0) });
 }
 

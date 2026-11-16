@@ -40,6 +40,19 @@
     '@keyframes gtbFade{to{opacity:1}}';
   document.head.appendChild(css);
 
+  /* 起動音：ブラウザが音を許してくれるときだけ鳴る（自動再生が止められていたら無音）。タップで飛ばしたときは鳴らせる */
+  var chimed = false;
+  function chime() {
+    if (chimed) return; chimed = true;
+    try {
+      var C = window.AudioContext || window.webkitAudioContext; if (!C) return; var a = new C();
+      var go = function () { var t = a.currentTime + .02; [[523.3, 0], [659.3, .1], [784, .2], [1046.5, .32]].forEach(function (n) {
+        var o = a.createOscillator(), g = a.createGain(); o.type = 'triangle'; o.frequency.value = n[0];
+        g.gain.setValueAtTime(0, t + n[1]); g.gain.linearRampToValueAtTime(.08, t + n[1] + .02); g.gain.exponentialRampToValueAtTime(.0001, t + n[1] + .7);
+        o.connect(g); g.connect(a.destination); o.start(t + n[1]); o.stop(t + n[1] + .75); }); setTimeout(function () { a.close(); }, 1500); };
+      if (a.state === 'running') go(); else a.resume().then(function () { if (a.state === 'running') go(); else a.close(); })['catch'](function () {});
+    } catch (e) {}
+  }
   var done = false, box;
   function finish(fast) {
     if (done) return; done = true;
@@ -53,9 +66,10 @@
     var t = box.querySelector('.gtb-t');
     'GiveTex'.split('').forEach(function (c, i) { var s = document.createElement('span'); s.textContent = c; s.style.animationDelay = (2.05 + i * 0.07) + 's'; t.appendChild(s); });
     (document.body || document.documentElement).appendChild(box);
-    box.addEventListener('click', function () { finish(true); });
+    box.addEventListener('click', function () { chime(); finish(true); });
+    setTimeout(chime, 1950); // G が着地して光るタイミング
     document.addEventListener('keydown', function () { finish(true); }, { once: true });
-    box.addEventListener('touchstart', function () { finish(true); }, { passive: true, once: true });
+    box.addEventListener('touchstart', function () { chime(); finish(true); }, { passive: true, once: true });
     setTimeout(function () { finish(false); }, 3900);
     try { if (window.gtag) window.gtag('event', 'boot_screen'); } catch (e) {}
   }

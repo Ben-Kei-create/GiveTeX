@@ -16,6 +16,7 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/assets/retro.css">
 <script type="text/javascript" src="/assets/retro.js"></script>
+<script src="/assets/retro-extras.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
@@ -25,10 +26,11 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'), ('/stamp/', 'スタンプ'), ('/#booths', 'ブース'),
        ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人'), ('/contact/', 'お問い合わせ')]
 NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　'
-        '<a href="/movie/">映画ブース</a>に、だれでも書ける感想ノート「みんなの C-Log」　◆　'
-        '<a href="/game/">ゲームブース</a>のイチオシは「umbrella lovers」！　◆　'
-        '<a href="/diary/">開発日記</a>に2022年からの歩みを追加しました　◆　'
-        'ご意見・ご感想は<a href="/contact/">お問い合わせ</a>からどうぞ　◆　'
+        '<a href="/guestbook/">ゲストブック</a>に足あとを残してね！　◆　'
+        'キリ番をふんだら名前をのこそう　◆　'
+        '右のゲームコーナーで、じゃんけん勝負！　◆　'
+        '今日のおみくじ、もう引いた？　◆　'
+        '<a href="/movie/">映画ブース</a>の感想ノート「みんなの C-Log」もよろしく　◆　'
         'このホームページはリンクフリーです　★☆★')
 
 def header(cur):
@@ -126,6 +128,8 @@ DEV = [
  ('doparika', 'ドパリカ！', '中学理科の2択クイズ。'),
 ]
 ARTICLES = [
+ ('/articles/ai-team-app-development.html', 'AIと分業してiPhoneアプリをつくる方法｜企画は人、実装はAI【実例つき】'),
+ ('/articles/ai-book-illustration-rules.html', 'AIで本の挿絵をつくるときの5つのルール｜1プロンプト＝1枚で迷わない'),
  ('/articles/claude-chatgpt-gemini-comparison.html', 'Claude vs ChatGPT vs Gemini｜プログラミング学習に最適なAIはどれ？【2026年版】'),
  ('/articles/ai-middle-school-science.html', '中学生の理科学習にAIを使ってみた結果【教室で検証】'),
  ('/articles/programming-learning-comparison.html', 'プログラミング学習サービス比較｜独学・スクール・AI、どれが最適？【2026年版】'),
@@ -146,6 +150,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-16', tag='サイト', title='昔のホームページっぽい機能を、どーんと追加',
+      body='<p>90年代〜2000年代の個人ホームページにあったものを、いろいろ入れました。</p><ul class="r-list"><li><a href="/guestbook/">ゲストブック</a>（足あと帳）、<a href="/links/">リンク集</a>（88×31 のバナー）、<a href="/sitemap/">サイトマップ</a></li><li>本物のアクセスカウンター（今日・昨日の人数、キリ番をふんだら名前をのこせる）</li><li>右のメニューに、ゲームコーナー（ブロックおとし・うちゅうげきたい・クレーンゲーム・メダルゲーム風じゃんけん）、BGM、今日のおみくじ、Web拍手</li><li>ホームの起動画面には、こっそり起動音も</li></ul><p>ほかに、<a href="/books/">ドパ読！</a>の本1冊ずつのページ、新しい記事2本、アプリのページに開発日記が出るようにもしました。どこかに<b>隠しコマンド</b>もあります……。</p>'),
  dict(date='2022-09-01', when='2022年9月', tag='学習', title='Web と Java の勉強をはじめた',
       body='<ul class="r-list"><li>HTML・CSS・JavaScript・Ruby で Web 制作を練習</li><li>Java の練習用コードやサンプルを書いた</li><li>HTML と画像で電子書籍をつくる実験</li></ul>'),
  dict(date='2022-12-01', when='2022年12月', tag='Web', title='Ruby on Rails で映画レビューサイト「C-Log」',
@@ -347,7 +353,7 @@ def books_flat():
 TOTAL = len(books_flat())
 
 def book(a, m, s, img):
-    return f'<a class="r-book" href="https://www.amazon.co.jp/dp/{a}" target="_blank" rel="noopener"><img src="{E(img)}" width="110" height="164" alt="{E(m)}の表紙" loading="lazy"><b>{E(m)}</b>{f"<small>{E(s)}</small>" if s else ""}</a>'
+    return f'<a class="r-book" href="/books/{a}.html"><img src="{E(img)}" width="110" height="164" alt="{E(m)}の表紙" loading="lazy"><b>{E(m)}</b>{f"<small>{E(s)}</small>" if s else ""}</a>'
 
 def icon(href, img, name, note, dev=False, ext=False):
     t = ' target="_blank" rel="noopener"' if ext else ''
@@ -356,15 +362,15 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
-        ('2026-11-16', 'ホームに<b>起動画面</b>をつけました（はじめの1回だけ）／ウインドウの「_ □ ×」ボタンが使えるように', True),
-        ('2026-11-16', 'スマホの各ブースに、ホームやほかのブースへ行ける<b>メニューボタン</b>', True),
-        ('2026-11-16', '<a href="/diary/">開発日記</a>に2022年からの歩みを追加（ぜんぶで{}件）'.format(len(DIARY)), True),
-        ('2026-11-16', 'カウンターが本物に！ キリ番をふんだら<a href="/contact/">教えてね</a>', True),
-        ('2026-11-15', '<a href="/movie/">映画ブース</a>に話題の映画と、匿名の感想ノート「みんなの C-Log」', True),
-        ('2026-11-15', '<a href="/contact/">お問い合わせフォーム</a>をつくりました', False),
+        ('2026-11-16', '<a href="/guestbook/">ゲストブック</a>・<a href="/links/">リンク集</a>・<a href="/sitemap/">サイトマップ</a>をつくりました！ 足あと残してね', True),
+        ('2026-11-16', '右のメニューに<b>ゲームコーナー</b>（じゃんけんはメダルゲーム風）・<b>BGM</b>・<b>おみくじ</b>・<b>Web拍手</b>', True),
+        ('2026-11-16', 'カウンターが本物に！ 今日・昨日の人数と、<b>キリ番</b>をふんだ人の名前がのこります', True),
+        ('2026-11-16', '<a href="/books/">ドパ読！</a>の{}冊に、1冊ずつのページができました'.format(TOTAL), True),
+        ('2026-11-16', '新しい記事「<a href="/articles/ai-team-app-development.html">AIと分業してiPhoneアプリをつくる方法</a>」「<a href="/articles/ai-book-illustration-rules.html">AIで本の挿絵をつくる5つのルール</a>」', True),
+        ('2026-11-16', 'ホームに起動画面／スマホの各ブースにメニューボタン／<a href="/diary/">開発日記</a>に2022年からの歩み（{}件）'.format(len(DIARY)), False),
+        ('2026-11-15', '<a href="/movie/">映画ブース</a>に話題の映画と、匿名の感想ノート「みんなの C-Log」／<a href="/contact/">お問い合わせフォーム</a>', False),
         ('2026-11-15', '<a href="/game/">ゲームブース</a>に unityroom のゲーム6本！ イチオシは「umbrella lovers」', False),
-        ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>を開設', False),
-        ('2026-11-15', '<a href="/stamp/">スタンプブース</a>と<a href="/note/">note ブース</a>をつくりました', False),
+        ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>、スタンプ・note ブースを開設', False),
         ('2026-11-15', 'Kindle本「<a href="/books/">ドパ読！</a>」{}冊を書庫に／オカルトブース「<a href="/doron/">どろん</a>」オープン'.format(TOTAL), False),
     ]
     N_NOTE = sum(1 for p in js_json('note/posts.js', 'NOTE_POSTS') if p.get('noteUrl'))
@@ -406,13 +412,16 @@ document.write(rGreeting());
             '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
+            win('Web拍手', '<p class="r-small" style="margin:0 0 6px">このホームページが気に入ったら、拍手で応援してね！</p><div class="r-clap" data-page="home"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>', '👏') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
-    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
+    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/sitemap/', 'サイトマップ'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
     side = (win('MENU', f'<div class="r-menu">{menu}</div>', '📁', bodycls='') +
-            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p id="r-kiri-list" class="r-center r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p><p class="r-small r-center" style="margin:2px 0 0"><a href="/guestbook/">ゲストブックに足あと ✎</a></p>', '🔢') +
+            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-today" class="r-center r-small" style="margin:4px 0 0"></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p id="r-kiri-list" class="r-center r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p><p class="r-small r-center" style="margin:2px 0 0"><a href="/guestbook/">ゲストブックに足あと ✎</a></p>', '🔢') +
+            win('BGM - MIDI プレイヤー', '<div id="r-bgm" class="r-bgm"><p class="r-bgm-now r-small">BGM は OFF です</p><select aria-label="曲をえらぶ"></select> <button type="button" class="r-btn">▶ さいせい</button></div><p class="r-small" style="margin:4px 0 0">♪ オリジナル曲です。押したときだけ鳴ります（音量に注意）</p>', '🎵') +
+            win('今日のおみくじ', '<div id="r-omikuji" class="r-center"><button type="button" class="r-btn">おみくじを引く</button><div class="r-omi-res" aria-live="polite"></div></div>', '⛩') +
             win('管理人のプロフィール', '<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>', '👤') +
             win('いまの時刻', '<p class="r-center" style="margin:0"><span id="r-clock">--:--:--</span></p>', '⏰') +
-            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span><br><a class="r-small" href="/links/">→ リンク集へ</a></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗') +
+            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span><br><a class="r-small" href="/links/">→ リンク集へ</a><br><span class="r-small">★ Ctrl+D（Mac は ⌘+D）で<br>お気に入りに入れてね！</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗') +
             win('ゲームコーナー', '''<div class="mg" id="mg">
 <div class="mg-tabs" role="group" aria-label="ゲームをえらぶ"><button type="button">ブロック</button><button type="button">うちゅう</button><button type="button">クレーン</button><button type="button">じゃんけん</button></div>
 <div class="mg-screen" tabindex="0" aria-label="ゲーム画面。クリックしてから、矢印キーとスペースキーで遊べます"><canvas width="160" height="240"></canvas></div>
@@ -477,7 +486,7 @@ def build_diary():
     idx = ' ｜ '.join(f'<a href="#m{k.replace("-", "")}">{int(k[:4])}年{int(k[5:])}月</a>' for k in months)
     parts = ''.join(f'<a name="m{k.replace("-", "")}" id="m{k.replace("-", "")}"></a><h2 class="r-h">{int(k[:4])}年{int(k[5:])}月</h2>' + ''.join(diary_entry(d) for d in v) for k, v in months.items())
     body = f'''<div class="r-page" role="main">
-{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 ' + DIARY[0]['date'].replace('-', '/')])}
+{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}<hr class="r-hr"><p class="r-small">日記を読んでくれてありがとう！ よかったら拍手してね。</p><div class="r-clap" data-page="diary"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 ' + DIARY[0]['date'].replace('-', '/')])}
 </div>'''
     page('diary/index.html', '開発日記 | GiveTex', 'GiveTexの開発日記。学習アプリのリリース、サイト更新、Kindle出版、オカルトブース「どろん」など、つくる過程の記録です。', body, '/diary/')
 
@@ -528,6 +537,7 @@ def build_guestbook():
 <p class="r-center"><b id="gb-total">読みこみ中…</b></p>
 <div id="gb-list" class="gb-list" aria-live="polite"></div>
 <p class="r-center"><button class="r-btn" type="button" id="gb-more" hidden>もっと読む</button></p>
+<hr class="r-hr"><div class="r-clap" data-page="guestbook"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>
 <noscript><p class="r-warn">ゲストブックは JavaScript をオンにすると使えます。</p></noscript>""", '📖')}
 </div>
 <script src="/assets/guestbook.js" defer></script>'''
@@ -558,11 +568,60 @@ def build_links():
 <p>当サイトは<b>リンクフリー</b>です。報告もいりません（してくれたらうれしいです）。<br>相互リンクのご希望は、<a href="/contact/">お問い合わせ</a>か<a href="/guestbook/">ゲストブック</a>からどうぞ。</p>
 <p class="r-center"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex のバナー"><br><span class="r-small">↑ うちのバナーです。<b>お持ち帰り</b>して使ってね（直リンクはごえんりょください）</span></p>
 <p class="r-small">リンク用のタグ：</p>
-<textarea class="r-code" readonly rows="3" onclick="this.select()">{code}</textarea>""", '🔗')}
+<textarea class="r-code" readonly rows="3" onclick="this.select()">{code}</textarea>
+<hr class="r-hr"><div class="r-clap" data-page="links"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>""", '🔗')}
 </div>'''
     page('links/index.html', 'リンク集 | GiveTex', 'GiveTex のリンク集。サイトの中のブースと、管理人の note・TALES・LINE スタンプ・unityroom・GitHub へのバナー。相互リンク募集中。', body, '/links/')
 
-build_index(); build_diary(); build_about(); build_guestbook(); build_links()  # books は pop デザインのまま（再生成しない）
+# ================= 手で書いたページのヘッダーも最新に =================
+def sync_static_headers():
+    """記事・404・お問い合わせ・プライバシーの上部（ロゴ・テロップ・メニュー）を、ほかのページと同じ最新のものにそろえる"""
+    pages = [('privacy.html', '/privacy.html'), ('404.html', ''), ('contact/index.html', '/contact/')] + [(p.relative_to(R).as_posix(), '/#articles') for p in sorted((R / 'articles').glob('*.html'))]
+    for path, cur in pages:
+        f = R / path
+        if not f.exists(): continue
+        t = f.read_text(encoding='utf-8')
+        m = re.search(r'<a name="top" id="top"></a>\s*<div class="r-head" role="banner">.*?<div class="r-nav"[^>]*>.*?</div>\s*</div>', t, re.S)
+        if not m: continue
+        nt = t[:m.start()] + header(cur).strip() + t[m.end():]
+        if nt != t: f.write_text(nt, encoding='utf-8')
+
+# ================= アプリのページに「開発日記」 =================
+APP_WORDS = {'doparika': ['ドパリカ'], 'heydrum': ['ヘイドラム', 'HeyDrum'], 'kuragoyomi': ['蔵ごよみ', 'sakeQuiz'], 'linatex': ['LinaTeX'], 'onitan': ['OniTan'],
+             'paperstory': ['PaperStory', '走れメロス'], 'terra': ['TERRA'], 'beerquiz': ['ビール雑学', 'beer_Server'], 'winequiz': ['ワイン'], 'minigamer': ['MiniGamer'],
+             'aws-saa-dojo': ['設計道場'], 'awstady-saa': ['AWSTUDY'], 'uzacal': ['UzaCal'], 'yomuemo': ['よむエモ'], 'zayping': ['Zayping'], 'ionstep': ['イオンステップ']}
+def build_app_diaries():
+    """アプリのページの「ページ一覧」の前に、そのアプリが出てくる開発日記（新しい5件）を入れる"""
+    for slug, words in APP_WORDS.items():
+        f = R / 'apps' / slug / 'index.html'
+        if not f.exists(): continue
+        hits = [d for d in DIARY if f'/apps/{slug}/' in d['body'] or any(w in d['title'] + re.sub('<[^>]+>', '', d['body']) for w in words)][:5]
+        t = f.read_text(encoding='utf-8')
+        t = re.sub(r'<!-- diary -->.*?<!-- /diary -->\n?', '', t, flags=re.S)
+        if hits:
+            cards = ''.join(f'<a class="card" href="/diary/#m{d["date"][:7].replace("-", "")}">\n  <strong>{re.sub("<[^>]+>", "", d["title"])}</strong>\n  <span>{E(d.get("when") or d["date"].replace("-", "/"))}</span>\n</a>\n' for d in hits)
+            block = f'<!-- diary -->\n<h2>開発日記</h2>\n{cards}<p class="ax-diary-more"><a href="/diary/">開発日記をぜんぶ読む ›</a></p>\n<!-- /diary -->\n'
+            t = t.replace('<h2>ページ一覧</h2>', block + '<h2>ページ一覧</h2>', 1)
+        f.write_text(t, encoding='utf-8')
+
+# ================= サイトマップ =================
+def build_sitemap_page():
+    tree = [('/', 'GiveTex ホーム', [('/#booths', 'ブース案内'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/about.html', '管理人のプロフィール'), ('/contact/', 'お問い合わせ'), ('/privacy.html', 'プライバシーポリシー')]),
+            ('/apps/', 'アプリ', [(h, n) for h, _, n, _, _ in RELEASED if h] + [(f'/apps/{k}/', n) for k, n, _ in DEV]),
+            ('/books/', 'ドパ読！（Kindle）', [('/books/#' + k, re.sub(r'^\S+\s', '', v)) for k, v in BOOKS['cats'].items()]),
+            ('/doron/', 'どろん（オカルト）', [('/doron/#relics', 'relics'), ('/doron/#reikai', '霊界案内所'), ('/doron/#c-circle', 'Cサークル')]),
+            ('/note/', 'note ブース', []), ('/stamp/', 'スタンプブース', []), ('/game/', 'ゲームブース', []), ('/museum/', '美術館ブース', []),
+            ('/ramen/', 'ラーメンブース', []), ('/movie/', '映画ブース（C-Log Web）', []), ('/bookmarks/', 'ブックマーク（裏口）', []),
+            ('/#articles', 'お役立ち記事', [(h, t) for h, t in ARTICLES])]
+    def node(h, t, kids, last):
+        k = ''.join(node(a, b, [], i == len(kids) - 1) for i, (a, b) in enumerate(kids))
+        return f'<li><a href="{h}">{E(t)}</a>' + (f'<ul>{k}</ul>' if k else '') + '</li>'
+    body = f'''<div class="r-page" role="main">
+{win('サイトマップ - エクスプローラー', '<p>GiveTex のページを、ぜんぶ木の形にならべました。迷子になったら、ここからどうぞ。</p><ul class="r-tree">' + ''.join(node(h, t, k, False) for h, t, k in tree) + '</ul>', '🗂', menu=True, status=['フォルダ表示', 'givetex.org'])}
+</div>'''
+    page('sitemap/index.html', 'サイトマップ | GiveTex', 'GiveTex のサイトマップ。ホーム、アプリ、ドパ読！、どろん、各ブース、記事へのリンクの一覧。', body, '/sitemap/')
+
+build_index(); build_diary(); build_about(); build_guestbook(); build_links(); sync_static_headers(); build_app_diaries(); build_sitemap_page()  # books は pop デザインのまま（再生成しない）
 
 def build_diary_feed():
     """開発日記の RSS（/diary/feed.xml）"""
