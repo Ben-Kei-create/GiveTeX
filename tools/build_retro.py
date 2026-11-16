@@ -86,6 +86,8 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 </body>
 </html>
 '''
+    if path == 'index.html':  # ホームだけ起動画面
+        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
     head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
     doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
