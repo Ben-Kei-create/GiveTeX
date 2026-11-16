@@ -94,7 +94,7 @@
     if (tag && tagNames.indexOf(tag) < 0 && tags[tag]) tagNames.unshift(tag);
     function chip(label, val) {
       var c = el('button', 'nb-chip', label); c.type = 'button'; c.setAttribute('aria-pressed', val === tag ? 'true' : 'false');
-      c.addEventListener('click', function () { tag = val; $$('.nb-chip', chips).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); c.setAttribute('aria-pressed', 'true'); render(); });
+      c.addEventListener('click', function () { tag = val; shown = PAGE; $$('.nb-chip', chips).forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); c.setAttribute('aria-pressed', 'true'); render(); });
       return c;
     }
     if (chips) {
@@ -102,9 +102,14 @@
       else chips.hidden = true;
     }
     var search = $('#nb-q');
-    if (search) search.addEventListener('input', function () { q = search.value.trim().toLowerCase(); render(); });
+    if (search) search.addEventListener('input', function () { q = search.value.trim().toLowerCase(); shown = PAGE; render(); });
 
-    function render() {
+    /* 一覧は30件ずつ。「もっと見る」で続きを足す（年のリンクを押したら、その年まで一気に出す） */
+    var PAGE = 30, shown = PAGE;
+    // その年の見出しへ移動。画像があとから読みこまれて位置がずれるので、少し待ってもう一度合わせる
+    function jump(id) { [0, 350, 1000].forEach(function (ms) { setTimeout(function () { var t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: 'instant', block: 'start' }); }, ms); }); }
+
+    function render(focusAt) {
       listBox.innerHTML = '';
       var hit = POSTS.filter(function (p) {
         if (tag && (p.tags || []).indexOf(tag) < 0) return false;
@@ -121,13 +126,19 @@
         listBox.appendChild(e); return;
       }
       var lastYear = null, ul = null;
-      hit.forEach(function (p) {
+      var seenY = {};
+      hit.forEach(function (p, idx) { // 年のリンクは、まだ出していない年のぶんも並べる
+        var y = String(p.date).slice(0, 4); if (seenY[y] || !years) return; seenY[y] = 1;
+        var ya = el('a', null, y + '年'); ya.href = '#y' + y;
+        ya.addEventListener('click', function (e) { if (idx >= shown) { e.preventDefault(); shown = idx + PAGE; render(); jump('y' + y); } });
+        years.appendChild(ya);
+      });
+      hit.slice(0, shown).forEach(function (p, idx) {
         var y = String(p.date).slice(0, 4);
         if (y !== lastYear) {
           lastYear = y;
           var h = el('h2', 'nb-year', y); h.id = 'y' + y; listBox.appendChild(h);
           ul = el('ul', 'nb-list'); listBox.appendChild(ul);
-          if (years) { var ya = el('a', null, y + '年'); ya.href = '#y' + y; years.appendChild(ya); }
         }
         var li = el('li', 'nb-item'), a = el('a'); a.href = postUrl(p);
         var t = el('time', null, fmt(p.date)); t.dateTime = p.date; a.appendChild(t);
@@ -139,9 +150,19 @@
         if (p.cover) { var im = el('img', 'nb-thumb'); im.src = p.cover; im.alt = ''; im.loading = 'lazy'; a.appendChild(im); }
         if (p.tags && p.tags.length) { var tg = el('div', 'nb-tags'); p.tags.forEach(function (x) { tg.appendChild(el('span', null, x)); }); a.appendChild(tg); }
         li.appendChild(a); ul.appendChild(li);
+        if (focusAt != null && idx === focusAt) setTimeout(function () { a.focus({ preventScroll: true }); }, 0);
       });
+      if (hit.length > shown) {
+        var rest = hit.length - shown, more = el('p', 'nb-more'), mb = el('button', null, 'もっと見る（あと ' + rest + ' 件）'); mb.type = 'button';
+        mb.addEventListener('click', function () { var from = shown; shown += PAGE; render(from); try { if (window.gtag) gtag('event', 'note_more', { shown: shown }); } catch (e) {} });
+        more.appendChild(mb); more.appendChild(el('span', null, shown + ' 件を表示中 / ' + hit.length + ' 件'));
+        listBox.appendChild(more);
+      }
     }
     render();
+    /* #y2023 のようなリンクで来たときは、その年まで出しておく */
+    var hy = /^#y(\d{4})$/.exec(location.hash);
+    if (hy) { var at = -1; POSTS.forEach(function (p, k) { if (at < 0 && String(p.date).slice(0, 4) === hy[1]) at = k; }); if (at >= shown) { shown = at + PAGE; render(); } jump('y' + hy[1]); }
   }
 
   /* ---------- 記事ページ ---------- */
