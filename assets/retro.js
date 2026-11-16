@@ -49,6 +49,7 @@ function rCounter() {
     show(n, "回目の訪問です");
   }
   var counted = false; try { counted = sessionStorage.getItem("givetex_counted") === "1"; } catch (e) {}
+  if (navigator.webdriver) counted = true; // 自動テストのブラウザは数えない（見るだけ）
   if (!window.fetch) return local();
   fetch("/api/counter", counted ? { cache: "no-store" } : { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" })
     .then(function (r) { return r.json(); })
