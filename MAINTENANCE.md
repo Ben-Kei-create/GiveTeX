@@ -243,5 +243,6 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `assets/meishi.js` / `assets/meishi.css`：ホームのメニューの「名刺」ボタンで開く、黒い背景のダイアログ。ホームだけで読みこむ（build_retro.py が index.html の最後に入れる）。
 - 画像：`assets/meishi/front.jpg`・`back.jpg` は、もらった画像を**再圧縮せず**、撮影データ（EXIF）だけ外したもの。最高画質のまま使う。
 - `assets/meishi/qr.svg`：名刺の裏の QR と同じ行き先（https://www.givetex.org/）の、読み取りやすい QR。名刺の QR は canvaqr.com 経由で givetex.org に飛ぶ。
-- できること：タップ・スワイプ・← → で裏返す、QR を大きく、共有（スマホは画像つき共有シート）、表・裏・両面1枚の保存、リンクのコピー。`/?meishi` で名刺を開いた状態から始まる。
+- できること：タップ・スワイプ・矢印キーで裏返す、縦・横の切りかえ（縦長の画面では最初から縦向き）、QR は2つ（「サイト」＝ qr.svg、「名刺の画像」＝ qr-card.svg → /meishi/）。`/?meishi` で名刺を開いた状態から始まる。
+- `meishi/index.html`：名刺の QR から来た人が画像を保存するページ（noindex・サイトマップに入れない）。`assets/meishi/both.jpg` は表と裏をならべた1枚（1756×2188、品質95）。スマホは共有シート（写真に保存）、PC はダウンロード。表・裏だけの保存もできる。
 - ゲームコーナーの BGM は `assets/minigames.js` の TUNES（4曲ともオリジナル）。右上の「音 OFF」かゲームコーナーの「♪ 音楽」で止まる。サイトの BGM プレイヤーとは同時に鳴らない。

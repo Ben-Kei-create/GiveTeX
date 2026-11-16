@@ -14,6 +14,8 @@ dialog.ms {
   box-sizing: border-box; opacity: 0; transition: opacity .32s ease;
 }
 @supports (height: 100dvh) { dialog.ms { height: 100dvh; --ms-w: min(92vw, 980px, calc((100dvh - 230px) * 1.655)); } }
+dialog.ms.ms-v { --ms-w: min(calc(100vh - 230px), calc(88vw * 1.655), 980px); }
+@supports (height: 100dvh) { dialog.ms.ms-v { --ms-w: min(calc(100dvh - 230px), calc(88vw * 1.655), 980px); } }
 dialog.ms[open] { display: grid; }
 dialog.ms.ms-in { opacity: 1; }
 dialog.ms.ms-out { opacity: 0; }
@@ -46,12 +48,15 @@ dialog.ms svg { width: 18px; height: 18px; fill: none; stroke: currentColor; str
 
 /* まんなか：名刺 */
 .ms-stage { position: relative; z-index: 1; width: 100%; height: 100%; display: grid; place-items: center; perspective: 1800px; padding: 12px 0; }
-.ms-lift { width: var(--ms-w); aspect-ratio: 1612 / 974; transition: filter .35s ease, transform .35s ease; }
+.ms-lift { position: relative; width: var(--ms-w); aspect-ratio: 1612 / 974; transition: filter .35s ease, transform .35s ease; }
+.ms-v .ms-lift { width: calc(var(--ms-w) / 1.655); aspect-ratio: 974 / 1612; }
+.ms-rot { position: absolute; left: 50%; top: 50%; width: var(--ms-w); aspect-ratio: 1612 / 974; transform: translate(-50%, -50%); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.ms-v .ms-rot { transform: translate(-50%, -50%) rotate(90deg); }
 .ms-in .ms-lift { animation: msRise 1s cubic-bezier(.16,.84,.24,1) backwards; }
 @keyframes msRise { from { opacity: 0; transform: translateY(46px) rotateX(22deg) scale(.92); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
 .ms-tilt { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
 .ms-card { position: relative; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: var(--ms-r);
-  transform-style: preserve-3d; transition: transform .95s cubic-bezier(.2,.75,.15,1); touch-action: pan-y; -webkit-user-select: none; user-select: none; }
+  transform-style: preserve-3d; transition: transform .95s cubic-bezier(.2,.75,.15,1); touch-action: none; -webkit-user-select: none; user-select: none; }
 .ms-card.ms-drag { transition: none; }
 .ms-card:focus { outline: none; }
 .ms-card:focus-visible .ms-face { outline: 2px solid var(--ms-gold); outline-offset: 6px; }
@@ -81,8 +86,11 @@ dialog.ms svg { width: 18px; height: 18px; fill: none; stroke: currentColor; str
 @supports (height: 100dvh) { .ms-qr-card { width: min(78vw, 340px, calc(100dvh - 260px)); } }
 .ms-qr.in .ms-qr-card { transform: none; }
 .ms-qr-card img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
-.ms-qr-t { margin: 12px 0 2px; font-size: 13px; font-weight: 500; color: #33424c; }
-.ms-qr-u { margin: 0; font: italic 500 18px/1.2 "Cormorant Garamond", serif; letter-spacing: .04em; color: #8f6d2c; }
+.ms-qr-t { margin: 12px 0 2px; font-size: 13px; font-weight: 500; color: #33424c; line-height: 1.5; }
+.ms-qr-u { margin: 0; font: italic 500 18px/1.2 "Cormorant Garamond", serif; letter-spacing: .04em; color: #8f6d2c; word-break: break-all; }
+.ms-seg { display: flex; gap: 2px; padding: 3px; margin: 0 0 14px; border-radius: 999px; background: #eef0f1; }
+.ms-seg button { flex: 1; height: 34px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-size: 12.5px; font-weight: 500; color: #5d6a72 !important; transition: background .2s, color .2s, box-shadow .2s; }
+.ms-seg button[aria-selected=true] { background: #0b1a24; color: #f3e2b3 !important; box-shadow: 0 4px 10px -4px rgba(0,0,0,.4); }
 
 /* 下：ヒント・ボタン */
 .ms-hint { position: relative; z-index: 2; margin: 0 0 12px; font-size: 11.5px; letter-spacing: .14em; color: rgba(255,255,255,.4); }
@@ -94,26 +102,11 @@ dialog.ms svg { width: 18px; height: 18px; fill: none; stroke: currentColor; str
   font-size: 13.5px; font-weight: 500; letter-spacing: .04em; white-space: nowrap; transition: background .2s, color .2s, transform .15s; }
 .ms-b:hover { background: rgba(255,255,255,.09); }
 .ms-b:active { transform: scale(.97); }
-.ms-b:focus-visible, .ms-x:focus-visible, .ms-sheet button:focus-visible { outline: 2px solid var(--ms-gold); outline-offset: 2px; }
+.ms-b:focus-visible, .ms-x:focus-visible, .ms-seg button:focus-visible { outline: 2px solid var(--ms-gold); outline-offset: 2px; }
 .ms-b[aria-pressed=true] { background: rgba(233,211,154,.16); color: var(--ms-gold); }
 .ms-b-gold { color: #1b1407; background: linear-gradient(135deg, #f6e7bd 0%, #d8b66e 48%, #a37b33 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 6px 18px -6px rgba(201,163,90,.6); }
 .ms-b-gold:hover { background: linear-gradient(135deg, #fff1cc 0%, #e2c27c 48%, #b08840 100%); }
 
-/* 共有・保存のメニュー */
-.ms-sheet { position: absolute; z-index: 5; left: 50%; bottom: calc(92px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(340px, calc(100vw - 32px));
-  padding: 8px; border-radius: 20px; background: rgba(24,24,27,.88); border: 1px solid var(--ms-line); -webkit-backdrop-filter: blur(24px) saturate(1.5); backdrop-filter: blur(24px) saturate(1.5);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.9); animation: msSheet .28s cubic-bezier(.2,.8,.2,1); }
-@keyframes msSheet { from { opacity: 0; transform: translate(-50%, 10px) scale(.98); } }
-.ms-sheet-h { margin: 6px 12px 6px; font: italic 500 17px/1 "Cormorant Garamond", serif; color: var(--ms-gold); letter-spacing: .06em; }
-.ms-sheet button { display: flex; width: 100%; align-items: center; gap: 14px; padding: 11px 12px; border: 0; border-radius: 12px; background: none; cursor: pointer; text-align: left; font-size: 14px; }
-.ms-sheet button[hidden] { display: none; }
-.ms-sheet button:hover { background: rgba(255,255,255,.07); }
-.ms-sheet button svg { width: 20px; height: 20px; color: var(--ms-gold); }
-.ms-sheet small { display: block; margin-top: 1px; font-size: 11.5px; color: rgba(255,255,255,.45); letter-spacing: .02em; }
-
-.ms-toast { position: absolute; z-index: 6; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); transform: translate(-50%, 8px); margin: 0; padding: 9px 16px; border-radius: 999px;
-  background: rgba(240,236,226,.95); color: #17130a; font-size: 12.5px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; white-space: nowrap; }
-.ms-toast.in { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 560px) {
   .ms-side { font-size: 17px; }
@@ -124,8 +117,8 @@ dialog.ms svg { width: 18px; height: 18px; fill: none; stroke: currentColor; str
   dialog.ms { --ms-w: min(92vw, 980px, calc((100vh - 150px) * 1.655)); }
   @supports (height: 100dvh) { dialog.ms { --ms-w: min(92vw, 980px, calc((100dvh - 150px) * 1.655)); } }
   .ms-top { padding-top: 8px; } .ms-hint { display: none; } .ms-bar { margin-bottom: 8px; } .ms-b { height: 38px; }
-  .ms-sheet { bottom: 64px; max-height: calc(100% - 80px); overflow: auto; }
-  .ms-qr-card { display: flex; align-items: center; gap: 18px; width: auto; padding: 14px 22px 14px 14px; text-align: left; }
+  .ms-qr-card { display: grid; grid-template-columns: auto 220px; grid-template-areas: "img seg" "img txt"; align-items: center; column-gap: 18px; width: auto; padding: 14px 18px 14px 14px; text-align: left; }
+  .ms-qr-card img { grid-area: img; } .ms-seg { grid-area: seg; align-self: end; } .ms-qr-txt { grid-area: txt; align-self: start; }
   .ms-qr-card img { width: calc(100vh - 170px); max-width: 240px; }
   @supports (height: 100dvh) { .ms-qr-card { width: auto; } .ms-qr-card img { width: calc(100dvh - 170px); } }
 }

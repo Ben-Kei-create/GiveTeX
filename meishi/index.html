@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex">
+<title>GiveTex の名刺</title>
+<meta name="description" content="GiveTex の名刺（表・裏）の画像を保存できるページです。">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* 名刺の QR から来た人のためのページ（名刺の画像を、元のサイズのまま保存できる） */
+:root { --gold: #e9d39a; --line: rgba(255,255,255,.1); }
+* { box-sizing: border-box; }
+html { background: #000; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; background: #000; color: #ececee; -webkit-font-smoothing: antialiased;
+  font: 400 15px/1.6 Inter, "Helvetica Neue", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  padding: calc(28px + env(safe-area-inset-top)) 16px calc(36px + env(safe-area-inset-bottom)); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 30%, rgba(28,140,150,.18), transparent 70%), radial-gradient(ellipse at 50% 120%, rgba(201,163,90,.12), transparent 55%); }
+main { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; text-align: center; }
+.eyebrow { margin: 0; display: inline-flex; align-items: center; gap: 10px; font: 500 10.5px/1 Inter, sans-serif; letter-spacing: .34em; text-transform: uppercase; color: rgba(233,211,154,.85); }
+.eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+h1 { margin: 12px 0 4px; font: italic 500 34px/1.1 "Cormorant Garamond", "Times New Roman", serif; letter-spacing: .02em; color: #f4f1e8; }
+.lead { margin: 0 0 22px; font-size: 13.5px; color: rgba(255,255,255,.6); }
+figure { margin: 0 0 22px; animation: rise .9s cubic-bezier(.16,.84,.24,1) backwards; }
+figure img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.06); -webkit-touch-callout: default; }
+figcaption { margin-top: 10px; font-size: 12px; color: rgba(255,255,255,.42); letter-spacing: .06em; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px) scale(.97); filter: blur(8px); } }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 54px; border-radius: 999px; border: 0; cursor: pointer; text-decoration: none;
+  font: 500 15.5px/1 Inter, "Hiragino Sans", sans-serif; letter-spacing: .04em; color: #1b1407;
+  background: linear-gradient(135deg, #f6e7bd 0%, #d8b66e 48%, #a37b33 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 10px 26px -10px rgba(201,163,90,.7); transition: transform .15s; }
+.btn:active { transform: scale(.98); }
+.btn svg, .sub svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.subs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0 0; }
+.sub { display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  font: 500 14px/1 Inter, "Hiragino Sans", sans-serif; color: #ececee; background: rgba(255,255,255,.055); border: 1px solid var(--line); }
+.sub:active { background: rgba(255,255,255,.1); }
+.btn:focus-visible, .sub:focus-visible, .links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.note { margin: 14px 0 0; font-size: 12px; color: rgba(255,255,255,.45); }
+.status { min-height: 1.6em; margin: 10px 0 0; font-size: 12.5px; color: var(--gold); }
+.links { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; }
+.links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 13.5px; }
+.links a b { font: italic 500 17px/1 "Cormorant Garamond", serif; color: var(--gold); font-weight: 500; }
+@media (prefers-reduced-motion: reduce) { figure { animation: none; } }
+</style>
+<script src="/assets/ga.js" defer></script>
+<!-- seo -->
+<meta property="og:title" content="GiveTex の名刺">
+<meta property="og:description" content="GiveTex の名刺（表・裏）の画像を保存できるページです。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.givetex.org/meishi/">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GiveTex の名刺">
+<meta name="twitter:description" content="GiveTex の名刺（表・裏）の画像を保存できるページです。">
+<meta name="twitter:image" content="https://www.givetex.org/assets/og/home.jpg">
+<!-- /seo -->
+</head>
+<body>
+<main>
+  <p class="eyebrow"><i></i>Business Card</p>
+  <h1>GiveTex</h1>
+  <p class="lead">名刺の画像（表・裏）を、元のサイズで保存できます。</p>
+  <figure>
+    <img src="/assets/meishi/both.jpg" width="1756" height="2188" alt="GiveTex の名刺。上が表（珊瑚の海をながめる二人）、下が裏（ウミガメ）">
+    <figcaption>表と裏をならべた1枚 ・ 1756×2188</figcaption>
+  </figure>
+  <a class="btn" href="/assets/meishi/both.jpg" download="givetex-meishi.jpg" data-file="both"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5V15M7.5 10.5 12 15l4.5-4.5"/><path d="M5 15.5v3A2 2 0 0 0 7 20.5h10a2 2 0 0 0 2-2v-3"/></svg>両面を1枚で保存</a>
+  <div class="subs">
+    <a class="sub" href="/assets/meishi/front.jpg" download="givetex-meishi-front.jpg" data-file="front">表だけ保存</a>
+    <a class="sub" href="/assets/meishi/back.jpg" download="givetex-meishi-back.jpg" data-file="back">裏だけ保存</a>
+  </div>
+  <p class="status" role="status" aria-live="polite"></p>
+  <p class="note">スマホは、画像を長押ししても「写真に保存」できます。表・裏はそれぞれ 1612×974 です。</p>
+  <nav class="links" aria-label="リンク">
+    <a href="/?meishi"><b>Card</b>　名刺をめくって見る</a>
+    <a href="/"><b>Home</b>　GiveTex のホームへ</a>
+  </nav>
+</main>
+<script>
+/* スマホ（共有シートで画像を渡せる端末）は「写真に保存」できる共有シートを開く。それ以外はそのままダウンロード */
+(function () {
+  var FILES = { both: ['/assets/meishi/both.jpg', 'givetex-meishi.jpg'], front: ['/assets/meishi/front.jpg', 'givetex-meishi-front.jpg'], back: ['/assets/meishi/back.jpg', 'givetex-meishi-back.jpg'] };
+  var st = document.querySelector('.status');
+  var ok = false;
+  try { ok = !!(navigator.canShare && window.File && navigator.canShare({ files: [new File([''], 'a.jpg', { type: 'image/jpeg' })] })) && matchMedia('(pointer: coarse)').matches; } catch (e) {}
+  var cache = {};
+  function get(k) { return cache[k] || (cache[k] = fetch(FILES[k][0]).then(function (r) { if (!r.ok) throw new Error('fetch'); return r.blob(); })); }
+  if (ok) get('both'); // 押したときにすぐ共有シートが出るよう、先に用意しておく
+  function ga(n, p) { try { if (window.gtag) gtag('event', n, p || {}); } catch (e) {} }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-file]'), function (a) {
+    a.addEventListener('click', function (e) {
+      var k = a.getAttribute('data-file'), f = FILES[k]; ga('meishi_save', { file: k, share: ok });
+      if (!ok) return; // 普通にダウンロード
+      e.preventDefault(); st.textContent = '画像を用意しています…';
+      get(k).then(function (b) {
+        st.textContent = '';
+        return navigator.share({ files: [new File([b], f[1], { type: 'image/jpeg' })] });
+      }).catch(function (err) {
+        if (err && err.name === 'AbortError') { st.textContent = ''; return; }
+        st.textContent = ''; location.href = f[0]; // 共有できなければ画像を開く（長押しで保存）
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
