@@ -104,6 +104,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 ### ブックマークを更新する
 - ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
 
+### ホームの数字・更新日
+- 「数字で見る GiveTex」の表（アプリ・note・TALES・スタンプ・unityroom・日記の数）と「最終更新日」は、`tools/build_retro.py` がデータから自動で数えます。What's New とテロップ（NEWS）は手で書きかえます。
+
 ### ホームの「note」「LINE スタンプ」の棚
 - ホームには note の最新8本（表紙画像つき）と、スタンプの新しい10セットを並べています。
 - 中身は `note/posts.js` と `stamp/stamps.js` から自動で作るので、記事やスタンプを足したら `python3 -I tools/build_retro.py` を実行するだけです。
@@ -143,6 +146,7 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `api/clog.js`：C-Log アプリのサーバー（`https://clog-api.onrender.com`）から話題の映画・検索・お知らせを中継。サーバーが眠っていたら約1分で起きます。
 - `api/board.js`：映画ブースの匿名掲示板。管理人も含めて全員「名無しの映画好き」。日替わり ID、3人の通報で自動非表示、本人は削除可、連投・重複・リンク・個人情報・暴言を機械ではじく、最新1000件まで。
 - `api/contact.js`：お問い合わせフォーム（`/contact/`）→ メール送信。
+- `api/counter.js`：ホームのアクセスカウンター（本物）。Upstash の `site:visits`。1回の訪問（タブ）につき1度だけ数える。数字を直したいときは Upstash で `site:visits` を書きかえる。
 - `api/_lib.js`：共通の道具（回数制限、合言葉、文字のそうじ、NG ワード）。
 - **設定ずみ（2026-11-15）**：
   - 掲示板：Vercel の Storage に **Upstash for Redis**（`givetex-board`・東京・Free・月50万回まで）。接頭辞 `KV` で `KV_REST_API_URL`・`KV_REST_API_TOKEN` が入っています。

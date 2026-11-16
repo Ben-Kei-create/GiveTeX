@@ -23,11 +23,12 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/assets/ga.js" defer></script>'''
 NAV = [('/', 'HOME'), ('/apps/', 'アプリ'), ('/books/', 'ドパ読！'), ('/doron/', 'どろん'), ('/note/', 'note'), ('/stamp/', 'スタンプ'), ('/#booths', 'ブース'),
-       ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人')]
+       ('/diary/', '開発日記'), ('/#articles', '記事'), ('/about.html', '管理人'), ('/contact/', 'お問い合わせ')]
 NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　'
-        'Kindle本「ドパ読！」96冊を書庫にならべました　◆　'
-        'オカルトブース「<a href="/doron/">どろん</a>」オープン！ Cサークルの新企画「十人奇談」準備中…　◆　'
-        '<a href="/note/">note ブース</a>はじめました　◆　<a href="/stamp/">スタンプブース</a>オープン　◆　'
+        '<a href="/movie/">映画ブース</a>に、だれでも書ける感想ノート「みんなの C-Log」　◆　'
+        '<a href="/game/">ゲームブース</a>のイチオシは「umbrella lovers」！　◆　'
+        '<a href="/diary/">開発日記</a>に2022年からの歩みを追加しました　◆　'
+        'ご意見・ご感想は<a href="/contact/">お問い合わせ</a>からどうぞ　◆　'
         'このホームページはリンクフリーです　★☆★')
 
 def header(cur):
@@ -355,17 +356,22 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
-        ('2026-11-15', '<a href="/game/">ゲームブース</a>に unityroom のゲーム6本！ イチオシは「umbrella lovers」', True),
-        ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>を開設', True),
-        ('2026-11-15', '<a href="/stamp/">スタンプブース</a>をつくりました', True),
-        ('2026-11-15', '<a href="/note/">note ブース</a>に過去の記事349本を移植しました', True),
-        ('2026-11-15', '<a href="/note/">note ブース</a>をはじめました（NingentteWinner の創作）', False),
-        ('2026-11-15', 'どろん：Cサークルの新企画「<a href="/doron/#c-circle">十人奇談</a>」の素材を公開', True),
+        ('2026-11-16', 'ホームに<b>起動画面</b>をつけました（はじめの1回だけ）／ウインドウの「_ □ ×」ボタンが使えるように', True),
+        ('2026-11-16', 'スマホの各ブースに、ホームやほかのブースへ行ける<b>メニューボタン</b>', True),
+        ('2026-11-16', '<a href="/diary/">開発日記</a>に2022年からの歩みを追加（ぜんぶで{}件）'.format(len(DIARY)), True),
+        ('2026-11-16', 'カウンターが本物に！ キリ番をふんだら<a href="/contact/">教えてね</a>', True),
+        ('2026-11-15', '<a href="/movie/">映画ブース</a>に話題の映画と、匿名の感想ノート「みんなの C-Log」', True),
+        ('2026-11-15', '<a href="/contact/">お問い合わせフォーム</a>をつくりました', False),
+        ('2026-11-15', '<a href="/game/">ゲームブース</a>に unityroom のゲーム6本！ イチオシは「umbrella lovers」', False),
+        ('2026-11-15', 'ゲーム・美術館・ラーメン・映画・ブックマークの<a href="/#booths">5ブース</a>を開設', False),
+        ('2026-11-15', '<a href="/stamp/">スタンプブース</a>と<a href="/note/">note ブース</a>をつくりました', False),
         ('2026-11-15', 'Kindle本「<a href="/books/">ドパ読！</a>」{}冊を書庫に／オカルトブース「<a href="/doron/">どろん</a>」オープン'.format(TOTAL), False),
-        ('2026-11-13', '「教育 × IT」の看板でサイトをリニューアル', False),
-        ('2026-11-06', '「<a href="/apps/aws-saa-dojo/">AWSTUDY SAA 設計道場</a>」のページを公開', False),
-        ('2026-11-05', 'ミニゲーム集「<a href="/apps/minigamer/">MiniGamer</a>」のページを追加', False),
     ]
+    N_NOTE = sum(1 for p in js_json('note/posts.js', 'NOTE_POSTS') if p.get('noteUrl'))
+    N_TALES = len(re.findall(r'"url": "https://tales\.note\.com/[^"]*/episodes/', (R / 'note/posts.js').read_text()))
+    N_GAMES = len(js_json('game/game-data.js', 'GAME')['games'])
+    last = max([DIARY[0]['date'], whats[0][0]] + [p['date'] for p in NOTE_POSTS[:1]])
+    UPDATED = f'{int(last[:4])}年{int(last[5:7])}月{int(last[8:10])}日'
     rows = ''.join(f'<tr><td class="date">{d.replace("-", "/")}</td><td>{t} {NEWGIF if n else ""}</td></tr>' for d, t, n in whats)
     welcome = f'''<p class="r-big"><script type="text/javascript"><!--
 document.write(rGreeting());
@@ -373,8 +379,8 @@ document.write(rGreeting());
 <p class="r-center"><b>GiveTex</b>（ギブテックス）のホームページへ ようこそ！<br>
 ここでは <font color="#d10056"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
 ゆっくりしていってくださいね。</p>
-<table class="r-tbl" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>7</b> 本</td><td class="r-center"><b>11</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>349</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>ブース</th><th>記事</th></tr><tr><td class="r-center"><b>11</b> 話</td><td class="r-center"><b>18</b> セット</td><td class="r-center"><b>11</b> こ</td><td class="r-center"><b>6</b> 本</td></tr></table>
-<p class="r-small r-center">最終更新日：2026年11月15日</p>'''
+<table class="r-tbl r-stats" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>{len(RELEASED)}</b> 本</td><td class="r-center"><b>{len(DEV)}</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>{N_NOTE}</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>unityroom</th><th>開発日記</th></tr><tr><td class="r-center"><b>{N_TALES}</b> 話</td><td class="r-center"><b>{len(STAMP_SETS)}</b> セット</td><td class="r-center"><b>{N_GAMES}</b> 本</td><td class="r-center"><b>{len(DIARY)}</b> 件</td></tr></table>
+<p class="r-small r-center">最終更新日：{UPDATED}</p>'''
     apps_icons = ''.join(icon(h or s, img, n, '★公開中', ext=not h) for h, img, n, d, s in RELEASED)
     apps_icons += ''.join(icon(f'/apps/{k}/', f'/apps/{k}/images/icon.jpg', n, '準備中', dev=True) for k, n, d in DEV)
     shelf = ''.join(book(*b) for k in BOOKS['cats'] for b in BOOKS['books'][k][:2])
@@ -392,18 +398,18 @@ document.write(rGreeting());
 <p><a class="r-btn r-btn-hot" href="{E(pick["url"])}" target="_blank" rel="noopener">▶ unityroom で遊ぶ</a> <a class="r-btn" href="/game/">ゲームブースへ &gt;&gt;</a></p></div></div>''', '🎮') if pick else ''
     main = (win('ようこそ！ - GiveTex', welcome, '🏠') + pick_win +
             win("What's New!! - 更新履歴", f'<table class="r-tbl" summary="更新履歴"><tr><th>日付</th><th>更新内容</th></tr>{rows}</table><p class="r-small">→ これまでの更新は <a href="/diary/">開発日記</a> へ</p>', '📢') +
-            win('アプリ置き場 - マイ コンピュータ', f'<div class="r-icons">{apps_icons}</div>', '💾', menu=True, status=['18 個のオブジェクト', 'App Store 公開中 7']) +
+            win('アプリ置き場 - マイ コンピュータ', f'<div class="r-icons">{apps_icons}</div>', '💾', menu=True, status=[f'{len(RELEASED) + len(DEV)} 個のオブジェクト', f'App Store 公開中 {len(RELEASED)}']) +
             win(f'ドパ読！書庫 - Kindle電子書籍 {TOTAL}冊', f'<div class="r-shelf">{shelf}</div><p class="r-center"><a class="r-btn" href="/books/">全{TOTAL}冊を見る &gt;&gt;</a></p>', '📚') +
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - 最新の記事', '<p class="r-center" style="margin:0 0 8px">NingentteWinner の note から、さいきんの記事。</p><div class="r-shelf r-notes">' + ''.join(f'<a class="r-book r-note" href="/note/posts/{E(p["slug"])}.html"><img src="{E(p["cover"])}" width="160" height="84" alt="" loading="lazy"><b>{E(p["title"])}</b><small>{p["date"].replace("-", "/")}</small></a>' for p in NOTE_POSTS[:8]) + '</div><p class="r-center"><a class="r-btn" href="/note/">note ブースへ（全 ' + str(len(js_json("note/posts.js", "NOTE_POSTS"))) + ' 本）&gt;&gt;</a></p>', '✒') +
             win('スタンプブース - LINE スタンプ', '<p class="r-center" style="margin:0 0 8px">fumi の LINE スタンプ <b>' + str(len(STAMP_SETS)) + 'セット</b>。トーク画面で送ってためせます。</p><div class="r-shelf r-stamps">' + ''.join(f'<a class="r-book r-stamp" href="/stamp/" title="{E(x["title"])}"><img src="{E(x["main"])}" width="96" height="96" alt="{E(x["title"])}" loading="lazy"><small>{E(x["title"])}</small></a>' for x in list(reversed(STAMP_SETS))[:10]) + '</div><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
-            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>C-Log Web・観た映画の感想</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
+            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
     menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
     side = (win('MENU', f'<div class="r-menu">{menu}</div>', '📁', bodycls='') +
-            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>1</b></span><br>回目の訪問です</p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>', '🔢') +
+            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>', '🔢') +
             win('管理人のプロフィール', '<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>', '👤') +
             win('いまの時刻', '<p class="r-center" style="margin:0"><span id="r-clock">--:--:--</span></p>', '⏰') +
             win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗'))
@@ -432,7 +438,7 @@ def build_apps():
 <h3 class="r-h3">App Store で公開中</h3>
 <table class="r-tbl" summary="公開中のアプリ"><tr><th></th><th>アプリ</th><th>状態</th></tr>{r1}</table>
 <h3 class="r-h3">開発中・リリース準備中</h3>
-<table class="r-tbl" summary="開発中のアプリ"><tr><th></th><th>アプリ</th><th>状態</th></tr>{r2}</table>""", '💾', menu=True, status=['18 個のオブジェクト', 'App Store 公開中 7 / 準備中 11'])}
+<table class="r-tbl" summary="開発中のアプリ"><tr><th></th><th>アプリ</th><th>状態</th></tr>{r2}</table>""", '💾', menu=True, status=[f'{len(RELEASED) + len(DEV)} 個のオブジェクト', f'App Store 公開中 {len(RELEASED)} / 準備中 {len(DEV)}'])}
 </div>'''
     page('apps/index.html', 'アプリ置き場 | GiveTex', 'GiveTexが開発・提供しているアプリの一覧です。App Storeで公開中のアプリと、開発中のアプリを紹介しています。', body, '/apps/')
 
@@ -462,7 +468,7 @@ def build_diary():
     idx = ' ｜ '.join(f'<a href="#m{k.replace("-", "")}">{int(k[:4])}年{int(k[5:])}月</a>' for k in months)
     parts = ''.join(f'<a name="m{k.replace("-", "")}" id="m{k.replace("-", "")}"></a><h2 class="r-h">{int(k[:4])}年{int(k[5:])}月</h2>' + ''.join(diary_entry(d) for d in v) for k, v in months.items())
     body = f'''<div class="r-page" role="main">
-{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 2026/11/16'])}
+{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 ' + DIARY[0]['date'].replace('-', '/')])}
 </div>'''
     page('diary/index.html', '開発日記 | GiveTex', 'GiveTexの開発日記。学習アプリのリリース、サイト更新、Kindle出版、オカルトブース「どろん」など、つくる過程の記録です。', body, '/diary/')
 
