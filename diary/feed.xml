@@ -2,6 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
 <title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
 <atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+<item><title>ページの切りかえと、起動画面</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-16-ページの切りかえと、起動画面</guid><category>サイト</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ページを移動するとき、ブラウン管テレビのチャンネルを変えるように、画面がいちど消えてから点くようにしました（対応しているブラウザだけ）。リンクにふれた時点で先に読みこむので、押すとすぐ開きます。&lt;/p&gt;&lt;p&gt;ほかにも、読み進みがわかる虹色のバー、スクロールするとウィンドウが開くように出てくる動き、マウスについてくる星、ドパ読！の表紙がかたむく動きを入れています。ホームの起動画面は、光の粒が集まってロゴになる演出につくりなおしました。動きを減らす設定にしている人には出ません。&lt;/p&gt;</description></item>
 <item><title>ブースめぐりと、こまかい手直し</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-16-ブースめぐりと、こまかい手直し</guid><category>サイト</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ブースを見てまわるのが楽しくなるように、「ブースめぐり」をつくりました。各ブースのいちばん下に、まわったブースのしるしと「つぎのブース」への道しるべが出ます。9つ全部まわると制覇です（記録はその端末の中だけに残ります）。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.givetex.org/doron/&quot;&gt;どろん&lt;/a&gt;には百物語のろうそくを100本ならべました。1本消すたびに、ひとことだけ話が出ます。&lt;a href=&quot;https://www.givetex.org/museum/&quot;&gt;美術館&lt;/a&gt;は所蔵品を先頭にして、「かけかえる」ボタンで別の9点に入れかえられるようにしました。&lt;a href=&quot;https://www.givetex.org/ramen/&quot;&gt;ラーメン&lt;/a&gt;は、麺とお品書きが重なっていたのを直しています。&lt;/p&gt;</description></item>
 <item><title>名刺を置きました</title><link>https://www.givetex.org/diary/#m202611</link>
@@ -60,6 +62,4 @@
 <guid isPermaLink="false">givetex-diary-2026-11-08-Pyxel のゲームを App Store に</guid><category>ゲーム</category><pubDate>Sun, 08 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;Pyxel（Python のレトロゲームエンジン）でつくったゲームを App Store で売る方法を調査。Swift との組み合わせ方やアプリ化できるかを確認&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>Muse でつくる、収益化できるアプリ</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-07-Muse でつくる、収益化できるアプリ</guid><category>企画</category><pubDate>Sat, 07 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;自作 AI「Muse」でアプリをつくる前提で、収益化できそうな新しいアプリを企画&lt;/li&gt;&lt;/ul&gt;</description></item>
-<item><title>自分でしゃべる AI VTuber</title><link>https://www.givetex.org/diary/#m202611</link>
-<guid isPermaLink="false">givetex-diary-2026-11-06-自分でしゃべる AI VTuber</guid><category>AI</category><pubDate>Fri, 06 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;自律して会話する AI キャラクターを構想。ゲーム画面の右下にいて、自分から話しかける最初の機能を検討&lt;/li&gt;&lt;li&gt;ローカルで動く AI（Ollama など）も調べる対象に&lt;/li&gt;&lt;/ul&gt;</description></item>
 </channel></rss>

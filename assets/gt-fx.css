@@ -1,0 +1,57 @@
+/* サイト全体の「動き」の仕上げ（全ページで読みこむ。tools/seo.py が <head> に入れる）
+   1) ページの切りかえ：ブラウン管テレビのチャンネルを変えるように、消えて・点く
+   2) 読み進みのバー、スクロールで現れる動き、星のカーソル など（gt-fx.js と組）
+   動きを減らす設定の人には、どれも出さない */
+
+/* ---- 1) ページの切りかえ（対応ブラウザだけ。ほかは普通に切りかわる） ---- */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition { background: #000; }
+  ::view-transition-group(root) { animation-duration: .62s; }
+  ::view-transition-old(root) { animation: gtx-off .24s cubic-bezier(.5, 0, 1, 1) both; transform-origin: 50% 50%; mix-blend-mode: normal; }
+  ::view-transition-new(root) { animation: gtx-on .4s cubic-bezier(.16, .84, .3, 1) .2s both; transform-origin: 50% 50%; mix-blend-mode: normal; }
+  @keyframes gtx-off {
+    0% { transform: none; filter: none; opacity: 1; }
+    65% { transform: scale(1.02, .006); filter: brightness(4) saturate(0); opacity: 1; }
+    100% { transform: scale(0, .004); filter: brightness(6) saturate(0); opacity: 0; }
+  }
+  @keyframes gtx-on {
+    0% { transform: scale(.2, .004); filter: brightness(6) saturate(0); opacity: 0; }
+    30% { transform: scale(1.02, .006); filter: brightness(4) saturate(0); opacity: 1; }
+    100% { transform: none; filter: none; opacity: 1; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+/* 切りかえに対応していないブラウザ：すっと暗くなってから移動 */
+html.gtx-leave body { opacity: 0; transition: opacity .16s ease-in; }
+
+/* ---- 2) 読み進みのバー（長いページだけ・いちばん上） ---- */
+.gtx-bar { position: fixed; left: 0; top: 0; z-index: 2147482000; width: 100%; height: 3px; pointer-events: none; transform-origin: 0 50%; transform: scaleX(0);
+  background: linear-gradient(90deg, #ff4fd8, #ffd23f, #6bff7a, #3ef0ff, #c77dff); opacity: .95; }
+@media print { .gtx-bar { display: none; } }
+
+/* ---- 3) スクロールで現れる（JS が付けたときだけ。JS が動かなければ、最初から見えている） ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .gtx-rv { opacity: 0; transform: translateY(18px) scale(.985); }
+  .gtx-rv.gtx-in { opacity: 1; transform: none; transition: opacity .5s ease, transform .6s cubic-bezier(.16, .84, .3, 1); transition-delay: var(--gtx-d, 0s); }
+  /* 90年代風のページの窓は、ウィンドウが「開く」ように */
+  .win.gtx-rv { transform: scale(.94, .7); transform-origin: 50% 0; }
+  .win.gtx-rv.gtx-in { transition: opacity .18s steps(3), transform .26s steps(5); }
+}
+
+/* ---- 4) 星のカーソル（90年代風のページ・マウスのときだけ） ---- */
+.gtx-star { position: fixed; left: 0; top: 0; z-index: 2147481000; pointer-events: none; font: 14px/1 "DotGothic16", monospace; will-change: transform, opacity; animation: gtx-star .7s steps(7) forwards; text-shadow: 0 0 4px currentColor; }
+@keyframes gtx-star { 0% { opacity: 1; transform: translate(var(--x), var(--y)) scale(1) rotate(0); } 100% { opacity: 0; transform: translate(calc(var(--x) + var(--dx)), calc(var(--y) + 26px)) scale(.3) rotate(90deg); } }
+
+/* ---- 5) 本の表紙：マウスを乗せると少し傾いて光る（ドパ読！） ---- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .gtx-tilt { transition: transform .35s cubic-bezier(.2, .8, .2, 1); transform-style: preserve-3d; will-change: transform; }
+  .gtx-tilt.gtx-on { transition: transform .08s linear; }
+}
+
+/* ---- 6) 押したところから広がる波紋（ボタン・カード） ---- */
+.gtx-rip { position: fixed; z-index: 2147481500; pointer-events: none; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; border: 2px solid var(--gtx-rip, #ffd23f); animation: gtx-rip .5s ease-out forwards; }
+@keyframes gtx-rip { to { transform: scale(7); opacity: 0; border-width: .5px; } }
+@media (prefers-reduced-motion: reduce) { .gtx-rip, .gtx-star { display: none; } }

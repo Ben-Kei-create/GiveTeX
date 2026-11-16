@@ -47,6 +47,8 @@ def og_block(t, rel, covers, book_covers={}):
     if desc: tags.append(f'<meta name="twitter:description" content="{X(desc[:200])}">')
     tags.append(f'<meta name="twitter:image" content="{SITE}{img}">')
     for label, href in FEEDS.get(rel, []): tags.append(f'<link rel="alternate" type="application/rss+xml" title="GiveTex {label}" href="{href}">')
+    # ページの切りかえ・細かい動き（全ページ共通）
+    tags += ['<link rel="stylesheet" href="/assets/gt-fx.css">', '<script src="/assets/gt-fx.js" defer></script>']
     return '<!-- seo -->\n' + '\n'.join(tags) + '\n<!-- /seo -->'
 
 def main():
