@@ -407,12 +407,12 @@ document.write(rGreeting());
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
-    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
+    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
     side = (win('MENU', f'<div class="r-menu">{menu}</div>', '📁', bodycls='') +
-            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p>', '🔢') +
+            win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p id="r-kiri-list" class="r-center r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p><p class="r-small r-center" style="margin:2px 0 0"><a href="/guestbook/">ゲストブックに足あと ✎</a></p>', '🔢') +
             win('管理人のプロフィール', '<table class="r-tbl" summary="プロフィール"><tr><th>なまえ</th><td>GiveTex</td></tr><tr><th>テーマ</th><td>教育 × IT</td></tr><tr><th>つくる</th><td>アプリ・Kindle本</td></tr><tr><th>Kindle</th><td>NingentteWinner</td></tr><tr><th>ほか</th><td>オカルト「どろん」</td></tr></table><p class="r-small" style="margin:4px 0 0">→ <a href="/about.html">くわしく</a></p>', '👤') +
             win('いまの時刻', '<p class="r-center" style="margin:0"><span id="r-clock">--:--:--</span></p>', '⏰') +
-            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗') +
+            win('リンク', '<p class="r-center" style="margin:0"><a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br><span class="r-small">リンクフリーです！<br>バナーはお持ち帰りOK</span><br><a class="r-small" href="/links/">→ リンク集へ</a></p><p class="r-center" style="margin:6px 0 0"><img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中"></p>', '🔗') +
             win('ゲームコーナー', '''<div class="mg" id="mg">
 <div class="mg-tabs" role="group" aria-label="ゲームをえらぶ"><button type="button">ブロック</button><button type="button">うちゅう</button><button type="button">クレーン</button><button type="button">じゃんけん</button></div>
 <div class="mg-screen" tabindex="0" aria-label="ゲーム画面。クリックしてから、矢印キーとスペースキーで遊べます"><canvas width="160" height="240"></canvas></div>
@@ -509,7 +509,60 @@ def build_about():
 </div>'''
     page('about.html', '管理人のプロフィール | GiveTex', 'GiveTex（ギブテックス）は教育×ITをテーマに、学習アプリ・Kindle電子書籍「ドパ読！」・オカルトブース「どろん」・開発日記・記事を発信する個人ホームページです。', body, '/about.html', canonical='https://www.givetex.org/about.html')
 
-build_index(); build_diary(); build_about()  # books は pop デザインのまま（再生成しない）
+# ================= ゲストブック =================
+def build_guestbook():
+    moods = ''.join(f'<option>{E(m)}</option>' for m in ['', '(^^)', '(*^_^*)', '(^o^)/', '(T_T)', '(-_-;)', 'ヽ(´▽`)ノ', '(゜o゜)', 'm(_ _)m'])
+    body = f'''<div class="r-page" role="main">
+{win('ゲストブック - 足あと帳', f"""<p class="r-center">ようこそ！ 来てくれた記念に、<b>足あと</b>を残していってね。<br>感想、はじめましてのあいさつ、なんでもOK！ <blink><span class="r-red">★キリ番の報告もここで★</span></blink></p>
+<form id="gb-form" class="ct gb-form" novalidate>
+<table class="r-tbl gb-tbl" summary="書きこみ"><tr><th><label for="gb-name">おなまえ</label></th><td><input id="gb-name" name="name" type="text" maxlength="20" placeholder="名無しさん" autocomplete="nickname"></td></tr>
+<tr><th><label for="gb-from">どこから？</label></th><td><input id="gb-from" name="from" type="text" maxlength="20" placeholder="例：群馬、ネットサーフィン中"></td></tr>
+<tr><th><label for="gb-mood">きもち</label></th><td><select id="gb-mood" name="mood">{moods}</select></td></tr>
+<tr><th><label for="gb-msg">メッセージ</label></th><td><textarea id="gb-msg" name="msg" rows="4" maxlength="400" required></textarea><br><span class="r-small" id="gb-c">0 / 400</span></td></tr></table>
+<p class="ct-hp" aria-hidden="true"><label>空欄のままに<input name="website" type="text" tabindex="-1" autocomplete="off"></label></p>
+<p class="r-center"><button class="r-btn ct-send" type="submit" name="send">書きこむ ✎</button></p>
+<div id="gb-out" role="status" aria-live="polite"></div>
+<p class="r-small">・住所や電話番号、メールアドレス、リンクは書けません（自動ではじきます）。<br>・ひどい書きこみは、3人から「通報」されると自動で見えなくなります。<br>・自分の書きこみは、同じブラウザからなら削除できます。</p>
+</form>
+<hr class="r-hr">
+<p class="r-center"><b id="gb-total">読みこみ中…</b></p>
+<div id="gb-list" class="gb-list" aria-live="polite"></div>
+<p class="r-center"><button class="r-btn" type="button" id="gb-more" hidden>もっと読む</button></p>
+<noscript><p class="r-warn">ゲストブックは JavaScript をオンにすると使えます。</p></noscript>""", '📖')}
+</div>
+<script src="/assets/guestbook.js" defer></script>'''
+    page('guestbook/index.html', 'ゲストブック（足あと帳） | GiveTex', 'GiveTex のゲストブック。来てくれた記念に、足あとを残していってね。', body, '/guestbook/')
+
+# ================= リンク集 =================
+def build_links():
+    def bn(href, img, alt, ext=False):
+        t = ' target="_blank" rel="noopener"' if ext else ''
+        return f'<a class="r-bnr" href="{href}"{t}><img src="/assets/retro/{img}" width="88" height="31" alt="{E(alt)}" loading="lazy"></a>'
+    inside = ''.join(bn(h, i, a) for h, i, a in [('/', 'bnr-givetex.gif', 'GiveTex'), ('/books/', 'bnr-dopayomi.gif', 'ドパ読！'), ('/doron/', 'bnr-doron.gif', 'どろん'), ('/apps/', 'bnr-apps.png', 'GiveTex Apps'),
+        ('/note/', 'bnr-note.png', 'note ブース'), ('/stamp/', 'bnr-stamp.png', 'スタンプブース'), ('/game/', 'bnr-game.png', 'ゲームブース'), ('/movie/', 'bnr-movie.png', 'C-Log 映画ブース'),
+        ('/diary/', 'bnr-diary.png', '開発日記'), ('/guestbook/', 'bnr-guestbook.png', 'ゲストブック')])
+    outside = [('https://note.com/benkein', 'bnr-x-note.png', 'note（NingentteWinner）', 'note で書いている創作・エッセイ'),
+               ('https://tales.note.com/benkein', 'bnr-x-tales.png', 'TALES', '連載小説「島の灯台と猫」'),
+               ('https://store.line.me/stickershop/author/4293406/ja', 'bnr-x-line.png', 'LINE STORE', 'fumi の LINE スタンプ'),
+               ('https://unityroom.com/users/qtnhm79e0xd5plfw28c4', 'bnr-x-unity.png', 'unityroom', 'ブラウザで遊べるゲーム'),
+               ('https://github.com/Ben-Kei-create', 'bnr-x-github.png', 'GitHub', 'つくったもののソースコード')]
+    out_rows = ''.join(f'<tr><td class="r-center">{bn(h, i, a, True)}</td><td><a href="{h}" target="_blank" rel="noopener">{E(a)}</a><br><span class="r-small">{E(d)}</span></td></tr>' for h, i, a, d in outside)
+    code = E('<a href="https://www.givetex.org/"><img src="あなたのサーバーに置いた画像" width="88" height="31" alt="GiveTex"></a>')
+    body = f'''<div class="r-page" role="main">
+{win('リンク集 - お気に入り', f"""<p class="r-center">GiveTex の中のブースと、管理人のほかの場所へのリンクです。<br>バナーをクリックすると飛べます。</p>
+<h2 class="r-h">🏠 GiveTex の中</h2>
+<div class="r-bnrs">{inside}</div>
+<h2 class="r-h">🌏 管理人のほかの場所</h2>
+<table class="r-tbl r-links" summary="管理人のほかの場所">{out_rows}</table>
+<h2 class="r-h">🤝 相互リンク募集中！</h2>
+<p>当サイトは<b>リンクフリー</b>です。報告もいりません（してくれたらうれしいです）。<br>相互リンクのご希望は、<a href="/contact/">お問い合わせ</a>か<a href="/guestbook/">ゲストブック</a>からどうぞ。</p>
+<p class="r-center"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex のバナー"><br><span class="r-small">↑ うちのバナーです。<b>お持ち帰り</b>して使ってね（直リンクはごえんりょください）</span></p>
+<p class="r-small">リンク用のタグ：</p>
+<textarea class="r-code" readonly rows="3" onclick="this.select()">{code}</textarea>""", '🔗')}
+</div>'''
+    page('links/index.html', 'リンク集 | GiveTex', 'GiveTex のリンク集。サイトの中のブースと、管理人の note・TALES・LINE スタンプ・unityroom・GitHub へのバナー。相互リンク募集中。', body, '/links/')
+
+build_index(); build_diary(); build_about(); build_guestbook(); build_links()  # books は pop デザインのまま（再生成しない）
 
 def build_diary_feed():
     """開発日記の RSS（/diary/feed.xml）"""

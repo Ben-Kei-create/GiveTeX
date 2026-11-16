@@ -152,6 +152,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `api/board.js`：映画ブースの匿名掲示板。管理人も含めて全員「名無しの映画好き」。日替わり ID、3人の通報で自動非表示、本人は削除可、連投・重複・リンク・個人情報・暴言を機械ではじく、最新1000件まで。
 - `api/contact.js`：お問い合わせフォーム（`/contact/`）→ メール送信。
 - `api/counter.js`：ホームのアクセスカウンター（本物）。Upstash の `site:visits`。1回の訪問（タブ）につき1度だけ数える。数字を直したいときは Upstash で `site:visits` を書きかえる。
+- `api/guestbook.js`＋`/guestbook/`：ゲストブック（足あと帳）。Upstash の `gb:*`。仕組みは映画の感想ノートと同じ（通報3件で非表示・本人削除・連投やリンクをはじく）。
+- キリ番：カウンターがキリ番（100の倍数・ゾロ目・1234 など）になった人に「名前を残す」欄が出る。記録は `site:kiri:<番号>`・一覧は `site:kirilist`。
+- `/links/`：リンク集（88×31 バナーは `assets/retro/bnr-*.png`）。
 - `api/_lib.js`：共通の道具（回数制限、合言葉、文字のそうじ、NG ワード）。
 - **設定ずみ（2026-11-15）**：
   - 掲示板：Vercel の Storage に **Upstash for Redis**（`givetex-board`・東京・Free・月50万回まで）。接頭辞 `KV` で `KV_REST_API_URL`・`KV_REST_API_TOKEN` が入っています。

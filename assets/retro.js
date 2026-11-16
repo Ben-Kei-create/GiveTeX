@@ -15,20 +15,34 @@ function rGreeting() {
 /* ---- アクセスカウンター（あなたがこのページに来た回数） ---- */
 function rCounter() {
   /* 本物のアクセスカウンター（/api/counter）。1回の訪問（タブ）につき1度だけ数える。
-     サーバーに届かないときは、このブラウザでの訪問回数を出す */
+     キリ番をふんだら、記念に名前を残せる。サーバーに届かないときは、このブラウザでの訪問回数を出す */
   var els = document.querySelectorAll ? document.querySelectorAll("span.r-counter") : [];
   if (!els.length) return;
+  var kiri = document.getElementById("r-kiri"), board = document.getElementById("r-kiri-list");
+  function pad(n) { var s = String(n); while (s.length < 6) s = "0" + s; return s; }
+  function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function show(n, label) {
-    var s = String(n); while (s.length < 6) s = "0" + s;
-    for (var i = 0; i < els.length; i++) {
-      var h = ""; for (var j = 0; j < s.length; j++) h += "<b>" + s.charAt(j) + "</b>";
-      els[i].innerHTML = h;
-    }
+    var s = pad(n);
+    for (var i = 0; i < els.length; i++) { var h = ""; for (var j = 0; j < s.length; j++) h += "<b>" + s.charAt(j) + "</b>"; els[i].innerHTML = h; }
     var lab = document.getElementById("r-count-label"); if (lab && label) lab.innerHTML = label;
-    var kiri = document.getElementById("r-kiri");
-    if (kiri && n > 0 && (n % 100 === 0 || /^(\d)\1+$/.test(String(n)) || n === 1234 || n === 12345)) {
-      kiri.innerHTML = "<blink>★キリ番 " + n + " ゲット！おめでとう！★</blink><br>記念にお問い合わせから報告してね";
-    }
+  }
+  function list(k) {
+    if (!board || !k || !k.length) return;
+    var h = "<b>これまでのキリ番</b>";
+    for (var i = 0; i < k.length; i++) h += "<br>" + pad(k[i].n) + "：" + (k[i].name ? esc(k[i].name) + " さん" : "（名無しさん）");
+    board.innerHTML = h;
+  }
+  function kiriForm(n, ktk) {
+    if (!kiri) return;
+    kiri.innerHTML = "<blink>★キリ番 " + n + " ゲット！★</blink><br>記念に名前をのこそう！<br><input id=\"r-kiri-name\" type=\"text\" maxlength=\"12\" placeholder=\"おなまえ\" style=\"width:9em;font-size:16px\"> <button type=\"button\" id=\"r-kiri-send\" class=\"r-btn\">のこす</button>";
+    var btn = document.getElementById("r-kiri-send");
+    btn.onclick = function () {
+      var name = document.getElementById("r-kiri-name").value;
+      btn.disabled = true;
+      fetch("/api/counter", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ act: "kiri", n: n, ktk: ktk, name: name }) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (j.ok) { kiri.innerHTML = "★キリ番 " + n + " に名前をのこしました！ おめでとう！★"; list(j.kiri); } else { btn.disabled = false; alert(j.error || "のこせませんでした"); } })["catch"](function () { btn.disabled = false; });
+    };
   }
   function local() {
     var n = 1; try { n = parseInt(localStorage.getItem("givetex_visits") || "0", 10) + 1; localStorage.setItem("givetex_visits", String(n)); } catch (e) {}
@@ -42,6 +56,8 @@ function rCounter() {
       if (!j || !j.ok) return local();
       try { sessionStorage.setItem("givetex_counted", "1"); } catch (e) {}
       show(j.n, "人目のお客さまです");
+      list(Array.isArray(j.kiri) ? j.kiri : j.list);
+      if (j.kiri === true && j.ktk) kiriForm(j.n, j.ktk);
     })["catch"](local);
 }
 

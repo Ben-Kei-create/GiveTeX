@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000080">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/assets/retro.css">
+<script type="text/javascript" src="/assets/retro.js"></script>
+<script src="/assets/img-fallback.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/assets/ga.js" defer></script>
+<title>ゲストブック（足あと帳） | GiveTex</title>
+<meta name="description" content="GiveTex のゲストブック。来てくれた記念に、足あとを残していってね。">
+<meta property="og:title" content="ゲストブック（足あと帳） | GiveTex">
+<meta property="og:description" content="GiveTex のゲストブック。来てくれた記念に、足あとを残していってね。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://www.givetex.org/guestbook/">
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/guestbook/">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ゲストブック（足あと帳） | GiveTex">
+<meta name="twitter:description" content="GiveTex のゲストブック。来てくれた記念に、足あとを残していってね。">
+<meta name="twitter:image" content="https://www.givetex.org/assets/og/home.jpg">
+<!-- /seo -->
+</head>
+<body>
+
+<a name="top" id="top"></a>
+<div class="r-head" role="banner">
+<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
+<div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
+<marquee class="r-news" scrollamount="5" scrolldelay="60">★☆★ ようこそ GiveTex のホームページへ！ ★☆★　<a href="/movie/">映画ブース</a>に、だれでも書ける感想ノート「みんなの C-Log」　◆　<a href="/game/">ゲームブース</a>のイチオシは「umbrella lovers」！　◆　<a href="/diary/">開発日記</a>に2022年からの歩みを追加しました　◆　ご意見・ご感想は<a href="/contact/">お問い合わせ</a>からどうぞ　◆　このホームページはリンクフリーです　★☆★</marquee>
+<div class="r-nav" role="navigation" aria-label="メニュー"><a href="/">HOME</a><a href="/apps/">アプリ</a><a href="/books/">ドパ読！</a><a href="/doron/">どろん</a><a href="/note/">note</a><a href="/stamp/">スタンプ</a><a href="/#booths">ブース</a><a href="/diary/">開発日記</a><a href="/#articles">記事</a><a href="/about.html">管理人</a><a href="/contact/">お問い合わせ</a></div>
+</div>
+<div class="r-page" role="main">
+<div class="win ">
+<div class="win-t"><span class="ico">📖</span><span class="ttl">ゲストブック - 足あと帳</span><button class="bt bt-min" type="button" aria-label="最小化（たたむ）">_</button><button class="bt bt-max" type="button" aria-label="元の大きさにもどす">□</button><button class="bt bt-x" type="button" aria-label="閉じる（ページを開き直すと元にもどります）">×</button></div>
+<div class="win-b ">
+<p class="r-center">ようこそ！ 来てくれた記念に、<b>足あと</b>を残していってね。<br>感想、はじめましてのあいさつ、なんでもOK！ <blink><span class="r-red">★キリ番の報告もここで★</span></blink></p>
+<form id="gb-form" class="ct gb-form" novalidate>
+<table class="r-tbl gb-tbl" summary="書きこみ"><tr><th><label for="gb-name">おなまえ</label></th><td><input id="gb-name" name="name" type="text" maxlength="20" placeholder="名無しさん" autocomplete="nickname"></td></tr>
+<tr><th><label for="gb-from">どこから？</label></th><td><input id="gb-from" name="from" type="text" maxlength="20" placeholder="例：群馬、ネットサーフィン中"></td></tr>
+<tr><th><label for="gb-mood">きもち</label></th><td><select id="gb-mood" name="mood"><option></option><option>(^^)</option><option>(*^_^*)</option><option>(^o^)/</option><option>(T_T)</option><option>(-_-;)</option><option>ヽ(´▽`)ノ</option><option>(゜o゜)</option><option>m(_ _)m</option></select></td></tr>
+<tr><th><label for="gb-msg">メッセージ</label></th><td><textarea id="gb-msg" name="msg" rows="4" maxlength="400" required></textarea><br><span class="r-small" id="gb-c">0 / 400</span></td></tr></table>
+<p class="ct-hp" aria-hidden="true"><label>空欄のままに<input name="website" type="text" tabindex="-1" autocomplete="off"></label></p>
+<p class="r-center"><button class="r-btn ct-send" type="submit" name="send">書きこむ ✎</button></p>
+<div id="gb-out" role="status" aria-live="polite"></div>
+<p class="r-small">・住所や電話番号、メールアドレス、リンクは書けません（自動ではじきます）。<br>・ひどい書きこみは、3人から「通報」されると自動で見えなくなります。<br>・自分の書きこみは、同じブラウザからなら削除できます。</p>
+</form>
+<hr class="r-hr">
+<p class="r-center"><b id="gb-total">読みこみ中…</b></p>
+<div id="gb-list" class="gb-list" aria-live="polite"></div>
+<p class="r-center"><button class="r-btn" type="button" id="gb-more" hidden>もっと読む</button></p>
+<noscript><p class="r-warn">ゲストブックは JavaScript をオンにすると使えます。</p></noscript>
+</div>
+</div>
+</div>
+<script src="/assets/guestbook.js" defer></script>
+<div class="r-foot" role="contentinfo">
+<hr class="r-hr">
+<div class="bnrs">
+<a href="/"><img loading="lazy" decoding="async" src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
+<a href="/books/"><img loading="lazy" decoding="async" src="/assets/retro/bnr-dopayomi.gif" width="88" height="31" alt="ドパ読！"></a>
+<a href="/doron/"><img loading="lazy" decoding="async" src="/assets/retro/bnr-doron.gif" width="88" height="31" alt="どろん"></a>
+<img loading="lazy" decoding="async" src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
+</div>
+<p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
+<p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="/contact/">お問い合わせ</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
+<address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
+</div>
+</body>
+</html>
