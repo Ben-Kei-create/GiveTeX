@@ -150,6 +150,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-16', tag='ブース', title='ラーメンブースに14杯、美術館に所蔵品',
+      body='<p><a href="/ramen/">ラーメンブース</a>に、これまで食べた14杯（ほうとう・そばの番外編もふくむ）をならべました。しょうゆ・みそ・とんこつ・家系・二郎系などの味でしぼりこめます。写真は軽くするために小さめです。</p><p><a href="/museum/">美術館ブース</a>には「所蔵品」の部屋をつくりました。ドパ読！の表紙、LINE スタンプ、unityroom のゲームの絵から、毎日9点が入れかわって飾られます。</p>'),
  dict(date='2026-11-16', tag='ゲーム', title='CPU と遊べるボードゲームを9種つくった',
       body='<p><a href="/game/board/">ゲームブースのボードゲームの部屋</a>に、CPU とたいせんできるゲームを9種類置きました。</p><ul class="r-list"><li>日本：将棋（持ち駒・成り・二歩・打ち歩詰めもちゃんと判定）、囲碁（9路盤）、麻雀（CPU と2人打ち）、五目ならべ</li><li>世界：チェス、リバーシ、四目ならべ、チェッカー、マンカラ</li></ul><p>CPU の強さは3段階。将棋とチェスは、決まった手の数を正しく数えられるかで、ルールの作りを確かめました。</p>'),
  dict(date='2026-11-16', tag='サイト', title='クリック音と、お助けツール',
@@ -373,6 +375,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-16', '<a href="/ramen/">ラーメンブース</a>に14杯！ 味でしぼりこめます／<a href="/museum/">美術館</a>に「所蔵品」の展示（毎日入れかわり）', True),
         ('2026-11-16', '<a href="/game/board/">ゲームブース</a>に、CPU と遊べるボードゲーム9種！ 将棋・囲碁・麻雀・チェス・リバーシ・マンカラなど', True),
         ('2026-11-16', 'ホームに<b>お助けツール</b>（手書きメモ・電卓）と、なつかしい<b>クリック音</b>（右上で ON／OFF）', True),
         ('2026-11-16', '<a href="/diary/">開発日記</a>に GitHub の記録（2022年〜）を追加', True),
@@ -382,7 +385,6 @@ def build_index():
         ('2026-11-16', '<a href="/books/">ドパ読！</a>の{}冊に、1冊ずつのページができました'.format(TOTAL), True),
         ('2026-11-16', '新しい記事「<a href="/articles/ai-team-app-development.html">AIと分業してiPhoneアプリをつくる方法</a>」「<a href="/articles/ai-book-illustration-rules.html">AIで本の挿絵をつくる5つのルール</a>」', True),
         ('2026-11-16', 'ホームに起動画面／スマホの各ブースにメニューボタン／<a href="/diary/">開発日記</a>に2022年からの歩み（{}件）'.format(len(DIARY)), False),
-        ('2026-11-15', '<a href="/movie/">映画ブース</a>に話題の映画と、匿名の感想ノート「みんなの C-Log」／<a href="/contact/">お問い合わせフォーム</a>', False),
     ]
     N_NOTE = sum(1 for p in js_json('note/posts.js', 'NOTE_POSTS') if p.get('noteUrl'))
     N_TALES = len(re.findall(r'"url": "https://tales\.note\.com/[^"]*/episodes/', (R / 'note/posts.js').read_text()))
@@ -420,7 +422,7 @@ document.write(rGreeting());
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - 最新の記事', '<p class="r-center" style="margin:0 0 8px">NingentteWinner の note から、さいきんの記事。</p><div class="r-shelf r-notes">' + ''.join(f'<a class="r-book r-note" href="/note/posts/{E(p["slug"])}.html"><img src="{E(p["cover"])}" width="160" height="84" alt="" loading="lazy"><b>{E(p["title"])}</b><small>{p["date"].replace("-", "/")}</small></a>' for p in NOTE_POSTS[:8]) + '</div><p class="r-center"><a class="r-btn" href="/note/">note ブースへ（全 ' + str(len(js_json("note/posts.js", "NOTE_POSTS"))) + ' 本）&gt;&gt;</a></p>', '✒') +
             win('スタンプブース - LINE スタンプ', '<p class="r-center" style="margin:0 0 8px">fumi の LINE スタンプ <b>' + str(len(STAMP_SETS)) + 'セット</b>。トーク画面で送ってためせます。</p><div class="r-shelf r-stamps">' + ''.join(f'<a class="r-book r-stamp" href="/stamp/" title="{E(x["title"])}"><img src="{E(x["main"])}" width="96" height="96" alt="{E(x["title"])}" loading="lazy"><small>{E(x["title"])}</small></a>' for x in list(reversed(STAMP_SETS))[:10]) + '</div><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
-            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>美術館のつぶやきと来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
+            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>所蔵品の展示（毎日かわる）と来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン14杯。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             win('Web拍手', '<p class="r-small" style="margin:0 0 6px">このホームページが気に入ったら、拍手で応援してね！</p><div class="r-clap" data-page="home"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>', '👏') +

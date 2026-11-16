@@ -1,22 +1,31 @@
 /* ラーメンブース — スクロールで麺がのびる */
 (function () {
   'use strict';
-  var P = ((window.RAMEN || {}).posts || []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
+  var P = ((window.RAMEN || {}).posts || []).slice().sort(function (a, b) { return String(b.date || '').localeCompare(String(a.date || '')) || (b.no || 0) - (a.no || 0); });
   function $(s) { return document.querySelector(s); }
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
   var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 食券 ---------- */
   var box = $('#tickets');
+  if (P.length) {
+    var tags = []; P.forEach(function (p) { if (p.tag && tags.indexOf(p.tag) < 0) tags.push(p.tag); });
+    var bar = el('div', 'rm-filter'); bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', '味でしぼりこむ');
+    bar.appendChild(el('p', 'rm-count', 'これまでに ' + P.length + ' 杯'));
+    ['ぜんぶ'].concat(tags).forEach(function (tg, i) { var b = el('button', null, tg); b.type = 'button'; b.setAttribute('aria-pressed', i ? 'false' : 'true');
+      b.addEventListener('click', function () { Array.prototype.forEach.call(bar.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        Array.prototype.forEach.call(box.querySelectorAll('.ticket'), function (t) { t.hidden = i && t.getAttribute('data-tag') !== tg; }); }); bar.appendChild(b); });
+    box.parentNode.insertBefore(bar, box);
+  }
   if (!P.length) {
     var t = el('article', 'ticket empty'); var h = el('div', 'head'); h.appendChild(el('b', null, '食券')); h.appendChild(el('span', null, 'No.0000')); t.appendChild(h);
     t.appendChild(el('h3', null, 'まだ一杯も記録していません')); t.appendChild(el('p', null, '食べたラーメンを、ここに食券として並べていきます。\nスクロールして、麺だけでもすすっていってください。'));
     box.appendChild(t);
   } else P.forEach(function (p, i) {
-    var t = el('article', 'ticket'); var h = el('div', 'head'); h.appendChild(el('b', null, '食券 No.' + String(P.length - i).padStart(4, '0')));
-    h.appendChild(el('span', null, String(p.date).replace(/-/g, '.') + (p.area ? '　' + p.area : ''))); t.appendChild(h);
-    t.appendChild(el('h3', null, p.shop || '')); if (p.menu) t.appendChild(el('p', 'menu', p.menu));
-    if (p.img) { var im = el('img'); im.src = p.img; im.alt = (p.menu || p.shop || '') + 'の写真'; im.loading = 'lazy'; t.appendChild(im); }
+    var t = el('article', 'ticket'); t.setAttribute('data-tag', p.tag || ''); var h = el('div', 'head'); h.appendChild(el('b', null, '食券 No.' + String(P.length - i).padStart(4, '0')));
+    h.appendChild(el('span', null, (p.date ? String(p.date).replace(/-/g, '.') : (p.tag || '')) + (p.area ? '　' + p.area : ''))); t.appendChild(h);
+    t.appendChild(el('h3', null, p.title || p.shop || '')); var sub = [p.shop ? 'お店：' + p.shop : '', p.menu].filter(Boolean).join('　'); if (sub) t.appendChild(el('p', 'menu', sub));
+    if (p.img) { var im = el('img'); im.src = p.img; im.alt = (p.title || p.menu || p.shop || '') + 'の写真'; im.decoding = 'async'; im.loading = 'lazy'; t.appendChild(im); }
     if (p.text) t.appendChild(el('p', null, p.text));
     var mp = window.GTPlace && GTPlace.chip(p, { query: p.shop ? p.shop + (p.area ? ' ' + p.area : '') : '', label: p.shop ? p.shop + (p.area ? '（' + p.area + '）' : '') : '' }); if (mp) { var mw = el('p', 'place'); mw.appendChild(mp); t.appendChild(mw); }
     if (p.score) {

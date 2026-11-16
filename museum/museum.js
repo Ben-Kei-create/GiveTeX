@@ -43,8 +43,24 @@
   render();
   // 来館記録
   var tb = $('#log tbody');
-  if (!P.length) { $('#log').hidden = true; return; }
-  P.forEach(function (p) {
+  if (!P.length) $('#log').hidden = true;
+  else P.forEach(function (p) {
     var tr = el('tr'); tr.appendChild(el('td', null, fmt(p.date))); tr.appendChild(el('td', null, p.museum || '')); tr.appendChild(el('td', 'ex', p.exhibition || '')); tb.appendChild(tr);
   });
+
+  /* ---------- 所蔵品（毎日9点を入れかえ） ---------- */
+  var C = window.MUSEUM_COLLECTION || [], cw = document.getElementById('coll-wall');
+  if (cw && C.length) {
+    var day = Math.floor((Date.now() + 9 * 3600e3) / 864e5), seed = day * 9301 + 49297, pick = [], used = {};
+    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    while (pick.length < Math.min(9, C.length)) { var k = Math.floor(rnd() * C.length); if (!used[k]) { used[k] = 1; pick.push(C[k]); } }
+    pick.forEach(function (c, i) {
+      var art = el('article', 'piece'), a = el('a', 'mu-coll-link'); a.href = c.href;
+      var im = el('img'); im.src = c.img; im.alt = c.t; im.loading = 'lazy'; im.decoding = 'async'; im.style.aspectRatio = c.ratio; im.style.objectFit = 'cover'; im.style.width = '100%';
+      a.appendChild(frame([im])); art.appendChild(a);
+      var pl = el('div', 'plaque'); pl.appendChild(el('b', null, c.t)); pl.appendChild(el('span', null, c.s));
+      pl.appendChild(el('time', null, 'No.' + String(i + 1).padStart(2, '0') + '　本日の展示')); art.appendChild(pl);
+      cw.appendChild(art); if (io) io.observe(art); else art.classList.add('in');
+    });
+  }
 })();

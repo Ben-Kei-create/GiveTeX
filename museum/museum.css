@@ -47,3 +47,8 @@ a{color:inherit}
 .mu-empty .canvas{min-height:180px;display:grid;place-items:center;color:var(--faint)}
 .mu-foot{border-top:1px solid var(--line);text-align:center;padding:28px 20px 40px;font:500 13px/2 var(--en);letter-spacing:.2em;color:var(--sub)}
 .mu-foot a{text-decoration:none}
+/* 所蔵品 */
+.mu-coll{margin-top:90px}
+.mu-coll-lead{text-align:center;color:var(--sub);margin:-6px auto 34px;max-width:36em;font-size:14px}
+.mu-coll-link{display:block;width:100%;text-decoration:none;color:inherit}
+.mu-coll .canvas img{display:block}

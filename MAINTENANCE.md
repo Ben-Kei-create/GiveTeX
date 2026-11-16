@@ -104,6 +104,10 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 ### ブックマークを更新する
 - ブラウザから書き出したブックマーク（HTML）をもらい、個人のアカウント・管理画面・決済・求人・成人向けなどを除いて `bookmarks/bookmarks.js` を作り直します。
 
+### ラーメン・美術館（2026-11-16）
+- ラーメン：`ramen/ramen-data.js`（title・shop・tag・text・img）。写真は `ramen/img/` に、長い辺560px・WebP（画質50）で**小さく**。位置情報などの撮影データは消す。**人が写っている写真は載せない**。店名は分かるものだけ（分からなければ空のまま）。
+- 美術館の所蔵品：`museum/collection.js`（本の表紙・スタンプ・ゲームの絵の一覧）から毎日9点を表示。
+
 ### ボードゲーム（/game/board/）
 - 入れもの：`game/board/index.html`・`board.js`・`board.css`。ゲームは選ばれたときだけ `game/board/<名前>.js` を読みこむ。
 - 9種：shogi・go（9路）・mahjong（2人打ち・簡易）・chess・reversi・gomoku・connect4・checkers・mancala。CPU の強さは3段階。

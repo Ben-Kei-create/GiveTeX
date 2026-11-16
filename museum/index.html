@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Shippori+Mincho:wght@500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/museum/museum.css">
 <script src="/museum/museum-data.js" defer></script>
+<script src="/museum/collection.js" defer></script>
 <script src="/museum/museum.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
 <script src="/assets/gt-menu.js" defer></script>
@@ -50,6 +51,11 @@
     <h2 class="mu-wall-h">EXHIBITION</h2>
     <nav class="mu-filter" id="filter" aria-label="年でしぼりこむ"></nav>
     <div class="wall" id="wall"></div>
+    <section class="mu-coll" id="coll" aria-labelledby="h-coll">
+      <h2 class="mu-wall-h" id="h-coll">PERMANENT COLLECTION</h2>
+      <p class="mu-coll-lead">GiveTex 所蔵品。管理人がつくった本の表紙、LINE スタンプ、ゲームの絵から、<b>毎日9点</b>を入れかえて展示しています。</p>
+      <div class="wall" id="coll-wall"></div>
+    </section>
     <section class="mu-log" id="log" aria-labelledby="h-log">
       <h2 id="h-log">VISIT LOG</h2>
       <table><thead><tr><th>DATE</th><th>MUSEUM</th><th class="ex">EXHIBITION</th></tr></thead><tbody></tbody></table>

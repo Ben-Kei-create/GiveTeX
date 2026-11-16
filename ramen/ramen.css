@@ -52,3 +52,9 @@ a{color:var(--red2)}
 .done button:active{transform:translate(3px,3px);box-shadow:none}
 .foot{position:relative;z-index:2;text-align:center;padding:0 16px 40px;color:var(--sub);font-size:14px}
 .done{visibility:hidden;opacity:0;transition:opacity .4s}.done.show{visibility:visible;opacity:1}
+/* 味でしぼりこみ */
+.rm-filter{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin:0 auto 18px;max-width:720px;padding:0 12px}
+.rm-count{width:100%;text-align:center;margin:0 0 4px;font-weight:700}
+.rm-filter button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:2px solid #c8102e;background:#fff8ec;color:#c8102e;cursor:pointer}
+.rm-filter button[aria-pressed=true]{background:#c8102e;color:#fff}
+[hidden]{display:none!important}
