@@ -337,6 +337,6 @@ table.info th { width: 8.5em; white-space: nowrap; }
 /* ウインドウのボタン：たたむと青いバーだけ */
 .win.closed .win-menu, .win.closed .win-status { display: none; }
 .win-t .bt[aria-pressed="true"] { box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf; }
-.win-t .bt-x { cursor: default; }
+.win.gone { display: none !important; }
 .win-t .bt:focus-visible { outline: 1px dotted #fff; outline-offset: 1px; }
 @media (hover: none) { .win-t .bt { width: 24px; height: 21px; line-height: 19px; font-size: 13px; } }

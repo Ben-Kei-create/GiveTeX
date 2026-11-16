@@ -48,16 +48,17 @@ function rClock() {
 }
 
 /* ---- ウィンドウの「_」ボタンでたたむ ---- */
-/* ウインドウの「_」でたたむ（青いバーだけ）、「□」で元にもどす。「×」は押しても閉じません */
+/* ウインドウの「_」でたたむ（青いバーだけ）、「□」で元にもどす、「×」で閉じる（ページを開き直すと元にもどる） */
 function rWin(btn) {
   var w = btn.parentNode.parentNode, min = btn.className.indexOf("bt-max") < 0;
+  if (btn.className.indexOf("bt-x") >= 0) { w.className += " gone"; return false; }
   if (min) { if (w.className.indexOf(" closed") < 0) w.className += " closed"; }
   else w.className = w.className.replace(" closed", "");
   btn.setAttribute("aria-pressed", "true"); setTimeout(function () { btn.removeAttribute("aria-pressed"); }, 150);
   return false;
 }
 document.addEventListener("click", function (e) {
-  var b = e.target && e.target.closest && e.target.closest(".win-t .bt-min, .win-t .bt-max");
+  var b = e.target && e.target.closest && e.target.closest(".win-t .bt-min, .win-t .bt-max, .win-t .bt-x");
   if (b) { e.preventDefault(); rWin(b); }
 });
 
@@ -89,3 +90,10 @@ window.onload = function () {
     for (var i = 0; i < mq.length; i++) { if (mq[i].stop) mq[i].stop(); }
   }
 };
+
+/* 「戻る」でページに帰ってきたときも、閉じたウインドウを元にもどす */
+window.addEventListener("pageshow", function (e) {
+  if (!e.persisted) return;
+  var ws = document.querySelectorAll(".win.gone");
+  for (var i = 0; i < ws.length; i++) ws[i].className = ws[i].className.replace(/ gone/g, "");
+});
