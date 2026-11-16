@@ -138,7 +138,22 @@
     card.addEventListener('pointerup', end); card.addEventListener('pointercancel', end);
     card.addEventListener('click', function (e) { if (moved) { moved = false; e.preventDefault(); return; } flip(1); });
   }
+  /* 裏返すときの手ざわり：紙がめくれる小さな音（右上の「音」が ON のとき）と、スマホなら軽い振動 */
+  var SA = null;
+  function swish() {
+    try { if (localStorage.getItem('gt-click') === 'off') return; } catch (e) {}
+    try {
+      var C = window.AudioContext || window.webkitAudioContext; if (!C) return; if (!SA) SA = new C(); if (SA.state === 'suspended') SA.resume();
+      var t = SA.currentTime, n = SA.createBuffer(1, SA.sampleRate * .22, SA.sampleRate), d = n.getChannelData(0);
+      for (var i = 0; i < d.length; i++) { var k = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.sin(Math.PI * k) * (1 - k * .6); }
+      var src = SA.createBufferSource(), f = SA.createBiquadFilter(), g = SA.createGain();
+      src.buffer = n; f.type = 'bandpass'; f.Q.value = .9; f.frequency.setValueAtTime(1800, t); f.frequency.exponentialRampToValueAtTime(5200, t + .2);
+      g.gain.value = .07; src.connect(f); f.connect(g); g.connect(SA.destination); src.start(t);
+    } catch (e) {}
+    try { if (navigator.vibrate) navigator.vibrate(8); } catch (e) {}
+  }
   function flip(dir) {
+    swish();
     turn += dir || 1; side = Math.abs(turn) % 2 ? 'back' : 'front';
     card.classList.toggle('is-back', side === 'back');
     card.setAttribute('aria-label', '名刺。押すと裏返ります（いまは' + (side === 'back' ? '裏' : '表') + '）');
