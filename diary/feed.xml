@@ -2,6 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
 <title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
 <atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+<item><title>2022年からの歩みを、開発日記にまとめた</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-16-2022年からの歩みを、開発日記にまとめた</guid><category>ふりかえり</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;これまでの活動を、この開発日記にまとめて移しました。時期ごとの中心はこんな感じです。&lt;/p&gt;&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;&lt;b&gt;2022〜2024年&lt;/b&gt;：プログラミングの勉強と、Web・ゲームの個人制作&lt;/li&gt;&lt;li&gt;&lt;b&gt;2025年前半&lt;/b&gt;：Java 系の技術、Web 開発、動画の研究&lt;/li&gt;&lt;li&gt;&lt;b&gt;2025年後半&lt;/b&gt;：iPhone アプリ、教育ツール、AI に手伝ってもらう制作&lt;/li&gt;&lt;li&gt;&lt;b&gt;2026年1〜6月&lt;/b&gt;：アプリをたくさん出すこと、続けるための仕組み、教育サービスの研究&lt;/li&gt;&lt;li&gt;&lt;b&gt;2026年7〜9月&lt;/b&gt;：Kindle・Apple Books の出版と、制作工程の自動化&lt;/li&gt;&lt;li&gt;&lt;b&gt;2026年10月&lt;/b&gt;：過去の作品の棚卸しと、ゲーム・アプリのつくり直し&lt;/li&gt;&lt;li&gt;&lt;b&gt;2026年11月&lt;/b&gt;：AI エージェント、研究用の AI、作業の自動化&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;流れでいうと、&lt;b&gt;「技術を学ぶ」→「作品をつくる」→「作品を届ける」→「つくる・届けるを仕組みにする」&lt;/b&gt;。&lt;/p&gt;&lt;p class=&quot;r-small&quot;&gt;※構想・設計の段階のものもふくみます。完成や公開を確認できたものだけ、リンクを付けています。&lt;/p&gt;</description></item>
 <item><title>高校物理「原子」の授業プリント</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-15-高校物理「原子」の授業プリント</guid><category>教材</category><pubDate>Sun, 15 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;高校物理の「原子」の授業プリント（全27ページ）を確認しました。基礎から共通テストのレベルまで。授業中に書きこむ穴埋め、例題、むずかしさ別の演習を組み合わせた構成です。&lt;/p&gt;&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;第1章 電子と光：光電効果、X線、コンプトン効果、物質波&lt;/li&gt;&lt;li&gt;第2章 原子の構造とスペクトル：原子模型、ボーアの理論、エネルギー準位&lt;/li&gt;&lt;li&gt;第3章 原子核と素粒子：放射性崩壊、半減期、質量欠損、核反応&lt;/li&gt;&lt;li&gt;巻末：公式まとめ、穴埋め90項目の答え、演習の解説&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>著作権の切れた名作をゲームに／ここ1年のふりかえり</title><link>https://www.givetex.org/diary/#m202611</link>
@@ -40,6 +42,8 @@
 <guid isPermaLink="false">givetex-diary-2026-11-13-GiveTexをリニューアル。「教育 × IT」の看板へ</guid><category>サイト</category><pubDate>Fri, 13 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ブログ中心だったサイトを作り直しました。アプリ、Kindle本、開発日記、記事をひとつのトップにまとめ、太い線とビビッドな色のポップなデザインに。この日記のページもここから始まります。&lt;/p&gt;</description></item>
 <item><title>Muse を「収益を育てる AI」にしたい</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-10-Muse を「収益を育てる AI」にしたい</guid><category>Muse</category><pubDate>Tue, 10 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;作業を手伝ってくれている自作の AI「Muse」について、これからの方向を考えはじめました。一回きりの報酬だけでなく、&lt;b&gt;続けるほど収益が積み上がる形&lt;/b&gt;にしたい。受注の仕事、継続の契約、デジタル商品の販売などを比べて、Muse を「作業の手伝い」から「収益づくりを手伝う AI」へ育てる方針にしました。&lt;/p&gt;</description></item>
+<item><title>AWS の基礎資格を取得、次の資格へ</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-09-AWS の基礎資格を取得、次の資格へ</guid><category>学習</category><pubDate>Mon, 09 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;AWS の基礎資格を取得。Global Accelerator・NLB・UDP などを問題で勉強しながら、次の資格へ&lt;/li&gt;&lt;li&gt;生成 AI 関連の資格の勉強も検討&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>Pyxel のゲームを App Store に</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-08-Pyxel のゲームを App Store に</guid><category>ゲーム</category><pubDate>Sun, 08 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;Pyxel（Python のレトロゲームエンジン）でつくったゲームを App Store で売る方法を調査。Swift との組み合わせ方やアプリ化できるかを確認&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>Muse でつくる、収益化できるアプリ</title><link>https://www.givetex.org/diary/#m202611</link>
@@ -58,13 +62,4 @@
 <guid isPermaLink="false">givetex-diary-2026-11-04-日本酒を毎日ひとつ学ぶ「蔵ごよみ」</guid><category>日本酒</category><pubDate>Wed, 04 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;約60日で日本酒を学べる無料の仕込み帳。公開前にリマインダーとふりがな設定を追加しました。&lt;a href=&quot;https://www.givetex.org/apps/kuragoyomi/&quot;&gt;アプリページ&lt;/a&gt;&lt;/p&gt;</description></item>
 <item><title>蔵ごよみのアイコンと、App Store 申請の効率化</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-03-蔵ごよみのアイコンと、App Store 申請の効率化</guid><category>アプリ</category><pubDate>Tue, 03 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;日本酒アプリ（sakeQuiz／&lt;a href=&quot;https://www.givetex.org/apps/kuragoyomi/&quot;&gt;蔵ごよみ&lt;/a&gt;）のアイコンを制作。日本酒の器と富士山を彫刻風に&lt;/li&gt;&lt;li&gt;配達員風キャラクターのドット絵素材（顔・正面・背面・横）を依頼&lt;/li&gt;&lt;li&gt;App Store Connect への入力を楽にする申請テンプレートを改訂。初回公開とアップデートの両方で使えるように&lt;/li&gt;&lt;/ul&gt;</description></item>
-<item><title>4本分のページを一気に整備</title><link>https://www.givetex.org/diary/#m202611</link>
-<guid isPermaLink="false">givetex-diary-2026-11-03-4本分のページを一気に整備</guid><category>ラッシュ</category><pubDate>Tue, 03 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/ionstep/&quot;&gt;イオンステップ&lt;/a&gt;（高校化学の電気分解・酸化還元）の紹介ページ&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/onitan/&quot;&gt;OniTan&lt;/a&gt;（漢検準1級）のページ&lt;/li&gt;
-        &lt;li&gt;毒舌キャラの電卓 &lt;a href=&quot;https://www.givetex.org/apps/uzacal/&quot;&gt;UzaCal&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://www.givetex.org/apps/awstady-saa/&quot;&gt;AWSSTUDY(SAA)&lt;/a&gt;：ブランド名を統一し、スクリーンショットを撮り直し。広告の初期設定（非パーソナライズ）もポリシーに明記&lt;/li&gt;
-      &lt;/ul&gt;</description></item>
-<item><title>唐揚げを揚げまくるゲーム「Karrage」</title><link>https://www.givetex.org/diary/#m202611</link>
-<guid isPermaLink="false">givetex-diary-2026-11-02-唐揚げを揚げまくるゲーム「Karrage」</guid><category>ゲーム</category><pubDate>Mon, 02 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;唐揚げを大量に揚げる、ポップなタップゲーム。ギャグ中心のゲームの仕組みを検討&lt;/li&gt;&lt;/ul&gt;</description></item>
 </channel></rss>

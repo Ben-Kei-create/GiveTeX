@@ -143,6 +143,72 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2022-09-01', when='2022年9月', tag='学習', title='Web と Java の勉強をはじめた',
+      body='<ul class="r-list"><li>HTML・CSS・JavaScript・Ruby で Web 制作を練習</li><li>Java の練習用コードやサンプルを書いた</li><li>HTML と画像で電子書籍をつくる実験</li></ul>'),
+ dict(date='2022-12-01', when='2022年12月', tag='Web', title='Ruby on Rails で映画レビューサイト「C-Log」',
+      body='<ul class="r-list"><li>映画レビューサイト「C-Log（CINEMA-LOG）」を Rails で開発（<a href="https://github.com/Ben-Kei-create/C-Log" target="_blank" rel="noopener">C-Log</a>）。のちの iPhone 版と、<a href="/movie/">映画ブース</a>のもと</li></ul>'),
+ dict(date='2024-03-01', when='2024年3月', tag='調査', title='Ruby のゲームと、iPhone アプリのつくり方',
+      body='<ul class="r-list"><li>Ruby で小さなゲームをつくる構想</li><li>iPhone アプリをかんたんにつくる方法を調べた</li></ul>'),
+ dict(date='2024-10-01', when='2024年10〜11月', tag='ゲーム', title='Unity でゲームづくりをはじめた',
+      body='<ul class="r-list"><li>2D シューティング（<a href="https://github.com/Ben-Kei-create/2d-shooting-game" target="_blank" rel="noopener">2d-shooting-game</a>）</li><li>3D ゴルフ（<a href="https://github.com/Ben-Kei-create/3d-golf-game" target="_blank" rel="noopener">3d-golf-game</a>）</li><li>11月には「accumulation_game」（<a href="https://github.com/Ben-Kei-create/accumulation_game" target="_blank" rel="noopener">accumulation_game</a>）</li></ul>'),
+ dict(date='2025-01-01', when='2025年1月', tag='学習', title='Java（Spring Boot・MyBatis）を学ぶ',
+      body='<ul class="r-list"><li>Spring Boot、MyBatis、API、DI などを勉強</li><li>Ruby／Sinatra でログイン・ログアウトの仕組みを試作</li></ul>'),
+ dict(date='2025-03-01', when='2025年3月', tag='Web', title='Java と React／Vue で Web サイト',
+      body='<ul class="r-list"><li>Java のサーバーと React／Vue の画面を組み合わせたサイトづくりに着手</li></ul>'),
+ dict(date='2025-04-01', when='2025年4月', tag='ゲーム', title='umbrella lovers の素材づくり',
+      body='<ul class="r-list"><li>Unity のゲーム「umbrella lovers」の素材を制作（いまの<a href="/game/">ゲームブース</a>のイチオシ）</li></ul>'),
+ dict(date='2025-06-01', when='2025年6月', tag='企画', title='ゲーム実況の YouTube 研究と、開発者ブログの企画',
+      body='<ul class="r-list"><li>YouTube 向けのタイトル・検索対策・サムネイルを研究</li><li>ゲーム開発者向けのブログサイトを企画</li></ul>'),
+ dict(date='2025-07-01', when='2025年7月', tag='企画', title='ネガティブな文をポジティブにする AI メモ帳',
+      body='<ul class="r-list"><li>Python で、書いた文章を前向きな言い方に変える AI メモ帳を企画</li></ul>'),
+ dict(date='2025-08-01', when='2025年8月', tag='アプリ', title='OniTan の設計と、AI で教育を手伝う仕組み',
+      body='<ul class="r-list"><li>漢字学習アプリ「<a href="/apps/onitan/">OniTan</a>」を設計して GitHub で管理</li><li>デジタル断捨離を手伝う iPhone アプリを企画・設計</li><li>スマホから AI 開発ツールを使う方法を調査</li><li>AI で教育ニュースの動画を自動でつくる仕組みを試作</li><li>チャット・復習・進み具合の管理ができる教育 AI を企画</li></ul>'),
+ dict(date='2025-09-01', when='2025年9月ごろ', tag='企画', title='返信や文章づくりを手伝う AI ツール',
+      body='<ul class="r-list"><li>AI で返信や文章をつくるツールを構想</li></ul>'),
+ dict(date='2026-01-01', when='2026年1月', tag='企画', title='個人開発でどう続けるか',
+      body='<ul class="r-list"><li>Web と iOS アプリで、つくる手間や費用を比べた</li><li><b>実装は AI にまかせて、自分は企画と判断をする</b>体制を考えはじめた</li></ul>'),
+ dict(date='2026-02-01', when='2026年2月', tag='企画', title='ショートカットキーのゲームと、理数系アプリ',
+      body='<ul class="r-list"><li>Mac・Windows のショートカットキーを覚えるゲームを設計</li><li>物理・数学の学習アプリを構想</li></ul>'),
+ dict(date='2026-03-01', when='2026年3月', tag='企画', title='漢字アプリのデザインと、自動でまわる仕組みの比較',
+      body='<ul class="r-list"><li>漢字学習アプリのアイコンや商品デザインを研究</li><li>Kindle・アプリ・動画・オンライン教材を、自動化しやすさで比べた</li></ul>'),
+ dict(date='2026-04-01', when='2026年4月', tag='アプリ', title='LinaTeX のビルド成功、日本語学習アプリの研究',
+      body='<ul class="r-list"><li>「<a href="/apps/linatex/">LinaTeX</a>」の開発が進み、ビルドに成功</li><li>外国人向けの日本語学習アプリで、どう差をつけるか研究</li><li>Swift で 3D ゲームや 2D ドット絵 RPG がつくれるか調査</li><li>税金の試算ツール「TaxSuite」を検討</li></ul>'),
+ dict(date='2026-05-01', when='2026年5月', tag='アプリ', title='落語の紙芝居アプリと springsta',
+      body='<ul class="r-list"><li>落語を紙芝居のように紹介するアプリを企画</li><li>Spring の学習アプリ「springsta」を制作</li></ul>'),
+ dict(date='2026-06-01', when='2026年6月', tag='Web', title='家計簿の Web ツール',
+      body='<ul class="r-list"><li>Web で使える家計簿ツールを検討</li></ul>'),
+ dict(date='2026-07-05', when='', tag='Kindle', title='アプリ量産の作戦と、Kindle 出版のはじまり',
+      body='<ul class="r-list"><li>SwiftUI のアプリを短い期間でたくさん出す作戦を研究</li><li>市場の大きさ・競合・利益率で、つくる候補を選ぶ方法を設計</li><li>Kindle Create で電子書籍づくりに着手。『30秒で読む イソップ物語』の KDP 登録を進めた（いまの<a href="/books/">ドパ読！</a>のはじまり）</li></ul>'),
+ dict(date='2026-07-19', when='', tag='画像', title='画像の二次利用と、ストック素材の研究',
+      body='<ul class="r-list"><li>画像の二次利用・クレジット・売り方を検討</li><li>Adobe Stock で AI 生成画像を売るための条件を調査</li><li>ほかのアプリを使いながら答えられる、ミニ調査アプリを構想</li></ul>'),
+ dict(date='2026-08-12', when='', tag='Kindle', title='著作権の切れた文学作品を電子書籍に',
+      body='<ul class="r-list"><li>パブリックドメインの文学作品を、翻訳して電子書籍にする方法を研究</li></ul>'),
+ dict(date='2026-08-24', when='', tag='Kindle', title='画像のファイル名を CSV で一括管理',
+      body='<ul class="r-list"><li>本に使う画像のファイル名を、CSV でまとめて管理するツールを試作</li></ul>'),
+ dict(date='2026-08-26', when='', tag='企画', title='つくったものを日記とポートフォリオに集める',
+      body='<ul class="r-list"><li>これまでの開発・制作を、日記やポートフォリオにまとめる仕組みを構想（この開発日記につながっています）</li></ul>'),
+ dict(date='2026-08-31', when='2026年8月末', tag='学習', title='AWS の勉強',
+      body='<ul class="r-list"><li>AWS のクラウドサービスと資格試験の勉強をはじめた</li></ul>'),
+ dict(date='2026-09-02', when='', tag='Kindle', title='KDP 自動入力が、原稿と表紙のアップロードに対応',
+      body='<ul class="r-list"><li>KDP 自動入力ツールを改良して、原稿と表紙のアップロードまでできるように</li></ul>'),
+ dict(date='2026-09-08', when='2026/09/03〜08', tag='Kindle', title='Kindle 以外の売り場を広げる',
+      body='<ul class="r-list"><li>Kindle 以外で売る方法を研究</li><li>EPUB 形式と、KDP セレクト（独占）の条件を調査</li><li>Apple Books で有料の本を配信できるよう手続き</li></ul>'),
+ dict(date='2026-09-13', when='', tag='Kindle', title='KDP 自動入力のハンズオン資料',
+      body='<ul class="r-list"><li>KDP 自動入力ツールの解説と、手を動かして学べる資料を制作</li></ul>'),
+ dict(date='2026-09-15', when='2026年9月中旬', tag='Kindle', title='本を YouTube Shorts・note・BOOTH にも',
+      body='<ul class="r-list"><li>電子書籍に加えて、YouTube Shorts・<a href="/note/">note</a>・BOOTH へ広げる準備</li></ul>'),
+ dict(date='2026-10-09', when='2026/10/07〜09', tag='企画', title='出版・動画・教育・アプリをどう組み合わせるか',
+      body='<ul class="r-list"><li>電子出版・動画・教育コンテンツを組み合わせた成長の作戦をつくった</li><li>AI・コンテンツ制作・アプリ開発をあわせた方針を整理</li></ul>'),
+ dict(date='2026-10-27', when='', tag='企画', title='GitHub の過去作品を棚卸し',
+      body='<ul class="r-list"><li>これまで GitHub に置いてきたものを調べて、使い回せる作品を分類（<a href="/bookmarks/">ブックマークブース</a>の github コマンドで概要が見られます）</li></ul><p>新しくつくるだけでなく、<b>これまでつくったものを見直して生かす</b>方針に切りかわった日。C-Log の復活もこの日に決めました。</p>'),
+ dict(date='2026-10-31', when='2026年10月末', tag='企画', title='AI がゲームを遊ぶ映像に、実況と編集を付ける',
+      body='<ul class="r-list"><li>AI が遊んだゲームの映像に、実況と編集を自動で付ける案を検討</li></ul>'),
+ dict(date='2026-11-02', when='2026年11月上旬', tag='AI', title='数学を研究する AI キャラ「トレンチャード」',
+      body='<ul class="r-list"><li>数学の研究をする AI キャラクター「トレンチャード」の運用方針を整理</li><li>生成 AI で数学を研究し、論文や動画で発信する方法を研究</li><li>11/15 には、研究用に複数の PC を使う構成も検討</li></ul>'),
+ dict(date='2026-11-09', when='2026年11月上旬', tag='学習', title='AWS の基礎資格を取得、次の資格へ',
+      body='<ul class="r-list"><li>AWS の基礎資格を取得。Global Accelerator・NLB・UDP などを問題で勉強しながら、次の資格へ</li><li>生成 AI 関連の資格の勉強も検討</li></ul>'),
+ dict(date='2026-11-16', when='', tag='ふりかえり', title='2022年からの歩みを、開発日記にまとめた',
+      body='<p>これまでの活動を、この開発日記にまとめて移しました。時期ごとの中心はこんな感じです。</p><ul class="r-list"><li><b>2022〜2024年</b>：プログラミングの勉強と、Web・ゲームの個人制作</li><li><b>2025年前半</b>：Java 系の技術、Web 開発、動画の研究</li><li><b>2025年後半</b>：iPhone アプリ、教育ツール、AI に手伝ってもらう制作</li><li><b>2026年1〜6月</b>：アプリをたくさん出すこと、続けるための仕組み、教育サービスの研究</li><li><b>2026年7〜9月</b>：Kindle・Apple Books の出版と、制作工程の自動化</li><li><b>2026年10月</b>：過去の作品の棚卸しと、ゲーム・アプリのつくり直し</li><li><b>2026年11月</b>：AI エージェント、研究用の AI、作業の自動化</li></ul><p>流れでいうと、<b>「技術を学ぶ」→「作品をつくる」→「作品を届ける」→「つくる・届けるを仕組みにする」</b>。</p><p class="r-small">※構想・設計の段階のものもふくみます。完成や公開を確認できたものだけ、リンクを付けています。</p>'),
  dict(date='2026-08-24', tag='Kindle', title='KDP の入力を自動化するツールをつくりはじめた',
       body='<ul class="r-list"><li>Kindle 本の情報を CSV にまとめて、KDP の画面に一括で入力する仕組みを Python と Playwright で検討</li></ul>'),
  dict(date='2026-09-01', tag='Kindle', title='KDP 自動入力ツールを改良',
@@ -259,7 +325,7 @@ def photos_html(ps):
 def diary_entry(d):
     ph = photos_html(d['photos']) if d.get('photos') else ''
     return f'''<div class="r-diary-entry">
-<div class="d">■ {jdate(d['date'])}　[{E(d['tag'])}]</div>
+<div class="d">■ {E(d['when']) if d.get('when') else jdate(d['date'])}　[{E(d['tag'])}]</div>
 <h3>{d['title']}</h3>
 {d['body']}
 {'<div>' + ph + '</div>' if ph else ''}
@@ -394,7 +460,7 @@ def build_diary():
     idx = ' ｜ '.join(f'<a href="#m{k.replace("-", "")}">{int(k[:4])}年{int(k[5:])}月</a>' for k in months)
     parts = ''.join(f'<a name="m{k.replace("-", "")}" id="m{k.replace("-", "")}"></a><h2 class="r-h">{int(k[:4])}年{int(k[5:])}月</h2>' + ''.join(diary_entry(d) for d in v) for k, v in months.items())
     body = f'''<div class="r-page" role="main">
-{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 2026/11/15'])}
+{win('開発日記 - メモ帳', f'<p>何をつくって、何を直して、何をリリースしたか。GiveTex の制作日記です。新しい順に並んでいます。</p><p class="r-jump">過去ログ：{idx}</p><hr class="r-hr">{parts}', '📝', menu=True, status=[f'{len(DIARY)} 件の日記', '最終更新 2026/11/16'])}
 </div>'''
     page('diary/index.html', '開発日記 | GiveTex', 'GiveTexの開発日記。学習アプリのリリース、サイト更新、Kindle出版、オカルトブース「どろん」など、つくる過程の記録です。', body, '/diary/')
 
