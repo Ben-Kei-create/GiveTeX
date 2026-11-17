@@ -120,6 +120,7 @@ RELEASED = [
  ('/apps/ionstep/', '/apps/ionstep/images/icon.jpg', 'イオンステップ', '高校化学の電気分解と酸化・還元を、反応式を組み立てながら学ぶ。', 'https://apps.apple.com/jp/app/id6821881917'),
  ('/apps/heydrum/', '/apps/heydrum/images/icon.jpg', 'HeyDrum！', 'ドラムの合図のあとで文章を読み上げる。白い画面に大きな文字。', 'https://apps.apple.com/jp/app/id6824921157'),
  (None, '/assets/store/awstudy-clf.jpg', 'AWSTUDY(CLF)', 'AWSの基礎を2択クイズで。3ステージ・全60問、回答ごとにポイント解説。', 'https://apps.apple.com/jp/app/id6819971113'),
+ ('/apps/awstady-saa/', '/apps/awstady-saa/images/icon.jpg', 'AWSSTUDY(SAA)', 'AWSの設計判断を理由から学ぶ3択クイズ。', 'https://apps.apple.com/jp/app/id6829979446'),
  (None, '/assets/store/pokephysics.jpg', 'PokePhysics', '高校物理の公式を、記号の意味・成立条件・例題と一緒にすばやく確認。', 'https://apps.apple.com/jp/app/id6778082145'),
  ('/apps/linatex/', '/apps/linatex/images/icon.jpg', 'LinaTeX', 'Linuxコマンドを、レッスン・クイズ・実践シナリオで身につける。', 'https://apps.apple.com/jp/app/id6775100355'),
  ('/apps/onitan/', '/assets/store/onitan.jpg', 'OniTan(Pre1)', '漢字検定準1級の合格をめざす本格学習アプリ。', 'https://apps.apple.com/jp/app/id6760243558'),
@@ -128,7 +129,6 @@ RELEASED = [
 ]
 DEV = [
  ('aws-saa-dojo', 'SAA 設計道場', 'AWS設計判断トレーナー。10問ずつ何度でも。'),
- ('awstady-saa', 'AWSSTUDY(SAA)', 'AWSの設計判断を理由から学ぶ3択クイズ。'),
  ('minigamer', 'MiniGamer', '本棚から選んですぐ遊べるミニゲーム集。'),
  ('kuragoyomi', '蔵ごよみ', '日本酒を1日ひとつ、約60日で学ぶ。'),
  ('uzacal', 'UzaCal', '毒舌キャラが話しかける電卓。'),
@@ -161,6 +161,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-18', tag='アプリ', title='AWSSTUDY(SAA)が App Store で公開開始。ビール雑学のアイコンも新しく',
+      body='<p><a href="/apps/awstady-saa/">AWSSTUDY(SAA)</a>が App Store の審査を通過し、公開が始まりました（11月17日）。これで公開中のアプリは9本になりました。<a href="https://apps.apple.com/jp/app/id6829979446">App Storeで見る</a></p><p>あわせて、<a href="/apps/beerquiz/">ビール雑学クイズ</a>のアプリアイコンを、現在のストア版（ビールのグラスと泡のデザイン）に差し替えました。サイト側が古いアイコンのままでした。</p>'),
  dict(date='2026-11-17', tag='サイト', title='落書きの壁は、窓の裏へ引っ越した。🔑つき',
       body='<p>「落書きの壁」は、特設ステージからホームの窓の裏（階段の下）へ引っ越しました。リンクをたどるのではなく、窓を動かして見つける場所です。</p><ul class="r-list"><li>壁の道具に 🔑 が増えました。数字4桁のコードを入れると、ページを開いている間だけ消しゴムが「完全消し」に変わります</li><li>コードは裏口（backstage）の上のほうに書いてあります。誰でも見つけたら使えます</li><li>コードなしの消しゴムは今までどおり、字は消えても汚れが残ります</li></ul>'),
  dict(date='2026-11-17', tag='サイト', title='階段の下に、落書きの壁ができた',
@@ -406,6 +408,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-18', '<a href="/apps/awstady-saa/">AWSSTUDY(SAA)</a>が App Store で公開開始！ 公開中のアプリは9本に／ビール雑学クイズのアイコンもストア版に差し替えました', True),
         ('2026-11-17', '「落書きの壁」はホームの窓の裏（階段の下）へ引っ越しました。🔑の数字4桁は裏口の上のほうに…？', True),
         ('2026-11-17', '<a href="/head/">頭の中ブース</a>で、その場でつぶやけるようになりました！ 管理人はパスワードで、ゲストもそのまま投稿できます', True),
         ('2026-11-17', 'お助けツールの右下に小さな 😌 が…？ 押すと昔のマインスイーパーが開きます（初級〜上級・ベストタイム保存つき）', True),
