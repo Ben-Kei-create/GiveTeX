@@ -124,6 +124,7 @@ RELEASED = [
  ('/apps/linatex/', '/apps/linatex/images/icon.jpg', 'LinaTeX', 'Linuxコマンドを、レッスン・クイズ・実践シナリオで身につける。', 'https://apps.apple.com/jp/app/id6775100355'),
  ('/apps/onitan/', '/assets/store/onitan.jpg', 'OniTan(Pre1)', '漢字検定準1級の合格をめざす本格学習アプリ。', 'https://apps.apple.com/jp/app/id6760243558'),
  ('/apps/beerquiz/', '/apps/beerquiz/images/icon.jpg', 'ビール雑学クイズ', '注ぎ方・スタイル・醸造まで、初級〜上級の125問。', 'https://apps.apple.com/jp/app/id6759665291'),
+ ('/apps/paperstory/', '/apps/paperstory/images/icon.jpg', 'PaperStory', '紙を引き出して読む、物語のアプリ。', 'https://apps.apple.com/jp/app/id6829360362'),
 ]
 DEV = [
  ('aws-saa-dojo', 'SAA 設計道場', 'AWS設計判断トレーナー。10問ずつ何度でも。'),
@@ -135,7 +136,6 @@ DEV = [
  ('zayping', 'Zayping', '雑学の一文をタイプするMac向けゲーム。'),
  ('terra', 'TERRA', '世界の7人の選択をたどるMac向け物語。'),
  ('yomuemo', 'よむエモ', '名作文学を、感情で読む。'),
- ('paperstory', 'PaperStory', '紙を引き出して読む、物語のアプリ。'),
  ('doparika', 'ドパリカ！', '中学理科の2択クイズ。'),
 ]
 ARTICLES = [
@@ -161,6 +161,10 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-17', tag='サイト', title='地下に特設ステージ。HipHopブースと頭の中ブースができた',
+      body='<p>ホームのどこかに、地下へつながる入口を3つ隠しました。ヒントは「窓は、青いタイトルバーをつかむと動かせる」です。見つけた先には<a href="/stage/">特設ステージ</a>があります。</p><ul class="r-list"><li><b><a href="/hiphop/">HipHopブース</a></b>：ヒップホップの歴史をポップに学べるブース。1973年のブロンクスから日本のシーンまで、「教科書」として読める形にまとめました。海外・日本のリンク集つき</li><li><b><a href="/head/">頭の中ブース</a></b>：管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を再現しました。投稿できるのは管理人だけです</li><li>もうひとつの出口は YouTube「なぜゲー」へのリンクです</li></ul>'),
+ dict(date='2026-11-17', tag='マンガ', title='『トレンチャードの最終定理』P1・P2が完成。活動一覧もはじめた',
+      body='<p>数学の女の子が主人公のマンガ『トレンチャードの最終定理』第1話を、コマごとに作る方式で制作しています。今日の進み具合はこんな感じです。</p><ul class="r-list"><li><b>制作方式を固定</b>：モノクロのラフネーム → コマ単位の原画 → ページに組み立て → セリフと数式は組版で載せる（数式は検証したものだけ）</li><li><b>P1（1ページ目）の清書版が完成</b>し、レビュー91点で承認</li><li><b>P2も完成</b>し、レビュー92点で承認。P3はネームを直して、試作版まで進みました</li><li>マンガ『島の灯台と猫』第1話の原画20枚を再検証（破損なし。第2話は脚本の確認待ち）</li><li>note のアーカイブ記事を1本公開し、次の10本（11/26〜12/05 分）を予約</li><li>このサイトに「<a href="/activities/">活動一覧</a>」のページを新しく作りました。今日やったことも、そちらに時刻つきで載せています</li></ul>'),
  dict(date='2026-11-17', tag='サイト', title='バナーの壁と、学習用のダウンロード',
       body='<p>ページのいちばん下に、88×31 のバナーをずらっと並べました。ミニゲーム、ボドゲ、美術館、ラーメン、名刺、キリ番……どれも点滅するドット絵で、新しくつくったものです。ウインドウは、青いタイトルバーをつかむと動かせるようになりました。</p><p><a href="/bookmarks/">裏口（backstage）</a>では、学習用の教材を zip で配りはじめました。<code>download</code> と打つと一覧が出ます。ボードゲーム AI のソース集、ミニゲーム4本、90年代ホームページの作り方キット、ファミコン風の音の出し方、AI と作る開発ノートの5本です。</p>'),
  dict(date='2026-11-16', tag='サイト', title='ページの切りかえと、起動画面',
@@ -394,6 +398,8 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-17', '地下に<a href="/stage/">特設ステージ</a>が出現！？ 窓を動かすと入口が見つかるかも…／<a href="/hiphop/">HipHopブース</a>と<a href="/head/">頭の中ブース</a>がオープン', True),
+        ('2026-11-17', '<a href="/activities/">活動一覧</a>ページができました！ 今日の活動も時刻つきで載せています／<a href="/diary/">開発日記</a>にマンガ制作の記録を追加', True),
         ('2026-11-17', 'フッターにバナーがずらり（ミニゲーム・ボドゲ・名刺など）／<a href="/bookmarks/">裏口</a>で学習用の教材（zip）を配りはじめました／窓をつかんで動かせます', True),
         ('2026-11-16', 'ページの切りかえが、テレビのチャンネルを変えるような動きに！ 起動画面もつくりなおしました', True),
         ('2026-11-16', '「ブースめぐり」スタート！ 9つのブースをまわると制覇です／<a href="/doron/">どろん</a>に百物語のろうそく／<a href="/museum/">美術館</a>で作品のかけかえ', True),
@@ -468,9 +474,24 @@ document.write(rGreeting());
 <noscript><p class="r-small">ゲームは JavaScript をオンにすると遊べます。</p></noscript>
 </div>
 <script src="/assets/minigames.js" defer></script>''', '🕹', cls='mg-win'))
+    secret = '''<style>
+.r-mainwrap{position:relative}
+.r-mainwrap .win{position:relative;z-index:1}
+.secret-layer{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.secret-bt{position:absolute;pointer-events:auto;text-align:center;text-decoration:none;font-size:11px;color:#444;line-height:1.3}
+.secret-bt svg{display:block;margin:0 auto 2px}
+.secret-bt:hover{color:#d10056}
+</style>
+<div class="secret-layer" aria-hidden="false">
+<a class="secret-bt" style="top:30px;left:45%" href="/stage/" aria-label="ひみつ：ちかへの階段"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><path d="M4 44 h10 V36 h10 V28 h10 V20 h10 V44 Z" fill="#a8a8a8" stroke="#3a3a3a" stroke-width="2"/><path d="M4 44 h10 V36 h10 V28 h10 V20 h10" fill="none" stroke="#e8e8e8" stroke-width="2"/></svg>ちかへの階段</a>
+<a class="secret-bt" style="top:37%;right:5%" href="/stage/" aria-label="ひみつ：ふしぎなドア"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><rect x="13" y="3" width="22" height="42" fill="#5d3319"/><rect x="16" y="6" width="16" height="39" fill="#7a4525"/><rect x="19" y="10" width="10" height="12" fill="none" stroke="#4a2612" stroke-width="2"/><rect x="19" y="26" width="10" height="14" fill="none" stroke="#4a2612" stroke-width="2"/><circle cx="29" cy="24" r="2" fill="#ffd94a" stroke="#8a6d1f"/></svg>ふしぎなドア</a>
+<a class="secret-bt" style="top:66%;left:5%" href="/stage/" aria-label="ひみつ：みどりの土管"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><rect x="9" y="5" width="30" height="11" fill="#37c837" stroke="#0d6e0d" stroke-width="2"/><rect x="14" y="16" width="20" height="27" fill="#2db32d" stroke="#0d6e0d" stroke-width="2"/><rect x="17" y="5" width="5" height="38" fill="#8dff8d" opacity=".65"/></svg>みどりの土管</a>
+</div>'''
     body = f'''<table class="r-layout" border="0" cellspacing="0" cellpadding="0" summary="レイアウト"><tr>
 <td class="r-main" valign="top">
+<div class="r-mainwrap">{secret}
 {main}
+</div>
 </td>
 <td class="r-side" valign="top" width="210">
 {side}
@@ -644,7 +665,7 @@ def build_app_diaries():
 
 # ================= サイトマップ =================
 def build_sitemap_page():
-    tree = [('/', 'GiveTex ホーム', [('/#booths', 'ブース案内'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/about.html', '管理人のプロフィール'), ('/contact/', 'お問い合わせ'), ('/privacy.html', 'プライバシーポリシー')]),
+    tree = [('/', 'GiveTex ホーム', [('/#booths', 'ブース案内'), ('/activities/', '活動一覧'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/about.html', '管理人のプロフィール'), ('/contact/', 'お問い合わせ'), ('/privacy.html', 'プライバシーポリシー'), ('/stage/', '特設ステージ（地下）'), ('/hiphop/', 'HipHopブース'), ('/head/', '頭の中ブース')]),
             ('/apps/', 'アプリ', [(h, n) for h, _, n, _, _ in RELEASED if h] + [(f'/apps/{k}/', n) for k, n, _ in DEV]),
             ('/books/', 'ドパ読！（Kindle）', [('/books/#' + k, re.sub(r'^\S+\s', '', v)) for k, v in BOOKS['cats'].items()]),
             ('/doron/', 'どろん（オカルト）', [('/doron/#relics', 'relics'), ('/doron/#reikai', '霊界案内所'), ('/doron/#c-circle', 'Cサークル')]),
@@ -659,7 +680,57 @@ def build_sitemap_page():
 </div>'''
     page('sitemap/index.html', 'サイトマップ | GiveTex', 'GiveTex のサイトマップ。ホーム、アプリ、ドパ読！、どろん、各ブース、記事へのリンクの一覧。', body, '/sitemap/')
 
-build_index(); build_diary(); build_about(); build_guestbook(); build_links(); sync_static_headers(); build_app_diaries(); build_sitemap_page()  # books は pop デザインのまま（再生成しない）
+
+# ================= 活動一覧 =================
+def build_activities():
+    acts = ''.join(f'<tr><td><b>{E(n)}</b></td><td>{d}</td><td nowrap>{l}</td></tr>' for n, d, l in [
+        ('アプリ開発', '学習アプリを iPhone / Mac 向けに開発。App Store 公開中 ' + str(len(RELEASED)) + '本、開発中 ' + str(len(DEV)) + '本', '<a href="/apps/">アプリ置き場</a>'),
+        ('Kindle出版「ドパ読！」', '「30秒で読む」シリーズを NingentteWinner 名義で出版。全' + str(TOTAL) + '冊', '<a href="/books/">ドパ読！書庫</a>'),
+        ('マンガ制作', '『トレンチャードの最終定理』（数学SF・制作中）と、『島の灯台と猫』（Kindleマンガ・第1話完成）', '<a href="/note/">note ブース</a>'),
+        ('小説連載', '『島の灯台と猫』の小説版を TALES で連載中（マンガ版と世界・キャラクターを共有）', '<a href="https://tales.note.com/benkein" target="_blank" rel="noopener">TALES</a>'),
+        ('note', '創作・エッセイを NingentteWinner 名義で。過去記事はこのサイトの note ブースでも読めます', '<a href="/note/">note ブース</a>'),
+        ('YouTube「なぜゲー」', 'ゲームの「なぜ？」を掘り下げる動画チャンネル', '<a href="https://www.youtube.com/@nazege_ch" target="_blank" rel="noopener">YouTube</a>'),
+        ('YouTube「Mingo Mango」', 'マンゴーの体をしたフラミンゴの、短い歌のチャンネル。1日1本まで投稿', '<a href="https://www.youtube.com/@mingomango_official" target="_blank" rel="noopener">YouTube</a>'),
+        ('ゲーム制作', 'unityroom でブラウザゲームを公開。サイト内のゲームブースにもまとめています', '<a href="/game/">ゲームブース</a>'),
+        ('技術記事', 'Zenn・Qiita への技術記事の投稿を準備中', '準備中'),
+        ('オカルト「どろん」', '座談会・心霊スポット巡りと、新企画「十人奇談」の準備', '<a href="/doron/">どろん</a>'),
+        ('映画', '映画ブース（C-Log Web）で話題の映画と感想ノート。映画サークルの活動もこちらへ', '<a href="/movie/">映画ブース</a>'),
+        ('HipHop', 'ヒップホップの歴史と音楽をポップに学ぶブース。「教科書」と海外・日本のリンク集つき（地下の特設ステージからも行けます）', '<a href="/hiphop/">HipHopブース</a>'),
+        ('頭の中', 'まだ企画段階のつぶやき置き場。昔の Twitter の画面を再現。投稿できるのは管理人だけ', '<a href="/head/">頭の中ブース</a>'),
+    ])
+    ext = ''.join(f'<tr><td><b>{E(n)}</b></td><td>{E(d)}</td><td nowrap><a href="{h}" target="_blank" rel="noopener">開く</a></td></tr>' for n, d, h in [
+        ('GitHub', 'つくったもののソースコード', 'https://github.com/Ben-Kei-create'),
+        ('note', 'NingentteWinner の創作・エッセイ', 'https://note.com/benkein'),
+        ('TALES', '連載小説『島の灯台と猫』', 'https://tales.note.com/benkein'),
+        ('X', 'ゲーム開発と AI・IT 学習の発信（@UzaUzaDeveyu）', 'https://x.com/UzaUzaDeveyu'),
+        ('unityroom', 'ブラウザで遊べるゲーム', 'https://unityroom.com/users/qtnhm79e0xd5plfw28c4'),
+        ('LINE スタンプ', 'fumi の LINE スタンプ', 'https://store.line.me/stickershop/author/4293406/ja'),
+    ])
+    today = ''.join(f'<li><b>{E(tm)}</b>　{E(tx)}</li>' for tm, tx in [
+        ('07:00', 'note のアーカイブ記事を1本公開'),
+        ('07:46〜08:13', 'note のアーカイブ第2弾として、古い下書き10本を 11/26〜12/05 の毎朝07:00公開で予約'),
+        ('午前', 'マンガ『トレンチャードの最終定理』の制作方式を変更（ラフネーム → コマ単位の原画 → 組み立て → 組版）'),
+        ('午前', '同作 P1 の清書版が完成。レビュー91点で承認'),
+        ('お昼ごろ', '同作 P2 が完成。レビュー92点で承認'),
+        ('午後', '同作 P3 のネームを改訂（レビュー87点・条件付き承認）して、試作版を制作'),
+        ('13:50ごろ', 'マンガ『島の灯台と猫』第1話の原画20枚を再検証（破損なし）'),
+        ('夕方', 'GiveTeX の更新専用セッションを開始。この活動一覧ページの制作に着手'),
+        ('夜', '地下の特設ステージと、HipHopブース・頭の中ブースの開設を指示。隠しボタンの制作を開始'),
+    ])
+    body = f'''<div class="r-page" role="main">
+{win('活動一覧 - GiveTex', f"""<h2 class="r-h">🗂 活動一覧</h2>
+<p>GiveTex の管理人がやっていることを、まとめたページです。「発想 → 調査 → 設計 → 制作 → 検証 → 公開」の流れで、つくっては出しています。新しい活動を始めたら、ここに足していきます。</p>
+<table class="r-tbl" summary="活動一覧"><tr><th>活動</th><th>内容</th><th>場所</th></tr>{acts}</table>
+<h3 class="r-h3">管理人のほかの場所</h3>
+<table class="r-tbl" summary="外部リンク"><tr><th>場所</th><th>内容</th><th>リンク</th></tr>{ext}</table>
+<p class="r-small">お問い合わせは contact[at]givetex.org まで（[at] を @ にかえてね）。</p>""", '🗂', menu=True, status=['活動 ' + '13' + ' 件', '外部リンク 6 件'])}
+{win('今日の活動 - 2026/11/17(火)', f"""<p>今日やったことを、時刻つきで載せています（個人の情報や、メールの中身のようなものは載せていません）。ラーメンなど、ほかのブースに合う内容があった日は、そちらのブースに書きます。</p>
+<ul class="r-list">{today}</ul>
+<p class="r-small">→ くわしい制作の記録は <a href="/diary/">開発日記</a> へ</p>""", '📝', menu=True, status=['2026/11/17 の記録', '9 件'])}
+</div>'''
+    page('activities/index.html', '活動一覧 | GiveTex', 'GiveTexの管理人の活動一覧。アプリ開発、Kindle出版、マンガ・小説、YouTube、技術記事などの入口と、今日の活動の記録です。', body, '/activities/')
+
+build_index(); build_diary(); build_about(); build_guestbook(); build_links(); build_activities(); sync_static_headers(); build_app_diaries(); build_sitemap_page()  # books は pop デザインのまま（再生成しない）
 
 def build_diary_feed():
     """開発日記の RSS（/diary/feed.xml）"""
