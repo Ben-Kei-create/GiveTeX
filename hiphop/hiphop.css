@@ -1,0 +1,41 @@
+/* HipHopブース専用（ポップデザイン）。ほかのブースのCSSとは混ぜない */
+* { box-sizing: border-box; }
+body { margin: 0; background: #0c0c10; color: #f5f2ea; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif; }
+a { color: #ffd21f; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px 64px; }
+.hero { text-align: center; padding: 46px 10px 30px; }
+.hero .boom { font-size: 15px; letter-spacing: .35em; color: #ff4fa3; font-weight: 700; }
+.hero h1 { font-size: 56px; margin: 6px 0 4px; letter-spacing: .04em; color: #ffd21f; text-shadow: 4px 4px 0 #ff4fa3, 8px 8px 0 rgba(0,209,255,.55); }
+.hero p { color: #cfcaba; font-size: 15px; line-height: 1.9; margin: 10px auto 0; max-width: 640px; }
+.chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.chips span { background: #1b1b22; border: 1px solid #3a3a46; border-radius: 999px; padding: 5px 13px; font-size: 12.5px; }
+h2.sec { font-size: 26px; margin: 44px 0 14px; padding: 8px 14px; background: #ffd21f; color: #111; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0 #ff4fa3; }
+h2.sec.cyan { background: #00d1ff; box-shadow: 4px 4px 0 #ffd21f; }
+h2.sec.pink { background: #ff4fa3; color: #fff; box-shadow: 4px 4px 0 #00d1ff; }
+.elements { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.el { background: #16161d; border: 2px solid #2c2c38; border-radius: 12px; padding: 16px 12px; text-align: center; }
+.el b { display: block; font-size: 19px; color: #ffd21f; margin-bottom: 6px; }
+.el:nth-child(2) b { color: #00d1ff; } .el:nth-child(3) b { color: #ff4fa3; } .el:nth-child(4) b { color: #7dff6a; } .el:nth-child(5) b { color: #ffb02e; }
+.el span { font-size: 12.5px; color: #cfcaba; line-height: 1.7; display: block; }
+.tl { border-left: 4px solid #ffd21f; margin: 6px 0 0 8px; padding-left: 20px; }
+.tl div { position: relative; padding: 0 0 16px; }
+.tl div::before { content: ""; position: absolute; left: -29px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: #ff4fa3; border: 3px solid #0c0c10; }
+.tl b { color: #ffd21f; font-size: 16px; }
+.tl .jp { color: #00d1ff; }
+.tl p { margin: 3px 0 0; font-size: 13.5px; color: #d8d3c4; line-height: 1.8; }
+details.book { background: #14141b; border: 1px solid #2e2e3a; border-radius: 10px; margin: 0 0 10px; }
+details.book summary { cursor: pointer; padding: 14px 16px; font-weight: 700; font-size: 16px; color: #fff; list-style: none; }
+details.book summary::-webkit-details-marker { display: none; }
+details.book summary::before { content: "▶ "; color: #ffd21f; }
+details.book[open ] summary::before { content: "▼ "; }
+details.book .in { padding: 0 18px 16px; font-size: 14px; line-height: 2.0; color: #ddd8ca; }
+details.book .in b { color: #ffd21f; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+table.cmp th, table.cmp td { border: 1px solid #33333f; padding: 8px 10px; text-align: left; line-height: 1.7; }
+table.cmp th { background: #1d1d27; color: #ffd21f; }
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.lk { background: #14141b; border: 1px solid #2e2e3a; border-radius: 10px; padding: 14px 16px; }
+.lk b { font-size: 15px; }
+.lk p { font-size: 12.5px; color: #bdb7a6; line-height: 1.8; margin: 6px 0 0; }
+.foot { margin-top: 48px; text-align: center; font-size: 12.5px; color: #8f8a7c; line-height: 2; }
+@media (max-width: 560px) { .hero h1 { font-size: 38px; } h2.sec { font-size: 21px; } }
