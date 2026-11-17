@@ -20,6 +20,18 @@
   a.door b { display: block; font-size: 19px; margin-bottom: 6px; color: #fff; }
   a.door span { font-size: 12.5px; color: #b9b2a2; line-height: 1.6; display: block; }
   .note { max-width: 620px; margin: 36px auto 0; font-size: 13px; line-height: 1.9; color: #9d9687; text-align: center; }
+  .wall { margin: 52px auto 0; max-width: 880px; }
+  .wall h2 { text-align: center; font-size: 21px; letter-spacing: .1em; color: #ffd678; margin: 0 0 6px; }
+  .wall .wsub { text-align: center; font-size: 12.5px; color: #9d9687; line-height: 1.9; margin: 0 0 16px; }
+  .board { position: relative; border: 12px solid #6b4a2b; border-radius: 6px; background: #26332b;
+    box-shadow: inset 0 0 60px rgba(0,0,0,.55), 0 6px 24px rgba(0,0,0,.5); aspect-ratio: 16 / 9; }
+  .board canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #wl-chalk { cursor: crosshair; touch-action: none; }
+  .wtools { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+  .wtools button { font: 13px "Hiragino Kaku Gothic ProN", sans-serif; background: #1c1c22; color: #e8e4da;
+    border: 1px solid #44424e; border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+  .wtools button[aria-pressed="true"] { border-color: #ffd678; background: #2a2a33; box-shadow: 0 0 0 1px #ffd678 inset; }
+  .wtools .dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; border: 1px solid rgba(0,0,0,.35); }
   .back { text-align: center; margin-top: 28px; }
   .back a { color: #ffd678; font-size: 14px; }
   @media (max-width: 560px) { a.door { width: 100%; max-width: 320px; } h1 { font-size: 24px; } }
@@ -63,7 +75,26 @@
     </a>
   </div>
   <p class="note">入口はホームのあちこちに隠れています（階段・ドア・土管の3種類）。<br>このページの場所を覚えておけば、次からは直接来られます。</p>
+
+  <section class="wall">
+    <h2>階段の下 ― 落書きの壁</h2>
+    <p class="wsub">階段の下の壁に、大きな黒板があります。チョークと消しゴムが置いてあります。<br>
+    ルールは2つだけ。チョークで描いたものは、消えません。<br>
+    消しゴムで消すと、字は消えても、描いた汚れが必ず残ります。</p>
+    <div class="board">
+      <canvas id="wl-dirt" width="960" height="540"></canvas>
+      <canvas id="wl-chalk" width="960" height="540"></canvas>
+    </div>
+    <div class="wtools" id="wl-tools">
+      <button type="button" data-color="#ffffff" aria-pressed="true"><span class="dot" style="background:#ffffff"></span>白チョーク</button>
+      <button type="button" data-color="#ffd7e8" aria-pressed="false"><span class="dot" style="background:#ffd7e8"></span>ピンク</button>
+      <button type="button" data-color="#ffe066" aria-pressed="false"><span class="dot" style="background:#ffe066"></span>黄色</button>
+      <button type="button" data-color="#a8e6ff" aria-pressed="false"><span class="dot" style="background:#a8e6ff"></span>水色</button>
+      <button type="button" data-tool="erase" aria-pressed="false">▭ 消しゴム</button>
+    </div>
+  </section>
   <p class="back"><a href="/">← ホームへもどる</a></p>
 </div>
+<script src="/stage/wall.js" defer></script>
 </body>
 </html>
