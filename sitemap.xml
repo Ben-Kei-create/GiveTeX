@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.givetex.org/</loc><priority>1.0</priority></url>
   <url><loc>https://www.givetex.org/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.givetex.org/activities/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/apps/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/articles/ai-book-illustration-rules.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/articles/ai-image-generation-guide.html</loc><priority>0.8</priority></url>
@@ -113,12 +114,15 @@
   <url><loc>https://www.givetex.org/doron/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/game/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/guestbook/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.givetex.org/head/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.givetex.org/hiphop/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/links/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/movie/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/museum/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/note/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/ramen/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/sitemap/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.givetex.org/stage/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/stamp/</loc><priority>0.8</priority></url>
   <url><loc>https://www.givetex.org/apps/beerquiz/</loc><priority>0.5</priority></url>
   <url><loc>https://www.givetex.org/apps/beerquiz/privacy/</loc><priority>0.5</priority></url>
