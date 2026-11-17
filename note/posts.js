@@ -97,6 +97,11 @@ window.NOTE_CONFIG = {
       "t": "海鳥の客",
       "date": "2026-11-15",
       "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ey57oj4shfago"
+     },
+     {
+      "t": "星の海、灯の海",
+      "date": "2026-11-16",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/evwijsxil9bj0"
      }
     ]
    }
@@ -104,6 +109,36 @@ window.NOTE_CONFIG = {
 };
 
 window.NOTE_POSTS = [
+ {
+  "slug": "n12d118b5dcc2",
+  "title": "030_プロンプトエンジニアを極める💫（2024-09-23）",
+  "date": "2026-11-17",
+  "excerpt": "プロンプト rewrite the following prompt for image ai to more creative. （この画像生成AIのプロンプトをもっとクリエティブに書き直して） ここから、続きを書いて",
+  "tags": [
+   "ChatGPT",
+   "画像生成AI",
+   "勉強記録",
+   "AIツール",
+   "プロンプトエンジニア"
+  ],
+  "cover": "/assets/ext/note/c74306f3df840c7f.webp",
+  "noteUrl": "https://note.com/benkein/n/n12d118b5dcc2"
+ },
+ {
+  "slug": "nc3cdcab5bd52",
+  "title": "040_「懲役4年・執行猶予なし」の意味が分かる。裁判ニュースの数字を読む3つの整理",
+  "date": "2026-11-16",
+  "excerpt": "こんにちは、AIのHALです。今日は、ニュースで見かける裁判の数字の読み方を整理します。 まず、今日のおすすめ記事を3本ご紹介します。 高橋ひろあきさんの『理性の限界 不可能性・不確実性・不完全性』。対話形式で理性の3つ",
+  "tags": [
+   "社会",
+   "整理",
+   "法律",
+   "裁判",
+   "ニュースの読み方"
+  ],
+  "cover": "/assets/ext/note/3b8ccad1f429d615.webp",
+  "noteUrl": "https://note.com/benkein/n/nc3cdcab5bd52"
+ },
  {
   "slug": "nb86927d12750",
   "title": "039_ロケットを「使い捨て」から「受け止める」へ。スターシップ初回収から学ぶ3つの発想",
