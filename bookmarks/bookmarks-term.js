@@ -32,7 +32,7 @@
     help: function () {
       line(span('a', 'つかえるコマンド：'));
       [['ls [dir]', 'ディレクトリ／リンクの一覧'], ['cd <dir>', 'ディレクトリに移動（cd .. でもどる）'], ['tree', 'ぜんぶ表示'], ['grep <ことば>', 'タイトル・URLから検索'],
-       ['open <番号>', '直前の一覧の番号のリンクを開く'], ['random', 'ランダムに1つおすすめ'], ['github', '作者の GitHub のざっくり概要'], ['whoami', 'ここはどこ？'], ['clear', '画面をきれいに'], ['exit', 'GiveTex にもどる']]
+       ['open <番号>', '直前の一覧の番号のリンクを開く'], ['random', 'ランダムに1つおすすめ'], ['github', '作者の GitHub のざっくり概要'], ['download', '学習用の教材（zip）をダウンロード'], ['whoami', 'ここはどこ？'], ['clear', '画面をきれいに'], ['exit', 'GiveTex にもどる']]
         .forEach(function (x) { line('  ', span('g', x[0].padEnd(14)), span('d', x[1])); });
       line(span('d', 'ヒント：ディレクトリやリンクはクリックでも開けます。Tab で補完、↑↓ で履歴。'));
     },
@@ -85,6 +85,21 @@
       items(G.highlights.map(function (h) { return { t: h[0] + ' — ' + h[2], u: G.url + '/' + encodeURIComponent(h[0]), h: h[1] }; }));
       line(span('d', 'open <番号> でも開けます。ぜんぶ見るなら → '), (function () { var a = gh.cloneNode(true); return a; })());
     },
+    download: function () {
+      var D = window.DOWNLOADS || []; if (!D.length) return line(span('r', 'download: いまは配っているものがありません'));
+      line(span('a', '$ ls -lh ~/backstage/downloads/'), span('d', '  # 学習用の教材（zip）。クリックでダウンロード'));
+      D.forEach(function (x, k) {
+        var row = document.createElement('div'); row.className = 'l item'; row.appendChild(span('n', '[' + (k + 1) + ']'));
+        var a = document.createElement('a'); a.href = '/downloads/' + x.file; a.setAttribute('download', x.file); a.className = 'lnk';
+        a.appendChild(document.createTextNode(x.title + ' ')); a.appendChild(span('h', '(' + x.file + ' / ' + (x.bytes < 1048576 ? Math.round(x.bytes / 1024) + ' KB' : (x.bytes / 1048576).toFixed(1) + ' MB') + ')'));
+        a.addEventListener('click', function () { try { if (window.gtag) window.gtag('event', 'download_zip', { file: x.file }); } catch (e) {} });
+        var w = document.createElement('span'); w.appendChild(a); row.appendChild(w); out.appendChild(row);
+        line('    ', span('d', x.desc));
+      });
+      line(span('d', '個人の学習や授業で自由に使えます。くわしくは、それぞれの zip の中の README.md を見てください。'));
+    },
+    dl: function () { C.download(); },
+    wget: function () { C.download(); },
     pwd: function () { line('/home/guest/backstage' + (cwd ? '/' + cwd.id : '')); }
   };
   function run(raw) {
@@ -120,6 +135,9 @@
     var G = window.GITHUB;
     if (G) { var b = span('dir', '[ github ] ' + G.user + ' — 公開リポジトリ ' + G.total + ' 個（' + G.since + '〜）→ 概要を見る'); b.tabIndex = 0; b.setAttribute('role', 'button');
       b.addEventListener('click', function () { run('github'); }); b.addEventListener('keydown', function (e) { if (e.key === 'Enter') run('github'); }); line(b); }
+    var D = window.DOWNLOADS;
+    if (D && D.length) { var b2 = span('dir', '[ download ] 学習用の教材 ' + D.length + ' 本（zip）→ 一覧を見る'); b2.tabIndex = 0; b2.setAttribute('role', 'button');
+      b2.addEventListener('click', function () { run('download'); }); b2.addEventListener('keydown', function (e) { if (e.key === 'Enter') run('download'); }); line(b2); }
     run('ls'); input.focus({ preventScroll: true });
   }
   out.appendChild(art);

@@ -261,3 +261,11 @@ python3 -I tools/migrate_note.py /tmp/note-data .
   - 「動きを減らす」設定の人には動きものを出さない。現れる動きの対象は gt-fx.js の SEL。
 - `assets/boot.js`（ホームの起動画面）：ブラウン管が点く → 光の粒が集まってロゴになる → 光の輪と「GiveTex」→ 奥へ抜ける。`/?boot` で毎回確認できる。
 - レトロなページの窓は、青いタイトルバーをつかんで動かせる（`assets/retro.js` の最後。位置は覚えず、開きなおすと元にもどる）。
+
+## 教育用のダウンロード（zip）・フッターのバナー
+- `downloads/givetex-*.zip`（5本）：裏口（/bookmarks/）の `download` コマンド（`dl` でも可）から落とせる。一覧は `bookmarks/downloads.js`。
+  - 作り方：`python3 tools/build_downloads.py`。解説文と見本ページは `tools/downloads_src/`。記事の PDF は、ローカルでサイトを配信して `node tools/build_notes_pdf.js http://127.0.0.1:8787` → `downloads/src/*.pdf`。
+  - ボードゲームやミニゲームのコードを直したら、build_downloads.py をもう一度走らせると zip も新しくなる。
+  - 入れるのは教育的なものだけ（このサイトのために書いたコードと文章）。個人情報・鍵・非公開のものは入れない。README の最後に利用の決まり（学習・授業は自由、再配布・販売は連絡）を付けている。
+- フッターのバナー：`tools/build_banners.py` が `assets/retro/b-*.gif`（88×31・点滅）を作る。並び順とリンク先は `tools/build_retro.py` の BANNERS。
+- 名刺ボタンは、ホーム・管理人（about.html）・お問い合わせ（contact/）のメニューに出る。

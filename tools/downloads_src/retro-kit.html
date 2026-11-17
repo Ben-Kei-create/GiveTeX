@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>わたしのホームページ</title>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="retro.css">
+</head>
+<body>
+<!-- ▼ ヘッダー：ロゴ、流れる文字、メニュー -->
+<div class="r-head">
+<span class="r-logo">My Home Page</span>
+<div class="r-sub">～ ようこそ <b>わたし</b> の ホームページへ ～</div>
+<marquee class="r-news" scrollamount="5">★☆★ ようこそ！ ゆっくりしていってね ★☆★　キリ番をふんだらおしえてね　◆　このページはリンクフリーです</marquee>
+<div class="r-nav"><a href="#top" aria-current="page">HOME</a><a href="#profile">プロフィール</a><a href="#diary">日記</a><a href="#links">リンク</a></div>
+</div>
+
+<!-- ▼ 表（table）で、左と右に分ける。むかしのレイアウトのやり方 -->
+<table class="r-layout" border="0" cellspacing="0" cellpadding="0"><tr>
+<td class="r-main" valign="top">
+
+<!-- ▼ ウインドウの部品。<div class="win"> から </div> までが1つ -->
+<div class="win">
+<div class="win-t"><span class="ico">🏠</span><span class="ttl">ようこそ！</span><button class="bt bt-min" type="button">_</button><button class="bt bt-max" type="button">□</button><button class="bt bt-x" type="button">×</button></div>
+<div class="win-b">
+<p class="r-center"><font size="5" color="#d10056"><b>ようこそ！</b></font></p>
+<p>ここは <b>わたし</b> のホームページです。すきなものを、すこしずつ置いていきます。<img src="img/new.gif" width="28" height="11" alt="NEW"></p>
+<p class="r-small">青いバーをつかむと、ウインドウを動かせます。右上のボタンもためしてね。</p>
+</div>
+</div>
+
+<a id="profile"></a>
+<div class="win">
+<div class="win-t"><span class="ico">📝</span><span class="ttl">プロフィール</span><button class="bt bt-min" type="button">_</button><button class="bt bt-max" type="button">□</button><button class="bt bt-x" type="button">×</button></div>
+<div class="win-b">
+<table class="r-tbl"><tr><th>なまえ</th><td>（ハンドルネーム）</td></tr><tr><th>すきなもの</th><td>ゲーム、ラーメン、ねこ</td></tr><tr><th>ひとこと</th><td>はじめてのホームページです！</td></tr></table>
+</div>
+</div>
+
+<a id="diary"></a>
+<div class="win">
+<div class="win-t"><span class="ico">📅</span><span class="ttl">日記 - メモ帳</span><button class="bt bt-min" type="button">_</button><button class="bt bt-max" type="button">□</button><button class="bt bt-x" type="button">×</button></div>
+<div class="win-menu"><span><u>F</u>ファイル</span><span><u>E</u>編集</span><span><u>H</u>ヘルプ</span></div>
+<div class="win-b">
+<p><b>■ 11月17日</b><br>ホームページをつくりました。これからよろしくね。</p>
+<hr class="r-hr">
+<p><b>■ 11月16日</b><br>HTML のべんきょうをはじめた。</p>
+</div>
+</div>
+
+</td>
+<td class="r-side" valign="top">
+
+<div class="win">
+<div class="win-t"><span class="ico">🔢</span><span class="ttl">カウンター</span></div>
+<div class="win-b gray">
+<p class="r-center" style="margin:0">あなたは<br><span class="r-counter" id="counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br>人目のお客さまです</p>
+</div>
+</div>
+
+<div class="win">
+<div class="win-t"><span class="ico">🎋</span><span class="ttl">おみくじ</span></div>
+<div class="win-b gray">
+<p class="r-center" style="margin:0"><button class="r-btn" type="button" id="omikuji">おみくじを引く</button></p>
+<p class="r-center" id="omikuji-out" style="margin:6px 0 0"></p>
+</div>
+</div>
+
+<a id="links"></a>
+<div class="win">
+<div class="win-t"><span class="ico">🔗</span><span class="ttl">リンク</span></div>
+<div class="win-b gray">
+<p class="r-center" style="margin:0"><a href="https://www.givetex.org/"><img src="img/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a><br>
+<img src="img/b-linkfree.gif" width="88" height="31" alt="リンクフリー"><br><img src="img/b-kiriban.gif" width="88" height="31" alt="キリ番"></p>
+</div>
+</div>
+
+</td>
+</tr></table>
+
+<div class="r-foot">
+<hr class="r-hr">
+<p><img src="img/b-since.gif" width="88" height="31" alt="Since 2026"> <img src="img/b-800x600.gif" width="88" height="31" alt="800×600 推奨"> <img src="img/koujichu.gif" width="88" height="31" alt="工事中"></p>
+<address>Copyright (C) 2026 わたし. All Rights Reserved.</address>
+</div>
+<script src="kit.js"></script>
+</body>
+</html>

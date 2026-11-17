@@ -477,3 +477,11 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .win-t .bt { cursor: default; }
 .win.dragging { box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff, 6px 8px 0 rgba(0,0,0,.45); opacity: .96; }
 html, body { overflow-x: clip; } /* 窓を画面の端まで動かしても、横スクロールが出ないように */
+
+/* フッターのバナーの壁（88×31 がずらっと並ぶ） */
+.bnr-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; max-width: 760px; margin: 10px auto 12px; padding: 0 6px; }
+.bnr-wall a, .bnr-wall > img { display: block; line-height: 0; }
+.bnr-wall img { image-rendering: pixelated; }
+.bnr-wall a:hover img, .bnr-wall a:focus-visible img { outline: 2px dotted #ffff00; outline-offset: 1px; }
+@media (prefers-reduced-motion: no-preference) { .bnr-wall a:hover { transform: translateY(-2px); } }
+.bnr-wall img { margin: 0 !important; vertical-align: top; }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ファミコン風の音の出し方</title>
+<style>
+body { margin: 0; padding: 20px 14px 60px; background: #10102a; color: #e8e8ff; font: 16px/1.8 system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+main { max-width: 640px; margin: 0 auto; }
+h1 { font-size: 22px; color: #ffe27a; } h2 { font-size: 17px; margin: 28px 0 8px; color: #7df9ff; border-bottom: 1px solid #334; padding-bottom: 4px; }
+button { font: inherit; font-size: 15px; padding: 9px 14px; margin: 3px 4px 3px 0; border: 2px solid #7df9ff; border-radius: 8px; background: #1b1b44; color: #fff; cursor: pointer; }
+button:hover { background: #2a2a66; } button.on { background: #ffe27a; color: #10102a; border-color: #ffe27a; }
+label { display: block; margin: 8px 0; } input[type=range] { width: 100%; }
+canvas { display: block; width: 100%; height: 120px; background: #000; border: 1px solid #334; margin-top: 8px; }
+small { color: #9aa3d6; }
+</style>
+</head>
+<body>
+<main>
+<h1>ファミコン風の音の出し方</h1>
+<p>音声ファイルは使っていません。プログラム（sound.js）が、その場で音を作っています。<br><small>※ ボタンを押すと音が出ます。音量に気をつけてね。</small></p>
+
+<h2>1. 高さ（周波数）と音色（波形）</h2>
+<label>周波数：<b id="hz-out">440</b> Hz <input type="range" id="hz" min="110" max="1760" value="440" step="1"></label>
+<p id="waves"><button data-wave="square" class="on">四角い波（square）</button><button data-wave="triangle">三角の波（triangle）</button><button data-wave="sine">サイン波（sine）</button><button data-wave="sawtooth">のこぎり波（sawtooth）</button></p>
+<p><button id="tone">この音を鳴らす</button></p>
+<canvas id="scope" width="640" height="120" aria-label="音の波の形"></canvas>
+
+<h2>2. ドレミ</h2>
+<p id="keys"></p>
+
+<h2>3. 曲（メロディ＋ベース）</h2>
+<p id="songs"></p>
+<p><button id="stop">■ とめる</button></p>
+
+<h2>4. 効果音</h2>
+<p><button data-fx="click">クリック</button><button data-fx="coin">コイン</button><button data-fx="jump">ジャンプ</button><button data-fx="boot">起動音</button><button data-fx="over">ゲームオーバー</button></p>
+</main>
+<script src="sound.js"></script>
+</body>
+</html>

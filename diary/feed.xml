@@ -2,6 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
 <title>GiveTex 開発日記</title><link>https://www.givetex.org/diary/</link><description>GiveTex（教育×IT）の制作日記。何をつくって、何を直して、何をリリースしたか。</description><language>ja</language>
 <atom:link href="https://www.givetex.org/diary/feed.xml" rel="self" type="application/rss+xml"/>
+<item><title>バナーの壁と、学習用のダウンロード</title><link>https://www.givetex.org/diary/#m202611</link>
+<guid isPermaLink="false">givetex-diary-2026-11-17-バナーの壁と、学習用のダウンロード</guid><category>サイト</category><pubDate>Tue, 17 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ページのいちばん下に、88×31 のバナーをずらっと並べました。ミニゲーム、ボドゲ、美術館、ラーメン、名刺、キリ番……どれも点滅するドット絵で、新しくつくったものです。ウインドウは、青いタイトルバーをつかむと動かせるようになりました。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.givetex.org/bookmarks/&quot;&gt;裏口（backstage）&lt;/a&gt;では、学習用の教材を zip で配りはじめました。&lt;code&gt;download&lt;/code&gt; と打つと一覧が出ます。ボードゲーム AI のソース集、ミニゲーム4本、90年代ホームページの作り方キット、ファミコン風の音の出し方、AI と作る開発ノートの5本です。&lt;/p&gt;</description></item>
 <item><title>ページの切りかえと、起動画面</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-16-ページの切りかえと、起動画面</guid><category>サイト</category><pubDate>Mon, 16 Nov 2026 12:00:00 +0900</pubDate><description>&lt;p&gt;ページを移動するとき、ブラウン管テレビのチャンネルを変えるように、画面がいちど消えてから点くようにしました（対応しているブラウザだけ）。リンクにふれた時点で先に読みこむので、押すとすぐ開きます。&lt;/p&gt;&lt;p&gt;ほかにも、読み進みがわかる虹色のバー、スクロールするとウィンドウが開くように出てくる動き、マウスについてくる星、ドパ読！の表紙がかたむく動きを入れています。ホームの起動画面は、光の粒が集まってロゴになる演出につくりなおしました。動きを減らす設定にしている人には出ません。&lt;/p&gt;</description></item>
 <item><title>ブースめぐりと、こまかい手直し</title><link>https://www.givetex.org/diary/#m202611</link>
@@ -60,6 +62,4 @@
 <guid isPermaLink="false">givetex-diary-2026-11-09-AWS の基礎資格を取得、次の資格へ</guid><category>学習</category><pubDate>Mon, 09 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;AWS の基礎資格を取得。Global Accelerator・NLB・UDP などを問題で勉強しながら、次の資格へ&lt;/li&gt;&lt;li&gt;生成 AI 関連の資格の勉強も検討&lt;/li&gt;&lt;/ul&gt;</description></item>
 <item><title>Pyxel のゲームを App Store に</title><link>https://www.givetex.org/diary/#m202611</link>
 <guid isPermaLink="false">givetex-diary-2026-11-08-Pyxel のゲームを App Store に</guid><category>ゲーム</category><pubDate>Sun, 08 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;Pyxel（Python のレトロゲームエンジン）でつくったゲームを App Store で売る方法を調査。Swift との組み合わせ方やアプリ化できるかを確認&lt;/li&gt;&lt;/ul&gt;</description></item>
-<item><title>Muse でつくる、収益化できるアプリ</title><link>https://www.givetex.org/diary/#m202611</link>
-<guid isPermaLink="false">givetex-diary-2026-11-07-Muse でつくる、収益化できるアプリ</guid><category>企画</category><pubDate>Sat, 07 Nov 2026 12:00:00 +0900</pubDate><description>&lt;ul class=&quot;r-list&quot;&gt;&lt;li&gt;自作 AI「Muse」でアプリをつくる前提で、収益化できそうな新しいアプリを企画&lt;/li&gt;&lt;/ul&gt;</description></item>
 </channel></rss>

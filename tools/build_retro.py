@@ -43,21 +43,28 @@ def header(cur):
 <a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
 <div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
 <marquee class="r-news" scrollamount="5" scrolldelay="60">{NEWS}</marquee>
-<div class="r-nav" role="navigation" aria-label="メニュー">{nav}{MEISHI if cur == '/' else ''}</div>
+<div class="r-nav" role="navigation" aria-label="メニュー">{nav}{MEISHI if cur in ('/', '/about.html', '/contact/') else ''}</div>
 </div>'''
 
 FOOTER = '''<div class="r-foot" role="contentinfo">
 <hr class="r-hr">
-<div class="bnrs">
-<a href="/"><img src="/assets/retro/bnr-givetex.gif" width="88" height="31" alt="GiveTex"></a>
-<a href="/books/"><img src="/assets/retro/bnr-dopayomi.gif" width="88" height="31" alt="ドパ読！"></a>
-<a href="/doron/"><img src="/assets/retro/bnr-doron.gif" width="88" height="31" alt="どろん"></a>
-<img src="/assets/retro/koujichu.gif" width="88" height="31" alt="工事中">
+<div class="bnrs bnr-wall">
+{BNR_WALL}
 </div>
 <p>当サイトは<b>リンクフリー</b>です。バナーはお持ち帰りOK！<br>推奨環境：画面サイズ 800×600 以上 ／ 文字サイズ「中」</p>
 <p><a href="/about.html">管理人について</a> ｜ <a href="/privacy.html">プライバシーポリシー</a> ｜ <a href="/contact/">お問い合わせ</a> ｜ <a href="#top">▲ ページの先頭へ</a></p>
 <address>Copyright (C) 2026 GiveTex. All Rights Reserved.<br>このホームページの文章・画像の無断転載を禁止します。</address>
 </div>'''
+
+# フッターに並べるバナー（88×31）。絵は tools/build_banners.py が作る。None はリンクなしの飾り
+BANNERS = [('/', 'bnr-givetex.gif', 'GiveTex'), ('/apps/', 'b-apps.gif', 'アプリ'), ('/books/', 'bnr-dopayomi.gif', 'ドパ読！'), ('/doron/', 'bnr-doron.gif', 'どろん'),
+           ('/note/', 'b-note.gif', 'note ブース（よみもの）'), ('/stamp/', 'b-stamp.gif', 'スタンプ'), ('/game/', 'b-game.gif', 'ゲームブース'), ('/#mg', 'b-minigame.gif', 'ミニゲーム（ホームのゲームコーナー）'),
+           ('/game/board/', 'b-board.gif', 'ボードゲーム（CPU 対戦）'), ('/museum/', 'b-museum.gif', '美術館'), ('/ramen/', 'b-ramen.gif', 'ラーメン'), ('/movie/', 'b-movie.gif', '映画（C-Log Web）'),
+           ('/diary/', 'b-diary.gif', '開発日記'), ('/guestbook/', 'b-guestbook.gif', 'ゲストブック（足あと帳）'), ('/links/', 'b-links.gif', 'リンク集'), ('/?meishi', 'b-meishi.gif', '名刺'),
+           ('/bookmarks/', 'b-backstage.gif', '裏口（backstage）'), ('/', 'b-kiriban.gif', 'キリ番'), ('/links/', 'b-linkfree.gif', 'リンクフリー'), ('/about.html', 'b-since.gif', 'Since 2026'),
+           (None, 'b-800x600.gif', '800×600 推奨'), (None, 'koujichu.gif', '工事中')]
+BNR_WALL = '\n'.join((f'<a href="{h}"><img src="/assets/retro/{f}" width="88" height="31" alt="{a}"></a>' if h else f'<img src="/assets/retro/{f}" width="88" height="31" alt="{a}">') for h, f, a in BANNERS)
+FOOTER = FOOTER.replace('{BNR_WALL}', BNR_WALL)
 
 def win(title, body, ico='■', cls='', menu=False, status=None, bodycls=''):
     m = '<div class="win-menu"><span><u>F</u>ファイル</span><span><u>E</u>編集</span><span><u>V</u>表示</span><span><u>H</u>ヘルプ</span></div>' if menu else ''
@@ -91,6 +98,8 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 </body>
 </html>
 '''
+    if path == 'about.html':  # 管理人のページにも名刺
+        doc = doc.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     if path == 'index.html':  # ホームだけ起動画面
         doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
@@ -152,6 +161,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-17', tag='サイト', title='バナーの壁と、学習用のダウンロード',
+      body='<p>ページのいちばん下に、88×31 のバナーをずらっと並べました。ミニゲーム、ボドゲ、美術館、ラーメン、名刺、キリ番……どれも点滅するドット絵で、新しくつくったものです。ウインドウは、青いタイトルバーをつかむと動かせるようになりました。</p><p><a href="/bookmarks/">裏口（backstage）</a>では、学習用の教材を zip で配りはじめました。<code>download</code> と打つと一覧が出ます。ボードゲーム AI のソース集、ミニゲーム4本、90年代ホームページの作り方キット、ファミコン風の音の出し方、AI と作る開発ノートの5本です。</p>'),
  dict(date='2026-11-16', tag='サイト', title='ページの切りかえと、起動画面',
       body='<p>ページを移動するとき、ブラウン管テレビのチャンネルを変えるように、画面がいちど消えてから点くようにしました（対応しているブラウザだけ）。リンクにふれた時点で先に読みこむので、押すとすぐ開きます。</p><p>ほかにも、読み進みがわかる虹色のバー、スクロールするとウィンドウが開くように出てくる動き、マウスについてくる星、ドパ読！の表紙がかたむく動きを入れています。ホームの起動画面は、光の粒が集まってロゴになる演出につくりなおしました。動きを減らす設定にしている人には出ません。</p>'),
  dict(date='2026-11-16', tag='サイト', title='ブースめぐりと、こまかい手直し',
@@ -383,6 +394,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-17', 'フッターにバナーがずらり（ミニゲーム・ボドゲ・名刺など）／<a href="/bookmarks/">裏口</a>で学習用の教材（zip）を配りはじめました／窓をつかんで動かせます', True),
         ('2026-11-16', 'ページの切りかえが、テレビのチャンネルを変えるような動きに！ 起動画面もつくりなおしました', True),
         ('2026-11-16', '「ブースめぐり」スタート！ 9つのブースをまわると制覇です／<a href="/doron/">どろん</a>に百物語のろうそく／<a href="/museum/">美術館</a>で作品のかけかえ', True),
         ('2026-11-16', 'メニューに「名刺」ボタン！ タップで裏返る・QR で名刺の画像をわたせます／ゲームコーナーで遊ぶと BGM が流れるように', True),
@@ -609,6 +621,7 @@ def sync_static_headers():
         m = re.search(r'<a name="top" id="top"></a>\s*<div class="r-head" role="banner">.*?<div class="r-nav"[^>]*>.*?</div>\s*</div>', t, re.S)
         if not m: continue
         nt = t[:m.start()] + header(cur).strip() + t[m.end():]
+        if cur == '/contact/' and '/assets/meishi.js' not in nt: nt = nt.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
         if nt != t: f.write_text(nt, encoding='utf-8')
 
 # ================= アプリのページに「開発日記」 =================
