@@ -1,0 +1,41 @@
+/* 頭の中ブース：2009〜2010年ごろの Twitter の画面再現（専用CSS） */
+* { box-sizing: border-box; }
+body { margin: 0; background: #c0deed; font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif; color: #333; }
+a { color: #0084b4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar { background: #fff; border-bottom: 1px solid #a9cfe8; }
+.topbar .in { max-width: 763px; margin: 0 auto; padding: 8px 10px; display: flex; align-items: center; gap: 14px; }
+.logo { font-size: 26px; font-weight: 700; color: #00aced; letter-spacing: -.5px; }
+.logo svg { vertical-align: -4px; margin-right: 2px; }
+.topnav { margin-left: auto; font-size: 12px; color: #555; }
+.page { max-width: 763px; margin: 14px auto 40px; background: #fff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.18); display: flex; overflow: hidden; }
+.main { flex: 1; min-width: 0; padding: 14px 16px 20px; }
+.side { width: 198px; flex: none; background: #f5f8fa; border-left: 1px solid #e1e8ed; padding: 14px 12px; font-size: 12px; }
+.compose { background: #e8f5fd; border: 1px solid #a9cfe8; border-radius: 5px; padding: 10px 12px; margin-bottom: 14px; }
+.compose .q { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+.compose textarea { width: 100%; height: 42px; border: 1px solid #a9cfe8; border-radius: 4px; padding: 6px; font-size: 13px; background: #f7fbfd; color: #888; resize: none; }
+.compose .row { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+.compose .cnt { color: #999; font-weight: 700; font-size: 15px; }
+.compose button { background: #eef2f4; border: 1px solid #ccd6dd; color: #8899a6; border-radius: 4px; padding: 4px 12px; font-size: 12px; }
+.compose .lock { font-size: 11px; color: #66757f; margin-top: 6px; }
+.tweet { display: flex; gap: 10px; padding: 10px 2px; border-bottom: 1px solid #e1e8ed; }
+.tweet:hover { background: #f5f8fa; }
+.ava { width: 48px; height: 48px; flex: none; border-radius: 5px; background: linear-gradient(135deg, #7ec8e3, #00aced); color: #fff; font-weight: 700; font-size: 22px; display: flex; align-items: center; justify-content: center; }
+.tweet .bd { min-width: 0; }
+.tweet .hd { font-size: 13px; }
+.tweet .hd b { color: #14171a; font-size: 14px; }
+.tweet .hd .un { color: #8899a6; }
+.tweet .tx { font-size: 14px; line-height: 1.55; margin: 2px 0; word-break: break-word; }
+.tweet .mt { font-size: 11.5px; color: #8899a6; }
+.side .prof { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.side .prof .ava { width: 32px; height: 32px; font-size: 15px; border-radius: 4px; }
+.side .prof b { font-size: 13px; color: #14171a; display: block; }
+.side .prof span { color: #8899a6; font-size: 11.5px; }
+.stats { display: flex; border-top: 1px solid #e1e8ed; border-bottom: 1px solid #e1e8ed; padding: 7px 0; margin: 8px 0 12px; }
+.stats div { flex: 1; }
+.stats b { display: block; font-size: 14px; color: #14171a; }
+.stats span { font-size: 10.5px; color: #8899a6; }
+.side h4 { font-size: 12px; color: #66757f; margin: 14px 0 6px; }
+.side p { line-height: 1.8; color: #66757f; margin: 0 0 8px; }
+.foot { max-width: 763px; margin: 0 auto 34px; font-size: 11.5px; color: #4a7a96; text-align: center; line-height: 2; }
+@media (max-width: 640px) { .page { flex-direction: column; } .side { width: auto; border-left: none; border-top: 1px solid #e1e8ed; } }
