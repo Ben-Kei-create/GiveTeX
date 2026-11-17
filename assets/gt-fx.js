@@ -65,8 +65,8 @@
     if (calm) return;
 
     /* ---- スクロールで現れる（最初の画面より下にあるものだけ。上にあるものは最初から見せる） ---- */
-    if ('IntersectionObserver' in window) {
-      var SEL = '.win, .kb, .ax-tile, .cart, .gcard, .ticket, .nb-item, .bk-nav, .gtt, .hyaku-in, .manners-in, .r-kiji, .cta-box';
+    if ('IntersectionObserver' in window && !retro) {
+      var SEL = '.kb, .ax-tile, .cart, .gcard, .ticket, .nb-item, .bk-nav, .gtt, .hyaku-in, .manners-in'; // 90年代風ページの窓は対象にしない（最初から本来の大きさで見せる）
       var io = new IntersectionObserver(function (es) {
         es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('gtx-in'); io.unobserve(x.target); var t = x.target; setTimeout(function () { t.classList.remove('gtx-rv', 'gtx-in'); t.style.removeProperty('--gtx-d'); }, 1200); } });
       }, { rootMargin: '0px 0px -6% 0px' });
