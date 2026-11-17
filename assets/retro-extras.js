@@ -176,9 +176,17 @@
     w.innerHTML = '<div class="win-t"><span class="ico">🧰</span><span class="ttl">お助けツール</span><button class="bt r-tw-x" type="button" aria-label="とじる">×</button></div>' +
       '<div class="win-b"><div class="r-tw-tabs"><button type="button" aria-pressed="true">手書きメモ</button><button type="button" aria-pressed="false">電卓</button></div>' +
       '<div class="r-tw-memo"><canvas width="560" height="380" aria-label="手書きメモ。指やマウスで書けます"></canvas><div class="r-tw-row"><button type="button" data-c="#000">黒</button><button type="button" data-c="#d10000">赤</button><button type="button" data-c="#0040d0">青</button><button type="button" data-c="eraser">消しゴム</button><button type="button" class="r-tw-clear">ぜんぶ消す</button></div><p class="r-small">書いたメモは、このブラウザにだけ保存されます。</p></div>' +
-      '<div class="r-tw-calc" hidden><div class="r-calc-disp" aria-live="polite">0</div><div class="r-calc-keys"></div></div></div>';
+      '<div class="r-tw-calc" hidden><div class="r-calc-disp" aria-live="polite">0</div><div class="r-calc-keys"></div></div>' +
+      '<div style="text-align:right;margin-top:6px"><button type="button" class="r-tw-ms" aria-label="ひみつ" title="" style="width:30px;height:30px;padding:0;font-size:17px;line-height:1;background:#c0c0c0;border:0;cursor:pointer;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #ffffff,inset -2px -2px #808080,inset 2px 2px #dfdfdf">😌</button></div></div>';
     document.body.appendChild(w);
     w.querySelector('.r-tw-x').addEventListener('click', function () { w.hidden = true; });
+    /* 右下の小さい 😌：マインスイーパー（初回だけ読みこむ） */
+    w.querySelector('.r-tw-ms').addEventListener('click', function () {
+      if (window.GT_openMinesweeper) { window.GT_openMinesweeper(); return; }
+      var s = document.createElement('script'); s.src = '/assets/minesweeper.js';
+      s.onload = function () { if (window.GT_openMinesweeper) window.GT_openMinesweeper(); };
+      document.head.appendChild(s);
+    });
     var tabs = w.querySelectorAll('.r-tw-tabs button'), memo = w.querySelector('.r-tw-memo'), calc = w.querySelector('.r-tw-calc');
     tabs[0].addEventListener('click', function () { memo.hidden = false; calc.hidden = true; tabs[0].setAttribute('aria-pressed', 'true'); tabs[1].setAttribute('aria-pressed', 'false'); });
     tabs[1].addEventListener('click', function () { memo.hidden = true; calc.hidden = false; tabs[1].setAttribute('aria-pressed', 'true'); tabs[0].setAttribute('aria-pressed', 'false'); });
