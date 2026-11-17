@@ -144,3 +144,34 @@ window.addEventListener("pageshow", function (e) {
     if (window.getSelection) getSelection().removeAllRanges();
   });
 })();
+
+/* ---- ウインドウを動かす：青いタイトルバーをつかんで引っぱると、本物の窓のように移動できる ----
+   位置は覚えない。ページを開きなおしたり、ほかのページへ行って戻ると、元の場所にもどる */
+(function () {
+  if (!window.PointerEvent) return;
+  var cur = null, sx = 0, sy = 0, bx = 0, by = 0, moved = false, z = 20;
+  function put(w, x, y) { w._dx = x; w._dy = y; w.style.transform = x || y ? "translate(" + x + "px," + y + "px)" : ""; }
+  document.addEventListener("pointerdown", function (e) {
+    var t = e.target.closest && e.target.closest(".win-t");
+    if (!t || e.target.closest(".bt") || (e.pointerType === "mouse" && e.button !== 0)) return;
+    cur = t.parentNode; sx = e.clientX; sy = e.clientY; bx = cur._dx || 0; by = cur._dy || 0; moved = false;
+    try { t.setPointerCapture(e.pointerId); } catch (x) {}
+  });
+  document.addEventListener("pointermove", function (e) {
+    if (!cur) return;
+    var dx = e.clientX - sx, dy = e.clientY - sy;
+    if (!moved) { if (Math.abs(dx) + Math.abs(dy) < 5) return; moved = true; cur.className += " dragging"; cur.style.position = "relative"; cur.style.zIndex = ++z; }
+    // 画面の外へ行きすぎないように（タイトルバーが少しは残る）
+    var r = cur.getBoundingClientRect(), nx = bx + dx, ny = by + dy, ox = r.left - (cur._dx || 0), oy = r.top - (cur._dy || 0);
+    nx = Math.max(60 - r.width - ox, Math.min(window.innerWidth - 60 - ox, nx));
+    ny = Math.max(-oy, Math.min(window.innerHeight - 30 - oy, ny));
+    put(cur, Math.round(nx), Math.round(ny));
+    if (window.getSelection) getSelection().removeAllRanges();
+  });
+  function end() { if (!cur) return; cur.className = cur.className.replace(/ dragging/g, ""); cur = null; }
+  document.addEventListener("pointerup", end); document.addEventListener("pointercancel", end);
+  window.addEventListener("pageshow", function (e) { // 「戻る」で帰ってきたときも、元の場所へ
+    if (!e.persisted) return; var ws = document.querySelectorAll(".win");
+    for (var i = 0; i < ws.length; i++) if (ws[i]._dx || ws[i]._dy) { put(ws[i], 0, 0); ws[i].style.zIndex = ""; }
+  });
+})();

@@ -471,3 +471,9 @@ table.info th { width: 8.5em; white-space: nowrap; }
 .r-nav .r-meishi:hover { color: #fff3c8; }
 .r-nav .r-meishi:focus-visible { outline: 2px dotted #000080; outline-offset: 1px; }
 @media (max-width: 600px) { .r-nav .r-meishi { padding: 3px 8px; font-size: 12.5px; } }
+
+/* ウインドウを動かす（タイトルバーをつかむ） */
+.win-t { cursor: move; touch-action: none; -webkit-user-select: none; user-select: none; }
+.win-t .bt { cursor: default; }
+.win.dragging { box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff, 6px 8px 0 rgba(0,0,0,.45); opacity: .96; }
+html, body { overflow-x: clip; } /* 窓を画面の端まで動かしても、横スクロールが出ないように */
