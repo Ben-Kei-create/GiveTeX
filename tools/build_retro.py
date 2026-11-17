@@ -161,6 +161,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-17', tag='サイト', title='落書きの壁は、窓の裏へ引っ越した。🔑つき',
+      body='<p>「落書きの壁」は、特設ステージからホームの窓の裏（階段の下）へ引っ越しました。リンクをたどるのではなく、窓を動かして見つける場所です。</p><ul class="r-list"><li>壁の道具に 🔑 が増えました。数字4桁のコードを入れると、ページを開いている間だけ消しゴムが「完全消し」に変わります</li><li>コードは裏口（backstage）の上のほうに書いてあります。誰でも見つけたら使えます</li><li>コードなしの消しゴムは今までどおり、字は消えても汚れが残ります</li></ul>'),
  dict(date='2026-11-17', tag='サイト', title='階段の下に、落書きの壁ができた',
       body='<p><a href="/stage/">特設ステージ</a>の階段の下に、大きな黒板の「落書きの壁」を作りました。チョーク（白・ピンク・黄色・水色）と消しゴムが置いてあります。</p><ul class="r-list"><li>チョークで描いたものは消えません（みんなの描いたものが、そのまま残ります）</li><li>消しゴムで消すと、字は消えても描いた汚れが必ず残ります。消せば消すほど、壁は味わい深くなります</li></ul>'),
  dict(date='2026-11-17', tag='サイト', title='頭の中ブースで、その場でつぶやけるようになった',
@@ -404,7 +406,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
-        ('2026-11-17', '<a href="/stage/">特設ステージ</a>の階段の下に「落書きの壁」ができました。チョークで描くと消えません。消しゴムで消すと汚れが残ります', True),
+        ('2026-11-17', '「落書きの壁」はホームの窓の裏（階段の下）へ引っ越しました。🔑の数字4桁は裏口の上のほうに…？', True),
         ('2026-11-17', '<a href="/head/">頭の中ブース</a>で、その場でつぶやけるようになりました！ 管理人はパスワードで、ゲストもそのまま投稿できます', True),
         ('2026-11-17', 'お助けツールの右下に小さな 😌 が…？ 押すと昔のマインスイーパーが開きます（初級〜上級・ベストタイム保存つき）', True),
         ('2026-11-17', '地下に<a href="/stage/">特設ステージ</a>が出現！？ 窓を動かすと入口が見つかるかも…／<a href="/hiphop/">HipHopブース</a>と<a href="/head/">頭の中ブース</a>がオープン', True),
@@ -490,12 +492,40 @@ document.write(rGreeting());
 .secret-bt{position:absolute;pointer-events:auto;text-align:center;text-decoration:none;font-size:11px;color:#444;line-height:1.3}
 .secret-bt svg{display:block;margin:0 auto 2px}
 .secret-bt:hover{color:#d10056}
+.wl-wrap{position:absolute;top:118px;left:50%;transform:translateX(-50%);width:min(600px,94%);pointer-events:auto;text-align:center}
+.wl-cap{font:12px "DotGothic16",sans-serif;color:#e8e4da;margin-bottom:6px;text-shadow:0 1px 3px #000}
+.wl-cap span{display:block;font-size:10.5px;color:#a49e8d;margin-top:2px}
+.wl-board{position:relative;border:10px solid #6b4a2b;border-radius:6px;background:#26332b;box-shadow:inset 0 0 50px rgba(0,0,0,.55);aspect-ratio:16/9}
+.wl-board canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#wl-chalk{cursor:crosshair;touch-action:none}
+.wl-tools{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.wl-tools button{font:11.5px "DotGothic16",sans-serif;background:#1c1c22;color:#e8e4da;border:1px solid #55545e;border-radius:999px;padding:5px 11px;cursor:pointer}
+.wl-tools button[aria-pressed="true"]{border-color:#ffd678;box-shadow:0 0 0 1px #ffd678 inset}
+.wl-tools .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:1px solid rgba(0,0,0,.35)}
+.wl-key{margin-top:8px;font:12px "DotGothic16",sans-serif;color:#e8e4da}
+.wl-key input{width:92px;padding:5px 8px;font-size:14px;letter-spacing:.3em;text-align:center;border:1px solid #55545e;border-radius:4px;background:#101014;color:#fff}
+.wl-key button{font:12px "DotGothic16",sans-serif;background:#1c1c22;color:#e8e4da;border:1px solid #55545e;border-radius:999px;padding:5px 12px;cursor:pointer}
+#wl-keymsg{margin-left:8px;color:#ffd678}
 </style>
 <div class="secret-layer" aria-hidden="false">
 <a class="secret-bt" style="top:30px;left:45%" href="/stage/" aria-label="ひみつ：ちかへの階段"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><path d="M4 44 h10 V36 h10 V28 h10 V20 h10 V44 Z" fill="#a8a8a8" stroke="#3a3a3a" stroke-width="2"/><path d="M4 44 h10 V36 h10 V28 h10 V20 h10" fill="none" stroke="#e8e8e8" stroke-width="2"/></svg>ちかへの階段</a>
 <a class="secret-bt" style="top:37%;right:5%" href="/stage/" aria-label="ひみつ：ふしぎなドア"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><rect x="13" y="3" width="22" height="42" fill="#5d3319"/><rect x="16" y="6" width="16" height="39" fill="#7a4525"/><rect x="19" y="10" width="10" height="12" fill="none" stroke="#4a2612" stroke-width="2"/><rect x="19" y="26" width="10" height="14" fill="none" stroke="#4a2612" stroke-width="2"/><circle cx="29" cy="24" r="2" fill="#ffd94a" stroke="#8a6d1f"/></svg>ふしぎなドア</a>
 <a class="secret-bt" style="top:66%;left:5%" href="/stage/" aria-label="ひみつ：みどりの土管"><svg width="52" height="52" viewBox="0 0 48 48" shape-rendering="crispEdges" aria-hidden="true"><rect x="9" y="5" width="30" height="11" fill="#37c837" stroke="#0d6e0d" stroke-width="2"/><rect x="14" y="16" width="20" height="27" fill="#2db32d" stroke="#0d6e0d" stroke-width="2"/><rect x="17" y="5" width="5" height="38" fill="#8dff8d" opacity=".65"/></svg>みどりの土管</a>
-</div>'''
+<div class="wl-wrap">
+<div class="wl-cap">階段の下 ― 落書きの壁<span>チョークは消えない。消しゴムは汚れが残る。🔑の数字は、裏口の上のほう。</span></div>
+<div class="wl-board"><canvas id="wl-dirt" width="960" height="540"></canvas><canvas id="wl-chalk" width="960" height="540"></canvas></div>
+<div class="wl-tools" id="wl-tools">
+<button type="button" data-color="#ffffff" aria-pressed="true"><span class="dot" style="background:#ffffff"></span>白チョーク</button>
+<button type="button" data-color="#ffd7e8" aria-pressed="false"><span class="dot" style="background:#ffd7e8"></span>ピンク</button>
+<button type="button" data-color="#ffe066" aria-pressed="false"><span class="dot" style="background:#ffe066"></span>黄色</button>
+<button type="button" data-color="#a8e6ff" aria-pressed="false"><span class="dot" style="background:#a8e6ff"></span>水色</button>
+<button type="button" data-tool="erase" aria-pressed="false">▭ 消しゴム</button>
+<button type="button" id="wl-keybtn" aria-pressed="false">🔑</button>
+</div>
+<div class="wl-key" id="wl-key" hidden><input id="wl-code" type="text" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="数字4桁" aria-label="4桁コード"><button type="button" id="wl-unlock">解錠</button><span id="wl-keymsg"></span></div>
+</div>
+</div>
+<script src="/assets/wall.js" defer></script>'''
     body = f'''<table class="r-layout" border="0" cellspacing="0" cellpadding="0" summary="レイアウト"><tr>
 <td class="r-main" valign="top">
 <div class="r-mainwrap">{secret}
