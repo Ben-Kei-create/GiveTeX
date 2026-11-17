@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>頭の中ブース | GiveTex</title>
-<meta name="description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。投稿できるのは管理人だけです。">
+<meta name="description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。管理人はパスワードで、ゲストもそのままつぶやけます。">
 <link rel="stylesheet" href="/head/head.css">
 <!-- seo -->
 <meta property="og:title" content="頭の中ブース | GiveTex">
-<meta property="og:description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。投稿できるのは管理人だけです。">
+<meta property="og:description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。管理人はパスワードで、ゲストもそのままつぶやけます。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.givetex.org/head/">
 <meta property="og:site_name" content="GiveTex">
@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="頭の中ブース | GiveTex">
-<meta name="twitter:description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。投稿できるのは管理人だけです。">
+<meta name="twitter:description" content="GiveTex 管理人の、まだ企画段階のつぶやき置き場。昔の Twitter の画面を完全再現。管理人はパスワードで、ゲストもそのままつぶやけます。">
 <meta name="twitter:image" content="https://www.givetex.org/assets/og/home.jpg">
 <link rel="stylesheet" href="/assets/gt-fx.css">
 <script src="/assets/gt-fx.js" defer></script>
@@ -33,9 +33,33 @@
   <div class="main">
     <div class="compose">
       <div class="q">いま、頭の中で考えてること？</div>
-      <textarea disabled>ここに書けるのは管理人だけです…</textarea>
-      <div class="row"><span></span><span class="cnt">140</span><button type="button" disabled>つぶやく</button></div>
-      <div class="lock">🔒 投稿は管理人専用です。新しいつぶやきは、サイトの更新と一緒にここへ反映されます。</div>
+      <textarea id="tw-text" maxlength="280" placeholder="つぶやいてみる？"></textarea>
+      <div class="row"><span></span><span class="cnt" id="tw-cnt">140</span><button type="button" id="tw-go" disabled>つぶやく</button></div>
+      <div class="authbox" id="authbox">
+        <h5>どっちで つぶやきますか？</h5>
+        <div class="cols">
+          <div class="col">
+            <b>🔒 管理人として</b>
+            <input type="password" id="tw-pass" placeholder="パスワード" autocomplete="current-password">
+            <button type="button" id="post-admin">パスワードで投稿</button>
+          </div>
+          <div class="col guest">
+            <b>👤 ゲストとして</b>
+            <input type="text" id="tw-gname" placeholder="名前（なくてもOK）" maxlength="20">
+            <button type="button" id="post-guest">ゲストで投稿</button>
+          </div>
+        </div>
+        <div class="msg" id="auth-msg"></div>
+        <a href="#" class="cancel" id="auth-cancel">やめる</a>
+      </div>
+      <div class="setupbox" id="setupbox" hidden>
+        <b>管理人パスワードの設定（管理人用）</b><br>
+        使いたいパスワードを入れて「ハッシュを作る」を押すと、SHA-256 ハッシュが出ます。計算はこのブラウザの中だけで行われ、パスワードはどこにも送られません。<br>
+        <input type="password" id="setup-pass" placeholder="使いたいパスワード">
+        <button type="button" id="setup-btn">ハッシュを作る</button>
+        <div id="setup-hash" style="margin-top:6px"></div>
+      </div>
+      <div class="lock">つぶやくとき、パスワード（管理人）かゲストかを選べます。ゲストのつぶやきには「ゲスト」の印がつきます。</div>
     </div>
     <div id="tl"></div>
     <noscript><p style="font-size:13px;color:#66757f">つぶやきの表示には JavaScript が必要です。</p></noscript>
@@ -51,6 +75,7 @@
     <p>ここは GiveTex 管理人の「頭の中」。まだ企画段階のアイデアを、思いついた形のまま置いておく場所です。</p>
     <p>画面は、昔の Twitter（2009〜2010年ごろ）の仕様を再現しています。水色の空、140字、シンプルなタイムライン。</p>
     <p>ここに書かれた企画が、いつかアプリや本や動画になるかもしれません。ならないものも、たぶん多いです。</p>
+    <p>ゲストのつぶやきも歓迎です。足あと代わりに、ひとことどうぞ。</p>
     <h4>もどる</h4>
     <p><a href="/stage/">特設ステージ（地下）</a><br><a href="/">GiveTex ホーム</a></p>
   </div>
