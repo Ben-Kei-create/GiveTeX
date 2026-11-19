@@ -129,6 +129,7 @@
   /* ===== 右クリック（禁止はしない、ジョークだけ） ===== */
   document.addEventListener('contextmenu', function (e) {
     if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.target && e.target.closest && e.target.closest('.ms-win, .mg, canvas')) return; // ゲームの中の右クリック（旗を立てる）では出さない
     var said = false; try { said = sessionStorage.getItem('gt-rc') === '1'; sessionStorage.setItem('gt-rc', '1'); } catch (x) {}
     if (!said) toast('右クリック禁止！……なんてね。ご自由にどうぞ (^^)');
   });

@@ -181,7 +181,7 @@
   }
 
   window.GT_openMinesweeper = function () {
-    if (!win) { win = build(); newGame(); }
+    if (!win) { win = build(); newGame(); win.hidden = true; } // 作った直後は閉じた状態にしてから、下で開く
     win.hidden = !win.hidden;
     if (!win.hidden && G && !G.over && G.started && !timerId) startTimer();
     if (win.hidden) stopTimer();
