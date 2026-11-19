@@ -485,3 +485,35 @@ html, body { overflow-x: clip; } /* 窓を画面の端まで動かしても、�
 .bnr-wall a:hover img, .bnr-wall a:focus-visible img { outline: 2px dotted #ffff00; outline-offset: 1px; }
 @media (prefers-reduced-motion: no-preference) { .bnr-wall a:hover { transform: translateY(-2px); } }
 .bnr-wall img { margin: 0 !important; vertical-align: top; }
+
+/* ===== ホームの 3D（assets/home3d.js）===== */
+.r-head { position: relative; }
+/* 左上の UFO キャッチャー（小さめ・背景は透明） */
+.r-ufo { position: absolute; z-index: 2; left: max(8px, calc(50% - 492px)); top: 0; width: 112px; height: 124px; pointer-events: none; opacity: 0; transition: opacity .8s ease; }
+.r-ufo.on { opacity: 1; }
+.r-ufo canvas { display: block; width: 100%; height: 100%; }
+/* ロゴ・サブタイトル・流れる文字に重ならない大きさに（画面の幅ごとに測って決めた） */
+@media (max-width: 1023px) { .r-ufo { width: 80px; height: 88px; left: 6px; } }
+@media (max-width: 599px) { .r-ufo { width: 64px; height: 70px; left: 3px; } }
+@media (max-width: 340px) { .r-ufo { width: 56px; height: 62px; left: 2px; } }
+/* 右下のイルカ */
+.r-iruka { position: fixed; z-index: 8990; right: 6px; bottom: calc(56px + env(safe-area-inset-bottom)); width: 128px; height: 112px; transition: opacity .5s, transform .5s; }
+.r-iruka.bye { opacity: 0; transform: translateY(30px) scale(.8); pointer-events: none; }
+.r-iruka-3d { position: absolute; inset: 0; pointer-events: none; }
+.r-iruka-3d canvas { display: block; width: 100%; height: 100%; }
+.r-iruka-hit { position: absolute; inset: 14px 10px 10px 10px; border: 0; padding: 0; background: none; cursor: pointer; border-radius: 40%; -webkit-tap-highlight-color: transparent; }
+.r-iruka-hit:focus-visible { outline: 2px dotted #ffff66; outline-offset: 2px; }
+.r-iruka:not(.on):not(.emoji) .r-iruka-hit { visibility: hidden; }
+.r-iruka.emoji .r-iruka-hit::before { content: "🐬"; font-size: 54px; line-height: 1; display: block; filter: drop-shadow(2px 3px 0 rgba(0,0,0,.35)); }
+@media (prefers-reduced-motion: no-preference) { .r-iruka.emoji .r-iruka-hit::before { animation: gtIruka 2.6s ease-in-out infinite; } }
+@keyframes gtIruka { 50% { transform: translateY(-6px) rotate(-6deg); } }
+/* ふきだし（ツールチップ風の黄色い紙） */
+.r-iruka-say { position: absolute; right: 8px; bottom: calc(100% - 6px); width: min(230px, calc(100vw - 30px)); padding: 9px 11px 8px; background: #ffffe1; color: #000; border: 1px solid #000;
+  border-radius: 10px; box-shadow: 3px 3px 0 rgba(0,0,0,.35); font: 13px/1.6 "MS PGothic", "IPAGothic", "Hiragino Kaku Gothic ProN", sans-serif; text-align: left; }
+.r-iruka-say::after { content: ""; position: absolute; right: 44px; bottom: -9px; width: 14px; height: 14px; background: #ffffe1; border-right: 1px solid #000; border-bottom: 1px solid #000; transform: skewX(30deg) rotate(45deg); }
+.r-iruka-say p { margin: 0 0 7px; }
+.r-iruka-say div { display: flex; justify-content: flex-end; gap: 4px; }
+.r-iruka-say button { font: 12px/1 "DotGothic16", sans-serif; color: #000; background: #c0c0c0; border: 0; padding: 5px 10px; cursor: pointer;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; }
+@media (max-width: 600px) { .r-iruka { width: 104px; height: 92px; right: 2px; } }
+@media print { .r-ufo, .r-iruka { display: none; } }

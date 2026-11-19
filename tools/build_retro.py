@@ -33,6 +33,7 @@ NEWS = ('★☆★ ようこそ GiveTex のホームページへ！ ★☆★　
         '<a href="/movie/">映画ブース</a>の感想ノート「みんなの C-Log」もよろしく　◆　'
         'このホームページはリンクフリーです　★☆★')
 
+UFO = '<div class="r-ufo" aria-hidden="true"></div>'  # ホームの左上の 3D UFO キャッチャー（assets/home3d.js が中に描く）
 MEISHI = '<button type="button" class="r-meishi" data-meishi aria-haspopup="dialog">名刺</button>'
 
 def header(cur):
@@ -40,7 +41,7 @@ def header(cur):
     nav = ''.join(f'<a href="{h}"{AC if h == cur else ""}>{t}</a>' for h, t in NAV)
     return f'''<a name="top" id="top"></a>
 <div class="r-head" role="banner">
-<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
+{UFO if cur == '/' else ''}<a class="r-logo-link" href="/"><span class="r-logo">GiveTex</span></a>
 <div class="r-sub">～ <b class="give">GIVE教育！</b> <b>教育</b> × <b>IT</b> の ホームページ ～</div>
 <marquee class="r-news" scrollamount="5" scrolldelay="60">{NEWS}</marquee>
 <div class="r-nav" role="navigation" aria-label="メニュー">{nav}{MEISHI if cur in ('/', '/about.html', '/contact/') else ''}</div>
@@ -101,7 +102,7 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
     if path == 'about.html':  # 管理人のページにも名刺
         doc = doc.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     if path == 'index.html':  # ホームだけ起動画面
-        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
+        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1).replace('</body>', '<script src="/assets/home3d.js" defer></script>\n</body>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
     head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
     doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
@@ -161,6 +162,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-19', tag='サイト', title='ホームに 3D の UFO キャッチャーと、イルカ',
+      body='<p>ホームの左上に、小さな 3D の UFO キャッチャーを置きました。アームが勝手にゆっくり動いて、くま・うさぎ・ねこのぬいぐるみをつかみにいきます。たまに取れて、たまに落とします。</p><p>右下には、3D のイルカがいます。ぷかぷか浮いて、ときどきくるっとジャンプ。押すと、サイトの小ネタをしゃべります。「またね」を押すと、そのあいだは帰っていきます。どちらも Three.js というしくみで、ブラウザの中で立体を描いています。</p>'),
  dict(date='2026-11-19', tag='アプリ', title='GitHub の棚卸し。つくりかけのアプリを洗い出した',
       body='<p>今年さわったリポジトリを、まとめて点検しました。README のチェックリスト、TODO、最後のコミットの日付から「いまどこで止まっているか」を見ています（App Store での実際の状況までは確かめていません）。</p>'
            '<ul class="r-list"><li><b>申請の直前で止まっている</b>：9本</li><li><b>開発の途中で止まっている</b>：20本ほど</li><li><b>中身がほぼ空（はじめのコミットだけ）</b>：13本</li><li><b>いま動いていて、ほぼ完成</b>：6本</li></ul>'
@@ -418,6 +421,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-19', '左上に 3D の UFO キャッチャー、右下に 3D のイルカがやってきました！ イルカは押すとしゃべります', True),
         ('2026-11-19', '<a href="/diary/">開発日記</a>に「GitHub の棚卸し」を書きました。つくりかけのアプリ、審査の直前まで来ているのは4本！', True),
         ('2026-11-18', '<a href="/apps/awstady-saa/">AWSSTUDY(SAA)</a>が App Store で公開開始！ 公開中のアプリは9本に／ビール雑学クイズのアイコンもストア版に差し替えました', True),
         ('2026-11-17', '「落書きの壁」はホームの窓の裏（階段の下）へ引っ越しました。🔑の数字4桁は裏口の上のほうに…？', True),

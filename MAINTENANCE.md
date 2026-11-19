@@ -269,3 +269,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
   - 入れるのは教育的なものだけ（このサイトのために書いたコードと文章）。個人情報・鍵・非公開のものは入れない。README の最後に利用の決まり（学習・授業は自由、再配布・販売は連絡）を付けている。
 - フッターのバナー：`tools/build_banners.py` が `assets/retro/b-*.gif`（88×31・点滅）を作る。並び順とリンク先は `tools/build_retro.py` の BANNERS。
 - 名刺ボタンは、ホーム・管理人（about.html）・お問い合わせ（contact/）のメニューに出る。
+
+## ホームの 3D（UFO キャッチャーとイルカ）
+- `assets/home3d.js`（ホームだけ。build_retro.py が index.html の最後に入れる）。Three.js r128 を cdnjs から読みこむ（SRI＝改ざん防止のハッシュつき。版を変えるときはハッシュも変える）。
+- UFO キャッチャーは、ヘッダーの `.r-ufo`（左上。ロゴ・サブタイトル・流れる文字に重ならない大きさを、画面幅ごとに `assets/retro.css` で決めている）。
+- イルカは右下に固定（`.r-iruka`）。しゃべる文は home3d.js の LINES（オリジナル）。「またね」でそのタブのあいだは消える（sessionStorage `gt-iruka-off`）。
+- 画面の外・タブを離れているあいだは止める、1秒30コマまで。WebGL が使えないときは UFO は出さず、イルカは絵文字で出る。動きを減らす設定の人には、止まった絵だけ。
