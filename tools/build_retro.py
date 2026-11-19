@@ -102,7 +102,7 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
     if path == 'about.html':  # 管理人のページにも名刺
         doc = doc.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     if path == 'index.html':  # ホームだけ起動画面
-        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1).replace('</body>', '<script src="/assets/home3d.js" defer></script>\n</body>', 1)
+        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1).replace('</body>', '<script src="/assets/home3d.js" defer></script>\n<script src="/assets/home-space.js" defer></script>\n</body>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
     head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
     doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
@@ -162,6 +162,11 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-19', tag='サイト', title='AI が入った。うしろの宇宙も 3D に',
+      body='<p>さくらインターネットの「さくらのAI Engine」（月3,000回まで無料）を使って、サイトに AI を入れました。</p>'
+           '<ul class="r-list"><li>ホーム右下のイルカに「質問する」から、サイトのことを聞けます。</li><li><a href="/books/">ドパ読！</a>に「本えらびコンシェルジュ」。いまの気分を書くと、96冊から3冊えらびます。</li><li><a href="/stamp/">スタンプブース</a>の fumi が、AI で返事をするようになりました。</li><li>ゲストブックや感想ノートの書きこみを、AI がそっと見張ります。</li></ul>'
+           '<p>無料の回数をこえないように、1日の回数を決めてあって、使えないときは今までの動きにもどります。</p>'
+           '<p>それから、ホームのうしろの宇宙を 3D にしました。星がゆらーり回って、流れ星がシュン。ロケットが飛んでいって、UFO がふわふわ。どちらもタップすると、煙を出して落ちていきます（ちゃんと立てなおして、また飛びます）。窓の裏にかくれている階段・扉・土管も 3D になって、さわると、ぷにっと手ごたえがあります。</p>'),
  dict(date='2026-11-19', tag='サイト', title='ホームに 3D の UFO キャッチャーと、イルカ',
       body='<p>ホームの左上に、小さな 3D の UFO キャッチャーを置きました。アームが勝手にゆっくり動いて、くま・うさぎ・ねこのぬいぐるみをつかみにいきます。たまに取れて、たまに落とします。</p><p>右下には、3D のイルカがいます。ぷかぷか浮いて、ときどきくるっとジャンプ。押すと、サイトの小ネタをしゃべります。「またね」を押すと、そのあいだは帰っていきます。どちらも Three.js というしくみで、ブラウザの中で立体を描いています。</p>'),
  dict(date='2026-11-19', tag='アプリ', title='GitHub の棚卸し。つくりかけのアプリを洗い出した',
@@ -421,6 +426,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-19', 'AI が入りました！ イルカに質問・<a href="/books/">本えらびコンシェルジュ</a>・fumi の返事／うしろの宇宙が 3D に。ロケットと UFO はタップすると…？', True),
         ('2026-11-19', '左上に 3D の UFO キャッチャー、右下に 3D のイルカがやってきました！ イルカは押すとしゃべります', True),
         ('2026-11-19', '<a href="/diary/">開発日記</a>に「GitHub の棚卸し」を書きました。つくりかけのアプリ、審査の直前まで来ているのは4本！', True),
         ('2026-11-18', '<a href="/apps/awstady-saa/">AWSSTUDY(SAA)</a>が App Store で公開開始！ 公開中のアプリは9本に／ビール雑学クイズのアイコンもストア版に差し替えました', True),

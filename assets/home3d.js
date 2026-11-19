@@ -22,11 +22,22 @@
     try { if (sessionStorage.getItem('gt-iruka-off') === '1') return; } catch (e) {}
     dol = document.createElement('div'); dol.className = 'r-iruka';
     dol.innerHTML = '<button type="button" class="r-iruka-hit" aria-label="イルカに話しかける"></button>' +
-      '<div class="r-iruka-say" role="status" aria-live="polite" hidden><p></p><div><button type="button" class="r-iruka-next">つぎ</button><button type="button" class="r-iruka-bye">またね</button></div></div>';
+      '<div class="r-iruka-say" role="status" aria-live="polite" hidden><p></p>' +
+      '<form class="r-iruka-ask" hidden><input type="text" maxlength="100" placeholder="サイトのこと、なんでも聞いてね" aria-label="イルカへの質問" autocomplete="off"><button type="submit">きく</button></form>' +
+      '<div><button type="button" class="r-iruka-q">質問する</button><button type="button" class="r-iruka-next">つぎ</button><button type="button" class="r-iruka-bye">またね</button></div></div>';
     document.body.appendChild(dol);
     bubble = dol.querySelector('.r-iruka-say');
     dol.querySelector('.r-iruka-hit').addEventListener('click', function () { if (bubble.hidden) say(); else say(); jumpReq = true; });
     dol.querySelector('.r-iruka-next').addEventListener('click', function () { say(); jumpReq = true; });
+    /* 質問する：AI（さくらのAI Engine）がサイトを案内。使えないときは、サイトの中を言葉でさがして答える */
+    var form = dol.querySelector('.r-iruka-ask'), inp = form.querySelector('input'), busy = false;
+    dol.querySelector('.r-iruka-q').addEventListener('click', function () { form.hidden = !form.hidden; if (!form.hidden) { bubble.querySelector('p').textContent = 'なにが知りたい？ 「ラーメンどこ？」「おすすめの本は？」みたいに聞いてね'; inp.focus(); } });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); var q = inp.value.trim(); if (!q || busy) return; busy = true;
+      var p = bubble.querySelector('p'); p.textContent = 'うーん、ちょっと考えるね…'; p.classList.add('thinking'); jumpReq = true;
+      ask(q).then(function (ans) { busy = false; p.classList.remove('thinking'); render(p, ans); inp.value = ''; }, function () { busy = false; p.classList.remove('thinking'); localAnswer(q, p); });
+      try { if (window.gtag) gtag('event', 'iruka_ask'); } catch (x) {}
+    });
     dol.querySelector('.r-iruka-bye').addEventListener('click', function () {
       bubble.hidden = true; dol.classList.add('bye');
       try { sessionStorage.setItem('gt-iruka-off', '1'); } catch (e) {}
@@ -35,6 +46,27 @@
     // はじめての人には、少したってから自分であいさつ
     var greeted = false; try { greeted = sessionStorage.getItem('gt-iruka-hi') === '1'; sessionStorage.setItem('gt-iruka-hi', '1'); } catch (e) {}
     if (!greeted) setTimeout(function () { if (bubble && bubble.hidden) { li = 0; say(); setTimeout(function () { if (bubble && li === 1) bubble.hidden = true; }, 6500); } }, 4500);
+  }
+  function ask(q) {
+    return fetch('/api/ai', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'guide', q: q }) })
+      .then(function (r) { return r.json(); }).then(function (j) { if (j && j.ok && j.text) return j.text; throw new Error('fallback'); });
+  }
+  /* 答えの [名前](/パス) だけをリンクにする（ほかは、ただの文字） */
+  function render(p, txt) {
+    p.textContent = ''; var re = /\[([^\]]{1,40})\]\((\/[^)\s]{0,120})\)/g, last = 0, m;
+    while ((m = re.exec(txt))) { p.appendChild(document.createTextNode(txt.slice(last, m.index))); var a = document.createElement('a'); a.href = m[2]; a.textContent = m[1]; p.appendChild(a); last = re.lastIndex; }
+    p.appendChild(document.createTextNode(txt.slice(last)));
+  }
+  /* AI が使えないとき：サイトの索引から、ことばが入っているページをさがす */
+  function localAnswer(q, p) {
+    function go() {
+      var I = window.SITE_INDEX || [], n = q.normalize('NFKC').toLowerCase().replace(/[\s?？。、!！]|って|どこ|ある|おしえて|教えて|ください|の(本|記事|アプリ)?$/g, '');
+      var hit = n.length < 1 ? [] : I.filter(function (x) { return x.t.normalize('NFKC').toLowerCase().indexOf(n) >= 0 && x.u.charAt(0) === '/'; }).slice(0, 2);
+      if (hit.length) render(p, 'これかな？ ' + hit.map(function (x) { return '[' + x.t.slice(0, 22) + '](' + x.u + ')'; }).join('　'));
+      else render(p, 'ごめんね、うまく答えられなかった…。[サイトマップ](/sitemap/) から探してみて！');
+    }
+    if (window.SITE_INDEX) return go();
+    var s = document.createElement('script'); s.src = '/assets/site-index.js'; s.onload = go; s.onerror = go; document.head.appendChild(s);
   }
   function say() { bubble.querySelector('p').textContent = LINES[li % LINES.length]; li++; bubble.hidden = false; try { if (window.gtag) gtag('event', 'iruka_talk'); } catch (e) {} }
 

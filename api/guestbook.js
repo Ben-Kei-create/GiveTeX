@@ -5,6 +5,7 @@
    おなまえは自由（なければ「名無しさん」）。日替わり ID つき。3人の通報で自動で非表示。書いた本人は削除キーで消せる。 */
 'use strict';
 const L = require('./_lib');
+const AI = require('./_ai');
 const MAX = 500, PAGE = 20, HIDE_AT = 3;
 const MOODS = ['(^^)', '(*^_^*)', '(^o^)/', '(T_T)', '(-_-;)', 'ヽ(´▽`)ノ', '(゜o゜)', 'm(_ _)m'];
 
@@ -46,6 +47,7 @@ module.exports = async function handler(req, res) {
         return L.send(res, 429, { ok: false, error: '続けて書きこめません。少し時間をおいてね。' });
       const [fresh] = await L.kv([['SET', 'gb:dup:' + L.sha(msg.replace(/\s/g, '')), '1', 'NX', 'EX', '86400']]);
       if (fresh !== 'OK') return L.send(res, 409, { ok: false, error: '同じメッセージは、もう書きこまれています。' });
+      if ((await AI.moderate([name, from, msg].join('\n'))) === 'ng') return L.send(res, 400, { ok: false, error: 'ごめんね、その書きこみは載せられませんでした。人を傷つける言葉や、個人の情報が入っていないか見なおしてね。' }); // AI の見張り（使えないときは素通り）
       const [id] = await L.kv([['INCR', 'gb:seq']]);
       const p = { id: id, at: Date.now(), uid: L.dailyId(req), name: L.mask(name || '名無しさん'), mood: MOODS.indexOf(b.mood) >= 0 ? b.mood : '', msg: L.mask(msg), from: L.mask(from || ''), dk: L.sha(dk) };
       const [, len] = await L.kv([['SET', 'gb:p:' + id, JSON.stringify(p)], ['LPUSH', 'gb:list', String(id)]]);

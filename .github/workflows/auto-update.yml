@@ -56,6 +56,7 @@ jobs:
           python3 -I tools/build_retro.py .
           python3 -I tools/build_books_pages.py .
           node tools/build_index.js
+          node tools/build_ai_context.js
           python3 -I tools/seo.py .
       - name: 変わっていたら main に反映
         run: |

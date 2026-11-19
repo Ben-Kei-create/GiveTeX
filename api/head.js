@@ -8,6 +8,7 @@
 'use strict';
 const crypto = require('crypto');
 const L = require('./_lib');
+const AI = require('./_ai');
 const MAX = 200, PAGE = 30, HIDE_AT = 3;
 
 function pub(p, reps) {
@@ -64,6 +65,7 @@ module.exports = async function handler(req, res) {
         dkHash = L.sha(dk);
         if (!(await L.limit([['hg30:' + ip, 1, 30], ['hgh:' + ip, 10, 3600], ['hgd:' + ip, 30, 86400]])))
           return L.send(res, 429, { ok: false, error: '続けてつぶやけません。少し時間をおいてね。' });
+      if ((await AI.moderate([name, text].join('\n'))) === 'ng') return L.send(res, 400, { ok: false, error: 'ごめんね、その書きこみは載せられませんでした。人を傷つける言葉や、個人の情報が入っていないか見なおしてね。' }); // AI の見張り（使えないときは素通り）
       }
       const [id] = await L.kv([['INCR', 'hd:seq']]);
       const p = { id: id, at: Date.now(), who: who, name: name, text: L.mask(text), dk: dkHash };

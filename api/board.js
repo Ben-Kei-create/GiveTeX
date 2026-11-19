@@ -6,6 +6,7 @@
    3人から通報されると自動で非表示。書いた本人は削除キーで消せる。 */
 'use strict';
 const L = require('./_lib');
+const AI = require('./_ai');
 const MAX_POSTS = 1000, PAGE = 30, HIDE_AT = 3;
 const POSTER = /^https:\/\/image\.tmdb\.org\/t\/p\/w\d{2,3}\/[\w-]+\.(jpg|png)$/;
 
@@ -44,6 +45,7 @@ async function post(req, res, b) {
   const dup = L.sha(body.replace(/\s/g, ''));
   const [fresh] = await L.kv([['SET', 'b:dup:' + dup, '1', 'NX', 'EX', '86400']]);
   if (fresh !== 'OK') return L.send(res, 409, { ok: false, error: '同じ内容の感想は、もう書きこまれています。' });
+      if ((await AI.moderate(t + '\n' + body)) === 'ng') return L.send(res, 400, { ok: false, error: 'ごめんね、その書きこみは載せられませんでした。人を傷つける言葉や、個人の情報が入っていないか見なおしてね。' }); // AI の見張り（使えないときは素通り）
   const [id] = await L.kv([['INCR', 'b:seq']]);
   const p = { id: id, at: Date.now(), uid: L.dailyId(req), t: L.mask(t), b: L.mask(body), r: r, tm: tm, poster: poster, dk: L.sha(dk) };
   const [, len] = await L.kv([['SET', 'b:p:' + id, JSON.stringify(p)], ['LPUSH', 'b:list', String(id)]]);

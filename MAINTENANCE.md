@@ -276,3 +276,16 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - UFO キャッチャーは、ヘッダーの `.r-ufo`（左上。ロゴ・サブタイトル・流れる文字に重ならない大きさを、画面幅ごとに `assets/retro.css` で決めている）。
 - イルカは右下に固定（`.r-iruka`）。しゃべる文は home3d.js の LINES（オリジナル）。「またね」でそのタブのあいだは消える（sessionStorage `gt-iruka-off`）。
 - 画面の外・タブを離れているあいだは止める、1秒30コマまで。WebGL が使えないときは UFO は出さず、イルカは絵文字で出る。動きを減らす設定の人には、止まった絵だけ。
+
+## AI（さくらのAI Engine）
+- 設定（Vercel の Environment Variables）：`SAKURA_AI_TOKEN`（必須。さくらのコントロールパネルで発行したアカウントトークン。リポジトリやチャットには書かない）。任意で `SAKURA_AI_MODEL`（既定 preview/GLM-5.3-Flash）、`SAKURA_AI_MODEL_FALLBACK`（既定 gpt-oss-120b）、`AI_DAY`（1日の上限・既定85）、`AI_MONTH`（月の上限・既定2700）。
+- `api/_ai.js`：呼び出しの共通部品（上限・キャッシュ・時間切れ・プレビューのモデルが使えないときは別のモデル）。トークンがないときは AI を使わず、今までの動きのまま。
+- `api/ai.js`：mode=guide（ホームのイルカ）／books（ドパ読！の本えらび・`books/concierge.js`）／fumi（スタンプブース）。1人1日の回数：guide 12・books 6・fumi 25。答えのリンクはサイト内のページだけ残す。
+- 見張り：`api/board.js`・`api/guestbook.js`・`api/head.js` の書きこみを `AI.moderate` で確認（ng なら載せない。AI が使えないときは素通り）。
+- `api/_ai_context.js`：AI に渡すサイトの案内書きと本の一覧。`node tools/build_ai_context.js` で作る（自動更新でも作り直す）。
+- 管理人用：`SAKURA_AI_TOKEN=… python3 tools/ai_describe.py --kind ramen 写真…` で、写真の説明文と alt の下書き（店名・人物は推測させない。人が写っていたら知らせる）。
+- プライバシーポリシーに「AI による案内…について」を追加ずみ。
+
+## うしろの宇宙・ひみつの入口（3D）
+- `assets/home-space.js`（ホームだけ）。うしろの宇宙は `.r-sky`（画面に固定・いちばん奥）。ロケットと UFO は、窓や文字のないところをタップすると「やられ」→ 煙 → 立てなおす。
+- ひみつの入口（`.secret-bt`：階段・扉・土管）は、3D で描いた絵に差しかえ、押すとへこむ・ふるえる・音。扉はひらき、土管はしずみ、階段はおりてから /stage/ へ。

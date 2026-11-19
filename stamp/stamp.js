@@ -168,14 +168,27 @@
     } else if (hit.length) {
       acts.push(['results', t, hit]);
     } else {
-      acts.push(['text', pick(['なるほど〜！', 'ふむふむ。', 'それ、スタンプにできそう。'])]);
-      acts.push(['text', 'サイトの中では見つからなかったよ。作品の名前で送ってくれたら、さがしてみるね。']);
+      acts.push(['ai', t]); // ルールにも、サイトの中にもないとき → AI の fumi が返事（使えなければ、いつもの返事）
     }
     try { if (window.gtag) window.gtag('event', 'stamp_chat', { kind: hit.length ? 'search' : (rule ? 'rule' : 'other'), hits: hit.length }); } catch (e) {}
     return acts;
   }
+  /* AI の fumi（さくらのAI Engine）。返事の中の [名前](/パス) はリンクにする */
+  var HIST = [];
+  function richText(t) {
+    var w = el('span'), re = /\[([^\]]{1,40})\]\((\/[^)\s]{0,120})\)/g, last = 0, m;
+    while ((m = re.exec(t))) { w.appendChild(document.createTextNode(t.slice(last, m.index))); var a = el('a', null, m[1]); a.href = m[2]; w.appendChild(a); last = re.lastIndex; }
+    w.appendChild(document.createTextNode(t.slice(last))); return w;
+  }
+  function aiReply(q, done) {
+    var fallback = function () { done([['text', pick(['なるほど〜！', 'ふむふむ。', 'それ、スタンプにできそう。'])], ['text', 'サイトの中では見つからなかったよ。作品の名前で送ってくれたら、さがしてみるね。']]); };
+    fetch('/api/ai', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'fumi', q: q, h: HIST.slice(-4) }) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.ok && j.text) { HIST.push({ r: 'me', t: q }, { r: 'fumi', t: j.text }); if (HIST.length > 8) HIST.splice(0, HIST.length - 8); done([['rich', j.text]]); } else fallback(); }, fallback);
+  }
   function play(acts) {
     acts.forEach(function (a) {
+      if (a[0] === 'rich') { var b = text(''); b.textContent = ''; b.appendChild(richText(a[1])); msg('host', b, { time: now(), pop: true }); return; }
       if (a[0] === 'text') msg('host', text(a[1]), { time: now(), pop: true });
       else if (a[0] === 'sticker') msg('host', sticker(a[1]), { time: now(), pop: true });
       else if (a[0] === 'card') msg('host', card(a[1]), { time: now(), pop: true });
@@ -189,7 +202,9 @@
     e.preventDefault();
     var v = input.value.trim(); if (!v) return;
     var m = msg('me', text(v), { time: now(), pop: true }); input.value = ''; sendBtn.disabled = true; scrollEnd(); readLater(m);
-    var acts = reply(v); hostReply(function () { play(acts); });
+    var acts = reply(v);
+    if (acts.length === 1 && acts[0][0] === 'ai') aiReply(v, function (a2) { hostReply(function () { play(a2); }); });
+    else hostReply(function () { play(acts); });
   });
 
   /* ---------- スタンプ選択 ---------- */
