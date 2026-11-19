@@ -2,6 +2,7 @@
    - ページの切りかえ：対応ブラウザは CSS（ブラウン管のチャンネル切りかえ風）。ほかは短い暗転
    - リンク先の先読み：リンクに触れた時点で読み始めるので、押した瞬間に開く
    - 読み進みのバー／スクロールで現れる／星のカーソル（90年代風ページ）／表紙の傾き／タップの波紋
+   - 同じページの中のリンクは、ぬるっと優しくスクロール（window.gtGlide でも呼べる）
    - タブを離れると、タイトルがひとこと話しかける
    動きを減らす設定の人には、動きものは出さない。JS が動かなくてもページは普通に見える */
 (function () {
@@ -42,6 +43,59 @@
     });
     window.addEventListener('pageshow', function () { root.classList.remove('gtx-leave'); });
   }
+
+  /* ---- 同じページの中の移動：一瞬で飛ばずに、ぬるっと優しくスクロール ----
+     「#booths」「#top」「▲ ページの先頭へ」など、同じページの中へのリンクを押したとき。
+     動きはじめと止まるところをゆっくりにして、遠いほど少しだけ長く（0.5〜1.2秒）。
+     上に固定のメニューがあるページは、その下にちょうど来るように合わせる。
+     とちゅうでホイールや指でスクロールしたら、そこで止める。動きを減らす設定の人には使わない */
+  var anim = null;
+  function fixedTop() { // 画面の上に貼りついているもの（固定のメニューなど）の高さ
+    var h = 0, els = d.querySelectorAll('header, nav, .nb-bar, .hd, .bar, [class*="head"], [class*="top"]');
+    for (var i = 0; i < els.length && i < 60; i++) {
+      var c = getComputedStyle(els[i]); if (c.position !== 'fixed' && c.position !== 'sticky') continue;
+      var r = els[i].getBoundingClientRect(); if (r.top <= 2 && r.bottom > 0 && r.bottom < innerHeight * .4 && r.width > innerWidth * .6) h = Math.max(h, r.bottom);
+    }
+    return h;
+  }
+  function targetY(el) {
+    if (!el) return 0;
+    var sm = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    return Math.max(0, Math.min(root.scrollHeight - innerHeight, el.getBoundingClientRect().top + scrollY - Math.max(fixedTop() + 8, sm)));
+  }
+  function stop() { if (anim) { cancelAnimationFrame(anim.raf); root.style.scrollBehavior = anim.sb; anim = null; } }
+  function glide(getY, done) {
+    stop();
+    var y0 = scrollY, y1 = getY(), dist = Math.abs(y1 - y0);
+    if (calm || dist < 2) { window.scrollTo(0, y1); if (done) done(); return; }
+    var dur = Math.min(1200, Math.max(500, 420 + dist * .18)), t0 = performance.now();
+    anim = { sb: root.style.scrollBehavior, raf: 0 }; root.style.scrollBehavior = 'auto'; // CSS のなめらかスクロールと二重にならないように
+    function ease(u) { return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; }
+    (function f(now) {
+      if (!anim) return;
+      var u = Math.min(1, (now - t0) / dur);
+      if (u > .6) { var ny = getY(); if (Math.abs(ny - y1) > 4) y1 = ny; } // 画像が読みこまれて位置がずれても、ちゃんと着く
+      window.scrollTo(0, y0 + (y1 - y0) * ease(u));
+      if (u < 1) anim.raf = requestAnimationFrame(f); else { stop(); if (done) done(); }
+    })(t0);
+  }
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.addEventListener(ev, function () { if (anim) stop(); }, { passive: true }); });
+  window.gtGlide = function (elOrY) { glide(function () { return typeof elOrY === 'number' ? elOrY : targetY(elOrY); }); };
+  d.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href*="#"]'); if (!a || a.target === '_blank') return;
+    if (a.origin !== location.origin || a.pathname !== location.pathname || a.search !== location.search) return; // ほかのページへの移動は、そのまま
+    if (a.closest('[role="tablist"], [role="tab"]') || a.getAttribute('role') === 'tab') return; // タブの切りかえ（どろんなど）はそのまま
+    var id = decodeURIComponent(a.hash.slice(1)), el = null;
+    if (id && id !== 'top') { el = d.getElementById(id) || d.querySelector('a[name="' + id.replace(/"/g, '') + '"]'); if (!el) return; }
+    e.preventDefault();
+    if (location.hash !== a.hash) { try { history.pushState(null, '', a.hash || location.pathname + location.search); } catch (x) {} }
+    glide(function () { return el ? targetY(el) : 0; }, function () {
+      if (!el) return; // 移動したところへ、キーボードの位置も合わせる（読み上げソフト向け）
+      if (!el.hasAttribute('tabindex') && !/^(A|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(el.tagName)) { el.setAttribute('tabindex', '-1'); el.style.outline = 'none'; }
+      try { el.focus({ preventScroll: true }); } catch (x) {}
+    });
+  });
 
   /* ---- タブを離れたら、タイトルがひとこと ---- */
   var title = d.title, AWAY = ['(・ω・) もどってきてね', '(=_=) まってるよ…', '☆ つづきはこちら ☆'];

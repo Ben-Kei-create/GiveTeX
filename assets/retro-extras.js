@@ -164,7 +164,7 @@
     if (location.pathname !== '/') return;
     /* ▲ TOP（右下） */
     var top = btn('r-top', 'ページのいちばん上へ', '▲ TOP'); top.hidden = true;
-    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); });
+    top.addEventListener('click', function () { if (window.gtGlide) window.gtGlide(0); else window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); });
     addEventListener('scroll', function () { top.hidden = scrollY < 500; }, { passive: true });
     /* お助けツール（左下）：手書きメモと電卓 */
     var tb = btn('r-tools', 'お助けツール（手書きメモ・電卓）', '🧰 お助けツール');
