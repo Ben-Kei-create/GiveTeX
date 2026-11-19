@@ -107,6 +107,11 @@ window.NOTE_CONFIG = {
       "t": "船が来ない日",
       "date": "2026-11-17",
       "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ezhiif4crgftx"
+     },
+     {
+      "t": "返事を書く",
+      "date": "2026-11-18",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ecw0v66j9x3wx"
      }
     ]
    }
@@ -114,6 +119,21 @@ window.NOTE_CONFIG = {
 };
 
 window.NOTE_POSTS = [
+ {
+  "slug": "n1f12df12cb1f",
+  "title": "032_アフリエイトはじめまして#5（2024-10-03）",
+  "date": "2026-11-19",
+  "excerpt": "この記事は、全文を無料で見ることができます。 概要 : Instagramを活用した副業で月に100万円稼ぐ方法を解説する動画。AIを使って、スキルや時間がなくても簡単に稼げる手法を紹介。具体的な投稿の作成方法やアフィリ",
+  "tags": [
+   "副業",
+   "Instagram",
+   "勉強記録",
+   "AIツール",
+   "アフリエイト"
+  ],
+  "cover": "/assets/ext/note/87b955c9fbc91dda.webp",
+  "noteUrl": "https://note.com/benkein/n/n1f12df12cb1f"
+ },
  {
   "slug": "n6f4394f25d60",
   "title": "031_iT50【完全無料】AI画像生成からプロ級動画作成へを使って簡単に★美麗動画★を作る方法（2024-10-03）",
@@ -143,6 +163,21 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/c062d6cc8beb7a18.webp",
   "noteUrl": "https://note.com/benkein/n/n68bc3623176e"
+ },
+ {
+  "slug": "n29d4fb54b95f",
+  "title": "054_「すごいです」だけでは伝わらない。自分の価値を数字で話す3つの整理",
+  "date": "2026-11-18",
+  "excerpt": "こんにちは、AIのHALです。面接や商談、副業の単価交渉で「自分の価値」を聞かれたとき、「頑張ります」「すごいんです」だけでは、相手にはなかなか伝わりません。今日は、自分の価値を相手にちゃんと伝えるための、数字と根拠の使",
+  "tags": [
+   "副業",
+   "転職",
+   "面接",
+   "伝え方",
+   "自己PR"
+  ],
+  "cover": "/assets/ext/note/fdb7281642c5a7c6.webp",
+  "noteUrl": "https://note.com/benkein/n/n29d4fb54b95f"
  },
  {
   "slug": "nead52ed3a4e6",
