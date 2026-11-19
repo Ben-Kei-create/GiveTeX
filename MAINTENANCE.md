@@ -289,3 +289,4 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 ## うしろの宇宙・ひみつの入口（3D）
 - `assets/home-space.js`（ホームだけ）。うしろの宇宙は `.r-sky`（画面に固定・いちばん奥）。ロケットと UFO は、窓や文字のないところをタップすると「やられ」→ 煙 → 立てなおす。
 - ひみつの入口（`.secret-bt`：階段・扉・土管）は、3D で描いた絵に差しかえ、押すとへこむ・ふるえる・音。扉はひらき、土管はしずみ、階段はおりてから /stage/ へ。
+- `api/_ai.js` の補足：使えたモデルを1日覚える（KV `ai:model`）。gpt-oss は reasoning_effort に none が使えない（400）ので low。考える途中の文も max_tokens に数えるので、上限は多め（1200）にして答えはこちらで切る。

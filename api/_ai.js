@@ -23,14 +23,17 @@ async function spend(n) {
   return out[0] <= DAY_MAX && out[2] <= MONTH_MAX;
 }
 
-async function call(model, messages, opt, ms) {
+/* モデルごとの「考える処理」の指定：gpt-oss は none を受けつけない（400 になる）ので low。ほかは none をためして、だめなら指定なし */
+function effortFor(model) { return /^gpt-oss/.test(model) ? 'low' : 'none'; }
+async function call(model, messages, opt, ms, effort) {
   const ac = new AbortController(), timer = setTimeout(() => ac.abort(), ms);
   try {
-    const body = { model: model, messages: messages, max_tokens: opt.max || 400, temperature: opt.temp == null ? .7 : opt.temp, stream: false };
-    if (opt.noThink !== false) body.reasoning_effort = 'none'; // 考えている途中の文は出さない（対応していないモデルでは無視される）
+    // 考える途中の文も max_tokens に数えられるので、上限は多めにして、答えはこちらで短く切る（無料枠は回数で数えるので、多めでも回数は同じ）
+    const body = { model: model, messages: messages, max_tokens: Math.max(opt.max || 400, 1200), temperature: opt.temp == null ? .7 : opt.temp, stream: false };
+    if (effort) body.reasoning_effort = effort;
     const r = await fetch(BASE + '/v1/chat/completions', {
       method: 'POST', signal: ac.signal,
-      headers: { 'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json' },
+      headers: { 'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(body)
     });
     const text = await r.text();
@@ -38,10 +41,17 @@ async function call(model, messages, opt, ms) {
     const j = JSON.parse(text), c = j.choices && j.choices[0] && j.choices[0].message;
     let s = c && (typeof c.content === 'string' ? c.content : Array.isArray(c.content) ? c.content.map(x => x.text || '').join('') : '');
     s = String(s || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim(); // 考えている途中の文が混ざったら消す
-    return { text: s };
+    return s ? { text: s } : { err: 'empty' };
   } catch (e) { return { err: e.name === 'AbortError' ? 'timeout' : 'net' }; }
   finally { clearTimeout(timer); }
 }
+/* 1つのモデルで：考える処理の指定つき → 400 なら指定なしで、もう1回 */
+async function tryModel(model, messages, opt, ms) {
+  let r = await call(model, messages, opt, ms, effortFor(model));
+  if (r.err === 400) r = await call(model, messages, opt, ms, null);
+  return r;
+}
+let goodModel = null; // 使えたモデルを、しばらく覚えておく（むだな失敗で回数を使わないように）
 
 /* チャット。opt: { max, temp, ms, cacheKey, cacheSec, cost }。返り値は文字列 or null */
 async function chat(messages, opt) {
@@ -50,8 +60,14 @@ async function chat(messages, opt) {
   if (opt.cacheKey && L.hasKV()) { const [hit] = await L.kv([['GET', 'ai:c:' + opt.cacheKey]]); if (hit) return hit; }
   if (!(await spend(opt.cost || 1))) return null;
   const ms = opt.ms || 12000;
-  let r = await call(MODEL, messages, opt, ms);
-  if (r.err && r.err !== 'timeout' && MODEL2 && MODEL2 !== MODEL && (r.err === 400 || r.err === 404 || r.err === 422)) r = await call(MODEL2, messages, opt, ms); // プレビューのモデルが終わっていたら、ふつうのモデルで
+  if (!goodModel && L.hasKV()) { const [gm] = await L.kv([['GET', 'ai:model']]); if (gm) goodModel = gm; }
+  const order = Array.from(new Set([goodModel, MODEL, MODEL2].filter(Boolean)));
+  let r = { err: 'none' };
+  for (const m of order) {
+    r = await tryModel(m, messages, opt, ms);
+    if (!r.err) { if (m !== goodModel) { goodModel = m; if (L.hasKV()) await L.kv([['SET', 'ai:model', m, 'EX', '86400']]); } break; }
+    if (r.err === 'timeout' || r.err === 429 || r.err === 401) break; // 時間切れ・回数オーバー・鍵ちがいは、ほかのモデルでも同じ
+  }
   if (r.err || !r.text) { console.warn('ai error', r.err, r.text || ''); return null; }
   if (opt.cacheKey && L.hasKV()) await L.kv([['SET', 'ai:c:' + opt.cacheKey, r.text, 'EX', String(opt.cacheSec || 7 * 86400)]]);
   return r.text;
@@ -63,7 +79,7 @@ async function moderate(text) {
   const out = await chat([
     { role: 'system', content: 'あなたは日本語の掲示板の見張り役です。投稿が「他人への悪口・差別・脅し・性的な内容・個人情報（電話番号・住所・本名の暴露）・宣伝や詐欺」にあたるなら ng、そうでなければ ok とだけ答えてください。映画の辛口の感想や、作品への批判は ok です。' },
     { role: 'user', content: String(text).slice(0, 1200) }
-  ], { max: 5, temp: 0, ms: 5000 });
+  ], { max: 5, temp: 0, ms: 8000 });
   if (!out) return null;
   return /^\s*ng/i.test(out) ? 'ng' : 'ok';
 }
