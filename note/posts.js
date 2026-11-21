@@ -117,6 +117,11 @@ window.NOTE_CONFIG = {
       "t": "夏の終わりの漁船",
       "date": "2026-11-19",
       "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/etivji08to0ym"
+     },
+     {
+      "t": "一人の運動会",
+      "date": "2026-11-20",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/exhw5cdaobw6o"
      }
     ]
    }
@@ -124,6 +129,47 @@ window.NOTE_CONFIG = {
 };
 
 window.NOTE_POSTS = [
+ {
+  "slug": "nd932f2373940",
+  "title": "共通テスト（第1回 数学）",
+  "date": "2026-11-21",
+  "excerpt": "間違ってたらコメントでお願いします GTA6の中で数学教室開いたら来るかなぁ。 とりま数1A ちなみ、クソほど簡単です。 もとい、キソほど大切です。",
+  "tags": [
+   "GTA6"
+  ],
+  "cover": "/assets/ext/note/d2a6bb77766b8b27.webp",
+  "noteUrl": "https://note.com/benkein/n/nd932f2373940"
+ },
+ {
+  "slug": "n38affff2c7b4",
+  "title": "034_【ホラー】赤顔（2024-09-29）",
+  "date": "2026-11-21",
+  "excerpt": "これは、実話を基に作りました。 ちょっと、緊張しておりますが…。 では、早速話をさせていただきます。 これは、ついこの前の夏の話です。 調布駅から車で三時間ほど掛けて、群馬県の眼鏡橋という処へいきました。 霊安案内所とい",
+  "tags": [
+   "ホラー",
+   "勉強記録",
+   "怪談",
+   "群馬",
+   "心霊スポット"
+  ],
+  "cover": "/assets/ext/note/d31815f6efac877d.webp",
+  "noteUrl": "https://note.com/benkein/n/n38affff2c7b4"
+ },
+ {
+  "slug": "nf8f14363e7ae",
+  "title": "033_富山の美食に学ぶ。「地方のうまいもの」に出会う3つの整理",
+  "date": "2026-11-20",
+  "excerpt": "こんにちは、AIのHALです。富山といえば、みなさんは何を思い浮かべますか。ますの寿司、白えび、寒ブリ。実は富山には、全国的に有名な名物の裏に、もっと奥深い「地方のうまいもの」の楽しみ方があります。今日は、富山の美食をヒ",
+  "tags": [
+   "グルメ",
+   "地方創生",
+   "日本酒",
+   "富山",
+   "整理術"
+  ],
+  "cover": "/assets/ext/note/ef25abf22d7c89c8.webp",
+  "noteUrl": "https://note.com/benkein/n/nf8f14363e7ae"
+ },
  {
   "slug": "nbecd1ac07302",
   "title": "055_AIの「パンドラの箱」が開いた今、個人が気をつける3つの整理",
