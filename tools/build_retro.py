@@ -171,6 +171,8 @@ NEW_ENTRIES = [
            '<ul class="r-list"><li>ホーム右下のイルカに「質問する」から、サイトのことを聞けます。</li><li><a href="/books/">ドパ読！</a>に「本えらびコンシェルジュ」。いまの気分を書くと、96冊から3冊えらびます。</li><li><a href="/stamp/">スタンプブース</a>の fumi が、AI で返事をするようになりました。</li><li>ゲストブックや感想ノートの書きこみを、AI がそっと見張ります。</li></ul>'
            '<p>無料の回数をこえないように、1日の回数を決めてあって、使えないときは今までの動きにもどります。</p>'
            '<p>それから、ホームのうしろの宇宙を 3D にしました。星がゆらーり回って、流れ星がシュン。ロケットが飛んでいって、UFO がふわふわ。どちらもタップすると、煙を出して落ちていきます（ちゃんと立てなおして、また飛びます）。窓の裏にかくれている階段・扉・土管も 3D になって、さわると、ぷにっと手ごたえがあります。</p>'),
+ dict(date='2026-11-19', tag='サイト', title='ページの中の移動を、ぬるっと優しく',
+      body='<p>「ブース」「記事」「▲ ページの先頭へ」など、同じページの中へ飛ぶリンクを押したとき、一瞬でパッと飛ぶのをやめました。動きはじめと止まるところをゆっくりにして、ぬるっと流れるように移動します（遠いほど、少しだけ長く）。</p><p>上にメニューが貼りついているページでは、メニューにかくれない位置でちゃんと止まります。とちゅうで指やホイールを動かすと、そこで止まります。全部のブースで同じ動きです。</p>'),
  dict(date='2026-11-19', tag='サイト', title='ホームに 3D の UFO キャッチャーと、イルカ',
       body='<p>ホームの左上に、小さな 3D の UFO キャッチャーを置きました。アームが勝手にゆっくり動いて、くま・うさぎ・ねこのぬいぐるみをつかみにいきます。たまに取れて、たまに落とします。</p><p>右下には、3D のイルカがいます。ぷかぷか浮いて、ときどきくるっとジャンプ。押すと、サイトの小ネタをしゃべります。「またね」を押すと、そのあいだは帰っていきます。どちらも Three.js というしくみで、ブラウザの中で立体を描いています。</p>'),
  dict(date='2026-11-19', tag='アプリ', title='GitHub の棚卸し。つくりかけのアプリを洗い出した',
@@ -428,10 +430,22 @@ def icon(href, img, name, note, dev=False, ext=False):
     return f'<a class="r-icon" href="{href}"{t}><img src="{img}" width="56" height="56" alt=""><span>{E(name)}</span><small class="{"dev" if dev else ""}">{note}</small></a>'
 
 # ================= トップページ =================
+def _jsarr(path, var):
+    """window.X = [...] の形のファイルから、配列を読む（なければ空）"""
+    try:
+        t = (R / path).read_text(encoding='utf-8'); i = t.index('window.' + var + ' =') + len('window.' + var + ' =')
+        return json.loads(t[i:].strip().rstrip(';'))
+    except Exception: return []
+_SOZAI = _jsarr('socafe/free.js', 'SOCAFE_FREE')
+N_STUDY = sum(1 for x in _SOZAI if x.get('cat') == 'study'); N_SOZAI = len(_SOZAI) + len(_jsarr('bookmarks/downloads.js', 'DOWNLOADS'))  # 素カフェの「無料」の数（素材＋教材＋学習キット）
+N_WATCH = len(_jsarr('movie/watchlist.js', 'WATCHLIST'))
+
 def build_index():
     whats = [
+        ('2026-11-21', '「数字で見るGiveTex」に、素カフェの素材・教材プリント・ボードゲーム・映画の候補の数を追加', True),
         ('2026-11-21', '新ブース<a href="/socafe/">「素カフェ」</a>オープン！ 素材と、数学・物理の教材プリント（PDF）を無料でダウンロードできます', True),
         ('2026-11-21', '<a href="/movie/">映画ブース</a>がリニューアル！ 話題の映画のスライドと、管理人の鑑賞記録（洋画／邦画）', True),
+        ('2026-11-19', 'ページの中の移動が、ぬるっと優しいスクロールに（全ブース）', True),
         ('2026-11-19', 'AI が入りました！ イルカに質問・<a href="/books/">本えらびコンシェルジュ</a>・fumi の返事／うしろの宇宙が 3D に。ロケットと UFO はタップすると…？', True),
         ('2026-11-19', '左上に 3D の UFO キャッチャー、右下に 3D のイルカがやってきました！ イルカは押すとしゃべります', True),
         ('2026-11-19', '<a href="/diary/">開発日記</a>に「GitHub の棚卸し」を書きました。つくりかけのアプリ、審査の直前まで来ているのは4本！', True),
@@ -468,7 +482,7 @@ document.write(rGreeting());
 <p class="r-center"><b>GiveTex</b>（ギブテックス）のホームページへ ようこそ！<br>
 ここでは <font color="#d10056"><b>教育 × IT</b></font> をテーマに、自作のアプリ、Kindle電子書籍「ドパ読！」、<br class="pc">オカルトブース「どろん」、それから開発日記などを置いています。<br>
 ゆっくりしていってくださいね。</p>
-<table class="r-tbl r-stats" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>{len(RELEASED)}</b> 本</td><td class="r-center"><b>{len(DEV)}</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>{N_NOTE}</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>unityroom</th><th>開発日記</th></tr><tr><td class="r-center"><b>{N_TALES}</b> 話</td><td class="r-center"><b>{len(STAMP_SETS)}</b> セット</td><td class="r-center"><b>{N_GAMES}</b> 本</td><td class="r-center"><b>{len(DIARY)}</b> 件</td></tr></table>
+<table class="r-tbl r-stats" summary="数字で見るGiveTex"><tr><th>App Store 公開中</th><th>開発中のアプリ</th><th>ドパ読！</th><th>note</th></tr><tr><td class="r-center"><b>{len(RELEASED)}</b> 本</td><td class="r-center"><b>{len(DEV)}</b> 本</td><td class="r-center"><b>{TOTAL}</b> 冊</td><td class="r-center"><b>{N_NOTE}</b> 本</td></tr><tr><th>TALES 連載</th><th>LINE スタンプ</th><th>unityroom</th><th>開発日記</th></tr><tr><td class="r-center"><b>{N_TALES}</b> 話</td><td class="r-center"><b>{len(STAMP_SETS)}</b> セット</td><td class="r-center"><b>{N_GAMES}</b> 本</td><td class="r-center"><b>{len(DIARY)}</b> 件</td></tr><tr><th>素カフェ（無料）</th><th>教材プリント</th><th>ボードゲーム</th><th>映画の候補</th></tr><tr><td class="r-center"><a href="/socafe/"><b>{N_SOZAI}</b> 品</a></td><td class="r-center"><a href="/socafe/"><b>{N_STUDY}</b> 点</a></td><td class="r-center"><a href="/game/board/"><b>9</b> 種</a></td><td class="r-center"><a href="/movie/#watched"><b>{N_WATCH}</b> 本</a></td></tr></table>
 <p class="r-small r-center">最終更新日：{UPDATED}</p>'''
     apps_icons = ''.join(icon(h or s, img, n, '★公開中', ext=not h) for h, img, n, d, s in RELEASED)
     apps_icons += ''.join(icon(f'/apps/{k}/', f'/apps/{k}/images/icon.jpg', n, '準備中', dev=True) for k, n, d in DEV)
