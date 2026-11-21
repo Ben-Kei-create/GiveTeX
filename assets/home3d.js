@@ -310,14 +310,22 @@
   /* ---------- はじめる：ページが表示し終わって、手がすいたとき ---------- */
   function start() {
     makeDolphinBox();
+    // イルカ：スプライトスタッキング（assets/iruka-stack.js）。WebGL はいらない
+    if (dol) {
+      try {
+        if (!window.GTIruka) throw 0;
+        var h = document.createElement('div'); h.className = 'r-iruka-3d'; dol.insertBefore(h, dol.firstChild);
+        window.GTIruka.mount(h, { jump: function () { if (jumpReq) { jumpReq = false; return true; } return false; } });
+        dol.classList.add('on');
+      } catch (e) { dol.classList.add('emoji'); }
+    }
     var u = document.querySelector('.r-ufo');
     var idle = window.requestIdleCallback || function (f) { setTimeout(f, 300); };
     idle(function () {
-      if (!glOK()) { if (u) u.remove(); if (dol) dol.classList.add('emoji'); return; }
+      if (!glOK()) { if (u) u.remove(); return; }
       loadThree(function (ok) {
-        if (!ok) { if (u) u.remove(); if (dol) dol.classList.add('emoji'); return; }
+        if (!ok) { if (u) u.remove(); return; }
         try { if (u) { ufo(u); u.classList.add('on'); } } catch (e) { if (u) u.remove(); }
-        try { if (dol) { var h = document.createElement('div'); h.className = 'r-iruka-3d'; dol.insertBefore(h, dol.firstChild); dolphin(h); dol.classList.add('on'); } } catch (e) { if (dol) dol.classList.add('emoji'); }
       });
     }, { timeout: 2500 });
   }

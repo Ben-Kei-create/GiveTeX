@@ -550,3 +550,4 @@ html, body { overflow-x: clip; } /* 窓を画面の端まで動かしても、�
 @keyframes sb3Stairs { 0% { transform: none; } 100% { transform: perspective(300px) rotateX(35deg) scale(1.4); opacity: 0; filter: brightness(.3); } }
 @keyframes sb3Door { 0% { transform: none; filter: drop-shadow(0 6px 6px rgba(0,0,0,.45)); } 40% { transform: scale(1.05); filter: drop-shadow(0 0 18px #c58bff); } 100% { transform: scale(1.8); opacity: 0; filter: drop-shadow(0 0 30px #c58bff) brightness(1.6); } }
 .secret-bt.sb3-stairs { top: 2px !important; } /* 落書きの壁の見出しに重ならないように */
+.r-iruka-3d { top: -40%; } /* スプライトスタッキングのイルカ：ジャンプしても上が切れないように */

@@ -305,3 +305,4 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 教材・プリント：PDF を `socafe/dl/study/` に置き、`tools/socafe_study.json` に書いて `tools/build_socafe.py` を実行（表紙の見本は1ページ目から作る。pdftoppm が必要）。画像だけの重い PDF（NotebookLM のスライドなど）は、ページを JPEG にして作り直すと軽くなる（一次不等式のスライド：11.6MB → 2.6MB）。教材は「個人の学習・授業で自由に使える（印刷・配布OK）、再配布・販売は連絡」。
 - むかしのホームページ素材（NEW!・区切り線・ボタン・カウンターの数字）も build_socafe.py の hp_parts() が作る。
 - ホームの What's New は直近6件だけ表示（build_retro.py の whats に足していけば、古いものは自動で消える。全部は開発日記へ）。
+- イルカは `assets/iruka-stack.js`（スプライトスタッキング：ボクセルのイルカを高さごとの輪切りにして重ねて描く。WebGL 不要）。形は PROF（太さ）、色は C、目・口などは model() の「顔」。しっぽは3コマ・まばたき・ジャンプでくるっと一回転。ジャンプ用に入れものの上4割をあけてある（.r-iruka-3d top:-40%）。home3d.js の Three.js のイルカ（dolphin）は使っていない。

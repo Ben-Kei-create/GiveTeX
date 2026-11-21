@@ -102,7 +102,7 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
     if path == 'about.html':  # 管理人のページにも名刺
         doc = doc.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     if path == 'index.html':  # ホームだけ起動画面
-        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1).replace('</body>', '<script src="/assets/home3d.js" defer></script>\n<script src="/assets/home-space.js" defer></script>\n</body>', 1)
+        doc = doc.replace('<script src="/assets/img-fallback.js"></script>', '<script src="/assets/img-fallback.js"></script>\n<script src="/assets/boot.js"></script>', 1).replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1).replace('</body>', '<script src="/assets/iruka-stack.js" defer></script>\n<script src="/assets/home3d.js" defer></script>\n<script src="/assets/home-space.js" defer></script>\n</body>', 1)
     # 画像は見えるところまで来てから読む（ヘッダーのロゴ・バナーは除く）
     head_end = doc.find('<div class="r-page"') if '<div class="r-page"' in doc else doc.find('</div>', doc.find('class="r-head"'))
     doc = doc[:head_end] + re.sub(r'<img (?![^>]*\bloading=)', '<img loading="lazy" decoding="async" ', doc[head_end:])
@@ -162,6 +162,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-21', tag='サイト', title='イルカを、ドット絵の立体につくりなおした',
+      body='<p>ホーム右下のイルカを「スプライトスタッキング」でつくりなおしました。小さなブロックでイルカを組み立てて、それを高さごとに輪切りにし、少しずつずらして重ねて描く方法です。ドット絵なのに立体に見えて、くるっと向きを変えられます。</p><p>しっぽをふって、まばたきして、ときどきジャンプ（一回転）。3D の重いしくみを使わないので、どの端末でも出るようになりました。</p>'),
  dict(date='2026-11-21', tag='ブース', title='素カフェ（素材カフェ）をオープン',
       body='<p>新しいブース「<a href="/socafe/">素カフェ</a>」をつくりました。このサイトのために作った素材を、カフェのメニューのように並べています。</p><ul class="r-list"><li>無料：88×31 バナー、ドット絵アイコン、背景パターン、ファミコン風の効果音（その場で試聴できます）、壁紙、レトロな窓とふきだし。学習キットも。</li><li>教材・プリント：数学Ⅰの一次不等式のスライド、データの分析の問題集、数学Ⅰ・A 基礎テスト（問題と解説）、フェルマーの最終定理 第1部、高校物理「原子」の授業プリント（PDF）。</li><li>むかしのホームページ素材：点滅する NEW!、区切り線、ボタン、カウンターの数字。</li><li>有料：LINE スタンプ（LINE STORE へ）。</li></ul><p>無料の素材は、個人でもお仕事でも使えます。素材そのものを配ったり売ったりするのだけ、NG です。</p>'),
  dict(date='2026-11-21', tag='ブース', title='映画ブースに「管理人の鑑賞記録」',
@@ -442,6 +444,7 @@ N_WATCH = len(_jsarr('movie/watchlist.js', 'WATCHLIST'))
 
 def build_index():
     whats = [
+        ('2026-11-21', '右下のイルカが、ドット絵の立体（スプライトスタッキング）に生まれかわりました', True),
         ('2026-11-21', '「数字で見るGiveTex」に、素カフェの素材・教材プリント・ボードゲーム・映画の候補の数を追加', True),
         ('2026-11-21', '新ブース<a href="/socafe/">「素カフェ」</a>オープン！ 素材と、数学・物理の教材プリント（PDF）を無料でダウンロードできます', True),
         ('2026-11-21', '<a href="/movie/">映画ブース</a>がリニューアル！ 話題の映画のスライドと、管理人の鑑賞記録（洋画／邦画）', True),
