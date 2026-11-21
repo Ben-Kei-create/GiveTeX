@@ -82,6 +82,7 @@ SPEC = [
     dict(name='stamp', bg='#06c755', main='スタンプ', mcol='#ffffff', sub='LINE STAMP', scol='#eaffef', spr='chat', sprcol='#ffffff', blink='spr', edge=('#8ef0b4', '#03702f')),
     dict(name='museum', bg='#f7f6f2', main='美術館', mcol='#2b2a27', sub='MUSEUM', scol='#8a6f3c', spr='frame', sprcol='#b89a5e', blink='sub', edge=('#d8c08a', '#8a6f3c')),
     dict(name='ramen', bg='#d7261e', main='ラーメン', mcol='#ffffff', sub='zuru zuru...', scol='#ffe27a', spr='bowl', sprcol='#ffe27a', blink='spr', edge=('#ff8a80', '#7a0d10')),
+    dict(name='socafe', bg='#3b2a20', main='素カフェ', mcol='#fff3d6', sub='SOZAI CAFE', scol='#e9c98f', blink='sub', edge=('#e9c98f', '#1d140e')),
     dict(name='movie', bg='#111111', main='映画', mcol='#ffd23f', sub='C-Log Web', scol='#ffffff', spr='film', sprcol='#ffd23f', blink='sub'),
     dict(name='diary', bg='#ffffff', main='開発日記', mcol='#000080', sub='DIARY', scol='#d10056', blink='sub', edge=('#dfdfdf', '#808080')),
     dict(name='guestbook', bg='#fffbe6', main='足あと帳', mcol='#7a3b00', sub='GUEST BOOK', scol='#d10056', spr='foot', sprcol='#c28a3a', blink='spr', edge=('#ffffff', '#c2a05a')),

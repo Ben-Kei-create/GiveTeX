@@ -1,0 +1,97 @@
+/* 素カフェ（素材カフェ）— 木の看板・黒板・白いお皿・紙のメニュー */
+:root{--wood:#5a3b26;--wood2:#3b2a20;--cream:#fbf4e6;--paper:#fffaf1;--ink:#3a2a1e;--sub:#7a6452;--green:#2f8f5b;--brown:#a8642e;--chalk:#2f3a33;--line:#e6d6bd;
+  --hand:"Yusei Magic","Zen Maru Gothic",sans-serif;--maru:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;--en:"Caveat","Zen Maru Gothic",cursive}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:15.5px/1.8 var(--maru);background:#f3e7d3;
+  background-image:radial-gradient(rgba(120,80,40,.07) 1px,transparent 1.5px),radial-gradient(rgba(120,80,40,.05) 1px,transparent 1.5px);background-size:22px 22px,22px 22px;background-position:0 0,11px 11px}
+a{color:var(--brown)}
+:focus-visible{outline:3px solid #e5a23a;outline-offset:2px}
+[hidden]{display:none!important}
+
+/* 看板 */
+.sc-head{position:relative;background:linear-gradient(180deg,var(--wood2),var(--wood));padding:18px 16px 26px;text-align:center;box-shadow:0 4px 0 #2a1d15,0 10px 24px rgba(0,0,0,.25)}
+.sc-head::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:repeating-linear-gradient(90deg,#c0392b 0 28px,#fff 28px 56px);clip-path:polygon(0 0,100% 0,100% 40%,97% 100%,94% 40%,91% 100%,88% 40%,85% 100%,82% 40%,79% 100%,76% 40%,73% 100%,70% 40%,67% 100%,64% 40%,61% 100%,58% 40%,55% 100%,52% 40%,49% 100%,46% 40%,43% 100%,40% 40%,37% 100%,34% 40%,31% 100%,28% 40%,25% 100%,22% 40%,19% 100%,16% 40%,13% 100%,10% 40%,7% 100%,4% 40%,1% 100%,0 40%)}
+.sc-back{position:absolute;left:12px;top:10px;color:#f3e2c5;font-size:13px;text-decoration:none;opacity:.85}
+.sc-sign{display:inline-block;position:relative;padding:10px 30px 8px;border:3px solid #e9c98f;border-radius:14px;background:rgba(0,0,0,.18);box-shadow:inset 0 0 0 2px rgba(255,255,255,.08)}
+.sc-sign h1{margin:0;line-height:1}
+.sc-logo{display:block;font:400 clamp(38px,9vw,58px)/1.1 var(--hand);color:#fff3d6;letter-spacing:.08em;text-shadow:0 0 14px rgba(255,210,140,.55),2px 2px 0 #2a1d15}
+.sc-sign small{display:block;margin-top:2px;font:600 clamp(18px,4vw,24px)/1 var(--en);color:#e9c98f;letter-spacing:.12em}
+.sc-lamp{position:absolute;left:50%;top:-14px;width:44px;height:14px;margin-left:-22px;border-radius:0 0 22px 22px;background:#e9c98f;box-shadow:0 10px 30px 10px rgba(255,214,140,.35)}
+
+.sc-main{max-width:1080px;margin:0 auto;padding:30px 14px 40px}
+
+/* 黒板 */
+.sc-hero{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:0 0 22px}
+.sc-board{position:relative;padding:22px 24px;border-radius:12px;background:radial-gradient(ellipse at 30% 20%,#3c4a41,var(--chalk) 70%);color:#f4f1e6;border:10px solid #8a5a35;box-shadow:inset 0 0 40px rgba(0,0,0,.45),0 8px 0 #6a4327,0 14px 24px rgba(0,0,0,.2)}
+.sc-today{margin:0;font:600 24px/1 var(--en);color:#ffd98a}
+.sc-board h2{margin:6px 0 10px;font:400 clamp(26px,5.4vw,40px)/1.35 var(--hand);letter-spacing:.04em}
+.sc-lead{margin:0 0 12px;font:500 14.5px/1.9 var(--maru);color:#e8e4d6}
+.sc-count{display:flex;gap:16px;flex-wrap:wrap;margin:0;font:400 18px/1.3 var(--hand)}
+.sc-count b{font-size:28px;color:#ffd98a;margin:0 2px}
+/* 湯気のたつカップ */
+.sc-cup{position:relative;width:150px;height:150px}
+.sc-cup .cup{position:absolute;left:28px;bottom:26px;width:84px;height:64px;background:#fff;border-radius:0 0 40px 40px;box-shadow:inset -8px -6px 0 #eadfce}
+.sc-cup .cup::before{content:"";position:absolute;left:4px;right:4px;top:-6px;height:14px;border-radius:50%;background:radial-gradient(ellipse,#6b3f22 55%,#fff 58%)}
+.sc-cup .cup::after{content:"";position:absolute;right:-24px;top:12px;width:28px;height:30px;border:7px solid #fff;border-left:0;border-radius:0 18px 18px 0}
+.sc-cup .saucer{position:absolute;left:12px;bottom:16px;width:126px;height:16px;border-radius:50%;background:#fff;box-shadow:0 6px 0 #e6d6bd}
+.sc-cup i{position:absolute;bottom:96px;width:10px;height:40px;border-radius:10px;background:linear-gradient(transparent,rgba(255,255,255,.9));filter:blur(2px);opacity:0}
+.sc-cup i:nth-child(1){left:46px}.sc-cup i:nth-child(2){left:66px;animation-delay:.8s!important}.sc-cup i:nth-child(3){left:86px;animation-delay:1.6s!important}
+@media(prefers-reduced-motion:no-preference){.sc-cup i{animation:steam 2.6s ease-in-out infinite}}
+@keyframes steam{0%{opacity:0;transform:translateY(12px) scaleX(1)}40%{opacity:.8}100%{opacity:0;transform:translateY(-26px) scaleX(1.6) rotate(8deg)}}
+@media(max-width:600px){.sc-hero{grid-template-columns:1fr}.sc-cup{display:none}}
+
+/* 札 */
+.tag-free,.tag-paid{display:inline-block;font:700 12px/1 var(--maru);letter-spacing:.06em;padding:6px 10px;border-radius:999px;color:#fff;vertical-align:1px}
+.tag-free{background:var(--green);box-shadow:0 2px 0 #1d6440}
+.tag-paid{background:var(--brown);box-shadow:0 2px 0 #7a4519}
+
+/* メニューのタブ */
+.sc-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;margin:0 0 6px;scrollbar-width:thin}
+@media(min-width:760px){.sc-tabs{flex-wrap:wrap;overflow:visible}}
+.sc-tabs button{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font:700 14px/1 var(--maru);color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer;transition:transform .15s,background .2s}
+.sc-tabs button:hover{transform:translateY(-2px)}
+.sc-tabs button i{font-style:normal;font-size:11.5px;background:var(--line);border-radius:999px;padding:2px 7px}
+.sc-tabs button[aria-selected=true]{background:var(--wood);border-color:var(--wood);color:#fff3d6}
+.sc-tabs button[aria-selected=true] i{background:#e9c98f;color:var(--wood2)}
+
+/* 見出し */
+.sc-sec{grid-column:1/-1;margin:14px 0 0;font:400 26px/1.3 var(--hand);color:var(--green);display:flex;align-items:center;gap:12px}
+.sc-sec::after{content:"";flex:1;border-top:2px dashed currentColor;opacity:.5}
+.sc-sec.paid{color:var(--brown)}
+
+/* メニューの品（白いお皿にのせる） */
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.sc-item{display:flex;flex-direction:column;background:var(--paper);border-radius:18px;border:1.5px solid var(--line);box-shadow:0 6px 0 #e9dcc4,0 12px 22px rgba(90,59,38,.12);overflow:hidden;animation:scIn .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0s);transition:transform .2s}
+.sc-item:hover{transform:translateY(-4px)}
+@keyframes scIn{from{opacity:0;transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){.sc-item{animation:none}}
+.sc-plate{position:relative;display:grid;place-items:center;aspect-ratio:16/10;margin:16px 16px 0;border-radius:50%/42%;background:radial-gradient(ellipse at 50% 45%,#fff 0 58%,#f1e7d6 60%,#fff 66%,#efe4d2 100%);box-shadow:inset 0 -6px 12px rgba(0,0,0,.06);overflow:visible}
+.sc-plate img{max-width:78%;max-height:74%;object-fit:contain;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.is-stamp .sc-plate img{box-shadow:none;max-height:80%}
+.sc-plate .tag-free,.sc-plate .tag-paid{position:absolute;z-index:2;right:-4px;top:-6px;font-size:13px;padding:8px 12px;transform:rotate(8deg);white-space:nowrap}
+.sc-emoji{font-size:54px;filter:drop-shadow(0 4px 4px rgba(0,0,0,.15))}
+.sc-wave{display:flex;align-items:center;gap:4px;height:44%;width:62%}
+.sc-wave i{flex:1;border-radius:4px;background:linear-gradient(#e5a23a,#a8642e)}
+.sc-body{display:flex;flex-direction:column;gap:6px;padding:12px 18px 18px;flex:1}
+.sc-body h3{margin:0;font:700 17px/1.4 var(--maru)}
+.sc-desc{margin:0;font-size:13.5px;line-height:1.75;color:var(--sub)}
+.sc-meta{margin:0;font-size:12px;color:#9a8470}
+.sc-sounds{display:flex;flex-wrap:wrap;gap:5px;margin:2px 0}
+.sc-sounds button{font:600 12px/1 var(--maru);padding:6px 9px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.sc-sounds button.on{background:#e5a23a;border-color:#e5a23a;color:#fff}
+.sc-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font:700 14px/1 var(--maru);text-decoration:none;padding:12px 18px;border-radius:999px}
+.sc-dl{background:var(--green);color:#fff;box-shadow:0 3px 0 #1d6440}
+.sc-buy{background:var(--brown);color:#fff;box-shadow:0 3px 0 #7a4519}
+.sc-dl:active,.sc-buy:active{transform:translateY(2px);box-shadow:none}
+.sc-soon{background:#eee3cf;color:var(--sub)}
+.is-soon{opacity:.85}
+
+/* おやくそく */
+.sc-rule{margin:34px 0 0;padding:20px 22px;background:var(--paper);border:2px dashed var(--line);border-radius:16px}
+.sc-rule h2{margin:0 0 10px;font:400 24px/1.3 var(--hand)}
+.sc-rule-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.sc-rule-cols{grid-template-columns:1fr}}
+.sc-rule ul{margin:8px 0 0;padding-left:1.2em;font-size:13.5px;line-height:1.9}
+.sc-rule li.ng{color:#b03a2e}
+.sc-foot{text-align:center;padding:18px 12px 90px;font-size:13px;color:var(--sub)}

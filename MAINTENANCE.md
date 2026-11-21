@@ -296,3 +296,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 鑑賞記録の候補：`tools/movie_candidates.json`（洋画 yo／邦画 ho、[検索ことば, 公開年]）→ `node tools/build_watchlist.js` で C-Log を検索して `movie/watchlist.js` を作る（前の結果は引き継ぐ。題名一致＋年が近いものをえらぶ）。2009年までは旧作、2010年からは新作。
 - チェック：映画ブースのいちばん下の「管理人」→ パスワード（頭の中ブースと同じ `HEAD_ADMIN_HASH`）。ポスターを押すと「観た ✓」。リストにない映画は、管理人モードの検索から、いま開いているタブ（洋画／邦画）に足せる。
 - 保存先：`api/watched.js`（Upstash：`w:ids` 観た映画、`w:at` チェックした時刻、`w:extra` 足した映画）。パスワードのまちがいは1時間8回まで。
+
+## 素カフェ（素材カフェ）
+- `socafe/`：無料・有料の素材をカフェのメニュー風に並べるブース。`socafe/socafe.js` が描く。
+- 無料素材：`python3 tools/build_socafe.py`（Pillow が必要）で `socafe/dl/*.zip`・見本の絵 `socafe/img/*`・一覧 `socafe/free.js` を作る（バナー・ドット絵アイコン・背景パターン・効果音 WAV・壁紙・窓とふきだし。すべてオリジナル）。バナーを作り直したら（tools/build_banners.py）、これも走らせる。学習キット（`bookmarks/downloads.js`）も無料の棚に並ぶ。
+- 有料素材：`socafe/menu.js` に手で書く（price・shop・url。soon: true で「準備中」）。LINE スタンプは `stamp/stamps.js` から自動で並ぶ（LINE STORE へ）。
+- 利用の決まり（無料素材）：個人・商用OK、加工OK、クレジット不要、素材そのものの再配布・販売はNG。zip の README.txt とページの「ご利用のおやくそく」に同じ文。

@@ -60,7 +60,7 @@ FOOTER = '''<div class="r-foot" role="contentinfo">
 # フッターに並べるバナー（88×31）。絵は tools/build_banners.py が作る。None はリンクなしの飾り
 BANNERS = [('/', 'bnr-givetex.gif', 'GiveTex'), ('/apps/', 'b-apps.gif', 'アプリ'), ('/books/', 'bnr-dopayomi.gif', 'ドパ読！'), ('/doron/', 'bnr-doron.gif', 'どろん'),
            ('/note/', 'b-note.gif', 'note ブース（よみもの）'), ('/stamp/', 'b-stamp.gif', 'スタンプ'), ('/game/', 'b-game.gif', 'ゲームブース'), ('/#mg', 'b-minigame.gif', 'ミニゲーム（ホームのゲームコーナー）'),
-           ('/game/board/', 'b-board.gif', 'ボードゲーム（CPU 対戦）'), ('/museum/', 'b-museum.gif', '美術館'), ('/ramen/', 'b-ramen.gif', 'ラーメン'), ('/movie/', 'b-movie.gif', '映画（C-Log Web）'),
+           ('/game/board/', 'b-board.gif', 'ボードゲーム（CPU 対戦）'), ('/museum/', 'b-museum.gif', '美術館'), ('/ramen/', 'b-ramen.gif', 'ラーメン'), ('/socafe/', 'b-socafe.gif', '素カフェ（素材カフェ）'), ('/movie/', 'b-movie.gif', '映画（C-Log Web）'),
            ('/diary/', 'b-diary.gif', '開発日記'), ('/guestbook/', 'b-guestbook.gif', 'ゲストブック（足あと帳）'), ('/links/', 'b-links.gif', 'リンク集'), ('/?meishi', 'b-meishi.gif', '名刺'),
            ('/bookmarks/', 'b-backstage.gif', '裏口（backstage）'), ('/', 'b-kiriban.gif', 'キリ番'), ('/links/', 'b-linkfree.gif', 'リンクフリー'), ('/about.html', 'b-since.gif', 'Since 2026'),
            (None, 'b-800x600.gif', '800×600 推奨'), (None, 'koujichu.gif', '工事中')]
@@ -162,6 +162,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-21', tag='ブース', title='素カフェ（素材カフェ）をオープン',
+      body='<p>新しいブース「<a href="/socafe/">素カフェ</a>」をつくりました。このサイトのために作った素材を、カフェのメニューのように並べています。</p><ul class="r-list"><li>無料：88×31 バナー、ドット絵アイコン、背景パターン、ファミコン風の効果音（その場で試聴できます）、壁紙、レトロな窓とふきだし。学習キットも。</li><li>有料：LINE スタンプ（LINE STORE へ）。</li></ul><p>無料の素材は、個人でもお仕事でも使えます。素材そのものを配ったり売ったりするのだけ、NG です。</p>'),
  dict(date='2026-11-21', tag='ブース', title='映画ブースに「管理人の鑑賞記録」',
       body='<p><a href="/movie/">映画ブース</a>を見ごたえのある形にしました。いちばん上に、いま話題の映画が大きな背景で切りかわるスライド。話題の映画の列には、1〜10位の順位がつきました。</p><p>それから「管理人の鑑賞記録」をはじめました。洋画と邦画のタブがあって、観た映画のポスターが並びます。新作・旧作・最近観た順でしぼりこめます。候補は洋画118本・邦画95本。これから少しずつチェックしていきます。</p>'),
  dict(date='2026-11-19', tag='サイト', title='AI が入った。うしろの宇宙も 3D に',
@@ -428,6 +430,7 @@ def icon(href, img, name, note, dev=False, ext=False):
 # ================= トップページ =================
 def build_index():
     whats = [
+        ('2026-11-21', '新ブース<a href="/socafe/">「素カフェ」</a>オープン！ バナー・アイコン・効果音・壁紙などの素材を無料でダウンロードできます', True),
         ('2026-11-21', '<a href="/movie/">映画ブース</a>がリニューアル！ 話題の映画のスライドと、管理人の鑑賞記録（洋画／邦画）', True),
         ('2026-11-19', 'AI が入りました！ イルカに質問・<a href="/books/">本えらびコンシェルジュ</a>・fumi の返事／うしろの宇宙が 3D に。ロケットと UFO はタップすると…？', True),
         ('2026-11-19', '左上に 3D の UFO キャッチャー、右下に 3D のイルカがやってきました！ イルカは押すとしゃべります', True),
@@ -489,12 +492,12 @@ document.write(rGreeting());
             win('どろん - オカルトブース', doron, '👻', cls='dark') +
             win('note ブース - 最新の記事', '<p class="r-center" style="margin:0 0 8px">NingentteWinner の note から、さいきんの記事。</p><div class="r-shelf r-notes">' + ''.join(f'<a class="r-book r-note" href="/note/posts/{E(p["slug"])}.html"><img src="{E(p["cover"])}" width="160" height="84" alt="" loading="lazy"><b>{E(p["title"])}</b><small>{p["date"].replace("-", "/")}</small></a>' for p in NOTE_POSTS[:8]) + '</div><p class="r-center"><a class="r-btn" href="/note/">note ブースへ（全 ' + str(len(js_json("note/posts.js", "NOTE_POSTS"))) + ' 本）&gt;&gt;</a></p>', '✒') +
             win('スタンプブース - LINE スタンプ', '<p class="r-center" style="margin:0 0 8px">fumi の LINE スタンプ <b>' + str(len(STAMP_SETS)) + 'セット</b>。トーク画面で送ってためせます。</p><div class="r-shelf r-stamps">' + ''.join(f'<a class="r-book r-stamp" href="/stamp/" title="{E(x["title"])}"><img src="{E(x["main"])}" width="96" height="96" alt="{E(x["title"])}" loading="lazy"><small>{E(x["title"])}</small></a>' for x in list(reversed(STAMP_SETS))[:10]) + '</div><p class="r-center"><a class="r-btn" href="/stamp/">スタンプブースへ &gt;&gt;</a></p>', '💬') +
-            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>所蔵品の展示（毎日かわる）と来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン14杯。麺がのびる</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
+            '<a name="booths" id="booths"></a>' + win('ブース案内 - GiveTex のなかみ', '<table class="r-tbl" summary="ブース一覧"><tr><th></th><th>ブース</th><th>なにがある？</th></tr><tr><td>💾</td><td><a href="/apps/">アプリ</a></td><td>iPhone / Mac の学習アプリ</td></tr><tr><td>📚</td><td><a href="/books/">ドパ読！</a></td><td>Kindle「30秒で読む」シリーズ</td></tr><tr><td>✒</td><td><a href="/note/">note</a></td><td>NingentteWinner の創作・TALES</td></tr><tr><td>💬</td><td><a href="/stamp/">スタンプ</a></td><td>LINE スタンプのトーク</td></tr><tr><td>🎮</td><td><a href="/game/">ゲーム</a></td><td>unityroom のゲームとゲームのつぶやき</td></tr><tr><td>🖼</td><td><a href="/museum/">美術館</a></td><td>所蔵品の展示（毎日かわる）と来館記録</td></tr><tr><td>🍜</td><td><a href="/ramen/">ラーメン</a></td><td>食べたラーメン14杯。麺がのびる</td></tr><tr><td>☕</td><td><a href="/socafe/">素カフェ</a></td><td>素材のダウンロード（無料・有料）</td></tr><tr><td>🎬</td><td><a href="/movie/">映画</a></td><td>話題の映画と、みんなの匿名の感想ノート</td></tr><tr><td>👻</td><td><a href="/doron/">どろん</a></td><td>オカルトブース</td></tr></table><p class="r-small" style="text-align:right;margin:6px 0 0"><a href="/bookmarks/" title="サイトの裏側">裏口 &gt;_</a></p>', '🗺') +
             '<a name="diary" id="diary"></a>' + win('開発日記 - メモ帳', diary_top + '<p class="r-small">→ <a href="/diary/">日記をぜんぶ読む</a></p>', '📝') +
             '<a name="articles" id="articles"></a>' + win('記事 - AI・学びのお役立ち', f'<ul class="r-list">{arts}</ul>', '📄') +
             win('Web拍手', '<p class="r-small" style="margin:0 0 6px">このホームページが気に入ったら、拍手で応援してね！</p><div class="r-clap" data-page="home"><button type="button" class="r-btn">👏 拍手する</button> <b class="r-clap-n">0</b> ぱちぱち<br><input type="text" maxlength="100" placeholder="ひとこと（管理人にだけ届きます・なくてもOK）" aria-label="拍手にそえるひとこと"><p class="r-clap-out r-small" aria-live="polite"></p></div>', '👏') +
             '<div class="r-under"><span>🚧 このホームページは いつでも 工事中 です 🚧</span></div>')
-    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/sitemap/', 'サイトマップ'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
+    menu = ''.join(f'<a href="{h}">{t}</a>' for h, t in [('/apps/', 'アプリ置き場'), ('/books/', 'ドパ読！書庫'), ('/doron/', 'どろん（オカルト）'), ('/note/', 'note ブース'), ('/stamp/', 'スタンプブース'), ('/game/', 'ゲームブース'), ('/museum/', '美術館ブース'), ('/ramen/', 'ラーメンブース'), ('/socafe/', '素カフェ（素材）'), ('/movie/', '映画ブース'), ('/diary/', '開発日記'), ('/guestbook/', 'ゲストブック'), ('/links/', 'リンク集'), ('/sitemap/', 'サイトマップ'), ('/#articles', 'お役立ち記事'), ('/about.html', '管理人のプロフィール'), ('/privacy.html', 'プライバシー')])
     side = (win('MENU', f'<div class="r-menu">{menu}</div>', '📁', bodycls='') +
             win('カウンター', '<p class="r-center" style="margin:0">あなたは<br><span class="r-counter"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></span><br><span id="r-count-label">人目のお客さまです</span></p><p id="r-today" class="r-center r-small" style="margin:4px 0 0"></p><p id="r-kiri" class="r-center r-red r-small" style="margin:4px 0 0"></p><p id="r-kiri-list" class="r-center r-small" style="margin:4px 0 0"></p><p class="r-small r-center" style="margin:4px 0 0">since 2026.03.22</p><p class="r-small r-center" style="margin:2px 0 0"><a href="/guestbook/">ゲストブックに足あと ✎</a></p>', '🔢') +
             win('BGM - MIDI プレイヤー', '<div id="r-bgm" class="r-bgm"><p class="r-bgm-now r-small">BGM は OFF です</p><select aria-label="曲をえらぶ"></select> <button type="button" class="r-btn">▶ さいせい</button></div><p class="r-small" style="margin:4px 0 0">♪ オリジナル曲です。押したときだけ鳴ります（音量に注意）</p>', '🎵') +
@@ -736,7 +739,7 @@ def build_sitemap_page():
             ('/books/', 'ドパ読！（Kindle）', [('/books/#' + k, re.sub(r'^\S+\s', '', v)) for k, v in BOOKS['cats'].items()]),
             ('/doron/', 'どろん（オカルト）', [('/doron/#relics', 'relics'), ('/doron/#reikai', '霊界案内所'), ('/doron/#c-circle', 'Cサークル')]),
             ('/note/', 'note ブース', []), ('/stamp/', 'スタンプブース', []), ('/game/', 'ゲームブース', []), ('/museum/', '美術館ブース', []),
-            ('/ramen/', 'ラーメンブース', []), ('/movie/', '映画ブース（C-Log Web）', []), ('/bookmarks/', 'ブックマーク（裏口）', []),
+            ('/ramen/', 'ラーメンブース', []), ('/socafe/', '素カフェ（素材カフェ）', []), ('/movie/', '映画ブース（C-Log Web）', []), ('/bookmarks/', 'ブックマーク（裏口）', []),
             ('/#articles', 'お役立ち記事', [(h, t) for h, t in ARTICLES])]
     def node(h, t, kids, last):
         k = ''.join(node(a, b, [], i == len(kids) - 1) for i, (a, b) in enumerate(kids))

@@ -7,10 +7,10 @@
   // [表示名, リンク先, フォント]：それぞれのブースの雰囲気に合わせて、全部ちがうフォント
   var LINKS = [['GiveTex ホーム', '/', '"DotGothic16"'], ['アプリ', '/apps/', '"WDXL Lubrifont JP N"'], ['ドパ読！', '/books/', '"Dela Gothic One"'],
     ['どろん', '/doron/', '"GT Osorosige"'], ['note', '/note/', '"Noto Serif JP"'], ['スタンプ', '/stamp/', '"M PLUS Rounded 1c"'],
-    ['ゲーム', '/game/', '"RocknRoll One"'], ['美術館', '/museum/', '"Shippori Mincho"'], ['ラーメン', '/ramen/', '"Mochiy Pop One"'],
+    ['ゲーム', '/game/', '"RocknRoll One"'], ['美術館', '/museum/', '"Shippori Mincho"'], ['ラーメン', '/ramen/', '"Mochiy Pop One"'], ['素カフェ', '/socafe/', '"Yusei Magic"'],
     ['映画（C-Log）', '/movie/', '"Zen Antique"'], ['開発日記', '/diary/', '"Klee One"'], ['お問い合わせ', '/contact/', '"Kiwi Maru"']];
   var FAMILIES = 'family=DotGothic16&family=WDXL+Lubrifont+JP+N&family=Dela+Gothic+One&family=Noto+Serif+JP:wght@700&family=M+PLUS+Rounded+1c:wght@800' +
-    '&family=RocknRoll+One&family=Shippori+Mincho:wght@700&family=Mochiy+Pop+One&family=Zen+Antique&family=Klee+One:wght@600&family=Kiwi+Maru:wght@500';
+    '&family=RocknRoll+One&family=Shippori+Mincho:wght@700&family=Mochiy+Pop+One&family=Zen+Antique&family=Klee+One:wght@600&family=Kiwi+Maru:wght@500&family=Yusei+Magic';
   var fontsLoaded = false;
   function loadFonts() {
     if (fontsLoaded) return; fontsLoaded = true;
@@ -25,7 +25,7 @@
   }
   var here = location.pathname;
   /* ---- ブースめぐり（スタンプラリー）：行ったブースをこの端末だけに覚えておく ---- */
-  var TOUR = [['apps', 'アプリ'], ['books', 'ドパ読！'], ['doron', 'どろん'], ['note', 'note'], ['stamp', 'スタンプ'], ['game', 'ゲーム'], ['museum', '美術館'], ['ramen', 'ラーメン'], ['movie', '映画']];
+  var TOUR = [['apps', 'アプリ'], ['books', 'ドパ読！'], ['doron', 'どろん'], ['note', 'note'], ['stamp', 'スタンプ'], ['game', 'ゲーム'], ['museum', '美術館'], ['ramen', 'ラーメン'], ['movie', '映画'], ['socafe', '素カフェ']];
   var seen = []; try { seen = JSON.parse(localStorage.getItem('gt-tour') || '[]') || []; } catch (e) {}
   var booth = (here.match(/^\/([a-z]+)\//) || [])[1], isBooth = TOUR.some(function (t) { return t[0] === booth; }), justDone = false;
   if (isBooth && seen.indexOf(booth) < 0) { seen.push(booth); justDone = seen.length === TOUR.length; try { localStorage.setItem('gt-tour', JSON.stringify(seen)); } catch (e) {} }
