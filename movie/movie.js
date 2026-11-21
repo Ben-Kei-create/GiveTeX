@@ -246,4 +246,5 @@
   }
   loadPop();
   onView($('#board'), loadBoard);
+  window.CLog = { openMovie: openMovie, card: card, poster: poster, getJSON: getJSON }; // movie/watched.js などから使う
 })();

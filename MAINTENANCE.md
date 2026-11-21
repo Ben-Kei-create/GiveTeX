@@ -290,3 +290,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - `assets/home-space.js`（ホームだけ）。うしろの宇宙は `.r-sky`（画面に固定・いちばん奥）。ロケットと UFO は、窓や文字のないところをタップすると「やられ」→ 煙 → 立てなおす。
 - ひみつの入口（`.secret-bt`：階段・扉・土管）は、3D で描いた絵に差しかえ、押すとへこむ・ふるえる・音。扉はひらき、土管はしずみ、階段はおりてから /stage/ へ。
 - `api/_ai.js` の補足：使えたモデルを1日覚える（KV `ai:model`）。gpt-oss は reasoning_effort に none が使えない（400）ので low。考える途中の文も max_tokens に数えるので、上限は多め（1200）にして答えはこちらで切る。
+
+## 映画ブースの見ごたえ・管理人の鑑賞記録
+- `movie/watched.js`：いま話題のスライド（`#hl`。話題の上位6本の背景画像を /api/clog?r=movie から）、話題の列の1〜10位（CSS）、管理人の鑑賞記録（`#watched`）。`movie/movie.js` が `window.CLog`（openMovie・card・poster）を出していて、それを使う。
+- 鑑賞記録の候補：`tools/movie_candidates.json`（洋画 yo／邦画 ho、[検索ことば, 公開年]）→ `node tools/build_watchlist.js` で C-Log を検索して `movie/watchlist.js` を作る（前の結果は引き継ぐ。題名一致＋年が近いものをえらぶ）。2009年までは旧作、2010年からは新作。
+- チェック：映画ブースのいちばん下の「管理人」→ パスワード（頭の中ブースと同じ `HEAD_ADMIN_HASH`）。ポスターを押すと「観た ✓」。リストにない映画は、管理人モードの検索から、いま開いているタブ（洋画／邦画）に足せる。
+- 保存先：`api/watched.js`（Upstash：`w:ids` 観た映画、`w:at` チェックした時刻、`w:extra` 足した映画）。パスワードのまちがいは1時間8回まで。

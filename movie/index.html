@@ -17,6 +17,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Shippori+Mincho:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/movie/movie.css">
 <script src="/movie/movie.js" defer></script>
+<script src="/movie/watchlist.js" defer></script>
+<script src="/movie/watched.js" defer></script>
 <script src="/assets/img-fallback.js"></script>
 <script src="/assets/gt-menu.js" defer></script>
 <!-- seo -->
@@ -61,9 +63,22 @@
       </div>
       <a class="oc-btn" href="https://line.me/ti/g2/PHAPvF3mwLGU-StyvUEee-7BIArtgj9z--SnQQ?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener">参加する ›</a>
     </section>
+    <section class="hl" id="hl" aria-label="いま話題の映画" hidden>
+      <div class="hl-track" id="hl-track"></div>
+      <div class="hl-ui"><button type="button" class="hl-nav" data-d="-1" aria-label="前の映画">‹</button><div class="hl-dots" id="hl-dots" role="tablist" aria-label="映画をえらぶ"></div><button type="button" class="hl-nav" data-d="1" aria-label="次の映画">›</button></div>
+    </section>
     <section class="sec" id="pop" aria-labelledby="h-pop">
       <div class="sec-hd"><h2 id="h-pop"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#1c1b19"/><g fill="#d6d3cf"><circle cx="16" cy="8.5" r="3.4"/><circle cx="16" cy="23.5" r="3.4"/><circle cx="8.5" cy="16" r="3.4"/><circle cx="23.5" cy="16" r="3.4"/><circle cx="16" cy="16" r="1.6"/></g></svg>Now Popular</h2><small>いま話題の映画</small><button class="more" type="button" id="pop-more" hidden>もっと見る ›</button></div>
       <div class="row" id="pop-list" aria-live="polite"></div>
+    </section>
+    <section class="sec wt" id="watched" aria-labelledby="h-wt">
+      <div class="sec-hd"><h2 id="h-wt"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="19" rx="2" fill="#1c1b19"/><path d="M3 12h26M8 7l-2 5M14 7l-2 5M20 7l-2 5M26 7l-2 5" stroke="#d6d3cf" stroke-width="1.6"/><path d="M12 16l7 3.5-7 3.5z" fill="#ffd133"/></svg>管理人の鑑賞記録</h2><small>GiveTex の管理人が、これまでに観た映画</small></div>
+      <div class="wt-tabs" role="tablist" aria-label="洋画・邦画"><button type="button" role="tab" data-k="yo" aria-selected="true">洋画<i></i></button><button type="button" role="tab" data-k="ho" aria-selected="false">邦画<i></i></button></div>
+      <div class="wt-bar"><div class="wt-prog" aria-hidden="true"><b></b></div><p class="wt-stat" aria-live="polite"></p></div>
+      <div class="wt-filter" role="group" aria-label="しぼりこみ"><button type="button" data-f="all" aria-pressed="true">すべて</button><button type="button" data-f="new" aria-pressed="false">新作（2010年〜）</button><button type="button" data-f="old" aria-pressed="false">旧作（〜2009年）</button><button type="button" data-f="recent" aria-pressed="false">最近観た順</button></div>
+      <div class="wt-admin" hidden><input type="search" class="wt-q" placeholder="リストにない映画をさがして足す" aria-label="映画をさがして足す" autocomplete="off"><div class="wt-found"></div><p class="wt-help">ポスターを押すと「観た ✓」が切りかわります。うすい絵は、まだ観ていない映画です。</p></div>
+      <div class="cards wt-grid" id="wt-grid" aria-live="polite"></div>
+      <p class="wt-foot"><button type="button" class="wt-login">管理人</button></p>
     </section>
     <section class="sec" id="news-sec" aria-labelledby="h-news" hidden>
       <div class="sec-hd"><h2 id="h-news">News</h2><small>C-Log からのお知らせ</small></div>
