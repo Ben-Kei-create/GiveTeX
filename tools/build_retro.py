@@ -475,7 +475,7 @@ def build_index():
     N_GAMES = len(js_json('game/game-data.js', 'GAME')['games'])
     last = max([DIARY[0]['date'], whats[0][0]] + [p['date'] for p in NOTE_POSTS[:1]])
     UPDATED = f'{int(last[:4])}年{int(last[5:7])}月{int(last[8:10])}日'
-    rows = ''.join(f'<tr><td class="date">{d.replace("-", "/")}</td><td>{t} {NEWGIF if n else ""}</td></tr>' for d, t, n in whats)
+    rows = ''.join(f'<tr><td class="date">{d.replace("-", "/")}</td><td>{t} {NEWGIF if n else ""}</td></tr>' for d, t, n in sorted(whats, key=lambda w: w[0], reverse=True)[:6])  # ホームには直近6件まで（それより前は開発日記へ）
     welcome = f'''<p class="r-big"><script type="text/javascript"><!--
 document.write(rGreeting());
 //--></script><noscript>ようこそ！</noscript></p>

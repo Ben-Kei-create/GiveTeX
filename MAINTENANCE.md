@@ -304,3 +304,4 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 利用の決まり（無料素材）：個人・商用OK、加工OK、クレジット不要、素材そのものの再配布・販売はNG。zip の README.txt とページの「ご利用のおやくそく」に同じ文。
 - 教材・プリント：PDF を `socafe/dl/study/` に置き、`tools/socafe_study.json` に書いて `tools/build_socafe.py` を実行（表紙の見本は1ページ目から作る。pdftoppm が必要）。画像だけの重い PDF（NotebookLM のスライドなど）は、ページを JPEG にして作り直すと軽くなる（一次不等式のスライド：11.6MB → 2.6MB）。教材は「個人の学習・授業で自由に使える（印刷・配布OK）、再配布・販売は連絡」。
 - むかしのホームページ素材（NEW!・区切り線・ボタン・カウンターの数字）も build_socafe.py の hp_parts() が作る。
+- ホームの What's New は直近6件だけ表示（build_retro.py の whats に足していけば、古いものは自動で消える。全部は開発日記へ）。
