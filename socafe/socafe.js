@@ -10,7 +10,7 @@
   function kb(n) { return n < 1048576 ? Math.max(1, Math.round(n / 1024)) + ' KB' : (n / 1048576).toFixed(1) + ' MB'; }
   var grid = $('#sc-grid'), tabs = $('.sc-tabs');
 
-  var FREE = (window.SOCAFE_FREE || []).map(function (x) { return { free: true, id: x.id, cat: x.cat, title: x.title, desc: x.desc, fmt: x.fmt, img: x.prev, url: '/socafe/dl/' + x.file, size: x.bytes, sounds: x.sounds || null }; });
+  var FREE = (window.SOCAFE_FREE || []).map(function (x) { return { free: true, id: x.id, cat: x.cat, title: x.title, desc: x.desc, fmt: x.fmt, img: x.prev, url: '/socafe/dl/' + x.file, size: x.bytes, sounds: x.sounds || null, pdf: !!x.pdf }; });
   (window.DOWNLOADS || []).forEach(function (d) { FREE.push({ free: true, id: d.file, cat: 'kit', title: d.title, desc: d.desc, fmt: 'zip（' + d.files + 'ファイル）', img: '', url: '/downloads/' + d.file, size: d.bytes, emoji: '📚' }); });
   var PAID = (window.SOCAFE_PAID || []).map(function (x) { return { free: false, id: x.id, cat: x.cat || 'icon', title: x.title, desc: x.desc, fmt: x.fmt, img: x.img || '', url: x.url || '', price: x.price || '', shop: x.shop || '', soon: !!x.soon }; });
   var ST = window.STAMP || {};
@@ -21,7 +21,7 @@
   var ALL = FREE.concat(PAID);
   $('#n-free').textContent = FREE.length; $('#n-paid').textContent = PAID.filter(function (p) { return !p.soon; }).length;
 
-  var CATS = [['all', 'すべて', '☕'], ['free', '無料だけ', '🆓'], ['icon', 'アイコン・バナー', '🍪'], ['bg', '背景・壁紙', '🍰'], ['sound', 'サウンド', '🎵'], ['kit', '学習キット', '📚'], ['stamp', 'LINEスタンプ', '💬']];
+  var CATS = [['all', 'すべて', '☕'], ['free', '無料だけ', '🆓'], ['study', '教材・プリント', '📝'], ['icon', 'アイコン・バナー', '🍪'], ['bg', '背景・壁紙', '🍰'], ['sound', 'サウンド', '🎵'], ['kit', '学習キット', '📚'], ['stamp', 'LINEスタンプ', '💬']];
   var cur = 'all';
   CATS.forEach(function (c) {
     var n = c[0] === 'all' ? ALL.length : c[0] === 'free' ? FREE.length : ALL.filter(function (x) { return x.cat === c[0]; }).length; if (!n) return;
@@ -51,6 +51,7 @@
     body.appendChild(el('h3', null, x.title));
     if (x.desc) body.appendChild(el('p', 'sc-desc', x.desc));
     var meta = [x.fmt, x.size ? kb(x.size) : '', x.shop ? x.shop : ''].filter(Boolean).join('　・　'); if (meta) body.appendChild(el('p', 'sc-meta', meta));
+    if (x.pdf) body.appendChild(el('p', 'sc-note', '個人の学習・授業で自由に使えます（印刷・配布OK）。再配布や販売は、お問い合わせから一声ください。'));
     if (x.sounds) {
       var sw = el('div', 'sc-sounds');
       x.sounds.forEach(function (s) { var b = el('button', null, '▶ ' + s.n); b.type = 'button'; b.addEventListener('click', function () { play(s.u, b); }); sw.appendChild(b); });
@@ -58,7 +59,10 @@
     }
     var act;
     if (x.soon) act = el('span', 'sc-btn sc-soon', 'ただいま準備中');
-    else if (x.free) { act = el('a', 'sc-btn sc-dl', 'ダウンロード ↓'); act.href = x.url; act.setAttribute('download', ''); act.addEventListener('click', function () { ga('socafe_dl', { id: x.id }); }); }
+    else if (x.free) {
+      act = el('div', 'sc-acts'); var dl = el('a', 'sc-btn sc-dl', x.pdf ? 'PDF をダウンロード ↓' : 'ダウンロード ↓'); dl.href = x.url; dl.setAttribute('download', ''); dl.addEventListener('click', function () { ga('socafe_dl', { id: x.id }); }); act.appendChild(dl);
+      if (x.pdf) { var op = el('a', 'sc-btn sc-open', 'ひらいて見る ↗'); op.href = x.url; op.target = '_blank'; op.rel = 'noopener'; op.addEventListener('click', function () { ga('socafe_open', { id: x.id }); }); act.appendChild(op); }
+    }
     else { act = el('a', 'sc-btn sc-buy', (x.shop || 'お店') + 'で見る ↗'); act.href = x.url; act.target = '_blank'; act.rel = 'noopener'; act.addEventListener('click', function () { ga('socafe_buy', { id: x.id }); }); }
     body.appendChild(act);
     a.appendChild(body);

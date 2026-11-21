@@ -302,3 +302,5 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 無料素材：`python3 tools/build_socafe.py`（Pillow が必要）で `socafe/dl/*.zip`・見本の絵 `socafe/img/*`・一覧 `socafe/free.js` を作る（バナー・ドット絵アイコン・背景パターン・効果音 WAV・壁紙・窓とふきだし。すべてオリジナル）。バナーを作り直したら（tools/build_banners.py）、これも走らせる。学習キット（`bookmarks/downloads.js`）も無料の棚に並ぶ。
 - 有料素材：`socafe/menu.js` に手で書く（price・shop・url。soon: true で「準備中」）。LINE スタンプは `stamp/stamps.js` から自動で並ぶ（LINE STORE へ）。
 - 利用の決まり（無料素材）：個人・商用OK、加工OK、クレジット不要、素材そのものの再配布・販売はNG。zip の README.txt とページの「ご利用のおやくそく」に同じ文。
+- 教材・プリント：PDF を `socafe/dl/study/` に置き、`tools/socafe_study.json` に書いて `tools/build_socafe.py` を実行（表紙の見本は1ページ目から作る。pdftoppm が必要）。画像だけの重い PDF（NotebookLM のスライドなど）は、ページを JPEG にして作り直すと軽くなる（一次不等式のスライド：11.6MB → 2.6MB）。教材は「個人の学習・授業で自由に使える（印刷・配布OK）、再配布・販売は連絡」。
+- むかしのホームページ素材（NEW!・区切り線・ボタン・カウンターの数字）も build_socafe.py の hp_parts() が作る。

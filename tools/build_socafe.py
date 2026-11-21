@@ -254,8 +254,83 @@ def frames():
     for i, s in enumerate(shots[3:7]): sheet.alpha_composite(s.resize((150, 80)), (350 + (i % 2) * 155, 20 + (i // 2) * 120))
     item(id='frames', cat='icon', title='レトロな窓とふきだし 7種', desc='Windows 95 っぽい窓の枠（青・ピンク）と、まるいふきだし。サムネイルや資料づくりに。', fmt='PNG（透明）', file=z.name, prev=preview(sheet, 'frames.webp', 660), n=7)
 
+
+# ---------------------------------------------------------------- 7) むかしのホームページ素材（NEW!・区切り線・ボタン・カウンターの数字）
+def hp_parts():
+    from PIL import ImageFont
+    try: F = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', 11); FB = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', 13); FD = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf', 22)
+    except Exception: F = FB = FD = ImageFont.load_default()
+    files = {}; shots = []
+    def gif(name, frames, ms=450):
+        b = io.BytesIO(); fr = [f.convert('P', palette=Image.ADAPTIVE, colors=32) for f in frames]
+        fr[0].save(b, 'GIF', save_all=True, append_images=fr[1:], duration=ms, loop=0, transparency=0, disposal=2); files[name] = b.getvalue()
+    # NEW! UP! HOT! FREE! の点滅アイコン（背景は透明）
+    for word, c1, c2 in [('NEW!', (255, 0, 0), (255, 200, 0)), ('UP!', (0, 120, 255), (0, 200, 120)), ('HOT!', (255, 90, 0), (255, 0, 120)), ('FREE!', (0, 150, 70), (255, 170, 0))]:
+        frs = []
+        for k, c in enumerate((c1, c2)):
+            im = Image.new('RGBA', (40, 16), (0, 0, 0, 0)); d = ImageDraw.Draw(im); d.fontmode = '1'
+            w = d.textlength(word, font=F); d.text(((40 - w) / 2 + 1, 2), word, font=F, fill=(0, 0, 0, 255)); d.text(((40 - w) / 2, 1), word, font=F, fill=c + (255,))
+            frs.append(im)
+        gif('icon/' + word.strip('!').lower() + '.gif', frs); shots.append(frs[0])
+    # 区切り線（幅 600px）
+    lines = []
+    def line(name, draw, h=8):
+        im = Image.new('RGBA', (600, h), (0, 0, 0, 0)); draw(ImageDraw.Draw(im), h); files['line/' + name + '.png'] = png(im); lines.append(im)
+    line('rainbow', lambda d, h: [d.line([(x, 2), (x, 5)], tuple(int(127 + 127 * math.sin(x / 600 * 6.283 + k)) for k in (0, 2.09, 4.19)) + (255,)) for x in range(600)])
+    line('dots', lambda d, h: [d.ellipse([x, 2, x + 4, 6], (200, 140, 90, 255)) for x in range(2, 600, 12)])
+    line('stars', lambda d, h: [d.polygon([(x + 6, 0), (x + 8, 5), (x + 13, 5), (x + 9, 8), (x + 11, 13), (x + 6, 10), (x + 1, 13), (x + 3, 8), (x - 1, 5), (x + 4, 5)], (255, 210, 60, 255)) for x in range(4, 596, 24)], 14)
+    line('hearts', lambda d, h: [(d.ellipse([x, 2, x + 6, 8], (255, 90, 150, 255)), d.ellipse([x + 5, 2, x + 11, 8], (255, 90, 150, 255)), d.polygon([(x, 6), (x + 11, 6), (x + 5.5, 13)], (255, 90, 150, 255))) for x in range(4, 596, 22)], 14)
+    line('double', lambda d, h: (d.line([(0, 2), (599, 2)], (60, 60, 120, 255), 2), d.line([(0, 6), (599, 6)], (60, 60, 120, 255), 1)))
+    line('zigzag', lambda d, h: d.line([(x, 2 if (x // 8) % 2 else 9) for x in range(0, 600, 8)], (40, 170, 120, 255), 2), 12)
+    # ボタン（HOME・BACK・NEXT・TOP・MAIL・LINK × 3色）
+    for style, bg, fg, hi, lo in [('silver', (192, 192, 192), (0, 0, 0), (255, 255, 255), (64, 64, 64)), ('navy', (0, 0, 128), (255, 255, 255), (120, 140, 255), (0, 0, 40)), ('pink', (255, 120, 180), (255, 255, 255), (255, 210, 230), (160, 40, 100))]:
+        for word in ['HOME', 'BACK', 'NEXT', 'TOP', 'MAIL', 'LINK']:
+            im = Image.new('RGB', (80, 24), bg); d = ImageDraw.Draw(im); d.fontmode = '1'
+            d.line([(0, 0), (79, 0)], hi); d.line([(0, 0), (0, 23)], hi); d.line([(1, 1), (78, 1)], hi); d.line([(1, 1), (1, 22)], hi)
+            d.line([(0, 23), (79, 23)], lo); d.line([(79, 0), (79, 23)], lo); d.line([(1, 22), (78, 22)], lo); d.line([(78, 1), (78, 22)], lo)
+            w = d.textlength(word, font=FB); d.text(((80 - w) / 2, 4), word, font=FB, fill=fg)
+            files['button/%s/%s.png' % (style, word.lower())] = png(im)
+            if word in ('HOME', 'NEXT'): shots.append(im.convert('RGBA'))
+    # カウンターの数字（0〜9、2種類）
+    for style, bg, fg in [('led', (17, 17, 17), (51, 255, 51)), ('odometer', (250, 250, 250), (20, 20, 20))]:
+        for n in range(10):
+            im = Image.new('RGB', (16, 24), bg); d = ImageDraw.Draw(im)
+            if style == 'odometer': d.rectangle([0, 0, 15, 23], outline=(120, 120, 120)); d.line([(1, 12), (14, 12)], (220, 220, 220))
+            w = d.textlength(str(n), font=FD); d.text(((16 - w) / 2, -1), str(n), font=FD, fill=fg)
+            files['counter/%s/%d.png' % (style, n)] = png(im)
+            if n < 6 and style == 'led': shots.append(im.convert('RGBA'))
+    files['README.txt'] = 'むかしのホームページ素材セット。\n・icon/ … NEW! UP! HOT! FREE! の点滅アイコン（GIF・背景は透明）\n・line/ … 区切り線 6種（幅600px・PNG）\n・button/ … HOME・BACK・NEXT・TOP・MAIL・LINK のボタン（3色）\n・counter/ … アクセスカウンター用の数字 0〜9（2種類）\n\n' + LICENSE
+    z = make_zip('socafe-homepage-parts.zip', files)
+    sheet = Image.new('RGBA', (620, 230), (255, 250, 242, 255))
+    for i, s in enumerate(shots[:4]): sheet.alpha_composite(s.resize((80, 32), Image.NEAREST), (12 + i * 96, 10))
+    for i, l in enumerate(lines): sheet.alpha_composite(l, (10, 56 + i * 18))
+    for i, s in enumerate(shots[4:10]): sheet.alpha_composite(s, (12 + i * 90, 168))
+    for i, s in enumerate(shots[10:16]): sheet.alpha_composite(s.resize((24, 36), Image.NEAREST), (420 + i * 30, 10 + 0))
+    item(id='hpparts', cat='icon', title='むかしのホームページ素材 70点', desc='点滅する NEW!・UP!、虹色や星の区切り線、HOME・TOP などのボタン、カウンターの数字。', fmt='GIF・PNG', file=z.name, prev=preview(sheet, 'hpparts.webp', 620), n=len(files) - 1)
+
+# ---------------------------------------------------------------- 8) 教材・プリント（PDF）
+def study():
+    import shutil, subprocess
+    cfg = json.loads((R / 'tools' / 'socafe_study.json').read_text(encoding='utf-8'))
+    for it in cfg['items']:
+        pdf = DL / 'study' / it['file']
+        if not pdf.exists(): print('  ないので飛ばす:', pdf); continue
+        pages = 0
+        try: pages = int(re_pages.search(subprocess.run(['pdfinfo', str(pdf)], capture_output=True, text=True).stdout).group(1))
+        except Exception: pass
+        cov = IMG / ('study-' + pdf.stem + '.webp')
+        if shutil.which('pdftoppm') and not cov.exists():
+            tmp = IMG / ('_cov_' + pdf.stem)
+            subprocess.run(['pdftoppm', '-f', '1', '-l', '1', '-r', '40', '-png', '-singlefile', str(pdf), str(tmp)], check=False)
+            if (tmp.with_suffix('.png')).exists():
+                im = Image.open(tmp.with_suffix('.png')).convert('RGB'); im.thumbnail((360, 360)); im.save(cov, 'WEBP', quality=60); tmp.with_suffix('.png').unlink()
+        item(id='study-' + pdf.stem, cat='study', title=it['title'], desc=it['desc'], fmt='PDF・' + (str(pages) + 'ページ' if pages else '') + '・' + it.get('tag', ''), file='study/' + it['file'],
+             prev='/socafe/img/' + cov.name if cov.exists() else '', n=pages, pdf=True)
+import re
+re_pages = re.compile(r'Pages:\s+(\d+)')
+
 if __name__ == '__main__':
-    banners(); icons(); patterns(); sounds(); wallpapers(); frames()
+    banners(); icons(); patterns(); sounds(); wallpapers(); frames(); hp_parts(); study()
     for it in ITEMS: it['bytes'] = (DL / it['file']).stat().st_size
     (R / 'socafe' / 'free.js').write_text('/* 素カフェの無料素材（tools/build_socafe.py が作る。手で書きかえない） */\nwindow.SOCAFE_FREE = ' + json.dumps(ITEMS, ensure_ascii=False) + ';\n', encoding='utf-8')
     for it in ITEMS: print('%-12s %-28s %7.1f KB' % (it['id'], it['file'], it['bytes'] / 1024))
