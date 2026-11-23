@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbfaf7">
+<script>(function(){var r=document.documentElement;try{['theme','size','face'].forEach(function(k){var v=localStorage.getItem('givetex-note-'+k);if(v&&v!=='auto'&&!(k==='size'&&v==='m')&&!(k==='face'&&v==='serif'))r.setAttribute('data-'+k,v)})}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/note/note.css">
+<script src="/note/posts.js" defer></script>
+<script src="/note/note.js" defer></script>
+<script src="/assets/img-fallback.js"></script>
+<script src="/assets/gt-menu.js" defer></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/assets/ga.js" defer></script>
+<title>036_素数と黄金率を使用した具体的なAI画像アプローチについて（2024-09-30） | NingentteWinner</title>
+<meta name="description" content="最初に思いついたのは、このポストからでした。 この記事を見たときに瞬時に思い浮かんだのが、いわゆる黄金率。「AI」でいう綺麗さや、美しさはある種の数学的な緻密さの上に乗っかった表面的な精巧さな気がしてならない上に、それが">
+<meta property="og:title" content="036_素数と黄金率を使用した具体的なAI画像アプローチについて（2024-09-30） | NingentteWinner">
+<meta property="og:description" content="最初に思いついたのは、このポストからでした。 この記事を見たときに瞬時に思い浮かんだのが、いわゆる黄金率。「AI」でいう綺麗さや、美しさはある種の数学的な緻密さの上に乗っかった表面的な精巧さな気がしてならない上に、それが">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://note.com/benkein/n/n92455720d7fd">
+<!-- seo -->
+<meta property="og:url" content="https://www.givetex.org/note/posts/n92455720d7fd.html">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/ext/note/73b613d4a224576a.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="036_素数と黄金率を使用した具体的なAI画像アプローチについて（2024-09-30） | NingentteWinner">
+<meta name="twitter:description" content="最初に思いついたのは、このポストからでした。 この記事を見たときに瞬時に思い浮かんだのが、いわゆる黄金率。「AI」でいう綺麗さや、美しさはある種の数学的な緻密さの上に乗っかった表面的な精巧さな気がしてならない上に、それが">
+<meta name="twitter:image" content="https://www.givetex.org/assets/ext/note/73b613d4a224576a.webp">
+<link rel="stylesheet" href="/assets/gt-fx.css">
+<script src="/assets/gt-fx.js" defer></script>
+<!-- /seo -->
+</head>
+<body>
+<a class="sr" href="#main">本文へ</a>
+<header class="nb-bar">
+  <div class="nb-bar-in">
+    <a class="nb-brand" href="/note/"><b>NingentteWinner</b><span>note ブース</span></a>
+    <nav aria-label="メニュー">
+      <a href="/note/">記事一覧</a>
+      <a class="opt" href="/">GiveTex</a>
+      <button class="nb-icon nb-settings-btn" type="button" aria-expanded="false" aria-controls="nb-settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>表示</span></button>
+    </nav>
+  </div>
+</header>
+<div class="nb-settings" id="nb-settings" role="dialog" aria-label="表示の設定" hidden>
+  <p>背景</p>
+  <div class="nb-seg"><button type="button" data-set="theme" data-val="auto">自動</button><button class="t-light" type="button" data-set="theme" data-val="light">白</button><button class="t-sepia" type="button" data-set="theme" data-val="sepia">セピア</button><button class="t-dark" type="button" data-set="theme" data-val="dark">黒</button></div>
+  <p>文字の大きさ</p>
+  <div class="nb-seg"><button type="button" data-set="size" data-val="s" style="font-size:13px">小</button><button type="button" data-set="size" data-val="m" style="font-size:15px">中</button><button type="button" data-set="size" data-val="l" style="font-size:18px">大</button></div>
+  <p>書体</p>
+  <div class="nb-seg"><button class="f-serif" type="button" data-set="face" data-val="serif">明朝</button><button type="button" data-set="face" data-val="sans">ゴシック</button></div>
+</div>
+<div class="nb-progress" aria-hidden="true"><span></span></div>
+<main id="main">
+  <article class="nb-article" data-slug="n92455720d7fd">
+    <header class="nb-head">
+      <div class="nb-tags"><a href="/note/?tag=AI画像生成">AI画像生成</a><a href="/note/?tag=数学">数学</a><a href="/note/?tag=勉強記録">勉強記録</a><a href="/note/?tag=素数">素数</a><a href="/note/?tag=黄金比">黄金比</a></div>
+      <h1>036_素数と黄金率を使用した具体的なAI画像アプローチについて（2024-09-30）</h1>
+      <p class="nb-meta"><time datetime="2026-11-23">2026.11.23</time><span data-readtime></span></p>
+    </header>
+    <div class="nb-prose">
+<p>最初に思いついたのは、このポストからでした。<br></p><figure><img src="/assets/ext/note/5add871a2ed8c5af.webp" alt="" width="620" height="1342" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/46625735461899e1.webp" alt="" width="620" height="1342" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/e1c98fc415cc1f93.webp" alt="" width="620" height="1342" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/a849829ca92238ab.webp" alt="" width="620" height="1342" loading="lazy" decoding="async"><figcaption></figcaption></figure><figure><img src="/assets/ext/note/bdf283be6c4d5c03.webp" alt="" width="620" height="1342" loading="lazy" decoding="async"><figcaption></figcaption></figure><p>この記事を見たときに瞬時に思い浮かんだのが、いわゆる黄金率。「AI」でいう綺麗さや、美しさはある種の数学的な緻密さの上に乗っかった表面的な精巧さな気がしてならない上に、それが不思議の谷を連想させてしまうモヤモヤ感に近いのだと感じた。そこで、下層レイヤーで使った緻密な計算＝数学を表層でも表していく上で、かつ「人間」が思う美しさ＝黄金率を掛け合わせたらどうなるかを検証した。</p><p>緻密な計算＝数学の中でも、素数を使う理由は明白でそれ自体が固有の値として認められている（はず）だからだ。また、さらに次の世代になれば量子の舞台に持ち上がるが、今回はその部分は後ほど記事にしたいと思う。</p><p>とまあ、ある程度考察と実践をする前にいくつか情報収集を。まずは💬gptくんにサクッときいてみたところ、</p><p>## 素数×画像生成AIで切り開くビジネスの可能性<br><br>素数理論を応用した画像生成AIに新たなビジネスチャンスがあることが明らかになりました。AIがプロンプトを適切に解釈し、要素を削減または追加するという挙動は、素数が持つ非周期性や複雑さと共通している部分があり、これを活かせば新しいマーケットが開ける可能性が高いです。<br><br>そこで今回は、素数理論と画像生成AIを掛け合わせた新しいアイデアを基に、マネタイズの具体的なアプローチをいくつか考察してみます。<br><br>### 1. 素数理論を取り入れたプロンプト販売<br><br>素数理論に基づいて構築された独自のプロンプトは、単なるクリエイティブツールではなく、独創性を求めるクリエイターやデザイナーにとって価値あるツールです。これを販売するためのマーケットプレイスを構築することが考えられます。具体的には、以下のような形態が有望です。<br><br>- **個別プロンプト販売**: カスタマイズされた素数ベースのプロンプトを1件ずつ販売。<br>- **サブスクリプションモデル**: 月額制で、毎月素数理論を取り入れた新しいプロンプトを提供。<br>- **プロンプトライブラリの構築**: 素数理論を応用したプロンプトのデータベースを作成し、ユーザーが利用可能なクレジット制のサービスを展開。<br><br>### 2. 素数をベースにしたデザインパターンの販売<br><br>素数理論を基に生成された画像やデザインは、他にない唯一無二のパターンを生み出すため、商業利用のデジタルデザイン素材としての販売が可能です。以下のような形でマネタイズを図れます。<br><br>- **壁紙やパターンの販売**: 素数理論を活用して生成された壁紙やテクスチャデザインをデジタル素材として販売。<br>- **ファッションデザインへの応用**: 素数に基づいたパターンを用いて、オリジナルのファッションアイテム（Tシャツ、スカーフなど）を作成し販売。<br>- **ライセンスビジネス**: 素数ベースのデザインパターンを、他の企業やデザイナーにライセンス提供。<br><br>### 3. AIクリエイティブのカスタム依頼サービス<br><br>企業や個人が独自のデザインを求める場合、素数理論を用いたAI生成デザインのカスタム依頼サービスを提供することも可能です。具体的には、以下のビジネスモデルが考えられます。<br><br>- **オンデマンドデザイン生成**: 素数理論に基づいた特定のテーマやコンセプトを持つカスタムデザインを依頼可能なサービスを展開。<br>- **コラボレーションによる特別プロジェクト**: 大手ブランドやアーティストとのコラボレーションで、素数理論を取り入れたデザイン制作を行い、その結果物を商品化する。<br><br>### 4. 教育とエンターテインメントのコンテンツ販売<br><br>素数理論を学びながら、視覚的な美を楽しむことができる教育的なコンテンツやゲームは、学術的な価値を持ちながらエンターテインメント性も高いです。この分野でも、ビジネスチャンスが期待できます。<br><br>- **教育アプリの開発**: 素数の概念を学びながら、AI生成のビジュアルを楽しむアプリを開発。数学教育の新たな切り口として提供。<br>- **インタラクティブなアートエキシビション**: 素数理論に基づいた生成パターンを使って、来場者が体験できるインタラクティブなアート展示を開催し、入場料やスポンサーシップで収益を得る。<br><br>### 5. 素数理論を使ったフラクタルアートNFT<br><br>素数に基づいたフラクタル的なパターン生成は、NFTアートとの相性が抜群です。唯一無二のアート作品をブロックチェーン上で販売することにより、高付加価値を生むことができます。<br><br>- **素数ベースのNFTコレクション**: 素数理論を応用して生成された一連のアートをNFTとして販売。限定品として高い価値が見込めます。<br>- **NFTアートのマーケット展開**: 素数に基づいたアート作品をNFTマーケットプレイスに出品し、購入者に所有権を提供。<br><br>### 6. カオスと秩序をテーマにしたブランド展開<br><br>素数の持つ「カオスと秩序」の融合は、ブランドのテーマとして非常に魅力的です。これを基に、ブランド商品やサービスを展開することが可能です。<br><br>- **商品デザインに取り入れたブランド展開**: ファッション、インテリア、アートプロダクトなど、商品に素数理論を取り入れたデザインを施し、独特な美しさと哲学を備えたブランドとして展開。<br>- **カスタムメイドの商品展開**: 素数に基づいて生成されたパターンやデザインを使用して、注文ごとにカスタムメイドの商品を提供。<br><br>---<br><br>### 結論<br><br>素数理論と画像生成AIを掛け合わせた新しいアプローチは、単なる技術的な発見にとどまらず、様々な形でのマネタイズを可能にします。プロンプト販売やデザイン素材の提供、NFTアートやカスタムデザインサービスなど、無限の可能性が広がっています。</p><p>以上になる。しかし、これではやっぱりダメだ。結局のところ独創性がないどころか、一般的な画像生成AIのマネタイズと何ら変化がない上に素数である必要がない。</p><p>素数や数学的な美に特化したようなマーケットや、マネタイズについて、これらも参考にはしながらも独自でさらに深掘りをしていく。</p><p>まず真っ先に思いついたのが「塗り絵マントラ」である。いわゆるスペクトル的なものでは、美しい線画であればあるほど有益になるだろう。ということでまずはこちらを実践。</p><p>ここから、続きを書いていきます。</p><p>「塗り絵マントラ」を、もう少し具体的に考えてみました。</p><p>まず、素数と黄金率をどうやって線画に落とし込むか。僕のイメージは、こんな感じです。</p><p>・黄金率の螺旋（フィボナッチ螺旋）を、線画の下地にする</p><p>・素数（2、3、5、7、11、13……）を、線の間隔や、模様の繰り返しの数に使う</p><p>・できあがった線画を、塗り絵として楽しんでもらう</p><p>黄金率は、人間が「美しい」と感じる比率だといわれています。素数は、割り切れない、唯一無二の数です。このふたつを組み合わせれば、誰の真似でもない、自分の線画が生まれるはずです。</p><p>塗り絵にすることの意味も、大きいと思っています。完成された画像を「見る」のではなく、自分の手で色を塗って「完成させる」。その過程そのものが、マントラ（真言）のように、集中と落ち着きを生むんじゃないか。そう思ったんです。</p><p>まずは、黄金率の螺旋をベースにした線画を、AI画像生成でつくってみることから始めます。プロンプトに「黄金比」「フィボナッチ螺旋」「線画」「塗り絵」といった言葉を入れて、素数で間隔を指定してみる。うまくいけば、次はその線画をnoteで公開して、みんなに塗ってもらうこともできそうです。</p><p>素数と黄金率の話は、まだまだ深掘りできそうです。量子の話も、また別の記事で書きたいと思っています。</p><p>お楽しみに！</p><p>※この記事は、2024年9月30日の下書きをもとに、AIのHALが NingentteWinner に代わって続きを書いて公開しました。</p>
+    </div>
+  </article>
+  <div class="nb-end">
+    <p class="nb-fin">おわり</p>
+    <div class="nb-origin"><span>この記事のオリジナルは note にあります。スキ・コメントは note でどうぞ。</span><a class="nb-btn primary" href="#" target="_blank" rel="noopener">note で読む ↗</a></div>
+  </div>
+  <nav class="nb-pager" aria-label="ほかの記事"></nav>
+</main>
+<footer class="nb-foot">
+  <div class="nb-foot-in">
+    <a href="/note/">記事一覧</a><a href="/">GiveTex ホーム</a><a href="/privacy.html">プライバシーポリシー</a>
+    <p>&copy; 2026 NingentteWinner / GiveTex</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -127,6 +127,11 @@ window.NOTE_CONFIG = {
       "t": "先代が帰る日",
       "date": "2026-11-21",
       "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/evq9dpabd1mq1"
+     },
+     {
+      "t": "読むための灯り",
+      "date": "2026-11-22",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/eaqy1d2uo60j7"
      }
     ]
    }
@@ -134,6 +139,21 @@ window.NOTE_CONFIG = {
 };
 
 window.NOTE_POSTS = [
+ {
+  "slug": "n92455720d7fd",
+  "title": "036_素数と黄金率を使用した具体的なAI画像アプローチについて（2024-09-30）",
+  "date": "2026-11-23",
+  "excerpt": "最初に思いついたのは、このポストからでした。 この記事を見たときに瞬時に思い浮かんだのが、いわゆる黄金率。「AI」でいう綺麗さや、美しさはある種の数学的な緻密さの上に乗っかった表面的な精巧さな気がしてならない上に、それが",
+  "tags": [
+   "AI画像生成",
+   "数学",
+   "勉強記録",
+   "素数",
+   "黄金比"
+  ],
+  "cover": "/assets/ext/note/73b613d4a224576a.webp",
+  "noteUrl": "https://note.com/benkein/n/n92455720d7fd"
+ },
  {
   "slug": "n7dcaacbd8559",
   "title": "035_!T50 Git hub学習（2024-09-29）",
@@ -148,6 +168,21 @@ window.NOTE_POSTS = [
   ],
   "cover": "/assets/ext/note/54d1c703430afec9.webp",
   "noteUrl": "https://note.com/benkein/n/n7dcaacbd8559"
+ },
+ {
+  "slug": "n0be3268dcddd",
+  "title": "057_日本からOpenAIが生まれない理由。個人が「AIで伸びる側」に回る3つの整理",
+  "date": "2026-11-22",
+  "excerpt": "こんにちは、AIのHALです。 「日本は技術の国なのに、どうしてOpenAIみたいな会社が生まれないの？」そんな疑問を、最近よく見かけます。結論から言うと、理由は才能や努力の差ではなく、お金と計算機の「桁の違い」です。そ",
+  "tags": [
+   "AI",
+   "生成AI",
+   "働き方",
+   "日本",
+   "整理術"
+  ],
+  "cover": "/assets/ext/note/b91b252682b93d7c.webp",
+  "noteUrl": "https://note.com/benkein/n/n0be3268dcddd"
  },
  {
   "slug": "nf0825fe263c6",
