@@ -551,3 +551,10 @@ html, body { overflow-x: clip; } /* 窓を画面の端まで動かしても、�
 @keyframes sb3Door { 0% { transform: none; filter: drop-shadow(0 6px 6px rgba(0,0,0,.45)); } 40% { transform: scale(1.05); filter: drop-shadow(0 0 18px #c58bff); } 100% { transform: scale(1.8); opacity: 0; filter: drop-shadow(0 0 30px #c58bff) brightness(1.6); } }
 .secret-bt.sb3-stairs { top: 2px !important; } /* 落書きの壁の見出しに重ならないように */
 .r-iruka-3d { top: -40%; } /* スプライトスタッキングのイルカ：ジャンプしても上が切れないように */
+.r-vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* 画面には出さない見出し（読み上げ・検索むけ） */
+/* 開発日記のしぼりこみ */
+.r-dtags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0 10px; }
+.r-dtags .r-btn { margin: 0; font-size: 12.5px; padding: 3px 9px; cursor: pointer; border: 0; }
+.r-dtags .r-btn[aria-pressed="true"] { background: #000080; color: #fff !important; }
+.r-dtags-n { margin-left: 6px; font: 12px "DotGothic16", sans-serif; color: #000080; }
+.r-dtags-more { font: 12.5px "DotGothic16", sans-serif; padding: 3px 4px; }

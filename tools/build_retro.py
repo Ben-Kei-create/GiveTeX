@@ -94,11 +94,14 @@ def page(path, title, desc, body, cur, pr=False, canonical=None):
 <body>
 {'<div class="pr-banner daily-quote" aria-label="今日のひとこと">今日のひとこと「千里の道も一歩から。」― 老子</div><script src="/assets/quote.js" defer></script>' if pr else ''}
 {header(cur)}
+<h1 class="r-vh">{E(title.split(' | ')[0].split('｜')[0])}</h1>
 {body}
 {FOOTER}
 </body>
 </html>
 '''
+    if path == 'diary/index.html':  # 日記：タグでしぼりこむ
+        doc = doc.replace('</body>', '<script src="/assets/diary-filter.js" defer></script>\n</body>', 1)
     if path == 'about.html':  # 管理人のページにも名刺
         doc = doc.replace('</body>', '<script src="/assets/meishi.js" defer></script>\n</body>', 1)
     if path == 'index.html':  # ホームだけ起動画面
@@ -162,6 +165,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-26', tag='サイト', title='定期メンテ：日記のしぼりこみ、地下のブースにメニュー',
+      body='<p>これから3日に1回、サイト全体を見まわって、ブースを少しずつよくしていくことにしました。その1回目です。</p><ul class="r-list"><li><a href="/diary/">開発日記</a>に、種類（サイト・アプリ・Kindle…）でしぼりこむボタンをつけました。150件をこえて長くなったので、読みたいものだけ出せます。</li><li>地下の<a href="/stage/">特設ステージ</a>・頭の中ブース・HipHop ブースにも、スマホのメニュー（ホームへもどる）をつけました。</li><li>頭の中ブースのロゴを、オリジナルの「tsubuyaki」マークにかえました。</li><li>90年代風のページに、読み上げ・検索のための見出しを足しました（見た目はそのまま）。</li></ul>'),
  dict(date='2026-11-22', tag='美術館', title='原宿で、葛飾応為の夜景を見てきた',
       body='<p>原宿の太田記念美術館で「葛飾応為『吉原格子先之図』― 夜景の系譜」を見てきました。3年ぶりに公開された応為の代表作です。</p><p>はじめは黒でぬられていた浮世絵の夜空が、プルシアンブルー（ベロ藍）を取り入れて新しい表現になり、そこから青い色の浮世絵が生まれていった――という流れが、いちばん印象に残りました。</p><p><a href="/museum/">美術館ブース</a>に、はじめての来館記録として飾りました。</p>'),
  dict(date='2026-11-22', tag='サイト', title='名刺が家に届いた',
@@ -448,6 +453,7 @@ N_WATCH = len(_jsarr('movie/watchlist.js', 'WATCHLIST'))
 
 def build_index():
     whats = [
+        ('2026-11-26', '定期メンテ（3日に1回）スタート！ <a href="/diary/">開発日記</a>を種類でしぼりこめるように／地下のブースにもメニュー', True),
         ('2026-11-22', '<a href="/museum/">美術館ブース</a>に、はじめての来館記録！ 太田記念美術館の葛飾応為展／名刺が届きました', True),
         ('2026-11-21', '右下のイルカが、ドット絵の立体（スプライトスタッキング）に生まれかわりました', True),
         ('2026-11-21', '「数字で見るGiveTex」に、素カフェの素材・教材プリント・ボードゲーム・映画の候補の数を追加', True),
