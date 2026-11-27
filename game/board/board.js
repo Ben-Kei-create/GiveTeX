@@ -10,7 +10,7 @@
   var list = document.getElementById('games'), play = document.getElementById('play'), title = document.getElementById('g-title'), stage = document.getElementById('stage'),
       status = document.getElementById('status'), lv = document.getElementById('level'), side = document.getElementById('side'), rules = document.getElementById('rules'), cur = null, inst = null;
   var ui = {
-    status: function (t, cls) { status.textContent = t; status.className = 'status' + (cls ? ' ' + cls : ''); },
+    status: function (t, cls) { status.textContent = t; status.className = 'status' + (cls ? ' ' + cls : ''); if (cls === 'win' && window.GTVfx) window.GTVfx.fire(status, 'win'); }, // 勝ったら、ドン！
     level: function () { return +lv.value; },
     side: function () { return side.value; },
     later: function (fn, ms) { return setTimeout(fn, ms || 280); },

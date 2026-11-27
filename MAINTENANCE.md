@@ -322,3 +322,9 @@ python3 -I tools/migrate_note.py /tmp/note-data .
   - bencho.dev のブロックは有料のライセンス品なので、コードや見た目をそのまま写さない。アイデアだけ借りて、GiveTex のブースの雰囲気でオリジナルに作る。動きを減らす設定の人には出さない。
 - 守ること：個人情報は出さない／鍵やパスワードを書かない／画像は粗く軽く（名刺だけ例外）／実在のゲームやサービスのそっくりさんを作らない／素材はオリジナル。
 - Vercel の無料枠（デプロイの保存 10GB）を使い切らないように、作業ブランチ redesign-pop への push ではプレビューのデプロイを作らない（vercel.json の git.deploymentEnabled）。本番（main）だけデプロイされる。1回のデプロイは約90MB（いちばん大きいのは assets/ext/note の画像 約53MB）。
+
+## 作画エフェクト（sakuga-vfx）
+- `assets/vfx.js`：ホーム以外のブースで、ボタンを押したときにアニメの見せ場のような演出（衝撃・煙・キラッ・描き文字 ドン！ポン！カチッ シュッ ズザッ）。ブースごとに、どこを押すと何が出るか（RULES）と色（THEME）を決めている。ボードゲームで勝つと「ドン！」。
+- 描画は sakuga-vfx（https://github.com/finktheartist/sakuga-vfx 、MIT ライセンス、© 2026 Justin Finkelman）の core をそのまま使う：`assets/vendor/sakuga-vfx/core.js`（LICENSE と取りこんだ版 VERSION も同じ場所に。消さないこと）。部品（ボタン・トグルなど）は使っていない。
+- `tools/seo.py` が、ホーム以外の全ページに vfx.js を入れる（90年代風のページでは何もしない）。対象のボタンがあるページだけ core（約40KB）を読む。動きを減らす設定の人には出ない。
+- 定期メンテで足すときは、vfx.js の RULES に [セレクタ, 'don'|'pon'|'kachi'|'shu'|'zuza'|'puff'|'kira'] を書き足す。

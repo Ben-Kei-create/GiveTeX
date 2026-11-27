@@ -49,6 +49,7 @@ def og_block(t, rel, covers, book_covers={}):
     for label, href in FEEDS.get(rel, []): tags.append(f'<link rel="alternate" type="application/rss+xml" title="GiveTex {label}" href="{href}">')
     # ページの切りかえ・細かい動き（全ページ共通）
     tags += ['<link rel="stylesheet" href="/assets/gt-fx.css">', '<script src="/assets/gt-fx.js" defer></script>']
+    if rel != 'index.html': tags.append('<script src="/assets/vfx.js" defer></script>')  # 作画エフェクト（ホームは対象外。90年代風ページでは何もしない）
     return '<!-- seo -->\n' + '\n'.join(tags) + '\n<!-- /seo -->'
 
 def main():
