@@ -365,3 +365,10 @@ beui.dev（動く部品）や recent.design（ギャラリーの見せ方）を�
 ## アイコンの読みこみ（キャッシュ対策）
 favicon・apple-touch-icon・manifest の `<link>` は、tools/seo.py が全ページの seo ブロックにまとめて入れる（ページに直接書いたものは外される）。
 アイコンを作りなおしたら、tools/seo.py の `ICON_V` と site.webmanifest の `?v=` を上げて、seo.py を走らせる。ブラウザはアイコンを長く覚えているので、URL を変えないと新しい絵に変わらない。
+
+## HIP HOP ブース（/hiphop/）
+- 中身（エレメンツ・年表・教科書8章・聴き方の表・リンク）は index.html に直接書いてある。動きは hiphop.js
+- ビートラボ：hiphop.js の `PAT`（16ステップのパターンと BPM）と `VOICES`（音の作り方）。音はすべて WebAudio で合成（録音ファイルなし）
+- 読んだ章は localStorage `hh-read`
+## 美術館の所蔵品
+- museum/collection.js の作品を、museum.js がギャラリーにする（丸ボタンでしぼりこみ・24点ずつ「もっと見る」・「本日の9点」は日付で入れかわる）

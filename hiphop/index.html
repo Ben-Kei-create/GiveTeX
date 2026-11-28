@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HipHopブース | GiveTex</title>
 <meta name="description" content="ヒップホップの歴史をポップに学べるブース。4つのエレメンツ、1973年のブロンクスから日本のシーンまでの年表、サイトで読める「教科書」、音楽の聴き方、海外・日本のリンク集。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Permanent+Marker&amp;family=Zen+Kaku+Gothic+New:wght@500;700;900&amp;display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0c0c10">
 <link rel="stylesheet" href="/hiphop/hiphop.css">
 <script src="/assets/gt-menu.js" defer></script>
 <!-- seo -->
@@ -32,107 +36,87 @@
 <!-- /seo -->
 </head>
 <body>
-<div class="wrap">
-  <div class="hero">
-    <div class="boom">★ HIP HOP BOOTH ★</div>
-    <h1>HIP HOP</h1>
-    <p>ヒップホップは、音楽のジャンルの名前である前に、ひとつの<b>文化</b>の名前です。<br>
+<header class="hh-bar"><a class="hh-back" href="/">← GiveTex</a><nav aria-label="このページの目次"><a href="#elements">ELEMENTS</a><a href="#history">HISTORY</a><a href="#tracks">TEXTBOOK</a><a href="#beat">BEAT LAB</a><a href="#links">LINKS</a></nav></header>
+<main class="hh">
+<section class="hh-hero" aria-labelledby="hh-h">
+  <div class="hh-hero-tx">
+    <p class="hh-kicker">GIVETEX HIP HOP BOOTH · SINCE 1973</p>
+    <h1 id="hh-h"><span>HIP</span><span>HOP</span></h1>
+    <p class="hh-lead">ヒップホップは、音楽のジャンルの名前である前に、ひとつの<b>文化</b>の名前です。<br>
     ここは、その歴史をポップに学んで、音楽にもっと詳しくなるためのブース。<br>
     年表で流れをつかんで、「教科書」で深掘りして、リンク集で本場の資料へどうぞ。</p>
-    <div class="chips"><span>歴史がわかる</span><span>教科書が読める</span><span>耳が育つ</span><span>海外・日本のリンク集</span></div>
+    <p class="hh-chips"><a href="#history">歴史がわかる</a><a href="#tracks">教科書が読める</a><a href="#beat">耳が育つ</a><a href="#links">海外・日本のリンク集</a></p>
   </div>
-
-  <h2 class="sec">まずはこれ：4つのエレメンツ</h2>
-  <div class="elements">
-    <div class="el"><b>MC</b><span>マイクで言葉をのせる人。ラップそのもの。ライム（韻）とフロー（のせ方）が命</span></div>
-    <div class="el"><b>DJ</b><span>2台のターンテーブルで場を作る人。文化の出発点はDJだった</span></div>
-    <div class="el"><b>B-BOY / B-GIRL</b><span>ブレイクダンスを踊る人。ビートの「ブレイク」で踊るから、この名前</span></div>
-    <div class="el"><b>GRAFFITI</b><span>壁や電車に描く文字のアート。自分の名前を街に残す表現</span></div>
-    <div class="el"><b>KNOWLEDGE</b><span>5つ目の要素とも言われる「知識」。歴史と敬意を知ることも文化のうち</span></div>
+  <div class="hh-deck" aria-label="ターンテーブル。レコードをドラッグするとスクラッチの音が出ます">
+    <div class="hh-plate"><div class="hh-vinyl" id="hh-vinyl" role="img" aria-label="レコード"><span class="lbl">GIVE<br>TEX</span></div><div class="hh-arm" aria-hidden="true"></div></div>
+    <p class="hh-deck-tip">レコードを指でこすると、スクラッチ！</p>
   </div>
-  <p style="font-size:13px;color:#bdb7a6;line-height:1.9">この4つ（＋知識）をまとめて「ヒップホップ」と呼ぶ言い方は、アフリカ・バンバータ（後述）が広めました。だから「ラップ＝ヒップホップ」ではなく、ラップはヒップホップという文化の中の音楽部分、というのが正確なところです。</p>
+</section>
 
-  <h2 class="sec pink">ポップに学ぶ歴史年表</h2>
-  <div class="tl">
-    <div><b>1973</b><p>ニューヨーク・ブロンクス。DJクール・ハークが妹のバースデーパーティで、2台のターンテーブルを使って曲の「ブレイク」（ドラムだけになる気持ちいい部分）をくり返しつなぐ手法を披露。ヒップホップの誕生日は、この1973年8月11日とされています。</p></div>
-    <div><b>1979</b><p>シュガーヒル・ギャング「Rapper's Delight」が大ヒット。ラップが初めてレコードとして世界に届きました。</p></div>
-    <div><b>1982</b><p>グランドマスター・フラッシュ＆ザ・フューリアス・ファイブ「The Message」。楽しさだけじゃなく、街の現実を歌うラップの力を示した転機。</p></div>
-    <div><b class="jp">1983 日本</b><p>映画『ワイルド・スタイル』が日本で公開され、ヒップホップが本格的に伝来。ブレイクダンスが代々木公園などに広がります。</p></div>
-    <div><b>1986</b><p>Run-DMC とエアロスミスの「Walk This Way」でロックと合体し、白人の若者にも一気に拡大。日本では、いとうせいこう＆Tinnie Punx『建設的』が「日本語ラップ」の出発点として語られます。</p></div>
-    <div><b>1988〜92</b><p>ゴールデンエラ（黄金期）。パブリック・エナミー、エリックB.＆ラキム、デ・ラ・ソウルなど、実験的で分厚い作品が次々と生まれました。</p></div>
-    <div><b>1992〜96</b><p>西海岸ではドクター・ドレー『The Chronic』のGファンク、東海岸ではナズ『Illmatic』（1994）やノトーリアス・B.I.G.。東西の対立も激しくなります。日本では1996年のイベント「さんピンCAMP」がシーンの結集点に。</p></div>
-    <div><b>2000s</b><p>ジェイ・Z、エミネム、カニエ・ウェストらがポップの中心へ。日本ではラップがJ-POPとも混ざり合い、フェスやテレビに進出していきます。</p></div>
-    <div><b class="jp">2015 日本</b><p>テレビ番組『フリースタイルダンジョン』がヒットし、フリースタイルバトルが全国区のブームに。</p></div>
-    <div><b>2018</b><p>ケンドリック・ラマーが、ラッパーとして初めてピューリッツァー賞（音楽部門）を受賞。ヒップホップが「文学・芸術」として公式に認められた象徴的な出来事です。</p></div>
-    <div><b>2023</b><p>誕生50周年。世界中で記念イベントや展示が開かれました。日本でも50周年を祝う催しが各地で。</p></div>
-  </div>
+<section class="hh-sec" id="elements" aria-labelledby="el-h">
+  <div class="hh-hd"><small>01 · THE ELEMENTS</small><h2 id="el-h">まずはこれ：4つのエレメンツ</h2></div>
+  <div class="hh-els"><article class="hh-el y"><span class="ic" aria-hidden="true">🎤</span><h3>MC</h3><p>マイクで言葉をのせる人。ラップそのもの。ライム（韻）とフロー（のせ方）が命</p></article><article class="hh-el c"><span class="ic" aria-hidden="true">🎧</span><h3>DJ</h3><p>2台のターンテーブルで場を作る人。文化の出発点はDJだった</p></article><article class="hh-el p"><span class="ic" aria-hidden="true">🕺</span><h3>B-BOY / B-GIRL</h3><p>ブレイクダンスを踊る人。ビートの「ブレイク」で踊るから、この名前</p></article><article class="hh-el g"><span class="ic" aria-hidden="true">🎨</span><h3>GRAFFITI</h3><p>壁や電車に描く文字のアート。自分の名前を街に残す表現</p></article><article class="hh-el o"><span class="ic" aria-hidden="true">📚</span><h3>KNOWLEDGE</h3><p>5つ目の要素とも言われる「知識」。歴史と敬意を知ることも文化のうち</p></article></div>
+  <p class="hh-note">この4つ（＋知識）をまとめて「ヒップホップ」と呼ぶ言い方は、アフリカ・バンバータ（後述）が広めました。だから「ラップ＝ヒップホップ」ではなく、ラップはヒップホップという文化の中の音楽部分、というのが正確なところです。</p>
+</section>
 
-  <h2 class="sec cyan">教科書（このサイトで読めます）</h2>
-  <details class="book"><summary>第1章　ヒップホップは「文化」である</summary><div class="in">
-    <p>ヒップホップは1970年代、ニューヨークのサウス・ブロンクスで生まれました。貧しい地域の若者たちが、お金をかけずに楽しむ方法として編み出したのが、レコードを2枚使ったDJ、そこに言葉をのせるMC、踊り、そして壁の絵でした。</p>
-    <p>アフリカ・バンバータは、この文化に「ヒップホップ」という名前をつけ、平和・団結・楽しさを掲げる団体ズールー・ネイションを作りました。<b>「ヒップホップ」とは音楽ジャンル名である前に、この文化全体の名前</b>だというのが、このブースの出発点です。</p>
-  </div></details>
-  <details class="book"><summary>第2章　DJの発明：ブレイクビートと3つの技</summary><div class="in">
-    <p><b>ブレイクビート</b>：曲の中でドラムだけになる部分（ブレイク）だけを、2枚の同じレコードを行き来して無限にのばす技法。クール・ハークの発明で、「メリーゴーラウンド」と呼ばれました。踊り手はブレイクで踊るから B-BOY（ブレイク・ボーイ）。</p>
+<section class="hh-sec" id="history" aria-labelledby="hi-h">
+  <div class="hh-hd"><small>02 · HISTORY</small><h2 id="hi-h">ポップに学ぶ歴史年表</h2></div>
+  <div class="hh-filter" role="group" aria-label="年表のしぼりこみ"><button type="button" data-f="all" aria-pressed="true">ぜんぶ</button><button type="button" data-f="us" aria-pressed="false">世界</button><button type="button" data-f="jp" aria-pressed="false">日本</button></div>
+  <ol class="hh-tl"><li data-k="us"><b>1973</b><span class="tag">世界</span><p>ニューヨーク・ブロンクス。DJクール・ハークが妹のバースデーパーティで、2台のターンテーブルを使って曲の「ブレイク」（ドラムだけになる気持ちいい部分）をくり返しつなぐ手法を披露。ヒップホップの誕生日は、この1973年8月11日とされています。</p></li><li data-k="us"><b>1979</b><span class="tag">世界</span><p>シュガーヒル・ギャング「Rapper's Delight」が大ヒット。ラップが初めてレコードとして世界に届きました。</p></li><li data-k="us"><b>1982</b><span class="tag">世界</span><p>グランドマスター・フラッシュ＆ザ・フューリアス・ファイブ「The Message」。楽しさだけじゃなく、街の現実を歌うラップの力を示した転機。</p></li><li data-k="jp"><b>1983 日本</b><span class="tag">日本</span><p>映画『ワイルド・スタイル』が日本で公開され、ヒップホップが本格的に伝来。ブレイクダンスが代々木公園などに広がります。</p></li><li data-k="us"><b>1986</b><span class="tag">世界</span><p>Run-DMC とエアロスミスの「Walk This Way」でロックと合体し、白人の若者にも一気に拡大。日本では、いとうせいこう＆Tinnie Punx『建設的』が「日本語ラップ」の出発点として語られます。</p></li><li data-k="us"><b>1988〜92</b><span class="tag">世界</span><p>ゴールデンエラ（黄金期）。パブリック・エナミー、エリックB.＆ラキム、デ・ラ・ソウルなど、実験的で分厚い作品が次々と生まれました。</p></li><li data-k="us"><b>1992〜96</b><span class="tag">世界</span><p>西海岸ではドクター・ドレー『The Chronic』のGファンク、東海岸ではナズ『Illmatic』（1994）やノトーリアス・B.I.G.。東西の対立も激しくなります。日本では1996年のイベント「さんピンCAMP」がシーンの結集点に。</p></li><li data-k="us"><b>2000s</b><span class="tag">世界</span><p>ジェイ・Z、エミネム、カニエ・ウェストらがポップの中心へ。日本ではラップがJ-POPとも混ざり合い、フェスやテレビに進出していきます。</p></li><li data-k="jp"><b>2015 日本</b><span class="tag">日本</span><p>テレビ番組『フリースタイルダンジョン』がヒットし、フリースタイルバトルが全国区のブームに。</p></li><li data-k="us"><b>2018</b><span class="tag">世界</span><p>ケンドリック・ラマーが、ラッパーとして初めてピューリッツァー賞（音楽部門）を受賞。ヒップホップが「文学・芸術」として公式に認められた象徴的な出来事です。</p></li><li data-k="us"><b>2023</b><span class="tag">世界</span><p>誕生50周年。世界中で記念イベントや展示が開かれました。日本でも50周年を祝う催しが各地で。</p></li></ol>
+</section>
+
+<section class="hh-sec" id="tracks" aria-labelledby="tr-h">
+  <div class="hh-hd"><small>03 · TEXTBOOK</small><h2 id="tr-h">教科書（このサイトで読めます）</h2></div>
+  <p class="hh-note">8つのトラック（章）。読んだ章には ✓ がつきます（この端末だけに記録）。<b class="hh-read-n" id="hh-read-n"></b></p>
+  <div class="hh-tracks"><details class="hh-track" data-n="1"><summary><span class="no">01</span><span class="tt">ヒップホップは「文化」である</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>ヒップホップは1970年代、ニューヨークのサウス・ブロンクスで生まれました。貧しい地域の若者たちが、お金をかけずに楽しむ方法として編み出したのが、レコードを2枚使ったDJ、そこに言葉をのせるMC、踊り、そして壁の絵でした。</p>
+    <p>アフリカ・バンバータは、この文化に「ヒップホップ」という名前をつけ、平和・団結・楽しさを掲げる団体ズールー・ネイションを作りました。<b>「ヒップホップ」とは音楽ジャンル名である前に、この文化全体の名前</b>だというのが、このブースの出発点です。</p></div></details><details class="hh-track" data-n="2"><summary><span class="no">02</span><span class="tt">DJの発明：ブレイクビートと3つの技</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p><b>ブレイクビート</b>：曲の中でドラムだけになる部分（ブレイク）だけを、2枚の同じレコードを行き来して無限にのばす技法。クール・ハークの発明で、「メリーゴーラウンド」と呼ばれました。踊り手はブレイクで踊るから B-BOY（ブレイク・ボーイ）。</p>
     <p><b>スクラッチ</b>：レコードを手で前後にこすって音を出す技法。グランド・ウィザード・セオドアが偶然から発明したと伝わります。</p>
-    <p><b>クイック・ミックス・セオリー</b>：グランドマスター・フラッシュによる、短い音の断片を正確につなぐ理論。DJが「職人」から「演奏者」になった転機です。</p>
-  </div></details>
-  <details class="book"><summary>第3章　MCとライム：言葉の技術</summary><div class="in">
-    <p>MCの仕事は、もともとDJを盛り上げる掛け声でした。それが独立した表現になり、<b>ライム（韻を踏むこと）</b>と<b>フロー（ビートへの言葉ののせ方）</b>を競う技術へ進化します。</p>
-    <p>聴くときのコツは3つ。①行の終わりの音がそろっているか（脚韻）、②言葉の母音をそろえる「母音韻」のような内側の工夫、③ビートのどこに言葉を置くかのリズム感。ラキムは、この「フローの設計」を変えた革命児として語られます。</p>
-  </div></details>
-  <details class="book"><summary>第4章　サンプリング：他人の曲から新しい曲を作る</summary><div class="in">
-    <p>ヒップホップのビート作りの中心が<b>サンプリング</b>。昔のレコードの一部分を切り取り、ループさせて土台にする手法です。ソウルやファンクの名演が、新しい世代の耳に届き直す仕組みでもありました。</p>
-    <p>一方で著作権の問題も大きく、1991年の裁判などをきっかけに「無断サンプリング」は難しくなり、ビートの作り方そのものが変わっていきます。制約が、新しい音を生んだわけです。</p>
-  </div></details>
-  <details class="book"><summary>第5章　ゴールデンエラ（1988〜92年ごろ）</summary><div class="in">
-    <p>サンプラーの進化とともに、音の密度と実験性が頂点に達した時期。パブリック・エナミーはノイズのように重ねた音と政治的なメッセージで、デ・ラ・ソウルは明るく自由なサンプリングで、それぞれ違う頂点を見せました。</p>
-    <p>「昔のヒップホップが好き」という人がまず勧めるのは、だいたいこの時期の作品です。入門にも最適。</p>
-  </div></details>
-  <details class="book"><summary>第6章　東・西・南：アメリカ各地の音</summary><div class="in">
-    <p><b>西海岸</b>：ファンクを下敷きにした、ゆったり重い「Gファンク」。ドクター・ドレー、スヌープ・ドッグ、2パック。</p>
+    <p><b>クイック・ミックス・セオリー</b>：グランドマスター・フラッシュによる、短い音の断片を正確につなぐ理論。DJが「職人」から「演奏者」になった転機です。</p></div></details><details class="hh-track" data-n="3"><summary><span class="no">03</span><span class="tt">MCとライム：言葉の技術</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>MCの仕事は、もともとDJを盛り上げる掛け声でした。それが独立した表現になり、<b>ライム（韻を踏むこと）</b>と<b>フロー（ビートへの言葉ののせ方）</b>を競う技術へ進化します。</p>
+    <p>聴くときのコツは3つ。①行の終わりの音がそろっているか（脚韻）、②言葉の母音をそろえる「母音韻」のような内側の工夫、③ビートのどこに言葉を置くかのリズム感。ラキムは、この「フローの設計」を変えた革命児として語られます。</p></div></details><details class="hh-track" data-n="4"><summary><span class="no">04</span><span class="tt">サンプリング：他人の曲から新しい曲を作る</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>ヒップホップのビート作りの中心が<b>サンプリング</b>。昔のレコードの一部分を切り取り、ループさせて土台にする手法です。ソウルやファンクの名演が、新しい世代の耳に届き直す仕組みでもありました。</p>
+    <p>一方で著作権の問題も大きく、1991年の裁判などをきっかけに「無断サンプリング」は難しくなり、ビートの作り方そのものが変わっていきます。制約が、新しい音を生んだわけです。</p></div></details><details class="hh-track" data-n="5"><summary><span class="no">05</span><span class="tt">ゴールデンエラ（1988〜92年ごろ）</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>サンプラーの進化とともに、音の密度と実験性が頂点に達した時期。パブリック・エナミーはノイズのように重ねた音と政治的なメッセージで、デ・ラ・ソウルは明るく自由なサンプリングで、それぞれ違う頂点を見せました。</p>
+    <p>「昔のヒップホップが好き」という人がまず勧めるのは、だいたいこの時期の作品です。入門にも最適。</p></div></details><details class="hh-track" data-n="6"><summary><span class="no">06</span><span class="tt">東・西・南：アメリカ各地の音</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p><b>西海岸</b>：ファンクを下敷きにした、ゆったり重い「Gファンク」。ドクター・ドレー、スヌープ・ドッグ、2パック。</p>
     <p><b>東海岸</b>：ジャズやソウルのサンプリングと、言葉の密度。ナズ、ノトーリアス・B.I.G.、ウータン・クラン。</p>
-    <p><b>南部</b>：2000年代以降の主役。のちに世界標準になる「トラップ」の故郷でもあります。地域ごとに音が違う、というのがアメリカのヒップホップの面白さです。</p>
-  </div></details>
-  <details class="book"><summary>第7章　日本のヒップホップ</summary><div class="in">
-    <p>1983年の映画『ワイルド・スタイル』公開が伝来の起点。日本語はラップに向いていないと言われた時代に、いとうせいこうらが日本語のフローを模索しました。</p>
+    <p><b>南部</b>：2000年代以降の主役。のちに世界標準になる「トラップ」の故郷でもあります。地域ごとに音が違う、というのがアメリカのヒップホップの面白さです。</p></div></details><details class="hh-track" data-n="7"><summary><span class="no">07</span><span class="tt">日本のヒップホップ</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>1983年の映画『ワイルド・スタイル』公開が伝来の起点。日本語はラップに向いていないと言われた時代に、いとうせいこうらが日本語のフローを模索しました。</p>
     <p>1990年代はクラブを中心にしたアンダーグラウンドの時代。スチャダラパーのポップな感覚、キングギドラやRHYMESTERらの言葉の追求、1996年の「さんピンCAMP」の結集が語られます。2000年代にメディアへ広がり、2015年の『フリースタイルダンジョン』でバトルブームが全国へ。2020年代は、地域や世代の多様さがそのまま強みになっています。</p>
-    <p>詳しくは下のリンク集（日本の専門メディア）へどうぞ。</p>
-  </div></details>
-  <details class="book"><summary>第8章　いまのヒップホップ：トラップと配信の時代</summary><div class="in">
-    <p>いま世界で標準のビートは<b>トラップ</b>。細かく刻むハイハット、808と呼ばれる重低音のキックが特徴です（第8章の聴き分けは下の「耳を鍛える」へ）。</p>
-    <p>配信とSNSの時代になり、地方や海外から直接スターが生まれるようになりました。ヒップホップは50年を過ぎても、まだ「いまの音楽」であり続けています。</p>
-  </div></details>
+    <p>詳しくは下のリンク集（日本の専門メディア）へどうぞ。</p></div></details><details class="hh-track" data-n="8"><summary><span class="no">08</span><span class="tt">いまのヒップホップ：トラップと配信の時代</span><span class="rd" aria-hidden="true"></span></summary><div class="in"><p>いま世界で標準のビートは<b>トラップ</b>。細かく刻むハイハット、808と呼ばれる重低音のキックが特徴です（第8章の聴き分けは下の「耳を鍛える」へ）。</p>
+    <p>配信とSNSの時代になり、地方や海外から直接スターが生まれるようになりました。ヒップホップは50年を過ぎても、まだ「いまの音楽」であり続けています。</p></div></details></div>
+</section>
 
-  <h2 class="sec">耳を鍛える：音楽に詳しくなる聴き方</h2>
-  <table class="cmp">
+<section class="hh-sec" id="beat" aria-labelledby="bt-h">
+  <div class="hh-hd"><small>04 · BEAT LAB</small><h2 id="bt-h">耳を鍛える：ブーンバップとトラップを聴きくらべ</h2></div>
+  <p class="hh-note">ボタンを押すと、その場で作ったドラムとベースが鳴ります（録音ではなく、ブラウザで合成した音）。パートを消したり足したりして、どの音がどんな役なのか耳で確かめてみてください。</p>
+  <div class="hh-lab">
+    <div class="hh-styles" role="group" aria-label="ビートのスタイル"><button type="button" data-s="boombap" aria-pressed="true">BOOM BAP<small>90 BPM</small></button><button type="button" data-s="trap" aria-pressed="false">TRAP<small>140 BPM</small></button></div>
+    <div class="hh-grid" id="hh-grid" aria-hidden="true"></div>
+    <div class="hh-parts" role="group" aria-label="鳴らすパート"></div>
+    <button type="button" class="hh-play" id="hh-play" aria-pressed="false"><span class="i" aria-hidden="true">▶</span><span class="t">再生</span></button>
+  </div>
+  <div class="hh-tablewrap"><table class="cmp">
     <tr><th></th><th>ブーンバップ（Boom Bap）</th><th>トラップ（Trap）</th></tr>
     <tr><th>時代</th><td>1980年代末〜90年代の東海岸が中心</td><td>2000年代の南部発祥、いまの世界標準</td></tr>
     <tr><th>ドラム</th><td>生っぽいキックとスネアの「ブーン・バップ」という音が名前の由来</td><td>808の重低音＋細かく転がるハイハット</td></tr>
     <tr><th>材料</th><td>ジャズ・ソウルのサンプリングが多い</td><td>シンセの音色が中心、サンプリングもあり</td></tr>
     <tr><th>聴きどころ</th><td>元の曲探し（サンプルの元ネタ当て）</td><td>フローの刻み方と、低音の気持ちよさ</td></tr>
-  </table>
-  <p style="font-size:13.5px;line-height:2.0;color:#ddd8ca">聴き方の順番のおすすめは、<b style="color:#ffd21f">ドラム → ベース → フロー → 歌詞</b>。1回目はドラムだけ、2回目はベースだけ、と耳の担当を決めて聴くと、曲の作りが見えてきます。気に入ったビートは「このサンプルの元ネタは何だろう？」と調べると、ソウルやファンクへの入口にもなります。</p>
+  </table></div>
+  <p class="hh-note">聴き方の順番のおすすめは、<b>ドラム → ベース → フロー → 歌詞</b>。1回目はドラムだけ、2回目はベースだけ、と耳の担当を決めて聴くと、曲の作りが見えてきます。気に入ったビートは「このサンプルの元ネタは何だろう？」と調べると、ソウルやファンクへの入口にもなります。</p>
+</section>
 
-  <h2 class="sec pink">リンク集：もっと学ぶ</h2>
-  <p style="font-size:13px;color:#bdb7a6;margin:0 0 12px">海外サイト（英語）</p>
-  <div class="links">
+<section class="hh-sec" id="links" aria-labelledby="lk-h">
+  <div class="hh-hd"><small>05 · LINKS</small><h2 id="lk-h">リンク集：もっと学ぶ</h2></div>
+  <h3 class="hh-sub">海外サイト（英語）</h3><div class="links">
     <div class="lk"><b><a href="https://hiphop.library.cornell.edu/" target="_blank" rel="noopener">Cornell Hip Hop Collection</a></b><p>コーネル大学図書館のヒップホップ・アーカイブ。初期のパーティのチラシや写真など25万点以上の資料を保存する、研究の本拠地（英語）</p></div>
     <div class="lk"><b><a href="https://library.rockhall.com/c.php?g=1239329&amp;p=9807001" target="_blank" rel="noopener">Hip Hop at 50（Rock &amp; Roll Hall of Fame）</a></b><p>ロックの殿堂の図書館がまとめた「ヒップホップ50年」ガイド。本・音源・アーカイブへの入口（英語）</p></div>
     <div class="lk"><b><a href="https://guides.osu.edu/hiphop/archives" target="_blank" rel="noopener">Hip Hop Culture Archives（Ohio State University）</a></b><p>世界各地のヒップホップ資料コレクションへの案内。Universal Hip Hop Museum など主要アーカイブの所在地もここから（英語）</p></div>
   </div>
-  <p style="font-size:13px;color:#bdb7a6;margin:18px 0 12px">日本サイト</p>
-  <div class="links">
+  <h3 class="hh-sub">日本サイト</h3><div class="links">
     <div class="lk"><b><a href="https://hiphopnewscs.jp/" target="_blank" rel="noopener">HIPHOPCs</a></b><p>2024年設立のヒップホップ専門メディア。日本語ラップと海外ヒップホップのニュース、独自インタビュー、批評まで</p></div>
     <div class="lk"><b><a href="https://pucho-henza.com/hiphop-history/" target="_blank" rel="noopener">ヒップホップの歴史を解説（pucho henza）</a></b><p>海外と日本の歴史を、代表的なラッパーとともにたどる日本語の解説記事。このブースの年表の復習に</p></div>
     <div class="lk"><b><a href="https://realjapanesehiphop.com/who-are-we/" target="_blank" rel="noopener">Real Japanese Hip Hop</a></b><p>日本のヒップホップを英語・フランス語で世界に伝えるメディア。外からの目で見た日本のシーンが新鮮（英語・仏語）</p></div>
   </div>
-  <p style="font-size:13px;color:#bdb7a6;line-height:1.9;margin-top:16px">本で読むなら：ジェフ・チャン『ヒップホップ・ジェネレーション』（Can't Stop Won't Stop）、エド・ピスコーアの漫画『ヒップホップ・ファミリー・ツリー』、スミソニアン博物館のCDボックス『Smithsonian Anthology of Hip-Hop and Rap』あたりが定番の入口です。</p>
-
-  <div class="foot">
-    <p>※ このブースは学習用のまとめです。年代や評価には諸説あります。気になった名前は、リンク集から一次の資料にあたってみてください。</p>
-    <p><a href="/stage/">特設ステージへ</a> ｜ <a href="/">ホームへ</a></p>
-  </div>
-</div>
+  <p class="hh-note">本で読むなら：ジェフ・チャン『ヒップホップ・ジェネレーション』（Can't Stop Won't Stop）、エド・ピスコーアの漫画『ヒップホップ・ファミリー・ツリー』、スミソニアン博物館のCDボックス『Smithsonian Anthology of Hip-Hop and Rap』あたりが定番の入口です。</p>
+</section>
+</main>
+<footer class="hh-foot"><p>※ このブースは学習用のまとめです。年代や評価には諸説あります。気になった名前は、リンク集から一次の資料にあたってみてください。</p><p><a href="/stage/">特設ステージへ</a> ｜ <a href="/">ホームへ</a></p></footer>
+<script src="/hiphop/hiphop.js" defer></script>
 </body>
 </html>

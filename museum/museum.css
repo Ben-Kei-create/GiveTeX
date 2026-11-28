@@ -60,3 +60,29 @@ a{color:inherit}
 .mu-coll-more button:hover{background:#222;color:#fff}
 .mu-coll.first~.wall .mu-empty .frame{max-width:260px}
 .mu-coll.first~.wall .mu-empty .canvas{min-height:110px}
+
+/* 所蔵品のギャラリー（recent.design 風：白いカード・↗・しぼりこみの丸ボタン・石組み） */
+.mu-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.mu-pills button{appearance:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--sub);font:500 14px/1 var(--serif);letter-spacing:.06em;transition:color .2s,border-color .2s,background .2s}
+.mu-pills button small{font:500 11.5px/1 var(--en);letter-spacing:.04em;padding:3px 7px;border-radius:999px;background:#f1eee6;color:var(--faint)}
+.mu-pills button:hover{color:var(--ink);border-color:var(--gold)}
+.mu-pills button[aria-pressed=true]{background:#2b2a27;border-color:#2b2a27;color:#fff}
+.mu-pills button[aria-pressed=true] small{background:#ffffff26;color:#fff}
+.mu-gallery{columns:3 260px;column-gap:18px}
+.mu-card{position:relative;display:block;break-inside:avoid;margin:0 0 18px;border-radius:16px;background:#fff;border:1px solid var(--line);overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04);animation:mu-up .6s cubic-bezier(.2,.9,.3,1) backwards;transition:box-shadow .3s,transform .4s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes mu-up{from{opacity:0;transform:translateY(18px)}}
+.mu-card:hover{box-shadow:0 22px 40px -22px rgba(43,42,39,.45)}
+.mu-card-img{display:block;padding:18px;background:#f4f2ec}
+.mu-card.k-stamp .mu-card-img{padding:26px 30px;background:#eef6ef}
+.mu-card.k-game .mu-card-img{padding:0}
+.mu-card-img img{display:block;width:100%;height:auto;object-fit:cover;border-radius:4px;box-shadow:0 10px 22px -14px rgba(0,0,0,.5)}
+.mu-card.k-stamp .mu-card-img img{object-fit:contain;box-shadow:none}
+.mu-card.k-game .mu-card-img img{border-radius:0;box-shadow:none}
+.mu-card-cap{display:flex;gap:10px;align-items:flex-start;padding:12px 14px 14px}
+.mu-card-cap i{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#f1eee6;font-style:normal;font-size:14px}
+.mu-card-cap b{display:block;font:600 14.5px/1.55 var(--serif)}
+.mu-card-cap small{display:block;font-size:12px;line-height:1.6;color:var(--faint)}
+.mu-no{position:absolute;left:12px;top:12px;font:500 11px/1 var(--en);letter-spacing:.14em;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--sub)}
+.mu-card .gu-arrow{bottom:auto;top:12px;right:12px}
+@media(max-width:560px){.mu-pills{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin:0 -16px 20px;padding:2px 16px}.mu-pills::-webkit-scrollbar{display:none}.mu-pills button{flex:none}.mu-gallery{columns:2;column-gap:10px}.mu-card{margin-bottom:10px;border-radius:12px}.mu-card-img{padding:10px}.mu-card.k-stamp .mu-card-img{padding:14px}.mu-card-cap{padding:9px 10px 11px;gap:8px}.mu-card-cap i{display:none}.mu-card-cap b{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.mu-card{animation:none}}
