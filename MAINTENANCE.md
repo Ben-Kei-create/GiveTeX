@@ -328,3 +328,8 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 描画は sakuga-vfx（https://github.com/finktheartist/sakuga-vfx 、MIT ライセンス、© 2026 Justin Finkelman）の core をそのまま使う：`assets/vendor/sakuga-vfx/core.js`（LICENSE と取りこんだ版 VERSION も同じ場所に。消さないこと）。部品（ボタン・トグルなど）は使っていない。
 - `tools/seo.py` が、ホーム以外の全ページに vfx.js を入れる（90年代風のページでは何もしない）。対象のボタンがあるページだけ core（約40KB）を読む。動きを減らす設定の人には出ない。
 - 定期メンテで足すときは、vfx.js の RULES に [セレクタ, 'don'|'pon'|'kachi'|'shu'|'zuza'|'puff'|'kira'] を書き足す。
+
+## サイトのアイコン
+- 2026-11-28 に一新：藍〜紫のグラデーションの角丸に、金色の太い「G」と、ひらめきの星。元の絵は `assets/icon/icon.svg`、作り方は `node tools/make_icon.js <出力フォルダ> a`（Playwright で SVG を PNG に）。
+- 書き出し：favicon.ico（16/32/48）、favicon-16/32/48、apple-touch-icon（180・四角いっぱい）、icon-192/512（角丸・まわり透明）、icon-maskable-512（四角いっぱい）。PNG は色数を減らして軽く（MEDIANCUT＋ディザ）。
+- ホームの起動画面は icon-512.png を光の粒で組み立てるので、アイコンを変えると起動画面のロゴも変わる。旧アイコン（金のドット絵の G）は tools/gold_g.py。
