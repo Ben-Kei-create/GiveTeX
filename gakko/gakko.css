@@ -1,0 +1,177 @@
+/* Gakko ブース — ノートの紙と黒板。先生はチョークの緑、生徒はえんぴつのオレンジ */
+:root{
+  --paper:#fbfaf4;--rule:#dfe8f3;--margin:#f3b8b8;--ink:#23302a;--sub:#5d6b63;--line:#d9ded6;--card:#fff;
+  --green:#2f6b4f;--green2:#e3efe7;--orange:#e8791a;--orange2:#fdebd9;
+  --acc:var(--green);--acc2:var(--green2);
+  --en:"Fredoka","Zen Maru Gothic",sans-serif;--hand:"Kiwi Maru","Zen Maru Gothic",serif;--jp:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;
+  color-scheme:light;
+}
+body[data-role=seito]{--acc:var(--orange);--acc2:var(--orange2)}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;color:var(--ink);font:16px/1.85 var(--jp);-webkit-font-smoothing:antialiased;
+  background:var(--paper) linear-gradient(90deg,transparent 54px,var(--margin) 54px,var(--margin) 56px,transparent 56px),
+    repeating-linear-gradient(180deg,transparent 0 31px,var(--rule) 31px 32px);background-attachment:local}
+a{color:var(--acc)}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+
+.gk-top{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:14px 18px 0}
+.gk-back{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border:2px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
+.gk-bell{font-size:22px;display:inline-block;transform-origin:50% 10%;animation:gk-ring 4s ease-in-out infinite}
+@keyframes gk-ring{0%,84%,100%{transform:rotate(0)}86%{transform:rotate(16deg)}89%{transform:rotate(-14deg)}92%{transform:rotate(10deg)}95%{transform:rotate(-6deg)}}
+
+.gk-main{max-width:1080px;margin:0 auto;padding:0 18px 60px}
+.gk-hero{position:relative;text-align:center;padding:26px 18px 30px;margin:16px 0 26px;border-radius:22px;color:#f1f5ef;
+  background:radial-gradient(ellipse at 30% 0%,rgba(255,255,255,.09),transparent 60%),#2b4a3c;
+  border:10px solid #8a5a33;box-shadow:inset 0 0 50px rgba(0,0,0,.35),0 10px 0 -2px #6b4224,0 18px 30px -14px rgba(0,0,0,.4)}
+.gk-hero::after{content:"";position:absolute;left:12%;right:12%;bottom:-10px;height:8px;border-radius:0 0 6px 6px;background:#d8c7a8;box-shadow:inset 0 2px 0 rgba(0,0,0,.15)}
+.gk-kicker{margin:0;font:600 13px/1.4 var(--en);letter-spacing:.3em;color:#bfe0cc}
+.gk-hero h1{margin:4px 0 6px;font-weight:400}
+.gk-logo{display:block;font:700 clamp(56px,13vw,104px)/1 var(--en);letter-spacing:.02em;color:#fff;text-shadow:0 0 1px #fff,2px 3px 0 rgba(0,0,0,.25)}
+.gk-hero h1 small{display:block;margin-top:6px;font:500 clamp(18px,3.6vw,24px)/1.4 var(--hand);color:#fff6c8}
+.gk-lead{max-width:640px;margin:0 auto 20px;font:500 14.5px/1.9 var(--jp);color:#dbe7df}
+
+/* 先生／生徒のスイッチ（白いつまみが すーっと移動） */
+.gk-role{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:6px;border-radius:22px;background:rgba(0,0,0,.28);box-shadow:inset 0 2px 8px rgba(0,0,0,.35)}
+.gk-role-pill{position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 6px);border-radius:16px;background:#fff;box-shadow:0 6px 16px -6px rgba(0,0,0,.5);transition:transform .5s cubic-bezier(.3,1.35,.5,1)}
+body[data-role=seito] .gk-role-pill{transform:translateX(100%)}
+.gk-role button{position:relative;z-index:1;appearance:none;border:0;background:transparent;cursor:pointer;display:grid;justify-items:center;gap:2px;min-width:132px;padding:10px 18px 9px;border-radius:16px;color:#e9f1ec;font:700 19px/1.2 var(--jp);transition:color .3s}
+.gk-role button i{font-style:normal;font-size:30px;line-height:1.1}
+.gk-role button small{font:600 11px/1 var(--en);letter-spacing:.2em;opacity:.7}
+.gk-role button[aria-selected=true]{color:var(--acc)}
+@media(max-width:420px){.gk-role button{min-width:118px;padding:9px 10px}}
+
+.gk-sec{margin:0 0 34px}
+.gk-sec-hd{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin:0 0 14px}
+.gk-sec-hd h2{margin:0;font:500 clamp(22px,4vw,28px)/1.3 var(--hand);padding:0 6px;background:linear-gradient(transparent 62%,var(--acc2) 62%)}
+.gk-note{margin:0;font-size:13.5px;color:var(--sub)}
+
+/* 道具のカード */
+.gk-tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:16px}
+@media(min-width:1000px){.gk-tools{grid-template-columns:repeat(6,1fr)}.gk-tool{grid-column:span 2}.gk-tool:nth-child(4){grid-column:2/span 2}}
+.gk-tool{position:relative;display:flex;flex-direction:column;gap:6px;text-align:left;appearance:none;cursor:pointer;padding:18px 18px 16px;border-radius:18px;border:2px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink);font:inherit;animation:gk-in .5s cubic-bezier(.2,1.2,.4,1) backwards}
+.gk-tool:nth-child(2){animation-delay:.04s}.gk-tool:nth-child(3){animation-delay:.08s}.gk-tool:nth-child(4){animation-delay:.12s}.gk-tool:nth-child(5){animation-delay:.16s}.gk-tool:nth-child(6){animation-delay:.2s}
+@keyframes gk-in{from{opacity:0;transform:translateY(14px) scale(.97)}}
+.gk-tool .ic{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--acc2);font-size:28px;line-height:1}
+.gk-tool b{font:700 18px/1.4 var(--jp)}
+.gk-tool span{font-size:13.5px;line-height:1.7;color:var(--sub)}
+.gk-tool .go{margin-top:auto;padding-top:6px;font:700 13px/1 var(--en);letter-spacing:.12em;color:var(--acc)}
+.gk-tool:hover{box-shadow:6px 6px 0 var(--ink)}
+.gk-tool:active{box-shadow:1px 1px 0 var(--ink)}
+
+/* 教材 */
+.gk-res{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.gk-r{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;align-items:start;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:#fff;color:var(--ink);text-decoration:none}
+.gk-r .ic{grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--acc2);font-size:22px}
+.gk-r b{font-size:15.5px;line-height:1.45}
+.gk-r small{font-size:12.5px;line-height:1.6;color:var(--sub)}
+.gk-r:hover{border-color:var(--acc)}
+
+/* 道具を開くシート */
+.gk-sheet{width:min(760px,calc(100% - 20px));max-height:calc(100dvh - 24px);margin:auto;padding:0;border:0;border-radius:22px;background:var(--paper);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.55)}
+.gk-sheet::backdrop{background:rgba(20,28,24,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.gk-sheet[open]{animation:gk-up .45s cubic-bezier(.2,1.2,.4,1)}
+@keyframes gk-up{from{opacity:0;transform:translateY(30px) scale(.96)}}
+.gk-sheet-in{display:flex;flex-direction:column;max-height:calc(100dvh - 24px)}
+.gk-sheet-hd{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:2px dashed var(--line);background:#fff;border-radius:22px 22px 0 0}
+.gk-sheet-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--acc2);font-size:21px}
+.gk-sheet-hd h2{flex:1;margin:0;font:500 21px/1.3 var(--hand)}
+.gk-x{appearance:none;border:2px solid var(--ink);background:#fff;width:38px;height:38px;border-radius:50%;font:700 20px/1 var(--en);cursor:pointer;color:var(--ink)}
+.gk-sheet-body{padding:18px clamp(14px,3vw,24px) 22px;overflow:auto}
+.gk-sheet.full{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}
+.gk-sheet.full .gk-sheet-in{max-height:100dvh;height:100%}
+.gk-sheet.full .gk-sheet-body{flex:1;display:grid;place-items:center}
+
+/* 道具の中の部品 */
+.gk-row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0 0 12px}
+.gk-row label{font-weight:700;font-size:14px}
+.gk-in,.gk-sel,.gk-ta{font:inherit;font-size:16px;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:10px;padding:7px 10px}
+.gk-in{width:84px}
+.gk-ta{width:100%;min-height:110px;resize:vertical;line-height:1.6}
+.gk-in:focus,.gk-sel:focus,.gk-ta:focus{border-color:var(--acc);outline:none}
+.gk-btn{appearance:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:var(--acc);color:#fff;font:700 15px/1 var(--jp);box-shadow:0 4px 0 var(--ink)}
+.gk-btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.gk-btn.sub{background:#fff;color:var(--ink)}
+.gk-btn[disabled]{opacity:.45;cursor:default}
+.gk-seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.gk-seg button{appearance:none;cursor:pointer;padding:7px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);font:700 14px/1 var(--jp)}
+.gk-seg button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.gk-hint{font-size:13px;color:var(--sub);margin:4px 0 12px}
+.gk-out{margin-top:14px}
+
+/* ルーレット */
+.gk-wheel{display:grid;place-items:center;min-height:170px;margin:6px 0 14px;border-radius:18px;background:#2b4a3c;color:#fff;border:6px solid #8a5a33;box-shadow:inset 0 0 30px rgba(0,0,0,.35)}
+.gk-wheel b{font:700 clamp(40px,9vw,72px)/1.1 var(--hand);text-align:center;padding:0 12px;overflow-wrap:anywhere}
+.gk-wheel.hit b{animation:gk-hit .6s cubic-bezier(.3,1.6,.5,1);color:#fff6a8}
+@keyframes gk-hit{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.gk-done{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.gk-done span{padding:2px 10px;border-radius:999px;background:var(--acc2);font-size:13px}
+
+/* 班 */
+.gk-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gk-group{padding:10px 12px;border-radius:14px;border:2px solid var(--ink);background:#fff;box-shadow:3px 3px 0 var(--ink);animation:gk-in .45s cubic-bezier(.2,1.2,.4,1) backwards}
+.gk-group h3{margin:0 0 4px;font:500 17px/1.3 var(--hand);color:var(--acc)}
+.gk-group ul{margin:0;padding:0 0 0 1.2em;font-size:15px;line-height:1.7}
+
+/* タイマー */
+.gk-timer{text-align:center}
+.gk-clock{font:700 clamp(72px,20vw,180px)/1 var(--en);font-variant-numeric:tabular-nums;letter-spacing:.02em;margin:6px 0 14px}
+.gk-sheet.full .gk-clock{font-size:min(30vw,42vh)}
+.gk-ring{width:100%;height:12px;border-radius:12px;background:var(--line);overflow:hidden;margin:0 0 16px}
+.gk-ring i{display:block;height:100%;width:100%;background:var(--acc);transform-origin:left;transition:transform .25s linear}
+.gk-timer.end .gk-clock{color:#d7261e;animation:gk-blink .5s steps(2) 6}
+@keyframes gk-blink{50%{opacity:.2}}
+.gk-timer .gk-row{justify-content:center}
+
+/* 席 */
+.gk-seats{display:grid;gap:8px;margin-top:10px}
+.gk-board{grid-column:1/-1;text-align:center;padding:6px;border-radius:8px;background:#2b4a3c;color:#fff;font:500 15px/1.4 var(--hand)}
+.gk-seat{display:grid;place-items:center;aspect-ratio:4/3;border-radius:10px;border:2px solid var(--ink);background:#fff;font:700 clamp(15px,3.4vw,22px)/1 var(--en);animation:gk-in .4s cubic-bezier(.2,1.2,.4,1) backwards}
+.gk-seat.empty{border-style:dashed;border-color:var(--line);color:transparent}
+
+/* 計算プリントの見本 */
+.gk-sheetprev{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 18px}
+.gk-probs{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:0;padding:0;list-style:none;counter-reset:p}
+.gk-probs li{counter-increment:p;font:500 17px/1.9 var(--en);font-variant-numeric:tabular-nums;border-bottom:1px dotted var(--line)}
+.gk-probs li::before{content:"(" counter(p) ") ";color:var(--sub);font-size:13px}
+@media(max-width:520px){.gk-probs{grid-template-columns:1fr}}
+
+/* クイズ・ドリル */
+.gk-quiz{text-align:center}
+.gk-qn{font:600 13px/1 var(--en);letter-spacing:.2em;color:var(--sub)}
+.gk-q{margin:10px 0 16px;font:700 clamp(30px,7vw,48px)/1.3 var(--en)}
+.gk-q small{display:block;font:500 15px/1.6 var(--jp);color:var(--sub)}
+.gk-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gk-choices button{appearance:none;cursor:pointer;padding:14px 10px;border-radius:14px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:700 17px/1.35 var(--jp);box-shadow:0 3px 0 var(--ink)}
+.gk-choices button.ok{background:#3ba55c;border-color:#1f6b37;color:#fff}
+.gk-choices button.ng{background:#e5484d;border-color:#8f1d21;color:#fff;animation:gk-shake .35s}
+@keyframes gk-shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.gk-ans{display:flex;gap:8px;justify-content:center}
+.gk-ans .gk-in{width:150px;font:700 26px/1 var(--en);text-align:center}
+.gk-bar{height:8px;border-radius:8px;background:var(--line);margin:0 0 14px;overflow:hidden}
+.gk-bar i{display:block;height:100%;background:var(--acc);transition:width .3s}
+.gk-result{padding:10px 0}
+.gk-result b{display:block;font:700 clamp(42px,9vw,64px)/1.1 var(--en);color:var(--acc)}
+.gk-result p{margin:6px 0 14px}
+.gk-flash{position:fixed;inset:0;pointer-events:none;z-index:9;animation:gk-fl .5s}
+@keyframes gk-fl{from{background:rgba(59,165,92,.25)}to{background:transparent}}
+
+.gk-foot{text-align:center;padding:24px 16px 40px;font-size:14px;color:var(--sub)}
+.gk-foot a{color:var(--sub)}
+
+/* 印刷：計算プリント・席の表だけを出す */
+.gk-print{display:none}
+@page{margin:14mm 12mm}
+@media print{
+  body{background:#fff}
+  body > *:not(.gk-print){display:none!important}
+  .gk-print{display:block!important;color:#000;font:16px/1.8 var(--jp)}
+  .gk-print h1{margin:0 0 4px;font:700 22px/1.3 var(--jp)}
+  .gk-print .nm{margin:0 0 14px;font-size:15px}
+  .gk-print .page{page-break-after:always}
+  .gk-print .page:last-child{page-break-after:auto}
+  .gk-print .gk-probs li{font-size:18px;line-height:2.6;border-bottom:0}
+  .gk-print .gk-seat{animation:none}
+}
+@media(prefers-reduced-motion:reduce){.gk-tool,.gk-group,.gk-seat,.gk-sheet[open]{animation:none}.gk-bell{animation:none}.gk-role-pill{transition:none}}

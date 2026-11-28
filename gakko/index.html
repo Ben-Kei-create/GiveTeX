@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/assets/ga.js" defer></script>
+<meta name="theme-color" content="#2f6b4f">
+<title>Gakko ブース（先生と生徒の道具箱） | GiveTex</title>
+<meta name="description" content="GiveTex の Gakko ブース。先生は、指名ルーレット・班分け・授業タイマー・計算プリント・席がえくじを、生徒は、計算タイムアタック・元素記号や県庁所在地や英単語のクイズ・勉強タイマーを、ブラウザですぐ無料で使えます。教材プリントの PDF も。">
+<link rel="canonical" href="https://www.givetex.org/gakko/">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&amp;family=Kiwi+Maru:wght@500&amp;family=Zen+Maru+Gothic:wght@500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/gakko/gakko.css">
+<script src="/socafe/free.js" defer></script>
+<script src="/bookmarks/downloads.js" defer></script>
+<script src="/gakko/gakko.js" defer></script>
+<script src="/assets/img-fallback.js"></script>
+<script src="/assets/gt-menu.js" defer></script>
+<!-- seo -->
+<meta property="og:title" content="Gakko ブース（先生と生徒の道具箱） | GiveTex">
+<meta property="og:description" content="GiveTex の Gakko ブース。先生は、指名ルーレット・班分け・授業タイマー・計算プリント・席がえくじを、生徒は、計算タイムアタック・元素記号や県庁所在地や英単語のクイズ・勉強タイマーを、ブラウザですぐ無料で使えます。教材プリントの PDF も。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.givetex.org/gakko/">
+<meta property="og:site_name" content="GiveTex">
+<meta property="og:image" content="https://www.givetex.org/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gakko ブース（先生と生徒の道具箱） | GiveTex">
+<meta name="twitter:description" content="GiveTex の Gakko ブース。先生は、指名ルーレット・班分け・授業タイマー・計算プリント・席がえくじを、生徒は、計算タイムアタック・元素記号や県庁所在地や英単語のクイズ・勉強タイマーを、ブラウザですぐ無料で使えます。教材プリントの PDF も。">
+<meta name="twitter:image" content="https://www.givetex.org/assets/og/home.jpg">
+<link rel="stylesheet" href="/assets/gt-fx.css">
+<script src="/assets/gt-fx.js" defer></script>
+<script src="/assets/vfx.js" defer></script>
+<link rel="stylesheet" href="/assets/gt-ui.css">
+<script src="/assets/gt-ui.js" defer></script>
+<!-- /seo -->
+</head>
+<body data-role="sensei">
+<noscript><p style="margin:0;padding:12px 16px;background:#222;color:#fff;font:15px/1.6 sans-serif;text-align:center">このブースは JavaScript を使って動きます。ブラウザの設定で JavaScript を有効にしてください。</p></noscript>
+<header class="gk-top">
+  <a class="gk-back" href="/">← GiveTex</a>
+  <span class="gk-bell" aria-hidden="true">🔔</span>
+</header>
+<main class="gk-main">
+  <section class="gk-hero" aria-labelledby="gk-h">
+    <p class="gk-kicker">GIVETEX SCHOOL BOOTH</p>
+    <h1 id="gk-h"><span class="gk-logo">Gakko</span><small>先生と生徒の道具箱</small></h1>
+    <p class="gk-lead">授業でも、自分の勉強でも、ブラウザですぐ使える道具を集めました。<br>ぜんぶ無料・登録なし。入れた名前は、この端末の中だけで使います（どこにも送りません）。</p>
+    <div class="gk-role" role="tablist" aria-label="使う人をえらぶ">
+      <span class="gk-role-pill" aria-hidden="true"></span>
+      <button type="button" role="tab" id="tab-sensei" data-role="sensei" aria-selected="true" aria-controls="gk-panel"><i aria-hidden="true">👩‍🏫</i>先生<small>TEACHER</small></button>
+      <button type="button" role="tab" id="tab-seito" data-role="seito" aria-selected="false" aria-controls="gk-panel"><i aria-hidden="true">🧑‍🎓</i>生徒<small>STUDENT</small></button>
+    </div>
+  </section>
+
+  <div id="gk-panel" role="tabpanel" aria-labelledby="tab-sensei">
+    <section class="gk-sec" aria-labelledby="gk-tools-h">
+      <div class="gk-sec-hd"><h2 id="gk-tools-h">すぐ使える道具</h2><p class="gk-note" id="gk-tools-note"></p></div>
+      <div class="gk-tools" id="gk-tools"></div>
+    </section>
+    <section class="gk-sec" aria-labelledby="gk-res-h">
+      <div class="gk-sec-hd"><h2 id="gk-res-h">教材と読みもの</h2><p class="gk-note" id="gk-res-note"></p></div>
+      <div class="gk-res" id="gk-res"></div>
+    </section>
+  </div>
+</main>
+
+<dialog class="gk-sheet" id="gk-sheet" aria-labelledby="gk-sheet-h">
+  <div class="gk-sheet-in">
+    <header class="gk-sheet-hd"><span class="gk-sheet-ic" aria-hidden="true"></span><h2 id="gk-sheet-h"></h2><button type="button" class="gk-x" aria-label="とじる">×</button></header>
+    <div class="gk-sheet-body" id="gk-sheet-body"></div>
+  </div>
+</dialog>
+<div class="gk-print" id="gk-print" aria-hidden="true"></div>
+
+<footer class="gk-foot"><a href="/">GiveTex ホームへ</a>　・　<a href="/socafe/">素カフェ（教材プリント）</a>　・　<a href="/contact/">お問い合わせ</a></footer>
+</body>
+</html>

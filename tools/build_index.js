@@ -6,7 +6,7 @@ const out = [];
 const add = (t, u, k, extra) => { if (t && u) out.push(Object.assign({ t: String(t).trim(), u, k }, extra || {})); };
 // ブース
 [['アプリ', '/apps/'], ['ドパ読！（Kindle）', '/books/'], ['どろん（オカルト）', '/doron/'], ['note ブース', '/note/'], ['スタンプブース', '/stamp/'],
- ['ゲームブース', '/game/'], ['美術館ブース', '/museum/'], ['ラーメンブース', '/ramen/'], ['素カフェ（素材カフェ）', '/socafe/'], ['映画ブース C-Log', '/movie/'], ['開発日記', '/diary/'], ['プロフィール', '/about.html']]
+ ['ゲームブース', '/game/'], ['美術館ブース', '/museum/'], ['ラーメンブース', '/ramen/'], ['素カフェ（素材カフェ）', '/socafe/'], ['Gakko ブース（先生と生徒の道具箱）', '/gakko/'], ['映画ブース C-Log', '/movie/'], ['開発日記', '/diary/'], ['プロフィール', '/about.html']]
   .forEach(([t, u]) => add(t, u, 'ブース'));
 // アプリ（HTML の <title> と App Store）
 fs.readdirSync(path.join(R, 'apps')).forEach(d => {

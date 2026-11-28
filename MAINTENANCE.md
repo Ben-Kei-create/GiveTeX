@@ -353,3 +353,11 @@ beui.dev（動く部品）や recent.design（ギャラリーの見せ方）を�
 - ドパ読！の本棚：books/index.html のいつもの表紙のならび（そのまま）の下に、ジャンルごとの背表紙の本棚 `#hondana` を JS で足す（本はならびから複製）
 - 音は、サイトの音が「オン」（localStorage `gt-click` が on）のときだけ小さく鳴る
 - ラーメン：広い画面（900px 以上）は ramen.js が食券を `.rm-col` の左右2列にわける
+
+## Gakko ブース（/gakko/）
+先生と生徒の道具箱。gakko/index.html・gakko.css・gakko.js だけで動く（サーバーいらず）。
+- 上のスイッチで先生（#sensei）／生徒（#seito）を切りかえ。`#seito-drill` のように道具まで指定して開ける
+- 道具は gakko.js の `TOOLS` の表に足す（[id, 絵文字, 名前, 説明, 作る関数]）。計算の問題の種類は `KINDS`、クイズのデータは `ELEMENTS`・`CAPITALS`・`WORDS`
+- 教材の一覧は socafe/free.js（cat が study の PDF）と bookmarks/downloads.js（学習キット）から自動で出る
+- 入れた名前は保存も送信もしない。localStorage（gk-*）に残すのは、人数・班の数・ベスト記録・今日のポモドーロの数だけ
+- 書体：英字は Fredoka、日本語の見出しは Kiwi Maru

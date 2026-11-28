@@ -16,6 +16,7 @@
   var RULES = [
     [/^\/game\//, [['.start', 'don'], ['.gcard', 'pon'], ['.tabs button', 'puff'], ['#restart', 'shu']]],
     [/^\/socafe\//, [['.sc-dl', 'kachi'], ['.sc-open', 'pon'], ['.sc-tabs button', 'puff'], ['.sc-sounds button', 'kira'], ['.sc-buy', 'pon']]],
+    [/^\/gakko\//, [['.gk-role button', 'pon'], ['.gk-tool', 'pon'], ['.gk-seg button', 'puff'], ['.gk-btn', 'kachi']]],
     [/^\/movie\//, [['#bf-send', 'don'], ['.wt-tabs button', 'zuza'], ['.wt-filter button', 'puff'], ['.hl-nav', 'shu'], ['.hl .btn-y', 'pon'], ['.bf-stars button, .bf-stars [role=radio]', 'kira']]],
     [/^\/museum\//, [['.mu-coll-more button', 'shu'], ['.mu-filter button', 'puff']]],
     [/^\/ramen\//, [['.rm-filter button', 'puff'], ['.done button', 'don']]],
@@ -34,6 +35,7 @@
     [/^\/doron\//, { fill: '#2a1f3d', shade: '#5c3d8a', line: '#b28dff', accent: '#ff3b6b', ink: '#120b1d', sfx: ['#f3e6ff', '#120b1d'] }],
     [/^\/ramen\//, { fill: '#fffaf0', shade: '#ffd27a', line: '#d7261e', accent: '#ff8a00', ink: '#2a1a12', sfx: ['#d7261e', '#fffaf0'] }],
     [/^\/movie\//, { fill: '#fffaf0', shade: '#ffd133', line: '#1c1b19', accent: '#ff6a3d', ink: '#1c1b19', sfx: ['#1c1b19', '#ffd133'] }],
+    [/^\/gakko\//, { fill: '#ffffff', shade: '#fff6a8', line: '#2f6b4f', accent: '#e8791a', ink: '#23302a', sfx: ['#2f6b4f', '#ffffff'] }],
     [/^\/socafe\//, { fill: '#fffaf1', shade: '#e9c98f', line: '#5a3b26', accent: '#2f8f5b', ink: '#3b2a20', sfx: ['#3b2a20', '#fffaf1'] }],
     [/^\/game\//, { fill: '#ffffff', shade: '#7df9ff', line: '#ff4fd8', accent: '#ffd23f', ink: '#120a24', sfx: ['#120a24', '#ffd23f'] }],
     [/^\/museum\//, { fill: '#fbfaf6', shade: '#e3d3a8', line: '#8a6f3c', accent: '#b89a5e', ink: '#2b2a27', sfx: ['#2b2a27', '#fbfaf6'] }],

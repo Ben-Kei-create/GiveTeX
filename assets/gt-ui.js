@@ -27,6 +27,7 @@
     [/^\/museum\//, '.frame, .mat'],
     [/^\/note\//, '.nb-item, .nb-more-card, .nb-tale'],
     [/^\/socafe\//, '.sc-item'],
+    [/^\/gakko\//, '.gk-r'],
     [/^\/doron\//, '.rep, .ph'],
     [/^\/ramen\//, '.ticket'],
     [/^\/books\//, '.kb, .box, .mode'],
