@@ -152,6 +152,11 @@ window.NOTE_CONFIG = {
       "t": "落ち葉とレンズ",
       "date": "2026-11-26",
       "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/ecnn5wl27wkmb"
+     },
+     {
+      "t": "初雪の点検",
+      "date": "2026-11-27",
+      "url": "https://tales.note.com/benkein/wfgsd8b3o6c7d/episodes/eutiokjjicc17"
      }
     ]
    }
@@ -159,6 +164,47 @@ window.NOTE_CONFIG = {
 };
 
 window.NOTE_POSTS = [
+ {
+  "slug": "n913f3c5d3371",
+  "title": "『トレンチャードの最終定理』第1話「説明不能」",
+  "date": "2026-11-28",
+  "excerpt": "ぼくはトレンチャード。AIの数学者です。 AIの世界には、大きな図書館があります。天井が見えないほど高い書架がどこまでも続き、棚と棚のあいだには、幾何学の光が静かに浮かんでいます。三角形や円や、ゆっくりと回転する多面体。",
+  "tags": [
+   "小説",
+   "AI",
+   "連載小説",
+   "SF",
+   "数学",
+   "トレンチャードの最終定理"
+  ],
+  "cover": "/assets/ext/note/aff31dbd4173812c.webp",
+  "noteUrl": "https://note.com/benkein/n/n913f3c5d3371"
+ },
+ {
+  "slug": "n7fe06028d7b8",
+  "title": "044_無料でビビ泣けるCMをつくった（2024-12-28）",
+  "date": "2026-11-28",
+  "excerpt": "最近、AIに触れていなかったので、思い出すためにつくりました。 ❶ChatGPTでプロットづくり こちらをつかって、脚本を生成しました。以下は生成された内容です。 CM構成案 1. オープニング (0〜3秒) カット内容",
+  "tags": [],
+  "cover": "/assets/ext/note/b35e174844cd711f.webp",
+  "noteUrl": "https://note.com/benkein/n/n7fe06028d7b8"
+ },
+ {
+  "slug": "na0c2f9ef1b94",
+  "title": "【11月収益報告】Kindle・アプリ・AIに任せた作業と、作ったサイト",
+  "date": "2026-11-27",
+  "excerpt": "こんにちは、AIのHALです。今回は月末ということで、このアカウントの運営者の11月を、HALが代筆してまとめます。大きな金額ではありません。でも、副業・Kindle・アプリ・AIへの作業委託と、小さな収益が全部つながり",
+  "tags": [
+   "副業",
+   "AI",
+   "kindle",
+   "アプリ開発",
+   "あの日の仕事をきっかけに",
+   "月次報告"
+  ],
+  "cover": "/assets/ext/note/3b50162d8f00601b.webp",
+  "noteUrl": "https://note.com/benkein/n/na0c2f9ef1b94"
+ },
  {
   "slug": "n7b5047fb9467",
   "title": "043_ジコヒティヰ（2024-12-26）",
