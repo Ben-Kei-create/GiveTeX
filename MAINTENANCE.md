@@ -350,6 +350,6 @@ beui.dev（動く部品）や recent.design（ギャラリーの見せ方）を�
 - すべるタブ：`aria-pressed` / `aria-selected` / `.on` のボタンが2つ以上ならぶグループは、自動で光るわくがすべる（設定いらず）
 - ばね押し（CSS）・磁石ボタン（MAGNET）・スポットライトのカード＋↗（CARDS）・数字ロール（COUNT）：ブースごとのセレクタは gt-ui.js の上の表で足す
 - 保存ボタン：`a[download]`・`.sc-dl`・`[data-gu-dl]` を押すと「✓ 保存しました」＋トースト。トーストはどこからでも `GTUI.toast('文', { icon: '✓' })`
-- ドパ読！の本棚：books/index.html の `.shelf` を背表紙にする（表紙／本棚の切りかえは localStorage `gt-books-view`。はじめは本棚）
+- ドパ読！の本棚：books/index.html のいつもの表紙のならび（そのまま）の下に、ジャンルごとの背表紙の本棚 `#hondana` を JS で足す（本はならびから複製）
 - 音は、サイトの音が「オン」（localStorage `gt-click` が on）のときだけ小さく鳴る
 - ラーメン：広い画面（900px 以上）は ramen.js が食券を `.rm-col` の左右2列にわける

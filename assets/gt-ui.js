@@ -7,7 +7,7 @@
    - 数字ロール    ：「96冊」「18品」などの数字が、見えたときに 0 から数えあがる
    - 保存ボタン    ：ダウンロードを押すと、ボタンの中をバーが走って「✓ 保存しました」に変わる
    - トースト      ：下からお知らせが出る。重なって積まれ、横にスワイプで消せる（window.GTUI.toast）
-   - 本棚          ：ドパ読！を背表紙の本棚で見られる（表紙／本棚を切りかえ）
+   - 本棚          ：ドパ読！の表紙のならびの下に、背表紙の本棚をもうひとつ置く
    ホーム・90年代風のページでは動かない。動きを減らす設定の人には動きを出さない。音はサイトの音の設定（gt-click）に合わせる */
 (function () {
   'use strict';
@@ -161,46 +161,46 @@
     setTimeout(function () { a.classList.remove('gu-dl', 'gu-done'); a.__guBusy = 0; }, 2600);
   }, true);
 
-  /* ---------- 本棚（ドパ読！のトップ） ---------- */
+  /* ---------- 本棚（ドパ読！のトップ。いつもの表紙のならびの下に、もうひとつ置く） ---------- */
   function shelfMode() {
     if (path !== '/books/' && path !== '/books/index.html') return;
-    var shelves = $$('.sec .shelf'); if (shelves.length < 2) return;
-    var KEY = 'gt-books-view', mode = 'cover'; try { mode = localStorage.getItem(KEY) || 'shelf'; } catch (e) { mode = 'shelf'; }
-    var seg = document.createElement('div'); seg.className = 'gu-seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', '本のならべかた');
-    [['shelf', '📚 本棚で見る'], ['cover', '🖼 表紙で見る']].forEach(function (o) {
-      var b = document.createElement('button'); b.type = 'button'; b.textContent = o[1]; b.setAttribute('data-v', o[0]); b.setAttribute('aria-pressed', mode === o[0] ? 'true' : 'false');
-      b.addEventListener('click', function () { mode = o[0]; try { localStorage.setItem(KEY, mode); } catch (e) {} $$('button', seg).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); apply(); });
-      seg.appendChild(b);
-    });
-    var first = shelves[0].closest('.sec'); first.parentNode.insertBefore(seg, first);
-    // 背表紙の色：表紙の絵の平均の色
+    var secs = $$('.sec').filter(function (s) { return s.querySelector(':scope > .shelf .kb'); }); if (secs.length < 2) return;
+    var last = secs[secs.length - 1];
+    var box = document.createElement('section'); box.className = 'sec gu-shelves'; box.id = 'hondana'; box.setAttribute('aria-labelledby', 'hondana-h');
+    box.innerHTML = '<div class="sec-hd"><h2 id="hondana-h">📚 ドパ読！の本棚 <span class="cnt"></span></h2></div><p class="gu-shelf-lead">ジャンルごとに背表紙でならべました。ふれると本が引きだされて、表紙が見えます。</p>';
     var cv = document.createElement('canvas'); cv.width = cv.height = 8; var cx = cv.getContext('2d', { willReadFrequently: true });
-    function tint(kb) {
-      if (kb.__guT) return; var im = kb.querySelector('img'); if (!im) return;
+    function tint(kb) { // 背表紙の色：表紙の絵の平均の色
+      var im = kb.querySelector('img'); if (!im) return;
       function go() { try { cx.drawImage(im, 0, 0, 8, 8); var d = cx.getImageData(0, 0, 8, 8).data, r = 0, g = 0, b = 0; for (var i = 0; i < d.length; i += 4) { r += d[i]; g += d[i + 1]; b += d[i + 2]; } r /= 64; g /= 64; b /= 64;
-        kb.style.setProperty('--sp', 'rgb(' + (r | 0) + ',' + (g | 0) + ',' + (b | 0) + ')'); kb.style.setProperty('--spi', (r * .3 + g * .59 + b * .11) > 150 ? '#141414' : '#fff'); kb.__guT = 1; } catch (e) {} }
+        kb.style.setProperty('--sp', 'rgb(' + (r | 0) + ',' + (g | 0) + ',' + (b | 0) + ')'); kb.style.setProperty('--spi', (r * .3 + g * .59 + b * .11) > 150 ? '#141414' : '#fff'); } catch (e) {} }
       if (im.complete && im.naturalWidth) go(); else im.addEventListener('load', go, { once: true });
     }
-    shelves.forEach(function (sh) {
-      $$('.kb', sh).forEach(function (kb, i) {
+    var n = 0;
+    secs.forEach(function (sec) {
+      var h = sec.querySelector('.sec-hd h2'), label = document.createElement('p'); label.className = 'gu-shelf-name';
+      label.textContent = h ? h.childNodes[0].textContent.trim() : ''; box.appendChild(label);
+      var sh = document.createElement('div'); sh.className = 'shelf gu-shelf';
+      $$(':scope > .shelf .kb', sec).forEach(function (orig, i) {
+        var kb = orig.cloneNode(true); n++;
+        $$('.gu-spot, .gu-arrow', kb).forEach(function (x) { x.parentNode.removeChild(x); }); kb.classList.remove('gu-card');
         kb.style.setProperty('--sh', (196 + ((i * 37) % 5) * 9) + 'px');
         kb.addEventListener('click', function (e) { // さわれる画面は、1回目で本を引きだし、2回目でひらく
-          if (!sh.classList.contains('gu-shelf') || fine) return;
-          if (!kb.classList.contains('out')) { e.preventDefault(); $$('.kb.out', sh).forEach(function (x) { x.classList.remove('out'); }); kb.classList.add('out'); tick(400, .07, .04); }
+          if (fine || kb.classList.contains('out')) return;
+          e.preventDefault(); $$('.kb.out', box).forEach(function (x) { x.classList.remove('out'); }); kb.classList.add('out'); tick(400, .07, .04);
         });
-        kb.addEventListener('mouseenter', function () { if (sh.classList.contains('gu-shelf')) tick(300 + (i % 5) * 40, .05, .02); });
+        kb.addEventListener('mouseenter', function () { tick(300 + (i % 5) * 40, .05, .02); });
+        sh.appendChild(kb); tint(kb);
       });
+      box.appendChild(sh);
     });
-    function apply() {
-      shelves.forEach(function (sh) { sh.classList.toggle('gu-shelf', mode === 'shelf'); if (mode === 'shelf') { $$('.kb img', sh).forEach(function (im) { im.loading = 'eager'; }); $$('.kb', sh).forEach(tint); } });
-    }
-    apply();
+    box.querySelector('.cnt').textContent = n + '冊';
+    last.parentNode.insertBefore(box, last.nextSibling);
   }
 
   /* ---------- まとめて取りつける ---------- */
   function scan() {
     var c = pick(CARDS), m = pick(MAGNET), n = pick(COUNT);
-    if (c) $$(c).forEach(spot);
+    if (c) $$(c).forEach(function (el) { if (!el.closest('.gu-shelves')) spot(el); });
     if (m) $$(m).forEach(magnet);
     if (n) $$(n).forEach(roll);
   }
