@@ -13,7 +13,7 @@ HEAD = '''<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="theme-color" content="#000080">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=VT323&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Titan+One&amp;family=VT323&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/assets/retro.css">
 <script type="text/javascript" src="/assets/retro.js"></script>
 <script src="/assets/retro-extras.js" defer></script>
@@ -165,6 +165,8 @@ if not DIARY:  # すでに90年代版になっている場合は保存データ�
 else:
     (pathlib.Path(__file__).parent / 'diary.json').write_text(json.dumps(DIARY, ensure_ascii=False))
 NEW_ENTRIES = [
+ dict(date='2026-11-28', tag='サイト', title='ブースごとに「顔」になる文字を',
+      body='<p>有名な映画やゲームのロゴに使われている書体を、無料で使える近いフォントといっしょに紹介しているサイトを見て、ブースごとの見出しの文字を選びなおしました。</p><ul class="r-list"><li>ホーム：ロゴの GiveTex を、ワードアートっぽい丸くて太い字に</li><li>ゲーム：小さい文字は、読みやすいドット体に</li><li>映画：細長い映画ポスター風の字</li><li>素カフェ：カフェの看板みたいな筆記体</li><li>ラーメン：ポップな太い字（数字も）</li><li>美術館：石に彫ったようなローマン体</li><li>どろん：英字はおどろおどろしい字</li><li>note：ブランド名を飾り文字に</li><li>ドパ読！：英字のラベルをマンガの描き文字風に</li></ul><p>日本語の部分はこれまでどおりなので、読みやすさはそのままです。</p>'),
  dict(date='2026-11-28', tag='サイト', title='アイコンを一新した',
       body='<p>サイトのアイコンを新しくしました。藍から紫へのグラデーションの角丸に、金色の太い「G」。G の口のところには、ひらめきの星がひとつ光っています。</p><p>ブラウザのタブ、スマホのホーム画面に追加したとき、それからホームの起動画面（光の粒が集まってロゴになるところ）も、このアイコンになりました。</p>'),
  dict(date='2026-11-27', tag='サイト', title='ボタンに「作画」の演出。ドン！ポン！カチッ',

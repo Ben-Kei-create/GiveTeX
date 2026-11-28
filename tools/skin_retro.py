@@ -14,7 +14,7 @@ for p in sorted(R.rglob('*.html')):
     s = re.sub(r'^<!DOCTYPE html>', DOCTYPE, s, count=1, flags=re.I)
     s = re.sub(r'<header class="hd">.*?</header>', HEADER, s, count=1, flags=re.S)
     s = re.sub(r'<footer class="ft">.*?</footer>', FOOTER, s, count=1, flags=re.S)
-    s = re.sub(r'<link href="https://fonts.googleapis.com/css2\?family=Dela[^"]*" rel="stylesheet">', FONTS, s, count=1)
+    s = re.sub(r'<link href="https://fonts.googleapis.com/css2\?family=(?:Bangers&)?Dela[^"]*" rel="stylesheet">', FONTS, s, count=1)
     s = s.replace('<link rel="stylesheet" href="/assets/pop.css">', '<link rel="stylesheet" type="text/css" href="/assets/retro.css">\n<script type="text/javascript" src="/assets/retro.js"></script>')
     s = s.replace('<link rel="stylesheet" href="/apps/assets/apps.css">\n', '').replace('<link rel="stylesheet" href="/apps/assets/apps.css">', '')
     if rel.startswith('apps/'):

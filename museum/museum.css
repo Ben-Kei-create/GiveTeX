@@ -1,6 +1,6 @@
 /* 美術館ブース — 白く、落ち着いた展示室。つぶやきは額縁の中に */
 :root{--wall:#f7f6f2;--wall2:#efede6;--ink:#2b2a27;--sub:#6e6a62;--faint:#6f6a61;--line:#dcd8ce;--gold:#b89a5e;--gold2:#8a6f3c;--mat:#fbfaf6;
-  --serif:"Shippori Mincho","Cormorant Garamond","Noto Serif JP",serif;--en:"Cormorant Garamond","Shippori Mincho",serif;color-scheme:light}
+  --serif:"Shippori Mincho","Cinzel","Noto Serif JP",serif;--en:"Cinzel","Shippori Mincho",serif;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--wall);color:var(--ink);font:16px/1.95 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit}

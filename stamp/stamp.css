@@ -42,7 +42,7 @@ button{font:inherit;color:inherit}
 .st-head{display:flex;align-items:center;gap:6px;height:56px;padding:0 8px;background:var(--head);color:var(--head-text);flex:none}
 .st-head a,.st-head button{display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:none;color:inherit;text-decoration:none;cursor:pointer;font-size:22px}
 .st-head a:hover,.st-head button:hover{background:rgba(255,255,255,.12)}
-.st-head h1{flex:1;min-width:0;margin:0;font-size:16.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-head h1{flex:1;min-width:0;margin:0;font-family:"Titan One",var(--font);letter-spacing:.02em;font-size:16.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .st-head h1 small{font-weight:400;opacity:.8;margin-left:4px}
 @media(min-width:900px){.st-head .menu{display:none}}
 

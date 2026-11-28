@@ -37,8 +37,8 @@ blink, .blink { animation: r-blink 1s steps(1) infinite; }
 .r-logo-link { text-decoration: none; }
 .r-logo {
   display: inline-block;
-  font-family: "DotGothic16", "MS PGothic", sans-serif;
-  font-size: 64px; line-height: 1.05; letter-spacing: 2px;
+  font-family: "Titan One", "DotGothic16", "MS PGothic", sans-serif;
+  font-size: 60px; line-height: 1.1; letter-spacing: 1px; padding: 0 .12em;
   color: #ffffff;
   background: linear-gradient(180deg, #ffffff 0%, #a8f0ff 35%, #2a6bff 50%, #ffffff 52%, #ffd84a 100%);
   -webkit-background-clip: text; background-clip: text;
@@ -267,7 +267,7 @@ table.info th { width: 8.5em; white-space: nowrap; }
   td.r-side > .win { flex: 1 1 260px; }
   br.pc { display: none; }
   table.info { width: calc(100% - 24px); }
-  .r-logo { font-size: 46px; }
+  .r-logo { font-size: 42px; }
   .r-sub { font-size: 12px; letter-spacing: 1px; }
   .r-nav a { padding: 3px 8px; font-size: 12.5px; }
   .content > *, .article > * { margin-left: 12px !important; margin-right: 12px !important; }

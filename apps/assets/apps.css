@@ -162,3 +162,6 @@ table.info th{width:9em;color:var(--sub);font-weight:400;white-space:nowrap}
 .ax-sub-links{align-items:center}
 .ax-sub-links a[href*="apps.apple.com"]{padding:4px 14px;font-size:13px;color:var(--accent-text)}
 .ax-diary-more{margin:6px 0 0;font-size:14px}.ax-diary-more a{color:var(--link,#0066cc);text-decoration:none}
+
+/* fontinlogo：見出しの英字・数字は Anton（日本語は WDXL Lubrifont のまま） */
+h1,h2,.ax-sec h2,.content h2{font-family:"Anton",var(--font);letter-spacing:.03em}

@@ -1,6 +1,6 @@
 /* ラーメンブース — スクロールすると丼から麺がのびる */
 :root{--bg:#fff6e6;--ink:#2a1a12;--sub:#7a5a44;--red:#d7261e;--red2:#a3150f;--noodle:#f3cf6a;--noodle2:#d9a93a;--soup:#e9a54a;
-  --pop:"Mochiy Pop One","Zen Maru Gothic",sans-serif;--jp:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;color-scheme:light}
+  --pop:"Luckiest Guy","Mochiy Pop One","Zen Maru Gothic",sans-serif;--jp:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg) radial-gradient(rgba(215,38,30,.06) 2px,transparent 2.5px) 0 0/26px 26px;color:var(--ink);font:16px/1.85 var(--jp);overflow-x:hidden}

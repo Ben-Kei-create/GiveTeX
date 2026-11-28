@@ -333,3 +333,14 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - 2026-11-28 に一新：藍〜紫のグラデーションの角丸に、金色の太い「G」と、ひらめきの星。元の絵は `assets/icon/icon.svg`、作り方は `node tools/make_icon.js <出力フォルダ> a`（Playwright で SVG を PNG に）。
 - 書き出し：favicon.ico（16/32/48）、favicon-16/32/48、apple-touch-icon（180・四角いっぱい）、icon-192/512（角丸・まわり透明）、icon-maskable-512（四角いっぱい）。PNG は色数を減らして軽く（MEDIANCUT＋ディザ）。
 - ホームの起動画面は icon-512.png を光の粒で組み立てるので、アイコンを変えると起動画面のロゴも変わる。旧アイコン（金のドット絵の G）は tools/gold_g.py。
+
+## ブースの書体（fontinlogo.com を参考に）
+有名ロゴの書体と近い無料フォントの組み合わせを参考に、英字・数字の見出しだけブースごとに変えている（日本語はそれぞれのブースの日本語フォントのまま。ロゴそのものはまねしない）。
+- ホーム・90年代風のページ：ロゴ `.r-logo` を Titan One（assets/retro.css・フォントの読みこみは tools/build_retro.py）
+- ゲーム：小さい文字 `--px2` を Silkscreen（見出しは Press Start 2P のまま）
+- 映画：`--en` を Bebas Neue（Cormorant は `--cg` に残してある）
+- 素カフェ：`--en` を Pacifico ／ ラーメン：`--pop` の先頭に Luckiest Guy ／ 美術館：`--en` を Cinzel
+- どろん：`--creep`（Creepster）を `.kicker` と `.h3 small` に ／ スタンプ：ヘッダーの h1 を Titan One
+- note：`--brand`（Cinzel Decorative）をブランド名に。記事ページの読みこみは tools/note_head.html
+- アプリ：h1・h2 の英数字を Anton ／ ドパ読！（assets/pop.css）：`--comic`（Bangers）を英字ラベルに。tools/skin_retro.py の置きかえもこれに合わせてある
+- 創作ブースは、もともと Orbitron（同じ系統）なのでそのまま
