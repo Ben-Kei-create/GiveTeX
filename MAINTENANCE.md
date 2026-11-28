@@ -361,3 +361,7 @@ beui.dev（動く部品）や recent.design（ギャラリーの見せ方）を�
 - 教材の一覧は socafe/free.js（cat が study の PDF）と bookmarks/downloads.js（学習キット）から自動で出る
 - 入れた名前は保存も送信もしない。localStorage（gk-*）に残すのは、人数・班の数・ベスト記録・今日のポモドーロの数だけ
 - 書体：英字は Fredoka、日本語の見出しは Kiwi Maru
+
+## アイコンの読みこみ（キャッシュ対策）
+favicon・apple-touch-icon・manifest の `<link>` は、tools/seo.py が全ページの seo ブロックにまとめて入れる（ページに直接書いたものは外される）。
+アイコンを作りなおしたら、tools/seo.py の `ICON_V` と site.webmanifest の `?v=` を上げて、seo.py を走らせる。ブラウザはアイコンを長く覚えているので、URL を変えないと新しい絵に変わらない。

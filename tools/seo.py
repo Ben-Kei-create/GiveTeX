@@ -51,7 +51,16 @@ def og_block(t, rel, covers, book_covers={}):
     tags += ['<link rel="stylesheet" href="/assets/gt-fx.css">', '<script src="/assets/gt-fx.js" defer></script>']
     if rel != 'index.html': tags.append('<script src="/assets/vfx.js" defer></script>')  # 作画エフェクト（ホームは対象外。90年代風ページでは何もしない）
     if rel != 'index.html': tags += ['<link rel="stylesheet" href="/assets/gt-ui.css">', '<script src="/assets/gt-ui.js" defer></script>']  # UI キット（すべるタブ・保存ボタン・本棚など。90年代風ページでは何もしない）
-    return '<!-- seo -->\n' + '\n'.join(tags) + '\n<!-- /seo -->'
+    return '<!-- seo -->\n' + '\n'.join(ICONS + tags) + '\n<!-- /seo -->'
+
+# サイトのアイコン（全ページ共通。ここでまとめて入れる）
+# アイコンを作りなおしたら ICON_V を上げる → ブラウザが古いアイコンを覚えていても、新しい URL なので読みなおす
+ICON_V = '2'
+ICONS = [f'<link rel="icon" href="/favicon.ico?v={ICON_V}" sizes="32x32">',
+         f'<link rel="icon" href="/assets/icon/icon.svg?v={ICON_V}" type="image/svg+xml">',
+         f'<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png?v={ICON_V}">',
+         f'<link rel="manifest" href="/site.webmanifest?v={ICON_V}">']
+ICON_RE = re.compile(r'[ \t]*<link rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>[ \t]*\n?')
 
 def main():
     posts = js_json('note/posts.js', 'NOTE_POSTS')
@@ -63,6 +72,7 @@ def main():
         t = p.read_text(encoding='utf-8')
         if '</head>' not in t: continue
         t2 = re.sub(r'\n?<!-- seo -->.*?<!-- /seo -->', '', t, flags=re.S)
+        t2 = ICON_RE.sub('', t2)  # ページごとに書いてあったアイコンは外して、seo ブロックの中のものだけにする
         t2 = t2.replace('</head>', og_block(t2, rel, covers, book_covers) + '\n</head>', 1)
         if t2 != t: p.write_text(t2, encoding='utf-8'); n += 1
         noindex = re.search(r'<meta name="robots" content="[^"]*noindex', t2)
