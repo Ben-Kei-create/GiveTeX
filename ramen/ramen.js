@@ -40,6 +40,21 @@
     box.appendChild(t);
   });
 
+  /* 広い画面は左右2列（左に奇数番、右に偶数番。それぞれ上につめて、すきまを作らない） */
+  (function () {
+    var mq = window.matchMedia && matchMedia('(min-width: 900px)'); if (!mq || !P.length) return;
+    var all = Array.prototype.slice.call(box.querySelectorAll('.ticket')), cols = null;
+    function lay() {
+      if (mq.matches && !cols) {
+        cols = [el('div', 'rm-col'), el('div', 'rm-col')];
+        all.forEach(function (t, i) { cols[i % 2].appendChild(t); }); box.appendChild(cols[0]); box.appendChild(cols[1]); box.classList.add('two');
+      } else if (!mq.matches && cols) {
+        all.forEach(function (t) { box.appendChild(t); }); cols.forEach(function (c) { c.remove(); }); cols = null; box.classList.remove('two');
+      }
+    }
+    lay(); if (mq.addEventListener) mq.addEventListener('change', function () { lay(); if (typeof build === 'function') setTimeout(build, 50); });
+  })();
+
   /* ---------- 麺 ---------- */
   var NS = 'http://www.w3.org/2000/svg';
   var svg = $('.noodles'), chop = $('.chopsticks'), meterB = $('.meter b'), bowl = $('.bowl');

@@ -344,3 +344,12 @@ python3 -I tools/migrate_note.py /tmp/note-data .
 - note：`--brand`（Cinzel Decorative）をブランド名に。記事ページの読みこみは tools/note_head.html
 - アプリ：h1・h2 の英数字を Anton ／ ドパ読！（assets/pop.css）：`--comic`（Bangers）を英字ラベルに。tools/skin_retro.py の置きかえもこれに合わせてある
 - 創作ブースは、もともと Orbitron（同じ系統）なのでそのまま
+
+## UI キット（assets/gt-ui.js・gt-ui.css）
+beui.dev（動く部品）や recent.design（ギャラリーの見せ方）を参考に、素の JS で自作した部品。tools/seo.py がホーム以外の全ページに読みこむ（ホーム・90年代風・名刺のページでは何もしない）。
+- すべるタブ：`aria-pressed` / `aria-selected` / `.on` のボタンが2つ以上ならぶグループは、自動で光るわくがすべる（設定いらず）
+- ばね押し（CSS）・磁石ボタン（MAGNET）・スポットライトのカード＋↗（CARDS）・数字ロール（COUNT）：ブースごとのセレクタは gt-ui.js の上の表で足す
+- 保存ボタン：`a[download]`・`.sc-dl`・`[data-gu-dl]` を押すと「✓ 保存しました」＋トースト。トーストはどこからでも `GTUI.toast('文', { icon: '✓' })`
+- ドパ読！の本棚：books/index.html の `.shelf` を背表紙にする（表紙／本棚の切りかえは localStorage `gt-books-view`。はじめは本棚）
+- 音は、サイトの音が「オン」（localStorage `gt-click` が on）のときだけ小さく鳴る
+- ラーメン：広い画面（900px 以上）は ramen.js が食券を `.rm-col` の左右2列にわける

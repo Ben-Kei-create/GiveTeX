@@ -50,6 +50,7 @@ def og_block(t, rel, covers, book_covers={}):
     # ページの切りかえ・細かい動き（全ページ共通）
     tags += ['<link rel="stylesheet" href="/assets/gt-fx.css">', '<script src="/assets/gt-fx.js" defer></script>']
     if rel != 'index.html': tags.append('<script src="/assets/vfx.js" defer></script>')  # 作画エフェクト（ホームは対象外。90年代風ページでは何もしない）
+    if rel != 'index.html': tags += ['<link rel="stylesheet" href="/assets/gt-ui.css">', '<script src="/assets/gt-ui.js" defer></script>']  # UI キット（すべるタブ・保存ボタン・本棚など。90年代風ページでは何もしない）
     return '<!-- seo -->\n' + '\n'.join(tags) + '\n<!-- /seo -->'
 
 def main():

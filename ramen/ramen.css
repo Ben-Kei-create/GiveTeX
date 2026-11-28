@@ -61,3 +61,14 @@ a{color:var(--red2)}
 .rm-filter button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:2px solid #c8102e;background:#fff8ec;color:#c8102e;cursor:pointer}
 .rm-filter button[aria-pressed=true]{background:#c8102e;color:#fff}
 [hidden]{display:none!important}
+
+/* 広い画面は2列。麺は真ん中の通路を通る（並べかえは ramen.js。左に奇数番、右に偶数番） */
+@media(min-width:900px){
+  .wrap{max-width:1080px}
+  .tickets.two{grid-template-columns:1fr 1fr;column-gap:150px;align-items:start}
+  .rm-col{display:grid;gap:48px}
+  .rm-col + .rm-col{padding-top:150px}
+  .tickets.two .ticket{justify-self:stretch;width:auto}
+  .rm-col .ticket:nth-child(odd){transform:rotate(-1.2deg)}.rm-col .ticket:nth-child(even){transform:rotate(1.2deg)}
+  .ticket img{aspect-ratio:4/3;object-fit:cover}
+}
